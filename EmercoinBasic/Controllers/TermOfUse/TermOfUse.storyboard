@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Term Of Use View Controller-->
+        <scene sceneID="RqR-Xj-MD8">
+            <objects>
+                <viewController storyboardIdentifier="TermOfUseViewController" id="rZl-9B-ZMR" customClass="TermOfUseViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4or-H7-gOv"/>
+                        <viewControllerLayoutGuide type="bottom" id="NsW-oy-8Db"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v4H-mp-qwM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-OY-BZZ">
+                                <rect key="frame" x="0.0" y="20" width="58" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="UIb-eo-c9x"/>
+                                    <constraint firstAttribute="width" constant="58" id="Xrh-BT-9gX"/>
+                                </constraints>
+                                <state key="normal" image="reg_arrow_icon"/>
+                                <connections>
+                                    <action selector="backToDashBoard" destination="rZl-9B-ZMR" eventType="touchUpInside" id="itm-sL-w5d"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-hR-Cxg">
+                                <rect key="frame" x="131" y="52" width="58" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G20-kr-Ayg"/>
+                                    <constraint firstAttribute="width" constant="58" id="dPf-nl-zQT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4q-T7-cqV">
+                                <rect key="frame" x="34" y="116" width="252" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="FgA-qi-mj9"/>
+                                    <constraint firstAttribute="height" constant="42" id="Z2I-aI-qGr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                <color key="textColor" red="0.61176470588235299" green="0.45098039215686275" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqz-Ik-wnO">
+                                <rect key="frame" x="16" y="166" width="288" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">PLEASE READ THESE TERMS OF USE CAREFULLY. BY ACCESSING OR USING THE SITE, YOU AGREE TO BE BOUND BY THE TERMS DESCRIBED HEREIN AND ALL TERMS INCORPORATED BY REFERENCE. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT USE THE SITE.
+ 
+These Terms of Use (“Terms”) apply to your access to, and use of, the websites and services, including Emercoin services of Aspanta Limited and its subsidiaries and affiliated companies (“Aspanta”, “Emercoin”, “we” or “us”). These Terms apply to the Emercoin client software and the Emercoin distributed open source global payment network accessed through that software and services (collectively, “Emercoin Blockchain”, “Emercoin Blockchain Services”). As further described in Section 4 (Assumption of Risk with Emercoin), Emercoin does not own or control the Emercoin Blockchain or Emercoin Blockchain Services and you are solely responsible for your use of the Emercoin Blockchain and Emercoin Blockchain Services.  Additionally, these Terms do not alter the terms or conditions of any other agreement you may have with Emercoin for products, services or otherwise. Emercoin reserves the right to change or modify the terms and conditions contained in these Terms or any policy or guidelines at any time and in its sole discretion. We will provide notice of these changes by posting the revised Terms to the Site and changing the “Last Revised” date at the top of the Terms, or by providing other means of notice as Emercoin will determine each time in its sole discretion. Using a particular form of notice in some instances does not obligate us to use the same form in other instances. Any changes or modifications will be effective immediately upon posting the revisions to the Emercoin Website at http://www.emercoin.com and/or affiliated web resources (collectively, “Site”), and will apply to your subsequent use of the Site. You waive any right you may have to receive specific notice of such changes or modifications. Your continued use of this Site will confirm your acceptance of such changes or modifications; therefore, you should review the Terms and applicable policies whenever you use the Site to understand the terms that apply to such use. The most current version of the Terms can be reviewed by clicking on the “Terms of Use” hypertext link located at the bottom of our web pages. If you do not agree to the Terms in effect when you access or use the Site, you must stop using the Site.
+
+1. ELIGIBILITY
+By accessing or using the Site, you represent and warrant that you have not previously been suspended or removed from the Site. You further represent and warrant that you will not use the Site if the laws of your country prohibit you from doing so in accordance with these Terms.
+
+2. ASSUMPTION OF RISK WITH EMERCOIN
+Emercoin developed the original protocol for the Emercoin Blockchain and Emercoin Blockchain Services, and continues to promote its use as a distributed open source blockchain. Additionally, as a member of the open source community, Emercoin may contribute updates and modifications to the Emercoin Blockchain source code and Emercoin Blockchain Services. However, Emercoin does not own or control the Emercoin Blockchain or Emercoin Blockchain Services. The Emercoin Blockchain and Emercoin Blockchain Services are an open source protocol that anyone can use, copy, modify and distribute. We encourage you to take precautions when considering whether to use the Emercoin Blockchain, particularly when participating in any transaction using the Emercoin Blockchain with a stranger.
+You acknowledge and agree that Emercoin:
+(i) does not own or control the Emercoin Blockchain or Emercoin Blockchain Services;
+(ii) does not have any authority or responsibility to prohibit, restrict, rescind or approve any transaction or other interaction that occurs through the Emercoin Blockchain or Emercoin Blockchain Services;
+(iii) is not a party to, has no involvement or interest in, makes no representations or warranties as to, and has no responsibility or liability with respect to any communications, transactions, interactions, disputes or any relations whatsoever between you and any other participant, person or organization that uses Emercoin Blockchain and Emercoin Blockchain Services; and
+(iv) does not investigate or verify the reputation, conduct, morality or criminal background of any Emercoin Blockchain or Emercoin Blockchain Services user, including without limitation any Emercoin gateway. Further, you acknowledge and agree that you are solely responsible for your access and use of Emercoin Blockchain or Emercoin Blockchain Services, including without limitation for:
+(i) any payments or other transactions you complete using the Emercoin Blockchain or Emercoin Blockchain Services;
+(ii) investigating or screening other Emercoin Blockchain users before engaging in any Emercoin transaction or Emercoin Blockchain Services with such users;
+(iii) any interactions you have with other Emercoin Blockchain users or gateways; and
+(iv) your use of any Emercoin gateways to exchange any currency or other items of value that you may have stored in your Emercoin wallet.
+EMERCOIN ASSUMES NO RESPONSIBILITY FOR ANY CONSEQUENCES RELATING DIRECTLY OR INDIRECTLY TO ANY ACTION OR INACTION YOU TAKE IN CONNECTION WITH EMERCOIN BLOCKCHAIN OR EMERCOIN BLOCKCHAIN SERVICES. YOU ASSUME ALL RISKS ASSOCIATED WITH USING EMERCOIN BLOCKCHAIN AND EMERCOIN BLOCKCHAIN SERVICES.
+ 
+3. COPYRIGHT AND LIMITED LICENSE
+Unless otherwise indicated on the Site, the Site and all content and other materials on the Site, including, without limitation, the Emercoin logo and all designs, text, graphics, pictures, information, data, software, sound files, other files and the selection and arrangement thereof (collectively, “Emercoin Materials”) are the proprietary property of Emercoin or its licensors or users and are protected by international copyright laws. You are granted a limited, non-sublicensable license to access and use the Site and Emercoin Materials; subject to these Terms. Except as expressly permitted on the Site, in these Terms or otherwise in writing by Emercoin, such license does not include: (a) any resale or commercial use of the Site or the Emercoin Materials; (b) the distribution, public performance or public display of any Emercoin Materials; (c) modifying or otherwise making any derivative uses of the Site and the Emercoin Materials, or any portion thereof; (d) use of any data mining, robots or similar data gathering or extraction methods; (e) downloading (other than the page caching) of any portion of the Site, the Emercoin Materials or any information contained therein; or (f) any use of the Site or the Emercoin Materials other than for its intended purpose. Any use of the Site or the Emercoin Materials other than as specifically authorized herein, without the prior written permission of Emercoin, is strictly prohibited and will terminate the license granted herein. Such unauthorized use may also violate applicable laws, including, without limitation, copyright and trademark laws and applicable communications regulations and statutes. Unless explicitly stated herein, nothing in these Terms will be construed as conferring any license to intellectual property rights, whether by estoppel, implication or otherwise. This license is revocable at any time.
+
+4. TRADEMARKS
+“Aspanta”, “Emercoin” the Emercoin logos and any other Emercoin product or service name, logo or slogan contained in the Site are trademarks or service marks of Emercoin (the “Emercoin Marks”) and may not be copied, imitated or used, in whole or in part, except as expressly permitted in these Terms or on the Site or with the prior written permission of Emercoin. You may not use any metatags or any other “hidden text” utilizing any Emercoin  Marks without our prior written permission. In addition, the look and feel of the Site, including all page headers, custom graphics, button icons and scripts, is the service mark, trademark and/or trade dress of Emercoin and is part of the Emercoin Marks and may not be copied, imitated or used, in whole or in part, without our prior written permission except as expressly permitted herein or on the Site. All other trademarks, registered trademarks, product names and company names or logos mentioned in the Site are the property of their respective owners and may not be copied, imitated or used, in whole or in part, without the written permission of the applicable trademark holder. Reference to any products, services, processes or other information, by trade name, trademark, manufacturer, supplier or otherwise does not constitute or imply endorsement, sponsorship or recommendation thereof by us.
+ 
+5. HYPERLINKS
+You are granted a limited, non-exclusive right to create a text hyperlink to the Site, provided such link does not portray Emercoin or any of our Site in a false, misleading, derogatory or otherwise defamatory manner and provided further that the linking site does not contain any adult or illegal material or any material that is offensive, harassing or otherwise objectionable. This limited right may be revoked at any time. You may not use any Emercoin Marks or other proprietary graphic of Emercoin to link to the Site without the express written permission of Emercoin. Further, you may not use, frame or utilize framing techniques to enclose any Emercoin trademark, logo or other proprietary information, including the images found on the Site, the content of any text or the layout/design of any page or form contained on a page of the Site without Emercoin’s express written consent. Except as noted above, you are not conveyed any right or license by implication, estoppel or otherwise in or under any patent, trademark, copyright or other proprietary right of Emercoin or any third party.
+ 
+6. THIRD PARTY CONTENT
+Emercoin and its users may provide third party content on the Site and may provide links to web pages and content that are not owned or controlled by Emercoin, including but not limited to Emercoin Blockchain , Emercoin Blockchain Services and any third party advertisements or promotions (collectively the “Third Party Content”) as a service to those interested in this information. Emercoin does not control, endorse or adopt any Third Party Content and makes no representation or warranties of any kind regarding the Third Party Content, including without limitation regarding its accuracy or completeness. You acknowledge and agree that Emercoin is not responsible or liable in any manner for any Third Party Content and undertakes no responsibility to update or review any Third Party Content. Users use such Third Party Content contained therein at their own risk. Your business dealings or correspondence with, or participation in promotions of, any third parties, and any terms, conditions, warranties or representations associated with such dealings or promotions, are solely between you and such third parties. Emercoin is not responsible or liable for any loss or damage of any sort incurred as the result of any such dealings or promotions or as the result of the presence of such Third Party Content on the Site.
+ 
+7. FEEDBACK
+You acknowledge and agree that any materials, including but not limited to questions, comments, feedback, suggestions, ideas, plans, notes, drawings, original or creative materials or other information, regarding Emercoin or the Site (collectively, “Feedback”) that are provided by you, whether by email, posting to the Site or otherwise, are non-confidential and will become the sole property of Emercoin. Emercoin will own exclusive rights, including all intellectual property rights, and will be entitled to the unrestricted use and dissemination of such Feedback for any purpose, commercial or otherwise, without acknowledgment or compensation to you.
+ 
+8. INDEMNIFICATION
+You agree to defend, indemnify and hold harmless Emercoin, its independent contractors, service providers and consultants, and their respective directors, employees and agents, from and against any claims, damages, costs, liabilities and expenses (including, but not limited to, reasonable attorneys’ fees) arising out of or related to: (a) your use of the Site; (b) any User Content or Feedback you provide; (c) your violation of these Terms; (d) your violation of any rights of another; or (e) your conduct in connection with the Site. Some jurisdictions limit consumer indemnities, so some or all of the indemnity provisions above may not apply to you. If you are obligated to indemnify us, we will have the right, in our sole and unfettered discretion, to control any action or proceeding and determine whether we wish to settle it, and if so, on what terms.
+ 
+9. DISCLAIMER OF WARRANTIES
+EMERCOIN PROVIDES NO GUARANTEE AS TO THE PERFORMANCE OR THE UNINTERRUPTED AVAILABILITY OF THE SITE, EMERCOIN BLOCKCHAIN SERVICES OR THE EMERCOIN MATERIALS. THE SITE AND EMERCOIN MATERIALS ARE PROVIDED ON AN “AS IS,” “AS AVAILABLE” BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. EMERCOIN DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT AS TO THE SITE AND THE INFORMATION, CONTENT AND MATERIALS CONTAINED THEREIN. EMERCOIN DOES NOT REPRESENT OR WARRANT THAT EMERCOIN MATERIALS OR THE SITE ARE ACCURATE, COMPLETE, RELIABLE, CURRENT OR ERROR-FREE. WHILE EMERCOIN ATTEMPTS TO MAKE YOUR ACCESS AND USE OF THE SITE SAFE, EMERCOIN CANNOT AND DOES NOT REPRESENT OR WARRANT THAT THE SITE OR ITS SERVER(S) ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS; THEREFORE, YOU SHOULD USE INDUSTRY-RECOGNIZED SOFTWARE TO DETECT AND DISINFECT VIRUSES FROM ANY DOWNLOAD. Emercoin reserves the right to change any and all content contained in the Site at any time without notice. Reference to any products, services, processes or other information, by trade name, trademark, manufacturer, supplier or otherwise does not constitute or imply endorsement, sponsorship or recommendation thereof, or any affiliation therewith, by Emercoin. SOME JURISDICTIONS DO NOT ALLOW THE DISCLAIMER OF IMPLIED TERMS IN CONTRACTS WITH CONSUMERS, SO SOME OR ALL OF THE DISCLAIMERS IN THIS SECTION MAY NOT APPLY TO YOU.
+
+10. LIMITATION OF LIABILITY
+IN NO EVENT WILL EMERCOIN, ITS DIRECTORS, EMPLOYEES OR AGENTS BE LIABLE FOR ANY DIRECT, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY OTHER DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO LOSS OF USE, LOSS OF PROFITS OR LOSS OF DATA, WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING BUT NOT LIMITED TO NEGLIGENCE) OR OTHERWISE, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OF OR INABILITY TO USE THE SITE, THE EMERCOIN MATERIALS OR THE CONTENT OR THE MATERIALS CONTAINED IN OR ACCESSED THROUGH THE SITE, INCLUDING WITHOUT LIMITATION ANY DAMAGES CAUSED BY OR RESULTING FROM RELIANCE BY USER ON ANY INFORMATION OBTAINED FROM EMERCOIN, OR THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES OR EMAIL, ERRORS, DEFECTS, VIRUSES, DELAYS IN OPERATION OR TRANSMISSION OR ANY FAILURE OF PERFORMANCE, WHETHER OR NOT RESULTING FROM ACTS OF GOD, COMMUNICATIONS FAILURE, THEFT, DESTRUCTION OR UNAUTHORIZED ACCESS TO EMERCOIN’S RECORDS, PROGRAMS OR SITE. IN NO EVENT WILL THE AGGREGATE LIABILITY OF EMERCOIN, WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), PRODUCT LIABILITY, STRICT LIABILITY OR OTHER THEORY, ARISING OUT OF OR RELATING TO THE USE OF OR INABILITY TO USE THE SITE EXCEED ANY COMPENSATION YOU PAY, IF ANY, TO EMERCOIN FOR ACCESS TO OR USE OF THE SITE. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY IN CONTRACTS WITH CONSUMERS, SO SOME OR ALL OF THESE LIMITATIONS OF LIABILITY MAY NOT APPLY TO YOU.
+ 
+11. MODIFICATIONS TO THE SITE
+Emercoin reserves the right to modify or discontinue, temporarily or permanently, the Site or any features or portions thereof without prior notice. You agree that Emercoin will not be liable for any modification, suspension or discontinuance of the Site or any part thereof.
+
+12. ARBITRATION
+PLEASE READ THE FOLLOWING PARAGRAPH CAREFULLY BECAUSE IT REQUIRES YOU TO ARBITRATE DISPUTES WITH EMERCOIN AND IT LIMITS THE MANNER IN WHICH YOU CAN SEEK RELIEF. You and Emercoin agree to arbitrate any dispute arising from these Terms or relating to the Site, except that you and Emercoin are not required to arbitrate any dispute in which either party seeks equitable or other relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets or patents. ARBITRATION PREVENTS YOU FROM SUING IN COURT OR FROM HAVING A JURY TRIAL. In any arbitration, the parties will not seek discovery from each other, and the arbitrator shall not allow parties to engage in discovery; rather, each party shall disclose the evidence supporting their positions at some mutually agreeable time and date prior to the final hearing. Other than class procedures and remedies discussed below, the arbitrator has the authority to grant any remedy that would otherwise be available in court. Neither you nor we will participate in a class action or class-wide arbitration for any claims covered by these Terms. You also agree not to participate in claims brought in an private attorney general or representative capacity, or consolidated claims involving another person, if Emercoin is a party to the proceeding. If the prohibition against class actions and other claims brought on behalf of third parties contained above is found to be unenforceable, then that language shall be deemed to have been dropped from the Terms and the remaining obligations relating to arbitration shall continue in full force and effect.
+ 
+13. TERMINATION AND SUSPENSION
+Notwithstanding any of these Terms, Emercoin reserves the right, without notice and in its sole discretion, to terminate or suspend your right to use the Site, and to block or prevent your future access to, and use of, the Site.
+ 
+14. SURVIVAL
+Sections 2 (Assumption of Risk with Emercoin), 5 (Trademarks), 7 (Third Party Content), 8 (Feedback), 9 (Indemnification), 10 (Disclaimer of Warranties), 11 (Limitation on Liability), 13 (Applicable Law), 14 (Disputes), this Section 20 (Survival) and Section 21 (Severability) will survive any termination or expiration of these Terms.
+ 
+15. SEVERABILITY
+If any provision of these Terms is deemed unlawful, void or for any reason unenforceable, then that provision shall be deemed severable from these Terms and will not affect the validity and enforceability of any remaining provisions.
+ 
+16. QUESTIONS &amp; CONTACT INFORMATION
+Questions or comments about the Site or these Terms may be directed to Emercoin by emailing to support@emercoin.com.
+</string>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O4q-T7-cqV" firstAttribute="top" secondItem="yXc-hR-Cxg" secondAttribute="bottom" constant="14" id="7Yn-NM-OXZ"/>
+                            <constraint firstItem="yXc-hR-Cxg" firstAttribute="centerX" secondItem="v4H-mp-qwM" secondAttribute="centerX" id="CrX-XF-KNr"/>
+                            <constraint firstItem="yXc-hR-Cxg" firstAttribute="top" secondItem="4or-H7-gOv" secondAttribute="bottom" constant="32" id="GKV-S4-FTf"/>
+                            <constraint firstAttribute="trailing" secondItem="jqz-Ik-wnO" secondAttribute="trailing" constant="16" id="M5S-rH-gEh"/>
+                            <constraint firstItem="jqz-Ik-wnO" firstAttribute="top" secondItem="O4q-T7-cqV" secondAttribute="bottom" constant="8" id="NtH-ZA-0Ai"/>
+                            <constraint firstItem="jqz-Ik-wnO" firstAttribute="leading" secondItem="v4H-mp-qwM" secondAttribute="leading" constant="16" id="UJw-zB-4Lr"/>
+                            <constraint firstItem="gsc-OY-BZZ" firstAttribute="top" secondItem="4or-H7-gOv" secondAttribute="bottom" id="XRA-5v-tjD"/>
+                            <constraint firstItem="O4q-T7-cqV" firstAttribute="centerX" secondItem="v4H-mp-qwM" secondAttribute="centerX" id="dM8-NR-hrq"/>
+                            <constraint firstItem="NsW-oy-8Db" firstAttribute="top" secondItem="jqz-Ik-wnO" secondAttribute="bottom" constant="20" id="edJ-G0-djd"/>
+                            <constraint firstItem="gsc-OY-BZZ" firstAttribute="leading" secondItem="v4H-mp-qwM" secondAttribute="leading" id="kfX-nM-VcU"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFb-jN-nBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56.25" y="-14.788732394366198"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="reg_arrow_icon" width="19" height="16"/>
+        <image name="reg_logo" width="110" height="96"/>
+    </resources>
+</document>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--About View Controller-->
+        <scene sceneID="btv-uM-4Er">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" id="Jlj-Qk-eba" customClass="AboutViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TcL-ed-2ZM"/>
+                        <viewControllerLayoutGuide type="bottom" id="1ci-rw-QYK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lyg-zc-Tvt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohf-iE-QXH">
+                                <rect key="frame" x="0.0" y="20" width="58" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="1Ad-sv-8Oj"/>
+                                    <constraint firstAttribute="height" constant="61" id="AVz-17-BNi"/>
+                                </constraints>
+                                <state key="normal" image="reg_arrow_icon"/>
+                                <connections>
+                                    <action selector="backToDashBoard" destination="Jlj-Qk-eba" eventType="touchUpInside" id="CSD-3C-6A5"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-xI-5se">
+                                <rect key="frame" x="159" y="52" width="58" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2tE-W7-RFe"/>
+                                    <constraint firstAttribute="width" constant="58" id="KNl-od-s9Z"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-Oa-cL1">
+                                <rect key="frame" x="62" y="116" width="252" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="FlL-Pt-ut0"/>
+                                    <constraint firstAttribute="height" constant="42" id="o5g-rF-Dda"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mE2-i9-cfb">
+                                <rect key="frame" x="0.0" y="166" width="320" height="402"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Emercoin One" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlw-7f-91q">
+                                        <rect key="frame" x="73.5" y="8" width="228" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tlw-7f-91q" firstAttribute="centerX" secondItem="mE2-i9-cfb" secondAttribute="centerX" id="S0s-97-XF3"/>
+                                    <constraint firstItem="tlw-7f-91q" firstAttribute="top" secondItem="mE2-i9-cfb" secondAttribute="topMargin" id="Yc7-kA-5p0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vwN-Oa-cL1" firstAttribute="centerX" secondItem="lyg-zc-Tvt" secondAttribute="centerX" id="4HY-8G-g9Z"/>
+                            <constraint firstItem="1ci-rw-QYK" firstAttribute="top" secondItem="mE2-i9-cfb" secondAttribute="bottom" id="8qe-4b-6jK"/>
+                            <constraint firstItem="ohf-iE-QXH" firstAttribute="top" secondItem="TcL-ed-2ZM" secondAttribute="bottom" id="Pjx-eL-YKc"/>
+                            <constraint firstItem="mE2-i9-cfb" firstAttribute="leading" secondItem="lyg-zc-Tvt" secondAttribute="leading" id="QVp-Ak-bR3"/>
+                            <constraint firstItem="ohf-iE-QXH" firstAttribute="leading" secondItem="lyg-zc-Tvt" secondAttribute="leading" id="fGN-5P-wgU"/>
+                            <constraint firstItem="YgJ-xI-5se" firstAttribute="centerX" secondItem="lyg-zc-Tvt" secondAttribute="centerX" id="fpr-BE-KVd"/>
+                            <constraint firstItem="mE2-i9-cfb" firstAttribute="top" secondItem="vwN-Oa-cL1" secondAttribute="bottom" constant="8" id="hha-WO-E8G"/>
+                            <constraint firstAttribute="trailing" secondItem="mE2-i9-cfb" secondAttribute="trailing" id="jca-Kv-Lv0"/>
+                            <constraint firstItem="YgJ-xI-5se" firstAttribute="top" secondItem="TcL-ed-2ZM" secondAttribute="bottom" constant="32" id="knY-KC-Wdf"/>
+                            <constraint firstItem="vwN-Oa-cL1" firstAttribute="top" secondItem="YgJ-xI-5se" secondAttribute="bottom" constant="14" id="xe5-fY-Kwz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdN-Ey-9Hb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.25" y="190.14084507042253"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="reg_arrow_icon" width="19" height="16"/>
+        <image name="reg_logo" width="110" height="96"/>
+    </resources>
+</document>
