@@ -7,10 +7,8 @@ import UIKit
 
 class RecipientAddressViewController: BaseViewController {
     
-    var coinType:CoinType = .bitcoin
-    
     override class func storyboardName() -> String {
-        return "CoinsOperation"
+        return "CoinOperations"
     }
     
     override func viewDidLoad() {
@@ -39,10 +37,9 @@ class RecipientAddressViewController: BaseViewController {
     
     private func showSendController(at data:[String:Any]?) {
     
-        let controller = BaseCoinsOperationViewController.controller() as! BaseCoinsOperationViewController
+        let controller = CoinOperationsViewController.controller() as! CoinOperationsViewController
         controller.coinsOperation = .send
         controller.object = data as AnyObject?
-        controller.coinType = coinType
         push(at: controller)
     }
     
@@ -56,7 +53,7 @@ class RecipientAddressViewController: BaseViewController {
                 self.showSendController(at: dict)
             }
         }
-        controller.coinType = coinType
+
         push(at: controller)
     }
     
@@ -64,11 +61,7 @@ class RecipientAddressViewController: BaseViewController {
         
         let controller = ScanQRCodeController.controller() as! ScanQRCodeController
         controller.scanned = {(data)in
-            
             let dict = data as! [String:Any]
-            let name = dict["name"] as? String
-            self.coinType = (name == "bitcoin") ? .bitcoin : .emercoin
-            
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.showSendController(at: dict)
             }

@@ -10,8 +10,7 @@ extension GetCoinsViewController {
     internal func setupDropDown() {
         
         let myAddressBook = AppManager.sharedInstance.myAddressBook
-        myAddressBook.cointType = viewModel?.coinType
-        
+                
         dropDown = DropDown()
         dropDown?.anchorView = dropDownButton
         

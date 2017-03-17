@@ -7,17 +7,10 @@ import UIKit
 
 class AccountPageViewController: ButtonBarPagerTabStripViewController {
     
-    let bitColor = Constants.Controllers.Send.HeaderView.BitcoinColor
     let emerColor = Constants.Controllers.Send.HeaderView.EmercoinColor
-    var mainColor:UIColor = .black
-    let backgroundColor = UIColor(hexString: "#EAEAEA")
+    var mainColor:UIColor = UIColor(hexString: Constants.Controllers.Send.HeaderView.EmercoinColor)
 
-    var coinType:CoinType = .bitcoin {
-        didSet {
-            let stringColor = coinType == .bitcoin ? bitColor : emerColor
-            mainColor = UIColor.init(hexString: stringColor)
-        }
-    }
+    let backgroundColor = UIColor(hexString: "#EAEAEA")
     
     override class func storyboardName() -> String {
         return "AccountPage"
@@ -50,10 +43,8 @@ class AccountPageViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         let firstVC = OperationsViewController.controller() as! OperationsViewController
-        firstVC.coinType = coinType
         let secondVC = HistoryViewController.controller() as! HistoryViewController
-        secondVC.coinType = coinType
-        
+
         return [firstVC, secondVC]
     }
 

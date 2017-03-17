@@ -4,11 +4,6 @@
 //
 import UIKit
 
-enum CoinType:Int{
-    case bitcoin
-    case emercoin
-}
-
 class Coin {
     
     var name:String?
@@ -17,15 +12,6 @@ class Coin {
     var sign:String?
     var color:String?
     var inUSD:Double? = 1.4
-    var type:CoinType? {
-        didSet {
-            if type == .bitcoin {
-                sign = "BTC"
-            } else {
-                sign = "EMC"
-            }
-        }
-    }
 
     func stringAmount() -> String {
         return String(format:"%0.2f",amount ?? 0)
@@ -48,7 +34,7 @@ class Coin {
         let part3 = NSMutableAttributedString(string: "      ", attributes: otherAttributes)
         let part4 = NSMutableAttributedString(string: "(", attributes: otherAttributes)
         let part5 = NSMutableAttributedString(string: "1 ", attributes: amountAttributes)
-        let part6 = NSMutableAttributedString(string: sign!+" = ", attributes: otherAttributes)
+        let part6 = NSMutableAttributedString(string: sign ?? ""+" = ", attributes: otherAttributes)
         let part7 = NSMutableAttributedString(string: String(format:"%0.1f",inUSD!), attributes: amountAttributes)
         let part8 = NSMutableAttributedString(string: ")", attributes: otherAttributes)
         

@@ -19,16 +19,16 @@ extension LeftViewController: UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
         
         switch row {
-            case 4:cellIdentifier = "MenuBCToolsCell"
-            case 8:cellIdentifier = "MenuPoliticsCell"
-            case 9:cellIdentifier = "MenuExitCell"
+            case 3:cellIdentifier = "MenuBCToolsCell"
+            case 7:cellIdentifier = "MenuPoliticsCell"
+            case 8:cellIdentifier = "MenuExitCell"
             default:break
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseTableViewCell
         cell.object = itemAt(indexPath: indexPath)
         
-        if row == 8 || row == 4 {
+        if row == 7 || row == 3 {
             let subCell = cell as! MenuDefaultCell
             subCell.pressedSubMenu = {[weak self] index in
                 if self?.pressed != nil {

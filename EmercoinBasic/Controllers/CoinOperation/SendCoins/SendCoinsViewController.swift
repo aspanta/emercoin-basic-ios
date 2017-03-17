@@ -15,10 +15,10 @@ class SendCoinsViewController: BaseViewController {
     @IBOutlet internal weak  var amountTextField:BaseTextField!
     
     let disposeBag = DisposeBag()
-    var viewModel:CoinsOperationViewModel?
+    var viewModel:CoinOperationsViewModel?
     
     override class func storyboardName() -> String {
-        return "CoinsOperation"
+        return "CoinOperations"
     }
     
     override func viewDidLoad() {
@@ -29,13 +29,8 @@ class SendCoinsViewController: BaseViewController {
         super.setupUI()
         
         hideStatusBar()
-        signLabel.text = viewModel?.coinSign
-        
-        viewModel?.headerColor.subscribe(onNext: { [weak self] color in
-            UIView.animate(withDuration: 0.1) {
-                self?.sendButton.backgroundColor = color
-            }
-        }).addDisposableTo(disposeBag)
+        viewModel?.coinSign.bindTo(signLabel.rx.text)
+        .addDisposableTo(disposeBag)
         
         if object != nil {
             guard let dict = object as? [String:Any] else {
@@ -82,7 +77,7 @@ class SendCoinsViewController: BaseViewController {
                                                            frame: self.parent!.view.frame) as! SuccessSendView
         successView.success = ({
             
-            let parent  = self.parent as! BaseCoinsOperationViewController
+            let parent  = self.parent as! CoinOperationsViewController
             
             if parent.parent is AddressBookViewController {
                 print ("AddressBookViewController")

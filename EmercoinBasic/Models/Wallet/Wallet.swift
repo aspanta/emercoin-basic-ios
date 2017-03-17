@@ -10,7 +10,6 @@ import UIKit
 
 class Wallet {
     
-    var bitcoin:Coin
     var emercoin:Coin
     
     var emcInBit:Double = 100.0
@@ -19,22 +18,14 @@ class Wallet {
     init() {
         
         let emCoin = Coin()
+        
         emCoin.name = "EMERCOIN"
         emCoin.amount = 10
         emCoin.image = "emer_icon_1"
         emCoin.sign = "EMC"
         emCoin.color = Constants.Colors.Coins.Emercoin
-        emCoin.type = .emercoin
-        
-        let  bCoin = Coin()
-        bCoin.name = "BITCOIN"
-        bCoin.amount = 1.0
-        bCoin.image = "bit_icon_1"
-        bCoin.sign = "BTC"
-        bCoin.color = Constants.Colors.Coins.Bitcoin
-        bCoin.type = .bitcoin
-        
-        self.bitcoin = bCoin
+
+    
         self.emercoin = emCoin
 
     }

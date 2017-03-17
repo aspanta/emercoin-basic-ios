@@ -9,7 +9,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
         
         addControllers()
@@ -17,29 +17,6 @@ class TabBarController: UITabBarController {
     
     var subControllerIndex = -1
     
-    func showNVSBrowser(at subIndex:Int) {
-        
-        
-        guard let nav = viewControllers?.last as? BaseNavigationController else {
-            return
-        }
-        
-        guard let vc = nav.viewControllers.first as? BlockchainViewController else {
-            return
-        }
-        
-        if nav.viewControllers.count > 1 {
-            nav.popToRootViewController(animated: false)
-        }
-        
-        if selectedIndex == 4 {
-            vc.showBrowserSubController(at: subIndex)
-        } else {
-            subControllerIndex = subIndex
-            selectedIndex = 4
-        }
-    }
-
     private func setupUI() {
         
         tabBar.tintColor = UIColor(hexString: Constants.Colors.TabBar.Tint)
@@ -52,16 +29,63 @@ class TabBarController: UITabBarController {
         
     }
     
+    func showController(at index:Int) {
+        
+        checkChildControllers(at: index)
+        
+        selectedIndex = index
+    }
+    
+    func showNVSBrowser(at index:Int, subIndex:Int) {
+        
+        
+        guard let nav = viewControllers?.last as? BaseNavigationController else {
+            return
+        }
+        
+        guard let vc = nav.viewControllers.first as? BlockchainViewController else {
+            return
+        }
+        
+        checkChildControllers(at: index)
+        
+        if selectedIndex == index {
+            vc.showBrowserSubController(at: subIndex)
+        } else {
+            subControllerIndex = subIndex
+            selectedIndex = index
+        }
+    }
+    
+    private func checkChildControllers(at index:Int) {
+        
+        guard let nav = viewControllers?[index] as? BaseNavigationController else {
+            return
+        }
+        
+        if nav.viewControllers.count > 1 {
+            nav.popToRootViewController(animated: false)
+        }
+    }
+    
+    internal override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print(item.description)
+        
+        guard let index = tabBar.items?.index(of: item) else {
+            return
+        }
+        
+        checkChildControllers(at: index)
+    }
+    
     private func addControllers() {
         
         let home = HomeViewController.controller() as! BaseViewController
         let homeNav = BaseNavigationController(rootViewController: home)
-        let send = CoinsOperationViewController.controller() as! CoinsOperationViewController
+        let send = CoinOperationsViewController.controller() as! CoinOperationsViewController
         let sendNav = BaseNavigationController(rootViewController: send)
-        let get = CoinsOperationViewController.controller() as! CoinsOperationViewController
+        let get = CoinOperationsViewController.controller() as! CoinOperationsViewController
         let getNav = BaseNavigationController(rootViewController: get)
-        let exchange = ExchangeViewController.controller() as! BaseViewController
-        let exchangeNav = BaseNavigationController(rootViewController: exchange)
         let blockChain = BlockchainViewController.controller() as! BlockchainViewController
         let blockChainNav = BaseNavigationController(rootViewController: blockChain)
         
@@ -74,9 +98,6 @@ class TabBarController: UITabBarController {
                                          imageName: Constants.Controllers.TabImage.Get)
         get.coinsOperation = .get
         
-        exchange.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.Exchange,
-                                         imageName: Constants.Controllers.TabImage.Exchange)
-        
         blockChain.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.BlockChain,
                                          imageName: Constants.Controllers.TabImage.BlockChain)
         
@@ -88,7 +109,7 @@ class TabBarController: UITabBarController {
             }
         }
 
-        viewControllers = [homeNav,sendNav,getNav,exchangeNav,blockChainNav]
+        viewControllers = [homeNav,sendNav,getNav,blockChainNav]
         
         let count:Int = (viewControllers?.count)!
         

@@ -54,13 +54,9 @@ struct Constants {
         struct Status {
             static let Main = "#684979"
             static let Menu = "#3d3d3d"
-            static let Bitcoin = "#417c83"
             static let Emercoin = "#684979"
-            static let Exchange = "#597998"
             static let Settings = "#897295"
             static let Blockchain = "#5b5e7d"
-            static let Livecoin = "587998"
-            
         }
         
         struct TabBar {
@@ -134,10 +130,6 @@ struct Constants {
             struct Get {
                 static let Title = "Receive Coins"
                 static let Image = "menu_get_icon"
-            }
-            struct Exchange {
-                static let Title = "Exchange"
-                static let Image = "menu_exchange_icon"
             }
             struct BCTools {
                 static let Title = "BC Tools"

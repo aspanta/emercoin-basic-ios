@@ -17,7 +17,7 @@ class HomeMyMoneyCell: BaseTableViewCell {
     
     var views:[MyMoneyView] = []
     
-    var pressed: ((_ type:CoinType) -> (Void))?
+    var pressed: ((Void) -> (Void))?
     
     
     private func addClosureAt(moneyView:MyMoneyView) {

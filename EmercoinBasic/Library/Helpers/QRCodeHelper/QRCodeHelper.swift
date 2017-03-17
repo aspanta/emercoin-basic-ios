@@ -40,7 +40,7 @@ class QRCodeHelper {
             
             let name = coinArray[0].lowercased()
             
-            if name == "bitcoin" || name == "emercoin" {
+            if name == "emercoin" {
                 coin["name"] = name
                 coin["address"] = coinArray[1]
                 isSuccess = true

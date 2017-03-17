@@ -10,7 +10,7 @@ let cellIdentifiers = ["HomeMyMoneyCell","HomeCourseCell"]
 extension HomeViewController {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
+        return 2
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -31,7 +31,7 @@ extension HomeViewController {
             height += coinsHeight
             }
             
-        default:break;
+        default:break
         }
         
         return CGFloat(height)
@@ -45,17 +45,15 @@ extension HomeViewController {
         
         cell.indexPath = indexPath
         
-        weak var this = self
-        
-        cell.pressedCell = {(selIndexPath)in
-            this?.expandedCell(indexPath: selIndexPath)
+        cell.pressedCell = {[weak self] (selIndexPath) in
+            self?.expandedCell(indexPath: selIndexPath)
         }
         
         if indexPath.row == 0 {
             
              let moneyCell = cell as! HomeMyMoneyCell
-            moneyCell.pressed = {(type)in
-                this?.showOperationController(at: type)
+            moneyCell.pressed = {[weak self] (type) in
+                self?.showOperationController()
             }
             
             cell.object = coins
@@ -66,11 +64,10 @@ extension HomeViewController {
         return cell
     }
     
-    private func showOperationController(at type:CoinType) {
+    private func showOperationController() {
     
-        let controller = BaseCoinsOperationViewController.controller() as! BaseCoinsOperationViewController
+        let controller = CoinOperationsViewController.controller() as! CoinOperationsViewController
         controller.coinsOperation = .historyAndOperations
-        controller.coinType = type
         navigationController?.pushViewController(controller, animated: true)
     }
     

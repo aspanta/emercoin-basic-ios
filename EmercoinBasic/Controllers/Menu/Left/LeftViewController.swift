@@ -40,8 +40,6 @@ class LeftViewController: BaseViewController {
                                     image: Constants.Controllers.Menu.Send.Image)
         let getMenuItem = MenuItem(title: Constants.Controllers.Menu.Get.Title,
                                     image: Constants.Controllers.Menu.Get.Image)
-        let exchangeMenuItem = MenuItem(title: Constants.Controllers.Menu.Exchange.Title,
-                                    image: Constants.Controllers.Menu.Exchange.Image)
         let bctoolsMenuItem = MenuItem(title: Constants.Controllers.Menu.BCTools.Title,
                                     image: Constants.Controllers.Menu.BCTools.Image)
         let settingsMenuItem = MenuItem(title: Constants.Controllers.Menu.Settings.Title,
@@ -55,7 +53,7 @@ class LeftViewController: BaseViewController {
         let exitMenuItem = MenuItem(title: Constants.Controllers.Menu.Exit.Title,
                                     image: Constants.Controllers.Menu.Exit.Image)
         
-        menuItems = [homeMenuItem,sendMenuItem,getMenuItem,exchangeMenuItem,bctoolsMenuItem,settingsMenuItem,
+        menuItems = [homeMenuItem,sendMenuItem,getMenuItem,bctoolsMenuItem,settingsMenuItem,
                     aboutMenuItem,contactsMenuItem,politicsMenuItem,exitMenuItem]
         
     }

@@ -13,10 +13,8 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     var isMyAddressBook = true
     
-    var coinType:CoinType = .bitcoin
-    
     override class func storyboardName() -> String {
-        return "CoinsOperation"
+        return "CoinOperations"
     }
     
     override func viewDidLoad() {
@@ -29,7 +27,6 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         }
         
         tableView.baseSetup()
-        addressBook.cointType = coinType
         hideStatusBar()
     }
 
@@ -40,7 +37,6 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         addAddressView.add = ({(name) in
             let contact = Contact()
             contact.name = name
-            contact.coinType = self.coinType
             contact.address = String.randomStringWithLength(10) as String
             
             self.addressBook.add(contact: contact)

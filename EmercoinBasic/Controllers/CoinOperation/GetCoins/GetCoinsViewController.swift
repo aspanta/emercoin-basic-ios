@@ -4,8 +4,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 class GetCoinsViewController: BaseViewController {
     
@@ -18,19 +16,10 @@ class GetCoinsViewController: BaseViewController {
     @IBOutlet internal weak var centerContentHeight:NSLayoutConstraint!
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     
-    var viewModel:CoinsOperationViewModel? = nil {
-        didSet {
-            if viewModel != nil {
-                updateUI()
-            }
-        }
-    }
     var dropDown:DropDown?
     
-    let disposeBag = DisposeBag()
-    
     override class func storyboardName() -> String {
-        return "CoinsOperation"
+        return "CoinOperations"
     }
     
     override func viewDidLoad() {
@@ -57,16 +46,6 @@ class GetCoinsViewController: BaseViewController {
                 constraint.constant -= value / 2.0
             })
         }
-    }
-    
-    private func updateUI() {
-        viewModel?.headerColor.subscribe(onNext: { [weak self] color in
-            UIView.animate(withDuration: 0.1) {
-                self?.coinSignLabel.textColor = color
-                self?.coinSignLabel.text = self?.viewModel?.coinSign
-                self?.setupDropDownUI()
-            }
-        }).addDisposableTo(disposeBag)
     }
     
     @IBAction func sendButtonPressed(sender:UIButton) {
@@ -117,7 +96,7 @@ class GetCoinsViewController: BaseViewController {
         let address = addressLabel.text
         var amount = amountTextField.text
         
-        let name = viewModel?.coinType == .bitcoin ? "bitcoin" : "emercoin"
+        let name = "emercoin"
         var text = ""
         
         if (address?.length)! > 0 {

@@ -20,42 +20,34 @@ class MyAddressBook: AddressBook {
         let contact1 = Contact()
         contact1.name = "Primary"
         contact1.address = String.randomStringWithLength(20)
-        contact1.coinType = .bitcoin
         
         let contact2 = Contact()
         contact2.name = "Payer 1"
         contact2.address = String.randomStringWithLength(20)
-        contact2.coinType = .bitcoin
         
         let contact3 = Contact()
         contact3.name = "Payer 2"
         contact3.address = String.randomStringWithLength(20)
-        contact3.coinType = .bitcoin
         
         let contact4 = Contact()
         contact4.name = "Payer 3"
         contact4.address = String.randomStringWithLength(20)
-        contact4.coinType = .bitcoin
         
         let contact5 = Contact()
         contact5.name = "Payer 4"
         contact5.address = String.randomStringWithLength(20)
-        contact5.coinType = .emercoin
         
         let contact6 = Contact()
         contact6.name = "Payer 5"
         contact6.address = String.randomStringWithLength(20)
-        contact6.coinType = .emercoin
         
         let contact7 = Contact()
         contact7.name = "Payer 6"
         contact7.address = String.randomStringWithLength(20)
-        contact7.coinType = .emercoin
         
         let contact8 = Contact()
         contact8.name = "Payer 7"
         contact8.address = String.randomStringWithLength(20)
-        contact8.coinType = .emercoin
         
         add(contact: contact1)
         add(contact: contact2)

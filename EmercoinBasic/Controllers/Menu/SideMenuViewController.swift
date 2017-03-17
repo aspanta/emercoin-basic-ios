@@ -42,16 +42,16 @@ class SideMenuViewController: LGSideMenuController {
     
     private func selectTabItem(at index:Int, subIndex:Int) {
         
-        if index == 9 {
+        if index == 8 {
             logout()
-        } else if index == 4 && subIndex != -1 {
+        } else if index == 3 && subIndex != -1 {
             checkRootController()
-            mainTabBarController.showNVSBrowser(at: subIndex)
-        } else if index > 4 {
+            mainTabBarController.showNVSBrowser(at: index,subIndex:subIndex)
+        } else if index > 3 {
             showController(at: index, subIndex: subIndex)
         } else {
             checkRootController()
-            mainTabBarController.selectedIndex = index
+            mainTabBarController.showController(at: index)
         }
         
         self.hideLeftView(animated: true, completionHandler: nil)
@@ -60,8 +60,9 @@ class SideMenuViewController: LGSideMenuController {
     private func checkRootController() {
         
         if rootViewController != mainTabBarController {
-            rootViewController = mainTabBarController
-            
+            DispatchQueue.main.async {
+                self.rootViewController = self.mainTabBarController
+            }
         }
     }
     

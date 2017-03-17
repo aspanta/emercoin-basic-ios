@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Base Coins Operation View Controller-->
+        <!--Coin Operations View Controller-->
         <scene sceneID="tZ7-cz-qYx">
             <objects>
-                <viewController storyboardIdentifier="BaseCoinsOperationViewController" id="mkW-Wa-y0w" customClass="BaseCoinsOperationViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoinOperationsViewController" id="mkW-Wa-y0w" customClass="CoinOperationsViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V13-tK-dUs"/>
                         <viewControllerLayoutGuide type="bottom" id="lJE-0H-Kec"/>
@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="height" constant="50" id="KAU-za-Zma"/>
                                             <constraint firstAttribute="width" constant="50" id="L18-bK-roG"/>
                                         </constraints>
-                                        <state key="normal" image="book_add_icon"/>
+                                        <state key="normal" image="book_add_emc_icon"/>
                                         <connections>
                                             <action selector="addButtonPressedWithSender:" destination="mkW-Wa-y0w" eventType="touchUpInside" id="eiq-oz-Bzq"/>
                                         </connections>
@@ -69,13 +69,10 @@
                                     <constraint firstItem="Axj-3N-BRE" firstAttribute="centerX" secondItem="vwH-qx-4Tw" secondAttribute="centerX" id="tf5-0V-xQM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESh-VJ-DVT" customClass="CoinsOpeartionHeaderView" customModule="EmercoinOne" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESh-VJ-DVT" customClass="CoinOperationsHeaderView" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="320" height="186"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yeF-ws-EjF">
-                                        <rect key="frame" x="0.0" y="0.0" width="322" height="186"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send_bit_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vBI-rC-4LF">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send_emer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vBI-rC-4LF">
                                         <rect key="frame" x="76" y="40" width="17" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="OoZ-8C-Lmp"/>
@@ -91,7 +88,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BITCOIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq5-9n-AC3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq5-9n-AC3">
                                         <rect key="frame" x="102" y="37" width="210" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="kgY-V1-hyD"/>
@@ -106,6 +103,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="~1 400 USD (1 BTC = 1,4 USD)">
                                                 <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="15" name="Roboto-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -135,13 +133,6 @@
                                             <action selector="back" destination="mkW-Wa-y0w" eventType="touchUpInside" id="euT-Md-bZ2"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send_bit_icon" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-JZ-1A9">
-                                        <rect key="frame" x="295" y="40" width="17" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="BXl-Lg-lDg"/>
-                                            <constraint firstAttribute="width" constant="17" id="bSL-RI-5CB"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.61176470588235299" green="0.45098039215686275" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -150,24 +141,16 @@
                                     <constraint firstItem="vBI-rC-4LF" firstAttribute="leading" secondItem="ESh-VJ-DVT" secondAttribute="leading" constant="76" id="6it-Vh-r5f"/>
                                     <constraint firstItem="4SR-YX-Mbk" firstAttribute="top" secondItem="ESh-VJ-DVT" secondAttribute="top" id="CLy-oS-lvw"/>
                                     <constraint firstItem="Hff-3l-Iht" firstAttribute="leading" secondItem="ESh-VJ-DVT" secondAttribute="leading" constant="76" id="Chl-6E-MEu"/>
-                                    <constraint firstAttribute="trailing" secondItem="yeF-ws-EjF" secondAttribute="trailing" constant="-2" id="Dga-aW-9rT"/>
                                     <constraint firstItem="QQ2-O7-CCd" firstAttribute="leading" secondItem="ESh-VJ-DVT" secondAttribute="leading" id="DiN-Sf-epX"/>
                                     <constraint firstItem="cq5-9n-AC3" firstAttribute="leading" secondItem="vBI-rC-4LF" secondAttribute="trailing" constant="9" id="FVj-q7-E6G"/>
-                                    <constraint firstAttribute="bottom" secondItem="yeF-ws-EjF" secondAttribute="bottom" id="UFS-EQ-m2k"/>
                                     <constraint firstItem="cq5-9n-AC3" firstAttribute="top" secondItem="ESh-VJ-DVT" secondAttribute="top" constant="37" id="Vts-M5-BK7"/>
                                     <constraint firstAttribute="trailing" secondItem="Hff-3l-Iht" secondAttribute="trailing" constant="8" id="ZHc-VM-Sho"/>
-                                    <constraint firstItem="yeF-ws-EjF" firstAttribute="top" secondItem="ESh-VJ-DVT" secondAttribute="top" id="dM8-Do-f07"/>
-                                    <constraint firstAttribute="trailing" secondItem="C3I-JZ-1A9" secondAttribute="trailing" constant="8" id="f8M-38-rWA"/>
                                     <constraint firstItem="Hff-3l-Iht" firstAttribute="top" secondItem="cq5-9n-AC3" secondAttribute="bottom" constant="32" id="hCN-Bp-Jtf"/>
                                     <constraint firstItem="QQ2-O7-CCd" firstAttribute="top" secondItem="ESh-VJ-DVT" secondAttribute="top" id="hdD-cq-Ntt"/>
-                                    <constraint firstItem="yeF-ws-EjF" firstAttribute="leading" secondItem="ESh-VJ-DVT" secondAttribute="leading" id="k5A-vq-nSw"/>
                                     <constraint firstAttribute="trailing" secondItem="cq5-9n-AC3" secondAttribute="trailing" constant="8" id="mgD-wh-yua"/>
-                                    <constraint firstItem="C3I-JZ-1A9" firstAttribute="top" secondItem="ESh-VJ-DVT" secondAttribute="top" constant="40" id="rzq-8b-YGo"/>
                                     <constraint firstAttribute="height" constant="186" id="yew-ID-ZZt"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="backgroundImageView" destination="yeF-ws-EjF" id="sa2-bw-NQg"/>
-                                    <outlet property="bitcoinImageView" destination="C3I-JZ-1A9" id="Vtn-gt-g8m"/>
                                     <outlet property="coinAmountLabel" destination="Hff-3l-Iht" id="KPp-5Z-nIf"/>
                                     <outlet property="coinCourseLabel" destination="E8Z-HB-8Zq" id="xCi-Ch-Pog"/>
                                     <outlet property="coinImageView" destination="vBI-rC-4LF" id="WzQ-TQ-0id"/>
@@ -210,7 +193,7 @@
         <!--Send Coins View Controller-->
         <scene sceneID="iCj-Tj-4RL">
             <objects>
-                <viewController storyboardIdentifier="SendCoinsViewController" id="xGE-gn-k5v" customClass="SendCoinsViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SendCoinsViewController" id="xGE-gn-k5v" customClass="SendCoinsViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Db-hV-U6h"/>
                         <viewControllerLayoutGuide type="bottom" id="KWy-TE-urm"/>
@@ -228,7 +211,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="efF-a7-STq" customClass="BaseTextField" customModule="EmercoinOne" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="efF-a7-STq" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="149" y="81" width="174" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
@@ -241,7 +224,7 @@
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-B3-vAl">
                                 <rect key="frame" x="99" y="182" width="177" height="42"/>
-                                <color key="backgroundColor" red="0.36470588235294116" green="0.69411764705882351" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.61176470588235299" green="0.45098039215686275" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Rc5-sv-88g"/>
                                     <constraint firstAttribute="width" constant="177" id="pWJ-Kf-xMg"/>
@@ -266,7 +249,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter an address" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Whz-z0-4dX" customClass="BaseTextField" customModule="EmercoinOne" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter an address" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Whz-z0-4dX" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="76" y="40" width="291" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OBq-OP-Cym"/>
@@ -310,7 +293,7 @@
         <!--Recipient Address View Controller-->
         <scene sceneID="LGy-wb-6bz">
             <objects>
-                <viewController storyboardIdentifier="RecipientAddressViewController" id="89M-Bf-k6B" customClass="RecipientAddressViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipientAddressViewController" id="89M-Bf-k6B" customClass="RecipientAddressViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hac-OH-8SB"/>
                         <viewControllerLayoutGuide type="bottom" id="uG5-jK-zL4"/>
@@ -481,50 +464,10 @@
             </objects>
             <point key="canvasLocation" x="1083" y="-798"/>
         </scene>
-        <!--Coins Operation View Controller-->
-        <scene sceneID="II7-zD-QDb">
-            <objects>
-                <viewController storyboardIdentifier="CoinsOperationViewController" id="Dj9-5p-hbd" customClass="CoinsOperationViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="s9Z-9S-1E9"/>
-                        <viewControllerLayoutGuide type="bottom" id="0fg-Ld-FGq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oTW-u8-ftr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iW3-tX-ZKn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <connections>
-                                    <segue destination="6qY-ZS-mnf" kind="embed" id="fhM-eq-udB"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="iW3-tX-ZKn" secondAttribute="trailing" id="LzD-5Q-Yva"/>
-                            <constraint firstItem="iW3-tX-ZKn" firstAttribute="top" secondItem="oTW-u8-ftr" secondAttribute="top" id="bhd-bH-cwH"/>
-                            <constraint firstItem="iW3-tX-ZKn" firstAttribute="leading" secondItem="oTW-u8-ftr" secondAttribute="leading" id="gfs-FN-bl0"/>
-                            <constraint firstItem="0fg-Ld-FGq" firstAttribute="top" secondItem="iW3-tX-ZKn" secondAttribute="bottom" id="wdB-xO-W52"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qwv-Ga-nHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2693" y="-828"/>
-        </scene>
-        <!--Base Page View Controller-->
-        <scene sceneID="qEF-SG-vHg">
-            <objects>
-                <pageViewController storyboardIdentifier="BasePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6qY-ZS-mnf" customClass="BasePageViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hQo-80-UQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3484" y="-828"/>
-        </scene>
         <!--Get Coins View Controller-->
         <scene sceneID="YEu-jb-jMq">
             <objects>
-                <viewController storyboardIdentifier="GetCoinsViewController" id="wve-jq-FRp" customClass="GetCoinsViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetCoinsViewController" id="wve-jq-FRp" customClass="GetCoinsViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tl4-tv-2hC"/>
                         <viewControllerLayoutGuide type="bottom" id="UyP-Rs-oQo"/>
@@ -591,17 +534,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58C-nU-3Bu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58C-nU-3Bu">
                                         <rect key="frame" x="310" y="296" width="44" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="S0N-Fe-y2q"/>
                                             <constraint firstAttribute="height" constant="16" id="bPe-5Z-uXe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
-                                        <color key="textColor" red="0.42352941179999998" green="0.74901960779999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61176470588235299" green="0.45098039215686275" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="m6G-fi-cxE" customClass="BaseTextField" customModule="EmercoinOne" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="m6G-fi-cxE" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="102" y="289" width="208" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hzo-8e-weJ"/>
@@ -693,7 +636,7 @@
         <!--My Adress View Controller-->
         <scene sceneID="cYO-zs-JM4">
             <objects>
-                <viewController storyboardIdentifier="MyAdressViewController" id="CsI-KB-e2y" customClass="MyAdressViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyAdressViewController" id="CsI-KB-e2y" customClass="MyAdressViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CWz-GR-A4X"/>
                         <viewControllerLayoutGuide type="bottom" id="cS8-Tv-2l8"/>
@@ -707,7 +650,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyAddressCell" rowHeight="66" id="MUk-ai-wto" customClass="MyAddressCell" customModule="EmercoinOne" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyAddressCell" rowHeight="66" id="MUk-ai-wto" customClass="MyAddressCell" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MUk-ai-wto" id="n6K-fv-6kR">
@@ -776,7 +719,7 @@
         <!--Exchange Coins View Controller-->
         <scene sceneID="j89-Wi-rXq">
             <objects>
-                <viewController storyboardIdentifier="ExchangeCoinsViewController" id="eGt-kz-lHr" customClass="ExchangeCoinsViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExchangeCoinsViewController" id="eGt-kz-lHr" customClass="ExchangeCoinsViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sk4-6Q-xXe"/>
                         <viewControllerLayoutGuide type="bottom" id="qXh-lA-MhH"/>
@@ -849,7 +792,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="zSn-4W-RSp" customClass="BaseTextField" customModule="EmercoinOne" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="zSn-4W-RSp" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                                 <rect key="frame" x="149" y="18" width="174" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
@@ -956,13 +899,13 @@
     </scenes>
     <resources>
         <image name="back_icon" width="18" height="15"/>
-        <image name="book_add_icon" width="24" height="24"/>
+        <image name="book_add_emc_icon" width="24" height="24"/>
         <image name="get_button_icon" width="21" height="21"/>
         <image name="get_down_icon" width="9" height="7"/>
         <image name="get_qr_image" width="160" height="160"/>
         <image name="get_send_icon" width="21" height="21"/>
         <image name="menu_icon" width="18" height="13"/>
-        <image name="send_bit_icon" width="17" height="24"/>
+        <image name="send_emer_icon" width="35" height="31"/>
         <image name="send_enter_icon" width="17" height="13"/>
         <image name="send_list_icon" width="12" height="13"/>
         <image name="send_qr_icon" width="14" height="14"/>

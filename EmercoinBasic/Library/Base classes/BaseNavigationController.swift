@@ -13,14 +13,4 @@ class BaseNavigationController: UINavigationController {
         navigationBar.isHidden = true
     }
     
-    override var shouldAutorotate: Bool {
-        
-        if Router.sharedInstance.isLiveCoinTradeController {
-            return true
-        }
-        return false
-    }
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return .all
-    }
 }

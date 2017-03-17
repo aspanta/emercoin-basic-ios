@@ -13,7 +13,6 @@ enum CoinsOperation {
     case get
     case historyAndOperations
     case myAddress
-    case exchangeCoins
 }
 
 enum Side:Int{
@@ -21,9 +20,9 @@ enum Side:Int{
     case right
 }
 
-class BaseCoinsOperationViewController: BaseViewController {
+class CoinOperationsViewController: BaseViewController {
     
-    @IBOutlet internal weak var headerView:CoinsOpeartionHeaderView!
+    @IBOutlet internal weak var headerView:CoinOperationsHeaderView!
     @IBOutlet internal weak var operationLabel:UILabel!
     @IBOutlet internal weak var menuButton:UIButton!
     @IBOutlet internal weak var backButton:UIButton!
@@ -33,31 +32,20 @@ class BaseCoinsOperationViewController: BaseViewController {
     
     @IBOutlet internal weak var container:UIView!
     
-    var coinType:CoinType = .emercoin {
-        didSet {
-            viewModel.coinType = coinType
-        }
-    }
-    
-    var switchController:((Void) -> (Void))?
-    
     var coinsOperation:CoinsOperation = .recipientAddress
-    var side:Side = .right
-    
-    let viewModel = CoinsOperationViewModel()
+    let viewModel = CoinOperationsViewModel()
     let disposeBag = DisposeBag()
     
     var childController:UIViewController?
     
     override class func storyboardName() -> String {
-        return "CoinsOperation"
+        return "CoinOperations"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareChildController()
-        viewModel.coinType = coinType
     }
     
     override func setupUI() {
@@ -89,54 +77,19 @@ class BaseCoinsOperationViewController: BaseViewController {
             text = Constants.Controllers.CoinsOperation.MyAddress
             addButton.isHidden = false
             isMenuHide = true;
-        case .exchangeCoins:
-            let isBitcoin = coinType == .bitcoin
-            text = isBitcoin ? Constants.Controllers.CoinsOperation.ExchangeCoins.Bitcoin :
-                                Constants.Controllers.CoinsOperation.ExchangeCoins.Emercoin
-            isMenuHide = true;
         }
-        
-        if side == .right && coinType == .bitcoin {
-            isMenuHide = true
-        }
-        
-        headerView.bitcoinImageView.isHidden = !(side == .left && coinType == .emercoin)
         
         menuButton.isHidden = isMenuHide
         backButton.isHidden = !isMenuHide
         
         operationLabel.text = text
         
-        viewModel.coinTitle.bindTo(headerView.coinTitleLabel.rx.text)
-            .addDisposableTo(disposeBag)
-        viewModel.coinImage.bindTo(headerView.coinImageView.rx.image)
-            .addDisposableTo(disposeBag)
         viewModel.coinCourseTitle.bindTo(headerView.coinCourseLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
         viewModel.coinAmount.bindTo(headerView.coinAmountLabel.rx.text)
             .addDisposableTo(disposeBag)
         
-        viewModel.headerColor.subscribe(onNext: { [weak self] color in
-            UIView.animate(withDuration: 0.1) {
-                self?.headerView.backgroundColor = color
-                self?.operationLabel.textColor = color
-                
-                guard let statusView = self?.statusBarView,
-                    let statusColor = self?.viewModel.statusColor else {
-                        return
-                }
-                
-                statusView.backgroundColor = statusColor
-                
-                self?.addButton.setImage(self?.viewModel.addImage, for: .normal)
-                
-                if self?.coinsOperation == .get {
-                    var text = self?.operationLabel.text
-                    text = String(format:"%@ %@",text!,(self?.viewModel.coinSign)!)
-                    self?.operationLabel.text = text
-                }
-            }
-        }).addDisposableTo(disposeBag)
+        viewModel.updateUI()
         
     }
     
@@ -147,7 +100,6 @@ class BaseCoinsOperationViewController: BaseViewController {
         switch coinsOperation {
         case .recipientAddress:
             let vc = RecipientAddressViewController.controller() as! RecipientAddressViewController
-            vc.coinType = coinType
             controller = vc
         case .send:
             let vc = SendCoinsViewController.controller() as! SendCoinsViewController
@@ -156,19 +108,12 @@ class BaseCoinsOperationViewController: BaseViewController {
             controller = vc
         case .get:
             let vc = GetCoinsViewController.controller() as! GetCoinsViewController
-            vc.viewModel = viewModel
             controller = vc
         case .historyAndOperations:
             let vc = AccountPageViewController.controller() as! AccountPageViewController
-            vc.coinType = coinType
             controller = vc
         case .myAddress:
             let vc = MyAdressViewController.controller() as! MyAdressViewController
-            vc.coinType = coinType
-            controller = vc
-        case .exchangeCoins:
-            let vc = ExchangeCoinsViewController.controller() as! ExchangeCoinsViewController
-            vc.viewModel = viewModel
             controller = vc
         }
         
@@ -185,15 +130,6 @@ class BaseCoinsOperationViewController: BaseViewController {
         if childController is MyAdressViewController {
             let controller = childController as! MyAdressViewController
             controller.showAddAddressView()
-        }
-    }
-    
-    override func back() {
-        
-        if side == .right && switchController != nil {
-            switchController!()
-        } else {
-            super.back()
         }
     }
 }

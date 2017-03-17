@@ -11,8 +11,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     
     var history = History()
     
-    var coinType:CoinType = .bitcoin
-
     override class func storyboardName() -> String {
         return "AccountPage"
     }
@@ -20,11 +18,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        history.stubContacts(cointType: .bitcoin)
-        history.stubContacts(cointType: .emercoin)
-        
-        history.cointType = coinType
-        
+        history.stubContacts()
         tableView.baseSetup()
     }
     

@@ -14,7 +14,6 @@ class AddressesNVSViewController: MyAdressViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        coinType = .emercoin
     }
     
     override class func storyboardName() -> String {

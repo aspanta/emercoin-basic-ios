@@ -9,17 +9,29 @@ import RxCocoa
 
 class LoginViewController: BaseViewController {
     
-    @IBOutlet internal weak var loginButton:LoginButton!
+    @IBOutlet internal weak var enterButton:LoginButton!
+    @IBOutlet internal weak var checkButton:CheckButton!
     @IBOutlet internal weak var loginTextField:BaseTextField!
+    @IBOutlet internal weak var hostTextField:BaseTextField!
+    @IBOutlet internal weak var portTextField:BaseTextField!
     @IBOutlet internal weak var passwordTextField:BaseTextField!
+    @IBOutlet internal weak var protocolTextField:BaseTextField!
+    @IBOutlet internal weak var protocolButton:UIButton!
     @IBOutlet internal weak var topConstraint:NSLayoutConstraint!
-
+    @IBOutlet internal weak var leftConstraint:NSLayoutConstraint!
+    
+    var dropDown:DropDown?
     let disposeBag = DisposeBag()
     var viewModel = LoginViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setupDropDown()
+    }
+    
+    override class func storyboardName() -> String {
+        return "Login"
     }
     
     override func setupUI() {
@@ -31,17 +43,38 @@ class LoginViewController: BaseViewController {
         
         passwordTextField.textChanged = {(text) in
             self.viewModel.password = text
+            self.viewModel.confirmPassword = text
         }
         
-        viewModel.isValidCredentials.bindTo(loginButton.rx.isEnabled)
+        hostTextField.textChanged = {(text) in
+            self.viewModel.host = text
+        }
+        
+        portTextField.textChanged = {(text) in
+            self.viewModel.port = text
+        }
+        
+        viewModel.isValidCredentials.bindTo(enterButton.rx.isEnabled)
             .addDisposableTo(disposeBag)
         viewModel.topConstraint.bindTo(topConstraint.rx.constant)
+            .addDisposableTo(disposeBag)
+        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
             .addDisposableTo(disposeBag)
         
         viewModel.prepareUI()
     }
     
-    @IBAction func loginButtonPressed(sender:UIButton) {
+    @IBAction func enterButtonPressed(sender:UIButton) {
+        
+        showMainController()
+    }
+    
+    @IBAction func skipButtonPressed(sender:UIButton) {
+        
+        showMainController()
+    }
+    
+    private func showMainController() {
         
         let main = UIStoryboard.init(name: "Main", bundle: nil)
         let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController")
@@ -50,31 +83,58 @@ class LoginViewController: BaseViewController {
         present(nav, animated: true, completion: nil)
     }
     
-    @IBAction func registerButtonPressed(sender:UIButton) {
+    @IBAction func checkButtonPressed(sender:UIButton) {
+        let isChecked = !checkButton.isChecked
+        checkButton.isChecked = isChecked
+        viewModel.isChecked = isChecked
+    }
+    
+    @IBAction func policyButtonPressed(sender:UIButton) {
+        print("policyButtonPressed")
         
-        showRegisterController()
     }
     
-    @IBAction func myServerButtonPressed(sender:UIButton) {
+    @IBAction func dropButtonPressed() {
         
-        showEnterMyServerController()
+        dropDown?.show()
     }
     
-    private func showRegisterController() {
-    
-        let controller = RegistrationViewController.controller()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    private func showEnterMyServerController() {
+    internal func setupDropDown() {
         
-        let controller = EnterToMyServerViewController.controller()
-        navigationController?.pushViewController(controller, animated: true)
+        dropDown = DropDown()
+        dropDown?.anchorView = protocolButton
+        
+        let dataSource = ["Protocol", "http", "https"]
+        
+        //protocolTextField.text = dataSource.first
+        
+        dropDown?.dataSource = dataSource
+        
+        dropDown?.selectionAction = { [unowned self] (index, item) in
+            if index == 0 {return}
+            self.protocolTextField.text = item
+            self.viewModel.`protocol` = item
+        }
+        
+        dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            
+            if index == 0 {
+                cell.isUserInteractionEnabled = false
+                cell.optionLabel?.textColor = .lightGray
+            }
+        }
+        
+        dropDown?.bottomOffset = CGPoint(x: 0, y: protocolButton.bounds.height)
+        
+        setupDropDownUI()
+        
     }
     
-    @IBAction func livecoinLogin(_ sender: Any) {
-        let controller = ProtectionModuleViewController.controller()
-        navigationController?.pushViewController(controller, animated: true)
+    internal func setupDropDownUI() {
+        
+        let appearance = DropDown.appearance()
+        appearance.selectionBackgroundColor = UIColor(hexString: "9C73B1")
+        appearance.cellHeight = protocolButton.bounds.height + 5
+        appearance.textFont = UIFont(name: "Roboto-Regular", size: 17)!
     }
-
 }

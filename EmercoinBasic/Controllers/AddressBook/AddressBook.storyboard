@@ -23,7 +23,7 @@
         <!--Address Book View Controller-->
         <scene sceneID="SST-JR-2Pa">
             <objects>
-                <viewController storyboardIdentifier="AddressBookViewController" id="G3T-U3-Usv" customClass="AddressBookViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddressBookViewController" id="G3T-U3-Usv" customClass="AddressBookViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V10-Av-wFy"/>
                         <viewControllerLayoutGuide type="bottom" id="qdh-FQ-a6k"/>
@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="width" constant="50" id="JPL-6J-BAa"/>
                                             <constraint firstAttribute="height" constant="50" id="O1U-Zf-XXV"/>
                                         </constraints>
-                                        <state key="normal" image="book_add_icon"/>
+                                        <state key="normal" image="book_add_emc_icon"/>
                                         <connections>
                                             <action selector="addButtonPressedWithSender:" destination="G3T-U3-Usv" eventType="touchUpInside" id="rlZ-nc-o6x"/>
                                         </connections>
@@ -69,7 +69,7 @@
                                     <constraint firstItem="AZg-MM-Dtu" firstAttribute="centerY" secondItem="sBC-sM-Zuf" secondAttribute="centerY" id="sbG-o3-4Wb"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oL-rD-8bM" customClass="AdressBookHeaderView" customModule="EmercoinOne" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oL-rD-8bM" customClass="AdressBookHeaderView" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="186"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send_emer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cb8-eK-jgw">
@@ -108,7 +108,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.36470588235294116" green="0.69411764705882351" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.61176470588235299" green="0.45098039215686275" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Cb8-eK-jgw" firstAttribute="leading" secondItem="9oL-rD-8bM" secondAttribute="leading" constant="76" id="25S-Cd-2gt"/>
                                     <constraint firstItem="NpS-Qq-d2c" firstAttribute="top" secondItem="9oL-rD-8bM" secondAttribute="top" id="4Ok-6C-Ryb"/>
@@ -121,16 +121,13 @@
                                     <constraint firstItem="ibT-lA-QG1" firstAttribute="top" secondItem="9oL-rD-8bM" secondAttribute="top" id="zdH-x4-OtZ"/>
                                     <constraint firstItem="ZZn-GF-oI6" firstAttribute="leading" secondItem="Cb8-eK-jgw" secondAttribute="trailing" constant="20" id="zqS-lP-r3h"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="coinImageView" destination="Cb8-eK-jgw" id="AkA-16-vWJ"/>
-                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nxa-WQ-DAM">
                                 <rect key="frame" x="0.0" y="329" width="375" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="66" id="2L1-EX-iiS" customClass="ContactCell" customModule="EmercoinOne" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="66" id="2L1-EX-iiS" customClass="ContactCell" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2L1-EX-iiS" id="KeX-AP-AQg">
@@ -238,9 +235,7 @@
                     <connections>
                         <outlet property="addButton" destination="Mne-7J-0Jl" id="dpj-BX-YeU"/>
                         <outlet property="backButton" destination="ibT-lA-QG1" id="Xy2-Zf-ryO"/>
-                        <outlet property="headerView" destination="9oL-rD-8bM" id="Xi4-Qs-9Tr"/>
                         <outlet property="menuButton" destination="NpS-Qq-d2c" id="8aF-k0-WMU"/>
-                        <outlet property="operationLabel" destination="AZg-MM-Dtu" id="v8k-Pu-xc0"/>
                         <outlet property="tableView" destination="Nxa-WQ-DAM" id="WsD-EB-9RY"/>
                     </connections>
                 </viewController>
@@ -248,50 +243,10 @@
             </objects>
             <point key="canvasLocation" x="365.60000000000002" y="-397.15142428785612"/>
         </scene>
-        <!--Address Books View Controller-->
-        <scene sceneID="gT3-Tr-FXZ">
-            <objects>
-                <viewController storyboardIdentifier="AddressBooksViewController" id="0lh-JG-OCj" customClass="AddressBooksViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nc0-ig-LKH"/>
-                        <viewControllerLayoutGuide type="bottom" id="uMh-zO-W7w"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YeZ-kX-aoz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-nv-epb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="GiO-zI-FY1" kind="embed" id="j8A-so-1MZ"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oeT-nv-epb" firstAttribute="top" secondItem="YeZ-kX-aoz" secondAttribute="top" id="45x-vP-ch0"/>
-                            <constraint firstItem="oeT-nv-epb" firstAttribute="leading" secondItem="YeZ-kX-aoz" secondAttribute="leading" id="HUq-PS-4T5"/>
-                            <constraint firstItem="uMh-zO-W7w" firstAttribute="top" secondItem="oeT-nv-epb" secondAttribute="bottom" id="fys-fa-AVU"/>
-                            <constraint firstAttribute="trailing" secondItem="oeT-nv-epb" secondAttribute="trailing" id="oRS-IO-Ceg"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvm-ws-fB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1215" y="-397"/>
-        </scene>
-        <!--Base Page View Controller-->
-        <scene sceneID="vfd-2W-sNS">
-            <objects>
-                <pageViewController storyboardIdentifier="BasePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GiO-zI-FY1" customClass="BasePageViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="87g-C4-YTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2007" y="-397"/>
-        </scene>
     </scenes>
     <resources>
         <image name="back_icon" width="18" height="15"/>
-        <image name="book_add_icon" width="24" height="24"/>
+        <image name="book_add_emc_icon" width="24" height="24"/>
         <image name="book_search_icon" width="18" height="20"/>
         <image name="menu_icon" width="18" height="13"/>
         <image name="send_emer_icon" width="35" height="31"/>

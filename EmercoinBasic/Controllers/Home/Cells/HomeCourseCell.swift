@@ -17,7 +17,7 @@ class HomeCourseCell: BaseTableViewCell {
     override var isExpanded: Bool {
         didSet{
             let arrowImage = (isExpanded) ? "arrow_col_icon" : "arrow_exp_icon"
-            arrowImageView.image = UIImage.init(named: arrowImage)
+            arrowImageView.image = UIImage(named: arrowImage)
         }
     }
     
@@ -57,7 +57,6 @@ class HomeCourseCell: BaseTableViewCell {
                 views.append(courseView)
             }
         }
-        
     }
     
     @IBAction func pressedButton(sender:UIButton) {
@@ -68,5 +67,4 @@ class HomeCourseCell: BaseTableViewCell {
             pressedCell!(indexPath!)
         }
     }
-
 }

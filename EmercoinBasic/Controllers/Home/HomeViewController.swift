@@ -2,9 +2,6 @@
 //  HomeViewController.swift
 //  EmercoinOne
 //
-//  Created by Sergey Lyubeznov on 14/02/2017.
-//  Copyright © 2017 Aspanta. All rights reserved.
-//
 
 import UIKit
 
@@ -30,7 +27,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
 
         let wallet = AppManager.sharedInstance.wallet
         
-        coins = [wallet.emercoin,wallet.bitcoin]
+        coins = [wallet.emercoin]
         setupTableView()
     }
     

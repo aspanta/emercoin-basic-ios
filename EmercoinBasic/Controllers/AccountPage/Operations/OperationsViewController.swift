@@ -6,8 +6,6 @@
 import UIKit
 
 class OperationsViewController: UIViewController, IndicatorInfoProvider {
-
-    var coinType:CoinType = .bitcoin
     
     override class func storyboardName() -> String {
         return "AccountPage"
@@ -34,11 +32,6 @@ class OperationsViewController: UIViewController, IndicatorInfoProvider {
         print("addMoneyButtonPressed")
     }
     
-    @IBAction func exchangeButtonPressed(sender:UIButton) {
-        showExchangeCoinsController()
-        
-    }
-    
     @IBAction func receiveButtonPressed(sender:UIButton) {
         showReceiveController()
     }
@@ -46,12 +39,6 @@ class OperationsViewController: UIViewController, IndicatorInfoProvider {
     private func showSendController() {
         
         let controller = getController(at: .recipientAddress)
-        push(at: controller)
-    }
-    
-    private func showExchangeCoinsController() {
-        
-        let controller = getController(at: .exchangeCoins)
         push(at: controller)
     }
     
@@ -73,9 +60,8 @@ class OperationsViewController: UIViewController, IndicatorInfoProvider {
     
     private func getController(at operationType:CoinsOperation) -> UIViewController {
         
-        let controller = BaseCoinsOperationViewController.controller() as! BaseCoinsOperationViewController
+        let controller = CoinOperationsViewController.controller() as! CoinOperationsViewController
         controller.coinsOperation = operationType
-        controller.coinType = coinType
         return controller
     }
 }

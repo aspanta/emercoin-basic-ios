@@ -26,17 +26,13 @@ class NVSBrowserViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
-
 
     func showController(at index:Int) {
         
         switch index {
-            case 0:self.dpoButtonPressed()
-            case 1:self.dnsButtonPressed()
-            case 2:self.nvsButtonPressed()
+            case 0:self.nvsButtonPressed()
             default:break
         }
     }
@@ -45,37 +41,14 @@ class NVSBrowserViewController: UIViewController, IndicatorInfoProvider {
         return IndicatorInfo(title: "NVS Browser")
     }
     
-    @IBAction func dpoButtonPressed() {
-       showController(at: "dpo")
-    }
-    
-    @IBAction func dnsButtonPressed() {
-        showController(at: "dns")
-    }
-    
     @IBAction func nvsButtonPressed() {
-        showController(at: "search")
+        showNVSController()
     }
     
-    private func showController(at name:String) {
-        
-        var controller:UIViewController?
-        
-        switch name {
-            case "dpo":
-                controller = DPOViewController.controller()
-            case "dns":
-                let vc = DNSViewController.controller() as! DNSViewController
-                vc.createPressed = createPressed
-                controller = vc
-            case "search":
-                let vc = SearchNVSViewController.controller() as! SearchNVSViewController
-                vc.createPressed = createPressed
-                controller = vc
-        default:
-            break
-        }
-        
-        self.navigationController?.pushViewController(controller!, animated: true)
+    private func showNVSController() {
+    
+        let vc = SearchNVSViewController.controller() as! SearchNVSViewController
+        vc.createPressed = createPressed
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
