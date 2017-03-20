@@ -2,9 +2,6 @@
 //  Constants.swift
 //  EmercoinOne
 //
-//  Created by Sergey Lyubeznov on 14/02/2017.
-//  Copyright © 2017 Aspanta. All rights reserved.
-//
 
 import Foundation
 
@@ -13,9 +10,7 @@ import UIKit
 struct Constants {
     
     struct API {
-        static let BaseURL = "https://159.203.138.164:6662"
-        static let User = "emccoinrpc"
-        static let Password = "shei7xaoJush6Hoo7shophooqu5doo7vei2riey5saik5egae9quie3sahx1naiw"
+        static let BaseURL = ""
         static let getInfo = "getinfo"
     }
     

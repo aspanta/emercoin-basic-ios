@@ -11,7 +11,7 @@ class LoginViewModel {
     
     var host:String = "" {didSet{validateCredentials()}}
     var port:String = "" {didSet{validateCredentials()}}
-    var `protocol`:String = "" {didSet{validateCredentials()}}
+    var webProtocol:String = "" {didSet{validateCredentials()}}
     
     var login:String = "" {didSet{validateCredentials()}}
     var password:String = "" {didSet{validateCredentials()}}
@@ -21,6 +21,10 @@ class LoginViewModel {
     var topConstraint = PublishSubject<CGFloat>()
     var leftConstraint = PublishSubject<CGFloat>()
     var isValidCredentials = PublishSubject<Bool>()
+    var isSuccessLogin = PublishSubject<Bool>()
+    var isError = PublishSubject<Error>()
+    var isActivityIndicator = PublishSubject<Bool>()
+
     
     var isValid = false
     
@@ -28,7 +32,7 @@ class LoginViewModel {
         
         let isEqualPasswords = password == confirmPassword
         
-        let valid = isValid && (host.length > 0 && port.length > 0 && `protocol`.length > 0)
+        let valid = isValid && (host.length > 0 && port.length > 0 && webProtocol.length > 0)
         
         isValidCredentials.onNext(valid)
         
@@ -44,4 +48,33 @@ class LoginViewModel {
             leftConstraint.onNext(CGFloat(value))
         }
     }
+    
+    func performLogin() {
+        
+        var loginInfo = [String:String]()
+        
+        loginInfo["host"] = host
+        loginInfo["port"] = port
+        loginInfo["user"] = login
+        loginInfo["password"] = password
+        loginInfo["protocol"] = webProtocol
+        
+        isActivityIndicator.onNext(true)
+        
+        APIManager.sharedInstance.login(at: loginInfo) {[weak self] (data, error) in
+            self?.isActivityIndicator.onNext(false)
+            if let currentError = error {
+                self?.isError.onNext(currentError)
+            } else {
+                
+                if let wallet = data as? Wallet {
+                    AppManager.sharedInstance.wallet = wallet
+                }
+                self?.isSuccessLogin.onNext(true)
+            }
+            
+        }
+    }
+    
+    
 }

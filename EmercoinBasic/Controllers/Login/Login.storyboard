@@ -22,7 +22,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -53,8 +53,8 @@
                                     <constraint firstAttribute="height" constant="96" id="O25-zq-6sl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32n-15-JxQ">
-                                <rect key="frame" x="98.5" y="178" width="178.5" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32n-15-JxQ">
+                                <rect key="frame" x="88.5" y="178" width="198.5" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="25"/>
                                 <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@
                                     <constraint firstItem="Oip-lX-Zw8" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="top" id="qlj-xt-rwp"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Ck-fRE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Ck-fRE">
                                 <rect key="frame" x="282" y="441" width="33" height="30"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.4039215686" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SKIP">
@@ -289,6 +289,16 @@
                                 </state>
                                 <connections>
                                     <action selector="skipButtonPressedWithSender:" destination="rgu-oq-k0z" eventType="touchUpInside" id="l8x-d0-E0G"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-c1-vEM">
+                                <rect key="frame" x="240" y="441" width="35" height="30"/>
+                                <color key="backgroundColor" red="0.58039215690000001" green="0.4039215686" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="INFO">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginInfoButtonPressed" destination="rgu-oq-k0z" eventType="touchUpInside" id="RRT-6N-MvN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -299,6 +309,8 @@
                             <constraint firstItem="kVx-JH-eXa" firstAttribute="top" secondItem="a73-Px-job" secondAttribute="bottom" constant="50" id="352-Zs-8dQ"/>
                             <constraint firstItem="Pgh-uX-8zk" firstAttribute="top" secondItem="BMK-8c-gUV" secondAttribute="bottom" constant="33" id="78b-UV-ubw"/>
                             <constraint firstItem="BMK-8c-gUV" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="8OC-eM-94g"/>
+                            <constraint firstItem="dZK-c1-vEM" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="bottom" constant="8" id="BKR-Ab-pVm"/>
+                            <constraint firstItem="Ykj-Ck-fRE" firstAttribute="leading" secondItem="dZK-c1-vEM" secondAttribute="trailing" constant="7" id="BKr-BP-N9g"/>
                             <constraint firstItem="8HB-lr-8Vo" firstAttribute="top" secondItem="cnJ-a1-ehB" secondAttribute="bottom" constant="15" id="Cp1-cN-Ed9"/>
                             <constraint firstItem="32n-15-JxQ" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="DZV-mn-36l"/>
                             <constraint firstItem="kVx-JH-eXa" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="GlQ-CT-8nc"/>

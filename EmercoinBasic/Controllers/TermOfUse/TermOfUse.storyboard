@@ -20,7 +20,7 @@
         <!--Term Of Use View Controller-->
         <scene sceneID="RqR-Xj-MD8">
             <objects>
-                <viewController storyboardIdentifier="TermOfUseViewController" id="rZl-9B-ZMR" customClass="TermOfUseViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermOfUseViewController" id="rZl-9B-ZMR" customClass="TermOfUseViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4or-H7-gOv"/>
                         <viewControllerLayoutGuide type="bottom" id="NsW-oy-8Db"/>
@@ -47,10 +47,9 @@
                                     <constraint firstAttribute="width" constant="58" id="dPf-nl-zQT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4q-T7-cqV">
-                                <rect key="frame" x="34" y="116" width="252" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4q-T7-cqV">
+                                <rect key="frame" x="19" y="116" width="282" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="252" id="FgA-qi-mj9"/>
                                     <constraint firstAttribute="height" constant="42" id="Z2I-aI-qGr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>

@@ -61,12 +61,70 @@ class LoginViewController: BaseViewController {
         viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
             .addDisposableTo(disposeBag)
         
+    
+        setupLogin()
+        
+        setupActivityIndicator()
+
         viewModel.prepareUI()
+    }
+    
+    private func setupLogin() {
+        
+        viewModel.isSuccessLogin.subscribe(onNext:{ [weak self] success in
+            if success {self?.showMainController()}
+        })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.isError.subscribe(onNext:{ [weak self] error in
+            self?.showErrorAlert(at: error)
+        })
+            .addDisposableTo(disposeBag)
+    }
+    
+    private func setupActivityIndicator() {
+        
+        viewModel.isActivityIndicator.subscribe(onNext:{ [weak self] state in
+            if state {
+                self?.showActivityIndicator()
+            } else {
+                self?.hideActivityIndicator()
+            }
+            
+        })
+        .addDisposableTo(disposeBag)
+    }
+    
+    private func fillData() {
+        
+        let host = "174.138.88.96"
+        let port = "6662"
+        let login = "emccoinrpc"
+        let password = "iejeet2vae4rohcohh2soRasi9roha4gaigohNaezaeNgahtaichay2xaed8Meew"
+        let webProtocol = "https"
+        
+        hostTextField.text = host
+        portTextField.text = port
+        loginTextField.text = login
+        passwordTextField.text = password
+        protocolTextField.text = webProtocol
+        
+        viewModel.host = host
+        viewModel.port = port
+        viewModel.login = login
+        viewModel.password = password
+        viewModel.webProtocol = webProtocol
+        
+        viewModel.isValidCredentials.onNext(true)
     }
     
     @IBAction func enterButtonPressed(sender:UIButton) {
         
-        showMainController()
+        viewModel.performLogin()
+    }
+    
+    @IBAction func loginInfoButtonPressed() {
+        fillData()
     }
     
     @IBAction func skipButtonPressed(sender:UIButton) {
@@ -81,6 +139,20 @@ class LoginViewController: BaseViewController {
         let nav = BaseNavigationController(rootViewController: controller)
         
         present(nav, animated: true, completion: nil)
+    }
+    
+    private func showErrorAlert(at error:Error) {
+        
+        let alert = UIAlertController(
+            title: "Error",
+            message: String (format:error.localizedDescription),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+        
+        print(error.localizedDescription)
     }
     
     @IBAction func checkButtonPressed(sender:UIButton) {
@@ -113,7 +185,7 @@ class LoginViewController: BaseViewController {
         dropDown?.selectionAction = { [unowned self] (index, item) in
             if index == 0 {return}
             self.protocolTextField.text = item
-            self.viewModel.`protocol` = item
+            self.viewModel.webProtocol = item
         }
         
         dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in

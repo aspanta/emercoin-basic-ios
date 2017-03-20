@@ -23,7 +23,7 @@
         <!--Home View Controller-->
         <scene sceneID="a7X-om-OQe">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="4eb-RU-WSg" customClass="HomeViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="4eb-RU-WSg" customClass="HomeViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rbN-Hm-9Os"/>
                         <viewControllerLayoutGuide type="bottom" id="MLY-PK-1zq"/>
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="206" width="414" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeMyMoneyCell" rowHeight="70" id="wMl-h4-oS1" customClass="HomeMyMoneyCell" customModule="EmercoinOne" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeMyMoneyCell" rowHeight="70" id="wMl-h4-oS1" customClass="HomeMyMoneyCell" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMl-h4-oS1" id="DIE-WL-E8K">
@@ -70,7 +70,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgU-Is-Gwn">
-                                                            <rect key="frame" x="76" y="27" width="87.666666666666657" height="20"/>
+                                                            <rect key="frame" x="76" y="27" width="89.666666666666657" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="HCh-6c-bQa"/>
                                                             </constraints>
@@ -122,7 +122,7 @@
                                             <outlet property="titleLabel" destination="CgU-Is-Gwn" id="tc4-1U-DK4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCourseCell" rowHeight="70" id="Fec-DC-XbR" customClass="HomeCourseCell" customModule="EmercoinOne" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCourseCell" rowHeight="70" id="Fec-DC-XbR" customClass="HomeCourseCell" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="98" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fec-DC-XbR" id="Ej7-9V-BUs">
@@ -153,7 +153,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCx-Zy-gpH">
-                                                            <rect key="frame" x="76" y="27" width="72.666666666666657" height="20"/>
+                                                            <rect key="frame" x="76" y="27" width="74.666666666666657" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="8Iu-Zl-XKB"/>
                                                             </constraints>
@@ -195,7 +195,7 @@
                                     <outlet property="delegate" destination="4eb-RU-WSg" id="Sq0-Uk-qPo"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-ez-OKT" customClass="HomeLogoView" customModule="EmercoinOne" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-ez-OKT" customClass="HomeLogoView" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="414" height="186"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-2X-bGd">
@@ -217,7 +217,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE WALLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-4T-YeX">
-                                        <rect key="frame" x="117" y="126" width="180" height="29"/>
+                                        <rect key="frame" x="117.33333333333331" y="126" width="180" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="hab-M9-PWy"/>
                                         </constraints>
@@ -225,8 +225,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5J-ua-5zU">
-                                        <rect key="frame" x="92" y="88" width="230" height="38"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5J-ua-5zU">
+                                        <rect key="frame" x="78.333333333333343" y="88" width="257.66666666666663" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="NOI-8F-EB4"/>
                                         </constraints>

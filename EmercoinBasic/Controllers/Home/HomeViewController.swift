@@ -25,7 +25,9 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let wallet = AppManager.sharedInstance.wallet
+        guard let wallet = AppManager.sharedInstance.wallet else {
+            return
+        }
         
         coins = [wallet.emercoin]
         setupTableView()

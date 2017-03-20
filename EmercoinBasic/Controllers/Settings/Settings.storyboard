@@ -111,6 +111,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6B-i3-c4a">
                                                         <rect key="frame" x="0.0" y="0.0" width="89" height="25"/>
+                                                        <connections>
+                                                            <action selector="languageButtonPressed" destination="1On-ch-fOY" eventType="touchUpInside" id="H5z-sm-OXG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -179,6 +182,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihM-7q-eH9">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
+                                                        <connections>
+                                                            <action selector="currencyButtonPressed" destination="1On-ch-fOY" eventType="touchUpInside" id="cKu-ge-rCe"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

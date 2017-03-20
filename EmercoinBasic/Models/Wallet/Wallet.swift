@@ -2,32 +2,38 @@
 //  Wallet.swift
 //  EmercoinOne
 //
-//  Created by Sergey Lyubeznov on 16/02/2017.
-//  Copyright © 2017 Aspanta. All rights reserved.
-//
 
 import UIKit
+import ObjectMapper
 
-class Wallet {
+class Wallet:Mappable {
     
-    var emercoin:Coin
-    
-    var emcInBit:Double = 100.0
-    var bitInEmc:Double = 0.0001
-    
-    init() {
-        
+    var emercoin:Coin = {
         let emCoin = Coin()
-        
         emCoin.name = "EMERCOIN"
-        emCoin.amount = 10
+        emCoin.amount = 0.0
         emCoin.image = "emer_icon_1"
         emCoin.sign = "EMC"
         emCoin.color = Constants.Colors.Coins.Emercoin
-
+        return emCoin
+    }()
     
-        self.emercoin = emCoin
-
+    var emcInBit:Double = 100.0
+    var bitInEmc:Double = 0.0001
+    var balance:Double = 0.0 {
+        didSet{
+            emercoin.amount = balance
+        }
+    }
+    
+    private var loginInfo:[String:String] = [:]
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        balance <- map["balance"]
     }
     
     func exchangeRateBitcoinInEmercoin() -> String {
@@ -40,6 +46,10 @@ class Wallet {
     
     func stubMyAddresses() -> [String] {
         return [""]
+    }
+    
+    func loadInfo() {
+        
     }
 
 }

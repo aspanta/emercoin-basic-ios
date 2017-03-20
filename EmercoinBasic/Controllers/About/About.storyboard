@@ -21,7 +21,7 @@
         <!--About View Controller-->
         <scene sceneID="btv-uM-4Er">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="Jlj-Qk-eba" customClass="AboutViewController" customModule="EmercoinOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="Jlj-Qk-eba" customClass="AboutViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TcL-ed-2ZM"/>
                         <viewControllerLayoutGuide type="bottom" id="1ci-rw-QYK"/>
@@ -48,10 +48,9 @@
                                     <constraint firstAttribute="width" constant="58" id="KNl-od-s9Z"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-Oa-cL1">
-                                <rect key="frame" x="62" y="116" width="252" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-Oa-cL1">
+                                <rect key="frame" x="47" y="116" width="282" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="252" id="FlL-Pt-ut0"/>
                                     <constraint firstAttribute="height" constant="42" id="o5g-rF-Dda"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
@@ -61,8 +60,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mE2-i9-cfb">
                                 <rect key="frame" x="0.0" y="166" width="320" height="402"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Emercoin One" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlw-7f-91q">
-                                        <rect key="frame" x="73.5" y="8" width="228" height="29.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Emercoin Basic" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlw-7f-91q">
+                                        <rect key="frame" x="65" y="8" width="245" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

@@ -71,13 +71,13 @@ class SideMenuViewController: LGSideMenuController {
         var vc:UIViewController?
         
         switch index {
-        case 5:
+        case 4:
             vc = SettingsViewController.controller()
-        case 6:
+        case 5:
             vc = AboutViewController.controller()
-        case 7:
+        case 6:
             vc = FeedbackViewController.controller()
-        case 8:
+        case 7:
             if subIndex == 1 {
                 vc = TermOfUseViewController.controller()
             } else {

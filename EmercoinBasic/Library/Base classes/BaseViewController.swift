@@ -7,6 +7,8 @@ import UIKit
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate, TabBarObjectInfo {
     
+    internal var activiryIndicator:UIActivityIndicatorView?
+    
     var tabBarObject: TabBarObject?
     
     internal weak var statusBarView:UIView?

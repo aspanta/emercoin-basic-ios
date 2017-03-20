@@ -12,13 +12,16 @@ class CoinOperationsViewModel {
     
     
     let disposeBag = DisposeBag()
-    var wallet:Wallet = AppManager.sharedInstance.wallet
-    
+
     var coinCourseTitle = PublishSubject<NSAttributedString>()
     var coinAmount = PublishSubject<String>()
     var coinSign = PublishSubject<String>()
-
+    
     func updateUI() {
+        
+        guard let wallet = AppManager.sharedInstance.wallet else {
+            return
+        }
         
         let courseTitle = wallet.emercoin.exchangeAttributedString(color: .white)
         let amount = wallet.emercoin.amount

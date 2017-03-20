@@ -13,6 +13,11 @@
 		2D22B2441E7C4455008BB64F /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22B23E1E7C4455008BB64F /* AddressBookViewController.swift */; };
 		2D22B2451E7C4455008BB64F /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22B2401E7C4455008BB64F /* ContactCell.swift */; };
 		2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28C85D1E7C596C0071947A /* ContactViewModel.swift */; };
+		2D4D98E81E7FF7D400DFB784 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E21E7FF7D400DFB784 /* BaseAPI.swift */; };
+		2D4D98E91E7FF7D400DFB784 /* InfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E51E7FF7D400DFB784 /* InfoAPI.swift */; };
+		2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E71E7FF7D400DFB784 /* APIManager.swift */; };
+		2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D55021E8036CC004FC57D /* ObjectMapper.framework */; };
+		2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
 		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
 		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
@@ -195,6 +200,11 @@
 		2D22B23E1E7C4455008BB64F /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		2D22B2401E7C4455008BB64F /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		2D28C85D1E7C596C0071947A /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		2D4D98E21E7FF7D400DFB784 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		2D4D98E51E7FF7D400DFB784 /* InfoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoAPI.swift; sourceTree = "<group>"; };
+		2D4D98E71E7FF7D400DFB784 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		2D5D55021E8036CC004FC57D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewController + ActivityIndicator.swift"; sourceTree = "<group>"; };
 		2D997A701E7AC49400630560 /* EmercoinBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmercoinBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D997A861E7AC90700630560 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D997A871E7AC90700630560 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -379,6 +389,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */,
 				2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */,
 				2D997AA51E7ACF3B00630560 /* QRCode.framework in Frameworks */,
@@ -418,6 +429,39 @@
 				2D28C85D1E7C596C0071947A /* ContactViewModel.swift */,
 			);
 			path = ContactViewModel;
+			sourceTree = "<group>";
+		};
+		2D4D98E11E7FF7D400DFB784 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2D4D98E21E7FF7D400DFB784 /* BaseAPI.swift */,
+				2D4D98E31E7FF7D400DFB784 /* GET */,
+				2D4D98E41E7FF7D400DFB784 /* POST */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2D4D98E31E7FF7D400DFB784 /* GET */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GET;
+			sourceTree = "<group>";
+		};
+		2D4D98E41E7FF7D400DFB784 /* POST */ = {
+			isa = PBXGroup;
+			children = (
+				2D4D98E51E7FF7D400DFB784 /* InfoAPI.swift */,
+			);
+			path = POST;
+			sourceTree = "<group>";
+		};
+		2D4D98E61E7FF7D400DFB784 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				2D4D98E71E7FF7D400DFB784 /* APIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 		2D997A671E7AC49400630560 = {
@@ -567,6 +611,7 @@
 		2D997A9B1E7ACF3B00630560 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D5D55021E8036CC004FC57D /* ObjectMapper.framework */,
 				2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */,
 				2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */,
 				2D997A9E1E7ACF3B00630560 /* QRCode.framework */,
@@ -607,6 +652,7 @@
 				2D997AC51E7AD1FF00630560 /* BaseNavigationController.swift */,
 				2D997AC61E7AD1FF00630560 /* BasePageViewController.swift */,
 				2D997AC71E7AD1FF00630560 /* BaseTableViewCell.swift */,
+				2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */,
 				2D997AC81E7AD1FF00630560 /* BaseViewController.swift */,
 			);
 			path = "Base classes";
@@ -624,6 +670,8 @@
 			isa = PBXGroup;
 			children = (
 				2D997ACC1E7AD1FF00630560 /* AppManager */,
+				2D4D98E11E7FF7D400DFB784 /* API */,
+				2D4D98E61E7FF7D400DFB784 /* APIManager */,
 				2D997ACE1E7AD1FF00630560 /* Base objects extensions */,
 				2D997ADA1E7AD1FF00630560 /* DropDown */,
 				2D997AE71E7AD1FF00630560 /* GenerationWordsHelper */,
@@ -1607,6 +1655,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/QRCode.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
 			);
@@ -1669,6 +1718,7 @@
 				2D997B181E7AD1FF00630560 /* QRCodeHelper.swift in Sources */,
 				2D997BC11E7AD2B600630560 /* HomeLogoView.swift in Sources */,
 				2D997AFF1E7AD1FF00630560 /* BasePageViewController.swift in Sources */,
+				2D4D98E91E7FF7D400DFB784 /* InfoAPI.swift in Sources */,
 				2D997CD91E7AD3B200630560 /* ScanQRCodeController.swift in Sources */,
 				2D997BD81E7AD2B600630560 /* SuccessSendView.swift in Sources */,
 				2D997C061E7AD37700630560 /* HistoryTransactionViewModel.swift in Sources */,
@@ -1690,6 +1740,7 @@
 				2D997CB41E7AD3B200630560 /* HistoryViewController + TableView.swift in Sources */,
 				2D997CB31E7AD3B200630560 /* HistoryCell.swift in Sources */,
 				2D997D011E7AD3B200630560 /* MenuExitCell.swift in Sources */,
+				2D4D98E81E7FF7D400DFB784 /* BaseAPI.swift in Sources */,
 				2D997B001E7AD1FF00630560 /* BaseTableViewCell.swift in Sources */,
 				2D997B211E7AD1FF00630560 /* FXPageControl.m in Sources */,
 				2D997BB21E7AD2B600630560 /* AddContactView.swift in Sources */,
@@ -1733,6 +1784,7 @@
 				2D997BD11E7AD2B600630560 /* YesButton.swift in Sources */,
 				2D997B111E7AD1FF00630560 /* DPDUIView+Extension.swift in Sources */,
 				2D997BD61E7AD2B600630560 /* RoundButton.swift in Sources */,
+				2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */,
 				2D997B521E7AD24E00630560 /* Coin.swift in Sources */,
 				2D997D071E7AD3B200630560 /* PrivacyPolicyViewController.swift in Sources */,
 				2D997CE11E7AD3B200630560 /* FeedbackViewController.swift in Sources */,
@@ -1752,6 +1804,7 @@
 				2D997B191E7AD1FF00630560 /* Router.swift in Sources */,
 				2D997B0E1E7AD1FF00630560 /* Utils.swift in Sources */,
 				2D997BCA1E7AD2B600630560 /* EnterAddressRecordView.swift in Sources */,
+				2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */,
 				2D997B0F1E7AD1FF00630560 /* DPDConstants.swift in Sources */,
 				2D997B5E1E7AD24E00630560 /* MenuItem.swift in Sources */,
 				2D997B091E7AD1FF00630560 /* UIImage + Utils.swift in Sources */,

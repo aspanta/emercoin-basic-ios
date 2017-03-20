@@ -1,5 +1,6 @@
 github "hackiftekhar/IQKeyboardManager" "v4.0.8"
 github "Friend-LGA/LGSideMenuController" "2.0.5"
+github "Hearst-DD/ObjectMapper" "2.2.5"
 github "aschuch/QRCode" "2.0"
 github "yannickl/QRCodeReader.swift" "7.3.0"
 github "ReactiveX/RxSwift" "3.3.1"
