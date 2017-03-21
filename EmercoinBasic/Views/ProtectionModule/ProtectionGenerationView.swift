@@ -1,6 +1,6 @@
 //
 //  ProtectionGenerateWordView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 //
 //  ProtectionModuleViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

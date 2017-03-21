@@ -1,6 +1,6 @@
 //
 //  EncryptionButton.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 

@@ -1,6 +1,6 @@
 //
 //  Coin.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 import UIKit
 

@@ -1,6 +1,6 @@
 //
 //  RequestSendView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

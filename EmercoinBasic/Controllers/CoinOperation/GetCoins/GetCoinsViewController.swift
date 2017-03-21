@@ -1,6 +1,6 @@
 //
 //  GetCoinsViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

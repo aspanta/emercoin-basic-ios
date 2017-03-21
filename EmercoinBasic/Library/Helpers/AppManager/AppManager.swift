@@ -1,6 +1,6 @@
 //
 //  AppManager.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

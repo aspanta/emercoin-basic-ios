@@ -1,6 +1,6 @@
 //
 //  SettingsViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 //
 //  BCNoteCell.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,13 +1,12 @@
 //
-//  InfoAPI.swift
+//  BalanceAPI.swift
 //  EmercoinBasic
 //
 
 import UIKit
-import ObjectMapper
 
-class InfoAPI: BaseAPI {
-    
+class BalanceAPI: BaseAPI {
+
     override func method() -> HTTPMethod {
         return .post
     }
@@ -15,7 +14,7 @@ class InfoAPI: BaseAPI {
     override func parameters() -> [String : Any] {
         
         var param = super.parameters()
-        let method = Constants.API.GetInfo
+        let method = Constants.API.GetBalance
         param["method"] = method
         
         return param
@@ -23,11 +22,10 @@ class InfoAPI: BaseAPI {
     
     override func apiDidReturnData(data: AnyObject) {
         
-        if let wallet = Mapper<Wallet>().map(JSON: data["result"] as! [String:AnyObject]) {
-            super.apiDidReturnData(data: wallet as AnyObject)
+        if let balance = data["result"] as? Double  {
+            super.apiDidReturnData(data: balance as AnyObject)
         } else {
             super.apiDidReturnData(data: data)
         }
     }
-
 }

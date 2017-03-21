@@ -1,6 +1,6 @@
 //
 //  EnterAddressRecordView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

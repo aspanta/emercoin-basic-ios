@@ -1,6 +1,6 @@
 //
 //  MyNotesViewController + TableView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

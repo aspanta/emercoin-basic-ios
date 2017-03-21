@@ -1,6 +1,6 @@
 //
 //  LoginButton.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

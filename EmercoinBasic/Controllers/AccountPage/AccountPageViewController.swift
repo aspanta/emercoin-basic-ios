@@ -1,6 +1,6 @@
 //
 //  AccountPageViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

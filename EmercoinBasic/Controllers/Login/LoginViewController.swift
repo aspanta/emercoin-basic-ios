@@ -1,6 +1,6 @@
 //
 //  LoginViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
@@ -98,7 +98,7 @@ class LoginViewController: BaseViewController {
     private func fillData() {
         
         let host = "174.138.88.96"
-        let port = "6662"
+        let port = "6682"
         let login = "emccoinrpc"
         let password = "iejeet2vae4rohcohh2soRasi9roha4gaigohNaezaeNgahtaichay2xaed8Meew"
         let webProtocol = "https"
@@ -129,6 +129,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func skipButtonPressed(sender:UIButton) {
         
+    AppManager.sharedInstance.wallet = Wallet(amount: 100)
         showMainController()
     }
     

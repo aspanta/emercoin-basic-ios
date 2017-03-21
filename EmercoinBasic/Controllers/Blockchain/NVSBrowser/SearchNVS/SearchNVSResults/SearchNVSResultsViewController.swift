@@ -1,6 +1,6 @@
 //
 //  SearchNVSResultsViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

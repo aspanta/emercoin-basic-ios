@@ -1,6 +1,6 @@
 //
 //  MyAdressViewController + TableView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

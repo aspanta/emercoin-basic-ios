@@ -1,6 +1,6 @@
 //
 //  CoinOperationsHeaderView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

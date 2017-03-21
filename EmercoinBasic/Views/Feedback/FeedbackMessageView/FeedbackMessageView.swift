@@ -1,6 +1,6 @@
 //
 //  FeedbackMessageView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

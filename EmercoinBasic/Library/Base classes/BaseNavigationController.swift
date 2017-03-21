@@ -1,6 +1,6 @@
 //
 //  BaseNavigationController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

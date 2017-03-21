@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import Foundation
@@ -11,7 +11,9 @@ struct Constants {
     
     struct API {
         static let BaseURL = ""
-        static let getInfo = "getinfo"
+        static let GetInfo = "getinfo"
+        static let GetTransactions = "listtransactions"
+        static let GetBalance = "getbalance"
     }
     
     struct CellHeights {

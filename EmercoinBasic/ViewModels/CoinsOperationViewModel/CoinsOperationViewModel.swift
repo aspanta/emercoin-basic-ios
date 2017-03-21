@@ -1,6 +1,6 @@
 //
 //  CoinOperationsViewModel.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 

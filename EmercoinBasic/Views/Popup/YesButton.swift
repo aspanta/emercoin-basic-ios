@@ -1,6 +1,6 @@
 //
 //  YesButton.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

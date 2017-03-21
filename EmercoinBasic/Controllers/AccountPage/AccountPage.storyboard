@@ -64,7 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUv-Ud-Nvs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUv-Ud-Nvs">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -149,16 +149,23 @@
                                     <outlet property="delegate" destination="1k6-jz-AqF" id="cGs-RZ-2ja"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6sM-vi-uyb">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.40784313729999999" green="0.28627450980000002" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QUv-Ud-Nvs" secondAttribute="trailing" id="Dbq-uK-Raa"/>
+                            <constraint firstItem="6sM-vi-uyb" firstAttribute="centerY" secondItem="p6D-me-SRJ" secondAttribute="centerY" id="M8r-AO-btg"/>
                             <constraint firstItem="QUv-Ud-Nvs" firstAttribute="leading" secondItem="p6D-me-SRJ" secondAttribute="leading" id="YaY-S2-UnH"/>
                             <constraint firstItem="QUv-Ud-Nvs" firstAttribute="top" secondItem="zEH-Q7-Gge" secondAttribute="bottom" id="eC7-XK-GpE"/>
+                            <constraint firstItem="6sM-vi-uyb" firstAttribute="centerX" secondItem="p6D-me-SRJ" secondAttribute="centerX" id="jku-PA-y7A"/>
                             <constraint firstItem="1SX-Z2-22U" firstAttribute="top" secondItem="QUv-Ud-Nvs" secondAttribute="bottom" id="uvC-eJ-4Lb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="6sM-vi-uyb" id="Jnf-oi-J5H"/>
                         <outlet property="tableView" destination="QUv-Ud-Nvs" id="vkZ-TO-cdd"/>
                     </connections>
                 </viewController>

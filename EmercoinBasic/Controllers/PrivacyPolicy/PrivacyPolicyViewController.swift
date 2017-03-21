@@ -1,6 +1,6 @@
 //
 //  PrivacyPolicyViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

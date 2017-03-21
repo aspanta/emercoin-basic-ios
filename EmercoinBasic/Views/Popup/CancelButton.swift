@@ -1,6 +1,6 @@
 //
 //  CancelButton.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

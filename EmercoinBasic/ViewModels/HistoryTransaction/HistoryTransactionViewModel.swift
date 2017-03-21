@@ -1,6 +1,6 @@
 //
 //  HistoryTransactionViewModel.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
@@ -10,19 +10,14 @@ class HistoryTransactionViewModel {
     var date:String = ""
     var address:String = ""
     var amount:String = ""
-    var sign:String = ""
+    var sign:String = "EMC"
     var imageTransactionDirection:UIImage? = nil
     
     init(historyTransaction:HistoryTransaction) {
         
-        self.date = historyTransaction.date
-        self.address = historyTransaction.address
-        self.amount = historyTransaction.coin.stringAmount()
-        
-        guard let sign = historyTransaction.coin.sign else {
-            return
-        }
-        self.sign = sign
+        self.date = historyTransaction.date ?? ""
+        self.address = historyTransaction.address ?? ""
+        self.amount = String(format:"%0.2f",historyTransaction.amount)
         
         let isIncoming = historyTransaction.typeOperation == .incoming
         

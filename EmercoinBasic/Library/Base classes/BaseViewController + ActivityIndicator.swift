@@ -10,7 +10,7 @@ extension BaseViewController {
     internal func createActivityIndicator() {
         
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        indicator.color = UIColor.init(hexString: Constants.Colors.Status.Emercoin)
+        indicator.color = UIColor(hexString: Constants.Colors.Status.Emercoin)
         indicator.center = view.center
         activiryIndicator = indicator
     }

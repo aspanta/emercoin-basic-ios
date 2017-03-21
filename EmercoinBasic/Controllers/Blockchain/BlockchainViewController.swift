@@ -1,6 +1,6 @@
 //
 //  BlockchainViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

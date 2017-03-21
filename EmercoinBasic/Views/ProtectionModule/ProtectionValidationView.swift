@@ -1,6 +1,6 @@
 //
 //  ProtectionValidationView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 

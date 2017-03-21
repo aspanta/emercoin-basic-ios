@@ -1,6 +1,6 @@
 //
 //  QRCodeHelper.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

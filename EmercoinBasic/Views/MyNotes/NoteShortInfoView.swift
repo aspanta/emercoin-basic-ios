@@ -1,6 +1,6 @@
 //
 //  NoteShortInfoView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 //
 //  Contact.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

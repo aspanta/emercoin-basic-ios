@@ -1,6 +1,6 @@
 //
 //  GenerationWordsHelper.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

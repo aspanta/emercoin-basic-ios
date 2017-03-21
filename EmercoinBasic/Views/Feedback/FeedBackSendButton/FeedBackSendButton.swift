@@ -1,6 +1,6 @@
 //
 //  FeedBackSendButton.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

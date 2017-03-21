@@ -1,6 +1,6 @@
 //
 //  HomeViewController + TableView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

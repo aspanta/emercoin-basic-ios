@@ -1,6 +1,6 @@
 //
 //  NVSInfoViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

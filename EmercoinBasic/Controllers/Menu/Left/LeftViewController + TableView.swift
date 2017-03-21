@@ -1,6 +1,6 @@
 //
 //  LeftViewController + TableView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,9 +1,6 @@
 //
 //  BaseAPI.swift
-//  VKApp
-//
-//  Created by Sergey Lyubeznov on 10/01/2017.
-//  Copyright © 2017 Sergey Lyubeznov. All rights reserved.
+//  EmercoinBasic
 //
 
 import UIKit
@@ -38,6 +35,7 @@ class BaseAPI: NSObject {
     var object:AnyObject?
     
     var addAccessToken = true
+    var timeRequest:Double = 10
     
     internal var dataTask:URLSessionTask?
 
@@ -72,6 +70,7 @@ class BaseAPI: NSObject {
         
         var request = URLRequest.init(url: url)
         request.httpMethod = method.rawValue
+        request.timeoutInterval = timeRequest
         
         if Constants.Permissions.JsonBody {
             let jsonData = jsonDataBody(param: parameters)

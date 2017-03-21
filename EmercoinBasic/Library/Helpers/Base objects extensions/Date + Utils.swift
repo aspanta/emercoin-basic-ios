@@ -1,11 +1,9 @@
 
 //
 //  Date + Utils.swift
-//  VKApp
+//  Emercoin
 //
-//  Created by Sergey Lyubeznov on 24/01/2017.
-//  Copyright © 2017 Sergey Lyubeznov. All rights reserved.
-//
+
 
 import UIKit
 
@@ -15,6 +13,14 @@ extension Date {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let dateString = dateFormatter.string(from:self)
+        return dateString
+    }
+    
+    func transactionStringDate() -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         let dateString = dateFormatter.string(from:self)
         return dateString
     }

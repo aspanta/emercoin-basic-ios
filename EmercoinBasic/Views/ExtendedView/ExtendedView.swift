@@ -1,6 +1,6 @@
 //
 //  ExtendedView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 

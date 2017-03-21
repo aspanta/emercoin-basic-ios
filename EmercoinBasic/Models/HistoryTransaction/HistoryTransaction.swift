@@ -1,27 +1,40 @@
 //
 //  HistoryTransaction.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
+import ObjectMapper
 
-enum TransactionDirection {
-    case incoming
-    case outcoming
+enum TransactionDirection:String {
+    case incoming = "receive"
+    case outcoming = "send"
 }
 
-class HistoryTransaction: NSObject {
+class HistoryTransaction: BaseModel {
     
-    var coin:Coin
-    var date:String
-    var address:String
-    var typeOperation:TransactionDirection
+    var amount:Double = 0.0
+    var date:String?
+    var address:String?
+    var typeOperation:TransactionDirection = .incoming
+    var timereceived:TimeInterval = 0 {
+        didSet {
+            date = Date.init(timeIntervalSince1970: timereceived).transactionStringDate()
+        }
+    }
     
-    init(coin:Coin, date:String, address:String) {
-        self.coin = coin
-        self.date = date
-        self.address = address
-        self.typeOperation = (arc4random_uniform(2) > 0) ? .incoming : .outcoming
+    var category:String? {
+        didSet {
+            typeOperation = TransactionDirection(rawValue: category ?? "")!
+        }
+    }
+    
+    override func mapping(map: Map) {
+        
+        amount <- map["amount"]
+        address <- map["address"]
+        timereceived <- map["timereceived"]
+        category <- map["category"]
     }
 
 }

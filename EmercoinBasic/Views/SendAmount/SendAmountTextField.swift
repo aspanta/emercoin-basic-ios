@@ -1,6 +1,6 @@
 //
 //  SendAmountTextField.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

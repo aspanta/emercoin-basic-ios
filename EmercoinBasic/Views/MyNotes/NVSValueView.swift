@@ -1,6 +1,6 @@
 //
 //  NVSValueView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

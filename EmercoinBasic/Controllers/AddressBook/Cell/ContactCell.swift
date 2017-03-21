@@ -1,9 +1,6 @@
 //
 //  ContactCell.swift
-//  EmercoinOne
-//
-//  Created by Sergey Lyubeznov on 20/02/2017.
-//  Copyright © 2017 Aspanta. All rights reserved.
+//  EmercoinBasic
 //
 
 import UIKit

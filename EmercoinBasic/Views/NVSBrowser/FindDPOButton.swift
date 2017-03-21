@@ -1,6 +1,6 @@
 //
 //  FindDPOButton.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

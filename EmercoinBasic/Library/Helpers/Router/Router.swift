@@ -1,6 +1,6 @@
 //
 //  Router.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import Foundation

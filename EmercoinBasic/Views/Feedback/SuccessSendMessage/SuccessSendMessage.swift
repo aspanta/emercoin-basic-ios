@@ -1,6 +1,6 @@
 //
 //  SuccessSendMessage.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,7 +1,7 @@
 
 //
 //  HistoryViewController + TableView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

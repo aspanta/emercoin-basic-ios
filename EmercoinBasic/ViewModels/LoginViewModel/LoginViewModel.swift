@@ -1,6 +1,6 @@
 //
 //  LoginViewModel.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
@@ -63,8 +63,8 @@ class LoginViewModel {
         
         APIManager.sharedInstance.login(at: loginInfo) {[weak self] (data, error) in
             self?.isActivityIndicator.onNext(false)
-            if let currentError = error {
-                self?.isError.onNext(currentError)
+            if error != nil {
+                self?.isError.onNext(error!)
             } else {
                 
                 if let wallet = data as? Wallet {
@@ -72,7 +72,6 @@ class LoginViewModel {
                 }
                 self?.isSuccessLogin.onNext(true)
             }
-            
         }
     }
     

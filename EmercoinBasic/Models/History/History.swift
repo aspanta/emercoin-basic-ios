@@ -1,9 +1,12 @@
 //
 //  History.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+
 
 class History: NSObject {
 
@@ -11,9 +14,16 @@ class History: NSObject {
     
     var transactions:[HistoryTransaction] {
         get {
-            return transactionList
+            return transactionList.sorted(by: { (tr1, tr2) -> Bool in
+                return tr1.timereceived > tr2.timereceived
+            })
         }
     }
+    
+    let disposeBag = DisposeBag()
+    var success = PublishSubject<Bool>()
+    var error = PublishSubject<Error>()
+    var isActivityIndicator = PublishSubject<Bool>()
     
     func add(transaction:HistoryTransaction) {
         transactionList.append(transaction)
@@ -27,34 +37,21 @@ class History: NSObject {
         transactionList.removeAll()
     }
     
-    func stubContacts() {
+    func load() {
         
-        let coin1 = Coin()
-        coin1.amount = 100
+        isActivityIndicator.onNext(true)
         
-        let coin2 = Coin()
-        coin2.amount = 200
-        
-        let coin3 = Coin()
-        coin3.amount = 300
-        
-        let coin4 = Coin()
-        coin4.amount = 400
-        
-        let coin5 = Coin()
-        coin5.amount = 500
-        
-        let trans1 = HistoryTransaction(coin: coin1, date: "28 .04. 2004", address: "1YhdkU125423kdf58RtEb6")
-        let trans2 = HistoryTransaction(coin: coin2, date: "27 .04. 2004", address: "1YhdkU125423kdf58RtEb6")
-        let trans3 = HistoryTransaction(coin: coin3, date: "26 .04. 2004", address: "1YhdkU125423kdf58RtEb6")
-        let trans4 = HistoryTransaction(coin: coin4, date: "25 .04. 2004", address: "1YhdkU125423kdf58RtEb6")
-        let trans5 = HistoryTransaction(coin: coin5, date: "24 .04. 2004", address: "1YhdkU125423kdf58RtEb6")
-        
-        add(transaction: trans1)
-        add(transaction: trans2)
-        add(transaction: trans3)
-        add(transaction: trans4)
-        add(transaction: trans5)
-        
+        APIManager.sharedInstance.loadTransactions {[weak self] (data, error) in
+            self?.isActivityIndicator.onNext(false)
+            if error == nil {
+                guard let transactions = data as? [HistoryTransaction] else {
+                    return
+                }
+                self?.transactionList = transactions
+                self?.success.onNext(true)
+            } else {
+                self?.error.onNext(error!)
+            }
+        }
     }
 }

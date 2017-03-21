@@ -1,12 +1,18 @@
 //
 //  Wallet.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
 import ObjectMapper
+import RxCocoa
+import RxSwift
 
-class Wallet:Mappable {
+class Wallet:BaseModel {
+    
+    var success = PublishSubject<Bool>()
+    var error = PublishSubject<Error>()
+    var isActivityIndicator = PublishSubject<Bool>()
     
     var emercoin:Coin = {
         let emCoin = Coin()
@@ -18,8 +24,15 @@ class Wallet:Mappable {
         return emCoin
     }()
     
-    var emcInBit:Double = 100.0
-    var bitInEmc:Double = 0.0001
+    init(amount:Double) {
+        emercoin.amount = amount
+        super.init()
+    }
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
     var balance:Double = 0.0 {
         didSet{
             emercoin.amount = balance
@@ -28,28 +41,26 @@ class Wallet:Mappable {
     
     private var loginInfo:[String:String] = [:]
     
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         balance <- map["balance"]
-    }
-    
-    func exchangeRateBitcoinInEmercoin() -> String {
-        return String(format:"1 EMC = %0.4f BTC",bitInEmc)
-    }
-    
-    func exchangeRateEmercoinInBitcoin() -> String {
-        return String(format:"1 BTC = %0.4f EMC",emcInBit)
     }
     
     func stubMyAddresses() -> [String] {
         return [""]
     }
     
-    func loadInfo() {
-        
+    func loadBalance() {
+     
+        APIManager.sharedInstance.loadBalance {[weak self] (data, error) in
+            self?.isActivityIndicator.onNext(false)
+            if error != nil {
+                self?.error.onNext(error!)
+            } else {
+                if let balance = data as? Double {
+                    self?.balance = balance
+                }
+                self?.success.onNext(true)
+            }
+        }
     }
-
 }

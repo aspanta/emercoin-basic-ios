@@ -1,6 +1,6 @@
 //
 //  BCNoteViewModel.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

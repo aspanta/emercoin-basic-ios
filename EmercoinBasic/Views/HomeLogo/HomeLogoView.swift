@@ -1,6 +1,6 @@
 //
 //  HomeLogoView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

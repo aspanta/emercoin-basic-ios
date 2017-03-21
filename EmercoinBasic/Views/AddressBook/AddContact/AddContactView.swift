@@ -1,6 +1,6 @@
 //
 //  AddContactView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 //
 //  RecipientAddressNVSViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

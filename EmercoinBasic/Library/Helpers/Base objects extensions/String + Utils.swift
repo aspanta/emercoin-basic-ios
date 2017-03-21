@@ -1,9 +1,6 @@
 //
 //  String + Utils.swift
-//  C-way
-//
-//  Created by Sergey Lyubeznov on 02/08/16.
-//  Copyright © 2016 El-Machine. All rights reserved.
+//  EmercoinBasic
 //
 
 import Foundation

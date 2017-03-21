@@ -1,6 +1,6 @@
 //
 //  SendCoinsViewController.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

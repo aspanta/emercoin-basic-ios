@@ -1,6 +1,6 @@
 //
 //  DeleteContact.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

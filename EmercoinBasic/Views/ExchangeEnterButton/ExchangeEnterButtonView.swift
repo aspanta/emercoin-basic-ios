@@ -1,6 +1,6 @@
 //
 //  ExchangeEnterButtonView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit
