@@ -41,7 +41,7 @@ class BaseAPI: NSObject {
 
     public func startRequest(completion:@escaping (_ data: AnyObject?,_ error:Error?) -> Void) {
         
-        guard let loginInfo = object as? [String:String] else {
+        guard let loginInfo = object as? [String:AnyObject] else {
             return
         }
         
@@ -104,8 +104,16 @@ class BaseAPI: NSObject {
                         }
                     }
                     
-                    let domain = StatusCode(rawValue: statusCode)?.description
+                    var domain = StatusCode(rawValue: statusCode)?.description
+                    
+                    if let tempError = jsonObject?["error"] as? [String:AnyObject] {
+                        domain = tempError["message"] as? String
+                    }
+                    
                     let newError = NSError(domain: domain!, code: statusCode, userInfo: nil)
+                    
+                    
+                    
                     self.apiDidReturnError(error:newError)
                 }
             }
@@ -148,7 +156,7 @@ class BaseAPI: NSObject {
     }
     
     func method() -> HTTPMethod {
-        return .get
+        return .post
     }
     
     func parameters() -> [String:Any] {
@@ -159,21 +167,21 @@ class BaseAPI: NSObject {
         return ""
     }
     
-    private func getBaseUrl(at loginInfo:[String:String]) -> String {
+    private func getBaseUrl(at loginInfo:[String:AnyObject]) -> String {
         
-        guard let host = loginInfo["host"],
-            let port = loginInfo["port"],
-            let webProtocol = loginInfo["protocol"]   else {
+        guard let host = loginInfo["host"] as? String,
+            let port = loginInfo["port"] as? String,
+            let webProtocol = loginInfo["protocol"] as? String else {
             return ""
         }
         
         return String(format:"%@://%@:%@",webProtocol,host,port)
     }
     
-    private func authConfig(at loginInfo:[String:String]) -> URLSessionConfiguration? {
+    private func authConfig(at loginInfo:[String:AnyObject]) -> URLSessionConfiguration? {
         
-        guard let user = loginInfo["user"],
-        let password = loginInfo["password"]
+        guard let user = loginInfo["user"] as? String,
+        let password = loginInfo["password"] as? String
         else {
             return nil
         }

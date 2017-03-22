@@ -6,10 +6,6 @@
 import UIKit
 
 class BalanceAPI: BaseAPI {
-
-    override func method() -> HTTPMethod {
-        return .post
-    }
     
     override func parameters() -> [String : Any] {
         

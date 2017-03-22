@@ -7,10 +7,6 @@ import UIKit
 import ObjectMapper
 
 class TransactionsAPI: BaseAPI {
-
-    override func method() -> HTTPMethod {
-        return .post
-    }
     
     override func parameters() -> [String : Any] {
         

@@ -14,6 +14,7 @@ struct Constants {
         static let GetInfo = "getinfo"
         static let GetTransactions = "listtransactions"
         static let GetBalance = "getbalance"
+        static let SendCoins = "sendtoaddress"
     }
     
     struct CellHeights {

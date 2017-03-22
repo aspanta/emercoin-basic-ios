@@ -97,10 +97,10 @@ class LoginViewController: BaseViewController {
     
     private func fillData() {
         
-        let host = "174.138.88.96"
-        let port = "6682"
+        let host = "10.144.0.102"
+        let port = "6662"
         let login = "emccoinrpc"
-        let password = "iejeet2vae4rohcohh2soRasi9roha4gaigohNaezaeNgahtaichay2xaed8Meew"
+        let password = "Taequohei1ohYiDii2ufangie8dash5aepoucoh9uWae7idoBoop1oul3cesetoo"
         let webProtocol = "https"
         
         hostTextField.text = host

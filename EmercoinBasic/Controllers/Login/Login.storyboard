@@ -22,7 +22,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -281,7 +281,7 @@
                                     <constraint firstItem="Oip-lX-Zw8" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="top" id="qlj-xt-rwp"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Ck-fRE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Ck-fRE">
                                 <rect key="frame" x="282" y="441" width="33" height="30"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.4039215686" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SKIP">
@@ -291,7 +291,7 @@
                                     <action selector="skipButtonPressedWithSender:" destination="rgu-oq-k0z" eventType="touchUpInside" id="l8x-d0-E0G"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-c1-vEM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-c1-vEM">
                                 <rect key="frame" x="240" y="441" width="35" height="30"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.4039215686" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="INFO">

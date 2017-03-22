@@ -21,6 +21,7 @@
 		2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E71E7FF7D400DFB784 /* APIManager.swift */; };
 		2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D55021E8036CC004FC57D /* ObjectMapper.framework */; };
 		2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */; };
+		2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
 		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
 		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
@@ -211,6 +212,7 @@
 		2D4D98E71E7FF7D400DFB784 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2D5D55021E8036CC004FC57D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewController + ActivityIndicator.swift"; sourceTree = "<group>"; };
+		2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCoinsAPI.swift; sourceTree = "<group>"; };
 		2D997A701E7AC49400630560 /* EmercoinBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmercoinBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D997A861E7AC90700630560 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D997A871E7AC90700630560 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D6537C41E82863E0051B953 /* SendCoins */,
 				2D4877D41E818DFF0084129C /* Balance */,
 				2D4877D11E814E3E0084129C /* Transactions */,
 				2D4D98E51E7FF7D400DFB784 /* InfoAPI.swift */,
@@ -494,6 +497,14 @@
 				2D4D98E71E7FF7D400DFB784 /* APIManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		2D6537C41E82863E0051B953 /* SendCoins */ = {
+			isa = PBXGroup;
+			children = (
+				2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */,
+			);
+			path = SendCoins;
 			sourceTree = "<group>";
 		};
 		2D997A671E7AC49400630560 = {
@@ -1824,6 +1835,7 @@
 				2D997CE11E7AD3B200630560 /* FeedbackViewController.swift in Sources */,
 				2D997CFF1E7AD3B200630560 /* MenuBCToolsCell.swift in Sources */,
 				2D997B031E7AD1FF00630560 /* AppManager.swift in Sources */,
+				2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */,
 				2D997CBE1E7AD3B200630560 /* BlockchainViewController.swift in Sources */,
 				2D997BCB1E7AD2B600630560 /* NoteInfoVIew.swift in Sources */,
 				2D997B071E7AD1FF00630560 /* String + Utils.swift in Sources */,

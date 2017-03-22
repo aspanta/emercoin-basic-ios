@@ -25,7 +25,7 @@ class LoginViewModel {
     var isError = PublishSubject<Error>()
     var isActivityIndicator = PublishSubject<Bool>()
 
-    
+    var isLoading = false
     var isValid = false
     
     func validateCredentials() {
@@ -51,6 +51,8 @@ class LoginViewModel {
     
     func performLogin() {
         
+        if isLoading {return}
+        
         var loginInfo = [String:String]()
         
         loginInfo["host"] = host
@@ -60,8 +62,10 @@ class LoginViewModel {
         loginInfo["protocol"] = webProtocol
         
         isActivityIndicator.onNext(true)
+        isLoading = true
         
         APIManager.sharedInstance.login(at: loginInfo) {[weak self] (data, error) in
+            self?.isLoading = false
             self?.isActivityIndicator.onNext(false)
             if error != nil {
                 self?.isError.onNext(error!)

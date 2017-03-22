@@ -23,6 +23,9 @@ class SendCoinsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSend()
+        setupActivityIndicator()
     }
     
     override func setupUI() {
@@ -49,29 +52,51 @@ class SendCoinsViewController: BaseViewController {
         }
     }
     
+    private func setupSend() {
+        
+        viewModel?.success.subscribe(onNext:{ [weak self] success in
+            if success {self?.showSuccesSendView()}
+        })
+            .addDisposableTo(disposeBag)
+        
+        viewModel?.error.subscribe(onNext:{ [weak self] error in
+            self?.showErrorAlert(at: error)
+        })
+            .addDisposableTo(disposeBag)
+    }
+    
+    private func setupActivityIndicator() {
+        
+        viewModel?.activityIndicator.subscribe(onNext:{ [weak self] state in
+            if state {
+                self?.showActivityIndicator()
+            } else {
+                self?.hideActivityIndicator()
+            }
+            
+        })
+            .addDisposableTo(disposeBag)
+    }
+    
     private func addRequestSendView() {
     
-        let amount = amountTextField.text
+        let amount = amountTextField.text?.replacingOccurrences(of: ",", with: ".")
+        let address = addressTextField.text
         
-        if (amount?.length)! > 0 {
+        if (amount?.length)! > 0 && (address?.length)! > 0  {
         
             let requestSendView:RequestSendView! = loadViewFromXib(name: "Send", index: 0,
                                                                    frame: self.parent!.view.frame) as! RequestSendView
             let requestString = String(format:"Do you want to send to the address %@ EMC?", amount!)
             requestSendView.amountLabel?.text = requestString
-            requestSendView.sendCoins = ({
-                //TODO: send coins
-                print("ok")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.addSuccesSendView()
-                }
+            requestSendView.sendCoins = ({[weak self] in
+                self?.viewModel?.sendCoins(at: [address!,Double(amount!)!] as AnyObject)
             })
              self.parent?.view.addSubview(requestSendView)
         }
     }
     
-    private func addSuccesSendView() {
+    private func showSuccesSendView() {
         
         let successView:SuccessSendView! = loadViewFromXib(name: "Send", index: 1,
                                                            frame: self.parent!.view.frame) as! SuccessSendView
@@ -89,8 +114,21 @@ class SendCoinsViewController: BaseViewController {
         self.parent?.view.addSubview(successView)
     }
     
+    private func showErrorAlert(at error:Error) {
+        
+        let alert = UIAlertController(
+            title: "Error",
+            message: String (format:error.localizedDescription),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+        
+        print(error.localizedDescription)
+    }
+    
     @IBAction func sendButtonPressed(sender:UIButton) {
-        print("sendButtonPressed")
         
         addRequestSendView()
     }

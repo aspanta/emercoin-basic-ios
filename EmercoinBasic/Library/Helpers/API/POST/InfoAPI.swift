@@ -8,10 +8,6 @@ import ObjectMapper
 
 class InfoAPI: BaseAPI {
     
-    override func method() -> HTTPMethod {
-        return .post
-    }
-    
     override func parameters() -> [String : Any] {
         
         var param = super.parameters()

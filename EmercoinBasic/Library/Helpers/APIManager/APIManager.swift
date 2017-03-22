@@ -9,6 +9,7 @@ enum APIType {
     case balance
     case info
     case transactions
+    case sendCoins
 }
 
 class APIManager: NSObject {
@@ -42,6 +43,18 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
+    func sendCoins(at sendData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+        
+        let api = getApi(at: .sendCoins)
+        
+        if var params = api.object as? [String:AnyObject] {
+            params["sendData"] = sendData as AnyObject?
+            api.object = params as AnyObject?
+        }
+        
+        api.startRequest(completion: completion)
+    }
+    
     private func getApi(at type:APIType) -> BaseAPI {
         
         var api:BaseAPI = BaseAPI()
@@ -50,6 +63,7 @@ class APIManager: NSObject {
             case .balance:api = BalanceAPI()
             case .info:api = InfoAPI()
             case .transactions:api = TransactionsAPI()
+            case .sendCoins:api = SendCoinsAPI()
         }
         
         api.object = loginInfo as AnyObject?
