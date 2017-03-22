@@ -17,7 +17,7 @@ class HistoryTransactionViewModel {
         
         self.date = historyTransaction.date ?? ""
         self.address = historyTransaction.address ?? ""
-        self.amount = String(format:"%0.2f",historyTransaction.amount)
+        self.amount = String.coinFormat(at: historyTransaction.amount)
         
         let isIncoming = historyTransaction.typeOperation == .incoming
         

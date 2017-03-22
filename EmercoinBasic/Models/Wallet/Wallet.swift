@@ -36,6 +36,7 @@ class Wallet:BaseModel {
     var balance:Double = 0.0 {
         didSet{
             emercoin.amount = balance
+              success.onNext(true)
         }
     }
     
@@ -59,7 +60,6 @@ class Wallet:BaseModel {
                 if let balance = data as? Double {
                     self?.balance = balance
                 }
-                self?.success.onNext(true)
             }
         }
     }

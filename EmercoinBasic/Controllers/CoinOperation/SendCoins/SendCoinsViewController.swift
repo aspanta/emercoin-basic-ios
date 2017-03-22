@@ -55,7 +55,13 @@ class SendCoinsViewController: BaseViewController {
     private func setupSend() {
         
         viewModel?.success.subscribe(onNext:{ [weak self] success in
-            if success {self?.showSuccesSendView()}
+            if success {
+                let wallet = AppManager.sharedInstance.wallet
+                let amount = Double(self?.amountTextField.text ?? "0.0")!
+                wallet?.balance -= amount
+                wallet?.loadBalance()
+                self?.showSuccesSendView()
+            }
         })
             .addDisposableTo(disposeBag)
         

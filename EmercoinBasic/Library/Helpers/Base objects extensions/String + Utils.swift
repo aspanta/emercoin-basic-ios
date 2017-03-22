@@ -52,4 +52,9 @@ extension String {
         }
         return randomString as String
     }
+    
+    static func coinFormat(at number:Double) -> String {
+        let string = String(format: "%g", number)
+        return string
+    }
 }

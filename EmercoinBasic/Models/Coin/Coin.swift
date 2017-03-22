@@ -7,18 +7,18 @@ import UIKit
 class Coin {
     
     var name:String?
-    var amount:Double?
+    var amount:Double = 0
     var image:String?
     var sign:String?
     var color:String?
-    var inUSD:Double? = 1.4
+    var inUSD:Double = 1.4
 
     func stringAmount() -> String {
-        return String(format:"%0.2f",amount ?? 0)
+        return String.coinFormat(at:amount)
     }
     
     func coinInUSD() -> Double {
-        return amount! * inUSD!
+        return amount * inUSD
     }
     
     func exchangeAttributedString(color:UIColor? = nil) -> NSAttributedString {
@@ -34,11 +34,12 @@ class Coin {
         let part3 = NSMutableAttributedString(string: "      ", attributes: otherAttributes)
         let part4 = NSMutableAttributedString(string: "(", attributes: otherAttributes)
         let part5 = NSMutableAttributedString(string: "1 ", attributes: amountAttributes)
-        let part6 = NSMutableAttributedString(string: sign ?? ""+" = ", attributes: otherAttributes)
-        let part7 = NSMutableAttributedString(string: String(format:"%0.1f",inUSD!), attributes: amountAttributes)
+        let part6 = NSMutableAttributedString(string: sign ?? "", attributes: otherAttributes)
+        let part7 = NSMutableAttributedString(string: String(format:"%0.1f",inUSD), attributes: amountAttributes)
         let part8 = NSMutableAttributedString(string: ")", attributes: otherAttributes)
+        let part9 = NSMutableAttributedString(string: " = ", attributes: otherAttributes)
         
-        let parts = [part1,part2,part3,part4,part5,part6,part7,part2,part8]
+        let parts = [part1,part2,part3,part4,part5,part6,part9,part7,part2,part8]
         
         let combination = NSMutableAttributedString()
         

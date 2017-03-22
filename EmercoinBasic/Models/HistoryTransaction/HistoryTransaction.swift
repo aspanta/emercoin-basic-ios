@@ -13,7 +13,7 @@ enum TransactionDirection:String {
 
 class HistoryTransaction: BaseModel {
     
-    var amount:Double = 0.0
+    var amount:Double = 0
     var date:String?
     var address:String?
     var typeOperation:TransactionDirection = .incoming

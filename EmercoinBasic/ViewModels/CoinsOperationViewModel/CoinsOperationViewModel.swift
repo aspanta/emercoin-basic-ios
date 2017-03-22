@@ -20,22 +20,36 @@ class CoinOperationsViewModel {
     var success = PublishSubject<Bool>()
     var error = PublishSubject<Error>()
     var activityIndicator = PublishSubject<Bool>()
+    var wallet:Wallet?
     
     private var isLoading = false
     
     func updateUI() {
+    
+        if wallet != nil {
+            
+            let courseTitle = wallet?.emercoin.exchangeAttributedString(color: .white)
+            let sign = wallet?.emercoin.sign
+            let stringAmount = wallet?.emercoin.stringAmount()
+            
+            coinCourseTitle.onNext(courseTitle!)
+            coinAmount.onNext(stringAmount!)
+            coinSign.onNext(sign ?? "")
+        }
+    }
+    
+    init() {
         
-        guard let wallet = AppManager.sharedInstance.wallet else {
-            return
+        wallet = AppManager.sharedInstance.wallet
+        
+        if wallet != nil {
+            
+            wallet?.success.subscribe(onNext: {[weak self] (state) in
+                self?.updateUI()
+            })
+            .addDisposableTo(disposeBag)
         }
         
-        let courseTitle = wallet.emercoin.exchangeAttributedString(color: .white)
-        let amount = wallet.emercoin.amount
-        let sign = wallet.emercoin.sign
-        
-        coinCourseTitle.onNext(courseTitle)
-        coinAmount.onNext(String(format:"%0.2f",amount ?? 0))
-        coinSign.onNext(sign ?? "")
     }
     
     func sendCoins(at sendData:AnyObject) {
