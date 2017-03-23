@@ -12,7 +12,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var activityView:UIActivityIndicatorView!
     
-    
     var history = History()
     
     let disposeBag = DisposeBag()
@@ -57,7 +56,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     
     private func setupActivityIndicator() {
         
-        history.isActivityIndicator.subscribe(onNext:{ [weak self] state in
+        history.activityIndicator.subscribe(onNext:{ [weak self] state in
             
             let refresh = self?.tableView.refreshControl
             

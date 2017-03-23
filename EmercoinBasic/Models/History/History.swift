@@ -23,7 +23,7 @@ class History: NSObject {
     let disposeBag = DisposeBag()
     var success = PublishSubject<Bool>()
     var error = PublishSubject<Error>()
-    var isActivityIndicator = PublishSubject<Bool>()
+    var activityIndicator = PublishSubject<Bool>()
     
     func add(transaction:HistoryTransaction) {
         transactionList.append(transaction)
@@ -39,10 +39,10 @@ class History: NSObject {
     
     func load() {
         
-        isActivityIndicator.onNext(true)
+        activityIndicator.onNext(true)
         
         APIManager.sharedInstance.loadTransactions {[weak self] (data, error) in
-            self?.isActivityIndicator.onNext(false)
+            self?.activityIndicator.onNext(false)
             if error == nil {
                 guard let transactions = data as? [HistoryTransaction] else {
                     return

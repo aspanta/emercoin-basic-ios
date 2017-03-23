@@ -29,7 +29,7 @@ extension AddressBookViewController {
         
         let item = itemAt(indexPath: indexPath)
         if selectedAddress != nil {
-            selectedAddress!(item.address!)
+            selectedAddress!(item.address)
             self.back()
         }
     }

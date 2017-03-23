@@ -105,6 +105,7 @@ class LoginViewModel {
                 
                 if let wallet = data as? Wallet {
                     AppManager.sharedInstance.wallet = wallet
+                    AppManager.sharedInstance.myAddressBook.load()
                 }
                 self?.isSuccessLogin.onNext(true)
             }

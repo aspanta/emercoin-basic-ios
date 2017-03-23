@@ -10,6 +10,7 @@ enum APIType {
     case info
     case transactions
     case sendCoins
+    case myAddresses
 }
 
 class APIManager: NSObject {
@@ -55,6 +56,12 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
+    func loadMyAddresses(completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+        
+        let api = getApi(at: .myAddresses)
+        api.startRequest(completion: completion)
+    }
+    
     private func getApi(at type:APIType) -> BaseAPI {
         
         var api:BaseAPI = BaseAPI()
@@ -64,6 +71,7 @@ class APIManager: NSObject {
             case .info:api = InfoAPI()
             case .transactions:api = TransactionsAPI()
             case .sendCoins:api = SendCoinsAPI()
+            case .myAddresses:api = MyAddressesAPI()
         }
         
         api.object = loginInfo as AnyObject?

@@ -43,7 +43,7 @@ class AddressesNVSViewController: MyAdressViewController {
         let contact = itemAt(indexPath: indexPath)
     
         if selectedAddress != nil {
-            selectedAddress!(contact.address!)
+            selectedAddress!(contact.address)
         }
     
         back()

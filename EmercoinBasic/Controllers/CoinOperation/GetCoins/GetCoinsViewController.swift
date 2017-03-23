@@ -4,6 +4,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class GetCoinsViewController: BaseViewController {
     
@@ -17,6 +19,7 @@ class GetCoinsViewController: BaseViewController {
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     
     var dropDown:DropDown?
+    let disposeBag = DisposeBag()
     
     override class func storyboardName() -> String {
         return "CoinOperations"
