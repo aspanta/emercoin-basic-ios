@@ -33,17 +33,17 @@
 
 #pragma mark - Constants
 
-static NSString * _Nonnull const LGSideMenuControllerWillShowLeftViewNotification = @"LGSideMenuControllerWillShowLeftViewNotification";
-static NSString * _Nonnull const LGSideMenuControllerDidShowLeftViewNotification  = @"LGSideMenuControllerDidShowLeftViewNotification";
+extern NSString * _Nonnull const LGSideMenuControllerWillShowLeftViewNotification;
+extern NSString * _Nonnull const LGSideMenuControllerDidShowLeftViewNotification;
 
-static NSString * _Nonnull const LGSideMenuControllerWillHideLeftViewNotification = @"LGSideMenuControllerWillHideLeftViewNotification";
-static NSString * _Nonnull const LGSideMenuControllerDidHideLeftViewNotification  = @"LGSideMenuControllerDidHideLeftViewNotification";
+extern NSString * _Nonnull const LGSideMenuControllerWillHideLeftViewNotification;
+extern NSString * _Nonnull const LGSideMenuControllerDidHideLeftViewNotification;
 
-static NSString * _Nonnull const LGSideMenuControllerWillShowRightViewNotification = @"LGSideMenuControllerWillShowRightViewNotification";
-static NSString * _Nonnull const LGSideMenuControllerDidShowRightViewNotification  = @"LGSideMenuControllerDidShowRightViewNotification";
+extern NSString * _Nonnull const LGSideMenuControllerWillShowRightViewNotification;
+extern NSString * _Nonnull const LGSideMenuControllerDidShowRightViewNotification;
 
-static NSString * _Nonnull const LGSideMenuControllerWillHideRightViewNotification = @"LGSideMenuControllerWillHideRightViewNotification";
-static NSString * _Nonnull const LGSideMenuControllerDidHideRightViewNotification  = @"LGSideMenuControllerDidHideRightViewNotification";
+extern NSString * _Nonnull const LGSideMenuControllerWillHideRightViewNotification;
+extern NSString * _Nonnull const LGSideMenuControllerDidHideRightViewNotification;
 
 #pragma mark - Types
 
@@ -100,9 +100,9 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 /** Container for rightViewController or rightView. Usually you do not need to use it */
 @property (strong, nonatomic, nullable, readonly) UIView *rightViewContainer;
 
-/** cancelsTouchesInView = NO */
+/** tapGesture.cancelsTouchesInView = NO */
 @property (strong, nonatomic, readonly, nonnull) UITapGestureRecognizer *tapGesture;
-/** cancelsTouchesInView = YES, only inside your swipeGestureArea */
+/** panGesture.cancelsTouchesInView = YES, only inside your swipeGestureArea */
 @property (strong, nonatomic, readonly, nonnull) UIPanGestureRecognizer *panGesture;
 
 #pragma mark - Static defaults
@@ -164,6 +164,11 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 @property (assign, nonatomic) IBInspectable NSTimeInterval leftViewAnimationSpeed;
 /** Default is 0.5 */
 @property (assign, nonatomic) IBInspectable NSTimeInterval rightViewAnimationSpeed;
+
+/** Default is YES */
+@property (assign, nonatomic) IBInspectable BOOL shouldHideLeftViewAnimated;
+/** Default is YES */
+@property (assign, nonatomic) IBInspectable BOOL shouldHideRightViewAnimated;
 
 /** Default is YES */
 @property (assign, nonatomic, getter=isLeftViewEnabled)  IBInspectable BOOL leftViewEnabled;
@@ -474,35 +479,27 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 
 #pragma mark - Callbacks
 
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^willShowLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^didShowLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
+@property (copy, nonatomic, nullable) void(^willShowLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
+@property (copy, nonatomic, nullable) void(^didShowLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
 
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^willHideLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^didHideLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
+@property (copy, nonatomic, nullable) void(^willHideLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
+@property (copy, nonatomic, nullable) void(^didHideLeftView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView);
 
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^willShowRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^didShowRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
+@property (copy, nonatomic, nullable) void(^willShowRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
+@property (copy, nonatomic, nullable) void(^didShowRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
 
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^willHideRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
-/** Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^didHideRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
+@property (copy, nonatomic, nullable) void(^willHideRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
+@property (copy, nonatomic, nullable) void(^didHideRightView)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView);
 
-/** You can use this block to add some custom animations. Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^showLeftViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView, NSTimeInterval duration);
-/** You can use this block to add some custom animations. Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^hideLeftViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView, NSTimeInterval duration);
+/** You can use this block to add some custom animations */
+@property (copy, nonatomic, nullable) void(^showLeftViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView, NSTimeInterval duration);
+/** You can use this block to add some custom animations */
+@property (copy, nonatomic, nullable) void(^hideLeftViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull leftView, NSTimeInterval duration);
 
-/** You can use this block to add some custom animations. Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^showRightViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView, NSTimeInterval duration);
-/** You can use this block to add some custom animations. Do not forget about weak reference to self */
-@property (strong, nonatomic, nullable) void(^hideRightViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView, NSTimeInterval duration);
+/** You can use this block to add some custom animations */
+@property (copy, nonatomic, nullable) void(^showRightViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView, NSTimeInterval duration);
+/** You can use this block to add some custom animations */
+@property (copy, nonatomic, nullable) void(^hideRightViewAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull rightView, NSTimeInterval duration);
 
 #pragma mark - Delegate
 
@@ -543,9 +540,7 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 - (BOOL)isLeftViewAlwaysVisibleForOrientation:(UIInterfaceOrientation)orientation;
 - (BOOL)isRightViewAlwaysVisibleForOrientation:(UIInterfaceOrientation)orientation;
 
-- (void)showLeftViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
-- (void)hideLeftViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
-- (void)toggleLeftViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+#pragma mark - Left view actions
 
 - (IBAction)showLeftView:(nullable id)sender;
 - (IBAction)hideLeftView:(nullable id)sender;
@@ -555,9 +550,29 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 - (IBAction)hideLeftViewAnimated:(nullable id)sender;
 - (IBAction)toggleLeftViewAnimated:(nullable id)sender;
 
-- (void)showRightViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
-- (void)hideRightViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
-- (void)toggleRightViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+- (void)showLeftViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+- (void)hideLeftViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+- (void)toggleLeftViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+/**
+ Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
+ You can use delay to avoid this and probably other unexpected visual bugs
+ */
+- (void)showLeftViewAnimated:(BOOL)animated delay:(NSTimeInterval)delay completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+/**
+ Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
+ You can use delay to avoid this and probably other unexpected visual bugs
+ */
+- (void)hideLeftViewAnimated:(BOOL)animated delay:(NSTimeInterval)delay completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+/**
+ Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
+ You can use delay to avoid this and probably other unexpected visual bugs
+ */
+- (void)toggleLeftViewAnimated:(BOOL)animated delay:(NSTimeInterval)delay completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+#pragma mark - Right view actions
 
 - (IBAction)showRightView:(nullable id)sender;
 - (IBAction)hideRightView:(nullable id)sender;
@@ -566,6 +581,35 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 - (IBAction)showRightViewAnimated:(nullable id)sender;
 - (IBAction)hideRightViewAnimated:(nullable id)sender;
 - (IBAction)toggleRightViewAnimated:(nullable id)sender;
+
+- (void)showRightViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+- (void)hideRightViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+- (void)toggleRightViewAnimated:(BOOL)animated completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+/**
+ Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
+ You can use delay to avoid this and probably other unexpected visual bugs
+ */
+- (void)showRightViewAnimated:(BOOL)animated delay:(NSTimeInterval)delay completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+/**
+ Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
+ You can use delay to avoid this and probably other unexpected visual bugs
+ */
+- (void)hideRightViewAnimated:(BOOL)animated delay:(NSTimeInterval)delay completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+/**
+ Rarely you can get some visual bugs when you change view hierarchy and toggle side views in the same iteration
+ You can use delay to avoid this and probably other unexpected visual bugs
+ */
+- (void)toggleRightViewAnimated:(BOOL)animated delay:(NSTimeInterval)delay completionHandler:(LGSideMenuControllerCompletionHandler)completionHandler;
+
+#pragma mark -
+
+/** Force update layouts and styles for all views */
+- (void)updateLayoutsAndStyles;
+
+#pragma mark - Unavailable methods
 
 /** Unavailable, select it on your rootViewController OR use rootViewShouldAutorotate */
 - (BOOL)shouldAutorotate __attribute__((unavailable("select it on your rootViewController OR use rootViewShouldAutorotate")));
@@ -610,32 +654,32 @@ LGSideMenuSwipeGestureRange LGSideMenuSwipeGestureRangeMake(CGFloat left, CGFloa
 
 #pragma mark - Deprecated
 
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideLeftViewNotification instead")
-LGSideMenuControllerWillDismissLeftViewNotification  = @"LGSideMenuControllerWillHideLeftViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideLeftViewNotification instead")
-LGSideMenuControllerDidDismissLeftViewNotification   = @"LGSideMenuControllerDidHideLeftViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideRightViewNotification instead")
-LGSideMenuControllerWillDismissRightViewNotification = @"LGSideMenuControllerWillHideRightViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideRightViewNotification instead")
-LGSideMenuControllerDidDismissRightViewNotification  = @"LGSideMenuControllerDidHideRightViewNotification";
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideLeftViewNotification instead")
+LGSideMenuControllerWillDismissLeftViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideLeftViewNotification instead")
+LGSideMenuControllerDidDismissLeftViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideRightViewNotification instead")
+LGSideMenuControllerWillDismissRightViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideRightViewNotification instead")
+LGSideMenuControllerDidDismissRightViewNotification;
 
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillShowLeftViewNotification instead")
-kLGSideMenuControllerWillShowLeftViewNotification = @"LGSideMenuControllerWillShowLeftViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideLeftViewNotification instead")
-kLGSideMenuControllerWillHideLeftViewNotification = @"LGSideMenuControllerWillHideLeftViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidShowLeftViewNotification instead")
-kLGSideMenuControllerDidShowLeftViewNotification  = @"LGSideMenuControllerDidShowLeftViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideLeftViewNotification instead")
-kLGSideMenuControllerDidHideLeftViewNotification  = @"LGSideMenuControllerDidHideLeftViewNotification";
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillShowLeftViewNotification instead")
+kLGSideMenuControllerWillShowLeftViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideLeftViewNotification instead")
+kLGSideMenuControllerWillHideLeftViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidShowLeftViewNotification instead")
+kLGSideMenuControllerDidShowLeftViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideLeftViewNotification instead")
+kLGSideMenuControllerDidHideLeftViewNotification;
 
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillShowRightViewNotification instead")
-kLGSideMenuControllerWillShowRightViewNotification = @"LGSideMenuControllerWillShowRightViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideRightViewNotification instead")
-kLGSideMenuControllerWillHideRightViewNotification = @"LGSideMenuControllerWillHideRightViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidShowRightViewNotification instead")
-kLGSideMenuControllerDidShowRightViewNotification  = @"LGSideMenuControllerDidShowRightViewNotification";
-static NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideRightViewNotification instead")
-kLGSideMenuControllerDidHideRightViewNotification  = @"LGSideMenuControllerDidHideRightViewNotification";
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillShowRightViewNotification instead")
+kLGSideMenuControllerWillShowRightViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerWillHideRightViewNotification instead")
+kLGSideMenuControllerWillHideRightViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidShowRightViewNotification instead")
+kLGSideMenuControllerDidShowRightViewNotification;
+extern NSString * _Nonnull const DEPRECATED_MSG_ATTRIBUTE("use LGSideMenuControllerDidHideRightViewNotification instead")
+kLGSideMenuControllerDidHideRightViewNotification;
 
 @interface LGSideMenuController (Deprecated)
 

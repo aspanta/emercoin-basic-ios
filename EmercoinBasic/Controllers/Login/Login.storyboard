@@ -54,7 +54,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32n-15-JxQ">
-                                <rect key="frame" x="88" y="178" width="199" height="30"/>
+                                <rect key="frame" x="88.5" y="178" width="198.5" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="25"/>
                                 <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@
                                     <constraint firstItem="Oip-lX-Zw8" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="top" id="qlj-xt-rwp"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Ck-fRE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Ck-fRE">
                                 <rect key="frame" x="282" y="441" width="33" height="30"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.4039215686" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SKIP">
@@ -291,7 +291,7 @@
                                     <action selector="skipButtonPressedWithSender:" destination="rgu-oq-k0z" eventType="touchUpInside" id="l8x-d0-E0G"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-c1-vEM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-c1-vEM">
                                 <rect key="frame" x="240" y="441" width="35" height="30"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.4039215686" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="INFO">

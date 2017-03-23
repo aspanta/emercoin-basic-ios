@@ -23,15 +23,28 @@ class LoginViewController: BaseViewController {
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
     var viewModel = LoginViewModel()
+    
+    var isAutoLogin = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDropDown()
+        
+        isAutoLogin = viewModel.isAutoLogin
     }
     
     override class func storyboardName() -> String {
         return "Login"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if isAutoLogin {
+            viewModel.performLogin()
+            isAutoLogin = false
+        }
     }
     
     override func setupUI() {
@@ -43,7 +56,6 @@ class LoginViewController: BaseViewController {
         
         passwordTextField.textChanged = {(text) in
             self.viewModel.password = text
-            self.viewModel.confirmPassword = text
         }
         
         hostTextField.textChanged = {(text) in
@@ -61,7 +73,17 @@ class LoginViewController: BaseViewController {
         viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
             .addDisposableTo(disposeBag)
         
-    
+        viewModel.hostString.bindTo(hostTextField.rx.text)
+            .addDisposableTo(disposeBag)
+        viewModel.portString.bindTo(portTextField.rx.text)
+            .addDisposableTo(disposeBag)
+        viewModel.loginString.bindTo(loginTextField.rx.text)
+            .addDisposableTo(disposeBag)
+        viewModel.passwordString.bindTo(passwordTextField.rx.text)
+            .addDisposableTo(disposeBag)
+        viewModel.portString.bindTo(portTextField.rx.text)
+            .addDisposableTo(disposeBag)
+        
         setupLogin()
         
         setupActivityIndicator()

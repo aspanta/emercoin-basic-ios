@@ -92,6 +92,8 @@ class SideMenuViewController: LGSideMenuController {
     }
     
     private func logout() {
+        
+        AppManager.sharedInstance.logOut()
         dismiss(animated: true, completion: nil)
     }
 }

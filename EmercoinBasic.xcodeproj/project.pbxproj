@@ -195,6 +195,8 @@
 		2D997D101E7AD3B200630560 /* TermOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CAE1E7AD3B200630560 /* TermOfUseViewController.swift */; };
 		2DA249441E7C1F4700AF81DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249431E7C1F4700AF81DD /* LoginViewController.swift */; };
 		2DA2494A1E7C203B00AF81DD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249491E7C203B00AF81DD /* LoginViewModel.swift */; };
+		2DA3E77C1E83DA19003F9A6D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E77B1E83DA19003F9A6D /* Settings.swift */; };
+		2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -390,6 +392,8 @@
 		2D997CAE1E7AD3B200630560 /* TermOfUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TermOfUseViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2DA249431E7C1F4700AF81DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2DA249491E7C203B00AF81DD /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2DA3E77B1E83DA19003F9A6D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */,
 				2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */,
 				2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */,
@@ -580,6 +585,7 @@
 		2D997A8B1E7AC90700630560 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2DA3E77A1E83DA0A003F9A6D /* Settings */,
 				2D4877CE1E8147CC0084129C /* BaseModel */,
 				2D997B291E7AD24E00630560 /* AddressBook */,
 				2D997B2B1E7AD24E00630560 /* BCNotes */,
@@ -655,6 +661,7 @@
 		2D997A9B1E7ACF3B00630560 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */,
 				2D5D55021E8036CC004FC57D /* ObjectMapper.framework */,
 				2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */,
 				2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */,
@@ -1587,6 +1594,14 @@
 			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
+		2DA3E77A1E83DA0A003F9A6D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2DA3E77B1E83DA19003F9A6D /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1700,6 +1715,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/QRCode.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
 			);
 			outputPaths = (
 			);
@@ -1781,6 +1797,7 @@
 				2D997D021E7AD3B200630560 /* MenuPoliticsCell.swift in Sources */,
 				2D997B601E7AD24E00630560 /* TabBarObject.swift in Sources */,
 				2D997B271E7AD1FF00630560 /* SwipeDirection.swift in Sources */,
+				2DA3E77C1E83DA19003F9A6D /* Settings.swift in Sources */,
 				2D997CB41E7AD3B200630560 /* HistoryViewController + TableView.swift in Sources */,
 				2D997CB31E7AD3B200630560 /* HistoryCell.swift in Sources */,
 				2D997D011E7AD3B200630560 /* MenuExitCell.swift in Sources */,

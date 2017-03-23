@@ -15,7 +15,6 @@ class LoginViewModel {
     
     var login:String = "" {didSet{validateCredentials()}}
     var password:String = "" {didSet{validateCredentials()}}
-    var confirmPassword:String = "" {didSet{validateCredentials()}}
     var isChecked:Bool = false {didSet{validateCredentials()}}
     
     var topConstraint = PublishSubject<CGFloat>()
@@ -24,19 +23,26 @@ class LoginViewModel {
     var isSuccessLogin = PublishSubject<Bool>()
     var isError = PublishSubject<Error>()
     var isActivityIndicator = PublishSubject<Bool>()
+    
+    var hostString = PublishSubject<String>()
+    var portString = PublishSubject<String>()
+    var loginString = PublishSubject<String>()
+    var passwordString = PublishSubject<String>()
+    var protocolString = PublishSubject<String>()
 
     var isLoading = false
     var isValid = false
+    var isAutoLogin = false
+    
+    private var settings = AppManager.sharedInstance.settings
     
     func validateCredentials() {
-        
-        let isEqualPasswords = password == confirmPassword
         
         let valid = isValid && (host.length > 0 && port.length > 0 && webProtocol.length > 0)
         
         isValidCredentials.onNext(valid)
         
-        isValid = login.length > 0 && password.length > 0 && isEqualPasswords && isChecked
+        isValid = login.length > 0 && password.length > 0 && isChecked
         isValidCredentials.onNext(isValid)
     }
     
@@ -47,6 +53,27 @@ class LoginViewModel {
             topConstraint.onNext(CGFloat(value))
             leftConstraint.onNext(CGFloat(value))
         }
+        
+        if isAutoLogin {
+            hostString.onNext(host)
+            portString.onNext(port)
+            loginString.onNext(login)
+            passwordString.onNext(password)
+            protocolString.onNext(webProtocol)
+        }
+    }
+    
+    init() {
+        
+        if let loginInfo = settings.loginInfo {
+            host = loginInfo["host"] ?? ""
+            port = loginInfo["port"] ?? ""
+            login = loginInfo["user"] ?? ""
+            password = loginInfo["password"] ?? ""
+            webProtocol = loginInfo["protocol"] ?? ""
+            isAutoLogin = true
+        }
+        
     }
     
     func performLogin() {
@@ -71,6 +98,11 @@ class LoginViewModel {
                 self?.isError.onNext(error!)
             } else {
                 
+                if self?.settings.loginInfo == nil {
+                    self?.settings.loginInfo = loginInfo
+                    self?.settings.save()
+                }
+                
                 if let wallet = data as? Wallet {
                     AppManager.sharedInstance.wallet = wallet
                 }
@@ -78,6 +110,4 @@ class LoginViewModel {
             }
         }
     }
-    
-    
 }
