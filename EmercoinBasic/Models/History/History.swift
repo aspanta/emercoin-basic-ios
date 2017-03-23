@@ -22,7 +22,7 @@ class History: NSObject {
     
     let disposeBag = DisposeBag()
     var success = PublishSubject<Bool>()
-    var error = PublishSubject<Error>()
+    var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
     
     func add(transaction:HistoryTransaction) {

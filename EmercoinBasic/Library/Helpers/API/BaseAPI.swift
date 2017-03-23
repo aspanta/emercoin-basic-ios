@@ -30,7 +30,7 @@ enum StatusCode:Int {
 
 class BaseAPI: NSObject {
     
-    var completion:((_ data:AnyObject?, _ erorr:Error?) -> Void)?
+    var completion:((_ data:AnyObject?, _ erorr:NSError?) -> Void)?
     
     var object:AnyObject?
     
@@ -39,7 +39,7 @@ class BaseAPI: NSObject {
     
     internal var dataTask:URLSessionTask?
 
-    public func startRequest(completion:@escaping (_ data: AnyObject?,_ error:Error?) -> Void) {
+    public func startRequest(completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
         
         guard let loginInfo = object as? [String:AnyObject] else {
             return
@@ -112,8 +112,6 @@ class BaseAPI: NSObject {
                     
                     let newError = NSError(domain: domain!, code: statusCode, userInfo: nil)
                     
-                    
-                    
                     self.apiDidReturnError(error:newError)
                 }
             }
@@ -150,7 +148,7 @@ class BaseAPI: NSObject {
     func apiDidReturnError(error:Error) {
         DispatchQueue.main.async {
             if self.completion != nil {
-                self.completion?(nil,error)
+                self.completion?(nil,self.formattedError(at: error))
             }
         }
     }

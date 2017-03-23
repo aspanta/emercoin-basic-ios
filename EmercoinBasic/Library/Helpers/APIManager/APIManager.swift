@@ -19,32 +19,32 @@ class APIManager: NSObject {
     
     private var loginInfo:[String:String] = [:]
     
-    func login(at loginInfo:[String:String], completion:@escaping (_ data: AnyObject?,_ error:Error?) -> Void) {
+    func login(at loginInfo:[String:String], completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
         
         self.loginInfo = loginInfo
         
         loadInfo(completion: completion)
     }
     
-    func loadInfo(completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+    func loadInfo(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .info)
         api.startRequest(completion: completion)
     }
     
-    func loadTransactions(completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+    func loadTransactions(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .transactions)
         api.startRequest(completion: completion)
     }
     
-    func loadBalance(completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+    func loadBalance(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .balance)
         api.startRequest(completion: completion)
     }
     
-    func sendCoins(at sendData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+    func sendCoins(at sendData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .sendCoins)
         
@@ -56,7 +56,7 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
-    func loadMyAddresses(completion:@escaping (_ data: AnyObject?, _ error:Error?) -> Void) {
+    func loadMyAddresses(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .myAddresses)
         api.startRequest(completion: completion)

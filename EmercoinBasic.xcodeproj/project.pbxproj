@@ -198,6 +198,7 @@
 		2DA3E77C1E83DA19003F9A6D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E77B1E83DA19003F9A6D /* Settings.swift */; };
 		2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */; };
 		2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */; };
+		2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -396,6 +397,7 @@
 		2DA3E77B1E83DA19003F9A6D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesAPI.swift; sourceTree = "<group>"; };
+		2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseAPI + Errors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				2D4D98E21E7FF7D400DFB784 /* BaseAPI.swift */,
+				2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */,
 				2D4D98E31E7FF7D400DFB784 /* GET */,
 				2D4D98E41E7FF7D400DFB784 /* POST */,
 			);
@@ -1869,6 +1872,7 @@
 				2D997B071E7AD1FF00630560 /* String + Utils.swift in Sources */,
 				2D997B1B1E7AD1FF00630560 /* BarView.swift in Sources */,
 				2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */,
+				2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */,
 				2D997CB01E7AD3B200630560 /* AboutViewController.swift in Sources */,
 				2D997BD51E7AD2B600630560 /* RequestSendView.swift in Sources */,
 				2D997BBD1E7AD2B600630560 /* ExtendedView.swift in Sources */,

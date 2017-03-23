@@ -82,11 +82,11 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
         return IndicatorInfo(title: "History")
     }
     
-    private func showErrorAlert(at error:Error) {
+    private func showErrorAlert(at error:NSError) {
         
         let alert = UIAlertController(
             title: "Error",
-            message: String (format:error.localizedDescription),
+            message: String (format:error.domain),
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
