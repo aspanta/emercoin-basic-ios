@@ -191,7 +191,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5j-Xv-9yW">
                                         <rect key="frame" x="0.0" y="134" width="375" height="67"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_get_icon" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-WN-qMS">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oper_address_icon" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-WN-qMS">
                                                 <rect key="frame" x="25" y="26" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="LOq-BS-SjV"/>
@@ -208,11 +208,11 @@
                                                     <constraint firstAttribute="height" constant="30" id="eCi-Tt-7lY"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                <state key="normal" title="Receive">
+                                                <state key="normal" title="My addresses">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="receiveButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="82D-1P-jyg"/>
+                                                    <action selector="myAddressButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="GFT-Ph-0bf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -234,7 +234,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUn-zE-ftd">
                                         <rect key="frame" x="0.0" y="67" width="375" height="67"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oper_send_icon" translatesAutoresizingMaskIntoConstraints="NO" id="alR-hN-Z8S">
+                                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_get_icon" translatesAutoresizingMaskIntoConstraints="NO" id="alR-hN-Z8S">
                                                 <rect key="frame" x="25" y="26" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="Bfs-Ha-1L0"/>
@@ -251,11 +251,11 @@
                                                     <constraint firstAttribute="height" constant="30" id="Jis-g2-ZuQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                <state key="normal" title="Send">
+                                                <state key="normal" title="Receive">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="sendButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="r4x-mb-5aT"/>
+                                                    <action selector="receiveButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="mKv-gV-Njj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -277,7 +277,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxC-eR-S9T">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oper_plus_icon" translatesAutoresizingMaskIntoConstraints="NO" id="CtI-9D-CAY">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oper_send_icon" translatesAutoresizingMaskIntoConstraints="NO" id="CtI-9D-CAY">
                                                 <rect key="frame" x="25" y="26" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="6jM-mS-q9Q"/>
@@ -294,11 +294,11 @@
                                                     <constraint firstAttribute="height" constant="30" id="YWQ-pl-dEr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                <state key="normal" title="Top up account">
+                                                <state key="normal" title="Send">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addMoneyButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="o4c-3g-eUe"/>
+                                                    <action selector="sendButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="seF-CC-tdA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -317,67 +317,20 @@
                                             <constraint firstAttribute="height" constant="67" id="ySQ-Ca-bdK"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz2-HS-Khd">
-                                        <rect key="frame" x="0.0" y="201" width="375" height="67"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oper_address_icon" translatesAutoresizingMaskIntoConstraints="NO" id="iky-0g-s52">
-                                                <rect key="frame" x="25" y="26" width="14" height="14"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="14" id="CG2-TP-cCp"/>
-                                                    <constraint firstAttribute="height" constant="14" id="ke3-Ab-1AF"/>
-                                                </constraints>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0o-s4-ICd">
-                                                <rect key="frame" x="70" y="66" width="305" height="1"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4M1-8B-fZP">
-                                                <rect key="frame" x="76" y="18" width="291" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="c0K-xy-rMJ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                                <state key="normal" title="My addresses">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="myAddressButtonPressedWithSender:" destination="dtx-ja-bcx" eventType="touchUpInside" id="8gA-0B-c3r"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="iky-0g-s52" secondAttribute="bottom" constant="27" id="1L4-sv-PMg"/>
-                                            <constraint firstItem="i0o-s4-ICd" firstAttribute="leading" secondItem="dz2-HS-Khd" secondAttribute="leading" constant="70" id="46n-iF-cVM"/>
-                                            <constraint firstAttribute="height" constant="67" id="9up-iY-Ozg"/>
-                                            <constraint firstItem="iky-0g-s52" firstAttribute="leading" secondItem="dz2-HS-Khd" secondAttribute="leading" constant="25" id="C26-DT-CdX"/>
-                                            <constraint firstAttribute="bottom" secondItem="i0o-s4-ICd" secondAttribute="bottom" id="MMl-ee-obD"/>
-                                            <constraint firstItem="4M1-8B-fZP" firstAttribute="top" secondItem="dz2-HS-Khd" secondAttribute="top" constant="18" id="MwM-8A-HzQ"/>
-                                            <constraint firstItem="iky-0g-s52" firstAttribute="top" secondItem="dz2-HS-Khd" secondAttribute="top" constant="26" id="XXy-ma-OXY"/>
-                                            <constraint firstAttribute="trailing" secondItem="4M1-8B-fZP" secondAttribute="trailing" constant="8" id="gSh-HH-Y5S"/>
-                                            <constraint firstItem="4M1-8B-fZP" firstAttribute="leading" secondItem="dz2-HS-Khd" secondAttribute="leading" constant="76" id="p3l-gi-Vzy"/>
-                                            <constraint firstAttribute="trailing" secondItem="i0o-s4-ICd" secondAttribute="trailing" id="wfG-MP-kRO"/>
-                                            <constraint firstItem="i0o-s4-ICd" firstAttribute="top" secondItem="4M1-8B-fZP" secondAttribute="bottom" constant="18" id="y0H-ks-pxr"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="centerX" secondItem="E4H-YY-gHz" secondAttribute="centerX" id="2dF-c6-ASC"/>
                                     <constraint firstItem="vxC-eR-S9T" firstAttribute="top" secondItem="E4H-YY-gHz" secondAttribute="top" id="5HK-h8-kfI"/>
                                     <constraint firstItem="vxC-eR-S9T" firstAttribute="top" secondItem="E4H-YY-gHz" secondAttribute="top" id="8Ve-f7-3Ok"/>
-                                    <constraint firstItem="dz2-HS-Khd" firstAttribute="top" secondItem="e5j-Xv-9yW" secondAttribute="bottom" id="ADX-dP-cbf"/>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="leading" secondItem="vxC-eR-S9T" secondAttribute="leading" id="BJg-ab-ab5"/>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="trailing" secondItem="vxC-eR-S9T" secondAttribute="trailing" id="DVz-ke-sCF"/>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="leading" secondItem="E4H-YY-gHz" secondAttribute="leading" id="FJ8-y0-jZh"/>
-                                    <constraint firstItem="e5j-Xv-9yW" firstAttribute="trailing" secondItem="dz2-HS-Khd" secondAttribute="trailing" id="HNI-kJ-HJA"/>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="top" secondItem="gUn-zE-ftd" secondAttribute="bottom" id="KAr-GG-RLS"/>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="trailing" secondItem="gUn-zE-ftd" secondAttribute="trailing" id="Pd2-90-A0b"/>
                                     <constraint firstItem="e5j-Xv-9yW" firstAttribute="leading" secondItem="gUn-zE-ftd" secondAttribute="leading" id="RAh-cd-cmY"/>
                                     <constraint firstAttribute="trailing" secondItem="e5j-Xv-9yW" secondAttribute="trailing" id="W0P-qV-2sW"/>
-                                    <constraint firstAttribute="bottom" secondItem="dz2-HS-Khd" secondAttribute="bottom" id="d6P-hA-4tz"/>
+                                    <constraint firstAttribute="bottom" secondItem="e5j-Xv-9yW" secondAttribute="bottom" id="b8u-iK-2od"/>
                                     <constraint firstItem="gUn-zE-ftd" firstAttribute="top" secondItem="vxC-eR-S9T" secondAttribute="bottom" id="g0Y-XX-ssV"/>
-                                    <constraint firstItem="dz2-HS-Khd" firstAttribute="top" secondItem="e5j-Xv-9yW" secondAttribute="bottom" id="oEk-PM-aCt"/>
-                                    <constraint firstItem="e5j-Xv-9yW" firstAttribute="leading" secondItem="dz2-HS-Khd" secondAttribute="leading" id="r7y-8e-sv9"/>
                                     <constraint firstItem="gUn-zE-ftd" firstAttribute="top" secondItem="vxC-eR-S9T" secondAttribute="bottom" id="tyi-aI-w6U"/>
                                 </constraints>
                             </scrollView>
@@ -402,7 +355,6 @@
     <resources>
         <image name="oper_address_icon" width="16" height="16"/>
         <image name="oper_leftarrow_icon" width="19" height="16"/>
-        <image name="oper_plus_icon" width="14" height="14"/>
         <image name="oper_send_icon" width="17" height="17"/>
         <image name="tab_get_icon" width="25" height="14"/>
     </resources>

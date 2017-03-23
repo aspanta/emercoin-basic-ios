@@ -94,14 +94,18 @@ class LoginViewController: BaseViewController {
     private func setupLogin() {
         
         viewModel.isSuccessLogin.subscribe(onNext:{ [weak self] success in
-            if success {self?.showMainController()}
-        })
-            .addDisposableTo(disposeBag)
+            if success {
+                DispatchQueue.main.async(){
+                    self?.showMainController()
+                }
+            }
+        }).addDisposableTo(disposeBag)
         
         viewModel.isError.subscribe(onNext:{ [weak self] error in
-            self?.showErrorAlert(at: error)
-        })
-            .addDisposableTo(disposeBag)
+            DispatchQueue.main.async(){
+                self?.showErrorAlert(at: error)
+            }
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupActivityIndicator() {
