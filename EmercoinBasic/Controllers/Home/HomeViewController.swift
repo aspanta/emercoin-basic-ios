@@ -53,18 +53,10 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         .addDisposableTo(disposeBag)
     }
     
-    private func showErrorAlert(at error:Error) {
+    private func showErrorAlert(at error:NSError) {
         
-        let alert = UIAlertController(
-            title: "Error",
-            message: String (format:error.localizedDescription),
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        
+        let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
-        
-        print(error.localizedDescription)
     }
     
     private func setupTableView() {

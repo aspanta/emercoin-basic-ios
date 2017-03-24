@@ -93,7 +93,7 @@ class LoginViewController: BaseViewController {
     
     private func setupLogin() {
         
-        viewModel.isSuccessLogin.subscribe(onNext:{ [weak self] success in
+        viewModel.successLogin.subscribe(onNext:{ [weak self] success in
             if success {
                 DispatchQueue.main.async(){
                     self?.showMainController()
@@ -101,7 +101,7 @@ class LoginViewController: BaseViewController {
             }
         }).addDisposableTo(disposeBag)
         
-        viewModel.isError.subscribe(onNext:{ [weak self] error in
+        viewModel.error.subscribe(onNext:{ [weak self] error in
             DispatchQueue.main.async(){
                 self?.showErrorAlert(at: error)
             }
@@ -110,7 +110,7 @@ class LoginViewController: BaseViewController {
     
     private func setupActivityIndicator() {
         
-        viewModel.isActivityIndicator.subscribe(onNext:{ [weak self] state in
+        viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
             if state {
                 self?.showActivityIndicator()
             } else {
@@ -168,18 +168,10 @@ class LoginViewController: BaseViewController {
         present(nav, animated: true, completion: nil)
     }
     
-    private func showErrorAlert(at error:Error) {
+    private func showErrorAlert(at error:NSError) {
         
-        let alert = UIAlertController(
-            title: "Error",
-            message: String (format:error.localizedDescription),
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        
+        let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
-        
-        print(error.localizedDescription)
     }
     
     @IBAction func checkButtonPressed(sender:UIButton) {

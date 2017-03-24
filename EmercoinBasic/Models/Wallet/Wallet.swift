@@ -11,7 +11,7 @@ import RxSwift
 class Wallet:BaseModel {
     
     var success = PublishSubject<Bool>()
-    var error = PublishSubject<Error>()
+    var error = PublishSubject<NSError>()
     var isActivityIndicator = PublishSubject<Bool>()
     
     var emercoin:Coin = {

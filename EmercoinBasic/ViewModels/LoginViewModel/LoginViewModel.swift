@@ -20,9 +20,9 @@ class LoginViewModel {
     var topConstraint = PublishSubject<CGFloat>()
     var leftConstraint = PublishSubject<CGFloat>()
     var isValidCredentials = PublishSubject<Bool>()
-    var isSuccessLogin = PublishSubject<Bool>()
-    var isError = PublishSubject<Error>()
-    var isActivityIndicator = PublishSubject<Bool>()
+    var successLogin = PublishSubject<Bool>()
+    var error = PublishSubject<NSError>()
+    var activityIndicator = PublishSubject<Bool>()
     
     var hostString = PublishSubject<String>()
     var portString = PublishSubject<String>()
@@ -88,14 +88,14 @@ class LoginViewModel {
         loginInfo["password"] = password
         loginInfo["protocol"] = webProtocol
         
-        isActivityIndicator.onNext(true)
+        activityIndicator.onNext(true)
         isLoading = true
         
         APIManager.sharedInstance.login(at: loginInfo) {[weak self] (data, error) in
             self?.isLoading = false
-            self?.isActivityIndicator.onNext(false)
+            self?.activityIndicator.onNext(false)
             if error != nil {
-                self?.isError.onNext(error!)
+                self?.error.onNext(error!)
             } else {
                 
                 if self?.settings.loginInfo == nil {
@@ -107,7 +107,7 @@ class LoginViewModel {
                     AppManager.sharedInstance.wallet = wallet
                     AppManager.sharedInstance.myAddressBook.load()
                 }
-                self?.isSuccessLogin.onNext(true)
+                self?.successLogin.onNext(true)
             }
         }
     }
