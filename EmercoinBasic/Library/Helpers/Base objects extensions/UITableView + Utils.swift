@@ -23,6 +23,9 @@ extension UITableView {
     }
     
     func reload() {
-        reloadData()
+        
+        DispatchQueue.main.async() {
+            self.reloadData()
+        }
     }
 }

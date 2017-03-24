@@ -1,28 +1,28 @@
 //
-//  MyAddressesAPI.swift
+//  AddMyAddressAPI.swift
 //  EmercoinBasic
+//
+//  Created by Sergey Lyubeznov on 24/03/2017.
+//  Copyright © 2017 Aspanta Limited. All rights reserved.
 //
 
 import UIKit
-import ObjectMapper
 
-
-class MyAddressesAPI: BaseAPI {
+class AddMyAddressAPI: BaseAPI {
 
     override func parameters() -> [String : Any] {
         
         var params = super.parameters()
-        let method = Constants.API.GetMyAddresses
+        let method = Constants.API.GetNewMyAddress
         params["method"] = method
-        params["params"] = [""]
         
         return params
     }
     
     override func apiDidReturnData(data: AnyObject) {
         
-        if let addresses = data["result"] as? [String]  {
-            super.apiDidReturnData(data: addresses as AnyObject)
+        if let address = data["result"] as? String  {
+            super.apiDidReturnData(data: address as AnyObject)
         } else {
             super.apiDidReturnData(data: data)
         }

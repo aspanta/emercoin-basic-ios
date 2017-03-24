@@ -11,6 +11,7 @@ class BaseTextField: UITextField, UITextFieldDelegate {
     
     @IBInspectable var maxCharacters: Int = 0
     @IBInspectable var disableEdit: Bool = false
+    @IBInspectable var validAmount: Bool = false
 
     var done:((_ text:String) -> (Void))?
     var textChanged:((_ text:String) -> (Void))?
@@ -49,7 +50,9 @@ class BaseTextField: UITextField, UITextFieldDelegate {
         
         let fullText = text+string
         
-        if maxCharacters == 0 {
+        if fullText.contains(".") && validAmount {
+          return fullText.validAmount()
+        } else if maxCharacters == 0 {
             return true
         } else {
              return  fullText.length <= maxCharacters

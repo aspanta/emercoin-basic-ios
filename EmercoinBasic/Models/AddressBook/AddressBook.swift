@@ -26,6 +26,10 @@ class AddressBook {
         contactsList.append(contact)
     }
     
+    func insert(contact:Contact, at index:Int) {
+        contactsList.insert(contact, at: 0)
+    }
+    
     func add(contacts:[Contact]) {
         contactsList.append(contentsOf: contacts)
     }
@@ -60,4 +64,7 @@ class AddressBook {
         
     }
     
+    func addNewMyAddress(at name:String) {
+    
+    }
 }

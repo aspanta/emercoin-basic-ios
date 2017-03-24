@@ -23,16 +23,14 @@ class MyAddressBook: AddressBook {
             self?.activityIndicator.onNext(false)
             
             if error == nil {
-                
                 guard let adresses = data as? [String] else {
                     return
                 }
-                
                 var array:[Contact] = []
                 
                 for i in 0...adresses.count - 1 {
                     
-                    let name = (i == 0) ? "Primary" : String(format:"%@ %i","Payer",i)
+                    let name = ""
                     
                     array.append(Contact(name: name, address: adresses[i]))
                 }
@@ -44,7 +42,28 @@ class MyAddressBook: AddressBook {
             } else {
                 self?.error.onNext(error!)
             }
-
+        }
+    }
+    
+    override func addNewMyAddress(at name:String) {
+        
+        activityIndicator.onNext(true)
+        
+        APIManager.sharedInstance.loadMyNewAddress {[weak self] (data, error) in
+            self?.activityIndicator.onNext(false)
+            
+            if error == nil {
+                guard let address = data as? String else {
+                    return
+                }
+                
+                self?.insert(contact: Contact(name: name, address: address), at: 0)
+        
+                self?.success.onNext(true)
+            } else {
+                self?.error.onNext(error!)
+            }
+            
         }
     }
 }

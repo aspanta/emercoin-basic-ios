@@ -57,4 +57,13 @@ extension String {
         let string = number.truncatingRemainder(dividingBy: 1.0) == 0 ? String(format: "%.0f", number) : String(number)
         return string
     }
+    
+    func validAmount() -> Bool {
+        let pat = "\\d{1,8}\\.(\\d{1,6})?"
+        let regex = try! NSRegularExpression(pattern:pat, options: [.caseInsensitive])
+        let nsString = self as NSString
+        let results = regex.matches(in: self, range: NSRange(location: 0, length: nsString.length))
+        let strings = results.map{nsString.substring(with: $0.range)}
+        return strings.first != nil && strings.first == self
+    }
 }

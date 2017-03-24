@@ -23,6 +23,7 @@
 		2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */; };
 		2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */; };
 		2D70A97B1E85334000F50488 /* AlertsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A97A1E85334000F50488 /* AlertsHelper.swift */; };
+		2D70A97E1E85853E00F50488 /* AddMyAddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
 		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
 		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
@@ -219,6 +220,7 @@
 		2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewController + ActivityIndicator.swift"; sourceTree = "<group>"; };
 		2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCoinsAPI.swift; sourceTree = "<group>"; };
 		2D70A97A1E85334000F50488 /* AlertsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsHelper.swift; sourceTree = "<group>"; };
+		2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMyAddressAPI.swift; sourceTree = "<group>"; };
 		2D997A701E7AC49400630560 /* EmercoinBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmercoinBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D997A861E7AC90700630560 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D997A871E7AC90700630560 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D70A97C1E85852B00F50488 /* AddMyAddress */,
 				2DA3E77F1E83F529003F9A6D /* MyAddresses */,
 				2D6537C41E82863E0051B953 /* SendCoins */,
 				2D4877D41E818DFF0084129C /* Balance */,
@@ -526,6 +529,14 @@
 				2D70A97A1E85334000F50488 /* AlertsHelper.swift */,
 			);
 			path = AlertsHelper;
+			sourceTree = "<group>";
+		};
+		2D70A97C1E85852B00F50488 /* AddMyAddress */ = {
+			isa = PBXGroup;
+			children = (
+				2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */,
+			);
+			path = AddMyAddress;
 			sourceTree = "<group>";
 		};
 		2D997A671E7AC49400630560 = {
@@ -1884,6 +1895,7 @@
 				2D997B071E7AD1FF00630560 /* String + Utils.swift in Sources */,
 				2D997B1B1E7AD1FF00630560 /* BarView.swift in Sources */,
 				2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */,
+				2D70A97E1E85853E00F50488 /* AddMyAddressAPI.swift in Sources */,
 				2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */,
 				2D997CB01E7AD3B200630560 /* AboutViewController.swift in Sources */,
 				2D997BD51E7AD2B600630560 /* RequestSendView.swift in Sources */,

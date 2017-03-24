@@ -95,10 +95,8 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         let addAddressView = loadViewFromXib(name: "AddressBook", index: 2,
                                              frame: self.parent!.view.frame) as! AddAddressView
-        addAddressView.add = ({(name) in
-            let address = String.randomStringWithLength(10) as String
-            self.addressBook.add(contact: Contact(name: name, address: address))
-            self.tableView.reload()
+        addAddressView.add = ({[weak self] (name) in
+            self?.addressBook.addNewMyAddress(at: name)
         })
         self.parent?.view.addSubview(addAddressView)
     }
