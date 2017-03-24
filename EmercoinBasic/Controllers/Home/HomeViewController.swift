@@ -30,9 +30,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let coin = wallet?.emercoin else {
-            return
-        }
+        let coin = wallet.emercoin
         
         coins = [coin]
         setupTableView()
@@ -42,12 +40,12 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     
     private func setupHome() {
         
-        wallet?.error.subscribe(onNext: {[weak self] (error) in
+        wallet.error.subscribe(onNext: {[weak self] (error) in
             self?.showErrorAlert(at: error)
         })
         .addDisposableTo(disposeBag)
         
-        wallet?.success.subscribe(onNext: {[weak self] (state) in
+        wallet.success.subscribe(onNext: {[weak self] (state) in
             self?.tableView.reload()
         })
         .addDisposableTo(disposeBag)
@@ -72,7 +70,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         refresh.addTarget(self, action: #selector(self.handleRefresh(sender:)), for: .valueChanged)
         tableView.refreshControl = refresh
         
-        wallet?.isActivityIndicator.subscribe(onNext:{ [weak self] state in
+        wallet.isActivityIndicator.subscribe(onNext:{ [weak self] state in
             
             if state == false {
                 refresh.endRefreshing()
@@ -82,7 +80,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        wallet?.loadBalance()
+        wallet.loadBalance()
     }
 
 }

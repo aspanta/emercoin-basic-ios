@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrW-pQ-wV6">
-                                <rect key="frame" x="66" y="346" width="242" height="36"/>
+                                <rect key="frame" x="66.5" y="346" width="241.5" height="35"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -38,12 +38,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PrW-pQ-wV6" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="346" id="DyM-rA-NsW"/>
                             <constraint firstItem="QAI-y4-Jaq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HIG-JS-ods"/>
                             <constraint firstAttribute="trailing" secondItem="QAI-y4-Jaq" secondAttribute="trailing" id="XHd-lB-nzR"/>
                             <constraint firstItem="QAI-y4-Jaq" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bfH-d3-Ont"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QAI-y4-Jaq" secondAttribute="bottom" id="vQd-EM-HET"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QAI-y4-Jaq" secondAttribute="bottom" id="eTB-Ag-URZ"/>
                             <constraint firstItem="PrW-pQ-wV6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xZE-Zz-FkT"/>
-                            <constraint firstItem="PrW-pQ-wV6" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="346" id="zNu-TZ-gU2"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

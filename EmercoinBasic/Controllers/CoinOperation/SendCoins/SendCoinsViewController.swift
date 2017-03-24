@@ -58,8 +58,8 @@ class SendCoinsViewController: BaseViewController {
             if success {
                 let wallet = AppManager.sharedInstance.wallet
                 let amount = Double(self?.amountTextField.text ?? "0.0")!
-                wallet?.balance -= amount
-                wallet?.loadBalance()
+                wallet.balance -= amount
+                wallet.loadBalance()
                 self?.showSuccesSendView()
             }
         })

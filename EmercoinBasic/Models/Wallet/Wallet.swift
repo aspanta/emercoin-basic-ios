@@ -53,6 +53,9 @@ class Wallet:BaseModel {
     func loadBalance() {
      
         APIManager.sharedInstance.loadBalance {[weak self] (data, error) in
+            
+            AppManager.sharedInstance.myAddressBook.load()
+            
             self?.isActivityIndicator.onNext(false)
             if error != nil {
                 self?.error.onNext(error!)

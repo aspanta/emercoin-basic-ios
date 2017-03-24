@@ -19,6 +19,11 @@ class APIManager: NSObject {
     
     private var loginInfo:[String:String] = [:]
     
+    func addLoginInfo(at loginInfo:[String:String]) {
+        
+        self.loginInfo = loginInfo
+    }
+    
     func login(at loginInfo:[String:String], completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
         
         self.loginInfo = loginInfo

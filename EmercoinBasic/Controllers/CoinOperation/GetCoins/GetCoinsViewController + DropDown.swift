@@ -25,7 +25,7 @@ extension GetCoinsViewController {
         
         let addresses = myAddressBook.addressesArray()
         
-        addressLabel.text = addresses.first
+        addressLabel.text = addresses.first ?? ""
         
         dropDown?.dataSource = addresses
         

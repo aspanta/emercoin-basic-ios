@@ -19,6 +19,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet internal weak var protocolButton:UIButton!
     @IBOutlet internal weak var topConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var leftConstraint:NSLayoutConstraint!
+    @IBOutlet internal weak var bootView:UIView!
     
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
@@ -41,10 +42,9 @@ class LoginViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if isAutoLogin {
-            viewModel.performLogin()
-            isAutoLogin = false
-        }
+        bootView.isHidden = !isAutoLogin
+        
+        autoLogin()
     }
     
     override func setupUI() {
@@ -84,11 +84,22 @@ class LoginViewController: BaseViewController {
         viewModel.portString.bindTo(portTextField.rx.text)
             .addDisposableTo(disposeBag)
         
+        bootView.isHidden = !viewModel.isAutoLogin
+        
         setupLogin()
         
         setupActivityIndicator()
 
         viewModel.prepareUI()
+    }
+    
+    private func autoLogin() {
+        
+        if isAutoLogin {
+            AppManager.sharedInstance.wallet.loadBalance()
+            showMainController()
+            isAutoLogin = false
+        }
     }
     
     private func setupLogin() {
@@ -155,7 +166,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func skipButtonPressed(sender:UIButton) {
         
-    AppManager.sharedInstance.wallet = Wallet(amount: 100)
+        AppManager.sharedInstance.wallet.balance = 1.12300
         showMainController()
     }
     

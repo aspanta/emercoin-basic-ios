@@ -7,14 +7,14 @@ import UIKit
 class Coin {
     
     var name:String?
-    var amount:Double = 0
+    var amount:Double = -1
     var image:String?
     var sign:String?
     var color:String?
     var inUSD:Double = 1.4
 
     func stringAmount() -> String {
-        return String.coinFormat(at:amount)
+        return amount == -1 ? "?" : String.coinFormat(at:amount)
     }
     
     func coinInUSD() -> Double {

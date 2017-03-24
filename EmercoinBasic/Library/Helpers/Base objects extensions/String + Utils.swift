@@ -54,7 +54,7 @@ extension String {
     }
     
     static func coinFormat(at number:Double) -> String {
-        let string = String(format: "%g", number)
+        let string = number.truncatingRemainder(dividingBy: 1.0) == 0 ? String(format: "%.0f", number) : String(number)
         return string
     }
 }

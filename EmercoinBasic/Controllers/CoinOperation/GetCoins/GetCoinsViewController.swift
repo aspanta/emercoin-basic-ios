@@ -49,6 +49,8 @@ class GetCoinsViewController: BaseViewController {
                 constraint.constant -= value / 2.0
             })
         }
+        
+        addressLabel.text = ""
     }
     
     @IBAction func sendButtonPressed(sender:UIButton) {

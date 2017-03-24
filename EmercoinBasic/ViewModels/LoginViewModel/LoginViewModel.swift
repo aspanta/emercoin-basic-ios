@@ -69,9 +69,11 @@ class LoginViewModel {
             host = loginInfo["host"] ?? ""
             port = loginInfo["port"] ?? ""
             login = loginInfo["user"] ?? ""
-            password = loginInfo["password"] ?? ""
-            webProtocol = loginInfo["protocol"] ?? ""
+//            password = loginInfo["password"] ?? ""
+//            webProtocol = loginInfo["protocol"] ?? ""
             isAutoLogin = true
+            
+            APIManager.sharedInstance.addLoginInfo(at: loginInfo)
         }
         
     }
@@ -104,8 +106,8 @@ class LoginViewModel {
                 }
                 
                 if let wallet = data as? Wallet {
-                    AppManager.sharedInstance.wallet = wallet
-                    AppManager.sharedInstance.myAddressBook.load()
+                    AppManager.sharedInstance.wallet.balance = wallet.balance
+                    AppManager.sharedInstance.wallet.loadBalance()
                 }
                 self?.successLogin.onNext(true)
             }
