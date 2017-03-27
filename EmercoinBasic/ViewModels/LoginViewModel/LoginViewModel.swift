@@ -53,28 +53,30 @@ class LoginViewModel {
             topConstraint.onNext(CGFloat(value))
             leftConstraint.onNext(CGFloat(value))
         }
-        
-        if isAutoLogin {
-            hostString.onNext(host)
-            portString.onNext(port)
-            loginString.onNext(login)
-            passwordString.onNext(password)
-            protocolString.onNext(webProtocol)
-        }
     }
     
     init() {
         
         if let loginInfo = settings.loginInfo {
-            host = loginInfo["host"] ?? ""
-            port = loginInfo["port"] ?? ""
-            login = loginInfo["user"] ?? ""
-//            password = loginInfo["password"] ?? ""
-//            webProtocol = loginInfo["protocol"] ?? ""
+    
             isAutoLogin = true
-            
             APIManager.sharedInstance.addLoginInfo(at: loginInfo)
         }
+    }
+    
+    func clearFields() {
+        
+        host = ""
+        port = ""
+        login = ""
+        password = ""
+        webProtocol = ""
+        
+        hostString.onNext(host)
+        portString.onNext(port)
+        loginString.onNext(login)
+        passwordString.onNext(password)
+        protocolString.onNext(webProtocol)
         
     }
     

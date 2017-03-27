@@ -19,7 +19,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet internal weak var protocolButton:UIButton!
     @IBOutlet internal weak var topConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var leftConstraint:NSLayoutConstraint!
-    @IBOutlet internal weak var bootView:UIView!
+    @IBOutlet internal weak var bootImageView:UIImageView!
     
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
@@ -42,7 +42,7 @@ class LoginViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        bootView.isHidden = !isAutoLogin
+        bootImageView.isHidden = !isAutoLogin
         
         autoLogin()
     }
@@ -81,10 +81,10 @@ class LoginViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         viewModel.passwordString.bindTo(passwordTextField.rx.text)
             .addDisposableTo(disposeBag)
-        viewModel.portString.bindTo(portTextField.rx.text)
+        viewModel.protocolString.bindTo(protocolTextField.rx.text)
             .addDisposableTo(disposeBag)
         
-        bootView.isHidden = !viewModel.isAutoLogin
+        bootImageView.isHidden = !viewModel.isAutoLogin
         
         setupLogin()
         
@@ -140,7 +140,10 @@ class LoginViewController: BaseViewController {
     private func showMainController() {
         
         let main = UIStoryboard.init(name: "Main", bundle: nil)
-        let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController")
+        let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+        controller.logout = {[weak self] in
+            self?.viewModel.clearFields()
+        }
         let nav = BaseNavigationController(rootViewController: controller)
         
         present(nav, animated: true, completion: nil)

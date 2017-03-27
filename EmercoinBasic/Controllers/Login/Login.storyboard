@@ -12,9 +12,6 @@
         <array key="Roboto-Light.ttf">
             <string>Roboto-Light</string>
         </array>
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
-        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -24,7 +21,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -56,7 +53,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32n-15-JxQ">
-                                <rect key="frame" x="88.5" y="178" width="198.5" height="30"/>
+                                <rect key="frame" x="88" y="178" width="199" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="25"/>
                                 <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -283,32 +280,9 @@
                                     <constraint firstItem="Oip-lX-Zw8" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="top" id="qlj-xt-rwp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4y-zH-xl7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boot_basic_img" translatesAutoresizingMaskIntoConstraints="NO" id="2ab-aQ-xoj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boot_image" translatesAutoresizingMaskIntoConstraints="NO" id="T7o-5Z-Gog">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR6-Ne-82o">
-                                        <rect key="frame" x="67.5" y="346" width="241.5" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="C5Z-Cf-IIl"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="30"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="T7o-5Z-Gog" firstAttribute="leading" secondItem="R4y-zH-xl7" secondAttribute="leading" id="CLl-sJ-54d"/>
-                                    <constraint firstItem="PR6-Ne-82o" firstAttribute="centerX" secondItem="R4y-zH-xl7" secondAttribute="centerX" id="FDL-Sv-aNW"/>
-                                    <constraint firstAttribute="bottom" secondItem="T7o-5Z-Gog" secondAttribute="bottom" id="Ugr-4g-WV6"/>
-                                    <constraint firstItem="PR6-Ne-82o" firstAttribute="top" secondItem="R4y-zH-xl7" secondAttribute="top" constant="346" id="Z3a-dB-zXb"/>
-                                    <constraint firstItem="T7o-5Z-Gog" firstAttribute="top" secondItem="R4y-zH-xl7" secondAttribute="top" id="d4f-sd-Mot"/>
-                                    <constraint firstAttribute="trailing" secondItem="T7o-5Z-Gog" secondAttribute="trailing" id="zWf-hC-pIe"/>
-                                </constraints>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -316,11 +290,11 @@
                             <constraint firstItem="32n-15-JxQ" firstAttribute="top" secondItem="kVx-JH-eXa" secondAttribute="bottom" constant="12" id="2sR-wk-lzF"/>
                             <constraint firstItem="kVx-JH-eXa" firstAttribute="top" secondItem="a73-Px-job" secondAttribute="bottom" constant="50" id="352-Zs-8dQ"/>
                             <constraint firstItem="Pgh-uX-8zk" firstAttribute="top" secondItem="BMK-8c-gUV" secondAttribute="bottom" constant="33" id="78b-UV-ubw"/>
+                            <constraint firstAttribute="trailing" secondItem="2ab-aQ-xoj" secondAttribute="trailing" id="7Ie-YB-2xS"/>
                             <constraint firstItem="BMK-8c-gUV" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="8OC-eM-94g"/>
-                            <constraint firstItem="yD6-ts-Q77" firstAttribute="top" secondItem="R4y-zH-xl7" secondAttribute="bottom" id="9Ab-n6-9R6"/>
+                            <constraint firstItem="2ab-aQ-xoj" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" id="CH2-UR-GV9"/>
                             <constraint firstItem="8HB-lr-8Vo" firstAttribute="top" secondItem="cnJ-a1-ehB" secondAttribute="bottom" constant="15" id="Cp1-cN-Ed9"/>
                             <constraint firstItem="32n-15-JxQ" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="DZV-mn-36l"/>
-                            <constraint firstItem="R4y-zH-xl7" firstAttribute="top" secondItem="5p0-16-MIm" secondAttribute="top" id="E2K-6l-V1g"/>
                             <constraint firstItem="kVx-JH-eXa" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="GlQ-CT-8nc"/>
                             <constraint firstItem="c5c-nc-zE4" firstAttribute="top" secondItem="Smb-ON-KLZ" secondAttribute="bottom" constant="15" id="HYO-Y7-RT4"/>
                             <constraint firstItem="8HB-lr-8Vo" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="MCl-WB-Lvt"/>
@@ -329,10 +303,10 @@
                             <constraint firstAttribute="trailing" secondItem="HSx-U4-Ekd" secondAttribute="trailing" constant="60" id="Pls-Gu-v0I"/>
                             <constraint firstAttribute="trailing" secondItem="Smb-ON-KLZ" secondAttribute="trailing" constant="60" id="RLa-CI-xGA"/>
                             <constraint firstItem="Smb-ON-KLZ" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="SuX-hx-v1u"/>
-                            <constraint firstItem="R4y-zH-xl7" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" id="T1P-FX-jMM"/>
                             <constraint firstAttribute="trailing" secondItem="8HB-lr-8Vo" secondAttribute="trailing" constant="60" id="UkQ-bQ-gT3"/>
                             <constraint firstItem="c5c-nc-zE4" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="VFB-yg-r4p"/>
                             <constraint firstItem="cnJ-a1-ehB" firstAttribute="top" secondItem="HSx-U4-Ekd" secondAttribute="bottom" constant="15" id="W2t-QK-g62"/>
+                            <constraint firstAttribute="bottom" secondItem="2ab-aQ-xoj" secondAttribute="bottom" id="cht-2u-9n2"/>
                             <constraint firstItem="Pgh-uX-8zk" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="52" id="d0a-gw-2RN"/>
                             <constraint firstAttribute="trailing" secondItem="BMK-8c-gUV" secondAttribute="trailing" constant="60" id="fbG-Yt-qO6"/>
                             <constraint firstItem="HSx-U4-Ekd" firstAttribute="top" secondItem="c5c-nc-zE4" secondAttribute="bottom" constant="15" id="gaf-j4-OHz"/>
@@ -341,15 +315,15 @@
                             <constraint firstItem="BMK-8c-gUV" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="nJc-fH-wc6"/>
                             <constraint firstItem="BMK-8c-gUV" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="bottom" constant="50" id="nNA-b3-a4t"/>
                             <constraint firstAttribute="trailing" secondItem="cnJ-a1-ehB" secondAttribute="trailing" constant="60" id="rPl-CH-rTn"/>
-                            <constraint firstAttribute="trailing" secondItem="R4y-zH-xl7" secondAttribute="trailing" id="tcU-Lz-nBq"/>
                             <constraint firstItem="V3a-da-p0N" firstAttribute="top" secondItem="BMK-8c-gUV" secondAttribute="bottom" constant="35" id="vFa-zh-ygo"/>
                             <constraint firstItem="HSx-U4-Ekd" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="wP2-2A-ozI"/>
+                            <constraint firstItem="2ab-aQ-xoj" firstAttribute="top" secondItem="5p0-16-MIm" secondAttribute="top" id="yu6-Tg-DkB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0bK-w4-TEO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="bootView" destination="R4y-zH-xl7" id="CAt-ab-vc4"/>
+                        <outlet property="bootImageView" destination="2ab-aQ-xoj" id="Rou-Oe-ldY"/>
                         <outlet property="checkButton" destination="Pgh-uX-8zk" id="gol-AM-JxN"/>
                         <outlet property="enterButton" destination="BMK-8c-gUV" id="ax5-F7-Zwg"/>
                         <outlet property="hostTextField" destination="FYw-qF-6SE" id="LGW-0b-TAt"/>
@@ -368,7 +342,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="boot_image" width="375" height="592"/>
+        <image name="boot_basic_img" width="375" height="592"/>
         <image name="check_off" width="15" height="15"/>
         <image name="check_on" width="15" height="15"/>
         <image name="get_down_icon" width="9" height="7"/>
