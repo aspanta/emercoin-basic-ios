@@ -132,42 +132,9 @@ class LoginViewController: BaseViewController {
         .addDisposableTo(disposeBag)
     }
     
-    private func fillData() {
-        
-        let host = "10.144.0.102"
-        let port = "6662"
-        let login = "emccoinrpc"
-        let password = "Taequohei1ohYiDii2ufangie8dash5aepoucoh9uWae7idoBoop1oul3cesetoo"
-        let webProtocol = "https"
-        
-        hostTextField.text = host
-        portTextField.text = port
-        loginTextField.text = login
-        passwordTextField.text = password
-        protocolTextField.text = webProtocol
-        
-        viewModel.host = host
-        viewModel.port = port
-        viewModel.login = login
-        viewModel.password = password
-        viewModel.webProtocol = webProtocol
-        
-        viewModel.isValidCredentials.onNext(true)
-    }
-    
     @IBAction func enterButtonPressed(sender:UIButton) {
         
         viewModel.performLogin()
-    }
-    
-    @IBAction func loginInfoButtonPressed() {
-        fillData()
-    }
-    
-    @IBAction func skipButtonPressed(sender:UIButton) {
-        
-        AppManager.sharedInstance.wallet.balance = 1.12300
-        showMainController()
     }
     
     private func showMainController() {

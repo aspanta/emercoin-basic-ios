@@ -11,7 +11,9 @@ extension BaseAPI {
         
         var text = ""
         
-        let message = error.localizedDescription
+        let tempError = error as NSError
+        
+        let message = tempError.domain
         
         if message.contains("Unauthorized error") {
             text = "Authentication failed"
