@@ -82,10 +82,10 @@ struct Constants {
         
         struct CoinsOperation {
             
-            static let RecipientAddress = "Address of recipient"
+            static let RecipientAddress = "Send Coins"
             static let Send = "Send Coins"
             static let MyAddress = "My Addresses"
-            static let Get = "Receive"
+            static let Get = "Receive Coins"
             
             struct ExchangeCoins {
                  static let Bitcoin = "BTC to EMC Exchange"

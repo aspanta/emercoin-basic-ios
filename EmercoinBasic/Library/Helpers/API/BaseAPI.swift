@@ -35,7 +35,7 @@ class BaseAPI: NSObject {
     var object:AnyObject?
     
     var addAccessToken = true
-    var timeRequest:Double = 10
+    var timeRequest:Double = 30
     
     internal var dataTask:URLSessionTask?
 
@@ -68,7 +68,7 @@ class BaseAPI: NSObject {
         
         guard let url = URL(string:baseUrl) else {return}
         
-        var request = URLRequest.init(url: url)
+        var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.timeoutInterval = timeRequest
         

@@ -25,6 +25,8 @@ class AddAddressView: PopupView {
             titleLabel.text = "Edit address"
             doneButton.setTitle("Save", for: .normal)
             nameTextField.text = viewModel?.name
+        } else {
+            nameTextField.text = ""
         }
     }
     
@@ -32,8 +34,8 @@ class AddAddressView: PopupView {
         
         let name = nameTextField.text
         
-        if add != nil && (name?.length)! > 0  {
-            add!(name!)
+        if add != nil {
+            add!(name ?? "")
         } else {
             return
         }

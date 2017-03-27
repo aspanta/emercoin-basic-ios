@@ -6,14 +6,14 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RealmSwift
 
 class AddressBook {
     
-    private var contactsList:[Contact] = []
-    
-    var contacts:[Contact] {
+    var contacts:Results<Contact> {
         get {
-            return contactsList
+            let realm = try! Realm()
+            return realm.objects(Contact.self).filter("isMyContact == false")
         }
     }
     
@@ -23,41 +23,45 @@ class AddressBook {
     var activityIndicator = PublishSubject<Bool>()
     
     func add(contact:Contact) {
-        contactsList.append(contact)
-    }
-    
-    func insert(contact:Contact, at index:Int) {
-        contactsList.insert(contact, at: 0)
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(contact)
+        }
     }
     
     func add(contacts:[Contact]) {
-        contactsList.append(contentsOf: contacts)
-    }
-    
-    func add(contact:[Contact]) {
-        contacts.forEach { (contact) in
-            add(contact: contact)
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(contacts)
         }
     }
     
     func remove(contact:Contact) {
-        contactsList.remove(object: contact)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(contact)
+        }
     }
     
-    func removeAll() {
-        contactsList.removeAll()
+    func remove(contacts:[Contact]) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(contacts)
+        }
     }
     
     func stubContacts() {
         
-        let contact1 = Contact(name: "Test1", address: "ES7d2mE9wWuSp6sSJ7tdQAPMNxaLzh7rds")
-        let contact2 = Contact(name: "Test2", address: "EcBxJTG7qJsdyuWT1TtftX7QQD47BD1CUw")
-        let contact3 = Contact(name: "Test3", address: "ELRvYhiize7ktMAJmvL4JKvw4x7wtv4AyM")
-        
-        add(contact: contact1)
-        add(contact: contact2)
-        add(contact: contact3)
-        
+        if contacts.count == 0 {
+            
+            let contact1 = Contact(value: ["name":"Test1","address":"ES7d2mE9wWuSp6sSJ7tdQAPMNxaLzh7rds"])
+            let contact2 = Contact(value: ["name":"Test2","address":"EcBxJTG7qJsdyuWT1TtftX7QQD47BD1CUw"])
+            let contact3 = Contact(value: ["name":"Test3","address":"ELRvYhiize7ktMAJmvL4JKvw4x7wtv4AyM"])
+            
+            add(contacts: [contact1, contact2, contact3])
+        }
     }
     
     func load() {

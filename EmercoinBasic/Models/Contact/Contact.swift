@@ -4,16 +4,20 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Contact: NSObject {
+class Contact: Object {
     
-    var name:String
-    var address:String
-    var date = Date()
+    dynamic var name = ""
+    dynamic var address = ""
+    dynamic var isMyContact = false
     
-    init(name:String, address:String) {
-        self.name = name
-        self.address = address
+    func update(at name:String) {
+        
+        let realm = try! Realm()
+        try! realm.write {
+            self.name = name
+        }
     }
     
 }

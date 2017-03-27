@@ -38,7 +38,7 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
         let addContactView = loadViewFromXib(name: "AddressBook", index: 1,
                                                                    frame: self.parent!.view.frame) as! AddContactView
         addContactView.add = ({(name, address) in
-            self.addressBook.add(contact: Contact(name: name, address: address))
+            self.addressBook.add(contact: Contact(value:["name":name, "address": address,"isMyContact":true]))
             self.tableView.reload()
         })
         self.parent?.view.addSubview(addContactView)
