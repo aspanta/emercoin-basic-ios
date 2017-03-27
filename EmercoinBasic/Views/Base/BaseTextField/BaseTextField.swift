@@ -10,6 +10,7 @@ import RxCocoa
 class BaseTextField: UITextField, UITextFieldDelegate {
     
     @IBInspectable var maxCharacters: Int = 0
+    @IBInspectable var maxIntCharacters: Int = 0
     @IBInspectable var disableEdit: Bool = false
     @IBInspectable var validAmount: Bool = false
 
@@ -48,14 +49,17 @@ class BaseTextField: UITextField, UITextFieldDelegate {
         
         let text = textField.text!
         
-        let fullText = text+string
+        var fullText = text.insert(string, index: range.location)
+        fullText = fullText.replacingOccurrences(of: ",", with: ".")
         
-        if fullText.contains(".") && validAmount {
-          return fullText.validAmount()
-        } else if maxCharacters == 0 {
-            return true
+        if validAmount {
+            if fullText.contains(".") {
+                return fullText.validAmount()
+            } else {
+                return maxIntCharacters == 0 ? true : fullText.length <= maxIntCharacters
+            }
         } else {
-             return  fullText.length <= maxCharacters
+            return maxCharacters == 0 ? true : fullText.length <= maxCharacters
         }
     }
     

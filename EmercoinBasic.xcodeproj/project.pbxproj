@@ -666,7 +666,6 @@
 				2D997B6A1E7AD2B600630560 /* Base */,
 				2D997B6F1E7AD2B600630560 /* Check */,
 				2D997B711E7AD2B600630560 /* CoinsOperationHeader */,
-				2D997B731E7AD2B600630560 /* CopyableLabel */,
 				2D997B741E7AD2B600630560 /* Course */,
 				2D997B761E7AD2B600630560 /* DeleteContact */,
 				2D997B781E7AD2B600630560 /* EncryptionButton */,
@@ -1034,13 +1033,6 @@
 				2D997B721E7AD2B600630560 /* CoinsOpeartionHeaderView.swift */,
 			);
 			path = CoinsOperationHeader;
-			sourceTree = "<group>";
-		};
-		2D997B731E7AD2B600630560 /* CopyableLabel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CopyableLabel;
 			sourceTree = "<group>";
 		};
 		2D997B741E7AD2B600630560 /* Course */ = {

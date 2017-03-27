@@ -14,6 +14,8 @@ class SendCoinsViewController: BaseViewController {
     @IBOutlet internal weak  var sendButton:UIButton!
     @IBOutlet internal weak  var amountTextField:BaseTextField!
     
+    private var amount:Double = 0
+    
     let disposeBag = DisposeBag()
     var viewModel:CoinOperationsViewModel?
     
@@ -57,8 +59,7 @@ class SendCoinsViewController: BaseViewController {
         viewModel?.success.subscribe(onNext:{ [weak self] success in
             if success {
                 let wallet = AppManager.sharedInstance.wallet
-                let amount = Double(self?.amountTextField.text ?? "0.0")!
-                wallet.balance -= amount
+                wallet.balance -= self?.amount ?? 0
                 wallet.loadBalance()
                 self?.showSuccesSendView()
             }
@@ -87,16 +88,17 @@ class SendCoinsViewController: BaseViewController {
     private func addRequestSendView() {
     
         let amount = amountTextField.text?.replacingOccurrences(of: ",", with: ".")
+        self.amount = Double(amount ?? "0") ?? 0
         let address = addressTextField.text
         
         if (amount?.length)! > 0 && (address?.length)! > 0  {
         
             let requestSendView:RequestSendView! = loadViewFromXib(name: "Send", index: 0,
                                                                    frame: self.parent!.view.frame) as! RequestSendView
-            let requestString = String(format:"Do you want to send to the address %@ EMC?", amount!)
-            requestSendView.amountLabel?.text = requestString
+            
+            requestSendView.amount = self.amount
             requestSendView.sendCoins = ({[weak self] in
-                self?.viewModel?.sendCoins(at: [address!,Double(amount!)!] as AnyObject)
+                self?.viewModel?.sendCoins(at: [address ?? "", self?.amount as Any] as AnyObject)
             })
              self.parent?.view.addSubview(requestSendView)
         }

@@ -59,7 +59,7 @@ extension String {
     }
     
     func validAmount() -> Bool {
-        let pat = "\\d{1,8}\\.(\\d{1,6})?"
+        let pat = "\\d{1,9}\\.(\\d{1,6})?"
         let regex = try! NSRegularExpression(pattern:pat, options: [.caseInsensitive])
         let nsString = self as NSString
         let results = regex.matches(in: self, range: NSRange(location: 0, length: nsString.length))

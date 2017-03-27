@@ -8,6 +8,8 @@ import LGSideMenuController
 
 class SideMenuViewController: LGSideMenuController {
     
+    var logout:((Void) -> (Void))?
+    
     fileprivate var mainTabBarController:TabBarController = {
         TabBarController.controller()
     }() as! TabBarController
@@ -43,7 +45,7 @@ class SideMenuViewController: LGSideMenuController {
     private func selectTabItem(at index:Int, subIndex:Int) {
         
         if index == 8 {
-            logout()
+            performLogout()
         } else if index == 3 && subIndex != -1 {
             checkRootController()
             mainTabBarController.showNVSBrowser(at: index,subIndex:subIndex)
@@ -91,7 +93,11 @@ class SideMenuViewController: LGSideMenuController {
         self.rootViewController = navController
     }
     
-    private func logout() {
+    private func performLogout() {
+        
+        if logout != nil {
+            logout!()
+        }
         
         AppManager.sharedInstance.logOut()
         dismiss(animated: true, completion: nil)
