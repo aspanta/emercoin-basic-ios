@@ -84,7 +84,7 @@ extension MyAdressViewController {
         editContactView.viewModel = ContactViewModel(contact: contact)
         
         editContactView.add = ({(name) in
-            contact.update(at: name)
+            self.addressBook.update(at: name, index:indexPath.row)
             self.reloadRows(at: [indexPath])
         })
         self.parent?.view.addSubview(editContactView)

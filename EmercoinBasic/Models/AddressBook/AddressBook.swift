@@ -52,6 +52,15 @@ class AddressBook {
         }
     }
     
+    func update(at name:String, index:Int) {
+        let realm = try! Realm()
+        try! realm.write {
+            contacts[index].name = name
+            success.onNext(true)
+        }
+
+    }
+    
     func stubContacts() {
         
         if contacts.count == 0 {

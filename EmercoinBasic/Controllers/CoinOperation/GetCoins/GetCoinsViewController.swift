@@ -20,6 +20,7 @@ class GetCoinsViewController: BaseViewController {
     
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
+    internal var address = ""
     
     override class func storyboardName() -> String {
         return "CoinOperations"
@@ -29,11 +30,11 @@ class GetCoinsViewController: BaseViewController {
         super.viewDidLoad()
         
         amountTextField.textChanged = {(text)in
-            self.generateQRCode()
+            self.generateQRCode(at:self.address)
         }
         
         setupDropDown()
-        generateQRCode()
+        generateQRCode(at:self.address)
     }
     
     override func setupUI() {
@@ -93,19 +94,17 @@ class GetCoinsViewController: BaseViewController {
                 copyView.removeFromSuperview()
             })
         }
-        
     }
     
-    internal func generateQRCode() {
-        
-        let address = addressLabel.text
+    internal func generateQRCode(at address:String) {
+    
         var amount = amountTextField.text
         
         let name = "emercoin"
         var text = ""
         
-        if (address?.length)! > 0 {
-            text =  name+":\(address!)"
+        if (address.length) > 0 {
+            text =  name+":\(address)"
             
             if (amount?.length)! > 0 && amount != "0" {
                 amount = amount?.replacingOccurrences(of: ",", with: ".")

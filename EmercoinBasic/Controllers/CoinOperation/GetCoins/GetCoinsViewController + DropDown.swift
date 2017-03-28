@@ -13,9 +13,7 @@ extension GetCoinsViewController {
         
         myAddressBook.success.subscribe(onNext:{ [weak self] success in
             if success {
-                self?.dropDown?.dataSource = myAddressBook.addressesArray()
-                self?.addressLabel.text = myAddressBook.addressesArray().first
-                self?.dropDown?.reloadAllComponents()
+                self?.setupDataSource(at: myAddressBook)
             }
         })
         .addDisposableTo(disposeBag)
@@ -23,21 +21,29 @@ extension GetCoinsViewController {
         dropDown = DropDown()
         dropDown?.anchorView = dropDownButton
         
-        let addresses = myAddressBook.addressesArray()
-        
-        addressLabel.text = addresses.first ?? ""
-        
-        dropDown?.dataSource = addresses
+        setupDataSource(at: myAddressBook)
         
         dropDown?.selectionAction = { [weak self] (index, item) in
             self?.addressLabel.text = item
-            self?.generateQRCode()
+            self?.address = myAddressBook.contacts[index].address
+            self?.generateQRCode(at:self?.address ?? "")
         }
         
         dropDown?.bottomOffset = CGPoint(x: 0, y: dropDownButton.bounds.height)
 
         setupDropDownUI()
         
+    }
+    
+    private func setupDataSource(at addressbook:MyAddressBook) {
+        
+        self.dropDown?.dataSource = addressbook.addressesArray()
+        
+        let firstAddress = addressbook.addressesArray().first ?? ""
+        self.address = firstAddress
+        
+        self.addressLabel.text = firstAddress
+        self.dropDown?.reloadAllComponents()
     }
     
     internal func setupDropDownUI() {
