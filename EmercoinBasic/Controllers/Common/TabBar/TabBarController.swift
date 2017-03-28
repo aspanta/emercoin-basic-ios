@@ -86,6 +86,8 @@ class TabBarController: UITabBarController {
         let sendNav = BaseNavigationController(rootViewController: send)
         let get = CoinOperationsViewController.controller() as! CoinOperationsViewController
         let getNav = BaseNavigationController(rootViewController: get)
+        let history = CoinOperationsViewController.controller() as! CoinOperationsViewController
+        let historyNav = BaseNavigationController(rootViewController: history)
         let blockChain = BlockchainViewController.controller() as! BlockchainViewController
         let blockChainNav = BaseNavigationController(rootViewController: blockChain)
         
@@ -98,6 +100,10 @@ class TabBarController: UITabBarController {
                                          imageName: Constants.Controllers.TabImage.Get)
         get.coinsOperation = .get
         
+        history.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.History,
+                                            imageName: Constants.Controllers.TabImage.History)
+        history.coinsOperation = .history
+        
         blockChain.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.BlockChain,
                                          imageName: Constants.Controllers.TabImage.BlockChain)
         
@@ -109,7 +115,7 @@ class TabBarController: UITabBarController {
             }
         }
 
-        viewControllers = [homeNav,sendNav,getNav,blockChainNav]
+        viewControllers = [homeNav,sendNav,getNav,historyNav,blockChainNav]
         
         let count:Int = (viewControllers?.count)!
         

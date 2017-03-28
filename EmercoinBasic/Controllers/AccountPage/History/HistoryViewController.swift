@@ -11,6 +11,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var activityView:UIActivityIndicatorView!
+    @IBOutlet internal weak var noTransactionsLabel:UILabel!
     
     var history = History()
     
@@ -25,8 +26,14 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
 
         tableView.baseSetup()
         setupHistory()
+        setupUI()
         setupActivityIndicator()
         history.load()
+    }
+    
+    private func setupUI() {
+        
+        noTransactionsLabel.isHidden = history.transactions.count != 0
     }
     
     private func setupRefreshControl() {
@@ -44,7 +51,10 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     private func setupHistory() {
         
         history.success.subscribe(onNext:{ [weak self] success in
-            if success {self?.tableView.reload()}
+            if success {
+                self?.setupUI()
+                self?.tableView.reload()
+            }
         })
         .addDisposableTo(disposeBag)
         

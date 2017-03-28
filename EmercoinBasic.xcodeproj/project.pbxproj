@@ -201,6 +201,7 @@
 		2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */; };
 		2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */; };
 		2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */; };
+		2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF212611E8AC8A500A989F3 /* RxRealm.framework */; };
 		2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDB1E89122C007D9A60 /* Realm.framework */; };
 		2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
@@ -404,6 +405,7 @@
 		2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesAPI.swift; sourceTree = "<group>"; };
 		2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseAPI + Errors.swift"; sourceTree = "<group>"; };
+		2DF212611E8AC8A500A989F3 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 		2DF62FDB1E89122C007D9A60 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -413,6 +415,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */,
 				2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */,
 				2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */,
 				2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */,
@@ -693,6 +696,7 @@
 		2D997A9B1E7ACF3B00630560 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DF212611E8AC8A500A989F3 /* RxRealm.framework */,
 				2DF62FDB1E89122C007D9A60 /* Realm.framework */,
 				2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */,
 				2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */,
@@ -1754,6 +1758,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 			);
 			outputPaths = (
 			);

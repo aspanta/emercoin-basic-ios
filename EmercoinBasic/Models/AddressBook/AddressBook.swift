@@ -7,6 +7,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RealmSwift
+import RxRealm
 
 class AddressBook {
     
@@ -21,6 +22,20 @@ class AddressBook {
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
+    var isEmpty = PublishSubject<Bool>()
+    
+    init() {
+        
+        Observable.changeset(from: contacts)
+            .subscribe(onNext: {results, changes in
+                self.isEmpty.onNext(results.count == 0)
+                
+                if changes?.inserted.count != 0 || changes?.updated.count != 0 {
+                    self.success.onNext(true)
+                }
+            })
+        .addDisposableTo(disposeBag)
+    }
     
     func add(contact:Contact) {
         
@@ -56,21 +71,17 @@ class AddressBook {
         let realm = try! Realm()
         try! realm.write {
             contacts[index].name = name
-            success.onNext(true)
         }
 
     }
     
-    func stubContacts() {
-        
-        if contacts.count == 0 {
-            
-            let contact1 = Contact(value: ["name":"Test1","address":"ES7d2mE9wWuSp6sSJ7tdQAPMNxaLzh7rds"])
-            let contact2 = Contact(value: ["name":"Test2","address":"EcBxJTG7qJsdyuWT1TtftX7QQD47BD1CUw"])
-            let contact3 = Contact(value: ["name":"Test3","address":"ELRvYhiize7ktMAJmvL4JKvw4x7wtv4AyM"])
-            
-            add(contacts: [contact1, contact2, contact3])
+    func update(at name:String, address:String, index:Int) {
+        let realm = try! Realm()
+        try! realm.write {
+            contacts[index].name = name
+            contacts[index].address = address
         }
+        
     }
     
     func load() {

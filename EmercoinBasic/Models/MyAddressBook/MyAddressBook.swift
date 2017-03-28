@@ -12,9 +12,7 @@ class MyAddressBook: AddressBook {
     
     func addressesArray() -> [String] {
         
-        return contacts.map({(contact:Contact) -> String in
-            return contact.name.length > 0 ? contact.name : contact.address
-        })
+        return contacts.map({!$0.name.isEmpty ? $0.name : $0.address})
     }
     
     override var contacts: Results<Contact> {

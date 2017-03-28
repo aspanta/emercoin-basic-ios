@@ -123,7 +123,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nxa-WQ-DAM">
-                                <rect key="frame" x="0.0" y="329" width="375" height="338"/>
+                                <rect key="frame" x="0.0" y="263" width="375" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -174,44 +174,19 @@
                                     <outlet property="delegate" destination="G3T-U3-Usv" id="HyN-wQ-lxp"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Iq-0G-Knw">
-                                <rect key="frame" x="0.0" y="263" width="375" height="66"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oer-3R-WvS">
+                                <rect key="frame" x="0.0" y="263" width="375" height="404"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qh-W2-kw8">
-                                        <rect key="frame" x="68" y="18" width="299" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="eJ7-QX-VQ5"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no any addresses" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-ST-wo7">
+                                        <rect key="frame" x="83" y="191" width="208.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LVL-Qu-74e">
-                                        <rect key="frame" x="27" y="23" width="18" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="WI9-vT-ady"/>
-                                            <constraint firstAttribute="width" constant="18" id="xIg-TN-GqL"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-Fp-bp3">
-                                        <rect key="frame" x="70" y="65" width="305" height="1"/>
-                                        <color key="backgroundColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="DXN-3i-pnJ"/>
-                                        </constraints>
-                                    </view>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DvE-Fp-bp3" firstAttribute="top" secondItem="0qh-W2-kw8" secondAttribute="bottom" constant="17" id="77k-mb-UaV"/>
-                                    <constraint firstAttribute="trailing" secondItem="DvE-Fp-bp3" secondAttribute="trailing" id="Kk2-oC-VOH"/>
-                                    <constraint firstItem="LVL-Qu-74e" firstAttribute="leading" secondItem="3Iq-0G-Knw" secondAttribute="leading" constant="27" id="QTW-8O-AYF"/>
-                                    <constraint firstItem="0qh-W2-kw8" firstAttribute="leading" secondItem="LVL-Qu-74e" secondAttribute="trailing" constant="23" id="RDE-iX-bGv"/>
-                                    <constraint firstAttribute="trailing" secondItem="0qh-W2-kw8" secondAttribute="trailing" constant="8" id="Twd-sQ-epA"/>
-                                    <constraint firstItem="DvE-Fp-bp3" firstAttribute="leading" secondItem="3Iq-0G-Knw" secondAttribute="leading" constant="70" id="bPk-EN-pp8"/>
-                                    <constraint firstItem="LVL-Qu-74e" firstAttribute="top" secondItem="3Iq-0G-Knw" secondAttribute="top" constant="23" id="ecD-Zm-Z4V"/>
-                                    <constraint firstAttribute="bottom" secondItem="DvE-Fp-bp3" secondAttribute="bottom" id="m4D-kD-MMj"/>
-                                    <constraint firstAttribute="height" constant="66" id="qYe-cP-6On"/>
-                                    <constraint firstItem="0qh-W2-kw8" firstAttribute="top" secondItem="3Iq-0G-Knw" secondAttribute="top" constant="18" id="rMi-49-IdO"/>
+                                    <constraint firstItem="fy8-ST-wo7" firstAttribute="centerX" secondItem="oer-3R-WvS" secondAttribute="centerX" id="bqC-th-1Zu"/>
+                                    <constraint firstItem="fy8-ST-wo7" firstAttribute="centerY" secondItem="oer-3R-WvS" secondAttribute="centerY" id="d7M-MM-KDP"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -220,22 +195,24 @@
                             <constraint firstItem="qdh-FQ-a6k" firstAttribute="top" secondItem="Nxa-WQ-DAM" secondAttribute="bottom" id="5qS-E7-F6Y"/>
                             <constraint firstAttribute="trailing" secondItem="sBC-sM-Zuf" secondAttribute="trailing" id="9So-0X-7kI"/>
                             <constraint firstItem="sBC-sM-Zuf" firstAttribute="leading" secondItem="F9j-wP-B4q" secondAttribute="leading" id="E0V-Ad-vNd"/>
-                            <constraint firstItem="3Iq-0G-Knw" firstAttribute="top" secondItem="sBC-sM-Zuf" secondAttribute="bottom" id="OfU-52-ghv"/>
+                            <constraint firstAttribute="trailing" secondItem="oer-3R-WvS" secondAttribute="trailing" id="EeH-uR-pg2"/>
+                            <constraint firstItem="Nxa-WQ-DAM" firstAttribute="top" secondItem="sBC-sM-Zuf" secondAttribute="bottom" id="QqF-uW-faq"/>
+                            <constraint firstItem="oer-3R-WvS" firstAttribute="top" secondItem="sBC-sM-Zuf" secondAttribute="bottom" id="aeR-9C-bcc"/>
                             <constraint firstItem="sBC-sM-Zuf" firstAttribute="top" secondItem="9oL-rD-8bM" secondAttribute="bottom" id="dM5-o6-DUU"/>
                             <constraint firstItem="9oL-rD-8bM" firstAttribute="leading" secondItem="F9j-wP-B4q" secondAttribute="leading" id="e3t-nW-JLC"/>
-                            <constraint firstItem="3Iq-0G-Knw" firstAttribute="leading" secondItem="F9j-wP-B4q" secondAttribute="leading" id="ehD-Ia-xPc"/>
-                            <constraint firstAttribute="trailing" secondItem="3Iq-0G-Knw" secondAttribute="trailing" id="ev6-xX-ww2"/>
+                            <constraint firstItem="qdh-FQ-a6k" firstAttribute="top" secondItem="oer-3R-WvS" secondAttribute="bottom" id="f7M-QZ-Crz"/>
                             <constraint firstItem="Nxa-WQ-DAM" firstAttribute="leading" secondItem="F9j-wP-B4q" secondAttribute="leading" id="fgN-IA-tzW"/>
+                            <constraint firstItem="oer-3R-WvS" firstAttribute="leading" secondItem="F9j-wP-B4q" secondAttribute="leading" id="iRu-d0-Hhh"/>
                             <constraint firstItem="9oL-rD-8bM" firstAttribute="top" secondItem="V10-Av-wFy" secondAttribute="bottom" id="kdp-dd-h93"/>
                             <constraint firstAttribute="trailing" secondItem="Nxa-WQ-DAM" secondAttribute="trailing" id="na2-bY-20B"/>
                             <constraint firstAttribute="trailing" secondItem="9oL-rD-8bM" secondAttribute="trailing" id="umQ-qZ-k9d"/>
-                            <constraint firstItem="Nxa-WQ-DAM" firstAttribute="top" secondItem="3Iq-0G-Knw" secondAttribute="bottom" id="xEV-5X-ikl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Mne-7J-0Jl" id="dpj-BX-YeU"/>
                         <outlet property="backButton" destination="ibT-lA-QG1" id="Xy2-Zf-ryO"/>
                         <outlet property="menuButton" destination="NpS-Qq-d2c" id="8aF-k0-WMU"/>
+                        <outlet property="noAddressesView" destination="oer-3R-WvS" id="a0v-N1-6dd"/>
                         <outlet property="tableView" destination="Nxa-WQ-DAM" id="WsD-EB-9RY"/>
                     </connections>
                 </viewController>
@@ -247,7 +224,6 @@
     <resources>
         <image name="back_icon" width="18" height="15"/>
         <image name="book_add_emc_icon" width="24" height="24"/>
-        <image name="book_search_icon" width="18" height="20"/>
         <image name="menu_icon" width="18" height="13"/>
         <image name="send_emer_icon" width="35" height="31"/>
     </resources>

@@ -44,12 +44,12 @@ class SideMenuViewController: LGSideMenuController {
     
     private func selectTabItem(at index:Int, subIndex:Int) {
         
-        if index == 8 {
+        if index == 9 {
             performLogout()
-        } else if index == 3 && subIndex != -1 {
+        } else if index == 4 && subIndex != -1 {
             checkRootController()
             mainTabBarController.showNVSBrowser(at: index,subIndex:subIndex)
-        } else if index > 3 {
+        } else if index > 4 {
             showController(at: index, subIndex: subIndex)
         } else {
             checkRootController()
@@ -73,13 +73,13 @@ class SideMenuViewController: LGSideMenuController {
         var vc:UIViewController?
         
         switch index {
-        case 4:
-            vc = SettingsViewController.controller()
         case 5:
-            vc = AboutViewController.controller()
+            vc = SettingsViewController.controller()
         case 6:
-            vc = FeedbackViewController.controller()
+            vc = AboutViewController.controller()
         case 7:
+            vc = FeedbackViewController.controller()
+        case 8:
             if subIndex == 1 {
                 vc = TermOfUseViewController.controller()
             } else {

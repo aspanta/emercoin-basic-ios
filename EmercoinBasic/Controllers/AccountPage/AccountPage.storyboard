@@ -153,11 +153,19 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" red="0.40784313729999999" green="0.28627450980000002" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no any transaction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-5V-wox">
+                                <rect key="frame" x="79" y="322" width="216" height="22"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="DmL-5V-wox" firstAttribute="centerY" secondItem="p6D-me-SRJ" secondAttribute="centerY" id="Azx-JO-yjo"/>
                             <constraint firstAttribute="trailing" secondItem="QUv-Ud-Nvs" secondAttribute="trailing" id="Dbq-uK-Raa"/>
                             <constraint firstItem="6sM-vi-uyb" firstAttribute="centerY" secondItem="p6D-me-SRJ" secondAttribute="centerY" id="M8r-AO-btg"/>
+                            <constraint firstItem="DmL-5V-wox" firstAttribute="centerX" secondItem="p6D-me-SRJ" secondAttribute="centerX" id="SZe-u5-OuW"/>
                             <constraint firstItem="QUv-Ud-Nvs" firstAttribute="leading" secondItem="p6D-me-SRJ" secondAttribute="leading" id="YaY-S2-UnH"/>
                             <constraint firstItem="QUv-Ud-Nvs" firstAttribute="top" secondItem="zEH-Q7-Gge" secondAttribute="bottom" id="eC7-XK-GpE"/>
                             <constraint firstItem="6sM-vi-uyb" firstAttribute="centerX" secondItem="p6D-me-SRJ" secondAttribute="centerX" id="jku-PA-y7A"/>
@@ -166,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="activityView" destination="6sM-vi-uyb" id="Jnf-oi-J5H"/>
+                        <outlet property="noTransactionsLabel" destination="DmL-5V-wox" id="E5R-88-PJ5"/>
                         <outlet property="tableView" destination="QUv-Ud-Nvs" id="vkZ-TO-cdd"/>
                     </connections>
                 </viewController>

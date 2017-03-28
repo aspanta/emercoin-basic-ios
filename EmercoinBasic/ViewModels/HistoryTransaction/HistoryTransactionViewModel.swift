@@ -15,11 +15,11 @@ class HistoryTransactionViewModel {
     
     init(historyTransaction:HistoryTransaction) {
         
-        self.date = historyTransaction.date ?? ""
-        self.address = historyTransaction.address ?? ""
+        self.date = historyTransaction.date
+        self.address = historyTransaction.address
         self.amount = String.coinFormat(at: historyTransaction.amount)
         
-        let isIncoming = historyTransaction.typeOperation == .incoming
+        let isIncoming = historyTransaction.direction() == .incoming
         
         let image = isIncoming ? "oper_rightarrow_icon" : "oper_leftarrow_icon"
         

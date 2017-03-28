@@ -86,11 +86,8 @@ struct Constants {
             static let Send = "Send Coins"
             static let MyAddress = "My Addresses"
             static let Get = "Receive Coins"
-            
-            struct ExchangeCoins {
-                 static let Bitcoin = "BTC to EMC Exchange"
-                 static let Emercoin = "EMC to BTC Exchange"
-            }
+            static let History = "History"
+    
         }
         
         struct Get {
@@ -131,6 +128,10 @@ struct Constants {
                 static let Title = "Receive Coins"
                 static let Image = "menu_get_icon"
             }
+            struct History {
+                static let Title = "Transaction History"
+                static let Image = "menu_history_icon"
+            }
             struct BCTools {
                 static let Title = "BC Tools"
                 static let Image = "menu_bctools_icon"
@@ -170,6 +171,7 @@ struct Constants {
             static let Get = "Receive"
             static let Exchange = "Exchange"
             static let BlockChain = "Blockchain"
+            static let History = "History"
         }
         
         struct TabImage {
@@ -178,6 +180,7 @@ struct Constants {
             static let Get = "tab_get_icon"
             static let Exchange = "tab_exchange_icon"
             static let BlockChain = "tab_blockchain_icon"
+            static let History = "tab_history_icon"
         }
     }
 

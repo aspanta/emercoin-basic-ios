@@ -7,6 +7,10 @@ import Foundation
 
 extension String {
     
+    var isEmpty:Bool {
+        return length == 0
+    }
+    
     var first: String {
         return String(characters.prefix(1))
     }

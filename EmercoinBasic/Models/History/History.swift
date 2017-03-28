@@ -6,17 +6,15 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RealmSwift
 
 
 class History: NSObject {
-
-    private var transactionList:[HistoryTransaction] = []
     
-    var transactions:[HistoryTransaction] {
+    var transactions:Results<HistoryTransaction> {
         get {
-            return transactionList.sorted(by: { (tr1, tr2) -> Bool in
-                return tr1.timereceived > tr2.timereceived
-            })
+            let realm = try! Realm()
+            return realm.objects(HistoryTransaction.self).sorted(byKeyPath: "timereceived", ascending: false)
         }
     }
     
@@ -26,15 +24,31 @@ class History: NSObject {
     var activityIndicator = PublishSubject<Bool>()
     
     func add(transaction:HistoryTransaction) {
-        transactionList.append(transaction)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(transaction)
+        }
+    }
+    
+    func add(transactions:[HistoryTransaction]) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(transactions)
+        }
     }
     
     func remove(transaction:HistoryTransaction) {
-        transactionList.remove(object: transaction)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(transaction)
+        }
     }
     
     func removeAll() {
-        transactionList.removeAll()
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(transactions)
+        }
     }
     
     func load() {
@@ -47,7 +61,9 @@ class History: NSObject {
                 guard let transactions = data as? [HistoryTransaction] else {
                     return
                 }
-                self?.transactionList = transactions
+                self?.removeAll()
+                self?.add(transactions: transactions)
+                
                 self?.success.onNext(true)
             } else {
                 self?.error.onNext(error!)

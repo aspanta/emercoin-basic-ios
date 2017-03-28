@@ -9,7 +9,7 @@ class Coin {
     var name:String?
     var amount:Double = -1
     var image:String?
-    var sign:String?
+    var sign = ""
     var color:String?
     var inUSD:Double = 1.4
 

@@ -33,9 +33,6 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
             } else {
                 setupRefreshControl()
             }
-    
-        } else {
-            addressBook.stubContacts()
         }
         
         tableView.baseSetup()

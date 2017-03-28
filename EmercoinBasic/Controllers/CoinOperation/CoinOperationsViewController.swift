@@ -13,6 +13,7 @@ enum CoinsOperation {
     case get
     case historyAndOperations
     case myAddress
+    case history
 }
 
 enum Side:Int{
@@ -76,7 +77,8 @@ class CoinOperationsViewController: BaseViewController {
         case .myAddress:
             text = Constants.Controllers.CoinsOperation.MyAddress
             addButton.isHidden = false
-            isMenuHide = true;
+        case .history:
+            text = Constants.Controllers.CoinsOperation.History
         }
         
         menuButton.isHidden = isMenuHide
@@ -114,6 +116,9 @@ class CoinOperationsViewController: BaseViewController {
             controller = vc
         case .myAddress:
             let vc = MyAdressViewController.controller() as! MyAdressViewController
+            controller = vc
+        case .history:
+            let vc = HistoryViewController.controller() as! HistoryViewController
             controller = vc
         }
         

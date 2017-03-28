@@ -36,4 +36,5 @@ FOUNDATION_EXPORT double LGSideMenuControllerVersionNumber;
 FOUNDATION_EXPORT const unsigned char LGSideMenuControllerVersionString[];
 
 #import <LGSideMenuController/LGSideMenuController.h>
+#import <LGSideMenuController/LGSideMenuSegue.h>
 #import <LGSideMenuController/UIViewController+LGSideMenuController.h>

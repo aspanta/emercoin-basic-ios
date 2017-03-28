@@ -49,8 +49,10 @@ class LeftViewController: BaseViewController {
                                     image: Constants.Controllers.Menu.Politics.Image)
         let exitMenuItem = MenuItem(title: Constants.Controllers.Menu.Exit.Title,
                                     image: Constants.Controllers.Menu.Exit.Image)
+        let historyMenuItem = MenuItem(title: Constants.Controllers.Menu.History.Title,
+                                    image: Constants.Controllers.Menu.History.Image)
         
-        menuItems = [homeMenuItem,sendMenuItem,getMenuItem,bctoolsMenuItem,settingsMenuItem,
+        menuItems = [homeMenuItem,sendMenuItem,getMenuItem,historyMenuItem,bctoolsMenuItem,settingsMenuItem,
                     aboutMenuItem,contactsMenuItem,politicsMenuItem,exitMenuItem]
         
     }

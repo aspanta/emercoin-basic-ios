@@ -65,6 +65,7 @@ extension AddressBookViewController {
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .top)
         tableView.endUpdates()
+        self.updateUI()
     }
     
     private func addDeleteContactViewWith(indexPath:IndexPath) {
@@ -89,11 +90,10 @@ extension AddressBookViewController {
         let contact = itemAt(indexPath: indexPath)
         editContactView.viewModel = ContactViewModel(contact: contact)
         
-        editContactView.add = ({(name, address) in
-            contact.name = name
-            contact.address = address
+        editContactView.add = ({[weak self](name, address) in
             
-            self.reloadRows(at: [indexPath])
+            self?.addressBook.update(at: name, address: address, index: indexPath.row)
+            self?.reloadRows(at: [indexPath])
         })
         self.parent?.view.addSubview(editContactView)
     }
