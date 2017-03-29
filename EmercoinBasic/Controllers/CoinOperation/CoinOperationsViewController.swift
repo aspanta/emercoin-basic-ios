@@ -76,6 +76,7 @@ class CoinOperationsViewController: BaseViewController {
             isMenuHide = true
         case .myAddress:
             text = Constants.Controllers.CoinsOperation.MyAddress
+            isMenuHide = true
             addButton.isHidden = false
         case .history:
             text = Constants.Controllers.CoinsOperation.History

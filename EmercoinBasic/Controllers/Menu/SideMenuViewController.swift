@@ -74,17 +74,12 @@ class SideMenuViewController: LGSideMenuController {
         
         switch index {
         case 5:
-            vc = SettingsViewController.controller()
-        case 6:
-            vc = AboutViewController.controller()
-        case 7:
-            vc = FeedbackViewController.controller()
-        case 8:
-            if subIndex == 1 {
-                vc = TermOfUseViewController.controller()
-            } else {
-                vc = PrivacyPolicyViewController.controller()
-            }
+            let bookVC = AddressBookViewController.controller() as! AddressBookViewController
+            bookVC.isFromMenu = true
+            vc = bookVC
+        case 6:vc = AboutViewController.controller()
+        case 7:vc = PrivacyPolicyViewController.controller()
+        case 8:vc = TermOfUseViewController.controller()
         default:
             return
         }

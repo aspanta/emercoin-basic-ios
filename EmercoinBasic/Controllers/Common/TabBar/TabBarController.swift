@@ -32,12 +32,10 @@ class TabBarController: UITabBarController {
     func showController(at index:Int) {
         
         checkChildControllers(at: index)
-        
         selectedIndex = index
     }
     
     func showNVSBrowser(at index:Int, subIndex:Int) {
-        
         
         guard let nav = viewControllers?.last as? BaseNavigationController else {
             return
@@ -50,7 +48,11 @@ class TabBarController: UITabBarController {
         checkChildControllers(at: index)
         
         if selectedIndex == index {
-            vc.showBrowserSubController(at: subIndex)
+            if subIndex == 0  {
+                vc.showBrowserSubController(at: subIndex)
+            } else if subIndex == 1 {
+                vc.showMyNotesTab()
+            }
         } else {
             subControllerIndex = subIndex
             selectedIndex = index
@@ -109,10 +111,15 @@ class TabBarController: UITabBarController {
         
         blockChain.viewDidAppear = {
             
-            if self.subControllerIndex != -1 {
+            let index = self.subControllerIndex
+            
+            if index == 0 {
                 blockChain.showBrowserSubController(at: self.subControllerIndex)
-                self.subControllerIndex = -1
+            } else if index == 1  {
+                blockChain.showMyNotesTab()
             }
+            
+            self.subControllerIndex = -1
         }
 
         viewControllers = [homeNav,sendNav,getNav,historyNav,blockChainNav]

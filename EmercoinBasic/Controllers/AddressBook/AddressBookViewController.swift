@@ -22,6 +22,8 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
     
     let disposeBag = DisposeBag()
     
+    var isFromMenu = false
+    
     override class func storyboardName() -> String {
         return "AddressBook"
     }
@@ -63,5 +65,13 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
             self.tableView.reload()
         })
         self.parent?.view.addSubview(addContactView)
+    }
+    
+    override func back() {
+        if isFromMenu {
+            backToDashBoard()
+        } else {
+            super.back()
+        }
     }
 }

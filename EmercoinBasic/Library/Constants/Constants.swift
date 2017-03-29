@@ -133,9 +133,8 @@ struct Constants {
                 static let Image = "menu_history_icon"
             }
             struct BCTools {
-                static let Title = "BC Tools"
+                static let Title = "Manage Names"
                 static let Image = "menu_bctools_icon"
-                static let SubTitles = ["EMC DPO,EMC DNS, NVS Etitor"]
             }
             struct About {
                 static let Title = "About"
@@ -149,7 +148,11 @@ struct Constants {
             struct Politics {
                 static let Title = "Privacy Policy"
                 static let Image = "menu_politics_icon"
-                static let SubTitles = ["Terms of Use"]
+            }
+            
+            struct Terms {
+                static let Title = "Terms of Use"
+                static let Image = "menu_terms_icon"
             }
             
             struct Contacts {
@@ -160,7 +163,11 @@ struct Constants {
             struct Exit {
                 static let Title = "Logout"
                 static let Image = "menu_exit_icon"
-                static let SubTitles = ["Alexxx30"]
+            }
+            
+            struct Book {
+                static let Title = "Address Book"
+                static let Image = "menu_book_icon"
             }
             
         }

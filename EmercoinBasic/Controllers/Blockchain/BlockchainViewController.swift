@@ -92,6 +92,15 @@ class BlockchainViewController: ButtonBarPagerTabStripViewController, TabBarObje
         
     }
     
+    func showMyNotesTab() {
+        
+        if self.buttonBarView.selectedIndex == 1 {
+            self.moveTo(viewController: self.notesController!)
+        } else {
+        }
+        
+    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         let firstVC = MyNotesViewController.controller() as! MyNotesViewController

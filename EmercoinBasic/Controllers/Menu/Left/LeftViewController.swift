@@ -39,21 +39,21 @@ class LeftViewController: BaseViewController {
                                     image: Constants.Controllers.Menu.Get.Image)
         let bctoolsMenuItem = MenuItem(title: Constants.Controllers.Menu.BCTools.Title,
                                     image: Constants.Controllers.Menu.BCTools.Image)
-        let settingsMenuItem = MenuItem(title: Constants.Controllers.Menu.Settings.Title,
-                                    image: Constants.Controllers.Menu.Settings.Image)
         let aboutMenuItem = MenuItem(title: Constants.Controllers.Menu.About.Title,
                                     image: Constants.Controllers.Menu.About.Image)
-        let contactsMenuItem = MenuItem(title: Constants.Controllers.Menu.Contacts.Title,
-                                    image: Constants.Controllers.Menu.Contacts.Image)
         let politicsMenuItem = MenuItem(title: Constants.Controllers.Menu.Politics.Title,
                                     image: Constants.Controllers.Menu.Politics.Image)
+        let termsMenuItem = MenuItem(title: Constants.Controllers.Menu.Terms.Title,
+                                        image: Constants.Controllers.Menu.Terms.Image)
         let exitMenuItem = MenuItem(title: Constants.Controllers.Menu.Exit.Title,
                                     image: Constants.Controllers.Menu.Exit.Image)
         let historyMenuItem = MenuItem(title: Constants.Controllers.Menu.History.Title,
                                     image: Constants.Controllers.Menu.History.Image)
+        let bookMenuItem = MenuItem(title: Constants.Controllers.Menu.Book.Title,
+                                       image: Constants.Controllers.Menu.Book.Image)
         
-        menuItems = [homeMenuItem,sendMenuItem,getMenuItem,historyMenuItem,bctoolsMenuItem,settingsMenuItem,
-                    aboutMenuItem,contactsMenuItem,politicsMenuItem,exitMenuItem]
+        menuItems = [homeMenuItem,sendMenuItem,getMenuItem,historyMenuItem,bctoolsMenuItem,
+                     bookMenuItem,aboutMenuItem,politicsMenuItem,termsMenuItem,exitMenuItem]
         
     }
 
