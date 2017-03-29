@@ -43,6 +43,22 @@ extension String {
         return  String(self.characters.prefix(index))
     }
     
+    static func dropZero(at text:String) -> String {
+        
+        var string = text
+        
+        let ch = string.last
+        
+        if ch == "0" {
+            string = string.removeLast()
+            string = dropZero(at:string)
+        } else if ch == "." {
+            string = string.removeLast()
+        }
+        
+        return string
+    }
+    
     static func randomStringWithLength (_ len : Int) -> String {
         
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

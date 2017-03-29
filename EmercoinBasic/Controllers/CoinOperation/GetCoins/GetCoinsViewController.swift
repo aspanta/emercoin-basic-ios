@@ -98,7 +98,9 @@ class GetCoinsViewController: BaseViewController {
     
     internal func generateQRCode(at address:String) {
     
-        var amount = amountTextField.text
+        var amount = amountTextField.text ?? ""
+        amount = amount.replacingOccurrences(of: ",", with: ".")
+        amount = String.dropZero(at: amount)
         
         let name = "emercoin"
         var text = ""
@@ -106,9 +108,9 @@ class GetCoinsViewController: BaseViewController {
         if (address.length) > 0 {
             text =  name+":\(address)"
             
-            if (amount?.length)! > 0 && amount != "0" {
-                amount = amount?.replacingOccurrences(of: ",", with: ".")
-                text = text+"?amount=\(amount!)"
+            if (amount.length) > 0 && amount != "0" {
+                
+                text = text+"?amount=\(amount)"
             }
             
             QRCodeHelper.generateQRCode(at: text, size: qrCodeImageView.frame.size, completion: { (image) in

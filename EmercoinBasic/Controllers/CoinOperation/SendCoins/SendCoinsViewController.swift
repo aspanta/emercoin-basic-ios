@@ -87,16 +87,18 @@ class SendCoinsViewController: BaseViewController {
     
     private func addRequestSendView() {
     
-        let amount = amountTextField.text?.replacingOccurrences(of: ",", with: ".")
-        self.amount = Double(amount ?? "0") ?? 0
+        var amount = amountTextField.text ?? ""
+        amount = amount.replacingOccurrences(of: ",", with: ".")
+        amount = String.dropZero(at: amount)
+        self.amount = Double(amount) ?? 0
         let address = addressTextField.text
         
-        if (amount?.length)! > 0 && (address?.length)! > 0  {
+        if (amount.length) > 0 && (address?.length)! > 0  {
         
             let requestSendView:RequestSendView! = loadViewFromXib(name: "Send", index: 0,
                                                                    frame: self.parent!.view.frame) as! RequestSendView
             
-            requestSendView.amount = self.amount
+            requestSendView.amount = amount
             requestSendView.sendCoins = ({[weak self] in
                 self?.viewModel?.sendCoins(at: [address ?? "", self?.amount as Any] as AnyObject)
             })

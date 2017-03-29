@@ -11,14 +11,14 @@ class RequestSendView: PopupView {
     
     var sendCoins:((Void) -> (Void))?
     
-    var amount:Double = 0 {
+    var amount:String = "" {
         didSet {
             updateUI()
         }
     }
     
     private func updateUI() {
-        let requestString = String(format:"Do you want to send to the address %@ EMC?",String.coinFormat(at:amount))
+        let requestString = String(format:"Do you want to send to the address %@ EMC?",amount)
         amountLabel?.text = requestString
     }
     
