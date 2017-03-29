@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -662,7 +662,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MUk-ai-wto" id="n6K-fv-6kR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72O-x6-QqY">
@@ -705,17 +705,11 @@
                                     <outlet property="delegate" destination="CsI-KB-e2y" id="n09-44-u0u"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qOq-dn-ZYj">
-                                <rect key="frame" x="169" y="183" width="37" height="37"/>
-                                <color key="color" red="0.40784313729999999" green="0.28627450980000002" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qOq-dn-ZYj" firstAttribute="centerY" secondItem="ooi-fH-H7W" secondAttribute="centerY" id="4jP-uo-ub6"/>
                             <constraint firstItem="8BI-hy-hmw" firstAttribute="leading" secondItem="ooi-fH-H7W" secondAttribute="leading" id="AI7-Hd-1Y4"/>
                             <constraint firstItem="cS8-Tv-2l8" firstAttribute="top" secondItem="8BI-hy-hmw" secondAttribute="bottom" id="WND-87-y0G"/>
-                            <constraint firstItem="qOq-dn-ZYj" firstAttribute="centerX" secondItem="ooi-fH-H7W" secondAttribute="centerX" id="bz3-eo-hLH"/>
                             <constraint firstAttribute="trailing" secondItem="8BI-hy-hmw" secondAttribute="trailing" id="rys-Zr-tdb"/>
                             <constraint firstItem="8BI-hy-hmw" firstAttribute="top" secondItem="CWz-GR-A4X" secondAttribute="bottom" id="ush-7q-lzm"/>
                         </constraints>
@@ -723,7 +717,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="404"/>
                     <connections>
-                        <outlet property="activityView" destination="qOq-dn-ZYj" id="TGG-ZH-36V"/>
                         <outlet property="tableView" destination="8BI-hy-hmw" id="MG6-Bl-wpT"/>
                     </connections>
                 </viewController>

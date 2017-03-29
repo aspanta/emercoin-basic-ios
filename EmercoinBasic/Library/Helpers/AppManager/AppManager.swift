@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AppManager {
     
@@ -20,6 +21,10 @@ class AppManager {
     func logOut() {
         
         settings.clear()
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
     }
-    
 }

@@ -15,7 +15,7 @@ class AlertsHelper {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        
+
         return alert
     }
 }

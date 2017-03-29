@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -73,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="21k-es-nmd" id="3ee-hm-lZM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOw-8b-Yyd">
@@ -149,12 +149,8 @@
                                     <outlet property="delegate" destination="1k6-jz-AqF" id="cGs-RZ-2ja"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6sM-vi-uyb">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <color key="color" red="0.40784313729999999" green="0.28627450980000002" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no any transaction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-5V-wox">
-                                <rect key="frame" x="79" y="322" width="216" height="22"/>
+                                <rect key="frame" x="79.5" y="322.5" width="216" height="21"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -164,16 +160,13 @@
                         <constraints>
                             <constraint firstItem="DmL-5V-wox" firstAttribute="centerY" secondItem="p6D-me-SRJ" secondAttribute="centerY" id="Azx-JO-yjo"/>
                             <constraint firstAttribute="trailing" secondItem="QUv-Ud-Nvs" secondAttribute="trailing" id="Dbq-uK-Raa"/>
-                            <constraint firstItem="6sM-vi-uyb" firstAttribute="centerY" secondItem="p6D-me-SRJ" secondAttribute="centerY" id="M8r-AO-btg"/>
                             <constraint firstItem="DmL-5V-wox" firstAttribute="centerX" secondItem="p6D-me-SRJ" secondAttribute="centerX" id="SZe-u5-OuW"/>
                             <constraint firstItem="QUv-Ud-Nvs" firstAttribute="leading" secondItem="p6D-me-SRJ" secondAttribute="leading" id="YaY-S2-UnH"/>
                             <constraint firstItem="QUv-Ud-Nvs" firstAttribute="top" secondItem="zEH-Q7-Gge" secondAttribute="bottom" id="eC7-XK-GpE"/>
-                            <constraint firstItem="6sM-vi-uyb" firstAttribute="centerX" secondItem="p6D-me-SRJ" secondAttribute="centerX" id="jku-PA-y7A"/>
                             <constraint firstItem="1SX-Z2-22U" firstAttribute="top" secondItem="QUv-Ud-Nvs" secondAttribute="bottom" id="uvC-eJ-4Lb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityView" destination="6sM-vi-uyb" id="Jnf-oi-J5H"/>
                         <outlet property="noTransactionsLabel" destination="DmL-5V-wox" id="E5R-88-PJ5"/>
                         <outlet property="tableView" destination="QUv-Ud-Nvs" id="vkZ-TO-cdd"/>
                     </connections>

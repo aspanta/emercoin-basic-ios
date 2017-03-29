@@ -10,7 +10,6 @@ import RxCocoa
 class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet internal weak var tableView:UITableView!
-    @IBOutlet internal weak var activityView:UIActivityIndicatorView!
     
     var addressBook = AddressBook()
     var isMyAddressBook = true
@@ -27,12 +26,8 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
             addressBook = AppManager.sharedInstance.myAddressBook
             setupAddresses()
             setupActivityIndicator()
-            
-            if addressBook.contacts.count == 0 {
-                addressBook.load()
-            } else {
-                setupRefreshControl()
-            }
+            setupRefreshControl()
+            addressBook.load()
         }
         
         tableView.baseSetup()
@@ -58,17 +53,8 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
             
             let refresh = self?.tableView.refreshControl
             
-            if refresh == nil {
-                self?.activityView.isHidden = !state
-                self?.activityView.startAnimating()
-                self?.setupRefreshControl()
-            } else {
-                if state {
-                    if refresh?.isRefreshing == false {
-                        refresh?.beginRefreshing()
-                    }
-                } else {
-                    self?.activityView.stopAnimating()
+            if state == false {
+                if refresh?.isRefreshing == true  {
                     refresh?.endRefreshing()
                 }
             }
@@ -79,7 +65,6 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
     private func setupRefreshControl() {
         
         let refresh = UIRefreshControl()
-        refresh.tintColor = activityView.tintColor
         refresh.addTarget(self, action: #selector(self.handleRefresh(sender:)), for: .valueChanged)
         tableView.refreshControl = refresh
     }

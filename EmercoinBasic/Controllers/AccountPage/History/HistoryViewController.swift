@@ -10,7 +10,6 @@ import RxCocoa
 class HistoryViewController: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet internal weak var tableView:UITableView!
-    @IBOutlet internal weak var activityView:UIActivityIndicatorView!
     @IBOutlet internal weak var noTransactionsLabel:UILabel!
     
     var history = History()
@@ -21,14 +20,21 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
         return "AccountPage"
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        history.load()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.baseSetup()
         setupHistory()
         setupUI()
+        setupRefreshControl()
         setupActivityIndicator()
-        history.load()
+    
     }
     
     private func setupUI() {
@@ -39,7 +45,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     private func setupRefreshControl() {
         
         let refresh = UIRefreshControl()
-        refresh.tintColor = activityView.tintColor
         refresh.addTarget(self, action: #selector(self.handleRefresh(sender:)), for: .valueChanged)
         tableView.refreshControl = refresh
     }
@@ -70,17 +75,8 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
             
             let refresh = self?.tableView.refreshControl
             
-            if refresh == nil {
-                self?.activityView.isHidden = !state
-                self?.activityView.startAnimating()
-                self?.setupRefreshControl()
-            } else {
-                if state {
-                    if refresh?.isRefreshing == false {
-                        refresh?.beginRefreshing()
-                    }
-                } else {
-                    self?.activityView.stopAnimating()
+            if state == false {
+                if refresh?.isRefreshing == true  {
                     refresh?.endRefreshing()
                 }
             }

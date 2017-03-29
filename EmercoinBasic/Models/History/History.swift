@@ -52,9 +52,7 @@ class History: NSObject {
     }
     
     func load() {
-        
-        activityIndicator.onNext(true)
-        
+    
         APIManager.sharedInstance.loadTransactions {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
             if error == nil {
