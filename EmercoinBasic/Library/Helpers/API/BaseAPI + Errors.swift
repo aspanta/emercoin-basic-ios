@@ -15,7 +15,7 @@ extension BaseAPI {
         
         let message = tempError.domain
         
-        if message.contains("Unauthorized error") {
+        if message.contains("Unauthorized") {
             text = "Authentication failed"
         } else if message.contains("Insufficient funds") {
             text = "Insufficient funds"

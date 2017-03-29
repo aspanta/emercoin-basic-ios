@@ -18,13 +18,18 @@ class AppManager {
         return settings
     }()
     
+    var isAuthorized = false
+    
     func logOut() {
         
+        isAuthorized = false
         settings.clear()
         
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
         }
+        
+        
     }
 }

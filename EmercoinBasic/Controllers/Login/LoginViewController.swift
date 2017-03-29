@@ -97,6 +97,7 @@ class LoginViewController: BaseViewController {
         
         if isAutoLogin {
             AppManager.sharedInstance.wallet.loadBalance()
+            AppManager.sharedInstance.isAuthorized = true
             showMainController()
             isAutoLogin = false
         }

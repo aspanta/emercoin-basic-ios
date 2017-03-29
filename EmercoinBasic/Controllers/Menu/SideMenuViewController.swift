@@ -88,7 +88,7 @@ class SideMenuViewController: LGSideMenuController {
         self.rootViewController = navController
     }
     
-    private func performLogout() {
+    func performLogout() {
         
         if logout != nil {
             logout!()
