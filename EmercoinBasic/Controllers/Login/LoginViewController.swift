@@ -97,7 +97,6 @@ class LoginViewController: BaseViewController {
         
         if isAutoLogin {
             AppManager.sharedInstance.wallet.loadBalance()
-            AppManager.sharedInstance.isAuthorized = true
             showMainController()
             isAutoLogin = false
         }
@@ -146,6 +145,8 @@ class LoginViewController: BaseViewController {
             self?.viewModel.clearFields()
         }
         let nav = BaseNavigationController(rootViewController: controller)
+        
+        AppManager.sharedInstance.isAuthorized = true
         
         present(nav, animated: true, completion: nil)
     }

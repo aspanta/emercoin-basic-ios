@@ -28,15 +28,17 @@ class CoinOperationsViewModel {
     
         if wallet != nil {
             
-            let coin = wallet?.emercoin
+            guard let coin = wallet?.emercoin else {
+                return
+            }
             
-            let courseTitle = coin?.exchangeAttributedString(color: .white)
-            let sign = coin?.sign
-            let stringAmount = String(format:"%@ %@",String.coinFormat(at:(coin?.amount)!),sign ?? "")
+            let courseTitle = coin.exchangeAttributedString(color: .white)
+            let sign = coin.sign
+            let stringAmount = String(format:"%@ %@",coin.stringAmount(),sign)
             
-            coinCourseTitle.onNext(courseTitle!)
+            coinCourseTitle.onNext(courseTitle)
             coinAmount.onNext(stringAmount)
-            coinSign.onNext(sign ?? "")
+            coinSign.onNext(sign)
         }
     }
     

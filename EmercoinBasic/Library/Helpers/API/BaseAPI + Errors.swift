@@ -19,7 +19,7 @@ extension BaseAPI {
             text = "Authentication failed"
         } else if message.contains("Insufficient funds") {
             text = "Insufficient funds"
-        } else if message.contains("Could not connect") {
+        } else if message.contains("Could not connect") || message.contains("NSURLErrorDomain") {
             text = "Could not connect to the server"
         } else {
             text = message.replacingOccurrences(of: ".", with: "")
@@ -28,7 +28,6 @@ extension BaseAPI {
         let newError = NSError(domain: text, code: -1, userInfo: nil)
         
         return newError
-        
     }
     
 }

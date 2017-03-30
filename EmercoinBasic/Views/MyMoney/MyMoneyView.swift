@@ -47,7 +47,7 @@ class MyMoneyView: UIView {
         
         nameLabel.text = coin.name
         nameLabel.textColor = UIColor(hexString: coin.color!)
-        countLabel.text = String(format:"%@ %@",String.coinFormat(at: coin.amount),coin.sign)
+        countLabel.text = String(format:"%@ %@",coin.stringAmount(),coin.sign)
         
         if let image = UIImage(named: coin.image!) {
             iconImageView.image = image
