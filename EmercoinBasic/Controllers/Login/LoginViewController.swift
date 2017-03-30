@@ -50,20 +50,20 @@ class LoginViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         
-        loginTextField.textChanged = {(text) in
-            self.viewModel.login = text
+        loginTextField.textChanged = {[weak self](text) in
+            self?.viewModel.login = text
         }
         
-        passwordTextField.textChanged = {(text) in
-            self.viewModel.password = text
+        passwordTextField.textChanged = {[weak self](text) in
+            self?.viewModel.password = text
         }
         
-        hostTextField.textChanged = {(text) in
-            self.viewModel.host = text
+        hostTextField.textChanged = {[weak self](text) in
+            self?.viewModel.host = text
         }
         
-        portTextField.textChanged = {(text) in
-            self.viewModel.port = text
+        portTextField.textChanged = {[weak self](text) in
+            self?.viewModel.port = text
         }
         
         viewModel.isValidCredentials.bindTo(enterButton.rx.isEnabled)
@@ -106,16 +106,12 @@ class LoginViewController: BaseViewController {
         
         viewModel.successLogin.subscribe(onNext:{ [weak self] success in
             if success {
-                DispatchQueue.main.async(){
-                    self?.showMainController()
-                }
+                self?.showMainController()
             }
         }).addDisposableTo(disposeBag)
         
         viewModel.error.subscribe(onNext:{ [weak self] error in
-            DispatchQueue.main.async(){
-                self?.showErrorAlert(at: error)
-            }
+            self?.showErrorAlert(at: error)
         }).addDisposableTo(disposeBag)
     }
     
@@ -139,16 +135,7 @@ class LoginViewController: BaseViewController {
     
     private func showMainController() {
         
-        let main = UIStoryboard.init(name: "Main", bundle: nil)
-        let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
-        controller.logout = {[weak self] in
-            self?.viewModel.clearFields()
-        }
-        let nav = BaseNavigationController(rootViewController: controller)
-        
-        AppManager.sharedInstance.isAuthorized = true
-        
-        present(nav, animated: true, completion: nil)
+        Router.sharedInstance.showMainController()
     }
     
     private func showErrorAlert(at error:NSError) {
@@ -184,13 +171,13 @@ class LoginViewController: BaseViewController {
         
         dropDown?.dataSource = dataSource
         
-        dropDown?.selectionAction = { [unowned self] (index, item) in
+        dropDown?.selectionAction = { [weak self] (index, item) in
             if index == 0 {return}
-            self.protocolTextField.text = item
-            self.viewModel.webProtocol = item
+            self?.protocolTextField.text = item
+            self?.viewModel.webProtocol = item
         }
         
-        dropDown?.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+        dropDown?.customCellConfiguration = {[weak self] (index: Index, item: String, cell: DropDownCell) -> Void in
             
             if index == 0 {
                 cell.isUserInteractionEnabled = false

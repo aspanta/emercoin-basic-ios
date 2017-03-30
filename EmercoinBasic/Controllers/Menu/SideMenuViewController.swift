@@ -25,8 +25,8 @@ class SideMenuViewController: LGSideMenuController {
         let menu = LeftViewController.controller() as! LeftViewController
         rootViewController = mainTabBarController
         
-        menu.pressed = {(index,subIndex) in
-            self.selectTabItem(at: index,subIndex: subIndex)
+        menu.pressed = {[weak self](index,subIndex) in
+            self?.selectTabItem(at: index,subIndex: subIndex)
         }
         
         menu.width = self.leftViewWidth
@@ -45,25 +45,31 @@ class SideMenuViewController: LGSideMenuController {
     private func selectTabItem(at index:Int, subIndex:Int) {
         
         if index == 9 {
-            performLogout()
+            self.performLogout()
         } else if index == 4 && subIndex != -1 {
-            checkRootController()
-            mainTabBarController.showNVSBrowser(at: index,subIndex:subIndex)
+            self.checkRootController()
+            self.mainTabBarController.showNVSBrowser(at: index,subIndex:subIndex)
         } else if index > 4 {
-            showController(at: index, subIndex: subIndex)
+            self.showController(at: index, subIndex: subIndex)
         } else {
-            checkRootController()
-            mainTabBarController.showController(at: index)
+            self.checkRootController()
+            self.mainTabBarController.showController(at: index)
         }
         
-        self.hideLeftView(animated: true, completionHandler: nil)
+        DispatchQueue.main.async {
+            self.hideLeftView(animated: true)
+        }
+    }
+    
+    deinit {
+        print("deinit - SideMenuViewController")
     }
     
     private func checkRootController() {
         
         if rootViewController != mainTabBarController {
             DispatchQueue.main.async {
-                self.rootViewController = self.mainTabBarController
+                self.changeRootController(to: self.mainTabBarController)
             }
         }
     }
@@ -84,8 +90,17 @@ class SideMenuViewController: LGSideMenuController {
             return
         }
         
-        let navController = BaseNavigationController(rootViewController: vc!)
-        self.rootViewController = navController
+        //let navController = BaseNavigationController(rootViewController: vc!)
+        //self.rootViewController = navController
+        
+        changeRootController(to: vc!)
+    }
+    
+    private func changeRootController(to controller:UIViewController)  {
+        
+        UIView.transition(with: self.rootView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.rootViewController = controller
+        }, completion: nil)
     }
     
     func performLogout() {
@@ -95,7 +110,7 @@ class SideMenuViewController: LGSideMenuController {
         }
         
         AppManager.sharedInstance.logOut()
-        dismiss(animated: true, completion: nil)
+        Router.sharedInstance.showLoginController()
     }
 }
 

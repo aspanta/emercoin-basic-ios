@@ -109,18 +109,18 @@ class TabBarController: UITabBarController {
         blockChain.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.BlockChain,
                                          imageName: Constants.Controllers.TabImage.BlockChain)
         
-        blockChain.viewDidAppear = {
+        blockChain.viewDidAppear = ({[weak self] in
             
-            let index = self.subControllerIndex
+            let index = self?.subControllerIndex
             
             if index == 0 {
-                blockChain.showBrowserSubController(at: self.subControllerIndex)
+                blockChain.showBrowserSubController(at: (self?.subControllerIndex)!)
             } else if index == 1  {
                 blockChain.showMyNotesTab()
             }
             
-            self.subControllerIndex = -1
-        }
+            self?.subControllerIndex = -1
+        })
 
         viewControllers = [homeNav,sendNav,getNav,historyNav,blockChainNav]
         

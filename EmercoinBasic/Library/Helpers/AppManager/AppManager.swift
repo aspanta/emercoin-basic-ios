@@ -25,11 +25,11 @@ class AppManager {
         isAuthorized = false
         settings.clear()
         
+        wallet.balance = -1
+        
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
         }
-        
-        
     }
 }
