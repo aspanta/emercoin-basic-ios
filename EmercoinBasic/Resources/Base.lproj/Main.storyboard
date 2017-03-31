@@ -95,7 +95,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="adS-CK-wZJ" id="il0-go-Mp1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nTY-Yy-OT1">
@@ -134,7 +134,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUJ-IO-yQu" id="Dvg-kn-BiM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bctools_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RzG-E4-XuK">
@@ -154,7 +154,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISP-un-Itt">
-                                                    <rect key="frame" x="110" y="42" width="257" height="31"/>
+                                                    <rect key="frame" x="100" y="42" width="267" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="277" id="M51-Zl-3mt"/>
                                                         <constraint firstAttribute="height" constant="31" id="T8E-ma-cGh"/>
@@ -168,7 +168,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaW-Gn-a2X">
-                                                    <rect key="frame" x="110" y="80" width="257" height="31"/>
+                                                    <rect key="frame" x="100" y="80" width="267" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="hkL-sO-ckh"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="277" id="rnc-Jh-MlK"/>
@@ -184,12 +184,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bBf-AU-j1b" firstAttribute="leading" secondItem="RzG-E4-XuK" secondAttribute="trailing" constant="28" id="6uf-Lr-Y4c"/>
-                                                <constraint firstItem="ISP-un-Itt" firstAttribute="leading" secondItem="Dvg-kn-BiM" secondAttribute="leading" constant="110" id="AQ9-LX-wEh"/>
+                                                <constraint firstItem="ISP-un-Itt" firstAttribute="leading" secondItem="Dvg-kn-BiM" secondAttribute="leading" constant="100" id="AQ9-LX-wEh"/>
                                                 <constraint firstAttribute="trailing" secondItem="ISP-un-Itt" secondAttribute="trailing" constant="8" id="LDL-Rt-cjX"/>
                                                 <constraint firstAttribute="bottom" secondItem="UaW-Gn-a2X" secondAttribute="bottom" constant="8.5" id="WyQ-sg-Svh"/>
                                                 <constraint firstItem="UaW-Gn-a2X" firstAttribute="top" secondItem="ISP-un-Itt" secondAttribute="bottom" constant="7" id="eeb-xW-9gI"/>
                                                 <constraint firstItem="RzG-E4-XuK" firstAttribute="leading" secondItem="Dvg-kn-BiM" secondAttribute="leading" constant="30" id="eu5-Nb-lZz"/>
-                                                <constraint firstItem="UaW-Gn-a2X" firstAttribute="leading" secondItem="Dvg-kn-BiM" secondAttribute="leading" constant="110" id="fPr-Uv-ToV"/>
+                                                <constraint firstItem="UaW-Gn-a2X" firstAttribute="leading" secondItem="Dvg-kn-BiM" secondAttribute="leading" constant="100" id="fPr-Uv-ToV"/>
                                                 <constraint firstItem="ISP-un-Itt" firstAttribute="top" secondItem="bBf-AU-j1b" secondAttribute="bottom" constant="10" id="fkk-mw-Eba"/>
                                                 <constraint firstItem="RzG-E4-XuK" firstAttribute="top" secondItem="Dvg-kn-BiM" secondAttribute="top" constant="13" id="hOh-Lr-2RA"/>
                                                 <constraint firstItem="bBf-AU-j1b" firstAttribute="top" secondItem="Dvg-kn-BiM" secondAttribute="top" constant="12" id="kiq-of-3uH"/>

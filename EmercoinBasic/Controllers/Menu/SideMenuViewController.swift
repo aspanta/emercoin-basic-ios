@@ -68,9 +68,7 @@ class SideMenuViewController: LGSideMenuController {
     private func checkRootController() {
         
         if rootViewController != mainTabBarController {
-            DispatchQueue.main.async {
-                self.changeRootController(to: self.mainTabBarController)
-            }
+            self.changeRootController(to: self.mainTabBarController)
         }
     }
     
@@ -89,9 +87,6 @@ class SideMenuViewController: LGSideMenuController {
         default:
             return
         }
-        
-        //let navController = BaseNavigationController(rootViewController: vc!)
-        //self.rootViewController = navController
         
         changeRootController(to: vc!)
     }
