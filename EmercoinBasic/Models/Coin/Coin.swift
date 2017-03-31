@@ -11,14 +11,14 @@ class Coin {
     var image:String?
     var sign = ""
     var color:String?
-    var inUSD:Double = 1.4
+    var priceUSD:Double = 0
 
     func stringAmount() -> String {
         return amount == -1 ? "?" : String.coinFormat(at:amount)
     }
     
     func coinInUSD() -> Double {
-        return amount * inUSD
+        return amount * priceUSD
     }
     
     func exchangeAttributedString(color:UIColor? = nil) -> NSAttributedString {
@@ -35,7 +35,7 @@ class Coin {
         let part4 = NSMutableAttributedString(string: "(", attributes: otherAttributes)
         let part5 = NSMutableAttributedString(string: "1 ", attributes: amountAttributes)
         let part6 = NSMutableAttributedString(string: sign ?? "", attributes: otherAttributes)
-        let part7 = NSMutableAttributedString(string: String(format:"%0.1f",inUSD), attributes: amountAttributes)
+        let part7 = NSMutableAttributedString(string: String(format:"%0.2f",priceUSD), attributes: amountAttributes)
         let part8 = NSMutableAttributedString(string: ")", attributes: otherAttributes)
         let part9 = NSMutableAttributedString(string: " = ", attributes: otherAttributes)
         
@@ -48,5 +48,4 @@ class Coin {
         }
         return combination
     }
-    
 }

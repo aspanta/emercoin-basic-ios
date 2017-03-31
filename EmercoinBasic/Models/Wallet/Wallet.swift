@@ -54,15 +54,24 @@ class Wallet:BaseModel {
      
         APIManager.sharedInstance.loadBalance {[weak self] (data, error) in
             
-            AppManager.sharedInstance.myAddressBook.load()
-            
             self?.isActivityIndicator.onNext(false)
             if error != nil {
                 self?.error.onNext(error!)
             } else {
+                AppManager.sharedInstance.myAddressBook.load()
                 if let balance = data as? Double {
                     self?.balance = balance
                 }
+            }
+        }
+        loadCourse()
+    }
+    
+    func loadCourse() {
+        APIManager.sharedInstance.loadEmercoinCourse {[weak self] (data, error) in
+            if let priceUSD = Double(data as! String) {
+                self?.emercoin.priceUSD = priceUSD
+                self?.success.onNext(true)
             }
         }
     }

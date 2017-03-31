@@ -74,6 +74,12 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
+    func loadEmercoinCourse(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = EmercoinCourseAPI()
+        api.startRequest(completion: completion)
+    }
+    
     private func getApi(at type:APIType) -> BaseAPI {
         
         var api:BaseAPI = BaseAPI()

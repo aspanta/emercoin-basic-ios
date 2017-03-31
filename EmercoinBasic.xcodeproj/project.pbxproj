@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
 		2D22B2411E7C4455008BB64F /* AddressBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D22B23B1E7C4455008BB64F /* AddressBook.storyboard */; };
 		2D22B2421E7C4455008BB64F /* AddressBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D22B23C1E7C4455008BB64F /* AddressBook.xib */; };
 		2D22B2431E7C4455008BB64F /* AddressBookViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22B23D1E7C4455008BB64F /* AddressBookViewController + TableView.swift */; };
@@ -202,6 +203,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
 		2D22B23B1E7C4455008BB64F /* AddressBook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddressBook.storyboard; sourceTree = "<group>"; };
 		2D22B23C1E7C4455008BB64F /* AddressBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressBook.xib; sourceTree = "<group>"; };
 		2D22B23D1E7C4455008BB64F /* AddressBookViewController + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "AddressBookViewController + TableView.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -423,6 +425,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D09F91A1E8E3FF00021B38A /* EmercoinCourseAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */,
+			);
+			path = EmercoinCourseAPI;
+			sourceTree = "<group>";
+		};
 		2D22B23A1E7C4455008BB64F /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +499,7 @@
 		2D4D98E31E7FF7D400DFB784 /* GET */ = {
 			isa = PBXGroup;
 			children = (
+				2D09F91A1E8E3FF00021B38A /* EmercoinCourseAPI */,
 			);
 			path = GET;
 			sourceTree = "<group>";
@@ -1789,6 +1800,7 @@
 				2D997BB41E7AD2B600630560 /* BaseTextField.swift in Sources */,
 				2D997B571E7AD24E00630560 /* HistoryTransaction.swift in Sources */,
 				2D997B081E7AD1FF00630560 /* UIColor + Utils.swift in Sources */,
+				2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */,
 				2D997CE31E7AD3B200630560 /* HomeMyMoneyCell.swift in Sources */,
 				2D997B1E1E7AD1FF00630560 /* ButtonBarView.swift in Sources */,
 				2D997CD61E7AD3B200630560 /* RecipientAddressViewController.swift in Sources */,
