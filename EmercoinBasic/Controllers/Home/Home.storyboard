@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="206" width="414" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeMyMoneyCell" rowHeight="70" id="wMl-h4-oS1" customClass="HomeMyMoneyCell" customModule="EmercoinBasic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeBalanceCell" rowHeight="70" id="wMl-h4-oS1" customClass="HomeBalanceCell" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMl-h4-oS1" id="DIE-WL-E8K">
@@ -70,7 +70,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgU-Is-Gwn">
-                                                            <rect key="frame" x="76" y="27" width="89.666666666666657" height="20"/>
+                                                            <rect key="frame" x="76" y="27" width="87.666666666666657" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="HCh-6c-bQa"/>
                                                             </constraints>
@@ -122,73 +122,6 @@
                                             <outlet property="titleLabel" destination="CgU-Is-Gwn" id="tc4-1U-DK4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCourseCell" rowHeight="70" id="Fec-DC-XbR" customClass="HomeCourseCell" customModule="EmercoinBasic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="98" width="414" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fec-DC-XbR" id="Ej7-9V-BUs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmV-x2-T43">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKt-Bn-WR5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                                            <connections>
-                                                                <action selector="pressedButtonWithSender:" destination="Fec-DC-XbR" eventType="touchUpInside" id="PeJ-yx-3Ot"/>
-                                                            </connections>
-                                                        </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_exp_icon" translatesAutoresizingMaskIntoConstraints="NO" id="46J-kw-4yW">
-                                                            <rect key="frame" x="380" y="25" width="20" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="U40-Jc-oGb"/>
-                                                                <constraint firstAttribute="width" constant="20" id="bQT-dp-S0p"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="course_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Kyh-eU-m1o">
-                                                            <rect key="frame" x="20" y="26" width="19" height="18"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="19" id="0xB-KK-Vpt"/>
-                                                                <constraint firstAttribute="height" constant="18" id="hb4-60-T5E"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCx-Zy-gpH">
-                                                            <rect key="frame" x="76" y="27" width="74.666666666666657" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="8Iu-Zl-XKB"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.3921568627" green="0.69019607839999997" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="sKt-Bn-WR5" secondAttribute="bottom" id="0NT-C4-YPX"/>
-                                                        <constraint firstAttribute="height" constant="70" id="J4r-Ar-XcZ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="46J-kw-4yW" secondAttribute="trailing" constant="14" id="PH9-JN-gtz"/>
-                                                        <constraint firstAttribute="trailing" secondItem="sKt-Bn-WR5" secondAttribute="trailing" id="Pkd-3B-flN"/>
-                                                        <constraint firstItem="Kyh-eU-m1o" firstAttribute="leading" secondItem="AmV-x2-T43" secondAttribute="leading" constant="20" id="QVB-dR-PfG"/>
-                                                        <constraint firstItem="cCx-Zy-gpH" firstAttribute="leading" secondItem="Kyh-eU-m1o" secondAttribute="trailing" constant="37" id="T4E-bX-4Kf"/>
-                                                        <constraint firstItem="sKt-Bn-WR5" firstAttribute="leading" secondItem="AmV-x2-T43" secondAttribute="leading" id="XoN-Xh-kst"/>
-                                                        <constraint firstItem="cCx-Zy-gpH" firstAttribute="top" secondItem="AmV-x2-T43" secondAttribute="top" constant="27" id="d3E-A4-anm"/>
-                                                        <constraint firstItem="sKt-Bn-WR5" firstAttribute="top" secondItem="AmV-x2-T43" secondAttribute="top" id="tFY-aK-85x"/>
-                                                        <constraint firstItem="Kyh-eU-m1o" firstAttribute="top" secondItem="AmV-x2-T43" secondAttribute="top" constant="26" id="uTW-gu-ddR"/>
-                                                        <constraint firstItem="46J-kw-4yW" firstAttribute="top" secondItem="AmV-x2-T43" secondAttribute="top" constant="25" id="vBw-51-lul"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="AmV-x2-T43" secondAttribute="trailing" id="Vc6-Fa-1kf"/>
-                                                <constraint firstItem="AmV-x2-T43" firstAttribute="top" secondItem="Ej7-9V-BUs" secondAttribute="top" id="eek-po-zN4"/>
-                                                <constraint firstItem="AmV-x2-T43" firstAttribute="leading" secondItem="Ej7-9V-BUs" secondAttribute="leading" id="vi6-04-kGK"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="arrowImageView" destination="46J-kw-4yW" id="enu-8O-8s6"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="4eb-RU-WSg" id="GSX-LH-Gh5"/>
@@ -217,7 +150,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE WALLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-4T-YeX">
-                                        <rect key="frame" x="117.33333333333331" y="126" width="180" height="29"/>
+                                        <rect key="frame" x="117.66666666666669" y="126" width="180" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="hab-M9-PWy"/>
                                         </constraints>
@@ -271,7 +204,6 @@
     </scenes>
     <resources>
         <image name="arrow_exp_icon" width="20" height="20"/>
-        <image name="course_icon" width="19" height="18"/>
         <image name="logo_main" width="58" height="49"/>
         <image name="menu_icon" width="18" height="12"/>
         <image name="wallet_icon" width="19" height="20"/>

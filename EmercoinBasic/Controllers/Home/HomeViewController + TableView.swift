@@ -5,8 +5,6 @@
 
 import UIKit
 
-let cellIdentifiers = ["HomeMyMoneyCell","HomeCourseCell"]
-
 extension HomeViewController {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,17 +18,11 @@ extension HomeViewController {
         let isSelectedRow = selectedRows.contains(indexPath)
         
         switch indexPath.row {
-        case 0:height = Constants.CellHeights.HomeMyMoneyCell.Collapsed
+        case 0:height = Constants.CellHeights.HomeBalanceCell.Collapsed
         if isSelectedRow {
-            let coinsHeight = Constants.CellHeights.HomeMyMoneyCell.MoneyView * Double(coins.count)
+            let coinsHeight = Constants.CellHeights.HomeBalanceCell.MoneyView * Double(coins.count)
             height += coinsHeight
             }
-        case 1:height = Constants.CellHeights.HomeCourseCell.Collapsed
-        if isSelectedRow {
-            let coinsHeight = Constants.CellHeights.HomeCourseCell.CourseView * 2.0
-            height += coinsHeight
-            }
-            
         default:break
         }
         
@@ -39,7 +31,7 @@ extension HomeViewController {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = cellIdentifiers[indexPath.row]
+        let cellIdentifier = "HomeBalanceCell"
         
         let cell:BaseTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseTableViewCell
         
@@ -51,14 +43,12 @@ extension HomeViewController {
         
         if indexPath.row == 0 {
             
-             let moneyCell = cell as! HomeMyMoneyCell
+             let moneyCell = cell as! HomeBalanceCell
             moneyCell.pressed = {[weak self] (type) in
                 self?.showOperationController()
             }
-            
+            cell.isExpanded = selectedRows.contains(indexPath)
             cell.object = coins
-        } else {
-            cell.updateUI()
         }
         
         return cell

@@ -27,7 +27,7 @@ class Coin {
         
         let otherAttributes = [NSForegroundColorAttributeName: color ?? .lightGray, NSFontAttributeName:UIFont(name: "Roboto-Light", size: 15)]
         
-        let countInUsd = String(format:"%0.1f",coinInUSD())
+        let countInUsd = String(format:"%0.2f",coinInUSD())
         
         let part1 = NSMutableAttributedString(string: "~"+countInUsd, attributes: amountAttributes)
         let part2 = NSMutableAttributedString(string: " USD", attributes: otherAttributes)

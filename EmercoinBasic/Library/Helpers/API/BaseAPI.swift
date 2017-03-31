@@ -82,7 +82,7 @@ class BaseAPI: NSObject {
         var jsonObject:[String:Any]?
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
-            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let error = error {
                 self.apiDidReturnError(error: error)
             } else if let httpResponse = response as? HTTPURLResponse {
@@ -118,6 +118,7 @@ class BaseAPI: NSObject {
         }
         self.dataTask = dataTask
         dataTask.resume()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     private func jsonDataBody(param:[String:Any]) -> Data? {

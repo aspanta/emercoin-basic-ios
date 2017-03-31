@@ -5,7 +5,7 @@
 
 import UIKit
 
-class HomeMyMoneyCell: BaseTableViewCell {
+class HomeBalanceCell: BaseTableViewCell {
 
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var arrowImageView:UIImageView!
@@ -35,7 +35,7 @@ class HomeMyMoneyCell: BaseTableViewCell {
             
             if views.count == 0 {
                 
-                var point = CGPoint(x: 0, y: Constants.CellHeights.HomeMyMoneyCell.Collapsed)
+                var point = CGPoint(x: 0, y: Constants.CellHeights.HomeBalanceCell.Collapsed)
                 
                 for coin in coins {
                     
@@ -51,7 +51,7 @@ class HomeMyMoneyCell: BaseTableViewCell {
                     let moneyView:MyMoneyView = loadViewFromXib(name: "Home", index: 0, frame: .zero) as! MyMoneyView
                     var newFrame = frame
                     newFrame.origin = point
-                    newFrame.size.height = CGFloat(Constants.CellHeights.HomeMyMoneyCell.MoneyView)
+                    newFrame.size.height = CGFloat(Constants.CellHeights.HomeBalanceCell.MoneyView)
                     moneyView.coin = coin
                     moneyView.frame = newFrame
                     addSubview(moneyView)

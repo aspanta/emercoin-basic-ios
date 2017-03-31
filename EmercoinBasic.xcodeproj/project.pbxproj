@@ -172,8 +172,7 @@
 		2D997CDF1E7AD3B200630560 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997C601E7AD3B200630560 /* Feedback.storyboard */; };
 		2D997CE01E7AD3B200630560 /* Feedback.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D997C611E7AD3B200630560 /* Feedback.xib */; };
 		2D997CE11E7AD3B200630560 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C621E7AD3B200630560 /* FeedbackViewController.swift */; };
-		2D997CE21E7AD3B200630560 /* HomeCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C651E7AD3B200630560 /* HomeCourseCell.swift */; };
-		2D997CE31E7AD3B200630560 /* HomeMyMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C661E7AD3B200630560 /* HomeMyMoneyCell.swift */; };
+		2D997CE31E7AD3B200630560 /* HomeBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C661E7AD3B200630560 /* HomeBalanceCell.swift */; };
 		2D997CE41E7AD3B200630560 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997C671E7AD3B200630560 /* Home.storyboard */; };
 		2D997CE51E7AD3B200630560 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D997C681E7AD3B200630560 /* Home.xib */; };
 		2D997CE61E7AD3B200630560 /* HomeViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C691E7AD3B200630560 /* HomeViewController + TableView.swift */; };
@@ -373,8 +372,7 @@
 		2D997C601E7AD3B200630560 /* Feedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 		2D997C611E7AD3B200630560 /* Feedback.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Feedback.xib; sourceTree = "<group>"; };
 		2D997C621E7AD3B200630560 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedbackViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997C651E7AD3B200630560 /* HomeCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeCourseCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997C661E7AD3B200630560 /* HomeMyMoneyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeMyMoneyCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2D997C661E7AD3B200630560 /* HomeBalanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeBalanceCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997C671E7AD3B200630560 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2D997C681E7AD3B200630560 /* Home.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
 		2D997C691E7AD3B200630560 /* HomeViewController + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "HomeViewController + TableView.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1535,8 +1533,7 @@
 		2D997C641E7AD3B200630560 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2D997C651E7AD3B200630560 /* HomeCourseCell.swift */,
-				2D997C661E7AD3B200630560 /* HomeMyMoneyCell.swift */,
+				2D997C661E7AD3B200630560 /* HomeBalanceCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1801,7 +1798,7 @@
 				2D997B571E7AD24E00630560 /* HistoryTransaction.swift in Sources */,
 				2D997B081E7AD1FF00630560 /* UIColor + Utils.swift in Sources */,
 				2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */,
-				2D997CE31E7AD3B200630560 /* HomeMyMoneyCell.swift in Sources */,
+				2D997CE31E7AD3B200630560 /* HomeBalanceCell.swift in Sources */,
 				2D997B1E1E7AD1FF00630560 /* ButtonBarView.swift in Sources */,
 				2D997CD61E7AD3B200630560 /* RecipientAddressViewController.swift in Sources */,
 				2D997BD01E7AD2B600630560 /* PopupView.swift in Sources */,
@@ -1817,7 +1814,6 @@
 				2D997BBC1E7AD2B600630560 /* ExchangeHeaderView.swift in Sources */,
 				2D997BD71E7AD2B600630560 /* SendAmountTextField.swift in Sources */,
 				2D997B501E7AD24E00630560 /* BCNote.swift in Sources */,
-				2D997CE21E7AD3B200630560 /* HomeCourseCell.swift in Sources */,
 				2D997BD31E7AD2B600630560 /* ProtectionGenerationView.swift in Sources */,
 				2D997B1C1E7AD1FF00630560 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				2D997BBE1E7AD2B600630560 /* FeedbackMessageView.swift in Sources */,

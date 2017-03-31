@@ -21,17 +21,9 @@ struct Constants {
     }
     
     struct CellHeights {
-        struct HomeMyMoneyCell {
+        struct HomeBalanceCell {
             static let MoneyView = 95.0
             static let Collapsed = 70.0
-        }
-        struct HomeCourseCell {
-            static let CourseView = 112.0
-            static let Collapsed = 70.0
-        }
-        struct LCBCell {
-            static let Expanded = 140.0
-            static let Collapsed = 72.0
         }
     }
     
@@ -49,7 +41,7 @@ struct Constants {
         
         struct Coins {
             static let Bitcoin = "#ED650A"
-            static let Emercoin = "#9B73AE"
+            static let Emercoin = "#8C5DA3"
         }
         
         struct Status {
@@ -103,7 +95,7 @@ struct Constants {
         struct Send {
             struct HeaderView {
                 static let BitcoinColor = "#5db1bc"
-                static let EmercoinColor = "#9c73b1"
+                static let EmercoinColor = "#8C5DA3"
                 static let BitcoinImage = "send_bit_icon"
                 static let EmercoinImage = "send_emer_icon"
             }

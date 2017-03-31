@@ -59,6 +59,8 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     
     private func setupTableView() {
         
+        selectedRows.append(IndexPath(row: 0, section: 0))
+        
         tableView.hideEmtyCells()
         tableView.allowsSelection = false
     }
