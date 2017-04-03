@@ -125,7 +125,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nxa-WQ-DAM">
                                 <rect key="frame" x="0.0" y="263" width="375" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="19" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" rowHeight="66" id="2L1-EX-iiS" customClass="ContactCell" customModule="EmercoinBasic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
@@ -135,7 +135,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KD7-vG-cnP">
-                                                    <rect key="frame" x="76" y="11" width="291" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="347" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="zyl-gq-QOZ"/>
                                                     </constraints>
@@ -144,7 +144,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wc-BU-XNn">
-                                                    <rect key="frame" x="76" y="32" width="279" height="21"/>
+                                                    <rect key="frame" x="20" y="32" width="335" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="n1i-le-EZV"/>
                                                     </constraints>
@@ -155,8 +155,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="0wc-BU-XNn" secondAttribute="trailing" constant="20" id="4Sg-HA-Yn0"/>
-                                                <constraint firstItem="0wc-BU-XNn" firstAttribute="leading" secondItem="KeX-AP-AQg" secondAttribute="leading" constant="76" id="9em-gH-Bg6"/>
-                                                <constraint firstItem="KD7-vG-cnP" firstAttribute="leading" secondItem="KeX-AP-AQg" secondAttribute="leading" constant="76" id="AbF-3X-F4u"/>
+                                                <constraint firstItem="0wc-BU-XNn" firstAttribute="leading" secondItem="KeX-AP-AQg" secondAttribute="leading" constant="20" id="9em-gH-Bg6"/>
+                                                <constraint firstItem="KD7-vG-cnP" firstAttribute="leading" secondItem="KeX-AP-AQg" secondAttribute="leading" constant="20" id="AbF-3X-F4u"/>
                                                 <constraint firstItem="KD7-vG-cnP" firstAttribute="top" secondItem="KeX-AP-AQg" secondAttribute="top" constant="11" id="TsT-nv-NDz"/>
                                                 <constraint firstAttribute="bottom" secondItem="0wc-BU-XNn" secondAttribute="bottom" constant="12" id="Utw-3Y-gog"/>
                                                 <constraint firstItem="0wc-BU-XNn" firstAttribute="top" secondItem="KD7-vG-cnP" secondAttribute="bottom" id="WA5-RJ-gAZ"/>
