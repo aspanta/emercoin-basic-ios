@@ -22,19 +22,20 @@ class Router {
     
     internal func showLoginController() {
         let login = LoginViewController.controller()
-        changeRootController(to:login)
+        let nav = BaseNavigationController(rootViewController: login)
+        changeRootController(to:nav)
         sideMenu = nil
     }
     
     internal func showMainController() {
         
-        let main = UIStoryboard.init(name: "Main", bundle: nil)
+        let main = UIStoryboard(name: "Main", bundle: nil)
         let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
-      //  let nav = BaseNavigationController(rootViewController: controller)
+        let nav = BaseNavigationController(rootViewController: controller)
         
         AppManager.sharedInstance.isAuthorized = true
         
-        changeRootController(to:controller)
+        changeRootController(to:nav)
     }
     
 }

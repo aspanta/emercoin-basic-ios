@@ -133,6 +133,11 @@ class LoginViewController: BaseViewController {
         viewModel.performLogin()
     }
     
+    @IBAction func skipButtonPressed(sender:UIButton) {
+        
+        showMainController()
+    }
+    
     private func showMainController() {
         
         Router.sharedInstance.showMainController()
