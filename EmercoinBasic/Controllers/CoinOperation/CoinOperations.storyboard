@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LZ-6c-JrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="-500.7042253521127"/>
+            <point key="canvasLocation" x="114" y="-510"/>
         </scene>
         <!--Send Coins View Controller-->
         <scene sceneID="iCj-Tj-4RL">

@@ -41,18 +41,14 @@ class TabBarController: UITabBarController {
             return
         }
         
-        guard let vc = nav.viewControllers.first as? BlockchainViewController else {
+        guard let vc = nav.viewControllers.first as? NamesViewController else {
             return
         }
         
         checkChildControllers(at: index)
         
         if selectedIndex == index {
-            if subIndex == 0  {
-                vc.showBrowserSubController(at: subIndex)
-            } else if subIndex == 1 {
-                vc.showMyNotesTab()
-            }
+            vc.showNamesTab(at: index)
         } else {
             subControllerIndex = subIndex
             selectedIndex = index
@@ -90,8 +86,8 @@ class TabBarController: UITabBarController {
         let getNav = BaseNavigationController(rootViewController: get)
         let history = CoinOperationsViewController.controller() as! CoinOperationsViewController
         let historyNav = BaseNavigationController(rootViewController: history)
-        let blockChain = BlockchainViewController.controller() as! BlockchainViewController
-        let blockChainNav = BaseNavigationController(rootViewController: blockChain)
+        let names = NamesViewController.controller() as! NamesViewController
+        let namesNav = BaseNavigationController(rootViewController: names)
         
         
         send.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.Send,
@@ -106,23 +102,19 @@ class TabBarController: UITabBarController {
                                             imageName: Constants.Controllers.TabImage.History)
         history.coinsOperation = .history
         
-        blockChain.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.BlockChain,
-                                         imageName: Constants.Controllers.TabImage.BlockChain)
+        names.tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.Names,
+                                         imageName: Constants.Controllers.TabImage.Names)
         
-        blockChain.viewDidAppear = ({[weak self] in
+        names.viewDidAppear = ({[weak self] in
             
             let index = self?.subControllerIndex
             
-            if index == 0 {
-                blockChain.showBrowserSubController(at: (self?.subControllerIndex)!)
-            } else if index == 1  {
-                blockChain.showMyNotesTab()
-            }
+            names.showNamesTab(at: index!)
             
             self?.subControllerIndex = -1
         })
 
-        viewControllers = [homeNav,sendNav,getNav,historyNav,blockChainNav]
+        viewControllers = [homeNav,sendNav,getNav,historyNav,namesNav]
         
         let count:Int = (viewControllers?.count)!
         

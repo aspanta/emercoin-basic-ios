@@ -74,13 +74,19 @@ struct Constants {
     struct Controllers {
         
         struct CoinsOperation {
-            
             static let RecipientAddress = "Send Coins"
             static let Send = "Send Coins"
             static let MyAddress = "My Addresses"
             static let Get = "Receive Coins"
             static let History = "History"
     
+        }
+        
+        struct Names {
+            
+            static let SearchResults = "Search NVS"
+            static let CreateNVS = "Create NVS"
+            static let Addresses = "My Addresses"
         }
         
         struct Get {
@@ -170,7 +176,7 @@ struct Constants {
             static let Send = "Send"
             static let Get = "Receive"
             static let Exchange = "Exchange"
-            static let BlockChain = "Blockchain"
+            static let Names = "Names"
             static let History = "History"
         }
         
@@ -179,7 +185,7 @@ struct Constants {
             static let Send = "tab_send_icon"
             static let Get = "tab_get_icon"
             static let Exchange = "tab_exchange_icon"
-            static let BlockChain = "tab_blockchain_icon"
+            static let Names = "tab_blockchain_icon"
             static let History = "tab_history_icon"
         }
     }

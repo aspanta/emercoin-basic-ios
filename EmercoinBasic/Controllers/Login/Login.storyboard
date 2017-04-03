@@ -21,7 +21,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -283,7 +283,7 @@
                                     <constraint firstItem="Oip-lX-Zw8" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="top" id="qlj-xt-rwp"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhC-Ud-97u">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhC-Ud-97u">
                                 <rect key="frame" x="281" y="445" width="34" height="30"/>
                                 <state key="normal" title="login"/>
                                 <connections>

@@ -31,11 +31,11 @@ class Router {
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
-        let nav = BaseNavigationController(rootViewController: controller)
+        //let nav = BaseNavigationController(rootViewController: controller)
         
         AppManager.sharedInstance.isAuthorized = true
         
-        changeRootController(to:nav)
+        changeRootController(to:controller)
     }
     
 }
