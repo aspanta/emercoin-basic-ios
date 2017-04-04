@@ -118,7 +118,7 @@
                                                     <color key="textColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="years" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-8Y-Uhf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-8Y-Uhf">
                                                     <rect key="frame" x="311" y="21" width="44" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="192-A5-Peh"/>
@@ -324,25 +324,25 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOc-4f-MOg">
-                                                <rect key="frame" x="20" y="55" width="66" height="25"/>
+                                                <rect key="frame" x="12" y="55" width="62" height="25"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="names_down_color_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5Tu-Pr-ijB">
-                                                        <rect key="frame" x="49" y="9" width="9" height="7"/>
+                                                        <rect key="frame" x="45" y="9" width="9" height="7"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Any" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOI-it-Vwj">
-                                                        <rect key="frame" x="8" y="2" width="34" height="22"/>
+                                                        <rect key="frame" x="8" y="2" width="30" height="21"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                                         <color key="textColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJW-RG-hvZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="25"/>
                                                         <connections>
                                                             <action selector="prefixButtonPressed" destination="FdD-AA-eA2" eventType="touchUpInside" id="NBh-o6-rwl"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niq-iS-s0P">
-                                                        <rect key="frame" x="8" y="25" width="50" height="1"/>
+                                                        <rect key="frame" x="8" y="25" width="46" height="1"/>
                                                         <color key="backgroundColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                 </subviews>
@@ -357,7 +357,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                     <constraint firstAttribute="height" constant="25" id="WDC-Cm-hHC"/>
                                                     <constraint firstItem="pOI-it-Vwj" firstAttribute="top" secondItem="MOc-4f-MOg" secondAttribute="top" constant="2" id="dud-pI-p5B"/>
                                                     <constraint firstItem="5Tu-Pr-ijB" firstAttribute="top" secondItem="MOc-4f-MOg" secondAttribute="top" constant="9" id="gfn-GN-CUU"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="obD-4T-7l8"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="obD-4T-7l8"/>
                                                     <constraint firstAttribute="trailing" secondItem="5Tu-Pr-ijB" secondAttribute="trailing" constant="8" id="otF-r3-gHJ"/>
                                                     <constraint firstItem="5Tu-Pr-ijB" firstAttribute="leading" secondItem="pOI-it-Vwj" secondAttribute="trailing" constant="7" id="p6L-RG-SaJ"/>
                                                     <constraint firstItem="NJW-RG-hvZ" firstAttribute="leading" secondItem="MOc-4f-MOg" secondAttribute="leading" id="rPI-w7-qBW"/>
@@ -413,7 +413,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                             <constraint firstAttribute="trailing" secondItem="7F8-8x-mp6" secondAttribute="trailing" constant="20" id="9Ds-nY-Ayn"/>
                                             <constraint firstAttribute="trailing" secondItem="DjJ-QK-7il" secondAttribute="trailing" id="JEP-fp-OgC"/>
                                             <constraint firstAttribute="height" constant="97" id="L25-3v-Pi1"/>
-                                            <constraint firstItem="MOc-4f-MOg" firstAttribute="leading" secondItem="VDJ-X0-e37" secondAttribute="leading" constant="20" id="UsA-bV-7dP"/>
+                                            <constraint firstItem="MOc-4f-MOg" firstAttribute="leading" secondItem="VDJ-X0-e37" secondAttribute="leading" constant="12" id="UsA-bV-7dP"/>
                                             <constraint firstItem="BPM-VD-Wp7" firstAttribute="leading" secondItem="VDJ-X0-e37" secondAttribute="leading" constant="20" id="ddY-EK-DSc"/>
                                             <constraint firstItem="7F8-8x-mp6" firstAttribute="leading" secondItem="BPM-VD-Wp7" secondAttribute="trailing" constant="8" id="hhr-88-MDi"/>
                                             <constraint firstItem="7F8-8x-mp6" firstAttribute="top" secondItem="VDJ-X0-e37" secondAttribute="top" constant="13" id="pqO-B1-0lo"/>
@@ -496,10 +496,10 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioo-WS-qSY" customClass="NVSValueView" customModule="EmercoinBasic" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="18" width="225" height="30"/>
+                                                <rect key="frame" x="98" y="18" width="222" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXp-aQ-5LV" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="222" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -515,7 +515,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHz-g1-4cu">
-                                                <rect key="frame" x="331" y="17" width="32" height="32"/>
+                                                <rect key="frame" x="328" y="17" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="Bkp-P0-fHo"/>
                                                     <constraint firstAttribute="width" constant="32" id="xBY-xc-x0g"/>
@@ -530,7 +530,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                         <constraints>
                                             <constraint firstItem="HWh-op-MKT" firstAttribute="top" secondItem="ioo-WS-qSY" secondAttribute="bottom" constant="18" id="071-qK-zJy"/>
                                             <constraint firstAttribute="trailing" secondItem="HWh-op-MKT" secondAttribute="trailing" id="1hg-nV-FYP"/>
-                                            <constraint firstAttribute="trailing" secondItem="WHz-g1-4cu" secondAttribute="trailing" constant="12" id="2oS-ca-WML"/>
+                                            <constraint firstAttribute="trailing" secondItem="WHz-g1-4cu" secondAttribute="trailing" constant="15" id="2oS-ca-WML"/>
                                             <constraint firstItem="ioo-WS-qSY" firstAttribute="top" secondItem="r3U-Cg-1sr" secondAttribute="top" constant="18" id="ARf-OI-rnf"/>
                                             <constraint firstAttribute="height" constant="67" id="DRj-ch-FQM"/>
                                             <constraint firstItem="HWh-op-MKT" firstAttribute="top" secondItem="WHz-g1-4cu" secondAttribute="bottom" constant="17" id="Hdx-ZC-ZgE"/>
@@ -555,79 +555,49 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-no-gaO">
-                                                <rect key="frame" x="19" y="23" width="82" height="21"/>
+                                                <rect key="frame" x="19" y="23" width="81" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="81.5" id="Viz-TO-KV7"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="81" id="Viz-TO-KV7"/>
                                                     <constraint firstAttribute="height" constant="21" id="wDq-b9-abh"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fp7-n3-l9v" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
-                                                <rect key="frame" x="109" y="19" width="177" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fp7-n3-l9v" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
+                                                <rect key="frame" x="108" y="19" width="200" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxCharacters">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZC-K7-1qe">
-                                                <rect key="frame" x="294" y="21" width="71" height="25"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="names_down_color_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ftT-GV-mYg">
-                                                        <rect key="frame" x="54" y="9" width="9" height="7"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdu-i1-wOo">
-                                                        <rect key="frame" x="8" y="2" width="39" height="21"/>
-                                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                                        <color key="textColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXD-Lg-00N">
-                                                        <rect key="frame" x="8" y="24" width="55" height="1"/>
-                                                        <color key="backgroundColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-fU-NcF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="25"/>
-                                                        <connections>
-                                                            <action selector="dateButtonPressed" destination="FdD-AA-eA2" eventType="touchUpInside" id="af4-ud-Loq"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="ftT-GV-mYg" firstAttribute="leading" secondItem="mdu-i1-wOo" secondAttribute="trailing" constant="7" id="0CW-IG-IsM"/>
-                                                    <constraint firstAttribute="height" constant="25" id="5kJ-U2-dtm"/>
-                                                    <constraint firstItem="mdu-i1-wOo" firstAttribute="top" secondItem="BZC-K7-1qe" secondAttribute="top" constant="2" id="CPz-sM-ujp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ftT-GV-mYg" secondAttribute="trailing" constant="8" id="Cej-AS-2yS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="bGx-fU-NcF" secondAttribute="trailing" id="Enb-QL-fne"/>
-                                                    <constraint firstItem="mdu-i1-wOo" firstAttribute="leading" secondItem="BZC-K7-1qe" secondAttribute="leading" constant="8" id="LiQ-NW-KhD"/>
-                                                    <constraint firstItem="bGx-fU-NcF" firstAttribute="top" secondItem="BZC-K7-1qe" secondAttribute="top" id="M5x-2s-YW2"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="NMC-sg-cQN"/>
-                                                    <constraint firstAttribute="bottom" secondItem="bGx-fU-NcF" secondAttribute="bottom" id="R5Y-pT-ko2"/>
-                                                    <constraint firstItem="bGx-fU-NcF" firstAttribute="leading" secondItem="BZC-K7-1qe" secondAttribute="leading" id="V7c-Xz-qm0"/>
-                                                    <constraint firstAttribute="bottom" secondItem="RXD-Lg-00N" secondAttribute="bottom" id="YZE-SU-NAM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="RXD-Lg-00N" secondAttribute="trailing" constant="8" id="fUa-TH-Ig5"/>
-                                                    <constraint firstItem="RXD-Lg-00N" firstAttribute="leading" secondItem="BZC-K7-1qe" secondAttribute="leading" constant="8" id="lo2-JW-V4Q"/>
-                                                    <constraint firstItem="ftT-GV-mYg" firstAttribute="top" secondItem="BZC-K7-1qe" secondAttribute="top" constant="9" id="lz8-Av-bGK"/>
-                                                    <constraint firstItem="RXD-Lg-00N" firstAttribute="top" secondItem="mdu-i1-wOo" secondAttribute="bottom" constant="1" id="sDO-cm-Jdf"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdu-i1-wOo">
+                                                <rect key="frame" x="316" y="23" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                                <color key="textColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Yow-no-gaO" firstAttribute="top" secondItem="OpR-Sr-5w2" secondAttribute="top" constant="23" id="3CN-ZE-SS3"/>
                                             <constraint firstAttribute="height" constant="67" id="70f-gK-ZAC"/>
                                             <constraint firstItem="7iB-HY-q9e" firstAttribute="top" secondItem="fp7-n3-l9v" secondAttribute="bottom" constant="17" id="BzJ-IW-hUz"/>
+                                            <constraint firstItem="mdu-i1-wOo" firstAttribute="leading" secondItem="fp7-n3-l9v" secondAttribute="trailing" constant="8" id="Kac-Oy-ggZ"/>
+                                            <constraint firstItem="mdu-i1-wOo" firstAttribute="top" secondItem="OpR-Sr-5w2" secondAttribute="top" constant="23" id="Nqh-Mq-uFE"/>
                                             <constraint firstItem="Yow-no-gaO" firstAttribute="leading" secondItem="OpR-Sr-5w2" secondAttribute="leading" constant="19" id="Rtb-Gh-rh0"/>
-                                            <constraint firstItem="7iB-HY-q9e" firstAttribute="top" secondItem="BZC-K7-1qe" secondAttribute="bottom" constant="20" id="aHq-eW-ygt"/>
                                             <constraint firstItem="7iB-HY-q9e" firstAttribute="leading" secondItem="OpR-Sr-5w2" secondAttribute="leading" constant="19" id="e3y-U8-MoX"/>
                                             <constraint firstItem="fp7-n3-l9v" firstAttribute="top" secondItem="OpR-Sr-5w2" secondAttribute="top" constant="19" id="eeZ-nz-uFg"/>
-                                            <constraint firstItem="BZC-K7-1qe" firstAttribute="top" secondItem="OpR-Sr-5w2" secondAttribute="top" constant="21" id="f69-HK-qq3"/>
-                                            <constraint firstAttribute="trailing" secondItem="BZC-K7-1qe" secondAttribute="trailing" constant="10" id="h0A-FR-47l"/>
+                                            <constraint firstItem="7iB-HY-q9e" firstAttribute="top" secondItem="mdu-i1-wOo" secondAttribute="bottom" constant="22" id="iSt-KX-80S"/>
                                             <constraint firstAttribute="trailing" secondItem="7iB-HY-q9e" secondAttribute="trailing" id="knT-am-e8n"/>
                                             <constraint firstAttribute="bottom" secondItem="7iB-HY-q9e" secondAttribute="bottom" id="lGW-fA-LgJ"/>
                                             <constraint firstItem="7iB-HY-q9e" firstAttribute="top" secondItem="Yow-no-gaO" secondAttribute="bottom" constant="22" id="nqI-60-RKl"/>
                                             <constraint firstItem="fp7-n3-l9v" firstAttribute="leading" secondItem="Yow-no-gaO" secondAttribute="trailing" constant="8" id="oHk-pj-8f8"/>
-                                            <constraint firstItem="BZC-K7-1qe" firstAttribute="leading" secondItem="fp7-n3-l9v" secondAttribute="trailing" constant="8" id="vtq-rS-3E5"/>
+                                            <constraint firstAttribute="trailing" secondItem="mdu-i1-wOo" secondAttribute="trailing" constant="20" id="zsR-qH-wyh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyN-hV-e4Q">
@@ -695,8 +665,8 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                     <connections>
                         <outlet property="addressTextField" destination="IXp-aQ-5LV" id="EIb-66-Zmi"/>
                         <outlet property="createButton" destination="FTz-9g-5bL" id="WV4-bQ-0ia"/>
-                        <outlet property="dateButton" destination="bGx-fU-NcF" id="aPs-Ai-GiZ"/>
                         <outlet property="dateLabel" destination="mdu-i1-wOo" id="c2i-5N-vVb"/>
+                        <outlet property="expiresLabel" destination="Yow-no-gaO" id="HyP-Yn-uty"/>
                         <outlet property="heightConstraint" destination="L25-3v-Pi1" id="Ayv-OF-aAN"/>
                         <outlet property="lineView" destination="YNT-No-yq7" id="694-W7-0TM"/>
                         <outlet property="nameTextField" destination="2xJ-Ts-vqs" id="AFq-Ih-zxv"/>

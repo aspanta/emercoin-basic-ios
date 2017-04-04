@@ -40,6 +40,9 @@ class NamesViewController: BaseViewController {
     let viewModel = CoinOperationsViewModel()
     let disposeBag = DisposeBag()
     
+    var isEditingMode = false
+    var record:BCNote?
+    
     override class func storyboardName() -> String {
         return "Names"
     }
@@ -85,7 +88,7 @@ class NamesViewController: BaseViewController {
         case .searchResults:
             text = Constants.Controllers.Names.SearchResults
         case .createNVS:
-            text = Constants.Controllers.Names.CreateNVS
+            text = isEditingMode ? Constants.Controllers.Names.EditNVS : Constants.Controllers.Names.CreateNVS
         case .addresses:
             text = Constants.Controllers.Names.Addresses
         }
@@ -161,6 +164,8 @@ class NamesViewController: BaseViewController {
             let vc = CreateNVSViewController.controller() as! CreateNVSViewController
             vc.data = data
             vc.created = self.created
+            vc.isEditingMode = isEditingMode
+            vc.record = record
             controller = vc
             
         case .addresses:

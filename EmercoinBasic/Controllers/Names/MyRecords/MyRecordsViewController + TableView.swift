@@ -136,7 +136,9 @@ extension MyNotesViewController {
     
     private func showEditRecordController(at record:BCNote) {
         
-        let controller = CreateNVSViewController.controller() as! CreateNVSViewController
+        let controller = NamesViewController.controller() as! NamesViewController
+        controller.subController = .createNVS
+        
         controller.record = record
         controller.created = {record in
             self.reloadRows()

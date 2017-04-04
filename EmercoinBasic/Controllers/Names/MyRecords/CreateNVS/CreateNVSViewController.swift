@@ -8,11 +8,10 @@ import UIKit
 class CreateNVSViewController: BaseViewController {
     
     @IBOutlet internal weak var prefixButton:UIButton!
-    @IBOutlet internal weak var dateButton:UIButton!
     @IBOutlet internal weak var prefixDropLabel:UILabel!
     @IBOutlet internal weak var dateLabel:UILabel!
+    @IBOutlet internal weak var expiresLabel:UILabel!
     @IBOutlet internal weak var prefixLabel:UILabel!
-    @IBOutlet internal weak var titleLabel:UILabel!
     @IBOutlet internal weak var prefixView:UIView!
     @IBOutlet internal weak var lineView:UIView!
     
@@ -27,7 +26,6 @@ class CreateNVSViewController: BaseViewController {
     @IBOutlet internal weak var createButton:UIButton!
     
     var prefixDropDown:DropDown?
-    var dateDropDown:DropDown?
     
     var created:((_ record:BCNote) -> (Void))?
     
@@ -60,7 +58,6 @@ class CreateNVSViewController: BaseViewController {
         super.viewDidLoad()
 
         setupPrefixDropDown()
-        setupDateDropDown()
     }
 
     override func setupUI() {
@@ -69,13 +66,13 @@ class CreateNVSViewController: BaseViewController {
         hideStatusBar()
         
         if isEditingMode {
-            titleLabel.text = "Edit NVS"
             let value = heightConstraint.constant
             heightConstraint.constant = value - 41.0
             prefixConstraint.constant = 0
             createButton.setTitle("Save", for: .normal)
             prefixView.isHidden = isEditingMode
             lineView.isHidden = isEditingMode
+            expiresLabel.text = "Extend days:"
             nameTextField.disableEdit = true
             
             if record != nil {
@@ -139,32 +136,6 @@ class CreateNVSViewController: BaseViewController {
     @IBAction func prefixButtonPressed() {
         
         prefixDropDown?.show()
-    }
-    
-    internal func setupDateDropDown() {
-        
-        dateDropDown = DropDown()
-        dateDropDown?.anchorView = dateButton
-        
-        let dataSource = ["Days", "Months", "Years"]
-        
-        if !isEditingMode {
-            dateLabel.text = dataSource.first
-        }
-        
-        dateDropDown?.dataSource = dataSource
-        
-        dateDropDown?.selectionAction = { [unowned self] (index, item) in
-            self.dateLabel.text = item
-        }
-        
-        dateDropDown?.bottomOffset = CGPoint(x: 0, y: dateButton.bounds.height)
-        
-    }
-    
-    @IBAction func dateButtonPressed() {
-        
-        dateDropDown?.show()
     }
     
     @IBAction func createButtonPressed() {

@@ -86,6 +86,7 @@ struct Constants {
             
             static let SearchResults = "Search NVS"
             static let CreateNVS = "Create NVS"
+            static let EditNVS = "Edit NVS"
             static let Addresses = "My Addresses"
         }
         
