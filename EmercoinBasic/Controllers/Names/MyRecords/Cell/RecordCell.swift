@@ -15,13 +15,13 @@ class RecordCell: BaseTableViewCell {
     
     override func updateUI() {
         
-        guard let viewModel = object as? BCNoteViewModel else {
+        guard let viewModel = object as? RecordViewModel else {
             return
         }
         
         nameLabeL.text = viewModel.name
-        timeValue.text = String(viewModel.timeValue)
-        timeType.text = viewModel.timeType.value
+        timeValue.text = viewModel.expiresInDay
+        timeType.text = viewModel.expiresType
     }
     
     @IBAction func timeButtonPressed() {

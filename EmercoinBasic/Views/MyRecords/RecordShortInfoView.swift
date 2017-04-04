@@ -9,7 +9,7 @@ class RecordShortInfoView: PopupView {
 
     @IBOutlet internal weak var infoLabel:UILabel!
     
-    var viewModel:BCNoteViewModel? {
+    var viewModel:RecordViewModel? {
         didSet {
             updateUI()
         }
@@ -17,9 +17,9 @@ class RecordShortInfoView: PopupView {
     
     private func updateUI() {
         
-        if viewModel != nil {
-            let text = String(format:"Address %@ was create %i %@",(viewModel?.name)!,
-                              (viewModel?.timeValue)!,(viewModel?.timeType.value)!)
+        if let viewModel = viewModel {
+            let text = String(format:"Address %@ was create %i %@",viewModel.name,
+                              viewModel.expiresInDay,viewModel.expiresType)
             infoLabel.text = text
         }
     }

@@ -190,7 +190,7 @@ class BaseAPI: NSObject {
         let userPasswordData = userPasswordString.data(using: String.Encoding.utf8)
         let base64EncodedCredential = userPasswordData?.base64EncodedString(options:.endLineWithLineFeed)
         let authString = "Basic \(base64EncodedCredential!)"
-        config.httpAdditionalHeaders = ["Authorization" : authString,"Connection":"close"]
+        config.httpAdditionalHeaders = ["Authorization" : authString,"Connection":"close","Keep-Alive":"timeout=1"]
         
         return config
     }

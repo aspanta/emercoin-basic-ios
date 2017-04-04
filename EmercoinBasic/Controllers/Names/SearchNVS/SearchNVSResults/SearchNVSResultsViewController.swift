@@ -7,7 +7,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SearchNVSResultsViewController: MyNotesViewController {
+class SearchNVSResultsViewController: MyRecordsViewController {
     
     @IBOutlet internal var textLabel:UILabel!
     
@@ -24,7 +24,7 @@ class SearchNVSResultsViewController: MyNotesViewController {
         
         textLabel.text = String(format:"Your query\n %@\n not found",searchText)
 
-        viewModel.searchRecords(at: searchText)
+        //viewModel.searchRecords(at: searchText)
     }
     
     @IBAction func back() {

@@ -13,25 +13,23 @@ enum TableCellAction {
     case add
 }
 
-class MyNotesViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
+class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var noNotesView:UIView!
     
+    var records = Records()
     let disposeBag = DisposeBag()
-    var viewModel = BCNotesViewModel()
     
     var filterString:String = ""
     
-    var notes:[BCNote] = [] {
-        didSet {
-            if tableCellAction == .add {
-                tableView.reload()
-            }
-        }
-    }
-    
     var tableCellAction:TableCellAction = .add
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        records.load()
+    }
 
     override class func storyboardName() -> String {
         return "Names"
@@ -40,30 +38,72 @@ class MyNotesViewController: UIViewController, IndicatorInfoProvider, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-        viewModel.stubNotes()
+        tableView.baseSetup()
+        setupRecords()
+        updateUI()
+        setupRefreshControl()
+        setupActivityIndicator()
     }
     
-    private func setupUI() {
-       
-        viewModel.notes.subscribe(onNext:{ [weak self] notes in
-            self?.notes = notes
+    private func updateUI() {
+       noNotesView.isHidden = records.records.count != 0
+    }
+    
+    private func setupRefreshControl() {
+        
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(self.handleRefresh(sender:)), for: .valueChanged)
+        tableView.refreshControl = refresh
+    }
+    
+    internal func handleRefresh(sender:UIRefreshControl) {
+        records.load()
+    }
+    
+    private func setupRecords() {
+        
+        records.success.subscribe(onNext:{ [weak self] success in
+            if success {
+                self?.updateUI()
+                self?.tableView.reload()
+            }
         })
             .addDisposableTo(disposeBag)
         
-        viewModel.isExistNotes.bindTo(noNotesView.rx.isHidden)
+        records.error.subscribe(onNext:{ [weak self] error in
+            self?.showErrorAlert(at: error)
+        })
             .addDisposableTo(disposeBag)
-
-        tableView.baseSetup()
+    }
+    
+    private func setupActivityIndicator() {
+        
+        records.activityIndicator.subscribe(onNext:{ [weak self] state in
+            
+            let refresh = self?.tableView.refreshControl
+            
+            if state == false {
+                if refresh?.isRefreshing == true  {
+                    refresh?.endRefreshing()
+                }
+            }
+        })
+            .addDisposableTo(disposeBag)
+    }
+    
+    private func showErrorAlert(at error:NSError) {
+        
+        let alert = AlertsHelper.errorAlert(at: error)
+        present(alert, animated: true, completion: nil)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "My NVS")
     }
     
-    func addNote(note:BCNote) {
+    func addRecord(record:Record) {
         tableCellAction = .add
-        viewModel.add(note: note)
+        records.add(record: record)
     }
     
     @IBAction func nvsInfoButtonPressed() {

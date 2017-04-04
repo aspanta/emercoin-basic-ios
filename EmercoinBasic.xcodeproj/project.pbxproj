@@ -43,6 +43,10 @@
 		2D70A97B1E85334000F50488 /* AlertsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A97A1E85334000F50488 /* AlertsHelper.swift */; };
 		2D70A97E1E85853E00F50488 /* AddMyAddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */; };
 		2D798EF71E9292F7008AB5AF /* NamesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EF61E9292F7008AB5AF /* NamesMainViewController.swift */; };
+		2D798EFA1E9394C3008AB5AF /* NamesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EF91E9394C3008AB5AF /* NamesAPI.swift */; };
+		2D798EFF1E939F1B008AB5AF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EFD1E939F1B008AB5AF /* Record.swift */; };
+		2D798F001E939F1B008AB5AF /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EFE1E939F1B008AB5AF /* Records.swift */; };
+		2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798F021E93A992008AB5AF /* RecordViewModel.swift */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
 		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
 		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
@@ -105,8 +109,6 @@
 		2D997B271E7AD1FF00630560 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997AFC1E7AD1FF00630560 /* SwipeDirection.swift */; };
 		2D997B281E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997AFD1E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift */; };
 		2D997B4F1E7AD24E00630560 /* AddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997B2A1E7AD24E00630560 /* AddressBook.swift */; };
-		2D997B501E7AD24E00630560 /* BCNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997B2D1E7AD24E00630560 /* BCNote.swift */; };
-		2D997B511E7AD24E00630560 /* BCNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997B2E1E7AD24E00630560 /* BCNotes.swift */; };
 		2D997B521E7AD24E00630560 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997B301E7AD24E00630560 /* Coin.swift */; };
 		2D997B541E7AD24E00630560 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997B341E7AD24E00630560 /* Contact.swift */; };
 		2D997B561E7AD24E00630560 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997B381E7AD24E00630560 /* History.swift */; };
@@ -144,8 +146,6 @@
 		2D997BD61E7AD2B600630560 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BAC1E7AD2B600630560 /* RoundButton.swift */; };
 		2D997BD71E7AD2B600630560 /* SendAmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BAE1E7AD2B600630560 /* SendAmountTextField.swift */; };
 		2D997BD81E7AD2B600630560 /* SuccessSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BB01E7AD2B600630560 /* SuccessSendView.swift */; };
-		2D997BFF1E7AD37700630560 /* BCNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BDE1E7AD37700630560 /* BCNotesViewModel.swift */; };
-		2D997C001E7AD37700630560 /* BCNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BE01E7AD37700630560 /* BCNoteViewModel.swift */; };
 		2D997C011E7AD37700630560 /* CoinsOperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BE21E7AD37700630560 /* CoinsOperationViewModel.swift */; };
 		2D997C051E7AD37700630560 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */; };
 		2D997C061E7AD37700630560 /* HistoryTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */; };
@@ -235,6 +235,10 @@
 		2D70A97A1E85334000F50488 /* AlertsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsHelper.swift; sourceTree = "<group>"; };
 		2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMyAddressAPI.swift; sourceTree = "<group>"; };
 		2D798EF61E9292F7008AB5AF /* NamesMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesMainViewController.swift; sourceTree = "<group>"; };
+		2D798EF91E9394C3008AB5AF /* NamesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesAPI.swift; sourceTree = "<group>"; };
+		2D798EFD1E939F1B008AB5AF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		2D798EFE1E939F1B008AB5AF /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
+		2D798F021E93A992008AB5AF /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		2D997A701E7AC49400630560 /* EmercoinBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmercoinBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D997A861E7AC90700630560 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D997A871E7AC90700630560 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -302,8 +306,6 @@
 		2D997AFC1E7AD1FF00630560 /* SwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
 		2D997AFD1E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterPagerTabStripViewController.swift; sourceTree = "<group>"; };
 		2D997B2A1E7AD24E00630560 /* AddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AddressBook.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997B2D1E7AD24E00630560 /* BCNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BCNote.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997B2E1E7AD24E00630560 /* BCNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BCNotes.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997B301E7AD24E00630560 /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Coin.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997B341E7AD24E00630560 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Contact.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997B381E7AD24E00630560 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = History.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -341,8 +343,6 @@
 		2D997BAC1E7AD2B600630560 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RoundButton.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BAE1E7AD2B600630560 /* SendAmountTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SendAmountTextField.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BB01E7AD2B600630560 /* SuccessSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SuccessSendView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997BDE1E7AD37700630560 /* BCNotesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BCNotesViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997BE01E7AD37700630560 /* BCNoteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BCNoteViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BE21E7AD37700630560 /* CoinsOperationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoinsOperationViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedbackViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HistoryTransactionViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -443,8 +443,8 @@
 				2D21D6501E926E690088AD31 /* Cell */,
 				2D21D6521E926E690088AD31 /* CreateNVS */,
 				2D21D6591E926E690088AD31 /* MyRecords.xib */,
-				2D21D65A1E926E690088AD31 /* MyRecordsViewController + TableView.swift */,
 				2D21D65B1E926E690088AD31 /* MyRecordsViewController.swift */,
+				2D21D65A1E926E690088AD31 /* MyRecordsViewController + TableView.swift */,
 				2D21D65C1E926E690088AD31 /* NVSInfo */,
 			);
 			path = MyRecords;
@@ -595,6 +595,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D798EF81E9394B1008AB5AF /* Names */,
 				2D70A97C1E85852B00F50488 /* AddMyAddress */,
 				2DA3E77F1E83F529003F9A6D /* MyAddresses */,
 				2D6537C41E82863E0051B953 /* SendCoins */,
@@ -643,6 +644,39 @@
 				2D798EF61E9292F7008AB5AF /* NamesMainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		2D798EF81E9394B1008AB5AF /* Names */ = {
+			isa = PBXGroup;
+			children = (
+				2D798EF91E9394C3008AB5AF /* NamesAPI.swift */,
+			);
+			path = Names;
+			sourceTree = "<group>";
+		};
+		2D798EFB1E939F1B008AB5AF /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				2D798EFC1E939F1B008AB5AF /* Record */,
+				2D798EFE1E939F1B008AB5AF /* Records.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		2D798EFC1E939F1B008AB5AF /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				2D798EFD1E939F1B008AB5AF /* Record.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		2D798F011E93A992008AB5AF /* RecordViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D798F021E93A992008AB5AF /* RecordViewModel.swift */,
+			);
+			path = RecordViewModel;
 			sourceTree = "<group>";
 		};
 		2D997A671E7AC49400630560 = {
@@ -716,10 +750,10 @@
 		2D997A8B1E7AC90700630560 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2D798EFB1E939F1B008AB5AF /* Records */,
 				2DA3E77A1E83DA0A003F9A6D /* Settings */,
 				2D4877CE1E8147CC0084129C /* BaseModel */,
 				2D997B291E7AD24E00630560 /* AddressBook */,
-				2D997B2B1E7AD24E00630560 /* BCNotes */,
 				2D997B2F1E7AD24E00630560 /* Coin */,
 				2D997B331E7AD24E00630560 /* Contact */,
 				2D997B371E7AD24E00630560 /* History */,
@@ -745,10 +779,9 @@
 		2D997A921E7AC90700630560 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2D798F011E93A992008AB5AF /* RecordViewModel */,
 				2D28C85C1E7C596C0071947A /* ContactViewModel */,
 				2DA249481E7C203B00AF81DD /* LoginViewModel */,
-				2D997BDD1E7AD37700630560 /* BCNotesViewModel */,
-				2D997BDF1E7AD37700630560 /* BCNoteViewModel */,
 				2D997BE11E7AD37700630560 /* CoinsOperationViewModel */,
 				2D997BE91E7AD37700630560 /* FeedBackViewModel */,
 				2D997BEB1E7AD37700630560 /* HistoryTransaction */,
@@ -986,23 +1019,6 @@
 				2D997B2A1E7AD24E00630560 /* AddressBook.swift */,
 			);
 			path = AddressBook;
-			sourceTree = "<group>";
-		};
-		2D997B2B1E7AD24E00630560 /* BCNotes */ = {
-			isa = PBXGroup;
-			children = (
-				2D997B2C1E7AD24E00630560 /* BCNote */,
-				2D997B2E1E7AD24E00630560 /* BCNotes.swift */,
-			);
-			path = BCNotes;
-			sourceTree = "<group>";
-		};
-		2D997B2C1E7AD24E00630560 /* BCNote */ = {
-			isa = PBXGroup;
-			children = (
-				2D997B2D1E7AD24E00630560 /* BCNote.swift */,
-			);
-			path = BCNote;
 			sourceTree = "<group>";
 		};
 		2D997B2F1E7AD24E00630560 /* Coin */ = {
@@ -1321,22 +1337,6 @@
 				2D997BB01E7AD2B600630560 /* SuccessSendView.swift */,
 			);
 			path = SuccessSend;
-			sourceTree = "<group>";
-		};
-		2D997BDD1E7AD37700630560 /* BCNotesViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2D997BDE1E7AD37700630560 /* BCNotesViewModel.swift */,
-			);
-			path = BCNotesViewModel;
-			sourceTree = "<group>";
-		};
-		2D997BDF1E7AD37700630560 /* BCNoteViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2D997BE01E7AD37700630560 /* BCNoteViewModel.swift */,
-			);
-			path = BCNoteViewModel;
 			sourceTree = "<group>";
 		};
 		2D997BE11E7AD37700630560 /* CoinsOperationViewModel */ = {
@@ -1744,15 +1744,13 @@
 				2D997BCF1E7AD2B600630560 /* CancelButton.swift in Sources */,
 				2D997D001E7AD3B200630560 /* MenuDefaultCell.swift in Sources */,
 				2D997CD31E7AD3B200630560 /* MyAddressCell.swift in Sources */,
-				2D997BFF1E7AD37700630560 /* BCNotesViewModel.swift in Sources */,
 				2D21D6771E9279220088AD31 /* EnterAddressRecordView.swift in Sources */,
-				2D997C001E7AD37700630560 /* BCNoteViewModel.swift in Sources */,
+				2D798EFA1E9394C3008AB5AF /* NamesAPI.swift in Sources */,
 				2D997CD11E7AD3B200630560 /* GetCoinsViewController + DropDown.swift in Sources */,
 				2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */,
 				2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */,
 				2D997B281E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift in Sources */,
 				2D997CB21E7AD3B200630560 /* AccountPageViewController.swift in Sources */,
-				2D997B511E7AD24E00630560 /* BCNotes.swift in Sources */,
 				2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */,
 				2D997B261E7AD1FF00630560 /* SegmentedPagerTabStripViewController.swift in Sources */,
 				2D997B141E7AD1FF00630560 /* DropDown+Appearance.swift in Sources */,
@@ -1780,8 +1778,8 @@
 				2D997B221E7AD1FF00630560 /* IndicatorInfo.swift in Sources */,
 				2D997B171E7AD1FF00630560 /* GenerationWordsHelper.swift in Sources */,
 				2D997BBC1E7AD2B600630560 /* ExchangeHeaderView.swift in Sources */,
+				2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */,
 				2D997BD71E7AD2B600630560 /* SendAmountTextField.swift in Sources */,
-				2D997B501E7AD24E00630560 /* BCNote.swift in Sources */,
 				2D997BD31E7AD2B600630560 /* ProtectionGenerationView.swift in Sources */,
 				2D997B1C1E7AD1FF00630560 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				2D997BBE1E7AD2B600630560 /* FeedbackMessageView.swift in Sources */,
@@ -1839,6 +1837,7 @@
 				2D997B0D1E7AD1FF00630560 /* UIViewController + Utils.swift in Sources */,
 				2D997BC71E7AD2B600630560 /* AddAddressView.swift in Sources */,
 				2D997BD41E7AD2B600630560 /* ProtectionValidationView.swift in Sources */,
+				2D798F001E939F1B008AB5AF /* Records.swift in Sources */,
 				2D997B0C1E7AD1FF00630560 /* UIView + Utils.swift in Sources */,
 				2D997B541E7AD24E00630560 /* Contact.swift in Sources */,
 				2D997D0A1E7AD3B200630560 /* ProtectionModuleViewController.swift in Sources */,
@@ -1878,6 +1877,7 @@
 				2D4877D61E818E090084129C /* BalanceAPI.swift in Sources */,
 				2D997B4F1E7AD24E00630560 /* AddressBook.swift in Sources */,
 				2D997CD21E7AD3B200630560 /* GetCoinsViewController.swift in Sources */,
+				2D798EFF1E939F1B008AB5AF /* Record.swift in Sources */,
 				2D997CE71E7AD3B200630560 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="-1042.4000000000001" y="-388.15592203898052"/>
         </scene>
-        <!--My Notes View Controller-->
+        <!--My Records View Controller-->
         <scene sceneID="KDP-lj-sfP">
             <objects>
-                <viewController storyboardIdentifier="MyNotesViewController" id="bG8-wi-3ev" customClass="MyNotesViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyRecordsViewController" id="bG8-wi-3ev" customClass="MyRecordsViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rko-kN-iK2"/>
                         <viewControllerLayoutGuide type="bottom" id="0C1-3C-Sdp"/>
@@ -103,17 +103,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dns:name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7I-PZ-Me9">
-                                                    <rect key="frame" x="20" y="22" width="120" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="S8S-zb-R1M"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="dns:name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7I-PZ-Me9">
+                                                    <rect key="frame" x="20" y="22" width="237" height="22"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1885" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gu-6E-MTW">
-                                                    <rect key="frame" x="145" y="21" width="161" height="22"/>
+                                                    <rect key="frame" x="265" y="21" width="41" height="22"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                                                     <color key="textColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -128,9 +125,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lC-1f-raW">
-                                                    <rect key="frame" x="238" y="19" width="117" height="25"/>
+                                                    <rect key="frame" x="265" y="19" width="90" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="117" id="yYq-gt-X31"/>
+                                                        <constraint firstAttribute="width" constant="90" id="yYq-gt-X31"/>
                                                     </constraints>
                                                     <connections>
                                                         <action selector="timeButtonPressed" destination="HX7-Qy-Zd8" eventType="touchUpInside" id="WUu-rB-54X"/>
@@ -138,11 +135,11 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2gu-6E-MTW" firstAttribute="leading" secondItem="V7I-PZ-Me9" secondAttribute="trailing" constant="8" id="518-8b-Fw2"/>
                                                 <constraint firstAttribute="trailing" secondItem="3lC-1f-raW" secondAttribute="trailing" constant="20" id="8Jk-4R-fFn"/>
                                                 <constraint firstItem="kPZ-8Y-Uhf" firstAttribute="top" secondItem="Bhr-AQ-TyK" secondAttribute="top" constant="21" id="Hqc-Ie-M4y"/>
                                                 <constraint firstItem="2gu-6E-MTW" firstAttribute="top" secondItem="Bhr-AQ-TyK" secondAttribute="top" constant="21" id="ILh-LG-mSi"/>
                                                 <constraint firstItem="V7I-PZ-Me9" firstAttribute="leading" secondItem="Bhr-AQ-TyK" secondAttribute="leading" constant="20" id="KsW-X5-liZ"/>
-                                                <constraint firstItem="2gu-6E-MTW" firstAttribute="leading" secondItem="V7I-PZ-Me9" secondAttribute="trailing" constant="5" id="O7l-74-O6d"/>
                                                 <constraint firstItem="V7I-PZ-Me9" firstAttribute="top" secondItem="Bhr-AQ-TyK" secondAttribute="top" constant="22" id="SVA-SI-xyN"/>
                                                 <constraint firstAttribute="bottom" secondItem="2gu-6E-MTW" secondAttribute="bottom" constant="22" id="V5u-sL-2fN"/>
                                                 <constraint firstAttribute="bottom" secondItem="V7I-PZ-Me9" secondAttribute="bottom" constant="21.5" id="We8-3K-q26"/>
@@ -555,7 +552,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-no-gaO">
-                                                <rect key="frame" x="19" y="23" width="81" height="21"/>
+                                                <rect key="frame" x="19" y="23" width="81.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="81" id="Viz-TO-KV7"/>
                                                     <constraint firstAttribute="height" constant="21" id="wDq-b9-abh"/>
@@ -565,7 +562,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fp7-n3-l9v" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
-                                                <rect key="frame" x="108" y="19" width="200" height="30"/>
+                                                <rect key="frame" x="108.5" y="19" width="199.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>

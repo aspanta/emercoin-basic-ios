@@ -31,13 +31,13 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
 
         tableView.baseSetup()
         setupHistory()
-        setupUI()
+        updateUI()
         setupRefreshControl()
         setupActivityIndicator()
     
     }
     
-    private func setupUI() {
+    private func updateUI() {
         
         noTransactionsLabel.isHidden = history.transactions.count != 0
     }
@@ -57,7 +57,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
         
         history.success.subscribe(onNext:{ [weak self] success in
             if success {
-                self?.setupUI()
+                self?.updateUI()
                 self?.tableView.reload()
             }
         })

@@ -27,10 +27,10 @@ class CreateNVSViewController: BaseViewController {
     
     var prefixDropDown:DropDown?
     
-    var created:((_ record:BCNote) -> (Void))?
+    var created:((_ record:Record) -> (Void))?
     
     var isEditingMode = false
-    var record:BCNote?
+    var record:Record?
     
     var data:Any? {
         didSet{
@@ -75,12 +75,11 @@ class CreateNVSViewController: BaseViewController {
             expiresLabel.text = "Extend days:"
             nameTextField.disableEdit = true
             
-            if record != nil {
-                nameTextField.text = record?.name
-                valueTextField.text = record?.value
-                addressTextField.text = record?.address
-                timeTextField.text = String(format:"%i",(record?.timeValue)!)
-                dateLabel.text = record?.timeType.value
+            if let record = record {
+                nameTextField.text = record.name
+                valueTextField.text = record.value
+                addressTextField.text = record.address
+                timeTextField.text = String(format:"%i",record.expiresInDays)
             }
         } else {
             if name.length > 0 {
@@ -145,21 +144,17 @@ class CreateNVSViewController: BaseViewController {
         let value = valueTextField.text!
         let address = addressTextField.text!
         var time = timeTextField.text!
-        let date = dateLabel.text!
         
         time = time.length > 0 ? time : "0"
         
         let fullName = (prefix.length > 0) ? (prefix+" \(name)") : name
         
-        let timeType = self.timeType(at: date)
-        
-        let record = BCNote.init(name: fullName, value:value , address: address, timeValue: Int(time)!, timeType: timeType)
+        let record = Record(value:["name": fullName, "value":value, "address": address, "expiresIn":Int(time) ?? 0 * blocksInDay])
         
         if isEditingMode {
             self.record?.value = record.value
             self.record?.address = record.address
-            self.record?.timeType = record.timeType
-            self.record?.timeValue = record.timeValue
+            self.record?.expiresIn = record.expiresIn
         }
         
         if created != nil {
@@ -167,17 +162,6 @@ class CreateNVSViewController: BaseViewController {
         }
         
         back()
-    }
-    
-    private func timeType(at string:String) -> TimeType {
-        
-        switch string.lowercased() {
-            case "days":return .days
-            case "months":return .months
-            case "years":return .years
-        default: return .days
-        }
-        
     }
     
     @IBAction func cancelButtonPressed() {

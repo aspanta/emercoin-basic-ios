@@ -5,10 +5,10 @@
 
 import UIKit
 
-extension MyNotesViewController {
+extension MyRecordsViewController {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = notes.count
+        let count = records.records.count
         return count
     }
     
@@ -18,7 +18,7 @@ extension MyNotesViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecordCell
         
-        let viewModel = BCNoteViewModel(note: itemAt(indexPath: indexPath))
+        let viewModel = RecordViewModel(record: itemAt(indexPath: indexPath))
         cell.object = viewModel
         cell.indexPath = indexPath
         cell.timePressed = {[weak self](indexPath)in
@@ -78,8 +78,8 @@ extension MyNotesViewController {
         
         let noteInfoView = getRecordView(at: 1) as! RecordInfoVIew
         
-        let note = itemAt(indexPath: indexPath)
-        noteInfoView.viewModel = BCNoteViewModel(note: note)
+        let record = itemAt(indexPath: indexPath)
+        noteInfoView.viewModel = RecordViewModel(record: record)
         
         self.parent?.view.addSubview(noteInfoView)
     }
@@ -88,8 +88,8 @@ extension MyNotesViewController {
         
         let noteInfoView = getRecordView(at: 2) as! RecordShortInfoView
         
-        let note = itemAt(indexPath: indexPath)
-        noteInfoView.viewModel = BCNoteViewModel(note: note)
+        let record = itemAt(indexPath: indexPath)
+        noteInfoView.viewModel = RecordViewModel(record: record)
         
         self.parent?.view.addSubview(noteInfoView)
     }
@@ -103,7 +103,7 @@ extension MyNotesViewController {
         tableCellAction = .remove
         
         let item = itemAt(indexPath: indexPath)
-        viewModel.remove(note: item)
+        records.remove(record: item)
         
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .top)
@@ -130,11 +130,11 @@ extension MyNotesViewController {
         self.tableView.endUpdates()
     }
 
-    private func itemAt(indexPath:IndexPath) -> BCNote {
-        return notes[indexPath.row]
+    private func itemAt(indexPath:IndexPath) -> Record {
+        return records.records[indexPath.row]
     }
     
-    private func showEditRecordController(at record:BCNote) {
+    private func showEditRecordController(at record:Record) {
         
         let controller = NamesViewController.controller() as! NamesViewController
         controller.subController = .createNVS

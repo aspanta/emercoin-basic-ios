@@ -32,7 +32,7 @@ class NamesViewController: BaseViewController {
     
     var searchText = ""
     var createPressed: ((_ data:Any) -> (Void))?
-    var created:((_ record:BCNote) -> (Void))?
+    var created:((_ record:Record) -> (Void))?
     var selectedAddress:((_ address:String) -> (Void))?
     
     var viewDidAppear: ((Void) -> (Void))?
@@ -41,7 +41,7 @@ class NamesViewController: BaseViewController {
     let disposeBag = DisposeBag()
     
     var isEditingMode = false
-    var record:BCNote?
+    var record:Record?
     
     override class func storyboardName() -> String {
         return "Names"

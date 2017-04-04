@@ -12,7 +12,7 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
     
     var createPressed: ((_ data:Any) -> (Void))?
     
-    private var recordsController:MyNotesViewController?
+    private var recordsController:MyRecordsViewController?
     private var searchController:SearchNVSViewController?
     
     private var data:Any?
@@ -52,7 +52,7 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
-        let firstVC = MyNotesViewController.controller() as! MyNotesViewController
+        let firstVC = MyRecordsViewController.controller() as! MyRecordsViewController
         let secondVC = SearchNVSViewController.controller() as! SearchNVSViewController
         secondVC.createPressed = {[weak self] data in
             
@@ -88,8 +88,8 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
         }
     }
     
-    func addRecord(record:BCNote) {
-        self.recordsController?.addNote(note: record)
+    func addRecord(record:Record) {
+        self.recordsController?.addRecord(record: record)
     }
     
 }
