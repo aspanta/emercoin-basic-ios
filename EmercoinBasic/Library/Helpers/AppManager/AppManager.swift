@@ -31,5 +31,9 @@ class AppManager {
         try! realm.write {
             realm.deleteAll()
         }
+        
+        Router.sharedInstance.showLoginController()
     }
+    
+    
 }

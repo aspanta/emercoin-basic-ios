@@ -45,9 +45,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boot_basic_img" translatesAutoresizingMaskIntoConstraints="NO" id="2ab-aQ-xoj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="kVx-JH-eXa">
                                 <rect key="frame" x="132" y="70" width="111" height="96"/>
                                 <constraints>
@@ -297,9 +294,7 @@
                             <constraint firstItem="32n-15-JxQ" firstAttribute="top" secondItem="kVx-JH-eXa" secondAttribute="bottom" constant="12" id="2sR-wk-lzF"/>
                             <constraint firstItem="kVx-JH-eXa" firstAttribute="top" secondItem="a73-Px-job" secondAttribute="bottom" constant="50" id="352-Zs-8dQ"/>
                             <constraint firstItem="Pgh-uX-8zk" firstAttribute="top" secondItem="BMK-8c-gUV" secondAttribute="bottom" constant="33" id="78b-UV-ubw"/>
-                            <constraint firstAttribute="trailing" secondItem="2ab-aQ-xoj" secondAttribute="trailing" id="7Ie-YB-2xS"/>
                             <constraint firstItem="BMK-8c-gUV" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="8OC-eM-94g"/>
-                            <constraint firstItem="2ab-aQ-xoj" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" id="CH2-UR-GV9"/>
                             <constraint firstItem="8HB-lr-8Vo" firstAttribute="top" secondItem="cnJ-a1-ehB" secondAttribute="bottom" constant="15" id="Cp1-cN-Ed9"/>
                             <constraint firstItem="32n-15-JxQ" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="DZV-mn-36l"/>
                             <constraint firstItem="kVx-JH-eXa" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="GlQ-CT-8nc"/>
@@ -314,7 +309,6 @@
                             <constraint firstItem="c5c-nc-zE4" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="VFB-yg-r4p"/>
                             <constraint firstItem="cnJ-a1-ehB" firstAttribute="top" secondItem="HSx-U4-Ekd" secondAttribute="bottom" constant="15" id="W2t-QK-g62"/>
                             <constraint firstAttribute="trailing" secondItem="dhC-Ud-97u" secondAttribute="trailing" constant="60" id="Zpc-Jl-Xp3"/>
-                            <constraint firstAttribute="bottom" secondItem="2ab-aQ-xoj" secondAttribute="bottom" id="cht-2u-9n2"/>
                             <constraint firstItem="Pgh-uX-8zk" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="52" id="d0a-gw-2RN"/>
                             <constraint firstAttribute="trailing" secondItem="BMK-8c-gUV" secondAttribute="trailing" constant="60" id="fbG-Yt-qO6"/>
                             <constraint firstItem="HSx-U4-Ekd" firstAttribute="top" secondItem="c5c-nc-zE4" secondAttribute="bottom" constant="15" id="gaf-j4-OHz"/>
@@ -326,13 +320,11 @@
                             <constraint firstItem="dhC-Ud-97u" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="bottom" constant="12" id="thd-mR-TIC"/>
                             <constraint firstItem="V3a-da-p0N" firstAttribute="top" secondItem="BMK-8c-gUV" secondAttribute="bottom" constant="35" id="vFa-zh-ygo"/>
                             <constraint firstItem="HSx-U4-Ekd" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="wP2-2A-ozI"/>
-                            <constraint firstItem="2ab-aQ-xoj" firstAttribute="top" secondItem="5p0-16-MIm" secondAttribute="top" id="yu6-Tg-DkB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0bK-w4-TEO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="bootImageView" destination="2ab-aQ-xoj" id="Rou-Oe-ldY"/>
                         <outlet property="checkButton" destination="Pgh-uX-8zk" id="gol-AM-JxN"/>
                         <outlet property="enterButton" destination="BMK-8c-gUV" id="ax5-F7-Zwg"/>
                         <outlet property="hostTextField" destination="FYw-qF-6SE" id="LGW-0b-TAt"/>
@@ -351,7 +343,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="boot_basic_img" width="375" height="592"/>
         <image name="check_off" width="15" height="15"/>
         <image name="check_on" width="15" height="15"/>
         <image name="get_down_icon" width="9" height="7"/>

@@ -18,7 +18,7 @@ class AlertsHelper {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
             
             if error.domain == "Authentication failed" && AppManager.sharedInstance.isAuthorized {
-                Router.sharedInstance.sideMenu?.performLogout()
+                Router.sharedInstance.sideMenu?.logout()
             }
             
         }))

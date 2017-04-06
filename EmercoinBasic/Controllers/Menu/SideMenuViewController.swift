@@ -8,7 +8,13 @@ import LGSideMenuController
 
 class SideMenuViewController: LGSideMenuController {
     
-    var logout:((Void) -> (Void))?
+    var swipeRange = LGSideMenuSwipeGestureRangeMake(100.0, 100.0)
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        AppManager.sharedInstance.wallet.loadBalance()
+    }
     
     fileprivate var mainTabBarController:TabBarController = {
         TabBarController.controller()
@@ -18,6 +24,10 @@ class SideMenuViewController: LGSideMenuController {
         super.viewDidLoad()
 
         setupMenu()
+    }
+    
+    deinit {
+        print("deinit - SideMenuViewController")
     }
     
     private func setupMenu() {
@@ -35,7 +45,8 @@ class SideMenuViewController: LGSideMenuController {
         
         Router.sharedInstance.sideMenu = self
         
-        leftViewSwipeGestureRange = LGSideMenuSwipeGestureRangeMake(100.0, 100.0)
+        leftViewSwipeGestureRange = swipeRange
+        
     }
     
     func showDashBoard() {
@@ -45,24 +56,21 @@ class SideMenuViewController: LGSideMenuController {
     private func selectTabItem(at index:Int, subIndex:Int) {
         
         if index == 9 {
-            self.performLogout()
+            logout()
         } else if index == 4 && subIndex != -1 {
-            self.checkRootController()
-            self.mainTabBarController.showNVSBrowser(at: index,subIndex:subIndex)
+            checkRootController()
+            mainTabBarController.showNVSBrowser(at: index, subIndex: subIndex)
         } else if index > 4 {
-            self.showController(at: index, subIndex: subIndex)
+            showController(at: index, subIndex: subIndex)
         } else {
-            self.checkRootController()
-            self.mainTabBarController.showController(at: index)
+            checkRootController()
+            mainTabBarController.showController(at: index)
         }
         
-        
-        self.hideLeftView(animated: true)
-        
-    }
-    
-    deinit {
-        print("deinit - SideMenuViewController")
+        DispatchQueue.main.async {
+            
+            self.hideLeftView(animated: true)
+        }
     }
     
     private func checkRootController() {
@@ -72,7 +80,7 @@ class SideMenuViewController: LGSideMenuController {
         }
     }
     
-    private func showController(at index:Index, subIndex:Int) {
+    private func showController(at index:Int, subIndex:Int) {
         
         var vc:UIViewController?
         
@@ -96,14 +104,8 @@ class SideMenuViewController: LGSideMenuController {
         self.rootViewController = controller
     }
     
-    func performLogout() {
-        
-        if logout != nil {
-            logout!()
-        }
-        
+    func logout() {
         AppManager.sharedInstance.logOut()
-        Router.sharedInstance.showLoginController()
     }
 }
 

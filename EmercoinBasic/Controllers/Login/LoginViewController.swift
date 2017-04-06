@@ -19,33 +19,22 @@ class LoginViewController: BaseViewController {
     @IBOutlet internal weak var protocolButton:UIButton!
     @IBOutlet internal weak var topConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var leftConstraint:NSLayoutConstraint!
-    @IBOutlet internal weak var bootImageView:UIImageView!
     
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
     var viewModel = LoginViewModel()
-    
-    var isAutoLogin = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDropDown()
         
-        isAutoLogin = viewModel.isAutoLogin
     }
     
     override class func storyboardName() -> String {
         return "Login"
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
-        bootImageView.isHidden = !isAutoLogin
-        
-        autoLogin()
-    }
     
     override func setupUI() {
         super.setupUI()
@@ -84,22 +73,11 @@ class LoginViewController: BaseViewController {
         viewModel.protocolString.bindTo(protocolTextField.rx.text)
             .addDisposableTo(disposeBag)
         
-        bootImageView.isHidden = !viewModel.isAutoLogin
-        
         setupLogin()
         
         setupActivityIndicator()
 
         viewModel.prepareUI()
-    }
-    
-    private func autoLogin() {
-        
-        if isAutoLogin {
-            AppManager.sharedInstance.wallet.loadBalance()
-            showMainController()
-            isAutoLogin = false
-        }
     }
     
     private func setupLogin() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iEh-ow-lye">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
         <!--Side Menu View Controller-->
         <scene sceneID="C9d-AN-C1O">
             <objects>
-                <viewController storyboardIdentifier="SideMenuViewController" id="iEh-ow-lye" customClass="SideMenuViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideMenuViewController" modalTransitionStyle="crossDissolve" id="iEh-ow-lye" customClass="SideMenuViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3t-Vr-mZU"/>
                         <viewControllerLayoutGuide type="bottom" id="abe-R7-iEi"/>
@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiF-5j-j6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2199.1999999999998" y="-452.02398800599701"/>
+            <point key="canvasLocation" x="-2098" y="-452"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mSM-En-ZvC">

@@ -32,7 +32,6 @@ class LoginViewModel {
 
     var isLoading = false
     var isValid = false
-    var isAutoLogin = false
     
     private var settings = AppManager.sharedInstance.settings
     
@@ -52,15 +51,6 @@ class LoginViewModel {
             let value = Constants.Constraints.Login.Top.iphone5
             topConstraint.onNext(CGFloat(value))
             leftConstraint.onNext(CGFloat(value))
-        }
-    }
-    
-    init() {
-        
-        if let loginInfo = settings.loginInfo {
-    
-            isAutoLogin = true
-            APIManager.sharedInstance.addLoginInfo(at: loginInfo)
         }
     }
     
@@ -109,7 +99,6 @@ class LoginViewModel {
                 
                 if let wallet = data as? Wallet {
                     AppManager.sharedInstance.wallet.balance = wallet.balance
-                    AppManager.sharedInstance.wallet.loadBalance()
                 }
                 self?.successLogin.onNext(true)
             }

@@ -20,21 +20,42 @@ class Router {
     }
     
     internal func showLoginController() {
-        let login = LoginViewController.controller()
-        let nav = BaseNavigationController(rootViewController: login)
-        changeRootController(to:nav)
+        let login = controller(at: "login")
+        changeRootController(to:login)
         sideMenu = nil
     }
     
     internal func showMainController() {
+        let main = controller(at: "main")
+        changeRootController(to:main)
+    }
+    
+    func initialController() -> UIViewController {
         
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+        var name = "login"
+        
+        if let loginInfo = AppManager.sharedInstance.settings.loginInfo {
+            APIManager.sharedInstance.addLoginInfo(at: loginInfo)
+            name = "main"
+        }
+        
+        return controller(at: name)
+    }
+    
+    private func controller(at name:String) -> UIViewController {
+        
+        var controller = UIViewController()
+        
+        switch name {
+        case "main":
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+        case "login":controller = LoginViewController.controller()
+        default:
+            break
+        }
         let nav = BaseNavigationController(rootViewController: controller)
-        
-        AppManager.sharedInstance.isAuthorized = true
-        
-        changeRootController(to:nav)
+        return nav
     }
     
 }

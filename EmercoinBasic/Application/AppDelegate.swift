@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         DropDown.startListeningToKeyboard()
         
+        window = UIWindow(frame:UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        if let window = self.window {
+            window.rootViewController = Router.sharedInstance.initialController()
+        }
+        
         return true
     }
 
