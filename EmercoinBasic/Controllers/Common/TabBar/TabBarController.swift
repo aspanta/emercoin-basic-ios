@@ -48,7 +48,7 @@ class TabBarController: UITabBarController {
         checkChildControllers(at: index)
         
         if selectedIndex == index {
-            vc.showNamesTab(at: index)
+            vc.showNamesTab(at: subIndex)
         } else {
             subControllerIndex = subIndex
             selectedIndex = index
@@ -109,8 +109,9 @@ class TabBarController: UITabBarController {
             
             let index = self?.subControllerIndex
             
-            names.showNamesTab(at: index!)
-            
+            if index != -1 {
+                names.showNamesTab(at: index!)
+            }
             self?.subControllerIndex = -1
         })
 

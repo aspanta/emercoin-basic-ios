@@ -149,7 +149,8 @@ class CreateNVSViewController: BaseViewController {
         
         let fullName = (prefix.length > 0) ? (prefix+" \(name)") : name
         
-        let record = Record(value:["name": fullName, "value":value, "address": address, "expiresIn":Int(time) ?? 0 * blocksInDay])
+        let record = Record(value:["name": fullName, "value":value, "address": address,
+                                   "expiresIn":Int(time) ?? 0 * blocksInDay, "isExpired":false])
         
         if isEditingMode {
             self.record?.value = record.value

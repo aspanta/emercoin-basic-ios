@@ -7,13 +7,14 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RealmSwift
+import RxRealm
 
-class Records: NSObject {
+class Records {
     
     var records:Results<Record> {
         get {
             let realm = try! Realm()
-            return realm.objects(Record.self).filter("isExpired == false")
+            return realm.objects(Record.self)
         }
     }
     
@@ -21,6 +22,20 @@ class Records: NSObject {
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
+    var isEmpty = PublishSubject<Bool>()
+    
+    init() {
+        
+        Observable.changeset(from: records)
+            .subscribe(onNext: {results, changes in
+                self.isEmpty.onNext(results.count == 0)
+                
+                if changes?.inserted.count != 0 || changes?.updated.count != 0 {
+                    self.success.onNext(true)
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
     
     func add(record:Record) {
         let realm = try! Realm()
@@ -59,7 +74,9 @@ class Records: NSObject {
                     return
                 }
                 self?.removeAll()
-                self?.add(records: records)
+                self?.add(records: records.filter({ (record) -> Bool in
+                    return record.isExpired == false
+                }))
                 
                 self?.success.onNext(true)
             } else {
