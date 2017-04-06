@@ -7,7 +7,7 @@ import UIKit
 import ObjectMapper
 import RealmSwift
 
-let blocksInDay = 182
+let blocksInDay = 175
 
 class Record: Object, Mappable {
     
@@ -18,7 +18,7 @@ class Record: Object, Mappable {
     
     dynamic var expiresIn = 0 {
         didSet{
-            expiresInDays = expiresIn / blocksInDay
+            expiresInDays = Int((Double(expiresIn)/Double(blocksInDay)).rounded(.up))
         }
     }
     dynamic var expiresInDays = 0
