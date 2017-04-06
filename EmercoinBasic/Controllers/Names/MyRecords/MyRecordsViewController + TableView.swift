@@ -71,7 +71,7 @@ extension MyRecordsViewController {
             self.reloadRows(at: [indexPath])
         })
         
-        self.parent?.view.addSubview(deleteNoteView)
+        self.parent?.parent?.view.addSubview(deleteNoteView)
     }
     
     private func addNoteInfoViewWith(indexPath:IndexPath) {
@@ -81,7 +81,7 @@ extension MyRecordsViewController {
         let record = itemAt(indexPath: indexPath)
         noteInfoView.viewModel = RecordViewModel(record: record)
         
-        self.parent?.view.addSubview(noteInfoView)
+        self.parent?.parent?.view.addSubview(noteInfoView)
     }
     
     private func addNoteShortInfoViewWith(indexPath:IndexPath) {
@@ -91,11 +91,11 @@ extension MyRecordsViewController {
         let record = itemAt(indexPath: indexPath)
         noteInfoView.viewModel = RecordViewModel(record: record)
         
-        self.parent?.view.addSubview(noteInfoView)
+        self.parent?.parent?.view.addSubview(noteInfoView)
     }
     
     private func getRecordView(at index:Int) -> UIView {
-        return loadViewFromXib(name: "MyRecords", index: index, frame: self.parent!.view.frame)
+        return loadViewFromXib(name: "MyRecords", index: index, frame: self.parent?.parent?.view.bounds)
     }
     
     private func removeCellAt(indexPath:IndexPath) {

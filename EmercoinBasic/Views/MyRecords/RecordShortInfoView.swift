@@ -18,7 +18,7 @@ class RecordShortInfoView: PopupView {
     private func updateUI() {
         
         if let viewModel = viewModel {
-            let text = String(format:"Address %@ was create %i %@",viewModel.name,
+            let text = String(format:"Address %@ was create %@ %@",viewModel.name,
                               viewModel.expiresInDay,viewModel.expiresType)
             infoLabel.text = text
         }

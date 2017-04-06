@@ -105,10 +105,10 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="IeH-df-tHD">
                             <rect key="frame" x="0.0" y="0.0" width="347" height="240"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-fP-bpN">
-                            <rect key="frame" x="49" y="40" width="250" height="19"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-fP-bpN">
+                            <rect key="frame" x="49" y="40" width="250" height="21.5"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="19" id="nph-u8-1gf"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="nph-u8-1gf"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                             <nil key="highlightedColor"/>
@@ -133,24 +133,24 @@
                                 <action selector="doneButtonPressedWithSender:" destination="88K-7N-SeA" eventType="touchUpInside" id="ydJ-gP-CG7"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B7-ec-zeA">
-                            <rect key="frame" x="49" y="67" width="250" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B7-ec-zeA">
+                            <rect key="frame" x="49" y="69.5" width="250" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="tJ4-97-3OK"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKx-7J-EpH">
-                            <rect key="frame" x="49" y="96" width="250" height="19"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKx-7J-EpH">
+                            <rect key="frame" x="49" y="98.5" width="250" height="21.5"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="19" id="Ayr-Xn-Q0o"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="Ayr-Xn-Q0o"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6St-wT-0aK">
-                            <rect key="frame" x="49" y="123" width="250" height="19"/>
+                            <rect key="frame" x="49" y="128" width="250" height="19"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="19" id="fcm-Gb-Szk"/>
                             </constraints>
@@ -160,8 +160,9 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="IKx-7J-EpH" firstAttribute="centerX" secondItem="lZs-iq-cVb" secondAttribute="centerX" id="33K-Pg-Dw5"/>
-                        <constraint firstAttribute="height" constant="240" id="3IZ-a4-7rp"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="3IZ-a4-7rp"/>
                         <constraint firstItem="6St-wT-0aK" firstAttribute="top" secondItem="IKx-7J-EpH" secondAttribute="bottom" constant="8" id="6FV-0b-Rb8"/>
+                        <constraint firstItem="xjt-cn-R0L" firstAttribute="top" secondItem="6St-wT-0aK" secondAttribute="bottom" constant="39" id="7pE-d3-5W7"/>
                         <constraint firstItem="tK9-fP-bpN" firstAttribute="leading" secondItem="lZs-iq-cVb" secondAttribute="leading" constant="49" id="8Qs-jY-shh"/>
                         <constraint firstItem="6St-wT-0aK" firstAttribute="leading" secondItem="lZs-iq-cVb" secondAttribute="leading" constant="49" id="901-1N-ngW"/>
                         <constraint firstItem="IKx-7J-EpH" firstAttribute="leading" secondItem="lZs-iq-cVb" secondAttribute="leading" constant="49" id="96E-8h-snG"/>

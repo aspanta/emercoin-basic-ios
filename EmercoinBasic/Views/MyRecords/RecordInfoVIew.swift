@@ -24,7 +24,7 @@ class RecordInfoVIew: PopupView {
             nameLabel.text = viewModel.name
             valueLabel.text = viewModel.value
             addressLabel.text = viewModel.address
-            timeLabel.text = String(format:"%i %@",viewModel.expiresInDay, viewModel.expiresType)
+            timeLabel.text = String(format:"%@ %@",viewModel.expiresInDay, viewModel.expiresType)
         }
     }
 

@@ -13,7 +13,7 @@ class Records: NSObject {
     var records:Results<Record> {
         get {
             let realm = try! Realm()
-            return realm.objects(Record.self)
+            return realm.objects(Record.self).filter("isExpired == false")
         }
     }
     

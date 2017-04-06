@@ -56,9 +56,9 @@ class SideMenuViewController: LGSideMenuController {
             self.mainTabBarController.showController(at: index)
         }
         
-        DispatchQueue.main.async {
-            self.hideLeftView(animated: true)
-        }
+        
+        self.hideLeftView(animated: true)
+        
     }
     
     deinit {
@@ -93,9 +93,7 @@ class SideMenuViewController: LGSideMenuController {
     
     private func changeRootController(to controller:UIViewController)  {
         
-        UIView.transition(with: self.rootView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.rootViewController = controller
-        }, completion: nil)
+        self.rootViewController = controller
     }
     
     func performLogout() {

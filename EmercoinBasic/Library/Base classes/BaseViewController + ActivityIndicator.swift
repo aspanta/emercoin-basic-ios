@@ -1,6 +1,6 @@
 //
 //  BaseViewController + ActivityIndicator.swift
-//  C-way
+//  Emercoin Basic
 //
 
 import UIKit

@@ -12,7 +12,6 @@ class Router {
     internal var sideMenu:SideMenuViewController?
     
     private func changeRootController(to viewController: UIViewController) {
-        viewController.view.layoutSubviews()
         if let window = UIApplication.shared.delegate?.window {
             UIView.transition(with: window!, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 window?.rootViewController = viewController
@@ -31,11 +30,11 @@ class Router {
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         let controller = main.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
-        //let nav = BaseNavigationController(rootViewController: controller)
+        let nav = BaseNavigationController(rootViewController: controller)
         
         AppManager.sharedInstance.isAuthorized = true
         
-        changeRootController(to:controller)
+        changeRootController(to:nav)
     }
     
 }
