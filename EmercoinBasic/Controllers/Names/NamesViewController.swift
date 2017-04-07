@@ -33,6 +33,7 @@ class NamesViewController: BaseViewController {
     var searchText = ""
     var createPressed: ((_ data:Any) -> (Void))?
     var created:((_ record:Record) -> (Void))?
+    var edited:((_ data:[String:Any]) -> (Void))?
     var selectedAddress:((_ address:String) -> (Void))?
     
     var viewDidAppear: ((Void) -> (Void))?
@@ -164,6 +165,7 @@ class NamesViewController: BaseViewController {
             let vc = CreateNVSViewController.controller() as! CreateNVSViewController
             vc.data = data
             vc.created = self.created
+            vc.edited = self.edited
             vc.isEditingMode = isEditingMode
             vc.record = record
             controller = vc

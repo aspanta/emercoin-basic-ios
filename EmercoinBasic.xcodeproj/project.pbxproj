@@ -31,6 +31,7 @@
 		2D22B2441E7C4455008BB64F /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22B23E1E7C4455008BB64F /* AddressBookViewController.swift */; };
 		2D22B2451E7C4455008BB64F /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22B2401E7C4455008BB64F /* ContactCell.swift */; };
 		2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28C85D1E7C596C0071947A /* ContactViewModel.swift */; };
+		2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2A6B511E9791BE000CFEE2 /* ExpireDaysTextField.swift */; };
 		2D4877D01E8147CC0084129C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4877CF1E8147CC0084129C /* BaseModel.swift */; };
 		2D4877D31E814E570084129C /* TransactionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4877D21E814E570084129C /* TransactionsAPI.swift */; };
 		2D4877D61E818E090084129C /* BalanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4877D51E818E090084129C /* BalanceAPI.swift */; };
@@ -223,6 +224,7 @@
 		2D22B23E1E7C4455008BB64F /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AddressBookViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D22B2401E7C4455008BB64F /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ContactCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D28C85D1E7C596C0071947A /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ContactViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2D2A6B511E9791BE000CFEE2 /* ExpireDaysTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpireDaysTextField.swift; sourceTree = "<group>"; };
 		2D4877CF1E8147CC0084129C /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		2D4877D21E814E570084129C /* TransactionsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsAPI.swift; sourceTree = "<group>"; };
 		2D4877D51E818E090084129C /* BalanceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceAPI.swift; sourceTree = "<group>"; };
@@ -549,6 +551,14 @@
 			path = ContactViewModel;
 			sourceTree = "<group>";
 		};
+		2D2A6B501E9791AD000CFEE2 /* ExpiresDays */ = {
+			isa = PBXGroup;
+			children = (
+				2D2A6B511E9791BE000CFEE2 /* ExpireDaysTextField.swift */,
+			);
+			path = ExpiresDays;
+			sourceTree = "<group>";
+		};
 		2D4877CE1E8147CC0084129C /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +803,7 @@
 		2D997A931E7AC90700630560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D2A6B501E9791AD000CFEE2 /* ExpiresDays */,
 				2D21D6701E9279220088AD31 /* MyRecords */,
 				2D997B641E7AD2B600630560 /* AddressBook */,
 				2D997B6A1E7AD2B600630560 /* Base */,
@@ -1849,6 +1860,7 @@
 				2D997B521E7AD24E00630560 /* Coin.swift in Sources */,
 				2D997D071E7AD3B200630560 /* PrivacyPolicyViewController.swift in Sources */,
 				2D997CFF1E7AD3B200630560 /* MenuBCToolsCell.swift in Sources */,
+				2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */,
 				2D997B031E7AD1FF00630560 /* AppManager.swift in Sources */,
 				2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */,
 				2D21D66F1E926E690088AD31 /* SearchNVSViewController.swift in Sources */,

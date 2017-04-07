@@ -49,7 +49,7 @@ extension MyRecordsViewController {
         
         let editAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
             let record = self.itemAt(indexPath: indexPath)
-            self.showEditRecordController(at: record)
+            self.showEditRecordController(at: record, index: indexPath.row)
         }
         
         let deleteAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
@@ -134,14 +134,15 @@ extension MyRecordsViewController {
         return records.records[indexPath.row]
     }
     
-    private func showEditRecordController(at record:Record) {
+    private func showEditRecordController(at record:Record, index:Int) {
         
         let controller = NamesViewController.controller() as! NamesViewController
         controller.subController = .createNVS
         
         controller.record = record
-        controller.created = {record in
-            self.reloadRows()
+        controller.edited = {[weak self] data in
+            self?.records.update(at: data, index: index)
+            self?.reloadRows()
         }
         controller.isEditingMode = true
         self.navigationController?.pushViewController(controller, animated: true)

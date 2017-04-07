@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreateNVSViewController: BaseViewController {
     
@@ -18,7 +19,7 @@ class CreateNVSViewController: BaseViewController {
     @IBOutlet internal weak var nameTextField:BaseTextField!
     @IBOutlet internal weak var valueTextField:BaseTextView!
     @IBOutlet internal weak var addressTextField:BaseTextField!
-    @IBOutlet internal weak var timeTextField:BaseTextField!
+    @IBOutlet internal weak var timeTextField:ExpireDaysTextField!
     
     @IBOutlet internal weak var heightConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var prefixConstraint:NSLayoutConstraint!
@@ -28,6 +29,7 @@ class CreateNVSViewController: BaseViewController {
     var prefixDropDown:DropDown?
     
     var created:((_ record:Record) -> (Void))?
+    var edited:((_ data:[String:Any]) -> (Void))?
     
     var isEditingMode = false
     var record:Record?
@@ -74,12 +76,13 @@ class CreateNVSViewController: BaseViewController {
             lineView.isHidden = isEditingMode
             expiresLabel.text = "Extend days:"
             nameTextField.disableEdit = true
+            timeTextField.isEditMode = true
             
             if let record = record {
                 nameTextField.text = record.name
                 valueTextField.text = record.value
                 addressTextField.text = record.address
-                timeTextField.text = String(format:"%i",record.expiresInDays)
+                timeTextField.text = "0"
             }
         } else {
             if name.length > 0 {
@@ -150,16 +153,25 @@ class CreateNVSViewController: BaseViewController {
         let fullName = (prefix.length > 0) ? (prefix+" \(name)") : name
         
         let record = Record(value:["name": fullName, "value":value, "address": address,
-                                   "expiresIn":Int(time) ?? 0 * blocksInDay, "isExpired":false])
+                                   "expiresIn":(Int(time) ?? 0) * blocksInDay, "isExpired":false])
         
         if isEditingMode {
-            self.record?.value = record.value
-            self.record?.address = record.address
-            self.record?.expiresIn = record.expiresIn
-        }
-        
-        if created != nil {
-            created!(record)
+            record.expiresIn += (self.record?.expiresIn)!
+            
+            var data = [String:Any]()
+            data["address"] = record.address
+            data["value"] = record.value
+            data["name"] = record.name
+            data["expiresIn"] = record.expiresIn
+            data["expiresInDays"] = record.expiresInDays
+            
+            if edited != nil {
+                edited!(data)
+            }
+        } else {
+            if created != nil {
+                created!(record)
+            }
         }
         
         back()

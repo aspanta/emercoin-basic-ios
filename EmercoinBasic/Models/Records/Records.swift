@@ -64,6 +64,18 @@ class Records {
             realm.delete(records)
         }
     }
+
+    func update(at data:[String:Any], index:Int) {
+        let realm = try! Realm()
+        try! realm.write {
+            let record = records[index]
+            record.address = (data["address"] as? String) ?? ""
+            record.expiresIn = (data["expiresIn"] as? Int) ?? 0
+            record.value = (data["value"] as? String) ?? ""
+            record.name = (data["name"] as? String) ?? ""
+            record.expiresInDays = (data["expiresInDays"] as? Int) ?? 0
+        }
+    }
     
     func load() {
         

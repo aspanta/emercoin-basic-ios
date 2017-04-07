@@ -72,7 +72,6 @@ class AddressBook {
         try! realm.write {
             contacts[index].name = name
         }
-
     }
     
     func update(at name:String, address:String, index:Int) {
