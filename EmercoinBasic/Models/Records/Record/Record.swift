@@ -18,7 +18,7 @@ class Record: Object, Mappable {
     
     dynamic var expiresIn = 0 {
         didSet{
-            expiresInDays = Int((Double(expiresIn)/Double(blocksInDay)).rounded(.up))
+            expiresInDays = Int((Double(expiresIn)/Double(blocksInDay)).rounded())
         }
     }
     dynamic var expiresInDays = 0
