@@ -78,6 +78,12 @@ extension String {
         return string
     }
     
+    static func isInfoCardType(at string:String) -> Bool {
+        let infoCardRegEx = "^info:[0-9a-fA-F]{16}$"
+        let infoCardTest = NSPredicate(format:"SELF MATCHES %@", infoCardRegEx)
+        return infoCardTest.evaluate(with: string)
+    }
+    
     func validAmount() -> Bool {
         let pat = "\\d{1,9}\\.(\\d{1,6})?"
         let regex = try! NSRegularExpression(pattern:pat, options: [.caseInsensitive])
@@ -86,4 +92,6 @@ extension String {
         let strings = results.map{nsString.substring(with: $0.range)}
         return strings.first != nil && strings.first == self
     }
+    
+    
 }

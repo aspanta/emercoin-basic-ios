@@ -101,7 +101,6 @@ class CreateNVSViewController: BaseViewController {
             nameTextField.font = font
             valueTextField.font = font
             addressTextField.font = font
-            timeTextField.font = font
         }
     }
     
