@@ -74,26 +74,26 @@ class LoginViewModel {
         
         if isLoading {return}
         
-        var loginInfo = [String:String]()
+        var authInfo = [String:String]()
         
-        loginInfo["host"] = host
-        loginInfo["port"] = port
-        loginInfo["user"] = login
-        loginInfo["password"] = password
-        loginInfo["protocol"] = webProtocol
+        authInfo["host"] = host
+        authInfo["port"] = port
+        authInfo["user"] = login
+        authInfo["password"] = password
+        authInfo["protocol"] = webProtocol
         
         activityIndicator.onNext(true)
         isLoading = true
         
-        APIManager.sharedInstance.login(at: loginInfo) {[weak self] (data, error) in
+        APIManager.sharedInstance.login(at: authInfo) {[weak self] (data, error) in
             self?.isLoading = false
             self?.activityIndicator.onNext(false)
             if error != nil {
                 self?.error.onNext(error!)
             } else {
                 
-                if self?.settings.loginInfo == nil {
-                    self?.settings.loginInfo = loginInfo
+                if self?.settings.authInfo == nil {
+                    self?.settings.authInfo = authInfo
                     self?.settings.save()
                 }
                 

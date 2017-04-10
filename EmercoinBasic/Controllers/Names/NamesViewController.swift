@@ -32,7 +32,7 @@ class NamesViewController: BaseViewController {
     
     var searchText = ""
     var createPressed: ((_ data:Any) -> (Void))?
-    var created:((_ record:Record) -> (Void))?
+    var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
     var selectedAddress:((_ address:String) -> (Void))?
     
@@ -133,8 +133,8 @@ class NamesViewController: BaseViewController {
         
         if subController == .main {
             if let main = childController as? NamesMainViewController {
-                    controller.created = {[weak self](record) in
-                            main.addRecord(record: record)
+                    controller.created = {[weak self] in
+                            main.reloadRecords()
                     }
             }
         }

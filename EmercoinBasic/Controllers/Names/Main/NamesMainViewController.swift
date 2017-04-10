@@ -92,4 +92,7 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
         self.recordsController?.addRecord(record: record)
     }
     
+    func reloadRecords() {
+        self.recordsController?.records.load()
+    }
 }

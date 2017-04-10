@@ -34,8 +34,8 @@ class Router {
         
         var name = "login"
         
-        if let loginInfo = AppManager.sharedInstance.settings.loginInfo {
-            APIManager.sharedInstance.addLoginInfo(at: loginInfo)
+        if let authInfo = AppManager.sharedInstance.settings.authInfo {
+            APIManager.sharedInstance.addAuthInfo(at: authInfo)
             name = "main"
         }
         

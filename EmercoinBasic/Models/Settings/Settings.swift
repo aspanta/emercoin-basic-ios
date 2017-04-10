@@ -10,20 +10,20 @@ let key = "login_info"
 
 class Settings {
     
-    var loginInfo:[String:String]?
+    var authInfo:[String:String]?
     
     func save() {
-        Defaults.set(loginInfo, forKey: key)
+        Defaults.set(authInfo, forKey: key)
     }
     
     func load() {
         if let data = Defaults.value(forKey: key) {
-            loginInfo = data as? [String:String]
+            authInfo = data as? [String:String]
         }
     }
     
     func clear() {
-        loginInfo = nil
+        authInfo = nil
         Defaults[key] = nil
     }
 

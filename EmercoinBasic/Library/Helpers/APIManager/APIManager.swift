@@ -13,22 +13,23 @@ enum APIType {
     case myAddresses
     case myNewAddress
     case names
+    case addName
 }
 
 class APIManager: NSObject {
     
     internal static let sharedInstance = APIManager()
     
-    private var loginInfo:[String:String] = [:]
+    private var authInfo:[String:String] = [:]
     
-    func addLoginInfo(at loginInfo:[String:String]) {
+    func addAuthInfo(at authInfo:[String:String]) {
         
-        self.loginInfo = loginInfo
+        self.authInfo = authInfo
     }
     
-    func login(at loginInfo:[String:String], completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
+    func login(at authInfo:[String:String], completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
         
-        self.loginInfo = loginInfo
+        self.authInfo = authInfo
         
         loadInfo(completion: completion)
     }
@@ -57,6 +58,18 @@ class APIManager: NSObject {
         
         if var params = api.object as? [String:AnyObject] {
             params["sendData"] = sendData as AnyObject?
+            api.object = params as AnyObject?
+        }
+        
+        api.startRequest(completion: completion)
+    }
+    
+    func addName(at nameData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = getApi(at: .addName)
+        
+        if var params = api.object as? [String:AnyObject] {
+            params["nameData"] = nameData as AnyObject?
             api.object = params as AnyObject?
         }
         
@@ -99,9 +112,10 @@ class APIManager: NSObject {
             case .myAddresses:api = MyAddressesAPI()
             case .myNewAddress:api = AddMyAddressAPI()
             case .names:api = NamesAPI()
+            case .addName:api = AddNameAPI()
         }
         
-        api.object = loginInfo as AnyObject?
+        api.object = authInfo as AnyObject?
 
         return api
     }

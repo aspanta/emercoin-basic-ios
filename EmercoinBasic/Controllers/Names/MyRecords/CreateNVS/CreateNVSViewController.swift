@@ -26,9 +26,10 @@ class CreateNVSViewController: BaseViewController {
     
     @IBOutlet internal weak var createButton:UIButton!
     
+    var isLoading = false
     var prefixDropDown:DropDown?
     
-    var created:((_ record:Record) -> (Void))?
+    var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
     
     var isEditingMode = false
@@ -104,35 +105,6 @@ class CreateNVSViewController: BaseViewController {
         }
     }
     
-    internal func setupPrefixDropDown() {
-        
-        prefixDropDown = DropDown()
-        prefixDropDown?.anchorView = prefixButton
-        
-        let dataSource = ["Any", "dns", "ssh", "dpo"]
-        
-        prefixDropLabel.text = dataSource.first
-        
-        prefixDropDown?.dataSource = dataSource
-        
-        prefixDropDown?.selectionAction = { [unowned self] (index, item) in
-            self.prefixDropLabel.text = item
-            self.prefixLabel.text = index != 0 ? item+":" : ""
-        }
-        
-        prefixDropDown?.bottomOffset = CGPoint(x: 0, y: prefixButton.bounds.height)
-        
-        setupDropDownUI()
-        
-    }
-    
-    internal func setupDropDownUI() {
-        
-        let appearance = DropDown.appearance()
-        appearance.selectionBackgroundColor = prefixDropLabel.textColor
-        appearance.cellHeight = prefixButton.bounds.height + 7
-        appearance.textFont = UIFont(name: "Roboto-Regular", size: 18)!
-    }
     
     @IBAction func prefixButtonPressed() {
         
@@ -145,14 +117,15 @@ class CreateNVSViewController: BaseViewController {
         let name = nameTextField.text!
         let value = valueTextField.text!
         let address = addressTextField.text!
-        var time = timeTextField.text!
+        var days = timeTextField.text!
         
-        time = time.length > 0 ? time : "0"
+        days = days.length > 0 ? days : "0"
+        let expiresIn = (Int(days) ?? 0) * blocksInDay
         
-        let fullName = (prefix.length > 0) ? (prefix+" \(name)") : name
+        let fullName = (prefix.length > 0) ? (prefix+"\(name)") : name
         
         let record = Record(value:["name": fullName, "value":value, "address": address,
-                                   "expiresIn":(Int(time) ?? 0) * blocksInDay, "isExpired":false])
+                                   "expiresIn":expiresIn, "isExpired":false])
         
         if isEditingMode {
             record.expiresIn += (self.record?.expiresIn)!
@@ -167,13 +140,24 @@ class CreateNVSViewController: BaseViewController {
             if edited != nil {
                 edited!(data)
             }
+            back()
         } else {
-            if created != nil {
-                created!(record)
+            var nameData:[AnyObject] = []
+            
+            let daysCount = Int(days)
+            
+            if !fullName.isEmpty && !value.isEmpty && daysCount != 0 {
+                nameData.append(fullName as AnyObject)
+                nameData.append(value as AnyObject)
+                nameData.append(daysCount as AnyObject)
+                
+                if !address.isEmpty {
+                    nameData.append(address as AnyObject)
+                }
+                
+                addName(at: nameData)
             }
         }
-        
-        back()
     }
     
     @IBAction func cancelButtonPressed() {
@@ -207,6 +191,45 @@ class CreateNVSViewController: BaseViewController {
             self.addressTextField.text = address
         }
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func addName(at nameData:[AnyObject]) {
+        
+        showActivityIndicator()
+        isLoading = true
+        
+        APIManager.sharedInstance.addName(at: nameData as AnyObject) {[weak self] (data, error) in
+            self?.isLoading = false
+            self?.hideActivityIndicator()
+            
+            if let error = error {
+                self?.showErrorAlert(at: error)
+            } else {
+                self?.showSuccessAddNameView()
+            }
+        }
+    }
+    
+    private func showSuccessAddNameView() {
+        
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+                                                           frame: self.parent!.view.frame) as! SuccessAddNameView
+        successView.success = ({[weak self] in
+            
+            if self?.created != nil {
+                self?.created!()
+            }
+            
+            self?.back()
+        })
+        
+        self.parent?.view.addSubview(successView)
+    }
+    
+    private func showErrorAlert(at error:NSError) {
+        
+        let alert = AlertsHelper.errorAlert(at: error)
+        present(alert, animated: true, completion: nil)
     }
 
 }

@@ -41,6 +41,9 @@
 		2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D55021E8036CC004FC57D /* ObjectMapper.framework */; };
 		2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */; };
 		2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */; };
+		2D6620931E9C02EA007DFB35 /* AddNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6620921E9C02EA007DFB35 /* AddNameAPI.swift */; };
+		2D6620951E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6620941E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift */; };
+		2D6620971E9C0A07007DFB35 /* SuccessAddNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6620961E9C0A07007DFB35 /* SuccessAddNameView.swift */; };
 		2D70A97B1E85334000F50488 /* AlertsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A97A1E85334000F50488 /* AlertsHelper.swift */; };
 		2D70A97E1E85853E00F50488 /* AddMyAddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */; };
 		2D798EF71E9292F7008AB5AF /* NamesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EF61E9292F7008AB5AF /* NamesMainViewController.swift */; };
@@ -234,6 +237,9 @@
 		2D5D55021E8036CC004FC57D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewController + ActivityIndicator.swift"; sourceTree = "<group>"; };
 		2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCoinsAPI.swift; sourceTree = "<group>"; };
+		2D6620921E9C02EA007DFB35 /* AddNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNameAPI.swift; sourceTree = "<group>"; };
+		2D6620941E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateNVSViewController + DropDown.swift"; sourceTree = "<group>"; };
+		2D6620961E9C0A07007DFB35 /* SuccessAddNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessAddNameView.swift; sourceTree = "<group>"; };
 		2D70A97A1E85334000F50488 /* AlertsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsHelper.swift; sourceTree = "<group>"; };
 		2D70A97D1E85853E00F50488 /* AddMyAddressAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMyAddressAPI.swift; sourceTree = "<group>"; };
 		2D798EF61E9292F7008AB5AF /* NamesMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamesMainViewController.swift; sourceTree = "<group>"; };
@@ -465,6 +471,7 @@
 			children = (
 				2D21D6541E926E690088AD31 /* AddressesNVSViewController */,
 				2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */,
+				2D6620941E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift */,
 				2D21D6571E926E690088AD31 /* RecipientAddressNVSController */,
 			);
 			path = CreateNVS;
@@ -519,6 +526,7 @@
 				2D21D6731E9279220088AD31 /* RecordInfoVIew.swift */,
 				2D21D6741E9279220088AD31 /* RecordShortInfoView.swift */,
 				2D21D6751E9279220088AD31 /* NVSValueView.swift */,
+				2D6620961E9C0A07007DFB35 /* SuccessAddNameView.swift */,
 			);
 			path = MyRecords;
 			sourceTree = "<group>";
@@ -605,6 +613,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D6620911E9C02D5007DFB35 /* AddName */,
 				2D798EF81E9394B1008AB5AF /* Names */,
 				2D70A97C1E85852B00F50488 /* AddMyAddress */,
 				2DA3E77F1E83F529003F9A6D /* MyAddresses */,
@@ -630,6 +639,14 @@
 				2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */,
 			);
 			path = SendCoins;
+			sourceTree = "<group>";
+		};
+		2D6620911E9C02D5007DFB35 /* AddName */ = {
+			isa = PBXGroup;
+			children = (
+				2D6620921E9C02EA007DFB35 /* AddNameAPI.swift */,
+			);
+			path = AddName;
 			sourceTree = "<group>";
 		};
 		2D70A9791E85332800F50488 /* AlertsHelper */ = {
@@ -1443,8 +1460,8 @@
 		2D997C481E7AD3B200630560 /* GetCoins */ = {
 			isa = PBXGroup;
 			children = (
-				2D997C491E7AD3B200630560 /* GetCoinsViewController + DropDown.swift */,
 				2D997C4A1E7AD3B200630560 /* GetCoinsViewController.swift */,
+				2D997C491E7AD3B200630560 /* GetCoinsViewController + DropDown.swift */,
 			);
 			path = GetCoins;
 			sourceTree = "<group>";
@@ -1744,6 +1761,7 @@
 				2D997B251E7AD1FF00630560 /* PagerTabStripViewController.swift in Sources */,
 				2D997B231E7AD1FF00630560 /* PagerTabStripBehaviour.swift in Sources */,
 				2D997CD81E7AD3B200630560 /* SendCoinsViewController.swift in Sources */,
+				2D6620971E9C0A07007DFB35 /* SuccessAddNameView.swift in Sources */,
 				2D997BB51E7AD2B600630560 /* BaseTextView.swift in Sources */,
 				2D997B241E7AD1FF00630560 /* PagerTabStripError.swift in Sources */,
 				2D997B611E7AD24E00630560 /* Wallet.swift in Sources */,
@@ -1818,6 +1836,7 @@
 				2D21D6691E926E690088AD31 /* MyRecordsViewController + TableView.swift in Sources */,
 				2D997B021E7AD1FF00630560 /* Constants.swift in Sources */,
 				2D22B2451E7C4455008BB64F /* ContactCell.swift in Sources */,
+				2D6620951E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift in Sources */,
 				2D997BB91E7AD2B600630560 /* DeleteContactView.swift in Sources */,
 				2D997AFE1E7AD1FF00630560 /* BaseNavigationController.swift in Sources */,
 				2D997BBF1E7AD2B600630560 /* FeedBackSendButton.swift in Sources */,
@@ -1888,6 +1907,7 @@
 				2D997B091E7AD1FF00630560 /* UIImage + Utils.swift in Sources */,
 				2D4877D61E818E090084129C /* BalanceAPI.swift in Sources */,
 				2D997B4F1E7AD24E00630560 /* AddressBook.swift in Sources */,
+				2D6620931E9C02EA007DFB35 /* AddNameAPI.swift in Sources */,
 				2D997CD21E7AD3B200630560 /* GetCoinsViewController.swift in Sources */,
 				2D798EFF1E939F1B008AB5AF /* Record.swift in Sources */,
 				2D997CE71E7AD3B200630560 /* HomeViewController.swift in Sources */,

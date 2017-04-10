@@ -316,6 +316,81 @@ was create 1824 days</string>
             </connections>
             <point key="canvasLocation" x="1858" y="58"/>
         </view>
+        <view contentMode="scaleToFill" id="DWO-Yc-Bsg" customClass="SuccessAddNameView" customModule="EmercoinBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNw-rX-tCr">
+                    <rect key="frame" x="33" y="290" width="348" height="157"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="TFw-fu-XcB">
+                            <rect key="frame" x="0.0" y="0.0" width="347" height="157"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operation was successfully completed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhh-eh-Qe9">
+                            <rect key="frame" x="36" y="45" width="277" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="43" id="8kv-ZR-p3h"/>
+                                <constraint firstAttribute="width" constant="277" id="Bhk-wJ-u0p"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87Q-f5-Zoj">
+                            <rect key="frame" x="67" y="18" width="214" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="WZZ-gW-sCq"/>
+                                <constraint firstAttribute="width" constant="214" id="esA-5D-Cs9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHl-ul-DrW">
+                            <rect key="frame" x="140" y="103" width="67" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Z9R-QA-ayQ"/>
+                                <constraint firstAttribute="width" constant="67" id="hMK-KS-nlY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <state key="normal" title="Ok">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="doneButtonPressedWithSender:" destination="DWO-Yc-Bsg" eventType="touchUpInside" id="tDR-Ru-WvZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yhh-eh-Qe9" firstAttribute="centerX" secondItem="tNw-rX-tCr" secondAttribute="centerX" id="A3T-tS-fHd"/>
+                        <constraint firstItem="TFw-fu-XcB" firstAttribute="top" secondItem="tNw-rX-tCr" secondAttribute="top" id="JFj-nB-FzB"/>
+                        <constraint firstItem="OHl-ul-DrW" firstAttribute="centerX" secondItem="tNw-rX-tCr" secondAttribute="centerX" id="Jue-WC-cU7"/>
+                        <constraint firstAttribute="bottom" secondItem="TFw-fu-XcB" secondAttribute="bottom" id="PFZ-l1-dGy"/>
+                        <constraint firstItem="yhh-eh-Qe9" firstAttribute="top" secondItem="87Q-f5-Zoj" secondAttribute="bottom" constant="8" id="PKo-U2-iHd"/>
+                        <constraint firstAttribute="height" constant="157" id="RN2-6l-Md5"/>
+                        <constraint firstItem="87Q-f5-Zoj" firstAttribute="centerX" secondItem="tNw-rX-tCr" secondAttribute="centerX" id="eW0-zf-w6d"/>
+                        <constraint firstItem="TFw-fu-XcB" firstAttribute="leading" secondItem="tNw-rX-tCr" secondAttribute="leading" id="g75-Wq-G4N"/>
+                        <constraint firstItem="87Q-f5-Zoj" firstAttribute="top" secondItem="tNw-rX-tCr" secondAttribute="top" constant="18" id="ggB-Ov-5wD"/>
+                        <constraint firstAttribute="bottom" secondItem="OHl-ul-DrW" secondAttribute="bottom" constant="24" id="nfj-Js-3jo"/>
+                        <constraint firstAttribute="trailing" secondItem="TFw-fu-XcB" secondAttribute="trailing" constant="1" id="vnk-37-tPz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tNw-rX-tCr" firstAttribute="centerX" secondItem="DWO-Yc-Bsg" secondAttribute="centerX" id="KH1-SV-3br"/>
+                <constraint firstItem="tNw-rX-tCr" firstAttribute="leading" secondItem="DWO-Yc-Bsg" secondAttribute="leading" constant="33" id="NaA-C9-4N7"/>
+                <constraint firstAttribute="trailing" secondItem="tNw-rX-tCr" secondAttribute="trailing" constant="33" id="Tqb-7a-1bp"/>
+                <constraint firstItem="tNw-rX-tCr" firstAttribute="centerY" secondItem="DWO-Yc-Bsg" secondAttribute="centerY" id="vwK-lD-5PT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="2417" y="58"/>
+        </view>
     </objects>
     <resources>
         <image name="popup_background" width="312" height="157"/>
