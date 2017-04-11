@@ -20,6 +20,7 @@ struct Constants {
         static let GetNewMyAddress = "getnewaddress"
         static let AddName = "name_new"
         static let UpdateName = "name_update"
+        static let DeleteName = "name_delete"
         static let GetNames = "name_list"
         
     }

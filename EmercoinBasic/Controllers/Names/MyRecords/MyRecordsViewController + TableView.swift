@@ -105,9 +105,9 @@ extension MyRecordsViewController {
         let item = itemAt(indexPath: indexPath)
         records.remove(record: item)
         
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [indexPath], with: .top)
-        tableView.endUpdates()
+//        tableView.beginUpdates()
+//        tableView.deleteRows(at: [indexPath], with: .top)
+//        tableView.endUpdates()
         
         reloadRows()
     }

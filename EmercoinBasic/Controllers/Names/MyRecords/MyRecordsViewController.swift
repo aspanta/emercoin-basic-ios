@@ -70,6 +70,13 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         })
             .addDisposableTo(disposeBag)
         
+        records.successDelete.subscribe(onNext:{ [weak self] success in
+            if success {
+                self?.showSuccessDeleteNameView()
+            }
+        })
+            .addDisposableTo(disposeBag)
+        
         records.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
         })
@@ -91,7 +98,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
             .addDisposableTo(disposeBag)
     }
     
-    private func showErrorAlert(at error:NSError) {
+    internal func showErrorAlert(at error:NSError) {
         
         let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
@@ -109,6 +116,13 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     @IBAction func nvsInfoButtonPressed() {
         let vc = NVSInfoViewController.controller()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showSuccessDeleteNameView() {
+        
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+                                                              frame: self.parent!.view.frame) as! SuccessAddNameView
+        self.parent?.view.addSubview(successView)
     }
 
 }

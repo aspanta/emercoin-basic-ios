@@ -37,6 +37,7 @@ class RecordInfoVIew: PopupView {
     
     override func didMoveToSuperview() {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
+
             self.textView.isScrollEnabled = true
         }
     }

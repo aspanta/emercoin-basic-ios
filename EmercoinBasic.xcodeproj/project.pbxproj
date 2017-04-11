@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D09DB811E9CC2290013970F /* UpdateNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */; };
+		2D09DB841E9CDF600013970F /* DeleteNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB831E9CDF600013970F /* DeleteNameAPI.swift */; };
 		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
 		2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6511E926E690088AD31 /* RecordCell.swift */; };
 		2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */; };
@@ -205,6 +206,7 @@
 
 /* Begin PBXFileReference section */
 		2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNameAPI.swift; sourceTree = "<group>"; };
+		2D09DB831E9CDF600013970F /* DeleteNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNameAPI.swift; sourceTree = "<group>"; };
 		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
 		2D21D6511E926E690088AD31 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesNVSViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 			path = UpdateName;
 			sourceTree = "<group>";
 		};
+		2D09DB821E9CDF240013970F /* DeleteName */ = {
+			isa = PBXGroup;
+			children = (
+				2D09DB831E9CDF600013970F /* DeleteNameAPI.swift */,
+			);
+			path = DeleteName;
+			sourceTree = "<group>";
+		};
 		2D09F91A1E8E3FF00021B38A /* EmercoinCourseAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +633,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D09DB821E9CDF240013970F /* DeleteName */,
 				2D09DB7F1E9CC1D40013970F /* UpdateName */,
 				2D6620911E9C02D5007DFB35 /* AddName */,
 				2D798EF81E9394B1008AB5AF /* Names */,
@@ -1790,6 +1801,7 @@
 				2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */,
 				2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */,
 				2D997B281E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift in Sources */,
+				2D09DB841E9CDF600013970F /* DeleteNameAPI.swift in Sources */,
 				2D997CB21E7AD3B200630560 /* AccountPageViewController.swift in Sources */,
 				2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */,
 				2D997B261E7AD1FF00630560 /* SegmentedPagerTabStripViewController.swift in Sources */,

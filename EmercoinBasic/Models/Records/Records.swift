@@ -20,6 +20,7 @@ class Records {
     
     let disposeBag = DisposeBag()
     var success = PublishSubject<Bool>()
+    var successDelete = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
     var isEmpty = PublishSubject<Bool>()
@@ -52,9 +53,14 @@ class Records {
     }
     
     func remove(record:Record) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.delete(record)
+        
+        APIManager.sharedInstance.deleteName(at: [record.name] as AnyObject) {[weak self] (data, error) in
+            self?.activityIndicator.onNext(false)
+            if let error = error {
+               self?.error.onNext(error)
+            } else {
+                self?.successDelete.onNext(true)
+            }
         }
     }
     
@@ -90,7 +96,7 @@ class Records {
                     return record.isExpired == false
                 }))
                 
-                self?.success.onNext(true)
+                //self?.success.onNext(true)
             } else {
                 self?.error.onNext(error!)
             }
