@@ -6,6 +6,8 @@
 import UIKit
 import ObjectMapper
 
+let maxTransactions = 100
+
 class TransactionsAPI: BaseAPI {
     
     override func parameters() -> [String : Any] {
@@ -13,7 +15,7 @@ class TransactionsAPI: BaseAPI {
         var param = super.parameters()
         let method = Constants.API.GetTransactions
         param["method"] = method
-        
+        param["params"] = ["",maxTransactions,0,true]
         return param
     }
     
