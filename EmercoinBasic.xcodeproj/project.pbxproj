@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D09DB811E9CC2290013970F /* UpdateNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */; };
 		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
 		2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6511E926E690088AD31 /* RecordCell.swift */; };
 		2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */; };
@@ -203,6 +204,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNameAPI.swift; sourceTree = "<group>"; };
 		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
 		2D21D6511E926E690088AD31 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesNVSViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D09DB7F1E9CC1D40013970F /* UpdateName */ = {
+			isa = PBXGroup;
+			children = (
+				2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */,
+			);
+			path = UpdateName;
+			sourceTree = "<group>";
+		};
 		2D09F91A1E8E3FF00021B38A /* EmercoinCourseAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +623,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D09DB7F1E9CC1D40013970F /* UpdateName */,
 				2D6620911E9C02D5007DFB35 /* AddName */,
 				2D798EF81E9394B1008AB5AF /* Names */,
 				2D70A97C1E85852B00F50488 /* AddMyAddress */,
@@ -1830,6 +1841,7 @@
 				2D21D6791E9279220088AD31 /* RecordShortInfoView.swift in Sources */,
 				2D997BB21E7AD2B600630560 /* AddContactView.swift in Sources */,
 				2D997BBA1E7AD2B600630560 /* EncryptionButtonView.swift in Sources */,
+				2D09DB811E9CC2290013970F /* UpdateNameAPI.swift in Sources */,
 				2D997C011E7AD37700630560 /* CoinsOperationViewModel.swift in Sources */,
 				2D997CE61E7AD3B200630560 /* HomeViewController + TableView.swift in Sources */,
 				2D997B1D1E7AD1FF00630560 /* ButtonBarPagerTabStripViewController.swift in Sources */,

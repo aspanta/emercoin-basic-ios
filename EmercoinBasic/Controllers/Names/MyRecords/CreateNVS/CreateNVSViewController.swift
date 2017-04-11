@@ -120,31 +120,46 @@ class CreateNVSViewController: BaseViewController {
         var days = timeTextField.text!
         
         days = days.length > 0 ? days : "0"
-        let expiresIn = (Int(days) ?? 0) * blocksInDay
+        let daysCount = Int(days) ?? 0
+        let expiresIn = daysCount * blocksInDay
         
         let fullName = (prefix.length > 0) ? (prefix+"\(name)") : name
         
         let record = Record(value:["name": fullName, "value":value, "address": address,
                                    "expiresIn":expiresIn, "isExpired":false])
         
+        var nameData:[AnyObject] = []
+        
         if isEditingMode {
-            record.expiresIn += (self.record?.expiresIn)!
             
-            var data = [String:Any]()
-            data["address"] = record.address
-            data["value"] = record.value
-            data["name"] = record.name
-            data["expiresIn"] = record.expiresIn
-            data["expiresInDays"] = record.expiresInDays
-            
-            if edited != nil {
-                edited!(data)
+            if let oldRecord = self.record {
+                
+                if oldRecord.value != record.value || oldRecord.address != record.address || daysCount > 0 {
+                    record.expiresIn += oldRecord.expiresIn
+                    
+                    var data = [String:Any]()
+                    data["address"] = record.address
+                    data["value"] = record.value
+                    data["name"] = record.name
+                    data["expiresIn"] = record.expiresIn
+                    data["expiresInDays"] = record.expiresInDays
+                    
+                    self.data = data
+                    
+                    nameData.append(oldRecord.name as AnyObject)
+                    nameData.append(record.value as AnyObject )
+                    nameData.append(daysCount as AnyObject)
+                    
+                    if !address.isEmpty {
+                        nameData.append(address as AnyObject)
+                    }
+                    
+                    updateName(at: nameData)
+                } else {
+                    back()
+                }
             }
-            back()
         } else {
-            var nameData:[AnyObject] = []
-            
-            let daysCount = Int(days)
             
             if !fullName.isEmpty && !value.isEmpty && daysCount != 0 {
                 nameData.append(fullName as AnyObject)
@@ -210,16 +225,40 @@ class CreateNVSViewController: BaseViewController {
         }
     }
     
+    private func updateName(at nameData:[AnyObject]) {
+        
+        showActivityIndicator()
+        isLoading = true
+        
+        APIManager.sharedInstance.updateName(at: nameData as AnyObject) {[weak self] (data, error) in
+            self?.isLoading = false
+            self?.hideActivityIndicator()
+            
+            if let error = error {
+                self?.showErrorAlert(at: error)
+            } else {
+                self?.showSuccessAddNameView()
+            }
+        }
+    }
+    
     private func showSuccessAddNameView() {
         
         let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
                                                            frame: self.parent!.view.frame) as! SuccessAddNameView
         successView.success = ({[weak self] in
             
-            if self?.created != nil {
-                self?.created!()
+            if self?.isEditingMode == true {
+                if self?.edited != nil {
+                    self?.edited!(self?.data as! [String : Any])
+                }
+            } else {
+                if self?.created != nil {
+                    self?.created!()
+                }
             }
             
+
             self?.back()
         })
         

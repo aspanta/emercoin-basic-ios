@@ -19,6 +19,7 @@ struct Constants {
         static let GetMyAddresses = "getaddressesbyaccount"
         static let GetNewMyAddress = "getnewaddress"
         static let AddName = "name_new"
+        static let UpdateName = "name_update"
         static let GetNames = "name_list"
         
     }
