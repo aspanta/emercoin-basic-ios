@@ -60,7 +60,7 @@ class SendCoinsViewController: BaseViewController {
             if success {
                 let wallet = AppManager.sharedInstance.wallet
                 wallet.balance -= self?.amount ?? 0
-                wallet.loadBalance()
+                wallet.loadInfo()
                 self?.showSuccesSendView()
             }
         })

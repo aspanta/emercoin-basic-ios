@@ -13,7 +13,7 @@ class SideMenuViewController: LGSideMenuController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        AppManager.sharedInstance.wallet.loadBalance()
+        AppManager.sharedInstance.wallet.loadInfo()
     }
     
     fileprivate var mainTabBarController:TabBarController = {

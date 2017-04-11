@@ -28,6 +28,7 @@ class CoinOperationsViewController: BaseViewController {
     @IBOutlet internal weak var menuButton:UIButton!
     @IBOutlet internal weak var backButton:UIButton!
     @IBOutlet internal weak var addButton:UIButton!
+    @IBOutlet internal weak var lockButton:LockButton!
     
     @IBOutlet internal weak var operationConstraint:NSLayoutConstraint!
     
@@ -132,10 +133,14 @@ class CoinOperationsViewController: BaseViewController {
         }
     }
     
-    @IBAction func addButtonPressed(sender:UIButton) {
+    @IBAction internal func addButtonPressed(sender:UIButton) {
         if childController is MyAdressViewController {
             let controller = childController as! MyAdressViewController
             controller.showAddAddressView()
         }
+    }
+    
+    @IBAction internal func lockButtonPressed(sender:UIButton) {
+        lockButton.isLocked = !lockButton.isLocked
     }
 }

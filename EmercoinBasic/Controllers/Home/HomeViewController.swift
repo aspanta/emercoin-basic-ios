@@ -10,6 +10,7 @@ import RxCocoa
 final class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet internal weak var tableView:UITableView!
+    @IBOutlet internal weak var lockButton:LockButton!
     
     private var wallet = AppManager.sharedInstance.wallet
     let disposeBag = DisposeBag()
@@ -42,6 +43,11 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         
         wallet.error.subscribe(onNext: {[weak self] (error) in
             self?.showErrorAlert(at: error)
+        })
+        .addDisposableTo(disposeBag)
+        
+        wallet.locked.subscribe(onNext: {[weak self] (locked) in
+            self?.lockButton.isLocked = locked
         })
         .addDisposableTo(disposeBag)
         
@@ -82,7 +88,11 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        wallet.loadBalance()
+        wallet.loadInfo()
+    }
+    
+    @IBAction internal func lockButtonPressed(sender:UIButton) {
+        lockButton.isLocked = !lockButton.isLocked
     }
 
 }

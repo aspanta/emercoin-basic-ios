@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2D09DB811E9CC2290013970F /* UpdateNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */; };
 		2D09DB841E9CDF600013970F /* DeleteNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB831E9CDF600013970F /* DeleteNameAPI.swift */; };
+		2D09DB871E9D0B0E0013970F /* LockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB861E9D0B0E0013970F /* LockButton.swift */; };
+		2D09DB891E9D5D370013970F /* WalletProtection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D09DB881E9D5D370013970F /* WalletProtection.xib */; };
+		2D09DB8C1E9D64E90013970F /* WalletProtectionUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB8B1E9D64E90013970F /* WalletProtectionUnlockView.swift */; };
+		2D09DB8E1E9D651A0013970F /* WalletProtectionLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB8D1E9D651A0013970F /* WalletProtectionLockView.swift */; };
+		2D09DB901E9D65870013970F /* WalletProtectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */; };
+		2D09DB921E9D67CF0013970F /* WalletProtectionWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */; };
 		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
 		2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6511E926E690088AD31 /* RecordCell.swift */; };
 		2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */; };
@@ -207,6 +213,12 @@
 /* Begin PBXFileReference section */
 		2D09DB801E9CC2290013970F /* UpdateNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNameAPI.swift; sourceTree = "<group>"; };
 		2D09DB831E9CDF600013970F /* DeleteNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNameAPI.swift; sourceTree = "<group>"; };
+		2D09DB861E9D0B0E0013970F /* LockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockButton.swift; sourceTree = "<group>"; };
+		2D09DB881E9D5D370013970F /* WalletProtection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WalletProtection.xib; path = ../../Controllers/Common/WalletProtection.xib; sourceTree = "<group>"; };
+		2D09DB8B1E9D64E90013970F /* WalletProtectionUnlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionUnlockView.swift; sourceTree = "<group>"; };
+		2D09DB8D1E9D651A0013970F /* WalletProtectionLockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionLockView.swift; sourceTree = "<group>"; };
+		2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionView.swift; sourceTree = "<group>"; };
+		2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionWarningView.swift; sourceTree = "<group>"; };
 		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
 		2D21D6511E926E690088AD31 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesNVSViewController.swift; sourceTree = "<group>"; };
@@ -443,6 +455,26 @@
 				2D09DB831E9CDF600013970F /* DeleteNameAPI.swift */,
 			);
 			path = DeleteName;
+			sourceTree = "<group>";
+		};
+		2D09DB851E9D0ABE0013970F /* LockButton */ = {
+			isa = PBXGroup;
+			children = (
+				2D09DB861E9D0B0E0013970F /* LockButton.swift */,
+			);
+			path = LockButton;
+			sourceTree = "<group>";
+		};
+		2D09DB8A1E9D64BE0013970F /* WalletProtection */ = {
+			isa = PBXGroup;
+			children = (
+				2D09DB881E9D5D370013970F /* WalletProtection.xib */,
+				2D09DB8B1E9D64E90013970F /* WalletProtectionUnlockView.swift */,
+				2D09DB8D1E9D651A0013970F /* WalletProtectionLockView.swift */,
+				2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */,
+				2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */,
+			);
+			path = WalletProtection;
 			sourceTree = "<group>";
 		};
 		2D09F91A1E8E3FF00021B38A /* EmercoinCourseAPI */ = {
@@ -842,6 +874,8 @@
 		2D997A931E7AC90700630560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D09DB8A1E9D64BE0013970F /* WalletProtection */,
+				2D09DB851E9D0ABE0013970F /* LockButton */,
 				2D2A6B501E9791AD000CFEE2 /* ExpiresDays */,
 				2D21D6701E9279220088AD31 /* MyRecords */,
 				2D997B641E7AD2B600630560 /* AddressBook */,
@@ -1547,10 +1581,10 @@
 			isa = PBXGroup;
 			children = (
 				2D997C641E7AD3B200630560 /* Cells */,
+				2D997C6A1E7AD3B200630560 /* HomeViewController.swift */,
+				2D997C691E7AD3B200630560 /* HomeViewController + TableView.swift */,
 				2D997C671E7AD3B200630560 /* Home.storyboard */,
 				2D997C681E7AD3B200630560 /* Home.xib */,
-				2D997C691E7AD3B200630560 /* HomeViewController + TableView.swift */,
-				2D997C6A1E7AD3B200630560 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1741,6 +1775,7 @@
 				2D997AB91E7AD02A00630560 /* Assets.xcassets in Resources */,
 				2D997D0F1E7AD3B200630560 /* TermOfUse.storyboard in Resources */,
 				2D997ABA1E7AD02A00630560 /* LaunchScreen.storyboard in Resources */,
+				2D09DB891E9D5D370013970F /* WalletProtection.xib in Resources */,
 				2D997CD71E7AD3B200630560 /* Send.xib in Resources */,
 				2D997D061E7AD3B200630560 /* PrivacyPolicy.storyboard in Resources */,
 			);
@@ -1780,6 +1815,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D09DB871E9D0B0E0013970F /* LockButton.swift in Sources */,
 				2D997B251E7AD1FF00630560 /* PagerTabStripViewController.swift in Sources */,
 				2D997B231E7AD1FF00630560 /* PagerTabStripBehaviour.swift in Sources */,
 				2D997CD81E7AD3B200630560 /* SendCoinsViewController.swift in Sources */,
@@ -1802,6 +1838,7 @@
 				2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */,
 				2D997B281E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift in Sources */,
 				2D09DB841E9CDF600013970F /* DeleteNameAPI.swift in Sources */,
+				2D09DB921E9D67CF0013970F /* WalletProtectionWarningView.swift in Sources */,
 				2D997CB21E7AD3B200630560 /* AccountPageViewController.swift in Sources */,
 				2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */,
 				2D997B261E7AD1FF00630560 /* SegmentedPagerTabStripViewController.swift in Sources */,
@@ -1888,6 +1925,7 @@
 				2D997BC61E7AD2B600630560 /* LoginButton.swift in Sources */,
 				2D997B161E7AD1FF00630560 /* DropDownCell.swift in Sources */,
 				2D4877D01E8147CC0084129C /* BaseModel.swift in Sources */,
+				2D09DB8C1E9D64E90013970F /* WalletProtectionUnlockView.swift in Sources */,
 				2D997B0D1E7AD1FF00630560 /* UIViewController + Utils.swift in Sources */,
 				2D997BC71E7AD2B600630560 /* AddAddressView.swift in Sources */,
 				2D997BD41E7AD2B600630560 /* ProtectionValidationView.swift in Sources */,
@@ -1901,6 +1939,7 @@
 				2D997BD61E7AD2B600630560 /* RoundButton.swift in Sources */,
 				2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */,
 				2D997B521E7AD24E00630560 /* Coin.swift in Sources */,
+				2D09DB8E1E9D651A0013970F /* WalletProtectionLockView.swift in Sources */,
 				2D997D071E7AD3B200630560 /* PrivacyPolicyViewController.swift in Sources */,
 				2D997CFF1E7AD3B200630560 /* MenuBCToolsCell.swift in Sources */,
 				2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */,
@@ -1923,6 +1962,7 @@
 				2D997BC81E7AD2B600630560 /* MyMoneyView.swift in Sources */,
 				2D997CD51E7AD3B200630560 /* MyAdressViewController.swift in Sources */,
 				2D997B191E7AD1FF00630560 /* Router.swift in Sources */,
+				2D09DB901E9D65870013970F /* WalletProtectionView.swift in Sources */,
 				2D997B0E1E7AD1FF00630560 /* Utils.swift in Sources */,
 				2D4877D31E814E570084129C /* TransactionsAPI.swift in Sources */,
 				2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */,

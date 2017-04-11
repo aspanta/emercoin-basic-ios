@@ -13,6 +13,7 @@ class Wallet:BaseModel {
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var isActivityIndicator = PublishSubject<Bool>()
+    var locked = PublishSubject<Bool>()
     
     var emercoin:Coin = {
         let emCoin = Coin()
@@ -23,6 +24,16 @@ class Wallet:BaseModel {
         emCoin.color = Constants.Colors.Coins.Emercoin
         return emCoin
     }()
+    
+    var isLocked = false
+    var isProtected = false
+    var isMintonly = false
+    
+    private var unlockedUntil = 1 {
+        didSet {
+            isLocked = unlockedUntil == 0
+        }
+    }
     
     init(amount:Double) {
         emercoin.amount = amount
@@ -36,21 +47,49 @@ class Wallet:BaseModel {
     var balance:Double = 0.0 {
         didSet{
             emercoin.amount = balance
-              success.onNext(true)
+            success.onNext(true)
+            checkLock()
         }
     }
     
-    private var loginInfo:[String:String] = [:]
-    
     override func mapping(map: Map) {
+        
+        isMintonly <- map["mintonly"]
+        unlockedUntil <- map["unlocked_until"]
+        isProtected <- map["encrypted"]
         balance <- map["balance"]
+        
     }
     
-    func stubMyAddresses() -> [String] {
-        return [""]
+    private func checkLock() {
+        
+        let lock = isLocked || isMintonly
+        locked.onNext(lock)
     }
     
-    func loadBalance() {
+    
+    func loadInfo() {
+        
+        APIManager.sharedInstance.loadInfo{[weak self] (data, error) in
+            
+            self?.isActivityIndicator.onNext(false)
+            if error != nil {
+                self?.error.onNext(error!)
+            } else {
+                AppManager.sharedInstance.myAddressBook.load()
+                if let wallet = data as? Wallet {
+                    self?.isLocked = wallet.isLocked
+                    self?.isProtected = wallet.isProtected
+                    self?.isMintonly = wallet.isMintonly
+                    self?.balance = wallet.balance
+                }
+            }
+        }
+        loadCourse()
+    }
+    
+    
+    func l1oadBalance() {
      
         APIManager.sharedInstance.loadBalance {[weak self] (data, error) in
             
