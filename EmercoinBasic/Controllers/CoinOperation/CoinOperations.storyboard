@@ -141,8 +141,7 @@
                                         </constraints>
                                         <state key="normal" image="lock_icon"/>
                                         <connections>
-                                            <action selector="back" destination="mkW-Wa-y0w" eventType="touchUpInside" id="q8Y-fr-lZl"/>
-                                            <action selector="lockButtonPressedWithSender:" destination="mkW-Wa-y0w" eventType="touchUpInside" id="brz-6X-PdG"/>
+                                            <action selector="lockButtonPressed" destination="mkW-Wa-y0w" eventType="touchUpInside" id="kKs-GI-nYB"/>
                                         </connections>
                                     </button>
                                 </subviews>

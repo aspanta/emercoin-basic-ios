@@ -16,6 +16,9 @@ enum APIType {
     case addName
     case updateName
     case deleteName
+    case protectWallet
+    case lockWallet
+    case unlockWallet
 }
 
 class APIManager: NSObject {
@@ -90,6 +93,36 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
+    func protectWallet(at protectData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = getApi(at: .protectWallet)
+        
+        if var params = api.object as? [String:AnyObject] {
+            params["protectData"] = protectData as AnyObject?
+            api.object = params as AnyObject?
+        }
+        
+        api.startRequest(completion: completion)
+    }
+    
+    func unlockWallet(at unlockData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = getApi(at: .unlockWallet)
+        
+        if var params = api.object as? [String:AnyObject] {
+            params["unlockData"] = unlockData as AnyObject?
+            api.object = params as AnyObject?
+        }
+        
+        api.startRequest(completion: completion)
+    }
+    
+    func lockWallet(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = getApi(at: .lockWallet)
+        api.startRequest(completion: completion)
+    }
+    
     func deleteName(at nameData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .deleteName)
@@ -141,6 +174,10 @@ class APIManager: NSObject {
             case .addName:api = AddNameAPI()
             case .updateName:api = UpdateNameAPI()
             case .deleteName:api = DeleteNameAPI()
+            case .protectWallet:api = ProtectWalletAPI()
+            case .lockWallet:api = LockWalletAPI()
+            case .unlockWallet:api = UnlockWalletAPI()
+            
         }
         
         api.object = authInfo as AnyObject?

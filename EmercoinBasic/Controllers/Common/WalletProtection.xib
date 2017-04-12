@@ -41,7 +41,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-64-LQe">
                             <rect key="frame" x="70" y="125" width="209" height="31"/>
                             <subviews>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36C-eU-ear" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36C-eU-ear" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,14 +74,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-Vx-zx3">
                             <rect key="frame" x="7" y="57" width="332" height="37"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your secret password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hj-oM-9HA">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your secret password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hj-oM-9HA" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="7" width="332" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="pIV-B7-Mtu"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oS3-RX-lNR">
                                     <rect key="frame" x="0.0" y="38" width="324" height="1"/>
@@ -127,9 +127,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="doneButton" destination="36C-eU-ear" id="xrB-xE-Lol"/>
-                <outlet property="nameTextField" destination="9Hj-oM-9HA" id="2rd-ff-8g3"/>
-                <outlet property="titleLabel" destination="ZBa-Fd-tP3" id="FbS-Uz-yNa"/>
+                <outlet property="doneButtun" destination="36C-eU-ear" id="68I-oJ-Yua"/>
+                <outlet property="passwordTextField" destination="9Hj-oM-9HA" id="Ue6-sI-79g"/>
             </connections>
             <point key="canvasLocation" x="-534" y="135"/>
         </view>
@@ -207,10 +206,6 @@
                 <constraint firstAttribute="trailing" secondItem="UpJ-Qj-df8" secondAttribute="trailing" constant="33" id="nMc-Qp-tPr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="doneButton" destination="U8c-JH-yC1" id="J1T-Ek-r49"/>
-                <outlet property="titleLabel" destination="PJw-yT-knt" id="4K3-Sz-tDD"/>
-            </connections>
             <point key="canvasLocation" x="-69" y="135"/>
         </view>
         <view contentMode="scaleToFill" id="4LR-Y6-08z" customClass="WalletProtectionView" customModule="EmercoinBasic" customModuleProvider="target">
@@ -235,7 +230,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtc-k2-cGS">
                             <rect key="frame" x="70" y="185" width="209" height="31"/>
                             <subviews>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEQ-bo-cIb" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEQ-bo-cIb" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,14 +263,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXg-89-WgM">
                             <rect key="frame" x="7" y="57" width="332" height="37"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your secret password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUh-JO-6Xv">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your secret password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUh-JO-6Xv" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="7" width="332" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="oF9-qD-y6g"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBo-c1-au1">
                                     <rect key="frame" x="0.0" y="38" width="324" height="1"/>
@@ -298,14 +293,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8g-NX-FNR">
                             <rect key="frame" x="7" y="117" width="332" height="37"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your secret password again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cL7-Aw-7GL">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your secret password again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cL7-Aw-7GL" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="7" width="332" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="XXm-KZ-JO1"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5t8-nw-xqf">
                                     <rect key="frame" x="0.0" y="38" width="324" height="1"/>
@@ -355,18 +350,18 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="doneButton" destination="QEQ-bo-cIb" id="mHE-yM-0ns"/>
-                <outlet property="nameTextField" destination="yUh-JO-6Xv" id="CYd-aU-zC9"/>
-                <outlet property="titleLabel" destination="BwM-4c-BeJ" id="1mQ-wt-vjO"/>
+                <outlet property="comfirmPasswordTextField" destination="cL7-Aw-7GL" id="WXg-Bo-2Pq"/>
+                <outlet property="doneButtun" destination="QEQ-bo-cIb" id="2a4-5x-ac5"/>
+                <outlet property="passwordTextField" destination="yUh-JO-6Xv" id="CXD-8h-yZG"/>
             </connections>
             <point key="canvasLocation" x="417" y="135"/>
         </view>
-        <view contentMode="scaleToFill" id="HUD-fs-exo" customClass="WalletProtectionLockView" customModule="EmercoinBasic" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="HUD-fs-exo" customClass="WalletProtectionWarningView" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-lI-DGc" userLabel="main view">
-                    <rect key="frame" x="33" y="246" width="348" height="244.5"/>
+                    <rect key="frame" x="33" y="246.5" width="348" height="244.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-QA-EKw">
                             <rect key="frame" x="0.0" y="0.0" width="347" height="244.5"/>
@@ -452,10 +447,6 @@ Would you like to continue anyway?</string>
                 <constraint firstItem="XDc-lI-DGc" firstAttribute="centerX" secondItem="HUD-fs-exo" secondAttribute="centerX" id="qcl-iK-zHb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="doneButton" destination="aGq-a5-lhT" id="E6P-Gj-oHB"/>
-                <outlet property="titleLabel" destination="XTI-gU-Zr0" id="hmm-Gv-UoM"/>
-            </connections>
             <point key="canvasLocation" x="899" y="135"/>
         </view>
     </objects>

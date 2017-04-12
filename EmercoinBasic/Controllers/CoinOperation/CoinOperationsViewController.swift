@@ -92,6 +92,10 @@ class CoinOperationsViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         viewModel.coinAmount.bindTo(headerView.coinAmountLabel.rx.text)
             .addDisposableTo(disposeBag)
+        viewModel.locked.subscribe(onNext: {[weak self] (locked) in
+            self?.lockButton.isLocked = locked
+        })
+        .addDisposableTo(disposeBag)
         
         viewModel.updateUI()
         
@@ -138,9 +142,5 @@ class CoinOperationsViewController: BaseViewController {
             let controller = childController as! MyAdressViewController
             controller.showAddAddressView()
         }
-    }
-    
-    @IBAction internal func lockButtonPressed(sender:UIButton) {
-        lockButton.isLocked = !lockButton.isLocked
     }
 }

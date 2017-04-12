@@ -20,17 +20,16 @@ class CoinOperationsViewModel {
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
+    var locked = PublishSubject<Bool>()
     var wallet:Wallet?
     
     private var isLoading = false
     
     func updateUI() {
     
-        if wallet != nil {
+        if let wallet = wallet {
             
-            guard let coin = wallet?.emercoin else {
-                return
-            }
+            let coin = wallet.emercoin
             
             let courseTitle = coin.exchangeAttributedString(color: .white)
             let sign = coin.sign
@@ -39,6 +38,7 @@ class CoinOperationsViewModel {
             coinCourseTitle.onNext(courseTitle)
             coinAmount.onNext(stringAmount)
             coinSign.onNext(sign)
+            locked.onNext(wallet.isLocked)
         }
     }
     
@@ -49,6 +49,10 @@ class CoinOperationsViewModel {
         if wallet != nil {
             
             wallet?.success.subscribe(onNext: {[weak self] (state) in
+                self?.updateUI()
+            })
+            .addDisposableTo(disposeBag)
+            wallet?.locked.subscribe(onNext: {[weak self] (state) in
                 self?.updateUI()
             })
             .addDisposableTo(disposeBag)

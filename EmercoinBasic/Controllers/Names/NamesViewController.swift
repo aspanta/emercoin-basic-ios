@@ -26,6 +26,7 @@ class NamesViewController: BaseViewController {
     @IBOutlet internal weak var menuButton:UIButton!
     @IBOutlet internal weak var backButton:UIButton!
     @IBOutlet internal weak var addButton:UIButton!
+    @IBOutlet internal weak var lockButton:LockButton!
     
     private var data:Any?
     private var isHasData = false
@@ -103,6 +104,10 @@ class NamesViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         viewModel.coinAmount.bindTo(headerView.coinAmountLabel.rx.text)
             .addDisposableTo(disposeBag)
+        viewModel.locked.subscribe(onNext: {[weak self] (locked) in
+            self?.lockButton.isLocked = locked
+        })
+        .addDisposableTo(disposeBag)
         
         viewModel.updateUI()
     }

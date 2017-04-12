@@ -90,9 +90,4 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     internal func handleRefresh(sender:UIRefreshControl) {
         wallet.loadInfo()
     }
-    
-    @IBAction internal func lockButtonPressed(sender:UIButton) {
-        lockButton.isLocked = !lockButton.isLocked
-    }
-
 }

@@ -2,9 +2,7 @@
 //  AddMyAddressAPI.swift
 //  EmercoinBasic
 //
-//  Created by Sergey Lyubeznov on 24/03/2017.
-//  Copyright © 2017 Aspanta Limited. All rights reserved.
-//
+
 
 import UIKit
 

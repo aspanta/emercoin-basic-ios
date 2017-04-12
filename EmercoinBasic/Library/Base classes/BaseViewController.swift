@@ -80,4 +80,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, TabBarO
             self.view.addSubview(view)
         }
     }
+    
+    @IBAction internal func lockButtonPressed() {
+        
+        let protectionHelper = WalletProtectionHelper()
+        protectionHelper.fromController = self
+        protectionHelper.startProtection()
+    }
 }

@@ -1478,10 +1478,22 @@ not found</string>
                                             <action selector="addNoteButtonPressed" destination="9re-1w-pTa" eventType="touchUpInside" id="ObU-Ks-D66"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQR-Kj-OP3" customClass="LockButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                        <rect key="frame" x="317" y="0.0" width="58" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="58" id="tIW-Tp-Uqf"/>
+                                            <constraint firstAttribute="height" constant="61" id="yvf-zC-r4g"/>
+                                        </constraints>
+                                        <state key="normal" image="lock_icon"/>
+                                        <connections>
+                                            <action selector="lockButtonPressed" destination="9re-1w-pTa" eventType="touchUpInside" id="xTi-ql-FC7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="YDJ-WY-o1u" firstAttribute="leading" secondItem="2Ex-FW-NCI" secondAttribute="leading" id="158-m3-5wJ"/>
+                                    <constraint firstItem="bQR-Kj-OP3" firstAttribute="top" secondItem="2Ex-FW-NCI" secondAttribute="top" id="4j9-fY-eTg"/>
                                     <constraint firstItem="JdU-BS-LTB" firstAttribute="top" secondItem="2Ex-FW-NCI" secondAttribute="top" id="5W6-97-5bs"/>
                                     <constraint firstAttribute="trailing" secondItem="8EX-fn-3qz" secondAttribute="trailing" constant="8" id="62S-2C-3t6"/>
                                     <constraint firstAttribute="bottom" secondItem="HaX-p2-ukl" secondAttribute="bottom" id="93M-sg-A6I"/>
@@ -1498,6 +1510,7 @@ not found</string>
                                     <constraint firstAttribute="trailing" secondItem="HaX-p2-ukl" secondAttribute="trailing" id="bV0-q7-qmh"/>
                                     <constraint firstAttribute="height" constant="186" id="h5y-wf-qPf"/>
                                     <constraint firstItem="8EX-fn-3qz" firstAttribute="top" secondItem="sh9-dn-Roi" secondAttribute="bottom" constant="32" id="mV2-IZ-8ic"/>
+                                    <constraint firstAttribute="trailing" secondItem="bQR-Kj-OP3" secondAttribute="trailing" id="nd9-vo-wgx"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="coinAmountLabel" destination="8EX-fn-3qz" id="IDs-4r-iaa"/>
@@ -1530,6 +1543,7 @@ not found</string>
                         <outlet property="backButton" destination="JdU-BS-LTB" id="8Nr-Dn-ubi"/>
                         <outlet property="container" destination="EyD-3B-7Vv" id="9qC-yS-UiF"/>
                         <outlet property="headerView" destination="2Ex-FW-NCI" id="SPa-Hn-Ya8"/>
+                        <outlet property="lockButton" destination="bQR-Kj-OP3" id="UoT-fK-ixG"/>
                         <outlet property="mainTitleConstraint" destination="JXb-BS-21E" id="o9J-8e-ASa"/>
                         <outlet property="mainTitleLabel" destination="51Q-aV-y9h" id="5n1-Wo-JfU"/>
                         <outlet property="menuButton" destination="YDJ-WY-o1u" id="9oW-0X-YfX"/>
@@ -1543,6 +1557,7 @@ not found</string>
     <resources>
         <image name="back_icon" width="18" height="15"/>
         <image name="block_add_icon" width="24" height="24"/>
+        <image name="lock_icon" width="19" height="25"/>
         <image name="menu_icon" width="18" height="13"/>
         <image name="names_arrow" width="19" height="16"/>
         <image name="names_down_color_icon" width="9" height="7"/>
