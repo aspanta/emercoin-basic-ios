@@ -24,7 +24,7 @@ class CreateNVSViewController: BaseViewController {
     @IBOutlet internal weak var heightConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var prefixConstraint:NSLayoutConstraint!
     
-    @IBOutlet internal weak var createButton:UIButton!
+    @IBOutlet internal weak var createButton:BaseButton!
     
     var isLoading = false
     var prefixDropDown:DropDown?
@@ -60,7 +60,41 @@ class CreateNVSViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupController()
         setupPrefixDropDown()
+    }
+    
+    private func setupController() {
+        
+        valueTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        timeTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        nameTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        timeTextField.didFirstResponder = {[weak self](state) in
+            if state {
+                if self?.timeTextField.text == "0" {
+                    self?.timeTextField.text = ""
+                }
+            }
+        }
+    }
+    
+    private func checkValidation() {
+        
+        let value = valueTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let days = timeTextField.text ?? ""
+        
+        
+        createButton.isEnabled = !value.isEmpty && !name.isEmpty && !days.isEmpty
     }
 
     override func setupUI() {

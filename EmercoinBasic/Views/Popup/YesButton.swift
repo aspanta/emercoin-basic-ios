@@ -5,7 +5,7 @@
 
 import UIKit
 
-class YesButton: UIButton {
+class YesButton: BaseButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()

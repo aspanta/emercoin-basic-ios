@@ -9,9 +9,9 @@ import RxCocoa
 
 class SendCoinsViewController: BaseViewController {
     
-    @IBOutlet internal weak  var addressTextField:UITextField!
+    @IBOutlet internal weak  var addressTextField:BaseTextField!
     @IBOutlet internal weak  var signLabel:UILabel!
-    @IBOutlet internal weak  var sendButton:UIButton!
+    @IBOutlet internal weak  var sendButton:BaseButton!
     @IBOutlet internal weak  var amountTextField:BaseTextField!
     
     private var amount:Double = 0
@@ -56,7 +56,7 @@ class SendCoinsViewController: BaseViewController {
     
     private func setupSend() {
         
-        viewModel?.success.subscribe(onNext:{ [weak self] success in
+        viewModel?.success.subscribe(onNext:{[weak self] success in
             if success {
                 let wallet = AppManager.sharedInstance.wallet
                 wallet.balance -= self?.amount ?? 0
@@ -70,6 +70,23 @@ class SendCoinsViewController: BaseViewController {
             self?.showErrorAlert(at: error)
         })
             .addDisposableTo(disposeBag)
+        
+        addressTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        amountTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+
+    }
+    
+    private func checkValidation() {
+        
+        let address = addressTextField.text ?? ""
+        let amount = amountTextField.text ?? ""
+        
+        sendButton.isEnabled = !address.isEmpty && !amount.isEmpty
     }
     
     private func setupActivityIndicator() {

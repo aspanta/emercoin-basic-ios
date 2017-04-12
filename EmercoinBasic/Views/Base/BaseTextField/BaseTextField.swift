@@ -16,10 +16,13 @@ class BaseTextField: UITextField, UITextFieldDelegate {
 
     var done:((_ text:String) -> (Void))?
     var textChanged:((_ text:String) -> (Void))?
+    var didFirstResponder:((_ state:Bool) -> (Void))?
     
     let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
+        
+        super.awakeFromNib()
         
         delegate = self
         
@@ -33,11 +36,22 @@ class BaseTextField: UITextField, UITextFieldDelegate {
         .addDisposableTo(disposeBag)
     }
     
+    override func becomeFirstResponder() -> Bool {
+        
+        if didFirstResponder != nil {
+            didFirstResponder!(true)
+        }
+        
+        return super.becomeFirstResponder()
+    }
+    
     override func resignFirstResponder() -> Bool {
         if done != nil {
             done!(self.text!)
         }
-        
+        if didFirstResponder != nil {
+            didFirstResponder!(false)
+        }
         return super.resignFirstResponder()
     }
     

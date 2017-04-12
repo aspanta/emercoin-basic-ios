@@ -49,6 +49,11 @@
                                     <state key="normal" title="Unlock">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="00535C"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="doneButtonPressedWithSender:" destination="57H-SL-cij" eventType="touchUpInside" id="OQZ-9i-0nY"/>
                                     </connections>
@@ -238,6 +243,11 @@
                                     <state key="normal" title="Encrypt">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="00535C"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="doneButtonPressedWithSender:" destination="4LR-Y6-08z" eventType="touchUpInside" id="4Fz-2v-LEE"/>
                                     </connections>
@@ -361,7 +371,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-lI-DGc" userLabel="main view">
-                    <rect key="frame" x="33" y="246.5" width="348" height="244.5"/>
+                    <rect key="frame" x="33" y="246" width="348" height="244.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-QA-EKw">
                             <rect key="frame" x="0.0" y="0.0" width="347" height="244.5"/>

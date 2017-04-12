@@ -213,6 +213,7 @@
 		2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF212611E8AC8A500A989F3 /* RxRealm.framework */; };
 		2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDB1E89122C007D9A60 /* Realm.framework */; };
 		2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */; };
+		2DF72DEF1E9E933900657494 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF72DEE1E9E933900657494 /* BaseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -427,6 +428,7 @@
 		2DF212611E8AC8A500A989F3 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 		2DF62FDB1E89122C007D9A60 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		2DF72DEE1E9E933900657494 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1243,6 +1245,7 @@
 		2D997B6A1E7AD2B600630560 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2DF72DED1E9E930E00657494 /* BaseButton */,
 				2D997B6B1E7AD2B600630560 /* BaseTextField */,
 				2D997B6D1E7AD2B600630560 /* BaseView */,
 			);
@@ -1734,6 +1737,14 @@
 			path = MyAddresses;
 			sourceTree = "<group>";
 		};
+		2DF72DED1E9E930E00657494 /* BaseButton */ = {
+			isa = PBXGroup;
+			children = (
+				2DF72DEE1E9E933900657494 /* BaseButton.swift */,
+			);
+			path = BaseButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1922,6 +1933,7 @@
 				2D997B1C1E7AD1FF00630560 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				2D997BBE1E7AD2B600630560 /* FeedbackMessageView.swift in Sources */,
 				2D22B2441E7C4455008BB64F /* AddressBookViewController.swift in Sources */,
+				2DF72DEF1E9E933900657494 /* BaseButton.swift in Sources */,
 				2D997B041E7AD1FF00630560 /* Array + Utils.swift in Sources */,
 				2D997BBB1E7AD2B600630560 /* ExchangeEnterButtonView.swift in Sources */,
 				2D997B601E7AD24E00630560 /* TabBarObject.swift in Sources */,

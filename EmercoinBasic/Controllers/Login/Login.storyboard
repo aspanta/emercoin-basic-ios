@@ -21,7 +21,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -60,17 +60,23 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMK-8c-gUV" customClass="LoginButton" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="60" y="483" width="255" height="46"/>
+                                <color key="backgroundColor" red="0.38431372549999998" green="0.20000000000000001" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="ojx-hB-Oc4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="Sign In" backgroundImage="login_but_enabled">
+                                <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="disabled" backgroundImage="login_but_disabled">
+                                <state key="disabled">
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected" backgroundImage="login_but_sel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="623374"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="enterButtonPressedWithSender:" destination="rgu-oq-k0z" eventType="touchUpInside" id="oKr-4O-Wim"/>
                                 </connections>
@@ -326,7 +332,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="checkButton" destination="Pgh-uX-8zk" id="gol-AM-JxN"/>
-                        <outlet property="enterButton" destination="BMK-8c-gUV" id="ax5-F7-Zwg"/>
+                        <outlet property="enterButton" destination="BMK-8c-gUV" id="O1M-Qe-uOB"/>
                         <outlet property="hostTextField" destination="FYw-qF-6SE" id="LGW-0b-TAt"/>
                         <outlet property="leftConstraint" destination="d0a-gw-2RN" id="Gkb-G8-lAp"/>
                         <outlet property="loginTextField" destination="6aD-BT-ars" id="wsg-f2-E8Z"/>
@@ -346,8 +352,6 @@
         <image name="check_off" width="15" height="15"/>
         <image name="check_on" width="15" height="15"/>
         <image name="get_down_icon" width="9" height="7"/>
-        <image name="login_but_disabled" width="255" height="46"/>
-        <image name="login_but_enabled" width="255" height="46"/>
         <image name="login_but_sel" width="255" height="46"/>
         <image name="reg_logo" width="110" height="96"/>
     </resources>

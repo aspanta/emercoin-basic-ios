@@ -30,4 +30,5 @@ class ExpireDaysTextField: BaseTextField {
         }
         return maxCharacters == 0 ? true : fullText.length <= maxCharacters
     }
+
 }

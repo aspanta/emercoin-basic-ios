@@ -240,9 +240,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-B3-vAl">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-B3-vAl" customClass="BaseButton" customModule="EmercoinBasic" customModuleProvider="target">
                                 <rect key="frame" x="99" y="182" width="177" height="42"/>
-                                <color key="backgroundColor" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Rc5-sv-88g"/>
                                     <constraint firstAttribute="width" constant="177" id="pWJ-Kf-xMg"/>
@@ -253,6 +253,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="8C5DA3"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sendButtonPressedWithSender:" destination="xGE-gn-k5v" eventType="touchUpInside" id="NUQ-U6-HfI"/>
@@ -298,7 +301,7 @@
                     <connections>
                         <outlet property="addressTextField" destination="Whz-z0-4dX" id="JbJ-kF-87Z"/>
                         <outlet property="amountTextField" destination="efF-a7-STq" id="WKe-qu-1bK"/>
-                        <outlet property="sendButton" destination="eT9-B3-vAl" id="45J-5g-kFS"/>
+                        <outlet property="sendButton" destination="eT9-B3-vAl" id="z7Z-9b-fPJ"/>
                         <outlet property="signLabel" destination="0Wf-gd-9A3" id="VPR-KK-Rlh"/>
                     </connections>
                 </viewController>

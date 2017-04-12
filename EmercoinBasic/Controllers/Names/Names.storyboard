@@ -614,7 +614,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyN-hV-e4Q">
                                         <rect key="frame" x="83" y="373" width="209" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTz-9g-5bL" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTz-9g-5bL" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -622,6 +622,11 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 <state key="normal" title="Create">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="00535C"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="createButtonPressed" destination="FdD-AA-eA2" eventType="touchUpInside" id="ku5-ix-9hn"/>
                                                 </connections>
@@ -675,7 +680,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="IXp-aQ-5LV" id="EIb-66-Zmi"/>
-                        <outlet property="createButton" destination="FTz-9g-5bL" id="WV4-bQ-0ia"/>
+                        <outlet property="createButton" destination="FTz-9g-5bL" id="GdS-Ki-wV8"/>
                         <outlet property="dateLabel" destination="mdu-i1-wOo" id="c2i-5N-vVb"/>
                         <outlet property="expiresLabel" destination="Yow-no-gaO" id="HyP-Yn-uty"/>
                         <outlet property="heightConstraint" destination="L25-3v-Pi1" id="Ayv-OF-aAN"/>
