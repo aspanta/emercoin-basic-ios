@@ -168,7 +168,8 @@ class NamesViewController: BaseViewController {
             
         case .searchResults:
             let vc = SearchNVSResultsViewController.controller() as! SearchNVSResultsViewController
-            vc.searchText = searchText
+            //vc.searchText = searchText
+            vc.filterString = searchText
             vc.createPressed = createPressed
             controller = vc
             

@@ -24,12 +24,6 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     var filterString:String = ""
     
     var tableCellAction:TableCellAction = .add
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        records.load()
-    }
 
     override class func storyboardName() -> String {
         return "Names"
@@ -40,9 +34,16 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         
         tableView.baseSetup()
         setupRecords()
+        
+        if filterString.isEmpty {
+            setupRefreshControl()
+            setupActivityIndicator()
+            records.load()
+        } else {
+            records.filterString = filterString
+        }
+        
         updateUI()
-        setupRefreshControl()
-        setupActivityIndicator()
     }
     
     private func updateUI() {

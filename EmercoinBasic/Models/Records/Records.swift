@@ -14,9 +14,18 @@ class Records {
     var records:Results<Record> {
         get {
             let realm = try! Realm()
-            return realm.objects(Record.self)
+            
+            if filterString.isEmpty {
+                return realm.objects(Record.self)
+            } else {
+                
+                return realm.objects(Record.self).filter("name contains[c] %@",filterString)
+            }
         }
     }
+    
+    var filterString = ""
+    
     
     let disposeBag = DisposeBag()
     var success = PublishSubject<Bool>()

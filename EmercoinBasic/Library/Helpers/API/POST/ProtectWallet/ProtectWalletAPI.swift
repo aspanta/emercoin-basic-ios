@@ -6,6 +6,10 @@
 import UIKit
 
 class ProtectWalletAPI: BaseAPI {
+    
+    override var timeRequest:Double {
+        return 120
+    }
 
     override func parameters() -> [String : Any] {
         

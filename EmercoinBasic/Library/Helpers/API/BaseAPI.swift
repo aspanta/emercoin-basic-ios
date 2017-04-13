@@ -35,7 +35,9 @@ class BaseAPI: NSObject {
     var object:AnyObject?
     
     var addAccessToken = true
-    var timeRequest:Double = 30
+    var timeRequest:Double {
+        return 30
+    }
     
     internal var dataTask:URLSessionTask?
 
