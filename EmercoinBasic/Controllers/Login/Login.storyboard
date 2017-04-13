@@ -21,7 +21,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

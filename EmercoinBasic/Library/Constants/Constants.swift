@@ -95,7 +95,9 @@ struct Constants {
             static let SearchResults = "Search NVS"
             static let CreateNVS = "Create NVS"
             static let EditNVS = "Edit NVS"
-            static let Addresses = "My Addresses"
+            static let MyAddresses = "My Addresses"
+            static let RecipientAddress = "Address of recipient"
+            static let Addresses = "List of recipients"
         }
         
         struct Get {

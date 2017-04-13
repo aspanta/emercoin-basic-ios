@@ -233,7 +233,7 @@ class CreateNVSViewController: BaseViewController {
     private func showAddressesController() {
     
         let controller = NamesViewController.controller() as! NamesViewController
-        controller.subController = .addresses
+        controller.subController = .myAddresses
         controller.selectedAddress = {address in
             self.addressTextField.text = address
         }
@@ -242,7 +242,8 @@ class CreateNVSViewController: BaseViewController {
     
     private func showRecepientAddressController() {
         
-        let controller = RecipientAddressNVSViewController.controller() as! RecipientAddressNVSViewController
+        let controller = NamesViewController.controller() as! NamesViewController
+        controller.subController = .recipientAddress
         controller.selectedAddress = {address in
             self.addressTextField.text = address
         }

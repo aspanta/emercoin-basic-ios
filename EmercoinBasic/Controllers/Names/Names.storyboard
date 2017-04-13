@@ -792,86 +792,8 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-EM-2yw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="186"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send_emer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="CIT-NN-b8Q">
-                                        <rect key="frame" x="76" y="81" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="TWy-Ip-3u8"/>
-                                            <constraint firstAttribute="height" constant="24" id="sw4-Bz-e4b"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTA-k4-TYI">
-                                        <rect key="frame" x="110" y="76" width="257" height="36"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8El-ED-m6H">
-                                        <rect key="frame" x="110" y="112" width="257" height="29"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="BLOCKCHAIN">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="24" name="Roboto-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twu-rO-Buu">
-                                        <rect key="frame" x="0.0" y="0.0" width="58" height="61"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="61" id="AKt-iz-VyW"/>
-                                            <constraint firstAttribute="width" constant="58" id="coa-34-lpy"/>
-                                        </constraints>
-                                        <state key="normal" image="back_icon"/>
-                                        <connections>
-                                            <action selector="back" destination="FdD-AA-eA2" eventType="touchUpInside" id="jNh-UP-UJ1"/>
-                                            <action selector="back" destination="zHw-YN-KR7" eventType="touchUpInside" id="uZs-i2-eXe"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.51372549020000002" green="0.52941176469999995" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="8El-ED-m6H" secondAttribute="bottom" constant="45" id="7wK-NU-se0"/>
-                                    <constraint firstItem="LTA-k4-TYI" firstAttribute="top" secondItem="bmg-EM-2yw" secondAttribute="top" constant="76" id="Cbp-4k-QI9"/>
-                                    <constraint firstItem="CIT-NN-b8Q" firstAttribute="top" secondItem="bmg-EM-2yw" secondAttribute="top" constant="81" id="GQF-3R-A0x"/>
-                                    <constraint firstItem="Twu-rO-Buu" firstAttribute="top" secondItem="bmg-EM-2yw" secondAttribute="top" id="JIF-m8-O5B"/>
-                                    <constraint firstAttribute="trailing" secondItem="LTA-k4-TYI" secondAttribute="trailing" constant="8" id="Pbq-T0-jjR"/>
-                                    <constraint firstItem="CIT-NN-b8Q" firstAttribute="leading" secondItem="bmg-EM-2yw" secondAttribute="leading" constant="76" id="V89-ZR-vey"/>
-                                    <constraint firstItem="Twu-rO-Buu" firstAttribute="leading" secondItem="bmg-EM-2yw" secondAttribute="leading" id="XG0-ek-Anj"/>
-                                    <constraint firstItem="8El-ED-m6H" firstAttribute="leading" secondItem="bmg-EM-2yw" secondAttribute="leading" constant="110" id="l9Q-wL-ni3"/>
-                                    <constraint firstAttribute="trailing" secondItem="8El-ED-m6H" secondAttribute="trailing" constant="8" id="mj0-yi-4zb"/>
-                                    <constraint firstItem="LTA-k4-TYI" firstAttribute="leading" secondItem="CIT-NN-b8Q" secondAttribute="trailing" constant="10" id="rgS-xY-1UO"/>
-                                    <constraint firstItem="8El-ED-m6H" firstAttribute="top" secondItem="LTA-k4-TYI" secondAttribute="bottom" id="rne-fW-xug"/>
-                                    <constraint firstAttribute="height" constant="186" id="svL-vD-S1e"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLp-25-dVm">
-                                <rect key="frame" x="0.0" y="206" width="375" height="57"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address of recipient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtO-hb-G2d">
-                                        <rect key="frame" x="92" y="17" width="191" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="RaX-9J-c5G"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="V8t-le-WfP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                        <color key="textColor" red="0.51372549020000002" green="0.52941176469999995" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="ZtO-hb-G2d" firstAttribute="centerX" secondItem="YLp-25-dVm" secondAttribute="centerX" id="Pge-0V-CiT"/>
-                                    <constraint firstItem="ZtO-hb-G2d" firstAttribute="centerY" secondItem="YLp-25-dVm" secondAttribute="centerY" id="njl-4R-pud"/>
-                                    <constraint firstAttribute="height" constant="57" id="vr7-yB-qNh"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-tT-EOn">
-                                <rect key="frame" x="0.0" y="263" width="375" height="404"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IA-AX-Nl4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
@@ -1033,22 +955,15 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wgI-tT-EOn" secondAttribute="trailing" id="CJs-X1-uuw"/>
-                            <constraint firstAttribute="trailing" secondItem="YLp-25-dVm" secondAttribute="trailing" id="Mx4-cF-xCP"/>
-                            <constraint firstItem="bmg-EM-2yw" firstAttribute="top" secondItem="jGn-QW-chQ" secondAttribute="bottom" id="NUz-c0-5BP"/>
-                            <constraint firstItem="YLp-25-dVm" firstAttribute="top" secondItem="bmg-EM-2yw" secondAttribute="bottom" id="RzH-zc-Fib"/>
-                            <constraint firstItem="wgI-tT-EOn" firstAttribute="top" secondItem="YLp-25-dVm" secondAttribute="bottom" id="aoY-VA-Zk2"/>
                             <constraint firstItem="HsR-OI-lgd" firstAttribute="top" secondItem="wgI-tT-EOn" secondAttribute="bottom" id="bAe-Ct-8Ce"/>
-                            <constraint firstAttribute="trailing" secondItem="bmg-EM-2yw" secondAttribute="trailing" id="fbF-uY-Rzr"/>
-                            <constraint firstItem="YLp-25-dVm" firstAttribute="top" secondItem="bmg-EM-2yw" secondAttribute="bottom" id="gei-kc-vB5"/>
-                            <constraint firstItem="bmg-EM-2yw" firstAttribute="leading" secondItem="YwZ-Ae-QRK" secondAttribute="leading" id="m1M-wT-EN8"/>
+                            <constraint firstItem="wgI-tT-EOn" firstAttribute="top" secondItem="jGn-QW-chQ" secondAttribute="bottom" id="jze-Fe-FWs"/>
                             <constraint firstItem="wgI-tT-EOn" firstAttribute="leading" secondItem="YwZ-Ae-QRK" secondAttribute="leading" id="q0d-ke-6hM"/>
-                            <constraint firstItem="YLp-25-dVm" firstAttribute="leading" secondItem="YwZ-Ae-QRK" secondAttribute="leading" id="zrt-sz-QUt"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lS-v5-IWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1362" y="-1111"/>
+            <point key="canvasLocation" x="1360.8" y="-1111.3943028485758"/>
         </scene>
         <!--SearchNVS View Controller-->
         <scene sceneID="Ao8-OS-WpY">

@@ -16,13 +16,12 @@ class RecipientAddressNVSViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func setupUI() {
         super.setupUI()
         
-        addStatusBarView(color: UIColor(hexString: Constants.Colors.Status.Blockchain))
+        hideStatusBar()
     }
     
     @IBAction func qrCodeButtonPressed(sender:UIButton) {
@@ -30,7 +29,6 @@ class RecipientAddressNVSViewController: BaseViewController {
     }
     
     @IBAction func listButtonPressed(sender:UIButton) {
-        //print("listButtonPressed")
         showAddressBookController()
     }
     
@@ -40,14 +38,16 @@ class RecipientAddressNVSViewController: BaseViewController {
 
     private func showEnterAddressView() {
         
-        let enterView = loadViewFromXib(name: "MyNotes", index: 3,
-                                          frame: self.parent!.view.frame) as! EnterAddressRecordView
+        let frame = UIScreen.main.bounds
+        
+        let enterView = loadViewFromXib(name: "MyRecords", index: 3,
+                                          frame: frame) as! EnterAddressRecordView
         enterView.text = { address in
             if address.length > 0 {
                 self.returnAddressAndBack(address: address)
             }
         }
-        self.view.addSubview(enterView)
+        self.parent?.parent!.view.addSubview(enterView)
     }
     
     private func showScanQRCodeController() {
@@ -71,7 +71,7 @@ class RecipientAddressNVSViewController: BaseViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
                         
                     }))
-                    self.present(alert, animated: true, completion: nil)
+                    self.parent?.parent!.present(alert, animated: true, completion: nil)
                 }
             } else {
                 self.returnAddressAndBack(address: data["address"] as! String)
@@ -79,13 +79,12 @@ class RecipientAddressNVSViewController: BaseViewController {
             
         }
         present(controller, animated: true, completion: nil)
-        //push(at: controller)
     }
     
     private func showAddressBookController() {
         
-        let controller = AddressesNVSViewController.controller() as! AddressesNVSViewController
-        controller.isMyAddressBook = false
+        let controller = NamesViewController.controller() as! NamesViewController
+        controller.subController = .addresses
         controller.selectedAddress = {address in
            self.returnAddressAndBack(address: address)
         }

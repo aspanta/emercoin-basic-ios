@@ -11,6 +11,8 @@ enum SubController {
     case main
     case searchResults
     case createNVS
+    case myAddresses
+    case recipientAddress
     case addresses
 }
 
@@ -91,6 +93,10 @@ class NamesViewController: BaseViewController {
             text = Constants.Controllers.Names.SearchResults
         case .createNVS:
             text = isEditingMode ? Constants.Controllers.Names.EditNVS : Constants.Controllers.Names.CreateNVS
+        case .myAddresses:
+            text = Constants.Controllers.Names.MyAddresses
+        case .recipientAddress:
+            text = Constants.Controllers.Names.RecipientAddress
         case .addresses:
             text = Constants.Controllers.Names.Addresses
         }
@@ -175,8 +181,17 @@ class NamesViewController: BaseViewController {
             vc.record = record
             controller = vc
             
+        case .myAddresses:
+            let vc = AddressesNVSViewController.controller() as! AddressesNVSViewController
+            vc.selectedAddress = self.selectedAddress
+            controller = vc
+        case .recipientAddress:
+            let vc = RecipientAddressNVSViewController.controller() as! RecipientAddressNVSViewController
+            vc.selectedAddress = self.selectedAddress
+            controller = vc
         case .addresses:
             let vc = AddressesNVSViewController.controller() as! AddressesNVSViewController
+            vc.isMyAddressBook = false
             vc.selectedAddress = self.selectedAddress
             controller = vc
         }
