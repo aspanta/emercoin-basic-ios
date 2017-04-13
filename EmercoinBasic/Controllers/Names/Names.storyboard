@@ -112,12 +112,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrG-fa-CfK">
                                                     <rect key="frame" x="296" y="22" width="59" height="22"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lC-1f-raW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="22"/>
-                                                            <connections>
-                                                                <action selector="timeButtonPressed" destination="HX7-Qy-Zd8" eventType="touchUpInside" id="WUu-rB-54X"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-8Y-Uhf">
                                                             <rect key="frame" x="19" y="0.0" width="39.5" height="22"/>
                                                             <constraints>
@@ -139,15 +133,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="3lC-1f-raW" secondAttribute="trailing" id="5Kq-nY-JBx"/>
-                                                        <constraint firstItem="3lC-1f-raW" firstAttribute="top" secondItem="yrG-fa-CfK" secondAttribute="top" id="HX6-f8-trz"/>
                                                         <constraint firstItem="2gu-6E-MTW" firstAttribute="leading" secondItem="yrG-fa-CfK" secondAttribute="leading" id="Jax-td-aGr"/>
                                                         <constraint firstItem="2gu-6E-MTW" firstAttribute="top" secondItem="yrG-fa-CfK" secondAttribute="top" id="PGc-yc-h8Y"/>
                                                         <constraint firstAttribute="trailing" secondItem="kPZ-8Y-Uhf" secondAttribute="trailing" id="Pdi-0J-Yb8"/>
                                                         <constraint firstItem="kPZ-8Y-Uhf" firstAttribute="top" secondItem="yrG-fa-CfK" secondAttribute="top" id="ZyI-p7-IZX"/>
-                                                        <constraint firstItem="3lC-1f-raW" firstAttribute="leading" secondItem="yrG-fa-CfK" secondAttribute="leading" id="eCs-fM-IrV"/>
                                                         <constraint firstAttribute="bottom" secondItem="kPZ-8Y-Uhf" secondAttribute="bottom" id="jo2-aQ-pca"/>
-                                                        <constraint firstAttribute="bottom" secondItem="3lC-1f-raW" secondAttribute="bottom" id="kPi-s4-Iw6"/>
                                                         <constraint firstItem="kPZ-8Y-Uhf" firstAttribute="leading" secondItem="2gu-6E-MTW" secondAttribute="trailing" constant="8" id="oQS-gU-pxl"/>
                                                         <constraint firstAttribute="bottom" secondItem="2gu-6E-MTW" secondAttribute="bottom" id="sp0-tk-R8L"/>
                                                     </constraints>
@@ -1477,7 +1467,7 @@ not found</string>
     <resources>
         <image name="back_icon" width="18" height="15"/>
         <image name="block_add_icon" width="24" height="24"/>
-        <image name="lock_icon" width="19" height="25"/>
+        <image name="lock_icon" width="16" height="19"/>
         <image name="menu_icon" width="18" height="13"/>
         <image name="names_arrow" width="19" height="16"/>
         <image name="names_down_color_icon" width="9" height="7"/>

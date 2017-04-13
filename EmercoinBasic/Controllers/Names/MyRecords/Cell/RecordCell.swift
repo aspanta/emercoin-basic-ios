@@ -13,10 +13,6 @@ class RecordCell: BaseTableViewCell {
     
     @IBOutlet weak var timeValueConstraint:NSLayoutConstraint!
     
-    
-    
-    var timePressed: ((_ indexPath:IndexPath) -> (Void))?
-    
     override func updateUI() {
         
         guard let viewModel = object as? RecordViewModel else {
@@ -28,14 +24,6 @@ class RecordCell: BaseTableViewCell {
         timeType.text = viewModel.expiresType
         
         timeValueConstraint.constant = CGFloat(viewModel.expiresInDay.length * 11)
-    }
-    
-    @IBAction func timeButtonPressed() {
-        print("timeButtonPressed")
-        
-        if timePressed != nil {
-            timePressed!(indexPath!)
-        }
     }
 
 }

@@ -5,6 +5,8 @@
 
 import UIKit
 
+let noDisableVerticalScrollTag = 123456
+
 extension UIImageView {
     
     func display(image:UIImage, isAnimation:Bool) {
@@ -23,4 +25,14 @@ extension UIImageView {
             }
         }
     }
+    
+//    open override var alpha: CGFloat {
+//        didSet {
+//            if self.superview?.tag == noDisableVerticalScrollTag {
+//                if alpha == 0.0 && autoresizingMask == .flexibleLeftMargin {
+//                    self.alpha = 1.0
+//                }
+//            }
+//        }
+//    }
 }

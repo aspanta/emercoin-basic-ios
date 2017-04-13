@@ -21,11 +21,6 @@ extension MyRecordsViewController {
         let viewModel = RecordViewModel(record: itemAt(indexPath: indexPath))
         cell.object = viewModel
         cell.indexPath = indexPath
-        cell.timePressed = {[weak self](indexPath)in
-            if !cell.isEditing {
-                self?.addNoteShortInfoViewWith(indexPath: indexPath)
-            }
-        }
         
         return cell
     }
