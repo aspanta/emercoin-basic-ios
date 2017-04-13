@@ -25,6 +25,7 @@ class AddAddressView: PopupView {
             titleLabel.text = "Edit address"
             doneButton.setTitle("Save", for: .normal)
             nameTextField.text = viewModel?.name
+            doneButton.isEnabled = true
         } else {
             nameTextField.text = ""
         }

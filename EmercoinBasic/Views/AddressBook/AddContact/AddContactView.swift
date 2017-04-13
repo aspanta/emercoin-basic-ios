@@ -7,8 +7,8 @@ import UIKit
 
 class AddContactView: PopupView {
 
-    @IBOutlet weak var nameTextField:UITextField!
-    @IBOutlet weak var addressTextField:UITextField!
+    @IBOutlet weak var nameTextField:BaseTextField!
+    @IBOutlet weak var addressTextField:BaseTextField!
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var doneButton:UIButton!
 
@@ -20,6 +20,25 @@ class AddContactView: PopupView {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        nameTextField.textChanged = {[weak self](text) in
+            self?.validateFields()
+        }
+        addressTextField.textChanged = {[weak self](text) in
+            self?.validateFields()
+        }
+        
+    }
+    
+    private func validateFields() {
+        
+        let name = nameTextField.text ?? ""
+        let address = addressTextField.text ?? ""
+        doneButton.isEnabled = !name.isEmpty && !address.isEmpty
+    }
+    
     private func updateUI() {
         
         if viewModel != nil {
@@ -27,6 +46,7 @@ class AddContactView: PopupView {
             doneButton.setTitle("Save", for: .normal)
             nameTextField.text = viewModel?.name
             addressTextField.text = viewModel?.address
+            doneButton.isEnabled = true
         }
     }
     

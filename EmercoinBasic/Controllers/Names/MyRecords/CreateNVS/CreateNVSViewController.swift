@@ -82,6 +82,12 @@ class CreateNVSViewController: BaseViewController {
             if state {
                 if self?.timeTextField.text == "0" {
                     self?.timeTextField.text = ""
+                    self?.checkValidation()
+                }
+            } else {
+                if self?.timeTextField.text == "" {
+                    self?.timeTextField.text = "0"
+                    self?.checkValidation()
                 }
             }
         }
@@ -112,6 +118,7 @@ class CreateNVSViewController: BaseViewController {
             expiresLabel.text = "Extend days:"
             nameTextField.disableEdit = true
             timeTextField.isEditMode = true
+            createButton.isEnabled = true
             
             if let record = record {
                 nameTextField.text = record.name

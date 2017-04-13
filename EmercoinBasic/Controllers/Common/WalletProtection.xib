@@ -371,7 +371,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-lI-DGc" userLabel="main view">
-                    <rect key="frame" x="33" y="246" width="348" height="244.5"/>
+                    <rect key="frame" x="33" y="246.5" width="348" height="244.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-QA-EKw">
                             <rect key="frame" x="0.0" y="0.0" width="347" height="244.5"/>

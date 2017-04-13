@@ -14,9 +14,7 @@ class BaseButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
-            if enableConfig {
-                updateUI()
-            }
+            updateUI()
         }
     }
     
@@ -27,8 +25,10 @@ class BaseButton: UIButton {
     }
     
     private func updateUI() {
-        let imageName = isEnabled ? enableColor : disableColor
-        backgroundColor = UIColor(hexString: imageName)
+        
+        if enableConfig {
+            let imageName = isEnabled ? enableColor : disableColor
+            backgroundColor = UIColor(hexString: imageName)
+        }
     }
-    
 }
