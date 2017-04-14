@@ -79,6 +79,9 @@ class CreateNVSViewController: BaseViewController {
         }
         
         timeTextField.didFirstResponder = {[weak self](state) in
+            
+            if self?.isEditingMode == false {return}
+            
             if state {
                 if self?.timeTextField.text == "0" {
                     self?.timeTextField.text = ""
