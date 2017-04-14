@@ -5,6 +5,8 @@
 
 import Foundation
 
+let removeStrings = [".", "Error: "]
+
 extension BaseAPI {
     
     func formattedError(at error:Error) -> NSError {
@@ -22,7 +24,11 @@ extension BaseAPI {
         } else if message.contains("Could not connect") || message.contains("NSURLErrorDomain") {
             text = "Could not connect to the server"
         } else {
-            text = message.replacingOccurrences(of: ".", with: "")
+            
+            for string in removeStrings {
+                text = message.replacingOccurrences(of: string, with: "")
+            }
+
         }
     
         let newError = NSError(domain: text, code: -1, userInfo: nil)
