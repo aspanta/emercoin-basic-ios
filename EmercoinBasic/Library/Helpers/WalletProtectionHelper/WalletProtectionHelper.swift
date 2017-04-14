@@ -37,6 +37,9 @@ class WalletProtectionHelper {
         view.unlock = {(password) in
             self.wallet.unlock(at:password)
         }
+        view.cancel = {
+            self.wallet.amountData = nil
+        }
         showView(at: view)
     }
     

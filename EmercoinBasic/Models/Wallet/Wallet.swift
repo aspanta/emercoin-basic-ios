@@ -25,6 +25,8 @@ class Wallet:BaseModel {
         return emCoin
     }()
     
+    var amountData:AnyObject?
+    
     var isLocked = false
     var isProtected = false
     var isMintonly = false
@@ -68,7 +70,7 @@ class Wallet:BaseModel {
     }
     
     
-    func loadInfo() {
+    func loadInfo(completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadInfo{[weak self] (data, error) in
             
@@ -76,7 +78,7 @@ class Wallet:BaseModel {
             if error != nil {
                 self?.error.onNext(error!)
             } else {
-                AppManager.sharedInstance.myAddressBook.load()
+                
                 if let wallet = data as? Wallet {
                     self?.isLocked = wallet.isLocked
                     self?.isProtected = wallet.isProtected
@@ -84,10 +86,12 @@ class Wallet:BaseModel {
                     self?.balance = wallet.balance
                 }
             }
+            if completion != nil {
+                completion!()
+            }
         }
         loadCourse()
     }
-    
     
     func l1oadBalance() {
      

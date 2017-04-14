@@ -18,12 +18,13 @@ class CoinOperationsViewModel {
     var coinSign = PublishSubject<String>()
     
     var success = PublishSubject<Bool>()
+    var walletLock = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
     var locked = PublishSubject<Bool>()
     var wallet:Wallet?
     
-    private var isLoading = false
+    internal var isLoading = false
     
     func updateUI() {
     
@@ -52,32 +53,10 @@ class CoinOperationsViewModel {
                 self?.updateUI()
             })
             .addDisposableTo(disposeBag)
-            wallet?.locked.subscribe(onNext: {[weak self] (state) in
-                self?.updateUI()
-            })
-            .addDisposableTo(disposeBag)
         }
-        
     }
     
-    func sendCoins(at sendData:AnyObject) {
-        
-        if isLoading {return}
-        
-        activityIndicator.onNext(true)
-        isLoading = true
-        
-        APIManager.sharedInstance.sendCoins(at: sendData) {[weak self] (data, error) in
-            self?.activityIndicator.onNext(false)
-            self?.isLoading = false
-            
-            if error != nil {
-                self?.error.onNext(error!)
-            } else {
-                if let success = data as? Bool {
-                    self?.success.onNext(success)
-                }
-            }
-        }
+    func updateWallet() {
+        wallet?.loadInfo(completion: nil)
     }
 }

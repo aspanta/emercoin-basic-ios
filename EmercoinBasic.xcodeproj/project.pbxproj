@@ -210,6 +210,7 @@
 		2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */; };
 		2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */; };
 		2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */; };
+		2DEDC9451EA0F71200F404B5 /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDC9441EA0F71200F404B5 /* SendViewModel.swift */; };
 		2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF212611E8AC8A500A989F3 /* RxRealm.framework */; };
 		2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDB1E89122C007D9A60 /* Realm.framework */; };
 		2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */; };
@@ -425,6 +426,7 @@
 		2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesAPI.swift; sourceTree = "<group>"; };
 		2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseAPI + Errors.swift"; sourceTree = "<group>"; };
+		2DEDC9441EA0F71200F404B5 /* SendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		2DF212611E8AC8A500A989F3 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 		2DF62FDB1E89122C007D9A60 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 		2D997A921E7AC90700630560 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2DEDC9431EA0F70100F404B5 /* SendViewModel */,
 				2D798F011E93A992008AB5AF /* RecordViewModel */,
 				2D28C85C1E7C596C0071947A /* ContactViewModel */,
 				2DA249481E7C203B00AF81DD /* LoginViewModel */,
@@ -1737,6 +1740,14 @@
 			path = MyAddresses;
 			sourceTree = "<group>";
 		};
+		2DEDC9431EA0F70100F404B5 /* SendViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DEDC9441EA0F71200F404B5 /* SendViewModel.swift */,
+			);
+			path = SendViewModel;
+			sourceTree = "<group>";
+		};
 		2DF72DED1E9E930E00657494 /* BaseButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -1953,6 +1964,7 @@
 				2D997BB21E7AD2B600630560 /* AddContactView.swift in Sources */,
 				2D997BBA1E7AD2B600630560 /* EncryptionButtonView.swift in Sources */,
 				2D09DB811E9CC2290013970F /* UpdateNameAPI.swift in Sources */,
+				2DEDC9451EA0F71200F404B5 /* SendViewModel.swift in Sources */,
 				2D997C011E7AD37700630560 /* CoinsOperationViewModel.swift in Sources */,
 				2D997CE61E7AD3B200630560 /* HomeViewController + TableView.swift in Sources */,
 				2D997B1D1E7AD1FF00630560 /* ButtonBarPagerTabStripViewController.swift in Sources */,

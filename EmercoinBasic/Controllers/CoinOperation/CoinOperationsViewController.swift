@@ -111,7 +111,6 @@ class CoinOperationsViewController: BaseViewController {
             controller = vc
         case .send:
             let vc = SendCoinsViewController.controller() as! SendCoinsViewController
-            vc.viewModel = viewModel
             vc.object = object
             controller = vc
         case .get:

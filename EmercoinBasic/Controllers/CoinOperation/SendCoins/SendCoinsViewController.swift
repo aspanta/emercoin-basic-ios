@@ -17,7 +17,7 @@ class SendCoinsViewController: BaseViewController {
     private var amount:Double = 0
     
     let disposeBag = DisposeBag()
-    var viewModel:CoinOperationsViewModel?
+    var viewModel = SendViewModel()
     
     override class func storyboardName() -> String {
         return "CoinOperations"
@@ -34,7 +34,7 @@ class SendCoinsViewController: BaseViewController {
         super.setupUI()
         
         hideStatusBar()
-        viewModel?.coinSign.bindTo(signLabel.rx.text)
+        viewModel.coinSign.bindTo(signLabel.rx.text)
         .addDisposableTo(disposeBag)
         
         if object != nil {
@@ -56,18 +56,25 @@ class SendCoinsViewController: BaseViewController {
     
     private func setupSend() {
         
-        viewModel?.success.subscribe(onNext:{[weak self] success in
+        viewModel.success.subscribe(onNext:{[weak self] success in
             if success {
                 let wallet = AppManager.sharedInstance.wallet
                 wallet.balance -= self?.amount ?? 0
-                wallet.loadInfo()
+                wallet.loadInfo(completion: nil)
                 self?.showSuccesSendView()
             }
         })
             .addDisposableTo(disposeBag)
         
-        viewModel?.error.subscribe(onNext:{ [weak self] error in
+        viewModel.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
+        })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.walletLock.subscribe(onNext:{ [weak self] state in
+            if let parent = self?.parent as? CoinOperationsViewController {
+                parent.lockButtonPressed()
+            }
         })
             .addDisposableTo(disposeBag)
         
@@ -78,7 +85,6 @@ class SendCoinsViewController: BaseViewController {
         amountTextField.textChanged = {[weak self](text) in
             self?.checkValidation()
         }
-
     }
     
     private func checkValidation() {
@@ -91,7 +97,7 @@ class SendCoinsViewController: BaseViewController {
     
     private func setupActivityIndicator() {
         
-        viewModel?.activityIndicator.subscribe(onNext:{ [weak self] state in
+        viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
             if state {
                 self?.showActivityIndicator()
             } else {
@@ -117,7 +123,8 @@ class SendCoinsViewController: BaseViewController {
             
             requestSendView.amount = amount
             requestSendView.sendCoins = ({[weak self] in
-                self?.viewModel?.sendCoins(at: [address ?? "", self?.amount as Any] as AnyObject)
+                let data = [address ?? "", self?.amount as Any] as AnyObject
+                self?.viewModel.checkWalletAndSend(at: data)
             })
              self.parent?.view.addSubview(requestSendView)
         }
@@ -130,10 +137,6 @@ class SendCoinsViewController: BaseViewController {
         successView.success = ({
             
             let parent  = self.parent as! CoinOperationsViewController
-            
-            if parent.parent is AddressBookViewController {
-                print ("AddressBookViewController")
-            }
             
             parent.back()
         })
