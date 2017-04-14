@@ -211,6 +211,7 @@
 		2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */; };
 		2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */; };
 		2DEDC9451EA0F71200F404B5 /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDC9441EA0F71200F404B5 /* SendViewModel.swift */; };
+		2DEDC9481EA10AC700F404B5 /* SearchNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDC9471EA10AC700F404B5 /* SearchNameAPI.swift */; };
 		2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF212611E8AC8A500A989F3 /* RxRealm.framework */; };
 		2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDB1E89122C007D9A60 /* Realm.framework */; };
 		2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */; };
@@ -427,6 +428,7 @@
 		2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesAPI.swift; sourceTree = "<group>"; };
 		2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseAPI + Errors.swift"; sourceTree = "<group>"; };
 		2DEDC9441EA0F71200F404B5 /* SendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
+		2DEDC9471EA10AC700F404B5 /* SearchNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNameAPI.swift; sourceTree = "<group>"; };
 		2DF212611E8AC8A500A989F3 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 		2DF62FDB1E89122C007D9A60 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2DEDC9461EA10AB400F404B5 /* SearchName */,
 				2D64EA991E9E35A6000F9B48 /* UnlockWallet */,
 				2D64EA961E9E3443000F9B48 /* LockWallet */,
 				2D64EA931E9E2EA3000F9B48 /* ProtectWallet */,
@@ -1748,6 +1751,14 @@
 			path = SendViewModel;
 			sourceTree = "<group>";
 		};
+		2DEDC9461EA10AB400F404B5 /* SearchName */ = {
+			isa = PBXGroup;
+			children = (
+				2DEDC9471EA10AC700F404B5 /* SearchNameAPI.swift */,
+			);
+			path = SearchName;
+			sourceTree = "<group>";
+		};
 		2DF72DED1E9E930E00657494 /* BaseButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -2003,6 +2014,7 @@
 				2D997B0D1E7AD1FF00630560 /* UIViewController + Utils.swift in Sources */,
 				2D997BC71E7AD2B600630560 /* AddAddressView.swift in Sources */,
 				2D997BD41E7AD2B600630560 /* ProtectionValidationView.swift in Sources */,
+				2DEDC9481EA10AC700F404B5 /* SearchNameAPI.swift in Sources */,
 				2D798F001E939F1B008AB5AF /* Records.swift in Sources */,
 				2D997B0C1E7AD1FF00630560 /* UIView + Utils.swift in Sources */,
 				2D997B541E7AD24E00630560 /* Contact.swift in Sources */,

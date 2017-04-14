@@ -16,6 +16,7 @@ enum APIType {
     case addName
     case updateName
     case deleteName
+    case searchName
     case protectWallet
     case lockWallet
     case unlockWallet
@@ -135,6 +136,18 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
+    func searchName(at nameData:AnyObject, completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = getApi(at: .searchName)
+        
+        if var params = api.object as? [String:AnyObject] {
+            params["nameData"] = nameData as AnyObject?
+            api.object = params as AnyObject?
+        }
+        
+        api.startRequest(completion: completion)
+    }
+    
     func loadMyAddresses(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .myAddresses)
@@ -177,6 +190,7 @@ class APIManager: NSObject {
             case .protectWallet:api = ProtectWalletAPI()
             case .lockWallet:api = LockWalletAPI()
             case .unlockWallet:api = UnlockWalletAPI()
+            case .searchName:api = SearchNameAPI()
             
         }
         

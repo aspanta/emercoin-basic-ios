@@ -21,7 +21,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     var records = Records()
     let disposeBag = DisposeBag()
     
-    var filterString:String = ""
+    var searchString:String = ""
     
     var tableCellAction:TableCellAction = .add
 
@@ -35,19 +35,21 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         tableView.baseSetup()
         setupRecords()
         
-        if filterString.isEmpty {
+        if searchString.isEmpty {
             setupRefreshControl()
             setupActivityIndicator()
             records.load()
         } else {
-            records.filterString = filterString
+            records.searchString = searchString
+            records.searchName()
         }
         
         updateUI()
     }
     
     private func updateUI() {
-       noNotesView.isHidden = records.records.count != 0
+        let count = searchString.isEmpty ? records.records.count : records.searchRecords.count
+        noNotesView.isHidden =  count != 0
     }
     
     private func setupRefreshControl() {
@@ -65,9 +67,9 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         
         records.success.subscribe(onNext:{ [weak self] success in
             if success {
-                self?.updateUI()
                 self?.tableView.reload()
             }
+            self?.updateUI()
         })
             .addDisposableTo(disposeBag)
         

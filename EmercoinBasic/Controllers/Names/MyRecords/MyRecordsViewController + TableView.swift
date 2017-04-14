@@ -8,7 +8,8 @@ import UIKit
 extension MyRecordsViewController {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = records.records.count
+        
+        let count = records.searchString.isEmpty ? records.records.count : records.searchRecords.count
         return count
     }
     
@@ -32,7 +33,9 @@ extension MyRecordsViewController {
     }
     
     internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        
+        let record = itemAt(indexPath: indexPath)
+        return record.isMyRecord
     }
     
     internal func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -126,7 +129,12 @@ extension MyRecordsViewController {
     }
 
     private func itemAt(indexPath:IndexPath) -> Record {
-        return records.records[indexPath.row]
+        
+        if records.searchString.isEmpty {
+            return records.records[indexPath.row]
+        } else {
+            return records.searchRecords[indexPath.row]
+        }
     }
     
     private func showEditRecordController(at record:Record, index:Int) {

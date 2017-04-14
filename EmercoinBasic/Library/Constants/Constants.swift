@@ -21,6 +21,7 @@ struct Constants {
         static let AddName = "name_new"
         static let UpdateName = "name_update"
         static let DeleteName = "name_delete"
+        static let SearchName = "name_show"
         static let GetNames = "name_list"
         static let ProtectWallet = "encryptwallet"
         static let LockWallet = "walletlock"

@@ -12,5 +12,4 @@ class BaseNavigationController: UINavigationController {
 
         navigationBar.isHidden = true
     }
-    
 }

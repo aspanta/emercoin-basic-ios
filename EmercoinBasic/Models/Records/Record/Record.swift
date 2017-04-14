@@ -15,6 +15,7 @@ class Record: Object, Mappable {
     dynamic var value = ""
     dynamic var address = ""
     dynamic var isExpired = false
+    dynamic var isMyRecord = true
     
     dynamic var expiresIn = 0 {
         didSet{

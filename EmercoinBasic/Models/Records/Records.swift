@@ -14,17 +14,12 @@ class Records {
     var records:Results<Record> {
         get {
             let realm = try! Realm()
-            
-            if filterString.isEmpty {
-                return realm.objects(Record.self)
-            } else {
-                
-                return realm.objects(Record.self).filter("name contains[c] %@",filterString)
-            }
+            return realm.objects(Record.self)
         }
     }
+    var searchRecords:[Record] = []
     
-    var filterString = ""
+    var searchString = ""
     
     
     let disposeBag = DisposeBag()
@@ -110,5 +105,27 @@ class Records {
                 self?.error.onNext(error!)
             }
         }
+    }
+    
+    func searchName() {
+        
+        APIManager.sharedInstance.searchName(at: [self.searchString] as AnyObject, completion: {[weak self] (data, error) in
+            if error == nil {
+                guard let record = data as? Record else {
+                    return
+                }
+                
+                let realm = try! Realm()
+                
+                if realm.objects(Record.self).filter("name == %@",record.name).count == 0 {
+                    record.isMyRecord = false
+                }
+                
+                self?.searchRecords.append(record)
+                self?.success.onNext(true)
+            } else {
+                self?.success.onNext(false)
+            }
+        })
     }
 }
