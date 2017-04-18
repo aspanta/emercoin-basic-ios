@@ -15,6 +15,8 @@ class SendCoinsViewController: BaseViewController {
     @IBOutlet internal weak  var amountTextField:BaseTextField!
     
     private var amount:Double = 0
+    private var sendData:AnyObject?
+    private var walletProtectionHelper:WalletProtectionHelper?
     
     let disposeBag = DisposeBag()
     var viewModel = SendViewModel()
@@ -72,9 +74,7 @@ class SendCoinsViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         
         viewModel.walletLock.subscribe(onNext:{ [weak self] state in
-            if let parent = self?.parent as? CoinOperationsViewController {
-                parent.lockButtonPressed()
-            }
+            self?.showProtection()
         })
             .addDisposableTo(disposeBag)
         
@@ -124,6 +124,7 @@ class SendCoinsViewController: BaseViewController {
             requestSendView.amount = amount
             requestSendView.sendCoins = ({[weak self] in
                 let data = [address ?? "", self?.amount as Any] as AnyObject
+                self?.sendData = data
                 self?.viewModel.checkWalletAndSend(at: data)
             })
              self.parent?.view.addSubview(requestSendView)
@@ -137,7 +138,7 @@ class SendCoinsViewController: BaseViewController {
         successView.success = ({
             
             let parent  = self.parent as! CoinOperationsViewController
-            
+            self.walletProtectionHelper = nil
             parent.back()
         })
         
@@ -153,5 +154,23 @@ class SendCoinsViewController: BaseViewController {
     @IBAction func sendButtonPressed(sender:UIButton) {
         
         addRequestSendView()
+    }
+    
+    private func showProtection() {
+        
+        if let parent = self.parent as? CoinOperationsViewController  {
+            let protectionHelper = WalletProtectionHelper()
+            protectionHelper.fromController = parent
+            protectionHelper.cancel = {[weak self] in
+                self?.sendData = nil
+            }
+            protectionHelper.unlock = {[weak self] in
+                if let data = self?.sendData {
+                    self?.viewModel.sendCoins(at: data)
+                }
+            }
+            self.walletProtectionHelper = protectionHelper
+            protectionHelper.startProtection()
+        }
     }
 }

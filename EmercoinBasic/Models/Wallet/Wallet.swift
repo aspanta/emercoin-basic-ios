@@ -12,8 +12,7 @@ class Wallet:BaseModel {
     
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
-    var isActivityIndicator = PublishSubject<Bool>()
-    var locked = PublishSubject<Bool>()
+    var activityIndicator = PublishSubject<Bool>()
     
     var emercoin:Coin = {
         let emCoin = Coin()
@@ -24,8 +23,6 @@ class Wallet:BaseModel {
         emCoin.color = Constants.Colors.Coins.Emercoin
         return emCoin
     }()
-    
-    var amountData:AnyObject?
     
     var isLocked = false
     var isProtected = false
@@ -50,7 +47,6 @@ class Wallet:BaseModel {
         didSet{
             emercoin.amount = balance
             success.onNext(true)
-            checkLock()
         }
     }
     
@@ -60,25 +56,16 @@ class Wallet:BaseModel {
         unlockedUntil <- map["unlocked_until"]
         isProtected <- map["encrypted"]
         balance <- map["balance"]
-        
     }
-    
-    private func checkLock() {
-        
-        let lock = isLocked
-        locked.onNext(lock)
-    }
-    
     
     func loadInfo(completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadInfo{[weak self] (data, error) in
             
-            self?.isActivityIndicator.onNext(false)
+            self?.activityIndicator.onNext(false)
             if error != nil {
                 self?.error.onNext(error!)
             } else {
-                
                 if let wallet = data as? Wallet {
                     self?.isLocked = wallet.isLocked
                     self?.isProtected = wallet.isProtected
@@ -88,23 +75,6 @@ class Wallet:BaseModel {
             }
             if completion != nil {
                 completion!()
-            }
-        }
-        loadCourse()
-    }
-    
-    func l1oadBalance() {
-     
-        APIManager.sharedInstance.loadBalance {[weak self] (data, error) in
-            
-            self?.isActivityIndicator.onNext(false)
-            if let error = error {
-                self?.error.onNext(error)
-            } else {
-                AppManager.sharedInstance.myAddressBook.load()
-                if let balance = data as? Double {
-                    self?.balance = balance
-                }
             }
         }
         loadCourse()

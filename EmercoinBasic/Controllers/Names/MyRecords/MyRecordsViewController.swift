@@ -24,6 +24,9 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     var searchString:String = ""
     
     var tableCellAction:TableCellAction = .add
+    
+    internal var deleteRecord:Record?
+    private var walletProtectionHelper:WalletProtectionHelper?
 
     override class func storyboardName() -> String {
         return "Names"
@@ -84,6 +87,11 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
             self?.showErrorAlert(at: error)
         })
             .addDisposableTo(disposeBag)
+        
+        records.walletLock.subscribe(onNext:{ [weak self] state in
+            self?.showProtection()
+        })
+            .addDisposableTo(disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -123,9 +131,31 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     
     private func showSuccessDeleteNameView() {
         
-        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
-                                                              frame: self.parent!.view.frame) as! SuccessAddNameView
-        self.parent?.view.addSubview(successView)
+        if let parent = self.parent?.parent as? NamesViewController {
+            let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+                                                              frame: parent.view.frame) as! SuccessAddNameView
+            self.walletProtectionHelper = nil
+            self.deleteRecord = nil
+            parent.view.addSubview(successView)
+        }
+    }
+    
+    private func showProtection() {
+        
+        if let parent = self.parent?.parent as? NamesViewController  {
+            let protectionHelper = WalletProtectionHelper()
+            protectionHelper.fromController = parent
+            protectionHelper.cancel = {[weak self] in
+                self?.deleteRecord = nil
+            }
+            protectionHelper.unlock = {[weak self] in
+                if let record = self?.deleteRecord {
+                    self?.records.remove(record: record)
+                }
+            }
+            self.walletProtectionHelper = protectionHelper
+            protectionHelper.startProtection()
+        }
     }
 
 }

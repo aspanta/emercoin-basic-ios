@@ -12,7 +12,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var lockButton:LockButton!
     
-    private var wallet = AppManager.sharedInstance.wallet
+    var viewModel = CoinOperationsViewModel()
     let disposeBag = DisposeBag()
     
     internal var selectedRows:[IndexPath] = []
@@ -31,9 +31,10 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let coin = wallet.emercoin
-        
-        coins = [coin]
+        if let wallet = viewModel.wallet {
+            let coin = wallet.emercoin
+            coins = [coin]
+        }
         setupTableView()
         setupRefreshControl()
         setupHome()
@@ -41,17 +42,17 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     
     private func setupHome() {
         
-        wallet.error.subscribe(onNext: {[weak self] (error) in
+        viewModel.error.subscribe(onNext: {[weak self] (error) in
             self?.showErrorAlert(at: error)
         })
         .addDisposableTo(disposeBag)
         
-        wallet.locked.subscribe(onNext: {[weak self] (locked) in
+        viewModel.locked.subscribe(onNext: {[weak self] (locked) in
             self?.lockButton.isLocked = locked
         })
         .addDisposableTo(disposeBag)
         
-        wallet.success.subscribe(onNext: {[weak self] (state) in
+        viewModel.walletSuccess.subscribe(onNext: {[weak self] (state) in
             self?.tableView.reload()
         })
         .addDisposableTo(disposeBag)
@@ -78,7 +79,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         refresh.addTarget(self, action: #selector(self.handleRefresh(sender:)), for: .valueChanged)
         tableView.refreshControl = refresh
         
-        wallet.isActivityIndicator.subscribe(onNext:{ [weak self] state in
+        viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
             
             if state == false {
                 refresh.endRefreshing()
@@ -88,6 +89,6 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        wallet.loadInfo()
+        viewModel.updateWallet()
     }
 }

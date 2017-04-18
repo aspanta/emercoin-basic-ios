@@ -101,7 +101,8 @@ extension MyRecordsViewController {
         tableCellAction = .remove
         
         let item = itemAt(indexPath: indexPath)
-        records.remove(record: item)
+        self.deleteRecord = item
+        records.checkWalletAndRemove(at: item)
         
 //        tableView.beginUpdates()
 //        tableView.deleteRows(at: [indexPath], with: .top)

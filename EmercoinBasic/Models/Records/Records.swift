@@ -25,6 +25,7 @@ class Records {
     let disposeBag = DisposeBag()
     var success = PublishSubject<Bool>()
     var successDelete = PublishSubject<Bool>()
+    var walletLock = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
     var isEmpty = PublishSubject<Bool>()
@@ -54,6 +55,18 @@ class Records {
         try! realm.write {
             realm.add(records)
         }
+    }
+    
+    func checkWalletAndRemove(at record:Record) {
+        let wallet = AppManager.sharedInstance.wallet
+        wallet.loadInfo(completion: {[weak self] in
+            if wallet.isLocked == true {
+                self?.walletLock.onNext(true)
+                return
+            } else {
+                self?.remove(record:record)
+            }
+        })
     }
     
     func remove(record:Record) {

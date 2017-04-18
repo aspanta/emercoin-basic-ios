@@ -13,7 +13,9 @@ enum ProtectionViewType:Int {
 }
 
 class WalletProtectionHelper {
-    
+
+    var cancel:((Void) -> (Void))?
+    var unlock:((Void) -> (Void))?
     var fromController:UIViewController?
     var wallet = AppManager.sharedInstance.wallet
     
@@ -35,10 +37,18 @@ class WalletProtectionHelper {
         
         let view = getProtectionView(at: .unlock) as! WalletProtectionUnlockView
         view.unlock = {(password) in
-            self.wallet.unlock(at:password)
+            self.wallet.unlock(at: password, completion: {[weak self] (unlock) in
+                if self?.unlock != nil {
+                    if unlock == true {
+                        self?.unlock!()
+                    }
+                }
+            })
         }
         view.cancel = {
-            self.wallet.amountData = nil
+            if self.cancel != nil {
+                self.cancel!()
+            }
         }
         showView(at: view)
     }

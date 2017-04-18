@@ -19,6 +19,7 @@ class CoinOperationsViewModel {
     
     var success = PublishSubject<Bool>()
     var walletLock = PublishSubject<Bool>()
+    var walletSuccess = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
     var locked = PublishSubject<Bool>()
@@ -51,8 +52,17 @@ class CoinOperationsViewModel {
             
             wallet?.success.subscribe(onNext: {[weak self] (state) in
                 self?.updateUI()
+                self?.walletSuccess.onNext(state)
             })
             .addDisposableTo(disposeBag)
+            wallet?.error.subscribe(onNext: {[weak self] (error) in
+                self?.error.onNext(error)
+            })
+                .addDisposableTo(disposeBag)
+            wallet?.activityIndicator.subscribe(onNext: {[weak self] (state) in
+                self?.activityIndicator.onNext(state)
+            })
+                .addDisposableTo(disposeBag)
         }
     }
     

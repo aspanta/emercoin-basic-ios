@@ -5,6 +5,8 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 class CreateNVSViewController: BaseViewController {
     
@@ -26,14 +28,20 @@ class CreateNVSViewController: BaseViewController {
     
     @IBOutlet internal weak var createButton:BaseButton!
     
-    var isLoading = false
     var prefixDropDown:DropDown?
+    
     
     var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
     
+    let disposeBag = DisposeBag()
+    var viewModel = CreateNVSViewModel()
+    
     var isEditingMode = false
     var record:Record?
+    
+    private var nameData:AnyObject?
+    private var walletProtectionHelper:WalletProtectionHelper?
     
     var data:Any? {
         didSet{
@@ -60,6 +68,7 @@ class CreateNVSViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.isEditingMode = isEditingMode
         setupController()
         setupPrefixDropDown()
     }
@@ -77,6 +86,23 @@ class CreateNVSViewController: BaseViewController {
         nameTextField.textChanged = {[weak self](text) in
             self?.checkValidation()
         }
+        
+        viewModel.success.subscribe(onNext:{[weak self] success in
+            if success {
+                self?.showSuccessAddNameView()
+            }
+        })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.error.subscribe(onNext:{ [weak self] error in
+            self?.showErrorAlert(at: error)
+        })
+            .addDisposableTo(disposeBag)
+        
+        viewModel.walletLock.subscribe(onNext:{ [weak self] state in
+            self?.showProtection()
+        })
+            .addDisposableTo(disposeBag)
         
         timeTextField.didFirstResponder = {[weak self](state) in
             
@@ -188,8 +214,6 @@ class CreateNVSViewController: BaseViewController {
                     data["expiresIn"] = record.expiresIn
                     data["expiresInDays"] = record.expiresInDays
                     
-                    self.data = data
-                    
                     nameData.append(oldRecord.name as AnyObject)
                     nameData.append(record.value as AnyObject )
                     nameData.append(daysCount as AnyObject)
@@ -198,7 +222,9 @@ class CreateNVSViewController: BaseViewController {
                         nameData.append(address as AnyObject)
                     }
                     
-                    updateName(at: nameData)
+                    self.data = data
+                    
+                    viewModel.checkWalletAndSend(at: nameData as AnyObject)
                 } else {
                     back()
                 }
@@ -214,9 +240,10 @@ class CreateNVSViewController: BaseViewController {
                     nameData.append(address as AnyObject)
                 }
                 
-                addName(at: nameData)
+                viewModel.checkWalletAndSend(at: nameData as AnyObject)
             }
         }
+        self.nameData = nameData as AnyObject
     }
     
     @IBAction func cancelButtonPressed() {
@@ -253,40 +280,6 @@ class CreateNVSViewController: BaseViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    private func addName(at nameData:[AnyObject]) {
-        
-        showActivityIndicator()
-        isLoading = true
-        
-        APIManager.sharedInstance.addName(at: nameData as AnyObject) {[weak self] (data, error) in
-            self?.isLoading = false
-            self?.hideActivityIndicator()
-            
-            if let error = error {
-                self?.showErrorAlert(at: error)
-            } else {
-                self?.showSuccessAddNameView()
-            }
-        }
-    }
-    
-    private func updateName(at nameData:[AnyObject]) {
-        
-        showActivityIndicator()
-        isLoading = true
-        
-        APIManager.sharedInstance.updateName(at: nameData as AnyObject) {[weak self] (data, error) in
-            self?.isLoading = false
-            self?.hideActivityIndicator()
-            
-            if let error = error {
-                self?.showErrorAlert(at: error)
-            } else {
-                self?.showSuccessAddNameView()
-            }
-        }
-    }
-    
     private func showSuccessAddNameView() {
         
         let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
@@ -303,7 +296,8 @@ class CreateNVSViewController: BaseViewController {
                 }
             }
             
-
+            self?.walletProtectionHelper = nil
+    
             self?.back()
         })
         
@@ -316,4 +310,21 @@ class CreateNVSViewController: BaseViewController {
         present(alert, animated: true, completion: nil)
     }
 
+    private func showProtection() {
+        
+        if let parent = self.parent as? NamesViewController  {
+            let protectionHelper = WalletProtectionHelper()
+            protectionHelper.fromController = parent
+            protectionHelper.cancel = {[weak self] in
+                self?.nameData = nil
+            }
+            protectionHelper.unlock = {[weak self] in
+                if let data = self?.nameData {
+                    self?.viewModel.sendData(at: data)
+                }
+            }
+            self.walletProtectionHelper = protectionHelper
+            protectionHelper.startProtection()
+        }
+    }
 }

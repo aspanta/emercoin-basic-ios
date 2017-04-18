@@ -64,6 +64,7 @@
 		2D798EFF1E939F1B008AB5AF /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EFD1E939F1B008AB5AF /* Record.swift */; };
 		2D798F001E939F1B008AB5AF /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EFE1E939F1B008AB5AF /* Records.swift */; };
 		2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798F021E93A992008AB5AF /* RecordViewModel.swift */; };
+		2D8237621EA60C5C00DC37D6 /* CreateNVSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8237611EA60C5C00DC37D6 /* CreateNVSViewModel.swift */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
 		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
 		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
@@ -276,6 +277,7 @@
 		2D798EFD1E939F1B008AB5AF /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		2D798EFE1E939F1B008AB5AF /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		2D798F021E93A992008AB5AF /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		2D8237611EA60C5C00DC37D6 /* CreateNVSViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNVSViewModel.swift; sourceTree = "<group>"; };
 		2D997A701E7AC49400630560 /* EmercoinBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmercoinBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D997A861E7AC90700630560 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D997A871E7AC90700630560 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -812,6 +814,14 @@
 			path = RecordViewModel;
 			sourceTree = "<group>";
 		};
+		2D8237601EA60C4600DC37D6 /* CreateNVSViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D8237611EA60C5C00DC37D6 /* CreateNVSViewModel.swift */,
+			);
+			path = CreateNVSViewModel;
+			sourceTree = "<group>";
+		};
 		2D997A671E7AC49400630560 = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +922,7 @@
 		2D997A921E7AC90700630560 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2D8237601EA60C4600DC37D6 /* CreateNVSViewModel */,
 				2DEDC9431EA0F70100F404B5 /* SendViewModel */,
 				2D798F011E93A992008AB5AF /* RecordViewModel */,
 				2D28C85C1E7C596C0071947A /* ContactViewModel */,
@@ -1895,6 +1906,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8237621EA60C5C00DC37D6 /* CreateNVSViewModel.swift in Sources */,
 				2D09DB871E9D0B0E0013970F /* LockButton.swift in Sources */,
 				2D997B251E7AD1FF00630560 /* PagerTabStripViewController.swift in Sources */,
 				2D997B231E7AD1FF00630560 /* PagerTabStripBehaviour.swift in Sources */,
