@@ -10,6 +10,8 @@ enum ProtectionViewType:Int {
     case lock = 1
     case protection = 2
     case warning = 3
+    case activity = 4
+    
 }
 
 class WalletProtectionHelper {
@@ -18,6 +20,7 @@ class WalletProtectionHelper {
     var unlock:((Void) -> (Void))?
     var fromController:UIViewController?
     var wallet = AppManager.sharedInstance.wallet
+    private var activityView:WalletProtectionActivityView?
     
     func startProtection() {
         
@@ -37,9 +40,12 @@ class WalletProtectionHelper {
         
         let view = getProtectionView(at: .unlock) as! WalletProtectionUnlockView
         view.unlock = {(password) in
-            self.wallet.unlock(at: password, completion: {[weak self] (unlock) in
+           let activity = self.showActivityView(at: .unlock)
+            self.wallet.unlock(at: password, completion: {[weak self](isLock) in
+                activity.removeFromSuperview()
+                
                 if self?.unlock != nil {
-                    if unlock == true {
+                    if isLock == false {
                         self?.unlock!()
                     }
                 }
@@ -57,7 +63,10 @@ class WalletProtectionHelper {
         
         let view = getProtectionView(at: .lock) as! WalletProtectionLockView
         view.lock = {
-            self.wallet.lock()
+            let activity = self.showActivityView(at: .lock)
+            self.wallet.lock(completion: {[weak self] (lock) in
+                activity.removeFromSuperview()
+            })
         }
         showView(at: view)
     }
@@ -75,11 +84,30 @@ class WalletProtectionHelper {
         showView(at: view)
     }
     
+    private func hideActivityView() {
+    
+        if let view = self.activityView {
+            view.removeFromSuperview()
+        }
+    }
+    
+    private func showActivityView(at type:ProtectionViewType) -> UIView {
+        
+        let view = getProtectionView(at: .activity) as! WalletProtectionActivityView
+        view.type = type
+        self.activityView = view
+        showView(at: view)
+        return view
+    }
+    
     private func showWarningView(at text:String) {
         
         let view = getProtectionView(at: .warning) as! WalletProtectionWarningView
         view.encrypt = {
-            self.wallet.protect(at:text)
+           let activity = self.showActivityView(at: .protection)
+            self.wallet.protect(at: text, completion: {[weak self] (protect) in
+                activity.removeFromSuperview()
+            })
         }
         showView(at: view)
     }
