@@ -16,6 +16,7 @@
 		2D09DB901E9D65870013970F /* WalletProtectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */; };
 		2D09DB921E9D67CF0013970F /* WalletProtectionWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */; };
 		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
+		2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */; };
 		2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6511E926E690088AD31 /* RecordCell.swift */; };
 		2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */; };
 		2D21D6661E926E690088AD31 /* CreateNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */; };
@@ -229,6 +230,7 @@
 		2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionView.swift; sourceTree = "<group>"; };
 		2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionWarningView.swift; sourceTree = "<group>"; };
 		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
+		2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionActivityView.swift; sourceTree = "<group>"; };
 		2D21D6511E926E690088AD31 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesNVSViewController.swift; sourceTree = "<group>"; };
 		2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNVSViewController.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				2D09DB8D1E9D651A0013970F /* WalletProtectionLockView.swift */,
 				2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */,
 				2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */,
+				2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */,
 			);
 			path = WalletProtection;
 			sourceTree = "<group>";
@@ -2021,6 +2024,7 @@
 				2D997B5F1E7AD24E00630560 /* MyAddressBook.swift in Sources */,
 				2D997BC61E7AD2B600630560 /* LoginButton.swift in Sources */,
 				2D997B161E7AD1FF00630560 /* DropDownCell.swift in Sources */,
+				2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */,
 				2D4877D01E8147CC0084129C /* BaseModel.swift in Sources */,
 				2D09DB8C1E9D64E90013970F /* WalletProtectionUnlockView.swift in Sources */,
 				2D997B0D1E7AD1FF00630560 /* UIViewController + Utils.swift in Sources */,

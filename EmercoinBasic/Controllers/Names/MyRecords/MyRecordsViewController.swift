@@ -21,8 +21,6 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     var records = Records()
     let disposeBag = DisposeBag()
     
-    var searchString:String = ""
-    
     var tableCellAction:TableCellAction = .add
     
     internal var deleteRecord:Record?
@@ -38,20 +36,16 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         tableView.baseSetup()
         setupRecords()
         
-        if searchString.isEmpty {
+        if records.searchString.isEmpty {
             setupRefreshControl()
             setupActivityIndicator()
             records.load()
-        } else {
-            records.searchString = searchString
-            records.searchName()
         }
-        
         updateUI()
     }
     
     private func updateUI() {
-        let count = searchString.isEmpty ? records.records.count : records.searchRecords.count
+        let count = records.searchString.isEmpty ? records.records.count : records.searchRecords.count
         noNotesView.isHidden =  count != 0
     }
     

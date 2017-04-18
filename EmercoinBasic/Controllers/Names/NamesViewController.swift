@@ -33,7 +33,7 @@ class NamesViewController: BaseViewController {
     private var data:Any?
     private var isHasData = false
     
-    var searchText = ""
+    var records:Records?
     var createPressed: ((_ data:Any) -> (Void))?
     var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
@@ -169,7 +169,9 @@ class NamesViewController: BaseViewController {
         case .searchResults:
             let vc = SearchNVSResultsViewController.controller() as! SearchNVSResultsViewController
             //vc.searchText = searchText
-            vc.searchString = searchText
+            if let records = self.records {
+                vc.records = records
+            }
             vc.createPressed = createPressed
             controller = vc
             

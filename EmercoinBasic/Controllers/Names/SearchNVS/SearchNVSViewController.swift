@@ -33,13 +33,17 @@ class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
     
     @IBAction func searchButtonPressed() {
         
-        showResultsController()
+        let records = Records()
+        records.searchString = nameTextField.text!
+        records.searchName {[weak self] in
+            self?.showResultsController(at: records)
+        }
     }
     
-    private func showResultsController() {
+    private func showResultsController(at records:Records) {
         let controller = NamesViewController.controller() as! NamesViewController
         controller.subController = .searchResults
-        controller.searchText = nameTextField.text!
+        controller.records = records
         controller.createPressed = createPressed
         navigationController?.pushViewController(controller, animated: true)
     }

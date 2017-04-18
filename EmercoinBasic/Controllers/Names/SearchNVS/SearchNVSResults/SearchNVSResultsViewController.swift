@@ -20,7 +20,7 @@ class SearchNVSResultsViewController: MyRecordsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textLabel.text = String(format:"Your query\n %@\n not found",searchString)
+        textLabel.text = String(format:"Your query\n %@\n not found",records.searchString)
     }
     
     @IBAction func back() {
@@ -30,7 +30,7 @@ class SearchNVSResultsViewController: MyRecordsViewController {
     @IBAction func createButtonPressed() {
        // parent?.navigationController?.popViewController(animated: true)
         
-        let name = searchString
+        let name = records.searchString
         
         let data = ["name":name]
         

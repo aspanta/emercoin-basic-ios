@@ -120,7 +120,7 @@ class Records {
         }
     }
     
-    func searchName() {
+    func searchName(completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.searchName(at: [self.searchString] as AnyObject, completion: {[weak self] (data, error) in
             if error == nil {
@@ -138,6 +138,10 @@ class Records {
                 self?.success.onNext(true)
             } else {
                 self?.success.onNext(false)
+            }
+            
+            if completion != nil {
+                completion!()
             }
         })
     }
