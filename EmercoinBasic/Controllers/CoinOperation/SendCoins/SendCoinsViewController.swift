@@ -53,6 +53,7 @@ class SendCoinsViewController: BaseViewController {
                 return
             }
             amountTextField.text = amount
+            sendButton.isEnabled = true
         }
     }
     

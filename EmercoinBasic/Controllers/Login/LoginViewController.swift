@@ -62,17 +62,6 @@ class LoginViewController: BaseViewController {
         viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
             .addDisposableTo(disposeBag)
         
-        viewModel.hostString.bindTo(hostTextField.rx.text)
-            .addDisposableTo(disposeBag)
-        viewModel.portString.bindTo(portTextField.rx.text)
-            .addDisposableTo(disposeBag)
-        viewModel.loginString.bindTo(loginTextField.rx.text)
-            .addDisposableTo(disposeBag)
-        viewModel.passwordString.bindTo(passwordTextField.rx.text)
-            .addDisposableTo(disposeBag)
-        viewModel.protocolString.bindTo(protocolTextField.rx.text)
-            .addDisposableTo(disposeBag)
-        
         setupLogin()
         
         setupActivityIndicator()

@@ -23,26 +23,17 @@ class LoginViewModel {
     var successLogin = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
-    
-    var hostString = PublishSubject<String>()
-    var portString = PublishSubject<String>()
-    var loginString = PublishSubject<String>()
-    var passwordString = PublishSubject<String>()
-    var protocolString = PublishSubject<String>()
 
     var isLoading = false
-    var isValid = false
     
     private var settings = AppManager.sharedInstance.settings
     
     func validateCredentials() {
         
-        let valid = isValid && (host.length > 0 && port.length > 0 && webProtocol.length > 0)
+        let valid = host.length > 0 && port.length > 0 && webProtocol.length > 0 && login.length > 0
+            && password.length > 0 && isChecked
         
         isValidCredentials.onNext(valid)
-        
-        isValid = login.length > 0 && password.length > 0 && isChecked
-        isValidCredentials.onNext(isValid)
     }
     
     func prepareUI() {
@@ -52,22 +43,6 @@ class LoginViewModel {
             topConstraint.onNext(CGFloat(value))
             leftConstraint.onNext(CGFloat(value))
         }
-    }
-    
-    func clearFields() {
-        
-        host = ""
-        port = ""
-        login = ""
-        password = ""
-        webProtocol = ""
-        
-        hostString.onNext(host)
-        portString.onNext(port)
-        loginString.onNext(login)
-        passwordString.onNext(password)
-        protocolString.onNext(webProtocol)
-        
     }
     
     func performLogin() {
