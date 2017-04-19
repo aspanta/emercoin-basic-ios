@@ -33,9 +33,13 @@ class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
     
     @IBAction func searchButtonPressed() {
         
+        if isLoading == true {return}
+        
         let records = Records()
         records.searchString = nameTextField.text!
+        isLoading = true
         records.searchName {[weak self] in
+            self?.isLoading = false
             self?.showResultsController(at: records)
         }
     }

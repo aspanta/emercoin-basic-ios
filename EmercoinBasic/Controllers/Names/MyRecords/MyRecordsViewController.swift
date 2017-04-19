@@ -125,6 +125,14 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     
     private func showSuccessDeleteNameView() {
         
+        if let parent = self.parent?.parent as? NamesViewController  {
+            showSuccessDeleteNameView(at: parent)
+        } else {
+            if let parent = self.parent as? NamesViewController {
+                showSuccessDeleteNameView(at: parent)
+            }
+        }
+        
         if let parent = self.parent?.parent as? NamesViewController {
             let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
                                                               frame: parent.view.frame) as! SuccessAddNameView
@@ -134,22 +142,38 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         }
     }
     
+    private func showSuccessDeleteNameView(at controlller:UIViewController) {
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+                                                              frame: controlller.view.frame) as! SuccessAddNameView
+        self.walletProtectionHelper = nil
+        self.deleteRecord = nil
+        controlller.view.addSubview(successView)
+    }
+    
     private func showProtection() {
         
         if let parent = self.parent?.parent as? NamesViewController  {
-            let protectionHelper = WalletProtectionHelper()
-            protectionHelper.fromController = parent
-            protectionHelper.cancel = {[weak self] in
-                self?.deleteRecord = nil
+            showProtection(at: parent)
+        } else {
+            if let parent = self.parent as? NamesViewController {
+                showProtection(at: parent)
             }
-            protectionHelper.unlock = {[weak self] in
-                if let record = self?.deleteRecord {
-                    self?.records.remove(record: record)
-                }
-            }
-            self.walletProtectionHelper = protectionHelper
-            protectionHelper.startProtection()
         }
+    }
+    
+    private func showProtection(at controller:UIViewController) {
+        let protectionHelper = WalletProtectionHelper()
+        protectionHelper.fromController = controller
+        protectionHelper.cancel = {[weak self] in
+            self?.deleteRecord = nil
+        }
+        protectionHelper.unlock = {[weak self] in
+            if let record = self?.deleteRecord {
+                self?.records.remove(record: record)
+            }
+        }
+        self.walletProtectionHelper = protectionHelper
+        protectionHelper.startProtection()
     }
 
 }

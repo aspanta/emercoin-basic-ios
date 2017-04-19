@@ -11,6 +11,9 @@ extension Wallet {
         
         APIManager.sharedInstance.protectWallet(at: [password] as AnyObject) {[weak self] (data, error) in
             if let error = error {
+                if completion != nil {
+                    completion!(false)
+                }
                 self?.error.onNext(error)
             } else {
                 self?.loadInfo(completion: {[weak self] in
@@ -38,6 +41,9 @@ extension Wallet {
     
     func showErrorOrLoadInfo(at error:NSError?, completion:((_ lock:Bool) -> Void)? = nil ) {
         if let error = error {
+            if completion != nil {
+                completion!(false)
+            }
             self.error.onNext(error)
         } else {
             self.loadInfo(completion: {[weak self] in

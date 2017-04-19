@@ -14,6 +14,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, TabBarO
     internal weak var statusBarView:UIView?
     
     var object:AnyObject?
+    var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

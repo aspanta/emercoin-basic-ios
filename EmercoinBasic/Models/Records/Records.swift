@@ -100,7 +100,7 @@ class Records {
         }
     }
     
-    func load() {
+    func load(completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadNames {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
@@ -112,37 +112,40 @@ class Records {
                 self?.add(records: records.filter({ (record) -> Bool in
                     return record.isExpired == false
                 }))
-                
-                //self?.success.onNext(true)
             } else {
                 self?.error.onNext(error!)
+            }
+            if completion != nil{
+                completion!()
             }
         }
     }
     
     func searchName(completion:((Void) -> Void)? = nil) {
         
-        APIManager.sharedInstance.searchName(at: [self.searchString] as AnyObject, completion: {[weak self] (data, error) in
-            if error == nil {
-                guard let record = data as? Record else {
-                    return
+        load {[weak self] in
+            APIManager.sharedInstance.searchName(at: [self?.searchString] as AnyObject, completion: {[weak self] (data, error) in
+                if error == nil {
+                    guard let record = data as? Record else {
+                        return
+                    }
+                    
+                    let realm = try! Realm()
+                    
+                    if realm.objects(Record.self).filter("name == %@",record.name).count == 0 {
+                        record.isMyRecord = false
+                    }
+                    
+                    self?.searchRecords.append(record)
+                    self?.success.onNext(true)
+                } else {
+                    self?.success.onNext(false)
                 }
                 
-                let realm = try! Realm()
-                
-                if realm.objects(Record.self).filter("name == %@",record.name).count == 0 {
-                    record.isMyRecord = false
+                if completion != nil {
+                    completion!()
                 }
-                
-                self?.searchRecords.append(record)
-                self?.success.onNext(true)
-            } else {
-                self?.success.onNext(false)
-            }
-            
-            if completion != nil {
-                completion!()
-            }
-        })
+            })
+        }
     }
 }
