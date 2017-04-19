@@ -17,6 +17,8 @@
 		2D09DB921E9D67CF0013970F /* WalletProtectionWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */; };
 		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
 		2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */; };
+		2D15E7931EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */; };
+		2D15E7951EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */; };
 		2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6511E926E690088AD31 /* RecordCell.swift */; };
 		2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */; };
 		2D21D6661E926E690088AD31 /* CreateNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */; };
@@ -231,6 +233,8 @@
 		2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionWarningView.swift; sourceTree = "<group>"; };
 		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
 		2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionActivityView.swift; sourceTree = "<group>"; };
+		2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptActivityView.swift; sourceTree = "<group>"; };
+		2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptSuccessView.swift; sourceTree = "<group>"; };
 		2D21D6511E926E690088AD31 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesNVSViewController.swift; sourceTree = "<group>"; };
 		2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNVSViewController.swift; sourceTree = "<group>"; };
@@ -494,6 +498,8 @@
 				2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */,
 				2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */,
 				2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */,
+				2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */,
+				2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */,
 			);
 			path = WalletProtection;
 			sourceTree = "<group>";
@@ -1949,6 +1955,7 @@
 				2D997B081E7AD1FF00630560 /* UIColor + Utils.swift in Sources */,
 				2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */,
 				2D997CE31E7AD3B200630560 /* HomeBalanceCell.swift in Sources */,
+				2D15E7931EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift in Sources */,
 				2D997B1E1E7AD1FF00630560 /* ButtonBarView.swift in Sources */,
 				2D997CD61E7AD3B200630560 /* RecipientAddressViewController.swift in Sources */,
 				2D997BD01E7AD2B600630560 /* PopupView.swift in Sources */,
@@ -2000,6 +2007,7 @@
 				2D6620951E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift in Sources */,
 				2D997BB91E7AD2B600630560 /* DeleteContactView.swift in Sources */,
 				2D997AFE1E7AD1FF00630560 /* BaseNavigationController.swift in Sources */,
+				2D15E7951EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift in Sources */,
 				2D997BBF1E7AD2B600630560 /* FeedBackSendButton.swift in Sources */,
 				2D997CD41E7AD3B200630560 /* MyAdressViewController + TableView.swift in Sources */,
 				2D997BB61E7AD2B600630560 /* CheckButton.swift in Sources */,

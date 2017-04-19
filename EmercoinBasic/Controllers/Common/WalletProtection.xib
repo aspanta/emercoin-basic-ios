@@ -213,99 +213,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-69" y="135"/>
         </view>
-        <view contentMode="scaleToFill" id="HUD-fs-exo" customClass="WalletProtectionWarningView" customModule="EmercoinBasic" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-lI-DGc" userLabel="main view">
-                    <rect key="frame" x="33" y="246" width="348" height="244.5"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-QA-EKw">
-                            <rect key="frame" x="0.0" y="0.0" width="347" height="244.5"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Protection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTI-gU-Zr0">
-                            <rect key="frame" x="61" y="30" width="225" height="19"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="19" id="MDy-SF-bOk"/>
-                                <constraint firstAttribute="width" constant="225" id="Tad-YN-vDF"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4n-iA-u93">
-                            <rect key="frame" x="70" y="189.5" width="209" height="31"/>
-                            <subviews>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGq-a5-lhT" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                    <state key="normal" title="Encrypt">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="doneButtonPressedWithSender:" destination="HUD-fs-exo" eventType="touchUpInside" id="eKm-05-x5y"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyS-7m-Rq4" customClass="CancelButton" customModule="EmercoinBasic" customModuleProvider="target">
-                                    <rect key="frame" x="105" y="0.0" width="104" height="31"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.85490196080000003" green="0.25098039220000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                    <state key="normal" title="Cancel">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="cancelButtonPressedWithSender:" destination="HUD-fs-exo" eventType="touchUpInside" id="VMu-9x-Pw2"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="209" id="fI5-BL-VYE"/>
-                                <constraint firstAttribute="height" constant="31" id="onM-Ln-RgO"/>
-                            </constraints>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bf-eQ-wo5">
-                            <rect key="frame" x="35" y="69" width="277" height="105.5"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="aaL-Na-E4B"/>
-                                <constraint firstAttribute="width" constant="277" id="pv5-jc-Am8"/>
-                            </constraints>
-                            <string key="text">This operation can not be undone!
-You will lose access to your wallet if you forget your password!
-Would you like to continue anyway?</string>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="0bf-eQ-wo5" firstAttribute="leading" secondItem="XDc-lI-DGc" secondAttribute="leading" constant="35" id="0Yk-dt-HpY"/>
-                        <constraint firstAttribute="trailing" secondItem="0bf-eQ-wo5" secondAttribute="trailing" constant="36" id="2AM-Aj-eMa"/>
-                        <constraint firstItem="yAh-QA-EKw" firstAttribute="top" secondItem="XDc-lI-DGc" secondAttribute="top" id="8ZK-tw-9wa"/>
-                        <constraint firstItem="XTI-gU-Zr0" firstAttribute="top" secondItem="XDc-lI-DGc" secondAttribute="top" constant="30" id="QTe-SO-Z8b"/>
-                        <constraint firstItem="yAh-QA-EKw" firstAttribute="leading" secondItem="XDc-lI-DGc" secondAttribute="leading" id="RZf-le-ukq"/>
-                        <constraint firstItem="l4n-iA-u93" firstAttribute="centerX" secondItem="XDc-lI-DGc" secondAttribute="centerX" id="SJd-2T-URN"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="bYA-am-ehx"/>
-                        <constraint firstItem="0bf-eQ-wo5" firstAttribute="top" secondItem="XTI-gU-Zr0" secondAttribute="bottom" constant="20" id="kej-ut-KZB"/>
-                        <constraint firstItem="l4n-iA-u93" firstAttribute="top" secondItem="0bf-eQ-wo5" secondAttribute="bottom" constant="15" id="o1B-UM-9Fa"/>
-                        <constraint firstAttribute="bottom" secondItem="yAh-QA-EKw" secondAttribute="bottom" id="pxW-wc-fz8"/>
-                        <constraint firstAttribute="bottom" secondItem="l4n-iA-u93" secondAttribute="bottom" constant="24" id="qUd-0r-pe3"/>
-                        <constraint firstAttribute="trailing" secondItem="yAh-QA-EKw" secondAttribute="trailing" constant="1" id="wDp-xZ-Wg4"/>
-                        <constraint firstItem="XTI-gU-Zr0" firstAttribute="centerX" secondItem="XDc-lI-DGc" secondAttribute="centerX" id="ytY-bT-DP9"/>
-                    </constraints>
-                </view>
-            </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="XDc-lI-DGc" firstAttribute="centerY" secondItem="HUD-fs-exo" secondAttribute="centerY" id="Ini-UC-Srd"/>
-                <constraint firstItem="XDc-lI-DGc" firstAttribute="leading" secondItem="HUD-fs-exo" secondAttribute="leading" constant="33" id="NQm-9x-ChF"/>
-                <constraint firstAttribute="trailing" secondItem="XDc-lI-DGc" secondAttribute="trailing" constant="33" id="SmS-QG-wsp"/>
-                <constraint firstItem="XDc-lI-DGc" firstAttribute="centerX" secondItem="HUD-fs-exo" secondAttribute="centerX" id="qcl-iK-zHb"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="899" y="135"/>
-        </view>
         <view contentMode="scaleToFill" id="4LR-Y6-08z" customClass="WalletProtectionView" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -459,6 +366,99 @@ Would you like to continue anyway?</string>
             </connections>
             <point key="canvasLocation" x="417" y="135"/>
         </view>
+        <view contentMode="scaleToFill" id="HUD-fs-exo" customClass="WalletProtectionWarningView" customModule="EmercoinBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-lI-DGc" userLabel="main view">
+                    <rect key="frame" x="33" y="246.5" width="348" height="244.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-QA-EKw">
+                            <rect key="frame" x="0.0" y="0.0" width="347" height="244.5"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Protection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTI-gU-Zr0">
+                            <rect key="frame" x="61" y="30" width="225" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="MDy-SF-bOk"/>
+                                <constraint firstAttribute="width" constant="225" id="Tad-YN-vDF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4n-iA-u93">
+                            <rect key="frame" x="70" y="189.5" width="209" height="31"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGq-a5-lhT" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                    <state key="normal" title="Encrypt">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="doneButtonPressedWithSender:" destination="HUD-fs-exo" eventType="touchUpInside" id="eKm-05-x5y"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyS-7m-Rq4" customClass="CancelButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                    <rect key="frame" x="105" y="0.0" width="104" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.85490196080000003" green="0.25098039220000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonPressedWithSender:" destination="HUD-fs-exo" eventType="touchUpInside" id="VMu-9x-Pw2"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="209" id="fI5-BL-VYE"/>
+                                <constraint firstAttribute="height" constant="31" id="onM-Ln-RgO"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bf-eQ-wo5">
+                            <rect key="frame" x="35" y="69" width="277" height="105.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="aaL-Na-E4B"/>
+                                <constraint firstAttribute="width" constant="277" id="pv5-jc-Am8"/>
+                            </constraints>
+                            <string key="text">This operation can not be undone!
+You will lose access to your wallet if you forget your password!
+Would you like to continue anyway?</string>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0bf-eQ-wo5" firstAttribute="leading" secondItem="XDc-lI-DGc" secondAttribute="leading" constant="35" id="0Yk-dt-HpY"/>
+                        <constraint firstAttribute="trailing" secondItem="0bf-eQ-wo5" secondAttribute="trailing" constant="36" id="2AM-Aj-eMa"/>
+                        <constraint firstItem="yAh-QA-EKw" firstAttribute="top" secondItem="XDc-lI-DGc" secondAttribute="top" id="8ZK-tw-9wa"/>
+                        <constraint firstItem="XTI-gU-Zr0" firstAttribute="top" secondItem="XDc-lI-DGc" secondAttribute="top" constant="30" id="QTe-SO-Z8b"/>
+                        <constraint firstItem="yAh-QA-EKw" firstAttribute="leading" secondItem="XDc-lI-DGc" secondAttribute="leading" id="RZf-le-ukq"/>
+                        <constraint firstItem="l4n-iA-u93" firstAttribute="centerX" secondItem="XDc-lI-DGc" secondAttribute="centerX" id="SJd-2T-URN"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="bYA-am-ehx"/>
+                        <constraint firstItem="0bf-eQ-wo5" firstAttribute="top" secondItem="XTI-gU-Zr0" secondAttribute="bottom" constant="20" id="kej-ut-KZB"/>
+                        <constraint firstItem="l4n-iA-u93" firstAttribute="top" secondItem="0bf-eQ-wo5" secondAttribute="bottom" constant="15" id="o1B-UM-9Fa"/>
+                        <constraint firstAttribute="bottom" secondItem="yAh-QA-EKw" secondAttribute="bottom" id="pxW-wc-fz8"/>
+                        <constraint firstAttribute="bottom" secondItem="l4n-iA-u93" secondAttribute="bottom" constant="24" id="qUd-0r-pe3"/>
+                        <constraint firstAttribute="trailing" secondItem="yAh-QA-EKw" secondAttribute="trailing" constant="1" id="wDp-xZ-Wg4"/>
+                        <constraint firstItem="XTI-gU-Zr0" firstAttribute="centerX" secondItem="XDc-lI-DGc" secondAttribute="centerX" id="ytY-bT-DP9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XDc-lI-DGc" firstAttribute="centerY" secondItem="HUD-fs-exo" secondAttribute="centerY" id="Ini-UC-Srd"/>
+                <constraint firstItem="XDc-lI-DGc" firstAttribute="leading" secondItem="HUD-fs-exo" secondAttribute="leading" constant="33" id="NQm-9x-ChF"/>
+                <constraint firstAttribute="trailing" secondItem="XDc-lI-DGc" secondAttribute="trailing" constant="33" id="SmS-QG-wsp"/>
+                <constraint firstItem="XDc-lI-DGc" firstAttribute="centerX" secondItem="HUD-fs-exo" secondAttribute="centerX" id="qcl-iK-zHb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="899" y="135"/>
+        </view>
         <view contentMode="scaleToFill" id="dPE-Ay-66C" customClass="WalletProtectionActivityView" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -509,6 +509,156 @@ Would you like to continue anyway?</string>
                 <outlet property="titleLabel" destination="jFc-G5-gkR" id="pNv-Gv-1jf"/>
             </connections>
             <point key="canvasLocation" x="1394" y="135"/>
+        </view>
+        <view contentMode="scaleToFill" id="pVt-1k-aw4" customClass="WalletProtectionEncryptSuccessView" customModule="EmercoinBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJh-vi-0HB">
+                    <rect key="frame" x="33" y="290" width="348" height="157"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="OsG-Ld-udv">
+                            <rect key="frame" x="0.0" y="0.0" width="347" height="157"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet has been encrypted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyx-aw-6f9">
+                            <rect key="frame" x="36" y="45" width="277" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="277" id="7L4-U4-7OM"/>
+                                <constraint firstAttribute="height" constant="43" id="b9K-hk-FK7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCQ-yA-PyW">
+                            <rect key="frame" x="67" y="18" width="214" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="214" id="TOm-E1-a6K"/>
+                                <constraint firstAttribute="height" constant="19" id="X65-mV-8VV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjE-59-YIe">
+                            <rect key="frame" x="140" y="103" width="67" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="67" id="TgZ-WW-Ert"/>
+                                <constraint firstAttribute="height" constant="30" id="bXm-Po-fpJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <state key="normal" title="Ok">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="doneButtonPressedWithSender:" destination="pVt-1k-aw4" eventType="touchUpInside" id="tc7-96-dmz"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="bCQ-yA-PyW" firstAttribute="centerX" secondItem="xJh-vi-0HB" secondAttribute="centerX" id="AYT-qW-mDS"/>
+                        <constraint firstItem="OsG-Ld-udv" firstAttribute="leading" secondItem="xJh-vi-0HB" secondAttribute="leading" id="D3f-dC-X2F"/>
+                        <constraint firstItem="OsG-Ld-udv" firstAttribute="top" secondItem="xJh-vi-0HB" secondAttribute="top" id="OFD-Eh-u7P"/>
+                        <constraint firstItem="fjE-59-YIe" firstAttribute="centerX" secondItem="xJh-vi-0HB" secondAttribute="centerX" id="WGk-Un-j6I"/>
+                        <constraint firstAttribute="bottom" secondItem="fjE-59-YIe" secondAttribute="bottom" constant="24" id="ch5-BA-ZiD"/>
+                        <constraint firstAttribute="trailing" secondItem="OsG-Ld-udv" secondAttribute="trailing" constant="1" id="hsh-c1-yxN"/>
+                        <constraint firstItem="Oyx-aw-6f9" firstAttribute="centerX" secondItem="xJh-vi-0HB" secondAttribute="centerX" id="n0M-mJ-wWT"/>
+                        <constraint firstAttribute="bottom" secondItem="OsG-Ld-udv" secondAttribute="bottom" id="wEs-td-wfo"/>
+                        <constraint firstItem="Oyx-aw-6f9" firstAttribute="top" secondItem="bCQ-yA-PyW" secondAttribute="bottom" constant="8" id="xH8-1b-WXm"/>
+                        <constraint firstAttribute="height" constant="157" id="xyf-3b-DgE"/>
+                        <constraint firstItem="bCQ-yA-PyW" firstAttribute="top" secondItem="xJh-vi-0HB" secondAttribute="top" constant="18" id="yAc-lH-gM1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xJh-vi-0HB" firstAttribute="centerY" secondItem="pVt-1k-aw4" secondAttribute="centerY" id="HvJ-63-MUR"/>
+                <constraint firstItem="xJh-vi-0HB" firstAttribute="leading" secondItem="pVt-1k-aw4" secondAttribute="leading" constant="33" id="QAQ-oy-tIX"/>
+                <constraint firstAttribute="trailing" secondItem="xJh-vi-0HB" secondAttribute="trailing" constant="33" id="RlU-Ec-ccM"/>
+                <constraint firstItem="xJh-vi-0HB" firstAttribute="centerX" secondItem="pVt-1k-aw4" secondAttribute="centerX" id="Rm6-zb-cyc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1880" y="143"/>
+        </view>
+        <view contentMode="scaleToFill" id="wtd-a4-FqM" customClass="WalletProtectionEncryptActivityView" customModule="EmercoinBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA1-Qr-cyd" userLabel="main view">
+                    <rect key="frame" x="107" y="293.5" width="200" height="150"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="vAC-c2-eNG">
+                            <rect key="frame" x="0.0" y="0.0" width="199" height="150"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encrypt Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhW-B4-6g4">
+                            <rect key="frame" x="8" y="30" width="184" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="PEc-wb-ult"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HiH-cM-DhV">
+                            <rect key="frame" x="24" y="74" width="150" height="2"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="eDr-do-S23"/>
+                            </constraints>
+                            <color key="progressTintColor" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ou9-W8-DuF">
+                            <rect key="frame" x="82" y="98" width="35" height="22"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-6b-QjW">
+                            <rect key="frame" x="165" y="112" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="P0o-Ot-tdj"/>
+                                <constraint firstAttribute="height" constant="20" id="f7O-yJ-39C"/>
+                            </constraints>
+                            <color key="color" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="HiH-cM-DhV" firstAttribute="leading" secondItem="eA1-Qr-cyd" secondAttribute="leading" constant="24" id="1J8-ez-HYT"/>
+                        <constraint firstAttribute="trailing" secondItem="VhW-B4-6g4" secondAttribute="trailing" constant="8" id="1wc-Pu-Him"/>
+                        <constraint firstAttribute="width" constant="200" id="27k-Y2-fTH"/>
+                        <constraint firstItem="VhW-B4-6g4" firstAttribute="centerX" secondItem="eA1-Qr-cyd" secondAttribute="centerX" id="AFJ-Ik-2XP"/>
+                        <constraint firstItem="VhW-B4-6g4" firstAttribute="leading" secondItem="eA1-Qr-cyd" secondAttribute="leading" constant="8" id="BrF-KG-74T"/>
+                        <constraint firstItem="Ou9-W8-DuF" firstAttribute="top" secondItem="HiH-cM-DhV" secondAttribute="bottom" constant="22" id="Ov8-82-oDM"/>
+                        <constraint firstItem="VhW-B4-6g4" firstAttribute="top" secondItem="eA1-Qr-cyd" secondAttribute="top" constant="30" id="Sjf-PK-BRy"/>
+                        <constraint firstAttribute="height" constant="150" id="VOO-HC-lRu"/>
+                        <constraint firstItem="vAC-c2-eNG" firstAttribute="top" secondItem="eA1-Qr-cyd" secondAttribute="top" id="ZTr-eh-ZpW"/>
+                        <constraint firstItem="Ou9-W8-DuF" firstAttribute="centerX" secondItem="eA1-Qr-cyd" secondAttribute="centerX" id="ZbF-D2-xST"/>
+                        <constraint firstAttribute="bottom" secondItem="vAC-c2-eNG" secondAttribute="bottom" id="dYP-1V-9px"/>
+                        <constraint firstAttribute="bottom" secondItem="Ou9-W8-DuF" secondAttribute="bottom" constant="30" id="fH4-oI-ECm"/>
+                        <constraint firstItem="HiH-cM-DhV" firstAttribute="top" secondItem="VhW-B4-6g4" secondAttribute="bottom" constant="25" id="nsy-XU-oo6"/>
+                        <constraint firstAttribute="trailing" secondItem="vAC-c2-eNG" secondAttribute="trailing" constant="1" id="ooP-l2-qvO"/>
+                        <constraint firstItem="vAC-c2-eNG" firstAttribute="leading" secondItem="eA1-Qr-cyd" secondAttribute="leading" id="qnU-68-VM5"/>
+                        <constraint firstAttribute="trailing" secondItem="BUf-6b-QjW" secondAttribute="trailing" constant="15" id="uCU-rh-0NM"/>
+                        <constraint firstAttribute="trailing" secondItem="HiH-cM-DhV" secondAttribute="trailing" constant="26" id="whb-8l-blV"/>
+                        <constraint firstAttribute="bottom" secondItem="BUf-6b-QjW" secondAttribute="bottom" constant="18" id="yAc-fT-vR4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eA1-Qr-cyd" firstAttribute="centerY" secondItem="wtd-a4-FqM" secondAttribute="centerY" id="9nD-tE-na4"/>
+                <constraint firstItem="eA1-Qr-cyd" firstAttribute="centerX" secondItem="wtd-a4-FqM" secondAttribute="centerX" id="CuG-Ly-9wZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicator" destination="BUf-6b-QjW" id="Mdg-OT-tLK"/>
+                <outlet property="progressBarView" destination="HiH-cM-DhV" id="DuP-eP-Zs3"/>
+                <outlet property="timeLabel" destination="Ou9-W8-DuF" id="tgS-NF-Bns"/>
+            </connections>
+            <point key="canvasLocation" x="2359" y="143"/>
         </view>
     </objects>
     <resources>

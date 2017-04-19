@@ -11,7 +11,8 @@ enum ProtectionViewType:Int {
     case protection = 2
     case warning = 3
     case activity = 4
-    
+    case encryptActivity = 6
+    case successEncrypt = 5
 }
 
 class WalletProtectionHelper {
@@ -33,7 +34,6 @@ class WalletProtectionHelper {
         } else {
             showProtectionView()
         }
-        
     }
     
     private func showUnlockView() {
@@ -100,14 +100,34 @@ class WalletProtectionHelper {
         return view
     }
     
+    private func showEncryptActivityView() {
+        
+        let view = getProtectionView(at: .encryptActivity) as! WalletProtectionEncryptActivityView
+        view.checkEncrypt = {
+            self.wallet.loadInfo{
+                if self.wallet.isProtected == true {
+                    view.removeFromSuperview()
+                    self.showSuccessEncryptView()
+                } else {
+                    view.startTimer(at:30)
+                }
+            }
+        }
+        showView(at: view)
+    }
+    
+    private func showSuccessEncryptView() {
+        
+        let view = getProtectionView(at: .successEncrypt)
+        showView(at: view)
+    }
+    
     private func showWarningView(at text:String) {
         
         let view = getProtectionView(at: .warning) as! WalletProtectionWarningView
         view.encrypt = {
-           let activity = self.showActivityView(at: .protection)
-            self.wallet.protect(at: text, completion: {[weak self] (protect) in
-                activity.removeFromSuperview()
-            })
+            self.wallet.protect(at: text)
+            self.showEncryptActivityView()
         }
         showView(at: view)
     }

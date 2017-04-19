@@ -8,7 +8,7 @@ import UIKit
 class ProtectWalletAPI: BaseAPI {
     
     override var timeRequest:Double {
-        return 120
+        return 3
     }
 
     override func parameters() -> [String : Any] {
@@ -36,6 +36,10 @@ class ProtectWalletAPI: BaseAPI {
         } else {
             super.apiDidReturnData(data: data)
         }
+    }
+    
+    override func apiDidReturnError(error: Error) {
+        print(error)
     }
     
 }
