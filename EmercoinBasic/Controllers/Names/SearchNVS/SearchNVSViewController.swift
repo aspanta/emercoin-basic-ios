@@ -7,7 +7,8 @@ import UIKit
 
 class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
     
-    @IBOutlet internal var nameTextField:BaseTextField!
+    @IBOutlet internal weak var nameTextField:BaseTextField!
+    @IBOutlet internal weak var searchButton:BaseButton!
 
     override class func storyboardName() -> String {
         return "Names"
@@ -18,7 +19,7 @@ class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupSearch()
     }
     
     override func setupUI() {
@@ -29,6 +30,20 @@ class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Search NVS")
+    }
+    
+    private func setupSearch() {
+        
+        nameTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+    }
+    
+    private func checkValidation() {
+        
+        let text = nameTextField.text ?? ""
+        
+        searchButton.isEnabled = !text.isEmpty
     }
     
     @IBAction func searchButtonPressed() {

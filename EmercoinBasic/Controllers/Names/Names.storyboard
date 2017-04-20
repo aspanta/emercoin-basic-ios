@@ -982,7 +982,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsY-fg-F5a" customClass="FindDPOButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsY-fg-F5a" customClass="FindDPOButton" customModule="EmercoinBasic" customModuleProvider="target">
                                                 <rect key="frame" x="98" y="194" width="180" height="44"/>
                                                 <color key="backgroundColor" red="0.5490196078431373" green="0.36470588235294116" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -992,6 +992,11 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                                                 <state key="normal" title="Find">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="8C5DA3"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="searchButtonPressed" destination="2sf-yt-Zfg" eventType="touchUpInside" id="nR3-h8-zzL"/>
                                                 </connections>
@@ -1081,6 +1086,7 @@ First - define: Emer - is a technology and network infrastructure. Emerkoin - cr
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="Kn2-zD-T4x" id="48B-ms-v3P"/>
+                        <outlet property="searchButton" destination="OsY-fg-F5a" id="D3W-YG-8CF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpZ-RT-WN7" userLabel="First Responder" sceneMemberID="firstResponder"/>

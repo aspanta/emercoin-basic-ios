@@ -5,7 +5,7 @@
 
 import UIKit
 
-class FindDPOButton: UIButton {
+class FindDPOButton: BaseButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()
