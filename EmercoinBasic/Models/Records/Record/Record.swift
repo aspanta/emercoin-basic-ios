@@ -15,6 +15,7 @@ class Record: Object, Mappable {
     dynamic var value = ""
     dynamic var address = ""
     dynamic var isExpired = false
+    dynamic var isDeleted = false
     dynamic var isMyRecord = true
     
     dynamic var expiresIn = 0 {
@@ -34,5 +35,6 @@ class Record: Object, Mappable {
         value <- map["value"]
         expiresIn <- map["expires_in"]
         isExpired <- map["expired"]
+        isDeleted <- map["deleted"]
     }
 }

@@ -132,8 +132,15 @@ class Records {
                         record.isMyRecord = false
                     }
                     
-                    self?.searchRecords.append(record)
-                    self?.success.onNext(true)
+                    var result = true
+                    
+                    if record.isDeleted || record.isExpired {
+                        result = false
+                    } else {
+                        self?.searchRecords.append(record)
+                    }
+                    
+                    self?.success.onNext(result)
                 } else {
                     self?.success.onNext(false)
                 }
