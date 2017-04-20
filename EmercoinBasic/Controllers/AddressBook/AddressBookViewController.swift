@@ -13,12 +13,14 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
     @IBOutlet internal weak var backButton:UIButton!
     @IBOutlet internal weak var addButton:UIButton!
     @IBOutlet internal weak var noAddressesView:UIView!
+    @IBOutlet internal weak var lockButton:LockButton!
     
     @IBOutlet internal weak var tableView:UITableView!
     
     var selectedAddress:((_ text:String) -> (Void))?
     
     var addressBook = AddressBook()
+    private var wallet = AppManager.sharedInstance.wallet
     
     let disposeBag = DisposeBag()
     
@@ -36,9 +38,19 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
         updateUI()
     }
     
+    override func setupUI() {
+        super.setupUI()
+        
+        wallet.success.subscribe(onNext: {[weak self] (state) in
+            self?.updateUI()
+        })
+         .addDisposableTo(disposeBag)
+    }
+    
     internal func updateUI() {
         
         noAddressesView.isHidden = addressBook.contacts.count != 0
+        lockButton.isLocked = wallet.isLocked
     }
     
     private func setupAddresses() {

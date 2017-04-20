@@ -107,6 +107,17 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EG-4R-VMF" customClass="LockButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                        <rect key="frame" x="317" y="0.0" width="58" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="58" id="BJs-mh-y0h"/>
+                                            <constraint firstAttribute="height" constant="61" id="rhL-s5-jDj"/>
+                                        </constraints>
+                                        <state key="normal" image="lock_icon"/>
+                                        <connections>
+                                            <action selector="lockButtonPressed" destination="G3T-U3-Usv" eventType="touchUpInside" id="r7X-rP-BfS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -118,6 +129,8 @@
                                     <constraint firstAttribute="trailing" secondItem="ZZn-GF-oI6" secondAttribute="trailing" constant="8" id="a8I-Jo-KhC"/>
                                     <constraint firstItem="NpS-Qq-d2c" firstAttribute="leading" secondItem="9oL-rD-8bM" secondAttribute="leading" id="eyd-Bx-Emo"/>
                                     <constraint firstAttribute="height" constant="186" id="g57-E3-RiS"/>
+                                    <constraint firstAttribute="trailing" secondItem="3EG-4R-VMF" secondAttribute="trailing" id="m9E-xk-OA4"/>
+                                    <constraint firstItem="3EG-4R-VMF" firstAttribute="top" secondItem="9oL-rD-8bM" secondAttribute="top" id="qqo-Ef-2iM"/>
                                     <constraint firstItem="ibT-lA-QG1" firstAttribute="top" secondItem="9oL-rD-8bM" secondAttribute="top" id="zdH-x4-OtZ"/>
                                     <constraint firstItem="ZZn-GF-oI6" firstAttribute="leading" secondItem="Cb8-eK-jgw" secondAttribute="trailing" constant="20" id="zqS-lP-r3h"/>
                                 </constraints>
@@ -211,6 +224,7 @@
                     <connections>
                         <outlet property="addButton" destination="Mne-7J-0Jl" id="dpj-BX-YeU"/>
                         <outlet property="backButton" destination="ibT-lA-QG1" id="Xy2-Zf-ryO"/>
+                        <outlet property="lockButton" destination="3EG-4R-VMF" id="5BL-QT-bEy"/>
                         <outlet property="menuButton" destination="NpS-Qq-d2c" id="8aF-k0-WMU"/>
                         <outlet property="noAddressesView" destination="oer-3R-WvS" id="a0v-N1-6dd"/>
                         <outlet property="tableView" destination="Nxa-WQ-DAM" id="WsD-EB-9RY"/>
@@ -224,6 +238,7 @@
     <resources>
         <image name="back_icon" width="18" height="15"/>
         <image name="book_add_emc_icon" width="24" height="24"/>
+        <image name="lock_icon" width="16" height="19"/>
         <image name="menu_icon" width="18" height="13"/>
         <image name="send_emer_icon" width="35" height="31"/>
     </resources>
