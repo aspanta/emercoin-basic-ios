@@ -51,17 +51,14 @@ class History: NSObject {
         }
     }
     
-    func load() {
+    func load(loadAll:Bool? = false) {
     
         APIManager.sharedInstance.loadTransactions {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
             if error == nil {
-                guard let transactions = data as? [HistoryTransaction] else {
-                    return
+                if loadAll == true {
+                    APIManager.sharedInstance.loadAll()
                 }
-                self?.removeAll()
-                self?.add(transactions: transactions)
-                
                 self?.success.onNext(true)
             } else {
                 self?.error.onNext(error!)

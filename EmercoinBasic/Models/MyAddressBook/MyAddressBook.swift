@@ -22,7 +22,7 @@ class MyAddressBook: AddressBook {
         }
     }
     
-    override func load() {
+    override func load(loadAll:Bool? = false) {
         
         activityIndicator.onNext(true)
         
@@ -31,34 +31,36 @@ class MyAddressBook: AddressBook {
             self?.activityIndicator.onNext(false)
             
             if error == nil {
-                guard let addresses = data as? [String] else {
-                    return
+                if loadAll == true {
+                    APIManager.sharedInstance.loadAll()
                 }
-        
-                var array:[Contact] = []
-                
-                    for i in 0...addresses.count - 1 {
-                        
-                        let address = addresses[i]
-                        
-                        if self?.contacts.filter("address = %@",address).count == 0 {
-                            let name = ""
-                            
-                            array.append(Contact(value:["name": name, "address": addresses[i], "isMyContact":true]))
-                        }
-                    }
-                
-                if array.count > 0 {
-                    self?.add(contacts: array)
-                }
-                
-                self?.removeNotUsedAddresses(at: addresses)
-                
                 self?.success.onNext(true)
             } else {
                 self?.error.onNext(error!)
             }
         }
+    }
+    
+    func processingAndAdd(at addresses:[String]) {
+        
+        var array:[Contact] = []
+        
+        for i in 0...addresses.count - 1 {
+            
+            let address = addresses[i]
+            
+            if self.contacts.filter("address = %@",address).count == 0 {
+                let name = ""
+                
+                array.append(Contact(value:["name": name, "address": addresses[i], "isMyContact":true]))
+            }
+        }
+        
+        if array.count > 0 {
+            add(contacts: array)
+        }
+        
+        removeNotUsedAddresses(at: addresses)
     }
     
     private func removeNotUsedAddresses(at addresses:[String]) {

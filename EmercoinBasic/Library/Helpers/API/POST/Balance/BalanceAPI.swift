@@ -19,6 +19,10 @@ class BalanceAPI: BaseAPI {
     override func apiDidReturnData(data: AnyObject) {
         
         if let balance = data["result"] as? Double  {
+            
+            let wallet = AppManager.sharedInstance.wallet
+            wallet.balance = balance
+            
             super.apiDidReturnData(data: balance as AnyObject)
         } else {
             super.apiDidReturnData(data: data)

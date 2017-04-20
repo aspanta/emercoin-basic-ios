@@ -80,10 +80,9 @@ class AddressBook {
             contacts[index].name = name
             contacts[index].address = address
         }
-        
     }
     
-    func load() {
+    func load(loadAll:Bool? = false) {
         
     }
     

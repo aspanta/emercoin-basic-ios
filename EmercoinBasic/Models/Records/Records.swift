@@ -100,19 +100,15 @@ class Records {
         }
     }
     
-    func load(completion:((Void) -> Void)? = nil) {
+    func load(loadAll:Bool? = false, completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadNames {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
             if error == nil {
-                guard let records = data as? [Record] else {
-                    return
-                }
-                self?.removeAll()
-                self?.add(records: records.filter({ (record) -> Bool in
-                    return record.isExpired == false
-                }))
             } else {
+                if loadAll == true {
+                    APIManager.sharedInstance.loadAll()
+                }
                 self?.error.onNext(error!)
             }
             if completion != nil{

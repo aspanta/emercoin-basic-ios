@@ -67,6 +67,6 @@ class CoinOperationsViewModel {
     }
     
     func updateWallet() {
-        wallet?.loadInfo(completion: nil)
+        wallet?.loadInfo(loadAll: true, completion: nil)
     }
 }

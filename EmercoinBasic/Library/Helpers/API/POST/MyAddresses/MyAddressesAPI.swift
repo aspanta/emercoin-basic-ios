@@ -22,6 +22,10 @@ class MyAddressesAPI: BaseAPI {
     override func apiDidReturnData(data: AnyObject) {
         
         if let addresses = data["result"] as? [String]  {
+            
+            let book = MyAddressBook()
+            book.processingAndAdd(at: addresses)
+            
             super.apiDidReturnData(data: addresses as AnyObject)
         } else {
             super.apiDidReturnData(data: data)

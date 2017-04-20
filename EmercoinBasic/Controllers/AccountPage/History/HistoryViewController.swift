@@ -23,7 +23,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        history.load()
+        history.load(loadAll:true)
     }
     
     override func viewDidLoad() {

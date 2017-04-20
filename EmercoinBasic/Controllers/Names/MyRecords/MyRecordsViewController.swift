@@ -57,7 +57,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        records.load()
+        records.load(loadAll: true)
     }
     
     private func setupRecords() {

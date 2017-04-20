@@ -70,7 +70,7 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        addressBook.load()
+        addressBook.load(loadAll: true)
     }
 
     func showAddAddressView() {
