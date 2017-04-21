@@ -70,7 +70,7 @@ class Records {
     }
     
     func remove(record:Record) {
-        
+        activityIndicator.onNext(true)
         APIManager.sharedInstance.deleteName(at: [record.name] as AnyObject) {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
             if let error = error {

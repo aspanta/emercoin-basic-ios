@@ -25,6 +25,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     
     internal var deleteRecord:Record?
     private var walletProtectionHelper:WalletProtectionHelper?
+    private var operationActivityView:UIView?
 
     override class func storyboardName() -> String {
         return "Names"
@@ -98,6 +99,9 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
                 if refresh?.isRefreshing == true  {
                     refresh?.endRefreshing()
                 }
+                self?.hideOperationActivityView()
+            } else {
+                self?.showOperationActivityView()
             }
         })
             .addDisposableTo(disposeBag)
@@ -132,14 +136,6 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
                 showSuccessDeleteNameView(at: parent)
             }
         }
-        
-        if let parent = self.parent?.parent as? NamesViewController {
-            let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
-                                                              frame: parent.view.frame) as! SuccessAddNameView
-            self.walletProtectionHelper = nil
-            self.deleteRecord = nil
-            parent.view.addSubview(successView)
-        }
     }
     
     private func showSuccessDeleteNameView(at controlller:UIViewController) {
@@ -148,6 +144,33 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         self.walletProtectionHelper = nil
         self.deleteRecord = nil
         controlller.view.addSubview(successView)
+    }
+    
+    private func showOperationActivityView() {
+        
+        var controller:UIViewController?
+        
+        if let parent = self.parent?.parent as? NamesViewController  {
+            controller = parent
+        } else {
+            if let parent = self.parent as? NamesViewController {
+                controller = parent
+            }
+        }
+        
+        if let controller = controller {
+            let view = loadViewFromXib(name: "Send", index: 2,
+                                       frame: controller.view.frame)
+            self.operationActivityView = view
+            controller.view.addSubview(view)
+        }
+    }
+    
+    private func hideOperationActivityView() {
+        
+        if let view = operationActivityView {
+            view.removeFromSuperview()
+        }
     }
     
     private func showProtection() {

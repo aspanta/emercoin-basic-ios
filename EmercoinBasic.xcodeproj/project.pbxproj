@@ -16,6 +16,10 @@
 		2D09DB901E9D65870013970F /* WalletProtectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */; };
 		2D09DB921E9D67CF0013970F /* WalletProtectionWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */; };
 		2D09F91C1E8E40040021B38A /* EmercoinCourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */; };
+		2D0DCC541EAA4BF300802609 /* RequestSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC4F1EAA4BF300802609 /* RequestSendView.swift */; };
+		2D0DCC551EAA4BF300802609 /* SendAmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC511EAA4BF300802609 /* SendAmountTextField.swift */; };
+		2D0DCC561EAA4BF300802609 /* SuccessSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC531EAA4BF300802609 /* SuccessSendView.swift */; };
+		2D0DCC5C1EAA4C5A00802609 /* OperationActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC5B1EAA4C5A00802609 /* OperationActivityView.swift */; };
 		2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */; };
 		2D15E7931EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */; };
 		2D15E7951EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */; };
@@ -163,10 +167,7 @@
 		2D997BD21E7AD2B600630560 /* ProtectionDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BA61E7AD2B600630560 /* ProtectionDoneView.swift */; };
 		2D997BD31E7AD2B600630560 /* ProtectionGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BA71E7AD2B600630560 /* ProtectionGenerationView.swift */; };
 		2D997BD41E7AD2B600630560 /* ProtectionValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BA81E7AD2B600630560 /* ProtectionValidationView.swift */; };
-		2D997BD51E7AD2B600630560 /* RequestSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BAA1E7AD2B600630560 /* RequestSendView.swift */; };
 		2D997BD61E7AD2B600630560 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BAC1E7AD2B600630560 /* RoundButton.swift */; };
-		2D997BD71E7AD2B600630560 /* SendAmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BAE1E7AD2B600630560 /* SendAmountTextField.swift */; };
-		2D997BD81E7AD2B600630560 /* SuccessSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BB01E7AD2B600630560 /* SuccessSendView.swift */; };
 		2D997C011E7AD37700630560 /* CoinsOperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BE21E7AD37700630560 /* CoinsOperationViewModel.swift */; };
 		2D997C051E7AD37700630560 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */; };
 		2D997C061E7AD37700630560 /* HistoryTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */; };
@@ -232,6 +233,10 @@
 		2D09DB8F1E9D65870013970F /* WalletProtectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionView.swift; sourceTree = "<group>"; };
 		2D09DB911E9D67CF0013970F /* WalletProtectionWarningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionWarningView.swift; sourceTree = "<group>"; };
 		2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmercoinCourseAPI.swift; sourceTree = "<group>"; };
+		2D0DCC4F1EAA4BF300802609 /* RequestSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSendView.swift; sourceTree = "<group>"; };
+		2D0DCC511EAA4BF300802609 /* SendAmountTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendAmountTextField.swift; sourceTree = "<group>"; };
+		2D0DCC531EAA4BF300802609 /* SuccessSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessSendView.swift; sourceTree = "<group>"; };
+		2D0DCC5B1EAA4C5A00802609 /* OperationActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationActivityView.swift; sourceTree = "<group>"; };
 		2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionActivityView.swift; sourceTree = "<group>"; };
 		2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptActivityView.swift; sourceTree = "<group>"; };
 		2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptSuccessView.swift; sourceTree = "<group>"; };
@@ -384,10 +389,7 @@
 		2D997BA61E7AD2B600630560 /* ProtectionDoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProtectionDoneView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BA71E7AD2B600630560 /* ProtectionGenerationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProtectionGenerationView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BA81E7AD2B600630560 /* ProtectionValidationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProtectionValidationView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997BAA1E7AD2B600630560 /* RequestSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RequestSendView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BAC1E7AD2B600630560 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RoundButton.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997BAE1E7AD2B600630560 /* SendAmountTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SendAmountTextField.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997BB01E7AD2B600630560 /* SuccessSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SuccessSendView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BE21E7AD37700630560 /* CoinsOperationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoinsOperationViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedbackViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HistoryTransactionViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -510,6 +512,49 @@
 				2D09F91B1E8E40040021B38A /* EmercoinCourseAPI.swift */,
 			);
 			path = EmercoinCourseAPI;
+			sourceTree = "<group>";
+		};
+		2D0DCC4D1EAA4BF300802609 /* Send */ = {
+			isa = PBXGroup;
+			children = (
+				2D0DCC5A1EAA4C4900802609 /* OperationActivity */,
+				2D0DCC4E1EAA4BF300802609 /* RequestSend */,
+				2D0DCC501EAA4BF300802609 /* SendAmount */,
+				2D0DCC521EAA4BF300802609 /* SuccessSend */,
+			);
+			path = Send;
+			sourceTree = "<group>";
+		};
+		2D0DCC4E1EAA4BF300802609 /* RequestSend */ = {
+			isa = PBXGroup;
+			children = (
+				2D0DCC4F1EAA4BF300802609 /* RequestSendView.swift */,
+			);
+			path = RequestSend;
+			sourceTree = "<group>";
+		};
+		2D0DCC501EAA4BF300802609 /* SendAmount */ = {
+			isa = PBXGroup;
+			children = (
+				2D0DCC511EAA4BF300802609 /* SendAmountTextField.swift */,
+			);
+			path = SendAmount;
+			sourceTree = "<group>";
+		};
+		2D0DCC521EAA4BF300802609 /* SuccessSend */ = {
+			isa = PBXGroup;
+			children = (
+				2D0DCC531EAA4BF300802609 /* SuccessSendView.swift */,
+			);
+			path = SuccessSend;
+			sourceTree = "<group>";
+		};
+		2D0DCC5A1EAA4C4900802609 /* OperationActivity */ = {
+			isa = PBXGroup;
+			children = (
+				2D0DCC5B1EAA4C5A00802609 /* OperationActivityView.swift */,
+			);
+			path = OperationActivity;
 			sourceTree = "<group>";
 		};
 		2D21D64E1E926E690088AD31 /* Names */ = {
@@ -947,6 +992,7 @@
 		2D997A931E7AC90700630560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D0DCC4D1EAA4BF300802609 /* Send */,
 				2D09DB8A1E9D64BE0013970F /* WalletProtection */,
 				2D09DB851E9D0ABE0013970F /* LockButton */,
 				2D2A6B501E9791AD000CFEE2 /* ExpiresDays */,
@@ -970,10 +1016,7 @@
 				2D997B9F1E7AD2B600630560 /* NVSBrowser */,
 				2D997BA11E7AD2B600630560 /* Popup */,
 				2D997BA51E7AD2B600630560 /* ProtectionModule */,
-				2D997BA91E7AD2B600630560 /* RequestSend */,
 				2D997BAB1E7AD2B600630560 /* RoundButton */,
-				2D997BAD1E7AD2B600630560 /* SendAmount */,
-				2D997BAF1E7AD2B600630560 /* SuccessSend */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1467,36 +1510,12 @@
 			path = ProtectionModule;
 			sourceTree = "<group>";
 		};
-		2D997BA91E7AD2B600630560 /* RequestSend */ = {
-			isa = PBXGroup;
-			children = (
-				2D997BAA1E7AD2B600630560 /* RequestSendView.swift */,
-			);
-			path = RequestSend;
-			sourceTree = "<group>";
-		};
 		2D997BAB1E7AD2B600630560 /* RoundButton */ = {
 			isa = PBXGroup;
 			children = (
 				2D997BAC1E7AD2B600630560 /* RoundButton.swift */,
 			);
 			path = RoundButton;
-			sourceTree = "<group>";
-		};
-		2D997BAD1E7AD2B600630560 /* SendAmount */ = {
-			isa = PBXGroup;
-			children = (
-				2D997BAE1E7AD2B600630560 /* SendAmountTextField.swift */,
-			);
-			path = SendAmount;
-			sourceTree = "<group>";
-		};
-		2D997BAF1E7AD2B600630560 /* SuccessSend */ = {
-			isa = PBXGroup;
-			children = (
-				2D997BB01E7AD2B600630560 /* SuccessSendView.swift */,
-			);
-			path = SuccessSend;
 			sourceTree = "<group>";
 		};
 		2D997BE11E7AD37700630560 /* CoinsOperationViewModel */ = {
@@ -1921,9 +1940,11 @@
 				2D997B231E7AD1FF00630560 /* PagerTabStripBehaviour.swift in Sources */,
 				2D997CD81E7AD3B200630560 /* SendCoinsViewController.swift in Sources */,
 				2D6620971E9C0A07007DFB35 /* SuccessAddNameView.swift in Sources */,
+				2D0DCC541EAA4BF300802609 /* RequestSendView.swift in Sources */,
 				2D64EA921E9E2CBC000F9B48 /* Wallet + Protection.swift in Sources */,
 				2D997BB51E7AD2B600630560 /* BaseTextView.swift in Sources */,
 				2D997B241E7AD1FF00630560 /* PagerTabStripError.swift in Sources */,
+				2D0DCC561EAA4BF300802609 /* SuccessSendView.swift in Sources */,
 				2D997B611E7AD24E00630560 /* Wallet.swift in Sources */,
 				2D22B2431E7C4455008BB64F /* AddressBookViewController + TableView.swift in Sources */,
 				2D997B1F1E7AD1FF00630560 /* ButtonBarViewCell.swift in Sources */,
@@ -1966,13 +1987,11 @@
 				2D64EA981E9E3452000F9B48 /* LockWalletAPI.swift in Sources */,
 				2D997CD91E7AD3B200630560 /* ScanQRCodeController.swift in Sources */,
 				2D21D66A1E926E690088AD31 /* MyRecordsViewController.swift in Sources */,
-				2D997BD81E7AD2B600630560 /* SuccessSendView.swift in Sources */,
 				2D997C061E7AD37700630560 /* HistoryTransactionViewModel.swift in Sources */,
 				2D997B221E7AD1FF00630560 /* IndicatorInfo.swift in Sources */,
 				2D997B171E7AD1FF00630560 /* GenerationWordsHelper.swift in Sources */,
 				2D997BBC1E7AD2B600630560 /* ExchangeHeaderView.swift in Sources */,
 				2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */,
-				2D997BD71E7AD2B600630560 /* SendAmountTextField.swift in Sources */,
 				2D997BD31E7AD2B600630560 /* ProtectionGenerationView.swift in Sources */,
 				2D997B1C1E7AD1FF00630560 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				2D997BBE1E7AD2B600630560 /* FeedbackMessageView.swift in Sources */,
@@ -2027,6 +2046,7 @@
 				2D997B151E7AD1FF00630560 /* DropDown.swift in Sources */,
 				2D997CDA1E7AD3B200630560 /* TabBarController.swift in Sources */,
 				2D997D041E7AD3B200630560 /* LeftViewController.swift in Sources */,
+				2D0DCC5C1EAA4C5A00802609 /* OperationActivityView.swift in Sources */,
 				2D997B561E7AD24E00630560 /* History.swift in Sources */,
 				2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */,
 				2D997B5F1E7AD24E00630560 /* MyAddressBook.swift in Sources */,
@@ -2052,6 +2072,7 @@
 				2D09DB8E1E9D651A0013970F /* WalletProtectionLockView.swift in Sources */,
 				2D997D071E7AD3B200630560 /* PrivacyPolicyViewController.swift in Sources */,
 				2D997CFF1E7AD3B200630560 /* MenuBCToolsCell.swift in Sources */,
+				2D0DCC551EAA4BF300802609 /* SendAmountTextField.swift in Sources */,
 				2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */,
 				2D997B031E7AD1FF00630560 /* AppManager.swift in Sources */,
 				2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */,
@@ -2065,7 +2086,6 @@
 				2D70A97E1E85853E00F50488 /* AddMyAddressAPI.swift in Sources */,
 				2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */,
 				2D997CB01E7AD3B200630560 /* AboutViewController.swift in Sources */,
-				2D997BD51E7AD2B600630560 /* RequestSendView.swift in Sources */,
 				2D997BBD1E7AD2B600630560 /* ExtendedView.swift in Sources */,
 				2D997D031E7AD3B200630560 /* LeftViewController + TableView.swift in Sources */,
 				2D21D6661E926E690088AD31 /* CreateNVSViewController.swift in Sources */,

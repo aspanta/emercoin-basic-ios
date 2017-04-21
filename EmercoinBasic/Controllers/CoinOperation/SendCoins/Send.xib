@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="dL3-jL-dHP" customClass="RequestSendView" customModule="EmercoinOne" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="dL3-jL-dHP" customClass="RequestSendView" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -47,7 +47,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-qo-1In">
                             <rect key="frame" x="70" y="102" width="209" height="31"/>
                             <subviews>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcy-ld-RLJ" customClass="YesButton" customModule="EmercoinOne" customModuleProvider="target">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcy-ld-RLJ" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.0" green="0.32549019607843138" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,7 +59,7 @@
                                         <action selector="doneButtonPressedWithSender:" destination="dL3-jL-dHP" eventType="touchUpInside" id="qt6-KJ-0SI"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asU-Yr-7IU" customClass="CancelButton" customModule="EmercoinOne" customModuleProvider="target">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asU-Yr-7IU" customClass="CancelButton" customModule="EmercoinBasic" customModuleProvider="target">
                                     <rect key="frame" x="105" y="0.0" width="104" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.85490196078431369" green="0.25098039215686274" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,7 +108,7 @@
             </connections>
             <point key="canvasLocation" x="416" y="264"/>
         </view>
-        <view contentMode="scaleToFill" id="wIt-L1-75N" customClass="SuccessSendView" customModule="EmercoinOne" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="wIt-L1-75N" customClass="SuccessSendView" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -182,6 +182,54 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="916" y="264"/>
+        </view>
+        <view contentMode="scaleToFill" id="Knd-O4-XH5" customClass="OperationActivityView" customModule="EmercoinBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-be-Z6p" userLabel="main view">
+                    <rect key="frame" x="107" y="293.5" width="200" height="150"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="aOM-ss-cEu">
+                            <rect key="frame" x="0.0" y="0.0" width="199" height="150"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Y2-cTX">
+                            <rect key="frame" x="8" y="30" width="184" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="bcE-8f-SG4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fJE-ux-xkm">
+                            <rect key="frame" x="81.5" y="71" width="37" height="37"/>
+                            <color key="color" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="fJE-ux-xkm" firstAttribute="centerX" secondItem="dqA-be-Z6p" secondAttribute="centerX" id="5mM-h6-kcd"/>
+                        <constraint firstItem="aOM-ss-cEu" firstAttribute="top" secondItem="dqA-be-Z6p" secondAttribute="top" id="9ZE-11-tY7"/>
+                        <constraint firstAttribute="trailing" secondItem="aOM-ss-cEu" secondAttribute="trailing" constant="1" id="Afg-J9-fOa"/>
+                        <constraint firstAttribute="trailing" secondItem="7C6-Y2-cTX" secondAttribute="trailing" constant="8" id="CFm-7Z-ybt"/>
+                        <constraint firstItem="7C6-Y2-cTX" firstAttribute="top" secondItem="dqA-be-Z6p" secondAttribute="top" constant="30" id="HaN-yv-03t"/>
+                        <constraint firstAttribute="height" constant="150" id="a99-iL-TPP"/>
+                        <constraint firstAttribute="bottom" secondItem="fJE-ux-xkm" secondAttribute="bottom" constant="42" id="c0P-DB-5dM"/>
+                        <constraint firstItem="aOM-ss-cEu" firstAttribute="leading" secondItem="dqA-be-Z6p" secondAttribute="leading" id="del-CG-fTE"/>
+                        <constraint firstAttribute="width" constant="200" id="ea0-Wj-64B"/>
+                        <constraint firstItem="7C6-Y2-cTX" firstAttribute="centerX" secondItem="dqA-be-Z6p" secondAttribute="centerX" id="m8b-UB-bHk"/>
+                        <constraint firstItem="7C6-Y2-cTX" firstAttribute="leading" secondItem="dqA-be-Z6p" secondAttribute="leading" constant="8" id="uJa-ym-WFo"/>
+                        <constraint firstAttribute="bottom" secondItem="aOM-ss-cEu" secondAttribute="bottom" id="uOH-S3-HWA"/>
+                        <constraint firstItem="fJE-ux-xkm" firstAttribute="top" secondItem="7C6-Y2-cTX" secondAttribute="bottom" constant="22" id="x1r-zX-il9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dqA-be-Z6p" firstAttribute="centerX" secondItem="Knd-O4-XH5" secondAttribute="centerX" id="F63-Ch-imQ"/>
+                <constraint firstItem="dqA-be-Z6p" firstAttribute="centerY" secondItem="Knd-O4-XH5" secondAttribute="centerY" id="QzR-hb-5GY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1401" y="264"/>
         </view>
     </objects>
     <resources>

@@ -40,6 +40,7 @@ class CreateNVSViewController: BaseViewController {
     var isEditingMode = false
     var record:Record?
     
+    private var operationActivityView:UIView?
     private var nameData:AnyObject?
     private var walletProtectionHelper:WalletProtectionHelper?
     
@@ -70,7 +71,20 @@ class CreateNVSViewController: BaseViewController {
 
         viewModel.isEditingMode = isEditingMode
         setupController()
+        setupActivityIndicator()
         setupPrefixDropDown()
+    }
+    
+    private func setupActivityIndicator() {
+        
+        viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
+            if state {
+                self?.showOperationActivityView()
+            } else {
+                self?.hideOperationActivityView()
+            }
+        })
+            .addDisposableTo(disposeBag)
     }
     
     private func setupController() {
@@ -278,6 +292,21 @@ class CreateNVSViewController: BaseViewController {
             self.addressTextField.text = address
         }
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func showOperationActivityView() {
+        
+        let view = loadViewFromXib(name: "Send", index: 2,
+                                   frame: self.parent!.view.frame)
+        self.operationActivityView = view
+        self.parent?.view.addSubview(view)
+    }
+    
+    private func hideOperationActivityView() {
+        
+        if let view = operationActivityView {
+            view.removeFromSuperview()
+        }
     }
     
     private func showSuccessAddNameView() {

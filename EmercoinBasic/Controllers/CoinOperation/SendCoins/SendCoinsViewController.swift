@@ -14,6 +14,7 @@ class SendCoinsViewController: BaseViewController {
     @IBOutlet internal weak  var sendButton:BaseButton!
     @IBOutlet internal weak  var amountTextField:BaseTextField!
     
+    private var operationActivityView:UIView?
     private var amount:Double = 0
     private var sendData:AnyObject?
     private var walletProtectionHelper:WalletProtectionHelper?
@@ -100,11 +101,10 @@ class SendCoinsViewController: BaseViewController {
         
         viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
             if state {
-                self?.showActivityIndicator()
+                self?.showOperationActivityView()
             } else {
-                self?.hideActivityIndicator()
+                self?.hideOperationActivityView()
             }
-            
         })
             .addDisposableTo(disposeBag)
     }
@@ -144,6 +144,26 @@ class SendCoinsViewController: BaseViewController {
         })
         
         self.parent?.view.addSubview(successView)
+    }
+    
+    private func showOperationActivityView() {
+        
+        let view = getView(at: 2)
+        self.operationActivityView = view
+        self.parent?.view.addSubview(view)
+    }
+    
+    private func hideOperationActivityView() {
+        
+        if let view = operationActivityView {
+            view.removeFromSuperview()
+        }
+    }
+    
+    private func getView(at index:Int) -> UIView {
+        let view = loadViewFromXib(name: "Send", index: index,
+                                   frame: self.parent!.view.frame)
+        return view
     }
     
     private func showErrorAlert(at error:NSError) {
