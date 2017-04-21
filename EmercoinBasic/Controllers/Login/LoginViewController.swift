@@ -123,8 +123,13 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func policyButtonPressed(sender:UIButton) {
-        print("policyButtonPressed")
-        
+        let controller = PrivacyPolicyViewController.controller()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func termsButtonPressed(sender:UIButton) {
+        let controller = TermOfUseViewController.controller()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func dropButtonPressed() {

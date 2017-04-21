@@ -16,4 +16,13 @@ class TermOfUseViewController: BaseViewController {
     override class func storyboardName() -> String {
         return "TermOfUse"
     }
+    
+    override func back() {
+        
+        if parent is SideMenuViewController {
+            backToDashBoard()
+        } else {
+            super.back()
+        }
+    }
 }

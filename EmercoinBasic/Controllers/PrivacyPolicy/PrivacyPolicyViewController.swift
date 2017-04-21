@@ -17,4 +17,13 @@ class PrivacyPolicyViewController: BaseViewController {
         return "PrivacyPolicy"
     }
     
+    override func back() {
+        
+        if parent is SideMenuViewController {
+            backToDashBoard()
+        } else {
+            super.back()
+        }
+    }
+    
 }
