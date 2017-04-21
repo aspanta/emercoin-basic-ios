@@ -30,9 +30,7 @@ class SearchNVSResultsViewController: MyRecordsViewController {
     @IBAction func createButtonPressed() {
        // parent?.navigationController?.popViewController(animated: true)
         
-        let name = records.searchString
-        
-        let data = ["name":name]
+        let data = nameData()
         
         if createPressed != nil {
             createPressed!(data)
@@ -43,5 +41,26 @@ class SearchNVSResultsViewController: MyRecordsViewController {
     override func nvsInfoButtonPressed() {
         let vc = NVSInfoViewController.controller()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func nameData() -> [String:String] {
+        var text = records.searchString
+        let array = text.components(separatedBy: ":")
+        let prefixes = Constants.Names.Prefixes
+        
+        var data = [String:String]()
+        
+        if array.count == 2 {
+            let prefix = array.first ?? ""
+            let name = array.last ?? ""
+            
+            if prefixes.contains(prefix) {
+                data["prefix"] = prefix
+                text = name
+            }
+        }
+        
+        data["name"] = text
+        return data
     }
 }

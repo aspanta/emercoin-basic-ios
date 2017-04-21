@@ -21,7 +21,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -251,6 +251,9 @@
                                 </constraints>
                                 <state key="normal" image="check_off"/>
                                 <state key="selected" image="check_on"/>
+                                <connections>
+                                    <action selector="checkButtonPressedWithSender:" destination="rgu-oq-k0z" eventType="touchUpInside" id="7Ng-Ni-gxN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-UZ-Ab1">
                                 <rect key="frame" x="84" y="571" width="49" height="14"/>
@@ -367,7 +370,7 @@
                     <navigationItem key="navigationItem" id="0bK-w4-TEO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="checkButton" destination="MBv-db-85U" id="t5d-2s-cdw"/>
+                        <outlet property="checkButton" destination="MBv-db-85U" id="bds-ms-o4T"/>
                         <outlet property="enterButton" destination="BMK-8c-gUV" id="O1M-Qe-uOB"/>
                         <outlet property="hostTextField" destination="FYw-qF-6SE" id="LGW-0b-TAt"/>
                         <outlet property="leftConstraint" destination="fGl-gh-rMj" id="nFg-nv-KbB"/>

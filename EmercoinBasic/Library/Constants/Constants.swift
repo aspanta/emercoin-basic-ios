@@ -29,6 +29,10 @@ struct Constants {
         
     }
     
+    struct Names {
+        static let Prefixes = ["dns","ssh","gpg","kx","ssl","bls","tts","swift","dpo","magnet","enum"]
+    }
+    
     struct CellHeights {
         struct HomeBalanceCell {
             static let MoneyView = 95.0
