@@ -105,10 +105,10 @@ class Records {
         APIManager.sharedInstance.loadNames {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
             if error == nil {
-            } else {
                 if loadAll == true {
                     APIManager.sharedInstance.loadAll()
                 }
+            } else {
                 self?.error.onNext(error!)
             }
             if completion != nil{

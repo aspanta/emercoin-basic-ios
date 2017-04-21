@@ -147,7 +147,6 @@ extension MyRecordsViewController {
         controller.edited = {[weak self] data in
             //self?.records.update(at: data, index: index)
             //self?.reloadRows()
-            self?.records.load()
         }
         controller.isEditingMode = true
         self.navigationController?.pushViewController(controller, animated: true)

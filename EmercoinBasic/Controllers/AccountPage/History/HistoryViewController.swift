@@ -50,7 +50,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        history.load()
+        history.load(loadAll: true)
     }
     
     private func setupHistory() {
