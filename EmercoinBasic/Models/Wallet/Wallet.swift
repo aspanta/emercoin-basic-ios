@@ -12,6 +12,7 @@ class Wallet:BaseModel {
     
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
+    var blockchain = PublishSubject<Blockchain>()
     var activityIndicator = PublishSubject<Bool>()
     
     var emercoin:Coin = {
@@ -61,7 +62,6 @@ class Wallet:BaseModel {
     func loadInfo(loadAll:Bool? = false, completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadInfo{[weak self] (data, error) in
-            
             self?.activityIndicator.onNext(false)
             if error != nil {
                 self?.error.onNext(error!)
@@ -83,6 +83,25 @@ class Wallet:BaseModel {
             }
         }
         loadCourse()
+    }
+    
+    func loadBlockChainInfo() {
+        
+        APIManager.sharedInstance.loadBlockchainInfo{[weak self] (data, error) in
+            if error != nil {
+                self?.error.onNext(error!)
+            } else {
+                if let blockchain = data as? Blockchain {
+                    if blockchain.isLoaded {
+                        AppManager.sharedInstance.isBlockchaiLoaded = true
+                        Router.sharedInstance.sideMenu?.hideTabBar(hiden: false)
+                        Router.sharedInstance.sideMenu?.enableMenuSwipe(at: true)
+                        self?.loadInfo()
+                    }
+                    self?.blockchain.onNext(blockchain)
+                }
+            }
+        }
     }
     
     func loadCourse() {

@@ -20,6 +20,7 @@ enum APIType {
     case protectWallet
     case lockWallet
     case unlockWallet
+    case blockchainInfo
 }
 
 class APIManager: NSObject {
@@ -43,6 +44,12 @@ class APIManager: NSObject {
     func loadInfo(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .info)
+        api.startRequest(completion: completion)
+    }
+    
+    func loadBlockchainInfo(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
+        
+        let api = getApi(at: .blockchainInfo)
         api.startRequest(completion: completion)
     }
     
@@ -210,7 +217,7 @@ class APIManager: NSObject {
             case .lockWallet:api = LockWalletAPI()
             case .unlockWallet:api = UnlockWalletAPI()
             case .searchName:api = SearchNameAPI()
-            
+            case .blockchainInfo:api = BlockchainInfoAPI()
         }
         
         api.object = authInfo as AnyObject?

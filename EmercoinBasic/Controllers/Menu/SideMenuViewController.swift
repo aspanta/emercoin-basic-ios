@@ -13,12 +13,16 @@ class SideMenuViewController: LGSideMenuController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        AppManager.sharedInstance.wallet.loadInfo()
+        AppManager.sharedInstance.wallet.loadBlockChainInfo()
     }
     
     fileprivate var mainTabBarController:TabBarController = {
         TabBarController.controller()
     }() as! TabBarController
+    
+    func hideTabBar(hiden:Bool) {
+        mainTabBarController.tabBar.isHidden = hiden
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +49,17 @@ class SideMenuViewController: LGSideMenuController {
         
         Router.sharedInstance.sideMenu = self
         
-        leftViewSwipeGestureRange = swipeRange
+        enableMenuSwipe(at: false)
         
+        mainTabBarController.tabBar.isHidden = true
+    }
+    
+    func enableMenuSwipe(at state:Bool) {
+        if state {
+            leftViewSwipeGestureRange = swipeRange
+        } else {
+            leftViewSwipeGestureRange = LGSideMenuSwipeGestureRangeMake(0.0, 0.0)
+        }
     }
     
     func showDashBoard() {

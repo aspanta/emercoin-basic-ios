@@ -11,6 +11,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var lockButton:LockButton!
+    private weak var blockchainLoadingView:BlockchainLoadingView?
     
     var viewModel = CoinOperationsViewModel()
     let disposeBag = DisposeBag()
@@ -20,7 +21,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarObject = TabBarObject.init(title: Constants.Controllers.TabTitle.Home,
+        tabBarObject = TabBarObject(title: Constants.Controllers.TabTitle.Home,
                                          imageName: Constants.Controllers.TabImage.Home)
     }
     
@@ -56,6 +57,15 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
             self?.tableView.reload()
         })
         .addDisposableTo(disposeBag)
+        
+        viewModel.blockchain.subscribe(onNext: {[weak self] (blockchain) in
+            if blockchain.isLoaded {
+                self?.hideBlockchainLoadingView()
+            } else {
+                self?.showBlockchainLoadingView(at: blockchain)
+            }
+        })
+            .addDisposableTo(disposeBag)
     }
     
     private func showErrorAlert(at error:NSError) {
@@ -90,5 +100,33 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
     
     internal func handleRefresh(sender:UIRefreshControl) {
         viewModel.updateWallet()
+    }
+    
+    private func showBlockchainLoadingView(at blockchain:Blockchain) {
+    
+        if let view = blockchainLoadingView {
+            view.blockchain = blockchain
+        } else {
+            let view = loadViewFromXib(name: "Blockchain", index: 0, frame: self.view.frame) as! BlockchainLoadingView
+            view.blockchain = blockchain
+            view.checkBlockchain = {
+                self.viewModel.updateBlockchain()
+            }
+            view.cancel = {
+                view.removeFromSuperview()
+                AppManager.sharedInstance.logOut()
+                self.blockchainLoadingView = nil
+            }
+            self.blockchainLoadingView = view
+            self.view.addSubview(view)
+        }
+    }
+    
+    private func hideBlockchainLoadingView() {
+        
+        if let view = blockchainLoadingView {
+            view.stopTimer()
+            view.removeFromSuperview()
+        }
     }
 }

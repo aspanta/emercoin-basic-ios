@@ -23,6 +23,7 @@ class CoinOperationsViewModel {
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
     var locked = PublishSubject<Bool>()
+    var blockchain = PublishSubject<Blockchain>()
     var wallet:Wallet?
     
     internal var isLoading = false
@@ -55,12 +56,20 @@ class CoinOperationsViewModel {
                 self?.walletSuccess.onNext(state)
             })
             .addDisposableTo(disposeBag)
+            
             wallet?.error.subscribe(onNext: {[weak self] (error) in
                 self?.error.onNext(error)
             })
-                .addDisposableTo(disposeBag)
+            .addDisposableTo(disposeBag)
+            
             wallet?.activityIndicator.subscribe(onNext: {[weak self] (state) in
                 self?.activityIndicator.onNext(state)
+            })
+            .addDisposableTo(disposeBag)
+            
+            wallet?.blockchain.subscribe(onNext: {[weak self] (blockchain) in
+                self?.updateUI()
+                self?.blockchain.onNext(blockchain)
             })
                 .addDisposableTo(disposeBag)
         }
@@ -68,5 +77,9 @@ class CoinOperationsViewModel {
     
     func updateWallet() {
         wallet?.loadInfo(loadAll: true, completion: nil)
+    }
+    
+    func updateBlockchain() {
+        wallet?.loadBlockChainInfo()
     }
 }

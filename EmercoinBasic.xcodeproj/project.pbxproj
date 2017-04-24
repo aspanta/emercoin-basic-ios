@@ -20,6 +20,10 @@
 		2D0DCC551EAA4BF300802609 /* SendAmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC511EAA4BF300802609 /* SendAmountTextField.swift */; };
 		2D0DCC561EAA4BF300802609 /* SuccessSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC531EAA4BF300802609 /* SuccessSendView.swift */; };
 		2D0DCC5C1EAA4C5A00802609 /* OperationActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DCC5B1EAA4C5A00802609 /* OperationActivityView.swift */; };
+		2D109F371EAE29AC003AD402 /* BlockchainLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D109F361EAE29AC003AD402 /* BlockchainLoadingView.swift */; };
+		2D109F391EAE29BB003AD402 /* Blockchain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D109F381EAE29BB003AD402 /* Blockchain.xib */; };
+		2D109F3C1EAE3814003AD402 /* BlockchainInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D109F3B1EAE3814003AD402 /* BlockchainInfoAPI.swift */; };
+		2D109F3F1EAE3983003AD402 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D109F3E1EAE3983003AD402 /* Blockchain.swift */; };
 		2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */; };
 		2D15E7931EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */; };
 		2D15E7951EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */; };
@@ -237,6 +241,10 @@
 		2D0DCC511EAA4BF300802609 /* SendAmountTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendAmountTextField.swift; sourceTree = "<group>"; };
 		2D0DCC531EAA4BF300802609 /* SuccessSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessSendView.swift; sourceTree = "<group>"; };
 		2D0DCC5B1EAA4C5A00802609 /* OperationActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationActivityView.swift; sourceTree = "<group>"; };
+		2D109F361EAE29AC003AD402 /* BlockchainLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockchainLoadingView.swift; sourceTree = "<group>"; };
+		2D109F381EAE29BB003AD402 /* Blockchain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Blockchain.xib; sourceTree = "<group>"; };
+		2D109F3B1EAE3814003AD402 /* BlockchainInfoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockchainInfoAPI.swift; sourceTree = "<group>"; };
+		2D109F3E1EAE3983003AD402 /* Blockchain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
 		2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionActivityView.swift; sourceTree = "<group>"; };
 		2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptActivityView.swift; sourceTree = "<group>"; };
 		2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptSuccessView.swift; sourceTree = "<group>"; };
@@ -557,6 +565,32 @@
 			path = OperationActivity;
 			sourceTree = "<group>";
 		};
+		2D109F351EAE2978003AD402 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				2D109F361EAE29AC003AD402 /* BlockchainLoadingView.swift */,
+				2D109F381EAE29BB003AD402 /* Blockchain.xib */,
+			);
+			name = Blockchain;
+			path = EmercoinBasic/Blockchain;
+			sourceTree = SOURCE_ROOT;
+		};
+		2D109F3A1EAE37FC003AD402 /* BlockchainInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2D109F3B1EAE3814003AD402 /* BlockchainInfoAPI.swift */,
+			);
+			path = BlockchainInfo;
+			sourceTree = "<group>";
+		};
+		2D109F3D1EAE3966003AD402 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				2D109F3E1EAE3983003AD402 /* Blockchain.swift */,
+			);
+			path = Blockchain;
+			sourceTree = "<group>";
+		};
 		2D21D64E1E926E690088AD31 /* Names */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +771,7 @@
 		2D4D98E41E7FF7D400DFB784 /* POST */ = {
 			isa = PBXGroup;
 			children = (
+				2D109F3A1EAE37FC003AD402 /* BlockchainInfo */,
 				2DEDC9461EA10AB400F404B5 /* SearchName */,
 				2D64EA991E9E35A6000F9B48 /* UnlockWallet */,
 				2D64EA961E9E3443000F9B48 /* LockWallet */,
@@ -947,6 +982,7 @@
 		2D997A8B1E7AC90700630560 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2D109F3D1EAE3966003AD402 /* Blockchain */,
 				2D798EFB1E939F1B008AB5AF /* Records */,
 				2DA3E77A1E83DA0A003F9A6D /* Settings */,
 				2D4877CE1E8147CC0084129C /* BaseModel */,
@@ -992,6 +1028,7 @@
 		2D997A931E7AC90700630560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D109F351EAE2978003AD402 /* Blockchain */,
 				2D0DCC4D1EAA4BF300802609 /* Send */,
 				2D09DB8A1E9D64BE0013970F /* WalletProtection */,
 				2D09DB851E9D0ABE0013970F /* LockButton */,
@@ -1877,6 +1914,7 @@
 				2D997AC11E7AD02A00630560 /* RobotoCondensed-Bold.ttf in Resources */,
 				2D997AC21E7AD02A00630560 /* RobotoCondensed-Light.ttf in Resources */,
 				2D997ABE1E7AD02A00630560 /* Roboto-Light.ttf in Resources */,
+				2D109F391EAE29BB003AD402 /* Blockchain.xib in Resources */,
 				2D21D66C1E926E690088AD31 /* Names.storyboard in Resources */,
 				2D997D091E7AD3B200630560 /* ProtectionModule.xib in Resources */,
 				2D997CB11E7AD3B200630560 /* AccountPage.storyboard in Resources */,
@@ -1956,6 +1994,7 @@
 				2D997CD31E7AD3B200630560 /* MyAddressCell.swift in Sources */,
 				2D21D6771E9279220088AD31 /* EnterAddressRecordView.swift in Sources */,
 				2D798EFA1E9394C3008AB5AF /* NamesAPI.swift in Sources */,
+				2D109F3F1EAE3983003AD402 /* Blockchain.swift in Sources */,
 				2D997CD11E7AD3B200630560 /* GetCoinsViewController + DropDown.swift in Sources */,
 				2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */,
 				2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */,
@@ -1969,8 +2008,10 @@
 				2DA249441E7C1F4700AF81DD /* LoginViewController.swift in Sources */,
 				2D997BD21E7AD2B600630560 /* ProtectionDoneView.swift in Sources */,
 				2D997BCE1E7AD2B600630560 /* FindDPOButton.swift in Sources */,
+				2D109F371EAE29AC003AD402 /* BlockchainLoadingView.swift in Sources */,
 				2D997B1A1E7AD1FF00630560 /* BarPagerTabStripViewController.swift in Sources */,
 				2D997BC01E7AD2B600630560 /* SuccessSendMessage.swift in Sources */,
+				2D109F3C1EAE3814003AD402 /* BlockchainInfoAPI.swift in Sources */,
 				2D997BB41E7AD2B600630560 /* BaseTextField.swift in Sources */,
 				2D997B571E7AD24E00630560 /* HistoryTransaction.swift in Sources */,
 				2D997B081E7AD1FF00630560 /* UIColor + Utils.swift in Sources */,

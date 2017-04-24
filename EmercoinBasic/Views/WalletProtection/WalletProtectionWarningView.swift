@@ -15,4 +15,5 @@ class WalletProtectionWarningView: PopupView {
             super.doneButtonPressed(sender: sender)
         }
     }
+    
 }

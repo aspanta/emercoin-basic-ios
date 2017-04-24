@@ -1,17 +1,17 @@
 //
-//  InfoAPI.swift
+//  BlockchainInfoAPI.swift
 //  EmercoinBasic
 //
 
 import UIKit
 import ObjectMapper
 
-class InfoAPI: BaseAPI {
+class BlockchainInfoAPI: BaseAPI {
     
     override func parameters() -> [String : Any] {
         
         var param = super.parameters()
-        let method = Constants.API.GetInfo
+        let method = Constants.API.GetBlockchainInfo
         param["method"] = method
         
         return param
@@ -19,8 +19,8 @@ class InfoAPI: BaseAPI {
     
     override func apiDidReturnData(data: AnyObject) {
         
-        if let wallet = Mapper<Wallet>().map(JSON: data["result"] as! [String:AnyObject]) {
-            super.apiDidReturnData(data: wallet as AnyObject)
+        if let blockchain = Mapper<Blockchain>().map(JSON: data["result"] as! [String:AnyObject]) {
+            super.apiDidReturnData(data: blockchain as AnyObject)
         } else {
             super.apiDidReturnData(data: data)
         }

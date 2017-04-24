@@ -19,6 +19,7 @@ class AppManager {
     }()
     
     var isAuthorized = false
+    var isBlockchaiLoaded = false
     
     func logOut() {
         
@@ -34,6 +35,5 @@ class AppManager {
         
         Router.sharedInstance.showLoginController()
     }
-    
-    
+
 }
