@@ -11,8 +11,9 @@ extension CreateNVSViewController {
         
         prefixDropDown = DropDown()
         prefixDropDown?.anchorView = prefixButton
+        prefixDropDown?.direction = .bottom
         
-        let dataSource = Constants.Names.Prefixes
+        let dataSource = ["Any"] + Constants.Names.Prefixes
         
         prefixDropLabel.text = dataSource.first
         
@@ -31,9 +32,13 @@ extension CreateNVSViewController {
     
     internal func setupDropDownUI() {
         
+        let height = 10
+        
+        let fontSize = 18
+        
         let appearance = DropDown.appearance()
         appearance.selectionBackgroundColor = prefixDropLabel.textColor
-        appearance.cellHeight = prefixButton.bounds.height + 10
-        appearance.textFont = UIFont(name: "Roboto-Regular", size: 18)!
+        appearance.cellHeight = prefixButton.bounds.height + CGFloat(height)
+        appearance.textFont = UIFont(name: "Roboto-Regular", size: CGFloat(fontSize))!
     }
 }
