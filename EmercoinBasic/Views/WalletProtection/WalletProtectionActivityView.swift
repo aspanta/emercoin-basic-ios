@@ -37,4 +37,15 @@ class WalletProtectionActivityView: PopupView {
         
         titleLabel.text = text
     }
+    
+    deinit {
+        print("deinit - WalletProtectionActivityView")
+        userInteraction(at: true)
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        userInteraction(at: false)
+    }
 }

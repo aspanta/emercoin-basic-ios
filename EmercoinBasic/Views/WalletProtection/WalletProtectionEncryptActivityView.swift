@@ -22,7 +22,13 @@ class WalletProtectionEncryptActivityView: PopupView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
+        userInteraction(at: false)
         startTimer(at:interval)
+    }
+    
+    deinit {
+        print("deinit - OperationActivityView")
+        userInteraction(at: true)
     }
     
     func startTimer(at seconds:Int) {
@@ -43,9 +49,7 @@ class WalletProtectionEncryptActivityView: PopupView {
         self.timer = timer
         timer.fire()
     }
-    
-    
-    
+
     func updateUI() {
         
         current += 1

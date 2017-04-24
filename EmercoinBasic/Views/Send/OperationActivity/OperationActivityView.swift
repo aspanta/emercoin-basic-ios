@@ -6,6 +6,5 @@
 import UIKit
 
 class OperationActivityView: PopupView {
-
-
+    
 }

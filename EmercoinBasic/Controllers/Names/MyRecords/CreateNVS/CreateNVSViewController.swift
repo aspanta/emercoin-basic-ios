@@ -299,12 +299,14 @@ class CreateNVSViewController: BaseViewController {
         let view = loadViewFromXib(name: "Send", index: 2,
                                    frame: self.parent!.view.frame)
         self.operationActivityView = view
+        userInteraction(at: false)
         self.parent?.view.addSubview(view)
     }
     
     private func hideOperationActivityView() {
         
         if let view = operationActivityView {
+            userInteraction(at: true)
             view.removeFromSuperview()
         }
     }

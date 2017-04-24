@@ -35,3 +35,11 @@ public func isValidEmail(email:String?) -> Bool {
     let result = emailTest.evaluate(with: email)
     return result
 }
+
+public func userInteraction(at enable:Bool) {
+    if enable {
+        UIApplication.shared.endIgnoringInteractionEvents()
+    } else {
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+}

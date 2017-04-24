@@ -150,12 +150,14 @@ class SendCoinsViewController: BaseViewController {
         
         let view = getView(at: 2)
         self.operationActivityView = view
+        userInteraction(at: false)
         self.parent?.view.addSubview(view)
     }
     
     private func hideOperationActivityView() {
         
         if let view = operationActivityView {
+            userInteraction(at: true)
             view.removeFromSuperview()
         }
     }

@@ -162,6 +162,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
             let view = loadViewFromXib(name: "Send", index: 2,
                                        frame: controller.view.frame)
             self.operationActivityView = view
+            userInteraction(at: false)
             controller.view.addSubview(view)
         }
     }
@@ -169,6 +170,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     private func hideOperationActivityView() {
         
         if let view = operationActivityView {
+            userInteraction(at: true)
             view.removeFromSuperview()
         }
     }

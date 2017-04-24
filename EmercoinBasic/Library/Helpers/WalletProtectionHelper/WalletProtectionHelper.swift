@@ -21,7 +21,6 @@ class WalletProtectionHelper {
     var unlock:((Void) -> (Void))?
     var fromController:UIViewController?
     var wallet = AppManager.sharedInstance.wallet
-    private var activityView:WalletProtectionActivityView?
     
     func startProtection() {
         
@@ -43,6 +42,7 @@ class WalletProtectionHelper {
            let activity = self.showActivityView(at: .unlock)
             self.wallet.unlock(at: password, completion: {[weak self](isLock) in
                 activity.removeFromSuperview()
+                userInteraction(at: true)
                 
                 if self?.unlock != nil {
                     if isLock == false {
@@ -65,6 +65,7 @@ class WalletProtectionHelper {
         view.lock = {
             let activity = self.showActivityView(at: .lock)
             self.wallet.lock(completion: {[weak self] (lock) in
+                userInteraction(at: true)
                 activity.removeFromSuperview()
             })
         }
@@ -84,18 +85,12 @@ class WalletProtectionHelper {
         showView(at: view)
     }
     
-    private func hideActivityView() {
-    
-        if let view = self.activityView {
-            view.removeFromSuperview()
-        }
-    }
-    
     private func showActivityView(at type:ProtectionViewType) -> UIView {
+        
+        userInteraction(at: false)
         
         let view = getProtectionView(at: .activity) as! WalletProtectionActivityView
         view.type = type
-        self.activityView = view
         showView(at: view)
         return view
     }
@@ -103,9 +98,11 @@ class WalletProtectionHelper {
     private func showEncryptActivityView() {
         
         let view = getProtectionView(at: .encryptActivity) as! WalletProtectionEncryptActivityView
+        userInteraction(at: false)
         view.checkEncrypt = {
             self.wallet.loadInfo{
                 if self.wallet.isProtected == true {
+                    userInteraction(at: true)
                     view.removeFromSuperview()
                     self.showSuccessEncryptView()
                 } else {
