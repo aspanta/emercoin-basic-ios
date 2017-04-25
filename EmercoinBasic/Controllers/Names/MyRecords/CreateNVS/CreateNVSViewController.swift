@@ -101,6 +101,10 @@ class CreateNVSViewController: BaseViewController {
             self?.checkValidation()
         }
         
+        addressTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
         viewModel.success.subscribe(onNext:{[weak self] success in
             if success {
                 self?.showSuccessAddNameView()
@@ -141,9 +145,11 @@ class CreateNVSViewController: BaseViewController {
         let value = valueTextField.text ?? ""
         let name = nameTextField.text ?? ""
         let days = timeTextField.text ?? ""
+        let address = addressTextField.text ?? ""
         
+        let validAddress = isEditingMode ? address.validAddress() : true
         
-        createButton.isEnabled = !value.isEmpty && !name.isEmpty && !days.isEmpty
+        createButton.isEnabled = !value.isEmpty && !name.isEmpty && !days.isEmpty && validAddress
     }
 
     override func setupUI() {

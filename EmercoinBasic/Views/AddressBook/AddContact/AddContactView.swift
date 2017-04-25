@@ -36,7 +36,7 @@ class AddContactView: PopupView {
         
         let name = nameTextField.text ?? ""
         let address = addressTextField.text ?? ""
-        doneButton.isEnabled = !name.isEmpty && !address.isEmpty
+        doneButton.isEnabled = !name.isEmpty && address.validAddress()
     }
     
     private func updateUI() {

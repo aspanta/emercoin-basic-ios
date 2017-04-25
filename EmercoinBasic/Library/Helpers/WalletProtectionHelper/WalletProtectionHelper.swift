@@ -31,7 +31,7 @@ class WalletProtectionHelper {
                 showLockView()
             }
         } else {
-            showProtectionView()
+           // showProtectionView()
         }
     }
     

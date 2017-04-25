@@ -244,36 +244,16 @@ was create 1824 days</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zab-LQ-7Iq">
-                    <rect key="frame" x="50" y="278" width="314" height="180"/>
+                    <rect key="frame" x="33" y="278" width="348" height="180"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_background" translatesAutoresizingMaskIntoConstraints="NO" id="dB9-JI-Bb3">
-                            <rect key="frame" x="0.0" y="0.0" width="313" height="180"/>
+                            <rect key="frame" x="0.0" y="0.0" width="347" height="180"/>
                         </imageView>
-                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7h-nn-3DJ">
-                            <rect key="frame" x="123" y="126" width="67" height="30"/>
-                            <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="67" id="Hnz-Ga-Hxr"/>
-                                <constraint firstAttribute="height" constant="30" id="XYP-kD-M5O"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                            <state key="normal" title="Ok">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="15"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="doneButtonPressedWithSender:" destination="drB-Rb-rPM" eventType="touchUpInside" id="xFJ-DY-kDI"/>
-                            </connections>
-                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0y-w0-JgE">
-                            <rect key="frame" x="29" y="48" width="255" height="46"/>
+                            <rect key="frame" x="29" y="48" width="289" height="46"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7R-XA-OOn" customClass="BaseTextField" customModule="EmercoinBasic" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="255" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="289" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="den-Hj-uvX"/>
                                     </constraints>
@@ -282,7 +262,7 @@ was create 1824 days</string>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2v-uR-Bwq">
-                                    <rect key="frame" x="0.0" y="45" width="255" height="1"/>
+                                    <rect key="frame" x="0.0" y="45" width="289" height="1"/>
                                     <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                             </subviews>
@@ -297,16 +277,56 @@ was create 1824 days</string>
                                 <constraint firstAttribute="bottom" secondItem="N2v-uR-Bwq" secondAttribute="bottom" id="zNZ-IR-V3V"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQz-9D-eF3">
+                            <rect key="frame" x="70" y="115" width="209" height="31"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ay-eq-RFP" customClass="YesButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="104" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.32549019610000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                    <state key="normal" title="Add">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableConfig" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="disableColor" value="ABABAB"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="enableColor" value="00535C"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="doneButtonPressedWithSender:" destination="drB-Rb-rPM" eventType="touchUpInside" id="Pdt-Sn-Ua1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8w-UV-zgC" customClass="CancelButton" customModule="EmercoinBasic" customModuleProvider="target">
+                                    <rect key="frame" x="105" y="0.0" width="104" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.85490196080000003" green="0.25098039220000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonPressedWithSender:" destination="drB-Rb-rPM" eventType="touchUpInside" id="687-r0-bEK"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="94z-1a-nAH"/>
+                                <constraint firstAttribute="width" constant="209" id="b1F-dV-QIY"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="dB9-JI-Bb3" secondAttribute="trailing" constant="1" id="51C-E3-Fzi"/>
-                        <constraint firstItem="Y7h-nn-3DJ" firstAttribute="top" secondItem="t0y-w0-JgE" secondAttribute="bottom" constant="32" id="Eji-wJ-Qmy"/>
+                        <constraint firstItem="DQz-9D-eF3" firstAttribute="centerX" secondItem="Zab-LQ-7Iq" secondAttribute="centerX" id="JQi-kC-vA3"/>
                         <constraint firstAttribute="height" constant="180" id="RR9-Km-ZAU"/>
+                        <constraint firstItem="DQz-9D-eF3" firstAttribute="top" secondItem="t0y-w0-JgE" secondAttribute="bottom" constant="21" id="Rrr-ad-gx1"/>
+                        <constraint firstItem="DQz-9D-eF3" firstAttribute="centerX" secondItem="Zab-LQ-7Iq" secondAttribute="centerX" id="SwE-TR-Af9"/>
                         <constraint firstItem="dB9-JI-Bb3" firstAttribute="top" secondItem="Zab-LQ-7Iq" secondAttribute="top" id="Xlt-Pc-VbZ"/>
                         <constraint firstAttribute="bottom" secondItem="dB9-JI-Bb3" secondAttribute="bottom" id="YEc-b6-K1W"/>
                         <constraint firstItem="t0y-w0-JgE" firstAttribute="leading" secondItem="Zab-LQ-7Iq" secondAttribute="leading" constant="29" id="cfc-Mq-R2S"/>
-                        <constraint firstAttribute="bottom" secondItem="Y7h-nn-3DJ" secondAttribute="bottom" constant="24" id="dMr-dw-nmV"/>
-                        <constraint firstItem="Y7h-nn-3DJ" firstAttribute="centerX" secondItem="Zab-LQ-7Iq" secondAttribute="centerX" id="hT3-bK-86q"/>
+                        <constraint firstItem="DQz-9D-eF3" firstAttribute="centerX" secondItem="Zab-LQ-7Iq" secondAttribute="centerX" id="g80-Qz-NR6"/>
+                        <constraint firstAttribute="bottom" secondItem="DQz-9D-eF3" secondAttribute="bottom" constant="34" id="hF3-HW-DTe"/>
                         <constraint firstAttribute="trailing" secondItem="t0y-w0-JgE" secondAttribute="trailing" constant="30" id="xIr-LR-gHu"/>
                         <constraint firstItem="dB9-JI-Bb3" firstAttribute="leading" secondItem="Zab-LQ-7Iq" secondAttribute="leading" id="xaD-5d-bOg"/>
                         <constraint firstItem="t0y-w0-JgE" firstAttribute="top" secondItem="Zab-LQ-7Iq" secondAttribute="top" constant="48" id="xhB-fP-d1T"/>
@@ -317,12 +337,13 @@ was create 1824 days</string>
             <constraints>
                 <constraint firstItem="Zab-LQ-7Iq" firstAttribute="centerY" secondItem="drB-Rb-rPM" secondAttribute="centerY" id="Ejs-D5-2sm"/>
                 <constraint firstItem="Zab-LQ-7Iq" firstAttribute="centerX" secondItem="drB-Rb-rPM" secondAttribute="centerX" id="gzX-pe-cO3"/>
-                <constraint firstAttribute="trailing" secondItem="Zab-LQ-7Iq" secondAttribute="trailing" constant="50" id="oOJ-U7-9W5"/>
-                <constraint firstItem="Zab-LQ-7Iq" firstAttribute="leading" secondItem="drB-Rb-rPM" secondAttribute="leading" constant="50" id="qfc-nC-KoK"/>
+                <constraint firstAttribute="trailing" secondItem="Zab-LQ-7Iq" secondAttribute="trailing" constant="33" id="oOJ-U7-9W5"/>
+                <constraint firstItem="Zab-LQ-7Iq" firstAttribute="leading" secondItem="drB-Rb-rPM" secondAttribute="leading" constant="33" id="qfc-nC-KoK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addressTextField" destination="G7R-XA-OOn" id="6FU-o7-bEi"/>
+                <outlet property="doneButton" destination="5Ay-eq-RFP" id="JSj-GF-Zhj"/>
             </connections>
             <point key="canvasLocation" x="1858" y="58"/>
         </view>

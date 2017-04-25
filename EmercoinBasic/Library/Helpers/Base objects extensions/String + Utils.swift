@@ -85,13 +85,18 @@ extension String {
     }
     
     func validAmount() -> Bool {
-        let pat = "\\d{1,9}\\.(\\d{1,6})?"
-        let regex = try! NSRegularExpression(pattern:pat, options: [.caseInsensitive])
+        return validData(at: "\\d{1,9}\\.(\\d{1,6})?")
+    }
+    
+    func validAddress() -> Bool {
+        return validData(at: "E{1}[A-Za-z0-9]{33}$")
+    }
+    
+    private func validData(at pattern:String) -> Bool {
+        let regex = try! NSRegularExpression(pattern:pattern, options:[])
         let nsString = self as NSString
         let results = regex.matches(in: self, range: NSRange(location: 0, length: nsString.length))
         let strings = results.map{nsString.substring(with: $0.range)}
         return strings.first != nil && strings.first == self
     }
-    
-    
 }

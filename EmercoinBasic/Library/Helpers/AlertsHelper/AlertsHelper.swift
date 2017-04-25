@@ -23,6 +23,8 @@ class AlertsHelper {
             
         }))
         
+        userInteraction(at: true)
+        
         return alert
     }
     
