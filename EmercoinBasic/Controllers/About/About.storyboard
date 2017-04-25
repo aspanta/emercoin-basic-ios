@@ -1,96 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--About View Controller-->
-        <scene sceneID="btv-uM-4Er">
+        <scene sceneID="iLO-x5-XOd">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="Jlj-Qk-eba" customClass="AboutViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="eyd-SJ-WiW" customClass="AboutViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TcL-ed-2ZM"/>
-                        <viewControllerLayoutGuide type="bottom" id="1ci-rw-QYK"/>
+                        <viewControllerLayoutGuide type="top" id="UmO-kr-im9"/>
+                        <viewControllerLayoutGuide type="bottom" id="e7s-7e-vb3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lyg-zc-Tvt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="atM-ve-yo1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohf-iE-QXH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX7-wG-UIP">
                                 <rect key="frame" x="0.0" y="20" width="58" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="58" id="1Ad-sv-8Oj"/>
-                                    <constraint firstAttribute="height" constant="61" id="AVz-17-BNi"/>
+                                    <constraint firstAttribute="height" constant="61" id="9kD-3i-pux"/>
+                                    <constraint firstAttribute="width" constant="58" id="bCY-mf-bWl"/>
                                 </constraints>
                                 <state key="normal" image="reg_arrow_icon"/>
                                 <connections>
-                                    <action selector="backToDashBoard" destination="Jlj-Qk-eba" eventType="touchUpInside" id="CSD-3C-6A5"/>
+                                    <action selector="backToDashBoard" destination="eyd-SJ-WiW" eventType="touchUpInside" id="oDu-9H-Slb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-xI-5se">
-                                <rect key="frame" x="159" y="52" width="58" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-bM-0GV">
+                                <rect key="frame" x="131" y="52" width="58" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="2tE-W7-RFe"/>
-                                    <constraint firstAttribute="width" constant="58" id="KNl-od-s9Z"/>
+                                    <constraint firstAttribute="height" constant="50" id="WEg-um-aKF"/>
+                                    <constraint firstAttribute="width" constant="58" id="fqW-JI-nQI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-Oa-cL1">
-                                <rect key="frame" x="47" y="116" width="282" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCO-dk-y9Z">
+                                <rect key="frame" x="19" y="116" width="282" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="o5g-rF-Dda"/>
+                                    <constraint firstAttribute="height" constant="42" id="sx7-0H-Quw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
                                 <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mE2-i9-cfb">
-                                <rect key="frame" x="0.0" y="166" width="320" height="402"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Emercoin Basic" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlw-7f-91q">
-                                        <rect key="frame" x="65" y="8" width="245" height="29.5"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="tlw-7f-91q" firstAttribute="centerX" secondItem="mE2-i9-cfb" secondAttribute="centerX" id="S0s-97-XF3"/>
-                                    <constraint firstItem="tlw-7f-91q" firstAttribute="top" secondItem="mE2-i9-cfb" secondAttribute="topMargin" id="Yc7-kA-5p0"/>
-                                </constraints>
-                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX9-MO-Z9d">
+                                <rect key="frame" x="16" y="166" width="288" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Emercoin Basic is a thin client for Emercoin Core Wallet which is connecting via RPC protocol designed by Aspanta Limited.
+
+Emercoin is one of the world's leading digital currency and blockchain platforms. Emercoin allows users to exchange money and valuable information, anywhere in the world, at any time, quickly, securely and affordably. Emercoin is a digital currency that uses the power of blockchain technology to provide the most secure way to send, receive and store money. A blockchain is a distributed database where cryptography is used to ensure that records can not be changed. The Emercoin blockchain allows you to store, send and receive money anywhere in the world. When you control your money, you decide when to send it. No one can charge you money, nor can they spend your money when you use Emercoin. International payments now take minutes, not days. Using Emercoin is extremely affordable. You can securely send any amount of money at any time, anywhere for pennies. The Emercoin blockchain is a safer way to send money than a bank because of the superior technology that gives control back to the owner. Emercoin is much more than money, it is information. You can securely store, send and receive ownership and identity information, register censorship-resistant domain names and browse the internet without having to use passwords anymore! These services are available 24/7 on the Emercoin blockchain. When you use Emercoin, you are the sole owner of your money and this means there is no third party who can lose track of your information. No one can steal your identity or impersonate you when using Emercoin, and you can choose how much information you reveal to someone when you send them money or information.
+
+Aspanta Limited is an expert in the development of highly loaded web and mobile full-cycle applications, reliable Microsoft Azure cloud resources, decentralized systems based on the Emercoin blockchain.</mutableString>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="LucidaGrande-Bold" family="Lucida Grande" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vwN-Oa-cL1" firstAttribute="centerX" secondItem="lyg-zc-Tvt" secondAttribute="centerX" id="4HY-8G-g9Z"/>
-                            <constraint firstItem="1ci-rw-QYK" firstAttribute="top" secondItem="mE2-i9-cfb" secondAttribute="bottom" id="8qe-4b-6jK"/>
-                            <constraint firstItem="ohf-iE-QXH" firstAttribute="top" secondItem="TcL-ed-2ZM" secondAttribute="bottom" id="Pjx-eL-YKc"/>
-                            <constraint firstItem="mE2-i9-cfb" firstAttribute="leading" secondItem="lyg-zc-Tvt" secondAttribute="leading" id="QVp-Ak-bR3"/>
-                            <constraint firstItem="ohf-iE-QXH" firstAttribute="leading" secondItem="lyg-zc-Tvt" secondAttribute="leading" id="fGN-5P-wgU"/>
-                            <constraint firstItem="YgJ-xI-5se" firstAttribute="centerX" secondItem="lyg-zc-Tvt" secondAttribute="centerX" id="fpr-BE-KVd"/>
-                            <constraint firstItem="mE2-i9-cfb" firstAttribute="top" secondItem="vwN-Oa-cL1" secondAttribute="bottom" constant="8" id="hha-WO-E8G"/>
-                            <constraint firstAttribute="trailing" secondItem="mE2-i9-cfb" secondAttribute="trailing" id="jca-Kv-Lv0"/>
-                            <constraint firstItem="YgJ-xI-5se" firstAttribute="top" secondItem="TcL-ed-2ZM" secondAttribute="bottom" constant="32" id="knY-KC-Wdf"/>
-                            <constraint firstItem="vwN-Oa-cL1" firstAttribute="top" secondItem="YgJ-xI-5se" secondAttribute="bottom" constant="14" id="xe5-fY-Kwz"/>
+                            <constraint firstItem="e7s-7e-vb3" firstAttribute="top" secondItem="qX9-MO-Z9d" secondAttribute="bottom" constant="20" id="83x-Np-aAp"/>
+                            <constraint firstItem="qX9-MO-Z9d" firstAttribute="top" secondItem="aCO-dk-y9Z" secondAttribute="bottom" constant="8" id="Dxd-2K-W4g"/>
+                            <constraint firstItem="aCO-dk-y9Z" firstAttribute="centerX" secondItem="atM-ve-yo1" secondAttribute="centerX" id="MXG-xv-G9L"/>
+                            <constraint firstItem="aCO-dk-y9Z" firstAttribute="top" secondItem="XaI-bM-0GV" secondAttribute="bottom" constant="14" id="PQM-JI-q9p"/>
+                            <constraint firstItem="qX9-MO-Z9d" firstAttribute="leading" secondItem="atM-ve-yo1" secondAttribute="leading" constant="16" id="QPR-bU-8us"/>
+                            <constraint firstItem="kX7-wG-UIP" firstAttribute="leading" secondItem="atM-ve-yo1" secondAttribute="leading" id="c01-je-6UP"/>
+                            <constraint firstAttribute="trailing" secondItem="qX9-MO-Z9d" secondAttribute="trailing" constant="16" id="fg4-Ax-doY"/>
+                            <constraint firstItem="kX7-wG-UIP" firstAttribute="top" secondItem="UmO-kr-im9" secondAttribute="bottom" id="juO-R7-R7Z"/>
+                            <constraint firstItem="XaI-bM-0GV" firstAttribute="centerX" secondItem="atM-ve-yo1" secondAttribute="centerX" id="tXy-on-dIz"/>
+                            <constraint firstItem="XaI-bM-0GV" firstAttribute="top" secondItem="UmO-kr-im9" secondAttribute="bottom" constant="32" id="xSd-18-5Le"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vdN-Ey-9Hb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5o-PT-WiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.25" y="190.14084507042253"/>
+            <point key="canvasLocation" x="835" y="-18"/>
         </scene>
     </scenes>
     <resources>

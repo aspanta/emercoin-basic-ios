@@ -26,9 +26,9 @@ class WalletProtectionActivityView: PopupView {
         var text = ""
         
         switch type {
-            case .lock:text = "Lock"
-            case .unlock:text = "Unlock"
-            case .protection:text = "Encrypt"
+            case .lock:text = "Locking"
+            case .unlock:text = "Unlocking"
+            case .protection:text = "Encrypting"
         default:
             text = "Protection"
         }
@@ -41,11 +41,5 @@ class WalletProtectionActivityView: PopupView {
     deinit {
         print("deinit - WalletProtectionActivityView")
         userInteraction(at: true)
-    }
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        
-        userInteraction(at: false)
     }
 }

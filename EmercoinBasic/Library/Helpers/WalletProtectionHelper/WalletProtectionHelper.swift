@@ -41,9 +41,8 @@ class WalletProtectionHelper {
         view.unlock = {(password) in
            let activity = self.showActivityView(at: .unlock)
             self.wallet.unlock(at: password, completion: {[weak self](isLock) in
-                activity.removeFromSuperview()
                 userInteraction(at: true)
-                
+                activity.removeFromSuperview()
                 if self?.unlock != nil {
                     if isLock == false {
                         self?.unlock!()

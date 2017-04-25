@@ -39,7 +39,8 @@ class SearchNVSResultsViewController: MyRecordsViewController {
     }
     
     override func nvsInfoButtonPressed() {
-        let vc = NVSInfoViewController.controller()
+        let vc = NVSInfoViewController.controller() as! NVSInfoViewController
+        vc.infoType = .why
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

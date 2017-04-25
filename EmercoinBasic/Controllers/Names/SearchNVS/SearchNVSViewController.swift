@@ -69,7 +69,6 @@ class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
 
     @IBAction func nvsInfoButtonPressed() {
         let vc = NVSInfoViewController.controller() as! NVSInfoViewController
-        vc.infoType = .dpo
         navigationController?.pushViewController(vc, animated: true)
     }
 }
