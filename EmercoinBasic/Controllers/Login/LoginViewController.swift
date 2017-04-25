@@ -59,8 +59,8 @@ class LoginViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         viewModel.topConstraint.bindTo(topConstraint.rx.constant)
             .addDisposableTo(disposeBag)
-        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
-            .addDisposableTo(disposeBag)
+//        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
+//            .addDisposableTo(disposeBag)
         
         setupLogin()
         
@@ -122,13 +122,8 @@ class LoginViewController: BaseViewController {
         viewModel.isChecked = isChecked
     }
     
-    @IBAction func policyButtonPressed(sender:UIButton) {
-        let controller = PrivacyPolicyViewController.controller()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     @IBAction func termsButtonPressed(sender:UIButton) {
-        let controller = TermOfUseViewController.controller()
+        let controller = LegalViewController.controller()
         navigationController?.pushViewController(controller, animated: true)
     }
     

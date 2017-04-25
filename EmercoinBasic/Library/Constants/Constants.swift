@@ -161,13 +161,8 @@ struct Constants {
                 static let Image = "menu_settings_icon"
             }
             
-            struct Politics {
-                static let Title = "Privacy Policy"
-                static let Image = "menu_politics_icon"
-            }
-            
-            struct Terms {
-                static let Title = "Terms of Use"
+            struct Legal {
+                static let Title = "Legal"
                 static let Image = "menu_terms_icon"
             }
             

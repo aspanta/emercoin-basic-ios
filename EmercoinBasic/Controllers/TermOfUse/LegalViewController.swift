@@ -5,7 +5,7 @@
 
 import UIKit
 
-class TermOfUseViewController: BaseViewController {
+class LegalViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,7 +14,7 @@ class TermOfUseViewController: BaseViewController {
     }
 
     override class func storyboardName() -> String {
-        return "TermOfUse"
+        return "Legal"
     }
     
     override func back() {

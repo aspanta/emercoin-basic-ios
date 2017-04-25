@@ -41,10 +41,8 @@ class LeftViewController: BaseViewController {
                                     image: Constants.Controllers.Menu.BCTools.Image)
         let aboutMenuItem = MenuItem(title: Constants.Controllers.Menu.About.Title,
                                     image: Constants.Controllers.Menu.About.Image)
-        let politicsMenuItem = MenuItem(title: Constants.Controllers.Menu.Politics.Title,
-                                    image: Constants.Controllers.Menu.Politics.Image)
-        let termsMenuItem = MenuItem(title: Constants.Controllers.Menu.Terms.Title,
-                                        image: Constants.Controllers.Menu.Terms.Image)
+        let legalMenuItem = MenuItem(title: Constants.Controllers.Menu.Legal.Title,
+                                        image: Constants.Controllers.Menu.Legal.Image)
         let exitMenuItem = MenuItem(title: Constants.Controllers.Menu.Exit.Title,
                                     image: Constants.Controllers.Menu.Exit.Image)
         let historyMenuItem = MenuItem(title: Constants.Controllers.Menu.History.Title,
@@ -53,7 +51,7 @@ class LeftViewController: BaseViewController {
                                        image: Constants.Controllers.Menu.Book.Image)
         
         menuItems = [homeMenuItem,sendMenuItem,getMenuItem,historyMenuItem,bctoolsMenuItem,
-                     bookMenuItem,aboutMenuItem,politicsMenuItem,termsMenuItem,exitMenuItem]
+                     bookMenuItem,aboutMenuItem,legalMenuItem,exitMenuItem]
         
     }
 

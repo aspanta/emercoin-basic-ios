@@ -68,7 +68,7 @@ class SideMenuViewController: LGSideMenuController {
     
     private func selectTabItem(at index:Int, subIndex:Int) {
         
-        if index == 9 {
+        if index == 8 {
             logout()
         } else if index == 4 && subIndex != -1 {
             checkRootController()
@@ -103,8 +103,7 @@ class SideMenuViewController: LGSideMenuController {
             bookVC.isFromMenu = true
             vc = bookVC
         case 6:vc = AboutViewController.controller()
-        case 7:vc = PrivacyPolicyViewController.controller()
-        case 8:vc = TermOfUseViewController.controller()
+        case 7:vc = LegalViewController.controller()
         default:
             return
         }

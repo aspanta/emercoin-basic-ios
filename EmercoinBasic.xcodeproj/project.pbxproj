@@ -206,13 +206,11 @@
 		2D997D031E7AD3B200630560 /* LeftViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C9B1E7AD3B200630560 /* LeftViewController + TableView.swift */; };
 		2D997D041E7AD3B200630560 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C9C1E7AD3B200630560 /* LeftViewController.swift */; };
 		2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C9D1E7AD3B200630560 /* SideMenuViewController.swift */; };
-		2D997D061E7AD3B200630560 /* PrivacyPolicy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997C9F1E7AD3B200630560 /* PrivacyPolicy.storyboard */; };
-		2D997D071E7AD3B200630560 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CA01E7AD3B200630560 /* PrivacyPolicyViewController.swift */; };
 		2D997D081E7AD3B200630560 /* ProtectionModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CA21E7AD3B200630560 /* ProtectionModule.storyboard */; };
 		2D997D091E7AD3B200630560 /* ProtectionModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CA31E7AD3B200630560 /* ProtectionModule.xib */; };
 		2D997D0A1E7AD3B200630560 /* ProtectionModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CA41E7AD3B200630560 /* ProtectionModuleViewController.swift */; };
-		2D997D0F1E7AD3B200630560 /* TermOfUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CAD1E7AD3B200630560 /* TermOfUse.storyboard */; };
-		2D997D101E7AD3B200630560 /* TermOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CAE1E7AD3B200630560 /* TermOfUseViewController.swift */; };
+		2D997D0F1E7AD3B200630560 /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CAD1E7AD3B200630560 /* Legal.storyboard */; };
+		2D997D101E7AD3B200630560 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CAE1E7AD3B200630560 /* LegalViewController.swift */; };
 		2DA249441E7C1F4700AF81DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249431E7C1F4700AF81DD /* LoginViewController.swift */; };
 		2DA2494A1E7C203B00AF81DD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249491E7C203B00AF81DD /* LoginViewModel.swift */; };
 		2DA3E77C1E83DA19003F9A6D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E77B1E83DA19003F9A6D /* Settings.swift */; };
@@ -432,13 +430,11 @@
 		2D997C9B1E7AD3B200630560 /* LeftViewController + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "LeftViewController + TableView.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997C9C1E7AD3B200630560 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LeftViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997C9D1E7AD3B200630560 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SideMenuViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997C9F1E7AD3B200630560 /* PrivacyPolicy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrivacyPolicy.storyboard; sourceTree = "<group>"; };
-		2D997CA01E7AD3B200630560 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997CA21E7AD3B200630560 /* ProtectionModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProtectionModule.storyboard; sourceTree = "<group>"; };
 		2D997CA31E7AD3B200630560 /* ProtectionModule.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectionModule.xib; sourceTree = "<group>"; };
 		2D997CA41E7AD3B200630560 /* ProtectionModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProtectionModuleViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997CAD1E7AD3B200630560 /* TermOfUse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermOfUse.storyboard; sourceTree = "<group>"; };
-		2D997CAE1E7AD3B200630560 /* TermOfUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TermOfUseViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2D997CAD1E7AD3B200630560 /* Legal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Legal.storyboard; sourceTree = "<group>"; };
+		2D997CAE1E7AD3B200630560 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LegalViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2DA249431E7C1F4700AF81DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2DA249491E7C203B00AF81DD /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2DA3E77B1E83DA19003F9A6D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -962,9 +958,8 @@
 				2D997C541E7AD3B200630560 /* Common */,
 				2D997C631E7AD3B200630560 /* Home */,
 				2D997C8D1E7AD3B200630560 /* Login */,
-				2D997C9E1E7AD3B200630560 /* PrivacyPolicy */,
 				2D997CA11E7AD3B200630560 /* ProtectionModule */,
-				2D997CAC1E7AD3B200630560 /* TermOfUse */,
+				2D997CAC1E7AD3B200630560 /* Legal */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1767,15 +1762,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		2D997C9E1E7AD3B200630560 /* PrivacyPolicy */ = {
-			isa = PBXGroup;
-			children = (
-				2D997C9F1E7AD3B200630560 /* PrivacyPolicy.storyboard */,
-				2D997CA01E7AD3B200630560 /* PrivacyPolicyViewController.swift */,
-			);
-			path = PrivacyPolicy;
-			sourceTree = "<group>";
-		};
 		2D997CA11E7AD3B200630560 /* ProtectionModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -1786,12 +1772,13 @@
 			path = ProtectionModule;
 			sourceTree = "<group>";
 		};
-		2D997CAC1E7AD3B200630560 /* TermOfUse */ = {
+		2D997CAC1E7AD3B200630560 /* Legal */ = {
 			isa = PBXGroup;
 			children = (
-				2D997CAD1E7AD3B200630560 /* TermOfUse.storyboard */,
-				2D997CAE1E7AD3B200630560 /* TermOfUseViewController.swift */,
+				2D997CAD1E7AD3B200630560 /* Legal.storyboard */,
+				2D997CAE1E7AD3B200630560 /* LegalViewController.swift */,
 			);
+			name = Legal;
 			path = TermOfUse;
 			sourceTree = "<group>";
 		};
@@ -1930,11 +1917,10 @@
 				2D997CAF1E7AD3B200630560 /* About.storyboard in Resources */,
 				2D997B201E7AD1FF00630560 /* ButtonCell.xib in Resources */,
 				2D997AB91E7AD02A00630560 /* Assets.xcassets in Resources */,
-				2D997D0F1E7AD3B200630560 /* TermOfUse.storyboard in Resources */,
+				2D997D0F1E7AD3B200630560 /* Legal.storyboard in Resources */,
 				2D997ABA1E7AD02A00630560 /* LaunchScreen.storyboard in Resources */,
 				2D09DB891E9D5D370013970F /* WalletProtection.xib in Resources */,
 				2D997CD71E7AD3B200630560 /* Send.xib in Resources */,
-				2D997D061E7AD3B200630560 /* PrivacyPolicy.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2076,7 +2062,7 @@
 				2D997B061E7AD1FF00630560 /* Dictionary + Utils.swift in Sources */,
 				2D997B011E7AD1FF00630560 /* BaseViewController.swift in Sources */,
 				2D997B101E7AD1FF00630560 /* DPDKeyboardListener.swift in Sources */,
-				2D997D101E7AD3B200630560 /* TermOfUseViewController.swift in Sources */,
+				2D997D101E7AD3B200630560 /* LegalViewController.swift in Sources */,
 				2D21D66E1E926E690088AD31 /* SearchNVSResultsViewController.swift in Sources */,
 				2D997BB71E7AD2B600630560 /* CoinsOpeartionHeaderView.swift in Sources */,
 				2D997CCD1E7AD3B200630560 /* CoinOperationsViewController.swift in Sources */,
@@ -2111,7 +2097,6 @@
 				2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */,
 				2D997B521E7AD24E00630560 /* Coin.swift in Sources */,
 				2D09DB8E1E9D651A0013970F /* WalletProtectionLockView.swift in Sources */,
-				2D997D071E7AD3B200630560 /* PrivacyPolicyViewController.swift in Sources */,
 				2D997CFF1E7AD3B200630560 /* MenuBCToolsCell.swift in Sources */,
 				2D0DCC551EAA4BF300802609 /* SendAmountTextField.swift in Sources */,
 				2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */,

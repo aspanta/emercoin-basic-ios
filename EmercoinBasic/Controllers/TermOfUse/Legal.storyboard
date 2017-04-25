@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Legal View Controller-->
+        <scene sceneID="RqR-Xj-MD8">
+            <objects>
+                <viewController storyboardIdentifier="LegalViewController" id="rZl-9B-ZMR" customClass="LegalViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4or-H7-gOv"/>
+                        <viewControllerLayoutGuide type="bottom" id="NsW-oy-8Db"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v4H-mp-qwM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-OY-BZZ">
+                                <rect key="frame" x="0.0" y="20" width="58" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="UIb-eo-c9x"/>
+                                    <constraint firstAttribute="width" constant="58" id="Xrh-BT-9gX"/>
+                                </constraints>
+                                <state key="normal" image="reg_arrow_icon"/>
+                                <connections>
+                                    <action selector="back" destination="rZl-9B-ZMR" eventType="touchUpInside" id="Ufk-Zu-20V"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-hR-Cxg">
+                                <rect key="frame" x="131" y="52" width="58" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G20-kr-Ayg"/>
+                                    <constraint firstAttribute="width" constant="58" id="dPf-nl-zQT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4q-T7-cqV">
+                                <rect key="frame" x="19" y="116" width="282" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Z2I-aI-qGr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                <color key="textColor" red="0.61176470588235299" green="0.45098039215686275" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqz-Ik-wnO">
+                                <rect key="frame" x="16" y="166" width="288" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Emercoin Basic License
+Copyright (c) 2017, Aspanta Limited
+Licensed under the Microsoft Reference Source License (MS-RSL)
+1. Definitions
+The terms "reproduce," "reproduction," and "distribution" have the same meaning here as under U.S. copyright law.
+"You" means the licensee of the software.
+"Your company" means the company you worked for when you downloaded the software.
+"Reference use" means use of the software within your company as a reference, in read only form, for the sole purposes of debugging your products, maintaining your products, or enhancing the interoperability of your products with the software, and specifically excludes the right to distribute the software outside of your company.
+"Licensed patents" means any Licensor patent claims which read directly on the software as distributed by the Licensor under this license.
+2. Grant of Rights
+(A) Copyright Grant- Subject to the terms of this license, the Licensor grants you a non-transferable, non-exclusive, worldwide, royalty-free copyright license to reproduce the software for reference use.
+(B) Patent Grant- Subject to the terms of this license, the Licensor grants you a non-transferable, non-exclusive, worldwide, royalty-free patent license under licensed patents for reference use.
+3. Limitations
+(A) No Trademark License- This license does not grant you any rights to use the LicensorвЂ™s name, logo, or trademarks.
+(B) If you begin patent litigation against the Licensor over patents that you think may apply to the software (including a cross-claim or counterclaim in a lawsuit), your license to the software ends automatically.
+(C) The software is licensed "as-is." You bear the risk of using it. The Licensor gives no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the Licensor excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+OpenSSL License
+Copyright (c) 1998-2017 The OpenSSL Project. All rights reserved.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3. All advertising materials mentioning features or use of this software must display the following acknowledgment: "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/)" 
+4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to endorse or promote products derived from this software without prior written permission. For written permission, please contact openssl-core@openssl.org.
+5. Products derived from this software may not be called "OpenSSL" nor may "OpenSSL" appear in their names without prior written permission of the OpenSSL Project.
+6. Redistributions of any form whatsoever must retain the following acknowledgment: "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)" 
+THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE OpenSSL PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).
+This product includes software written by Tim Hudson (tjh@cryptsoft.com).
+
+FMDB License
+Copyright (c) 2008 Flying Meat Inc.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="LucidaGrande-Bold" family="Lucida Grande" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O4q-T7-cqV" firstAttribute="top" secondItem="yXc-hR-Cxg" secondAttribute="bottom" constant="14" id="7Yn-NM-OXZ"/>
+                            <constraint firstItem="yXc-hR-Cxg" firstAttribute="centerX" secondItem="v4H-mp-qwM" secondAttribute="centerX" id="CrX-XF-KNr"/>
+                            <constraint firstItem="yXc-hR-Cxg" firstAttribute="top" secondItem="4or-H7-gOv" secondAttribute="bottom" constant="32" id="GKV-S4-FTf"/>
+                            <constraint firstAttribute="trailing" secondItem="jqz-Ik-wnO" secondAttribute="trailing" constant="16" id="M5S-rH-gEh"/>
+                            <constraint firstItem="jqz-Ik-wnO" firstAttribute="top" secondItem="O4q-T7-cqV" secondAttribute="bottom" constant="8" id="NtH-ZA-0Ai"/>
+                            <constraint firstItem="jqz-Ik-wnO" firstAttribute="leading" secondItem="v4H-mp-qwM" secondAttribute="leading" constant="16" id="UJw-zB-4Lr"/>
+                            <constraint firstItem="gsc-OY-BZZ" firstAttribute="top" secondItem="4or-H7-gOv" secondAttribute="bottom" id="XRA-5v-tjD"/>
+                            <constraint firstItem="O4q-T7-cqV" firstAttribute="centerX" secondItem="v4H-mp-qwM" secondAttribute="centerX" id="dM8-NR-hrq"/>
+                            <constraint firstItem="NsW-oy-8Db" firstAttribute="top" secondItem="jqz-Ik-wnO" secondAttribute="bottom" constant="20" id="edJ-G0-djd"/>
+                            <constraint firstItem="gsc-OY-BZZ" firstAttribute="leading" secondItem="v4H-mp-qwM" secondAttribute="leading" id="kfX-nM-VcU"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFb-jN-nBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56.25" y="-14.788732394366198"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="reg_arrow_icon" width="19" height="16"/>
+        <image name="reg_logo" width="110" height="96"/>
+    </resources>
+</document>
