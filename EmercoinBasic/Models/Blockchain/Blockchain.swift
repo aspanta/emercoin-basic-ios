@@ -13,7 +13,7 @@ class Blockchain: Object, Mappable {
     dynamic var headers = 0
     dynamic var verificationprogress = 0.0 {
         didSet {
-            isLoaded = !((verificationprogress < 0.99) && (blocks + 1 < headers))
+            isLoaded = !((verificationprogress < 0.99) || (blocks + 1 < headers))
         }
     }
     dynamic var isLoaded = false
