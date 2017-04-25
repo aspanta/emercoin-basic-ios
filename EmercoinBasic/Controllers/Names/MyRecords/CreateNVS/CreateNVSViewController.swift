@@ -183,6 +183,8 @@ class CreateNVSViewController: BaseViewController {
             if prefix.length > 0 {
                 prefixLabel.text = prefix
             }
+            
+            timeTextField.text = "300"
         }
         
         if isIphone5() {
