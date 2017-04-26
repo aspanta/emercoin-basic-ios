@@ -154,8 +154,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                             <constraint firstItem="gsc-OY-BZZ" firstAttribute="leading" secondItem="v4H-mp-qwM" secondAttribute="leading" id="kfX-nM-VcU"/>
                         </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="textView" destination="jqz-Ik-wnO" id="r4k-oK-8qm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFb-jN-nBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

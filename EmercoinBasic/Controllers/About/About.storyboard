@@ -126,6 +126,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="textView" destination="qX9-MO-Z9d" id="eEO-yy-N49"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5o-PT-WiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
