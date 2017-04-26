@@ -10,7 +10,7 @@ class AppManager {
     
     internal static let sharedInstance = AppManager()
     
-    var wallet:Wallet = Wallet(amount: -1)
+    var wallet:Wallet = Wallet(amount: 123456789.123456)
     var myAddressBook:MyAddressBook = MyAddressBook()
     var settings:Settings = {
         let settings = Settings()

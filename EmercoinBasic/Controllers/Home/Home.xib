@@ -39,11 +39,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 000,00000 EMC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwC-la-Q0a">
-                    <rect key="frame" x="74" y="37" width="196" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 000,00000 EMC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="UwC-la-Q0a">
+                    <rect key="frame" x="74" y="37" width="285" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="E7d-Fa-73G"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="196" id="iGx-9P-iw2"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
                     <nil key="textColor"/>
@@ -64,6 +63,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="UwC-la-Q0a" firstAttribute="leading" secondItem="p4D-pW-5bN" secondAttribute="trailing" constant="20" id="1zN-2b-lXr"/>
+                <constraint firstAttribute="trailing" secondItem="UwC-la-Q0a" secondAttribute="trailing" constant="16" id="BAK-o7-JwJ"/>
                 <constraint firstItem="p4D-pW-5bN" firstAttribute="top" secondItem="jWw-zK-oc3" secondAttribute="top" constant="20" id="E2H-pL-0w5"/>
                 <constraint firstAttribute="trailing" secondItem="ppE-Bf-d4v" secondAttribute="trailing" constant="16" id="Ejs-q0-a1e"/>
                 <constraint firstItem="UwC-la-Q0a" firstAttribute="top" secondItem="nJg-0w-6Zn" secondAttribute="bottom" constant="1" id="HIQ-O3-DQL"/>
