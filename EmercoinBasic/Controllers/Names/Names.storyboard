@@ -241,7 +241,7 @@
         <!--Info View Controller-->
         <scene sceneID="RGZ-rR-Tb9">
             <objects>
-                <viewController storyboardIdentifier="NVSInfoViewController" id="OAT-BX-9MU" customClass="NVSInfoViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OAT-BX-9MU" customClass="NVSInfoViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Rm-oV-6AO"/>
                         <viewControllerLayoutGuide type="bottom" id="xhO-LU-rKg"/>
@@ -1470,6 +1470,80 @@ not found</string>
             </objects>
             <point key="canvasLocation" x="-1772" y="-388"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="FnF-zO-QN4">
+            <objects>
+                <viewController storyboardIdentifier="NVSInfoViewController" id="Vq4-sW-0SU" customClass="NVSInfoViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Zf-dq-ED6"/>
+                        <viewControllerLayoutGuide type="bottom" id="jyd-SV-1sv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rdp-5n-Sj0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHo-rS-a6d">
+                                <rect key="frame" x="0.0" y="20" width="58" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="BJf-9o-lyk"/>
+                                    <constraint firstAttribute="height" constant="61" id="mSm-cv-jKA"/>
+                                </constraints>
+                                <state key="normal" image="reg_arrow_icon"/>
+                                <connections>
+                                    <action selector="back" destination="Vq4-sW-0SU" eventType="touchUpInside" id="BfQ-wP-ONk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-WS-y1H">
+                                <rect key="frame" x="131" y="52" width="58" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1nf-f7-ldn"/>
+                                    <constraint firstAttribute="width" constant="58" id="d7R-Ui-5Tw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-3s-6Oh">
+                                <rect key="frame" x="19" y="116" width="282" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="cbS-7E-7dK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-Ts-AfW" customClass="BaseTextView" customModule="EmercoinBasic" customModuleProvider="target">
+                                <rect key="frame" x="16" y="166" width="288" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">EmerCoin (Emerkoin) - a new generation cryptocurrency, which allows not only to exchange money, but also offers a range of unique technologies. On the basis of a block Cheyne EmerCoin developed decentralized advertising system emcLNX, secure authentication system on the sites emcSSL, smart authentication servers through emcSSH and more. On this page is a list of publications about cryptocurrency EmerCoin, as well as instructions for installing, configuring, and using numerous services based on this technology exchange.
+
+First - define: Emer - is a technology and network infrastructure. Emerkoin - credit units, which circulate within Emer network. But since so accepted that the word EmerCoin called all together, we will also follow the generally accepted semantics of using the word Emer, just when we want to emphasize that we are talking about technology, not settlement and accounting aspects.</mutableString>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7mn-3s-6Oh" firstAttribute="centerX" secondItem="rdp-5n-Sj0" secondAttribute="centerX" id="I1z-3E-Y2G"/>
+                            <constraint firstItem="jyd-SV-1sv" firstAttribute="top" secondItem="gxj-Ts-AfW" secondAttribute="bottom" constant="20" id="IRX-qK-tRj"/>
+                            <constraint firstItem="GHo-rS-a6d" firstAttribute="top" secondItem="3Zf-dq-ED6" secondAttribute="bottom" id="KJF-AR-f3x"/>
+                            <constraint firstItem="gxj-Ts-AfW" firstAttribute="leading" secondItem="rdp-5n-Sj0" secondAttribute="leading" constant="16" id="O0m-jO-tdF"/>
+                            <constraint firstItem="hkI-WS-y1H" firstAttribute="centerX" secondItem="rdp-5n-Sj0" secondAttribute="centerX" id="Xq3-7S-1AU"/>
+                            <constraint firstAttribute="trailing" secondItem="gxj-Ts-AfW" secondAttribute="trailing" constant="16" id="Zpj-0F-0yd"/>
+                            <constraint firstItem="gxj-Ts-AfW" firstAttribute="top" secondItem="7mn-3s-6Oh" secondAttribute="bottom" constant="8" id="fou-Se-sN9"/>
+                            <constraint firstItem="7mn-3s-6Oh" firstAttribute="top" secondItem="hkI-WS-y1H" secondAttribute="bottom" constant="14" id="ha3-SL-qnB"/>
+                            <constraint firstItem="GHo-rS-a6d" firstAttribute="leading" secondItem="rdp-5n-Sj0" secondAttribute="leading" id="lP7-ix-Pya"/>
+                            <constraint firstItem="hkI-WS-y1H" firstAttribute="top" secondItem="3Zf-dq-ED6" secondAttribute="bottom" constant="32" id="oNY-yB-LFO"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="infoTextView" destination="gxj-Ts-AfW" id="euT-Em-0HQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKi-bu-PcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557" y="269"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back_icon" width="18" height="15"/>
@@ -1479,6 +1553,7 @@ not found</string>
         <image name="names_arrow" width="19" height="16"/>
         <image name="names_down_color_icon" width="9" height="7"/>
         <image name="reg_arrow_icon" width="19" height="16"/>
+        <image name="reg_logo" width="110" height="96"/>
         <image name="send_emer_icon" width="35" height="31"/>
         <image name="send_enter_icon" width="17" height="13"/>
         <image name="send_list_icon" width="12" height="13"/>

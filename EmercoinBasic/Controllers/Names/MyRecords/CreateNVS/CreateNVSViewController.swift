@@ -181,7 +181,7 @@ class CreateNVSViewController: BaseViewController {
             }
             
             if prefix.length > 0 {
-                prefixLabel.text = prefix
+                prefixLabel.text = prefix+":"
             }
             
             timeTextField.text = "300"
