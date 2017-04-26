@@ -38,6 +38,8 @@ public func isValidEmail(email:String?) -> Bool {
 
 public func userInteraction(at enable:Bool) {
     if enable {
+        Router.sharedInstance.sideMenu?.hideTabBar(hiden: false)
+        Router.sharedInstance.sideMenu?.enableMenuSwipe(at: true)
         UIApplication.shared.endIgnoringInteractionEvents()
     } else {
         UIApplication.shared.beginIgnoringInteractionEvents()

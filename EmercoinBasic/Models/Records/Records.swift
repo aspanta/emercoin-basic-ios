@@ -36,7 +36,7 @@ class Records {
             .subscribe(onNext: {results, changes in
                 self.isEmpty.onNext(results.count == 0)
                 
-                if changes?.inserted.count != 0 || changes?.updated.count != 0 {
+                if changes != nil {
                     self.success.onNext(true)
                 }
             })

@@ -89,13 +89,13 @@ class Wallet:BaseModel {
         
         APIManager.sharedInstance.loadBlockchainInfo{[weak self] (data, error) in
             if error != nil {
+                userInteraction(at: true)
                 self?.error.onNext(error!)
             } else {
                 if let blockchain = data as? Blockchain {
                     if blockchain.isLoaded {
                         AppManager.sharedInstance.isBlockchaiLoaded = true
-                        Router.sharedInstance.sideMenu?.hideTabBar(hiden: false)
-                        Router.sharedInstance.sideMenu?.enableMenuSwipe(at: true)
+                        userInteraction(at: true)
                         self?.loadInfo()
                     }
                     self?.blockchain.onNext(blockchain)
