@@ -77,6 +77,10 @@ class LoginViewController: BaseViewController {
             }
         }).addDisposableTo(disposeBag)
         
+        viewModel.blocks.subscribe(onNext:{ [weak self] blocks in
+            self?.showBlockchainController(at:blocks)
+        }).addDisposableTo(disposeBag)
+        
         viewModel.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
         }).addDisposableTo(disposeBag)
@@ -108,6 +112,11 @@ class LoginViewController: BaseViewController {
     private func showMainController() {
         
         Router.sharedInstance.showMainController()
+    }
+    
+    private func showBlockchainController(at blocks:Int) {
+        
+        Router.sharedInstance.showBlockChainLoadingController(at: blocks)
     }
     
     private func showErrorAlert(at error:NSError) {

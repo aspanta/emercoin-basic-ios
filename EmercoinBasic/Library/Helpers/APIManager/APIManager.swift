@@ -27,7 +27,30 @@ class APIManager: NSObject {
     
     internal static let sharedInstance = APIManager()
     
+    private var apies:[BaseAPI] = []
+    
     private var authInfo:[String:String] = [:]
+    
+    func addApi(at api:BaseAPI) {
+        apies.append(api)
+    }
+    
+    func removeApi(at api:BaseAPI) {
+        apies.remove(object: api)
+    }
+    
+    func removeAll() {
+        apies.removeAll()
+    }
+    
+    func cancelAllRequests() {
+        
+        for api in apies {
+            api.dataTask?.cancel()
+        }
+        
+        removeAll()
+    }
     
     func addAuthInfo(at authInfo:[String:String]) {
         
@@ -37,8 +60,7 @@ class APIManager: NSObject {
     func login(at authInfo:[String:String], completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
         
         self.authInfo = authInfo
-        
-        loadInfo(completion: completion)
+        loadBlockchainInfo(completion: completion)
     }
     
     func loadInfo(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
@@ -221,6 +243,11 @@ class APIManager: NSObject {
         }
         
         api.object = authInfo as AnyObject?
+        
+        addApi(at: api)
+        api.done = {
+            self.removeApi(at: api)
+        }
 
         return api
     }

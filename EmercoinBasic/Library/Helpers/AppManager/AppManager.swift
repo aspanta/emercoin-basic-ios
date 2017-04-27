@@ -25,7 +25,7 @@ class AppManager {
         
         isAuthorized = false
         settings.clear()
-        
+        APIManager.sharedInstance.cancelAllRequests()
         wallet.balance = -1
         
         let realm = try! Realm()

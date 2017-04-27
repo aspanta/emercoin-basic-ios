@@ -17,7 +17,7 @@ class BlockchainLoadingView: PopupView {
     
     private var timer:Timer?
     
-    var blockchain:Blockchain? {
+    var blocks:Int = 0 {
         didSet {
             updateUI()
         }
@@ -68,10 +68,7 @@ class BlockchainLoadingView: PopupView {
     }
     
     private func updateUI() {
-        
-        if let blockchain = blockchain {
-            textLabel.text = String(format:"Depth done: %i blocks",blockchain.blocks)
-        }
+        textLabel.text = String(format:"Depth done: %i blocks",blocks)
     }
 
 }

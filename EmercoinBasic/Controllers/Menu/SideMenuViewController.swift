@@ -13,7 +13,7 @@ class SideMenuViewController: LGSideMenuController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        AppManager.sharedInstance.wallet.loadBlockChainInfo()
+        AppManager.sharedInstance.wallet.loadInfo()
     }
     
     fileprivate var mainTabBarController:TabBarController = {
@@ -48,10 +48,6 @@ class SideMenuViewController: LGSideMenuController {
         leftViewController = menu
         
         Router.sharedInstance.sideMenu = self
-        
-        enableMenuSwipe(at: false)
-        
-        mainTabBarController.tabBar.isHidden = true
     }
     
     func enableMenuSwipe(at state:Bool) {

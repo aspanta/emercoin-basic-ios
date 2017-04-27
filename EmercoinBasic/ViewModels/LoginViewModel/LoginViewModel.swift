@@ -21,6 +21,7 @@ class LoginViewModel {
     var leftConstraint = PublishSubject<CGFloat>()
     var isValidCredentials = PublishSubject<Bool>()
     var successLogin = PublishSubject<Bool>()
+    var blocks = PublishSubject<Int>()
     var error = PublishSubject<NSError>()
     var activityIndicator = PublishSubject<Bool>()
 
@@ -72,10 +73,13 @@ class LoginViewModel {
                     self?.settings.save()
                 }
                 
-                if let wallet = data as? Wallet {
-                    AppManager.sharedInstance.wallet.balance = wallet.balance
+                if let blockchain = data as? Blockchain {
+                    if blockchain.isLoaded == false {
+                        self?.blocks.onNext(blockchain.blocks)
+                    } else {
+                         self?.successLogin.onNext(true)
+                    }
                 }
-                self?.successLogin.onNext(true)
             }
         }
     }

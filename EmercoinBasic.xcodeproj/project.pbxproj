@@ -51,6 +51,9 @@
 		2D22B2451E7C4455008BB64F /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22B2401E7C4455008BB64F /* ContactCell.swift */; };
 		2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28C85D1E7C596C0071947A /* ContactViewModel.swift */; };
 		2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2A6B511E9791BE000CFEE2 /* ExpireDaysTextField.swift */; };
+		2D2E06961EB1E3E50053A6AC /* BlockchainLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E06951EB1E3E50053A6AC /* BlockchainLoadingViewController.swift */; };
+		2D2E06981EB1E42D0053A6AC /* BlockchainLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2E06971EB1E42D0053A6AC /* BlockchainLoading.storyboard */; };
+		2D2E069B1EB1E52A0053A6AC /* BlockchainLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2E069A1EB1E52A0053A6AC /* BlockchainLoadingViewModel.swift */; };
 		2D4877D01E8147CC0084129C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4877CF1E8147CC0084129C /* BaseModel.swift */; };
 		2D4877D31E814E570084129C /* TransactionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4877D21E814E570084129C /* TransactionsAPI.swift */; };
 		2D4877D61E818E090084129C /* BalanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4877D51E818E090084129C /* BalanceAPI.swift */; };
@@ -173,7 +176,6 @@
 		2D997BD41E7AD2B600630560 /* ProtectionValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BA81E7AD2B600630560 /* ProtectionValidationView.swift */; };
 		2D997BD61E7AD2B600630560 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BAC1E7AD2B600630560 /* RoundButton.swift */; };
 		2D997C011E7AD37700630560 /* CoinsOperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BE21E7AD37700630560 /* CoinsOperationViewModel.swift */; };
-		2D997C051E7AD37700630560 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */; };
 		2D997C061E7AD37700630560 /* HistoryTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */; };
 		2D997CAF1E7AD3B200630560 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997C0E1E7AD3B200630560 /* About.storyboard */; };
 		2D997CB01E7AD3B200630560 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C0F1E7AD3B200630560 /* AboutViewController.swift */; };
@@ -270,6 +272,9 @@
 		2D22B2401E7C4455008BB64F /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ContactCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D28C85D1E7C596C0071947A /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ContactViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D2A6B511E9791BE000CFEE2 /* ExpireDaysTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpireDaysTextField.swift; sourceTree = "<group>"; };
+		2D2E06951EB1E3E50053A6AC /* BlockchainLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockchainLoadingViewController.swift; sourceTree = "<group>"; };
+		2D2E06971EB1E42D0053A6AC /* BlockchainLoading.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BlockchainLoading.storyboard; sourceTree = "<group>"; };
+		2D2E069A1EB1E52A0053A6AC /* BlockchainLoadingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockchainLoadingViewModel.swift; sourceTree = "<group>"; };
 		2D4877CF1E8147CC0084129C /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		2D4877D21E814E570084129C /* TransactionsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsAPI.swift; sourceTree = "<group>"; };
 		2D4877D51E818E090084129C /* BalanceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceAPI.swift; sourceTree = "<group>"; };
@@ -397,7 +402,6 @@
 		2D997BA81E7AD2B600630560 /* ProtectionValidationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProtectionValidationView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BAC1E7AD2B600630560 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RoundButton.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BE21E7AD37700630560 /* CoinsOperationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoinsOperationViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FeedbackViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HistoryTransactionViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997C0E1E7AD3B200630560 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		2D997C0F1E7AD3B200630560 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AboutViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -721,6 +725,23 @@
 			path = ExpiresDays;
 			sourceTree = "<group>";
 		};
+		2D2E06941EB1E3970053A6AC /* BlockchainLoading */ = {
+			isa = PBXGroup;
+			children = (
+				2D2E06951EB1E3E50053A6AC /* BlockchainLoadingViewController.swift */,
+				2D2E06971EB1E42D0053A6AC /* BlockchainLoading.storyboard */,
+			);
+			path = BlockchainLoading;
+			sourceTree = "<group>";
+		};
+		2D2E06991EB1E5000053A6AC /* BlockchainLoadingViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D2E069A1EB1E52A0053A6AC /* BlockchainLoadingViewModel.swift */,
+			);
+			path = BlockchainLoadingViewModel;
+			sourceTree = "<group>";
+		};
 		2D4877CE1E8147CC0084129C /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,6 +971,7 @@
 		2D997A881E7AC90700630560 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2D2E06941EB1E3970053A6AC /* BlockchainLoading */,
 				2D21D64E1E926E690088AD31 /* Names */,
 				2D22B23A1E7C4455008BB64F /* AddressBook */,
 				2D997C0D1E7AD3B200630560 /* About */,
@@ -1007,13 +1029,13 @@
 		2D997A921E7AC90700630560 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2D2E06991EB1E5000053A6AC /* BlockchainLoadingViewModel */,
 				2D8237601EA60C4600DC37D6 /* CreateNVSViewModel */,
 				2DEDC9431EA0F70100F404B5 /* SendViewModel */,
 				2D798F011E93A992008AB5AF /* RecordViewModel */,
 				2D28C85C1E7C596C0071947A /* ContactViewModel */,
 				2DA249481E7C203B00AF81DD /* LoginViewModel */,
 				2D997BE11E7AD37700630560 /* CoinsOperationViewModel */,
-				2D997BE91E7AD37700630560 /* FeedBackViewModel */,
 				2D997BEB1E7AD37700630560 /* HistoryTransaction */,
 				2D997BFB1E7AD37700630560 /* SendHeaderViewModel */,
 			);
@@ -1558,14 +1580,6 @@
 			path = CoinsOperationViewModel;
 			sourceTree = "<group>";
 		};
-		2D997BE91E7AD37700630560 /* FeedBackViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2D997BEA1E7AD37700630560 /* FeedbackViewModel.swift */,
-			);
-			path = FeedBackViewModel;
-			sourceTree = "<group>";
-		};
 		2D997BEB1E7AD37700630560 /* HistoryTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -1909,6 +1923,7 @@
 				2D997ABF1E7AD02A00630560 /* Roboto-Medium.ttf in Resources */,
 				2D997D081E7AD3B200630560 /* ProtectionModule.storyboard in Resources */,
 				2D997B121E7AD1FF00630560 /* Info.plist in Resources */,
+				2D2E06981EB1E42D0053A6AC /* BlockchainLoading.storyboard in Resources */,
 				2D22B2421E7C4455008BB64F /* AddressBook.xib in Resources */,
 				2D997ABD1E7AD02A00630560 /* Roboto-Bold.ttf in Resources */,
 				2D997CCE1E7AD3B200630560 /* CoinOperations.storyboard in Resources */,
@@ -1962,6 +1977,7 @@
 				2D09DB871E9D0B0E0013970F /* LockButton.swift in Sources */,
 				2D997B251E7AD1FF00630560 /* PagerTabStripViewController.swift in Sources */,
 				2D997B231E7AD1FF00630560 /* PagerTabStripBehaviour.swift in Sources */,
+				2D2E069B1EB1E52A0053A6AC /* BlockchainLoadingViewModel.swift in Sources */,
 				2D997CD81E7AD3B200630560 /* SendCoinsViewController.swift in Sources */,
 				2D6620971E9C0A07007DFB35 /* SuccessAddNameView.swift in Sources */,
 				2D0DCC541EAA4BF300802609 /* RequestSendView.swift in Sources */,
@@ -2057,7 +2073,6 @@
 				2D997BBF1E7AD2B600630560 /* FeedBackSendButton.swift in Sources */,
 				2D997CD41E7AD3B200630560 /* MyAdressViewController + TableView.swift in Sources */,
 				2D997BB61E7AD2B600630560 /* CheckButton.swift in Sources */,
-				2D997C051E7AD37700630560 /* FeedbackViewModel.swift in Sources */,
 				2DA2494A1E7C203B00AF81DD /* LoginViewModel.swift in Sources */,
 				2D997B061E7AD1FF00630560 /* Dictionary + Utils.swift in Sources */,
 				2D997B011E7AD1FF00630560 /* BaseViewController.swift in Sources */,
@@ -2097,6 +2112,7 @@
 				2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */,
 				2D997B521E7AD24E00630560 /* Coin.swift in Sources */,
 				2D09DB8E1E9D651A0013970F /* WalletProtectionLockView.swift in Sources */,
+				2D2E06961EB1E3E50053A6AC /* BlockchainLoadingViewController.swift in Sources */,
 				2D997CFF1E7AD3B200630560 /* MenuBCToolsCell.swift in Sources */,
 				2D0DCC551EAA4BF300802609 /* SendAmountTextField.swift in Sources */,
 				2D2A6B521E9791BE000CFEE2 /* ExpireDaysTextField.swift in Sources */,

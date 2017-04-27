@@ -31,6 +31,7 @@ enum StatusCode:Int {
 class BaseAPI: NSObject {
     
     var completion:((_ data:AnyObject?, _ erorr:NSError?) -> Void)?
+    var done:((Void) -> Void)?
     
     var object:AnyObject?
     
@@ -39,11 +40,14 @@ class BaseAPI: NSObject {
         return 30
     }
     
-    internal var dataTask:URLSessionTask?
+    var dataTask:URLSessionTask?
 
     public func startRequest(completion:@escaping (_ data: AnyObject?,_ error:NSError?) -> Void) {
         
         guard let loginInfo = object as? [String:AnyObject] else {
+            if self.done != nil {
+                self.done!()
+            }
             return
         }
         
@@ -85,6 +89,11 @@ class BaseAPI: NSObject {
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            if self.done != nil {
+                self.done!()
+            }
+            
             if let error = error {
                 self.apiDidReturnError(error: error)
             } else if let httpResponse = response as? HTTPURLResponse {

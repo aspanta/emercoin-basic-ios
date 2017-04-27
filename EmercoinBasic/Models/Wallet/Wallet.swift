@@ -12,7 +12,7 @@ class Wallet:BaseModel {
     
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
-    var blockchain = PublishSubject<Blockchain>()
+
     var activityIndicator = PublishSubject<Bool>()
     
     var emercoin:Coin = {
@@ -83,25 +83,6 @@ class Wallet:BaseModel {
             }
         }
         loadCourse()
-    }
-    
-    func loadBlockChainInfo() {
-        
-        APIManager.sharedInstance.loadBlockchainInfo{[weak self] (data, error) in
-            if error != nil {
-                userInteraction(at: true)
-                self?.error.onNext(error!)
-            } else {
-                if let blockchain = data as? Blockchain {
-                    if blockchain.isLoaded {
-                        AppManager.sharedInstance.isBlockchaiLoaded = true
-                        userInteraction(at: true)
-                        self?.loadInfo()
-                    }
-                    self?.blockchain.onNext(blockchain)
-                }
-            }
-        }
     }
     
     func loadCourse() {
