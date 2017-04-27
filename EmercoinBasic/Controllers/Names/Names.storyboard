@@ -1439,7 +1439,7 @@ not found</string>
                                 </constraints>
                                 <state key="normal" image="reg_arrow_icon"/>
                                 <connections>
-                                    <action selector="backToDashBoard" destination="woM-S7-DIr" eventType="touchUpInside" id="Y4U-ji-3fJ"/>
+                                    <action selector="back" destination="woM-S7-DIr" eventType="touchUpInside" id="IUd-mg-nQd"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W61-LC-SHi">
@@ -1486,52 +1486,13 @@ not found</string>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <mutableString key="content">EmerCoin (Emerkoin) - a new generation cryptocurrency, which allows not only to exchange money, but also offers a range of unique technologies. On the basis of a block Cheyne EmerCoin developed decentralized advertising system emcLNX, secure authentication system on the sites emcSSL, smart authentication servers through emcSSH and more. On this page is a list of publications about cryptocurrency EmerCoin, as well as instructions for installing, configuring, and using numerous services based on this technology exchange.
+                                                <string key="content">EmerCoin (Emerkoin) - a new generation cryptocurrency, which allows not only to exchange money, but also offers a range of unique technologies. On the basis of a block Cheyne EmerCoin developed decentralized advertising system emcLNX, secure authentication system on the sites emcSSL, smart authentication servers through emcSSH and more. On this page is a list of publications about cryptocurrency EmerCoin, as well as instructions for installing, configuring, and using numerous services based on this technology exchange.
 
-First - define: Emer - is a technology and network infrastructure. Emerkoin - credit units, which circulate within Emer network. But since so accepted that the word EmerCoin called all together, we will also follow the generally accepted semantics of using the word Emer, just when we want to emphasize that we are talking about technology, not settlement and accounting aspects.</mutableString>
+First - define: Emer - is a technology and network infrastructure. Emerkoin - credit units, which circulate within Emer network. But since so accepted that the word EmerCoin called all together, we will also follow the generally accepted semantics of using the word Emer, just when we want to emphasize that we are talking about technology, not settlement and accounting aspects.</string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="14" name="Helvetica"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="84">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="112">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="140">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="168">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="196">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="224">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="252">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="280">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="308">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="336">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>

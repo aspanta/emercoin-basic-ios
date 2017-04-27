@@ -10,7 +10,7 @@ import RxCocoa
 class BlockchainLoadingViewController: BaseViewController {
 
     private weak var blockchainLoadingView:BlockchainLoadingView?
-    private let viewModel = BlockchainLoadingViewModel()
+    private var viewModel = BlockchainLoadingViewModel()
     private let disposeBag = DisposeBag()
     
     var blocks = 0
@@ -54,13 +54,14 @@ class BlockchainLoadingViewController: BaseViewController {
         } else {
             let view = loadViewFromXib(name: "Blockchain", index: 0, frame: self.view.frame) as! BlockchainLoadingView
             view.blocks = blocks
-            view.checkBlockchain = {
-                self.viewModel.loadBlockChainInfo()
+            view.checkBlockchain = {[weak self] in
+                self?.viewModel.loadBlockChainInfo()
             }
-            view.cancel = {
-                view.removeFromSuperview()
+            view.cancel = {[weak self] in
+                self?.hideBlockchainLoadingView()
+                self?.blockchainLoadingView?.removeFromSuperview()
+                self?.blockchainLoadingView = nil
                 AppManager.sharedInstance.logOut()
-                self.blockchainLoadingView = nil
             }
             self.blockchainLoadingView = view
             self.view.addSubview(view)

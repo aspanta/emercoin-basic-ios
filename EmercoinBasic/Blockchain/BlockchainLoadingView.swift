@@ -13,7 +13,7 @@ class BlockchainLoadingView: PopupView {
     var checkBlockchain:((Void) -> (Void))?
     
     private var seconds = 0
-    private var interval = 15
+    private var interval = 30
     
     private var timer:Timer?
     
@@ -52,7 +52,7 @@ class BlockchainLoadingView: PopupView {
         
         if seconds == 0 {
             
-            seconds = 60
+            seconds = interval
             
             if checkBlockchain != nil {
                 checkBlockchain!()
