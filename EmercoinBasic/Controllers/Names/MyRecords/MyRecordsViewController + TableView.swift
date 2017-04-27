@@ -144,9 +144,11 @@ extension MyRecordsViewController {
         controller.subController = .createNVS
         
         controller.record = record
+        controller.cancel = {[weak self] in
+            self?.reloadRows(at: [IndexPath(row: index, section: 0)])
+        }
         controller.edited = {[weak self] data in
-            //self?.records.update(at: data, index: index)
-            //self?.reloadRows()
+            self?.reloadRows(at: [IndexPath.init(row: index, section: 0)])
         }
         controller.isEditingMode = true
         self.navigationController?.pushViewController(controller, animated: true)

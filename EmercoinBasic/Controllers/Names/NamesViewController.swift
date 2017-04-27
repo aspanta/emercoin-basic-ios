@@ -37,6 +37,7 @@ class NamesViewController: BaseViewController {
     var createPressed: ((_ data:Any) -> (Void))?
     var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
+    var cancel:((Void) -> (Void))?
     var selectedAddress:((_ address:String) -> (Void))?
     
     var viewDidAppear: ((Void) -> (Void))?
@@ -182,6 +183,7 @@ class NamesViewController: BaseViewController {
             vc.edited = self.edited
             vc.isEditingMode = isEditingMode
             vc.record = record
+            vc.cancel = cancel
             controller = vc
             
         case .myAddresses:
@@ -206,5 +208,14 @@ class NamesViewController: BaseViewController {
             didMove(toParentViewController: controller!)
             self.childController = controller
         }
+    }
+    
+    override func back() {
+        if cancel != nil {
+            cancel!()
+        }
+        
+        super.back()
+        
     }
 }

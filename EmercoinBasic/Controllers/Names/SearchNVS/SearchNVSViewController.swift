@@ -51,11 +51,15 @@ class SearchNVSViewController: BaseViewController, IndicatorInfoProvider {
         if isLoading == true {return}
         
         let records = Records()
-        records.searchString = nameTextField.text!
+        let text = nameTextField.text?.copy() as! String
+        records.searchString = text
         isLoading = true
         records.searchName {[weak self] in
             self?.isLoading = false
             self?.showResultsController(at: records)
+            self?.nameTextField.text = ""
+            self?.nameTextField.resignFirstResponder()
+            self?.checkValidation()
         }
     }
     

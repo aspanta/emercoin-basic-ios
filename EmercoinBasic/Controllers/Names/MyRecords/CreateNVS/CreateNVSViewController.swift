@@ -33,6 +33,7 @@ class CreateNVSViewController: BaseViewController {
     
     var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
+    var cancel:((Void) -> (Void))?
     
     let disposeBag = DisposeBag()
     var viewModel = CreateNVSViewModel()
@@ -270,6 +271,9 @@ class CreateNVSViewController: BaseViewController {
     
     @IBAction func cancelButtonPressed() {
         
+        if cancel != nil {
+            cancel!()
+        }
         back()
     }
     
