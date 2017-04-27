@@ -16,7 +16,7 @@ enum InfoType {
 
 class NVSInfoViewController: BaseViewController {
     
-    @IBOutlet internal weak var infoTextView:BaseTextView!
+    @IBOutlet internal weak var infoLabel:UILabel!
     
     var infoType:InfoType = .nvs
     
@@ -40,7 +40,7 @@ class NVSInfoViewController: BaseViewController {
             case .nvs:text = nvsInfo
             case .why:text = whyInfo
         }
-        infoTextView.text = text
+        infoLabel.text = text
     }
     
 }

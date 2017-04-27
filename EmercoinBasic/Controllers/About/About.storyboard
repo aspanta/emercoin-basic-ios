@@ -15,124 +15,385 @@
     </customFonts>
     <scenes>
         <!--About View Controller-->
-        <scene sceneID="iLO-x5-XOd">
+        <scene sceneID="Tgb-tu-Hm4">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="eyd-SJ-WiW" customClass="AboutViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="Y2u-0D-XBt" customClass="AboutViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UmO-kr-im9"/>
-                        <viewControllerLayoutGuide type="bottom" id="e7s-7e-vb3"/>
+                        <viewControllerLayoutGuide type="top" id="hCJ-08-q6o"/>
+                        <viewControllerLayoutGuide type="bottom" id="fSt-Mh-UTc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="atM-ve-yo1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <view key="view" contentMode="scaleToFill" id="iaO-yr-1Nw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX7-wG-UIP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOb-ah-ME4">
                                 <rect key="frame" x="0.0" y="20" width="58" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="9kD-3i-pux"/>
-                                    <constraint firstAttribute="width" constant="58" id="bCY-mf-bWl"/>
+                                    <constraint firstAttribute="height" constant="61" id="UVz-YB-xfh"/>
+                                    <constraint firstAttribute="width" constant="58" id="bFW-7q-z4A"/>
                                 </constraints>
                                 <state key="normal" image="reg_arrow_icon"/>
                                 <connections>
-                                    <action selector="backToDashBoard" destination="eyd-SJ-WiW" eventType="touchUpInside" id="oDu-9H-Slb"/>
+                                    <action selector="backToDashBoard" destination="Y2u-0D-XBt" eventType="touchUpInside" id="kmv-YD-NzR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-bM-0GV">
-                                <rect key="frame" x="131" y="52" width="58" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="WEg-um-aKF"/>
-                                    <constraint firstAttribute="width" constant="58" id="fqW-JI-nQI"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCO-dk-y9Z">
-                                <rect key="frame" x="19" y="116" width="282" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="sx7-0H-Quw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
-                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX9-MO-Z9d" customClass="BaseTextView" customModule="EmercoinBasic" customModuleProvider="target">
-                                <rect key="frame" x="16" y="166" width="288" height="382"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Emercoin Basic">
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content"> is a thin client for Emercoin Core Wallet which is connecting via RPC protocol designed by Aspanta Limited.
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iS4-XW-IQF">
+                                <rect key="frame" x="0.0" y="81" width="320" height="586"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daE-Cu-hOv">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="by6-CH-jLR">
+                                                <rect key="frame" x="131" y="0.0" width="58" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="58" id="15S-4k-E6b"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bxd-cD-IeX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOP-qt-WJc">
+                                                <rect key="frame" x="19" y="64" width="282" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="E2B-X1-9EG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="bOP-qt-WJc" firstAttribute="top" secondItem="by6-CH-jLR" secondAttribute="bottom" constant="14" id="12Z-nj-6au"/>
+                                            <constraint firstAttribute="trailing" secondItem="by6-CH-jLR" secondAttribute="trailing" constant="131" id="7Ff-QT-T8j"/>
+                                            <constraint firstAttribute="trailing" secondItem="bOP-qt-WJc" secondAttribute="trailing" constant="19" id="EQ6-eW-Wxd"/>
+                                            <constraint firstAttribute="height" constant="128" id="HDV-5D-nen"/>
+                                            <constraint firstAttribute="bottom" secondItem="bOP-qt-WJc" secondAttribute="bottom" constant="22" id="P5B-sj-sda"/>
+                                            <constraint firstItem="by6-CH-jLR" firstAttribute="leading" secondItem="daE-Cu-hOv" secondAttribute="leading" constant="131" id="Sf7-o1-K3i"/>
+                                            <constraint firstItem="bOP-qt-WJc" firstAttribute="top" secondItem="by6-CH-jLR" secondAttribute="bottom" constant="14" id="Tx6-zE-rRl"/>
+                                            <constraint firstItem="bOP-qt-WJc" firstAttribute="leading" secondItem="daE-Cu-hOv" secondAttribute="leading" constant="19" id="X0f-tO-nhj"/>
+                                            <constraint firstItem="by6-CH-jLR" firstAttribute="top" secondItem="daE-Cu-hOv" secondAttribute="top" id="buJ-DG-fyA"/>
+                                            <constraint firstItem="bOP-qt-WJc" firstAttribute="top" secondItem="by6-CH-jLR" secondAttribute="bottom" constant="14" id="njx-tZ-RiG"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFM-al-QZe">
+                                        <rect key="frame" x="20" y="128" width="280" height="821.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="K4b-lF-0Zv"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Emercoin Basic">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> is a thin client for Emercoin Core Wallet which is connecting via RPC protocol designed by Aspanta Limited.
 
 </string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Emercoin">
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content"> is one of the world's leading digital currency and blockchain platforms. Emercoin allows users to exchange money and valuable information, anywhere in the world, at any time, quickly, securely and affordably. Emercoin is a digital currency that uses the power of blockchain technology to provide the most secure way to send, receive and store money. A blockchain is a distributed database where cryptography is used to ensure that records can not be changed. The Emercoin blockchain allows you to store, send and receive money anywhere in the world. When you control your money, you decide when to send it. No one can charge you money, nor can they spend your money when you use Emercoin. International payments now take minutes, not days. Using Emercoin is extremely affordable. You can securely send any amount of money at any time, anywhere for pennies. The Emercoin blockchain is a safer way to send money than a bank because of the superior technology that gives control back to the owner. Emercoin is much more than money, it is information. You can securely store, send and receive ownership and identity information, register censorship-resistant domain names and browse the internet without having to use passwords anymore! These services are available 24/7 on the Emercoin blockchain. When you use Emercoin, you are the sole owner of your money and this means there is no third party who can lose track of your information. No one can steal your identity or impersonate you when using Emercoin, and you can choose how much information you reveal to someone when you send them money or information.
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Emercoin">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content"> is one of the world's leading digital currency and blockchain platforms. Emercoin allows users to exchange money and valuable information, anywhere in the world, at any time, quickly, securely and affordably. Emercoin is a digital currency that uses the power of blockchain technology to provide the most secure way to send, receive and store money. A blockchain is a distributed database where cryptography is used to ensure that records can not be changed. The Emercoin blockchain allows you to store, send and receive money anywhere in the world. When you control your money, you decide when to send it. No one can charge you money, nor can they spend your money when you use Emercoin. International payments now take minutes, not days. Using Emercoin is extremely affordable. You can securely send any amount of money at any time, anywhere for pennies. The Emercoin blockchain is a safer way to send money than a bank because of the superior technology that gives control back to the owner. Emercoin is much more than money, it is information. You can securely store, send and receive ownership and identity information, register censorship-resistant domain names and browse the internet without having to use passwords anymore! These services are available 24/7 on the Emercoin blockchain. When you use Emercoin, you are the sole owner of your money and this means there is no third party who can lose track of your information. No one can steal your identity or impersonate you when using Emercoin, and you can choose how much information you reveal to someone when you send them money or information.
 
 </mutableString>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Aspanta Limited">
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content"> is an expert in the development of highly loaded web and mobile full-cycle applications, reliable Microsoft Azure cloud resources, decentralized systems based on the Emercoin blockchain.</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Aspanta Limited">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> is an expert in the development of highly loaded web and mobile full-cycle applications, reliable Microsoft Azure cloud resources, decentralized systems based on the Emercoin blockchain.</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="daE-Cu-hOv" firstAttribute="leading" secondItem="iS4-XW-IQF" secondAttribute="leading" id="FUF-aP-WQw"/>
+                                    <constraint firstAttribute="trailing" secondItem="QFM-al-QZe" secondAttribute="trailing" constant="20" id="MTx-Uc-ZAW"/>
+                                    <constraint firstItem="daE-Cu-hOv" firstAttribute="top" secondItem="iS4-XW-IQF" secondAttribute="top" id="TA9-ZM-y11"/>
+                                    <constraint firstItem="QFM-al-QZe" firstAttribute="leading" secondItem="iS4-XW-IQF" secondAttribute="leading" constant="20" id="bBw-5Z-8UO"/>
+                                    <constraint firstAttribute="bottom" secondItem="QFM-al-QZe" secondAttribute="bottom" id="dCD-g6-Hj6"/>
+                                    <constraint firstAttribute="trailing" secondItem="daE-Cu-hOv" secondAttribute="trailing" id="iob-Sv-pxr"/>
+                                    <constraint firstItem="QFM-al-QZe" firstAttribute="top" secondItem="daE-Cu-hOv" secondAttribute="bottom" id="jPu-NW-NeB"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e7s-7e-vb3" firstAttribute="top" secondItem="qX9-MO-Z9d" secondAttribute="bottom" constant="20" id="83x-Np-aAp"/>
-                            <constraint firstItem="qX9-MO-Z9d" firstAttribute="top" secondItem="aCO-dk-y9Z" secondAttribute="bottom" constant="8" id="Dxd-2K-W4g"/>
-                            <constraint firstItem="aCO-dk-y9Z" firstAttribute="centerX" secondItem="atM-ve-yo1" secondAttribute="centerX" id="MXG-xv-G9L"/>
-                            <constraint firstItem="aCO-dk-y9Z" firstAttribute="top" secondItem="XaI-bM-0GV" secondAttribute="bottom" constant="14" id="PQM-JI-q9p"/>
-                            <constraint firstItem="qX9-MO-Z9d" firstAttribute="leading" secondItem="atM-ve-yo1" secondAttribute="leading" constant="16" id="QPR-bU-8us"/>
-                            <constraint firstItem="kX7-wG-UIP" firstAttribute="leading" secondItem="atM-ve-yo1" secondAttribute="leading" id="c01-je-6UP"/>
-                            <constraint firstAttribute="trailing" secondItem="qX9-MO-Z9d" secondAttribute="trailing" constant="16" id="fg4-Ax-doY"/>
-                            <constraint firstItem="kX7-wG-UIP" firstAttribute="top" secondItem="UmO-kr-im9" secondAttribute="bottom" id="juO-R7-R7Z"/>
-                            <constraint firstItem="XaI-bM-0GV" firstAttribute="centerX" secondItem="atM-ve-yo1" secondAttribute="centerX" id="tXy-on-dIz"/>
-                            <constraint firstItem="XaI-bM-0GV" firstAttribute="top" secondItem="UmO-kr-im9" secondAttribute="bottom" constant="32" id="xSd-18-5Le"/>
+                            <constraint firstAttribute="trailing" secondItem="iS4-XW-IQF" secondAttribute="trailing" id="Bbi-pg-Sff"/>
+                            <constraint firstItem="iS4-XW-IQF" firstAttribute="bottom" secondItem="fSt-Mh-UTc" secondAttribute="top" id="H1N-7O-AtD"/>
+                            <constraint firstItem="iS4-XW-IQF" firstAttribute="leading" secondItem="rOb-ah-ME4" secondAttribute="leading" id="Jxc-vW-yov"/>
+                            <constraint firstItem="iS4-XW-IQF" firstAttribute="top" secondItem="rOb-ah-ME4" secondAttribute="bottom" id="OCd-3P-3bX"/>
+                            <constraint firstItem="rOb-ah-ME4" firstAttribute="leading" secondItem="iaO-yr-1Nw" secondAttribute="leading" id="ib6-1Y-8gp"/>
+                            <constraint firstItem="rOb-ah-ME4" firstAttribute="top" secondItem="hCJ-08-q6o" secondAttribute="bottom" id="v9w-bA-L0z"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
-                    <connections>
-                        <outlet property="textView" destination="qX9-MO-Z9d" id="eEO-yy-N49"/>
-                    </connections>
+                    <size key="freeformSize" width="320" height="667"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N5o-PT-WiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsw-LF-Hh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="-18"/>
+            <point key="canvasLocation" x="806" y="-19"/>
         </scene>
     </scenes>
     <resources>

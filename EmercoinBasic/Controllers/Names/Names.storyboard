@@ -238,57 +238,6 @@
             </objects>
             <point key="canvasLocation" x="-117.59999999999999" y="-388.15592203898052"/>
         </scene>
-        <!--Info View Controller-->
-        <scene sceneID="RGZ-rR-Tb9">
-            <objects>
-                <viewController id="OAT-BX-9MU" customClass="NVSInfoViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Rm-oV-6AO"/>
-                        <viewControllerLayoutGuide type="bottom" id="xhO-LU-rKg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OlZ-Aj-n66">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV3-dz-Gbi">
-                                <rect key="frame" x="0.0" y="20" width="58" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="HOq-mh-bGr"/>
-                                    <constraint firstAttribute="width" constant="58" id="lvL-Aa-IZp"/>
-                                </constraints>
-                                <state key="normal" image="reg_arrow_icon"/>
-                                <connections>
-                                    <action selector="back" destination="OAT-BX-9MU" eventType="touchUpInside" id="8nz-ka-1JT"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9Y-eZ-T2R" customClass="BaseTextView" customModule="EmercoinBasic" customModuleProvider="target">
-                                <rect key="frame" x="16" y="89" width="343" height="578"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">EmerCoin (Emerkoin) - a new generation cryptocurrency, which allows not only to exchange money, but also offers a range of unique technologies. On the basis of a block Cheyne EmerCoin developed decentralized advertising system emcLNX, secure authentication system on the sites emcSSL, smart authentication servers through emcSSH and more. On this page is a list of publications about cryptocurrency EmerCoin, as well as instructions for installing, configuring, and using numerous services based on this technology exchange.
-
-First - define: Emer - is a technology and network infrastructure. Emerkoin - credit units, which circulate within Emer network. But since so accepted that the word EmerCoin called all together, we will also follow the generally accepted semantics of using the word Emer, just when we want to emphasize that we are talking about technology, not settlement and accounting aspects.</string>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="N9Y-eZ-T2R" firstAttribute="leading" secondItem="OlZ-Aj-n66" secondAttribute="leading" constant="16" id="4Qb-7e-G5p"/>
-                            <constraint firstItem="N9Y-eZ-T2R" firstAttribute="top" secondItem="BV3-dz-Gbi" secondAttribute="bottom" constant="8" id="5kP-EG-GFn"/>
-                            <constraint firstItem="BV3-dz-Gbi" firstAttribute="top" secondItem="8Rm-oV-6AO" secondAttribute="bottom" id="6yl-mS-a9X"/>
-                            <constraint firstItem="xhO-LU-rKg" firstAttribute="top" secondItem="N9Y-eZ-T2R" secondAttribute="bottom" id="LjA-so-QIG"/>
-                            <constraint firstAttribute="trailing" secondItem="N9Y-eZ-T2R" secondAttribute="trailing" constant="16" id="URU-oR-TLe"/>
-                            <constraint firstItem="BV3-dz-Gbi" firstAttribute="leading" secondItem="OlZ-Aj-n66" secondAttribute="leading" id="eyo-fA-rTW"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="infoTextView" destination="N9Y-eZ-T2R" id="As8-GM-yjA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V90-rW-gKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-114" y="314"/>
-        </scene>
         <!--CreateNVS View Controller-->
         <scene sceneID="itf-bI-D7t">
             <objects>
@@ -1471,78 +1420,154 @@ not found</string>
             <point key="canvasLocation" x="-1772" y="-388"/>
         </scene>
         <!--Info View Controller-->
-        <scene sceneID="FnF-zO-QN4">
+        <scene sceneID="EiS-q8-W01">
             <objects>
-                <viewController storyboardIdentifier="NVSInfoViewController" id="Vq4-sW-0SU" customClass="NVSInfoViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NVSInfoViewController" id="woM-S7-DIr" customClass="NVSInfoViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Zf-dq-ED6"/>
-                        <viewControllerLayoutGuide type="bottom" id="jyd-SV-1sv"/>
+                        <viewControllerLayoutGuide type="top" id="7rd-XZ-mdV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hb7-eE-fc0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rdp-5n-Sj0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <view key="view" contentMode="scaleToFill" id="eZQ-AQ-Cvd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHo-rS-a6d">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="440-PW-aQO">
                                 <rect key="frame" x="0.0" y="20" width="58" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="58" id="BJf-9o-lyk"/>
-                                    <constraint firstAttribute="height" constant="61" id="mSm-cv-jKA"/>
+                                    <constraint firstAttribute="width" constant="58" id="Td6-lU-F3V"/>
+                                    <constraint firstAttribute="height" constant="61" id="YNZ-Um-Kd5"/>
                                 </constraints>
                                 <state key="normal" image="reg_arrow_icon"/>
                                 <connections>
-                                    <action selector="back" destination="Vq4-sW-0SU" eventType="touchUpInside" id="BfQ-wP-ONk"/>
+                                    <action selector="backToDashBoard" destination="woM-S7-DIr" eventType="touchUpInside" id="Y4U-ji-3fJ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-WS-y1H">
-                                <rect key="frame" x="131" y="52" width="58" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1nf-f7-ldn"/>
-                                    <constraint firstAttribute="width" constant="58" id="d7R-Ui-5Tw"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-3s-6Oh">
-                                <rect key="frame" x="19" y="116" width="282" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="cbS-7E-7dK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
-                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-Ts-AfW" customClass="BaseTextView" customModule="EmercoinBasic" customModuleProvider="target">
-                                <rect key="frame" x="16" y="166" width="288" height="382"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">EmerCoin (Emerkoin) - a new generation cryptocurrency, which allows not only to exchange money, but also offers a range of unique technologies. On the basis of a block Cheyne EmerCoin developed decentralized advertising system emcLNX, secure authentication system on the sites emcSSL, smart authentication servers through emcSSH and more. On this page is a list of publications about cryptocurrency EmerCoin, as well as instructions for installing, configuring, and using numerous services based on this technology exchange.
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W61-LC-SHi">
+                                <rect key="frame" x="0.0" y="81" width="320" height="586"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pU-Yh-aCw">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="bne-7S-HGV">
+                                                <rect key="frame" x="131" y="0.0" width="58" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="58" id="i9j-7C-I5X"/>
+                                                    <constraint firstAttribute="height" constant="50" id="yWJ-ZY-Pmt"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-g8-lax">
+                                                <rect key="frame" x="19" y="64" width="282" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="eQM-yn-NIp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bne-7S-HGV" secondAttribute="trailing" constant="131" id="10F-w2-9hj"/>
+                                            <constraint firstItem="bne-7S-HGV" firstAttribute="leading" secondItem="3pU-Yh-aCw" secondAttribute="leading" constant="131" id="58K-Jf-fs0"/>
+                                            <constraint firstItem="ddY-g8-lax" firstAttribute="top" secondItem="bne-7S-HGV" secondAttribute="bottom" constant="14" id="6T7-EX-QaH"/>
+                                            <constraint firstItem="bne-7S-HGV" firstAttribute="top" secondItem="3pU-Yh-aCw" secondAttribute="top" id="GQR-Sd-QHk"/>
+                                            <constraint firstAttribute="trailing" secondItem="ddY-g8-lax" secondAttribute="trailing" constant="19" id="NkG-Zj-FVK"/>
+                                            <constraint firstAttribute="bottom" secondItem="ddY-g8-lax" secondAttribute="bottom" constant="22" id="Tgk-nj-ZB0"/>
+                                            <constraint firstItem="ddY-g8-lax" firstAttribute="leading" secondItem="3pU-Yh-aCw" secondAttribute="leading" constant="19" id="XZN-RL-IeO"/>
+                                            <constraint firstItem="ddY-g8-lax" firstAttribute="top" secondItem="bne-7S-HGV" secondAttribute="bottom" constant="14" id="gc4-7A-qOA"/>
+                                            <constraint firstItem="ddY-g8-lax" firstAttribute="top" secondItem="bne-7S-HGV" secondAttribute="bottom" constant="14" id="tBI-r7-gaU"/>
+                                            <constraint firstAttribute="height" constant="128" id="y8b-iP-CdH"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3I-Wh-6lb">
+                                        <rect key="frame" x="20" y="128" width="280" height="386.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Uit-EY-3MI"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <mutableString key="content">EmerCoin (Emerkoin) - a new generation cryptocurrency, which allows not only to exchange money, but also offers a range of unique technologies. On the basis of a block Cheyne EmerCoin developed decentralized advertising system emcLNX, secure authentication system on the sites emcSSL, smart authentication servers through emcSSH and more. On this page is a list of publications about cryptocurrency EmerCoin, as well as instructions for installing, configuring, and using numerous services based on this technology exchange.
 
 First - define: Emer - is a technology and network infrastructure. Emerkoin - credit units, which circulate within Emer network. But since so accepted that the word EmerCoin called all together, we will also follow the generally accepted semantics of using the word Emer, just when we want to emphasize that we are talking about technology, not settlement and accounting aspects.</mutableString>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3pU-Yh-aCw" firstAttribute="leading" secondItem="W61-LC-SHi" secondAttribute="leading" id="8m9-0d-1FX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y3I-Wh-6lb" secondAttribute="bottom" id="BLJ-ok-pKX"/>
+                                    <constraint firstItem="Y3I-Wh-6lb" firstAttribute="top" secondItem="3pU-Yh-aCw" secondAttribute="bottom" id="Uwn-OZ-Rak"/>
+                                    <constraint firstAttribute="trailing" secondItem="3pU-Yh-aCw" secondAttribute="trailing" id="at5-41-0Yl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y3I-Wh-6lb" secondAttribute="trailing" constant="20" id="cVq-9Z-q8l"/>
+                                    <constraint firstItem="3pU-Yh-aCw" firstAttribute="top" secondItem="W61-LC-SHi" secondAttribute="top" id="mL8-FO-sWR"/>
+                                    <constraint firstItem="Y3I-Wh-6lb" firstAttribute="leading" secondItem="W61-LC-SHi" secondAttribute="leading" constant="20" id="qbt-yI-aPS"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7mn-3s-6Oh" firstAttribute="centerX" secondItem="rdp-5n-Sj0" secondAttribute="centerX" id="I1z-3E-Y2G"/>
-                            <constraint firstItem="jyd-SV-1sv" firstAttribute="top" secondItem="gxj-Ts-AfW" secondAttribute="bottom" constant="20" id="IRX-qK-tRj"/>
-                            <constraint firstItem="GHo-rS-a6d" firstAttribute="top" secondItem="3Zf-dq-ED6" secondAttribute="bottom" id="KJF-AR-f3x"/>
-                            <constraint firstItem="gxj-Ts-AfW" firstAttribute="leading" secondItem="rdp-5n-Sj0" secondAttribute="leading" constant="16" id="O0m-jO-tdF"/>
-                            <constraint firstItem="hkI-WS-y1H" firstAttribute="centerX" secondItem="rdp-5n-Sj0" secondAttribute="centerX" id="Xq3-7S-1AU"/>
-                            <constraint firstAttribute="trailing" secondItem="gxj-Ts-AfW" secondAttribute="trailing" constant="16" id="Zpj-0F-0yd"/>
-                            <constraint firstItem="gxj-Ts-AfW" firstAttribute="top" secondItem="7mn-3s-6Oh" secondAttribute="bottom" constant="8" id="fou-Se-sN9"/>
-                            <constraint firstItem="7mn-3s-6Oh" firstAttribute="top" secondItem="hkI-WS-y1H" secondAttribute="bottom" constant="14" id="ha3-SL-qnB"/>
-                            <constraint firstItem="GHo-rS-a6d" firstAttribute="leading" secondItem="rdp-5n-Sj0" secondAttribute="leading" id="lP7-ix-Pya"/>
-                            <constraint firstItem="hkI-WS-y1H" firstAttribute="top" secondItem="3Zf-dq-ED6" secondAttribute="bottom" constant="32" id="oNY-yB-LFO"/>
+                            <constraint firstItem="W61-LC-SHi" firstAttribute="leading" secondItem="440-PW-aQO" secondAttribute="leading" id="5uU-9m-2TN"/>
+                            <constraint firstItem="440-PW-aQO" firstAttribute="top" secondItem="7rd-XZ-mdV" secondAttribute="bottom" id="9Ks-nL-fdV"/>
+                            <constraint firstItem="W61-LC-SHi" firstAttribute="top" secondItem="440-PW-aQO" secondAttribute="bottom" id="KsT-iV-lNI"/>
+                            <constraint firstItem="440-PW-aQO" firstAttribute="leading" secondItem="eZQ-AQ-Cvd" secondAttribute="leading" id="V1N-ep-A3g"/>
+                            <constraint firstAttribute="trailing" secondItem="W61-LC-SHi" secondAttribute="trailing" id="brJ-Mr-4yT"/>
+                            <constraint firstItem="W61-LC-SHi" firstAttribute="bottom" secondItem="Hb7-eE-fc0" secondAttribute="top" id="jCT-hi-Ih0"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <size key="freeformSize" width="320" height="667"/>
                     <connections>
-                        <outlet property="infoTextView" destination="gxj-Ts-AfW" id="euT-Em-0HQ"/>
+                        <outlet property="infoLabel" destination="Y3I-Wh-6lb" id="8kj-XA-pAA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yKi-bu-PcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIC-wR-XDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557" y="269"/>
+            <point key="canvasLocation" x="1146" y="313"/>
         </scene>
     </scenes>
     <resources>
