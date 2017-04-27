@@ -60,6 +60,7 @@
 		2D4D98E81E7FF7D400DFB784 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E21E7FF7D400DFB784 /* BaseAPI.swift */; };
 		2D4D98E91E7FF7D400DFB784 /* InfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E51E7FF7D400DFB784 /* InfoAPI.swift */; };
 		2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E71E7FF7D400DFB784 /* APIManager.swift */; };
+		2D578BFA1EB2571100996573 /* BaseTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D578BF91EB2571100996573 /* BaseTextViewController.swift */; };
 		2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D55021E8036CC004FC57D /* ObjectMapper.framework */; };
 		2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */; };
 		2D64EA901E9E0F4F000F9B48 /* WalletProtectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64EA8F1E9E0F4F000F9B48 /* WalletProtectionHelper.swift */; };
@@ -281,6 +282,7 @@
 		2D4D98E21E7FF7D400DFB784 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		2D4D98E51E7FF7D400DFB784 /* InfoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = InfoAPI.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D4D98E71E7FF7D400DFB784 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		2D578BF91EB2571100996573 /* BaseTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextViewController.swift; sourceTree = "<group>"; };
 		2D5D55021E8036CC004FC57D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewController + ActivityIndicator.swift"; sourceTree = "<group>"; };
 		2D64EA8F1E9E0F4F000F9B48 /* WalletProtectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionHelper.swift; sourceTree = "<group>"; };
@@ -1125,6 +1127,7 @@
 				2D997AC71E7AD1FF00630560 /* BaseTableViewCell.swift */,
 				2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */,
 				2D997AC81E7AD1FF00630560 /* BaseViewController.swift */,
+				2D578BF91EB2571100996573 /* BaseTextViewController.swift */,
 			);
 			path = "Base classes";
 			sourceTree = "<group>";
@@ -2037,6 +2040,7 @@
 				2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */,
 				2D997BD31E7AD2B600630560 /* ProtectionGenerationView.swift in Sources */,
 				2D997B1C1E7AD1FF00630560 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
+				2D578BFA1EB2571100996573 /* BaseTextViewController.swift in Sources */,
 				2D997BBE1E7AD2B600630560 /* FeedbackMessageView.swift in Sources */,
 				2D22B2441E7C4455008BB64F /* AddressBookViewController.swift in Sources */,
 				2DF72DEF1E9E933900657494 /* BaseButton.swift in Sources */,

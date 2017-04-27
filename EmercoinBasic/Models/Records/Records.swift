@@ -34,10 +34,10 @@ class Records {
         
         Observable.changeset(from: records)
             .subscribe(onNext: {results, changes in
-                self.isEmpty.onNext(results.count == 0)
-                
-                if changes != nil {
-                    self.success.onNext(true)
+                if let changes = changes {
+                    if changes.deleted.count == 0 {
+                        self.success.onNext(true)
+                    }
                 }
             })
             .addDisposableTo(disposeBag)

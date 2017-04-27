@@ -5,7 +5,7 @@
 
 import UIKit
 
-class LegalViewController: BaseViewController {
+class LegalViewController: BaseTextViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,4 @@ class LegalViewController: BaseViewController {
             super.back()
         }
     }
-    
-    
 }

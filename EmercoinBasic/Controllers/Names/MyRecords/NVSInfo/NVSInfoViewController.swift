@@ -14,7 +14,7 @@ enum InfoType {
     case why
 }
 
-class NVSInfoViewController: BaseViewController {
+class NVSInfoViewController: BaseTextViewController {
     
     @IBOutlet internal weak var infoLabel:UILabel!
     

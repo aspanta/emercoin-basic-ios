@@ -5,7 +5,7 @@
 
 import UIKit
 
-class AboutViewController: BaseViewController {
+class AboutViewController: BaseTextViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

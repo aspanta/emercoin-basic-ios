@@ -59,7 +59,10 @@ class SideMenuViewController: LGSideMenuController {
     }
     
     func showDashBoard() {
-        selectTabItem(at: 0, subIndex:0)
+        
+        changeRootController(to: self.mainTabBarController)
+        
+        //selectTabItem(at: 0, subIndex:0)
     }
     
     private func selectTabItem(at index:Int, subIndex:Int) {
