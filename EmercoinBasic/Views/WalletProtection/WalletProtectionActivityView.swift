@@ -33,7 +33,7 @@ class WalletProtectionActivityView: PopupView {
             text = "Protection"
         }
         
-        text = text + " Wallet..."
+        text = text + " wallet..."
         
         titleLabel.text = text
     }

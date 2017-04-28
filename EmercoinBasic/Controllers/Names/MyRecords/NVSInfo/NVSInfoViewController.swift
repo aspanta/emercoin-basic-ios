@@ -40,7 +40,11 @@ class NVSInfoViewController: BaseTextViewController {
             case .nvs:text = nvsInfo
             case .why:text = whyInfo
         }
-        infoLabel.text = text
+        
+        let font = UIFont(name: "Helvetica", size: 14)!
+        let attributes = [NSForegroundColorAttributeName:UIColor(hexString: "#333333"), NSFontAttributeName:font]
+        let string = NSMutableAttributedString(string: text, attributes: attributes)
+        
+        infoLabel.attributedText = string
     }
-    
 }

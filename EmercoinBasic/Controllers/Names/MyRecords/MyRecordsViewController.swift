@@ -26,6 +26,8 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     internal var deleteRecord:Record?
     private var walletProtectionHelper:WalletProtectionHelper?
     private var operationActivityView:UIView?
+    
+    internal var editingIndexPath:IndexPath?
 
     override class func storyboardName() -> String {
         return "Names"
@@ -43,6 +45,15 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
             records.load()
         }
         updateUI()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if let indexPath = editingIndexPath {
+            self.reloadRows(at: [indexPath])
+            editingIndexPath = nil
+        }
     }
     
     private func updateUI() {

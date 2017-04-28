@@ -32,15 +32,15 @@ class Records {
     
     init() {
         
-        Observable.changeset(from: records)
-            .subscribe(onNext: {results, changes in
-                if let changes = changes {
-                    if changes.deleted.count == 0 {
-                        self.success.onNext(true)
-                    }
-                }
-            })
-            .addDisposableTo(disposeBag)
+//        Observable.changeset(from: records)
+//            .subscribe(onNext: {results, changes in
+//                if let changes = changes {
+//                    if changes.deleted.count == 0 {
+//                        self.success.onNext(true)
+//                    }
+//                }
+//            })
+//            .addDisposableTo(disposeBag)
     }
     
     func add(record:Record) {
@@ -108,6 +108,7 @@ class Records {
                 if loadAll == true {
                     APIManager.sharedInstance.loadAll()
                 }
+                self?.success.onNext(true)
             } else {
                 self?.error.onNext(error!)
             }

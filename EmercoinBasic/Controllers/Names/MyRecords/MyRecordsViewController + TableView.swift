@@ -40,6 +40,8 @@ extension MyRecordsViewController {
     
     internal func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        editingIndexPath = indexPath
+        
         let deleteImage = UIImageView(image: UIImage(named: "delete_icon"))
         let editImage = UIImageView(image: UIImage(named: "edit_icon"))
         deleteImage.contentMode = .scaleAspectFit
@@ -111,7 +113,7 @@ extension MyRecordsViewController {
         reloadRows()
     }
     
-    private func reloadRows(at indexPaths:[IndexPath]) {
+    internal func reloadRows(at indexPaths:[IndexPath]) {
         
         tableCellAction = .edit
         
@@ -142,14 +144,7 @@ extension MyRecordsViewController {
         
         let controller = NamesViewController.controller() as! NamesViewController
         controller.subController = .createNVS
-        
         controller.record = record
-        controller.cancel = {[weak self] in
-            self?.reloadRows(at: [IndexPath(row: index, section: 0)])
-        }
-        controller.edited = {[weak self] data in
-            self?.reloadRows(at: [IndexPath.init(row: index, section: 0)])
-        }
         controller.isEditingMode = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
