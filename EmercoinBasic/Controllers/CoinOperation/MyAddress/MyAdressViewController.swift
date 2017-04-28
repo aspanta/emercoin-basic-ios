@@ -14,6 +14,7 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
     var addressBook = AddressBook()
     var isMyAddressBook = true
     let disposeBag = DisposeBag()
+    private var operationActivityView:UIView?
     
     override class func storyboardName() -> String {
         return "CoinOperations"
@@ -42,6 +43,7 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
             .addDisposableTo(disposeBag)
         
         addressBook.error.subscribe(onNext:{ [weak self] error in
+            self?.hideOperationActivityView()
             self?.showErrorAlert(at: error)
         })
             .addDisposableTo(disposeBag)
@@ -57,6 +59,8 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
                 if refresh?.isRefreshing == true  {
                     refresh?.endRefreshing()
                 }
+                self?.hideOperationActivityView()
+            } else {
             }
         })
             .addDisposableTo(disposeBag)
@@ -79,6 +83,7 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
                                              frame: self.parent!.view.frame) as! AddAddressView
         addAddressView.add = ({[weak self] (name) in
             self?.addressBook.addNewMyAddress(at: name)
+            self?.showOperationActivityView()
         })
         self.parent?.view.addSubview(addAddressView)
     }
@@ -91,5 +96,30 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func showOperationActivityView() {
+        
+        var controller:UIViewController?
+        
+        if let parent = self.parent as? CoinOperationsViewController {
+            controller = parent
+        }
+        
+        if let controller = controller {
+            let view = loadViewFromXib(name: "Send", index: 2,
+                                       frame: controller.view.frame)
+            self.operationActivityView = view
+            userInteraction(at: false)
+            controller.view.addSubview(view)
+        }
+    }
+    
+    private func hideOperationActivityView() {
+        
+        if let view = operationActivityView {
+            userInteraction(at: true)
+            view.removeFromSuperview()
+        }
     }
 }

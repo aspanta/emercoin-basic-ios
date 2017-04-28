@@ -1479,7 +1479,14 @@ not found</string>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhX-1A-0k3">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="20"/>
-                                                <attributedString key="attributedText"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="1234567">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name="Helvetica-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
