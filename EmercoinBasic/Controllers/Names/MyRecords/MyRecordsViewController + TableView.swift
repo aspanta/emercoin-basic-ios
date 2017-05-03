@@ -76,7 +76,7 @@ extension MyRecordsViewController {
     
     private func addNoteInfoViewWith(indexPath:IndexPath) {
         
-        let noteInfoView = getRecordView(at: 1) as! RecordInfoVIew
+        let noteInfoView = getRecordView(at: 6) as! RecordInfoVIew
         
         let record = itemAt(indexPath: indexPath)
         noteInfoView.viewModel = RecordViewModel(record: record)
