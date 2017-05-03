@@ -52,7 +52,6 @@ extension MyAdressViewController {
                 copyView.removeFromSuperview()
             })
         }
-
     }
     
     internal func itemAt(indexPath:IndexPath) -> Contact {

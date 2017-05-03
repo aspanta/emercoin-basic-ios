@@ -12,7 +12,6 @@ class Wallet:BaseModel {
     
     var success = PublishSubject<Bool>()
     var error = PublishSubject<NSError>()
-
     var activityIndicator = PublishSubject<Bool>()
     
     var emercoin:Coin = {
