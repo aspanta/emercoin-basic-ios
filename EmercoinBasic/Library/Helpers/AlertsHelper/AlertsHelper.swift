@@ -7,9 +7,9 @@ import UIKit
 
 class AlertsHelper {
     
-    class func errorAlert(at error:NSError) -> UIAlertController {
+    class func errorAlert(at error:NSError) -> BaseAlertController {
         
-        let alert = UIAlertController(
+        let alert = BaseAlertController(
             title: "Error",
             message: String (format:error.domain),
             preferredStyle: .alert

@@ -13,6 +13,8 @@ class BlockchainLoadingViewController: BaseViewController {
     private var viewModel = BlockchainLoadingViewModel()
     private let disposeBag = DisposeBag()
     
+    private var isErrorShowing = false
+    
     var blocks = 0
     
     override class func storyboardName() -> String {
@@ -40,11 +42,26 @@ class BlockchainLoadingViewController: BaseViewController {
             self?.showBlockchainLoadingView(at: blocks)
         })
             .addDisposableTo(disposeBag)
+        
+        viewModel.error.subscribe(onNext:{ [weak self] error in
+            if self?.isErrorShowing == false {self?.showErrorAlert(at: error)}
+            
+        }).addDisposableTo(disposeBag)
     }
     
     private func showMainController() {
         
         Router.sharedInstance.showMainController()
+    }
+    
+    private func showErrorAlert(at error:NSError) {
+        
+        let alert = AlertsHelper.errorAlert(at: error)
+        alert.done = {[weak self] in
+            self?.isErrorShowing = false
+        }
+        present(alert, animated: true, completion: nil)
+        isErrorShowing = true
     }
     
     private func showBlockchainLoadingView(at blocks:Int) {
