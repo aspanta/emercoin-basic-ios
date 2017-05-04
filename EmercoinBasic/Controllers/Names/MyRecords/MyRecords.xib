@@ -604,7 +604,6 @@ was create 1824 days</string>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yr-Zb-ceG">
                                             <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
-                                            <state key="normal" title="Button"/>
                                             <connections>
                                                 <action selector="copyButtonPressedWithSender:" destination="DSi-2A-opT" eventType="touchUpInside" id="65s-7w-Jia"/>
                                             </connections>
@@ -674,7 +673,6 @@ was create 1824 days</string>
                                                 </label>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6p1-15-aVn">
                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
-                                                    <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="copyButtonPressedWithSender:" destination="DSi-2A-opT" eventType="touchUpInside" id="Udq-kf-ROX"/>
                                                     </connections>
@@ -713,7 +711,7 @@ was create 1824 days</string>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54x-L3-bLm">
-                            <rect key="frame" x="28" y="83" width="51" height="21"/>
+                            <rect key="frame" x="28" y="83" width="50.5" height="21"/>
                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -726,7 +724,6 @@ was create 1824 days</string>
                                     <subviews>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wE-Wy-wCw">
                                             <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
-                                            <state key="normal" title="Button"/>
                                             <connections>
                                                 <action selector="copyButtonPressedWithSender:" destination="DSi-2A-opT" eventType="touchUpInside" id="Lfa-fn-cJm"/>
                                             </connections>

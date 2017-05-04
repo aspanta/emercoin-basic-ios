@@ -45,3 +45,18 @@ public func userInteraction(at enable:Bool) {
         UIApplication.shared.beginIgnoringInteractionEvents()
     }
 }
+
+public func bundleVersion() -> String {
+    
+    var version = "1"
+    
+    if let versionMain = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+        version = versionMain
+        
+//        if let bundleVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+//            version = version + "."+bundleVersion
+//        }
+    }
+    
+    return version
+}

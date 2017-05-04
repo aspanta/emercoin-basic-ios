@@ -8,6 +8,8 @@ import UIKit
 class LeftViewController: BaseViewController {
     
     @IBOutlet internal weak var tableView:UITableView!
+    @IBOutlet internal weak var versionLabel:UILabel!
+    
     
     var menuItems:[MenuItem] = []
     
@@ -21,6 +23,13 @@ class LeftViewController: BaseViewController {
         addMenuItems()
         setupController()
         tableView.baseSetup()
+    }
+    
+    override func setupUI() {
+        super.setupUI()
+        
+        let version = bundleVersion()
+        versionLabel.text = String(format:"Version %@",version)
     }
     
     private func setupController() {

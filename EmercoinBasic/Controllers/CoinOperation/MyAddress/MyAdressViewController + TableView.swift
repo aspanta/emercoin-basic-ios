@@ -35,7 +35,7 @@ extension MyAdressViewController {
     private func showCopyView() {
         
         let copyView:UIView = loadViewFromXib(name: "AddressBook", index: 3,
-                                               frame: nil)
+                                              frame: nil)
         copyView.alpha = 0;
         view.addSubview(copyView)
         
