@@ -58,6 +58,14 @@ class SideMenuViewController: LGSideMenuController {
         }
     }
     
+    func showSendController(at data:AnyObject) {
+        mainTabBarController.showController(at: data, index: 1)
+    }
+    
+    func showGetCoinsController(at data:AnyObject) {
+        mainTabBarController.showController(at: data, index: 2)
+    }
+    
     func showDashBoard() {
         
         changeRootController(to: self.mainTabBarController)

@@ -101,6 +101,24 @@ class CoinOperationsViewController: BaseViewController {
         
     }
     
+    func showSendController(at data:AnyObject) {
+        
+        if let controller = childController as? RecipientAddressViewController {
+            controller.showSendController(at: data as? [String : Any])
+        } else {
+            object = data
+        }
+    }
+    
+    func showGetCoinsController(at data:AnyObject) {
+        
+        if let controller = childController as? GetCoinsViewController {
+            controller.object = data
+        } else {
+            object = data
+        }
+    }
+    
     private func prepareChildController() {
         
         var controller:UIViewController? = nil
@@ -108,6 +126,7 @@ class CoinOperationsViewController: BaseViewController {
         switch coinsOperation {
         case .recipientAddress:
             let vc = RecipientAddressViewController.controller() as! RecipientAddressViewController
+            vc.object = object
             controller = vc
         case .send:
             let vc = SendCoinsViewController.controller() as! SendCoinsViewController
@@ -116,6 +135,7 @@ class CoinOperationsViewController: BaseViewController {
         case .get:
             let vc = GetCoinsViewController.controller() as! GetCoinsViewController
             controller = vc
+            vc.object = object
         case .historyAndOperations:
             let vc = AccountPageViewController.controller() as! AccountPageViewController
             controller = vc

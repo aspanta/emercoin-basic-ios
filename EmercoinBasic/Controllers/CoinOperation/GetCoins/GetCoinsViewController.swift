@@ -37,6 +37,28 @@ class GetCoinsViewController: BaseViewController {
         generateQRCode(at:self.address)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let data = object as? [String : Any] {
+            
+            guard let address = data["address"] as? String else {
+                return
+            }
+            self.address = address
+            self.addressLabel.text = address
+            guard let amount = data["amount"] as? String else {
+                return
+            }
+            
+            amountTextField.text = amount
+            
+            generateQRCode(at: address)
+            
+            object = nil
+        }
+    }
+    
     override func setupUI() {
         super.setupUI()
         

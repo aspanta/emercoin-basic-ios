@@ -35,6 +35,27 @@ class TabBarController: UITabBarController {
         selectedIndex = index
     }
     
+    func showController(at data:AnyObject, index:Int) {
+        
+        checkChildControllers(at: index)
+        
+        guard let nav = viewControllers?[index] as? BaseNavigationController else {
+            return
+        }
+        
+        guard let controller = nav.viewControllers.first as? CoinOperationsViewController else {
+            return
+        }
+        
+        if index == 1 {
+            controller.showSendController(at: data)
+        } else if index == 2 {
+            controller.showGetCoinsController(at: data)
+        }
+        
+        selectedIndex = index
+    }
+    
     func showNVSBrowser(at index:Int, subIndex:Int) {
         
         guard let nav = viewControllers?.last as? BaseNavigationController else {

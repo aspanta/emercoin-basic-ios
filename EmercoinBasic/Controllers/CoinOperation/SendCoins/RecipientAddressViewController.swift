@@ -16,6 +16,15 @@ class RecipientAddressViewController: BaseViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let data = object {
+            showSendController(at: data as? [String : Any])
+            object = nil
+        }
+    }
+    
     override func setupUI() {
         super.setupUI()
         
@@ -35,7 +44,7 @@ class RecipientAddressViewController: BaseViewController {
         showSendController(at:nil)
     }
     
-    private func showSendController(at data:[String:Any]?) {
+    func showSendController(at data:[String:Any]?) {
     
         let controller = CoinOperationsViewController.controller() as! CoinOperationsViewController
         controller.coinsOperation = .send
