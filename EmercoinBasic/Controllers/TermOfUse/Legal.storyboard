@@ -12,12 +12,15 @@
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--Legal View Controller-->
+        <!--Licensies View Controller-->
         <scene sceneID="unV-aH-O5g">
             <objects>
-                <viewController storyboardIdentifier="LegalViewController" id="CTg-51-aAf" customClass="LegalViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LicensiesViewController" id="CTg-51-aAf" customClass="LicensiesViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RMx-HS-qu0"/>
                         <viewControllerLayoutGuide type="bottom" id="UbY-ol-dcL"/>
@@ -37,168 +40,215 @@
                                     <action selector="back" destination="CTg-51-aAf" eventType="touchUpInside" id="GIx-Pd-ASG"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIY-l5-FKg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WmU-MB-Qd8">
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LicenseLogoCell" rowHeight="128" id="z43-Bi-2eh" customClass="LicenseLogoCell" customModule="EmercoinBasic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z43-Bi-2eh" id="zqp-Ms-TfZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-iJ-r0B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NVl-Yi-LIH">
+                                                            <rect key="frame" x="158" y="0.0" width="58" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="V8O-gX-Wep"/>
+                                                                <constraint firstAttribute="width" constant="58" id="sQA-Z3-Zdl"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKf-YG-YJi">
+                                                            <rect key="frame" x="46" y="65" width="282" height="42"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="42" id="Hbs-1A-egY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
+                                                            <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="qKf-YG-YJi" firstAttribute="top" secondItem="NVl-Yi-LIH" secondAttribute="bottom" constant="15" id="4pI-W3-eiN"/>
+                                                        <constraint firstAttribute="height" constant="128" id="KgV-AJ-I1q"/>
+                                                        <constraint firstItem="NVl-Yi-LIH" firstAttribute="top" secondItem="Q6w-iJ-r0B" secondAttribute="top" id="cNM-6b-x4Z"/>
+                                                        <constraint firstItem="NVl-Yi-LIH" firstAttribute="centerX" secondItem="qKf-YG-YJi" secondAttribute="centerX" id="hZe-3d-hhu"/>
+                                                        <constraint firstItem="qKf-YG-YJi" firstAttribute="centerX" secondItem="Q6w-iJ-r0B" secondAttribute="centerX" id="lrm-ws-GPy"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Q6w-iJ-r0B" firstAttribute="top" secondItem="zqp-Ms-TfZ" secondAttribute="top" id="6bo-Y1-A0w"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q6w-iJ-r0B" secondAttribute="bottom" id="7tY-Un-cg1"/>
+                                                <constraint firstItem="Q6w-iJ-r0B" firstAttribute="leading" secondItem="zqp-Ms-TfZ" secondAttribute="leading" id="kHY-OV-1Rx"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q6w-iJ-r0B" secondAttribute="trailing" id="qyi-db-WtN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LicenseCell" rowHeight="44" id="JbN-aB-H5h" customClass="LicenseCell" customModule="EmercoinBasic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JbN-aB-H5h" id="k14-FK-fAd">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NA3-cq-J8b">
+                                                    <rect key="frame" x="20" y="16" width="10" height="10"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="HWX-CS-q2B"/>
+                                                        <constraint firstAttribute="height" constant="10" id="dEK-MR-Cvz"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc1-XT-AeB">
+                                                    <rect key="frame" x="45" y="11" width="297" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="NA3-cq-J8b" secondAttribute="bottom" constant="17.5" id="4Pj-6i-MEO"/>
+                                                <constraint firstAttribute="bottom" secondItem="dc1-XT-AeB" secondAttribute="bottom" constant="11.5" id="HsA-DH-SdX"/>
+                                                <constraint firstAttribute="trailing" secondItem="dc1-XT-AeB" secondAttribute="trailing" id="PxM-21-wk3"/>
+                                                <constraint firstItem="NA3-cq-J8b" firstAttribute="leading" secondItem="k14-FK-fAd" secondAttribute="leading" constant="20" id="UsU-8f-SrA"/>
+                                                <constraint firstItem="dc1-XT-AeB" firstAttribute="leading" secondItem="NA3-cq-J8b" secondAttribute="trailing" constant="15" id="Z0J-gr-7Yk"/>
+                                                <constraint firstItem="dc1-XT-AeB" firstAttribute="top" secondItem="k14-FK-fAd" secondAttribute="top" constant="11" id="aTp-3q-t6K"/>
+                                                <constraint firstItem="NA3-cq-J8b" firstAttribute="top" secondItem="k14-FK-fAd" secondAttribute="top" constant="16" id="feQ-mq-pPE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="dc1-XT-AeB" id="cxz-Iv-ddI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CTg-51-aAf" id="xYk-jw-kaE"/>
+                                    <outlet property="delegate" destination="CTg-51-aAf" id="WLp-Yo-7Ue"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UbY-ol-dcL" firstAttribute="top" secondItem="WmU-MB-Qd8" secondAttribute="bottom" id="CXH-8x-IS2"/>
+                            <constraint firstItem="ek1-uI-W4S" firstAttribute="leading" secondItem="On5-hi-lfq" secondAttribute="leading" id="MuB-B0-q9U"/>
+                            <constraint firstItem="WmU-MB-Qd8" firstAttribute="leading" secondItem="On5-hi-lfq" secondAttribute="leading" id="VFD-Fu-tbs"/>
+                            <constraint firstItem="ek1-uI-W4S" firstAttribute="top" secondItem="RMx-HS-qu0" secondAttribute="bottom" id="g5X-QI-WLL"/>
+                            <constraint firstAttribute="trailing" secondItem="WmU-MB-Qd8" secondAttribute="trailing" id="ind-F5-zpD"/>
+                            <constraint firstItem="WmU-MB-Qd8" firstAttribute="top" secondItem="ek1-uI-W4S" secondAttribute="bottom" id="yMj-aC-hZu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="WmU-MB-Qd8" id="Cjl-ZT-JOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lin-Bw-lld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="-133.5832083958021"/>
+        </scene>
+        <!--Legal View Controller-->
+        <scene sceneID="c3W-Zb-8hM">
+            <objects>
+                <viewController storyboardIdentifier="LegalViewController" id="Fkz-QV-z9s" customClass="LegalViewController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ePC-Bu-BeT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ofh-11-Uoa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gix-ad-fm0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aV-7K-eKP">
+                                <rect key="frame" x="0.0" y="20" width="58" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="9Eq-A6-3nc"/>
+                                    <constraint firstAttribute="width" constant="58" id="M8x-hg-QFd"/>
+                                </constraints>
+                                <state key="normal" image="reg_arrow_icon"/>
+                                <connections>
+                                    <action selector="back" destination="Fkz-QV-z9s" eventType="touchUpInside" id="o7w-eY-Ixt"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-oA-VdE">
                                 <rect key="frame" x="0.0" y="81" width="375" height="586"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQj-56-Rjg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-f5-1Yx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reg_logo" translatesAutoresizingMaskIntoConstraints="NO" id="SFc-aA-ywm">
-                                                <rect key="frame" x="158" y="0.0" width="58" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="OOn-sD-7cT"/>
-                                                    <constraint firstAttribute="width" constant="58" id="hXl-fO-pIG"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMERCOIN BASIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPY-Nt-Gbc">
-                                                <rect key="frame" x="38.5" y="65" width="297" height="42"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="42" id="EWg-en-eao"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="35"/>
-                                                <color key="textColor" red="0.61176470589999998" green="0.45098039220000002" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOv-JN-41C">
+                                                <rect key="frame" x="20" y="66" width="334" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usa-8y-nnd" customClass="HyperlinkLabel" customModule="EmercoinBasic" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="38" width="334" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-gs-ihg">
+                                                <rect key="frame" x="20" y="8" width="334" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="5Gd-Qw-gDq"/>
-                                            <constraint firstItem="SFc-aA-ywm" firstAttribute="top" secondItem="KQj-56-Rjg" secondAttribute="top" id="L2N-LM-MqC"/>
-                                            <constraint firstItem="oPY-Nt-Gbc" firstAttribute="top" secondItem="SFc-aA-ywm" secondAttribute="bottom" constant="15" id="PiE-RX-RsZ"/>
-                                            <constraint firstItem="oPY-Nt-Gbc" firstAttribute="centerX" secondItem="KQj-56-Rjg" secondAttribute="centerX" id="UuL-ma-HUT"/>
-                                            <constraint firstItem="SFc-aA-ywm" firstAttribute="centerX" secondItem="oPY-Nt-Gbc" secondAttribute="centerX" id="WLv-74-i3j"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhs-gD-x3w">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="2077"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9J-Ny-t1R">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="2077"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Emercoin Basic License">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment>
-                                                        <string key="content">
-Copyright (c) 2017, Aspanta Limited
-Licensed under the Microsoft Reference Source License (MS-RSL)
-1. Definitions
-The terms "reproduce," "reproduction," and "distribution" have the same meaning here as under U.S. copyright law.
-"You" means the licensee of the software.
-"Your company" means the company you worked for when you downloaded the software.
-"Reference use" means use of the software within your company as a reference, in read only form, for the sole purposes of debugging your products, maintaining your products, or enhancing the interoperability of your products with the software, and specifically excludes the right to distribute the software outside of your company.
-"Licensed patents" means any Licensor patent claims which read directly on the software as distributed by the Licensor under this license.
-2. Grant of Rights
-(A) Copyright Grant- Subject to the terms of this license, the Licensor grants you a non-transferable, non-exclusive, worldwide, royalty-free copyright license to reproduce the software for reference use.
-(B) Patent Grant- Subject to the terms of this license, the Licensor grants you a non-transferable, non-exclusive, worldwide, royalty-free patent license under licensed patents for reference use.
-3. Limitations
-(A) No Trademark License- This license does not grant you any rights to use the LicensorвЂ™s name, logo, or trademarks.
-(B) If you begin patent litigation against the Licensor over patents that you think may apply to the software (including a cross-claim or counterclaim in a lawsuit), your license to the software ends automatically.
-(C) The software is licensed "as-is." You bear the risk of using it. The Licensor gives no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the Licensor excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
-
-</string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="OpenSSL License">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment>
-                                                        <string key="content">
-Copyright (c) 1998-2017 The OpenSSL Project. All rights reserved.
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-3. All advertising materials mentioning features or use of this software must display the following acknowledgment: "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/)" 
-4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to endorse or promote products derived from this software without prior written permission. For written permission, please contact openssl-core@openssl.org.
-5. Products derived from this software may not be called "OpenSSL" nor may "OpenSSL" appear in their names without prior written permission of the OpenSSL Project.
-6. Redistributions of any form whatsoever must retain the following acknowledgment: "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)" 
-THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE OpenSSL PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).
-This product includes software written by Tim Hudson (tjh@cryptsoft.com).
-
-</string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="FMDB License">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment>
-                                                        <string key="content">
-Copyright (c) 2008 Flying Meat Inc.
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="P9J-Ny-t1R" firstAttribute="top" secondItem="rhs-gD-x3w" secondAttribute="top" id="6GC-Dg-CGD"/>
-                                            <constraint firstAttribute="bottom" secondItem="P9J-Ny-t1R" secondAttribute="bottom" id="Ugo-XH-BqP"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="165" id="Um6-rd-gej"/>
-                                            <constraint firstItem="P9J-Ny-t1R" firstAttribute="leading" secondItem="rhs-gD-x3w" secondAttribute="leading" constant="20" id="fXh-Ob-mXB"/>
-                                            <constraint firstAttribute="trailing" secondItem="P9J-Ny-t1R" secondAttribute="trailing" constant="20" id="lou-EW-PES"/>
+                                            <constraint firstItem="Usa-8y-nnd" firstAttribute="leading" secondItem="GzU-f5-1Yx" secondAttribute="leading" constant="20" id="0cu-IH-vsj"/>
+                                            <constraint firstItem="AvT-gs-ihg" firstAttribute="leading" secondItem="GzU-f5-1Yx" secondAttribute="leading" constant="20" id="Bkv-1S-7ll"/>
+                                            <constraint firstItem="zOv-JN-41C" firstAttribute="leading" secondItem="GzU-f5-1Yx" secondAttribute="leading" constant="20" id="DvA-il-QO9"/>
+                                            <constraint firstAttribute="bottom" secondItem="zOv-JN-41C" secondAttribute="bottom" id="Prp-sI-pZa"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="Q56-iw-OWv"/>
+                                            <constraint firstItem="AvT-gs-ihg" firstAttribute="top" secondItem="GzU-f5-1Yx" secondAttribute="top" constant="8" id="Xnm-v6-Xie"/>
+                                            <constraint firstItem="zOv-JN-41C" firstAttribute="top" secondItem="Usa-8y-nnd" secondAttribute="bottom" constant="8" id="ciQ-e1-9JO"/>
+                                            <constraint firstAttribute="trailing" secondItem="Usa-8y-nnd" secondAttribute="trailing" constant="21" id="f63-IP-Fs1"/>
+                                            <constraint firstItem="Usa-8y-nnd" firstAttribute="top" secondItem="AvT-gs-ihg" secondAttribute="bottom" constant="10" id="f8U-rv-J5q"/>
+                                            <constraint firstItem="zOv-JN-41C" firstAttribute="centerX" secondItem="GzU-f5-1Yx" secondAttribute="centerX" id="ffw-R5-fTQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="AvT-gs-ihg" secondAttribute="trailing" constant="21" id="xPQ-yB-qAI"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="KQj-56-Rjg" firstAttribute="centerX" secondItem="MIY-l5-FKg" secondAttribute="centerX" id="E0A-su-8vs"/>
-                                    <constraint firstItem="rhs-gD-x3w" firstAttribute="leading" secondItem="MIY-l5-FKg" secondAttribute="leading" id="GbN-HS-RpN"/>
-                                    <constraint firstItem="KQj-56-Rjg" firstAttribute="leading" secondItem="rhs-gD-x3w" secondAttribute="leading" id="KBx-rw-Poh"/>
-                                    <constraint firstAttribute="trailing" secondItem="KQj-56-Rjg" secondAttribute="trailing" id="UOl-aM-L6A"/>
-                                    <constraint firstAttribute="bottom" secondItem="rhs-gD-x3w" secondAttribute="bottom" id="bz0-iC-KHs"/>
-                                    <constraint firstItem="rhs-gD-x3w" firstAttribute="top" secondItem="KQj-56-Rjg" secondAttribute="bottom" id="cBg-N2-xH4"/>
-                                    <constraint firstItem="KQj-56-Rjg" firstAttribute="top" secondItem="MIY-l5-FKg" secondAttribute="top" id="geA-D2-nOr"/>
-                                    <constraint firstAttribute="trailing" secondItem="rhs-gD-x3w" secondAttribute="trailing" id="lyf-pg-IxV"/>
+                                    <constraint firstItem="GzU-f5-1Yx" firstAttribute="leading" secondItem="JDt-oA-VdE" secondAttribute="leading" id="NcG-3A-ocI"/>
+                                    <constraint firstAttribute="bottom" secondItem="GzU-f5-1Yx" secondAttribute="bottom" id="OYI-2g-UpS"/>
+                                    <constraint firstItem="GzU-f5-1Yx" firstAttribute="centerX" secondItem="JDt-oA-VdE" secondAttribute="centerX" id="Qq2-TJ-oUA"/>
+                                    <constraint firstAttribute="trailing" secondItem="GzU-f5-1Yx" secondAttribute="trailing" id="egy-IF-xpc"/>
+                                    <constraint firstItem="GzU-f5-1Yx" firstAttribute="top" secondItem="JDt-oA-VdE" secondAttribute="top" id="t27-Jv-KeH"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MIY-l5-FKg" firstAttribute="bottom" secondItem="UbY-ol-dcL" secondAttribute="top" id="5Aj-fU-lk2"/>
-                            <constraint firstItem="ek1-uI-W4S" firstAttribute="leading" secondItem="On5-hi-lfq" secondAttribute="leading" id="MuB-B0-q9U"/>
-                            <constraint firstItem="MIY-l5-FKg" firstAttribute="leading" secondItem="ek1-uI-W4S" secondAttribute="leading" id="N0R-ch-d4h"/>
-                            <constraint firstAttribute="trailing" secondItem="MIY-l5-FKg" secondAttribute="trailing" id="ZOB-4N-qr5"/>
-                            <constraint firstItem="ek1-uI-W4S" firstAttribute="top" secondItem="RMx-HS-qu0" secondAttribute="bottom" id="g5X-QI-WLL"/>
-                            <constraint firstItem="MIY-l5-FKg" firstAttribute="top" secondItem="ek1-uI-W4S" secondAttribute="bottom" id="myE-SR-gcK"/>
+                            <constraint firstAttribute="trailing" secondItem="JDt-oA-VdE" secondAttribute="trailing" id="5MY-pQ-ODH"/>
+                            <constraint firstItem="JDt-oA-VdE" firstAttribute="bottom" secondItem="Ofh-11-Uoa" secondAttribute="top" id="7cx-CG-Rr5"/>
+                            <constraint firstItem="8aV-7K-eKP" firstAttribute="leading" secondItem="Gix-ad-fm0" secondAttribute="leading" id="N4k-yq-cES"/>
+                            <constraint firstItem="JDt-oA-VdE" firstAttribute="leading" secondItem="8aV-7K-eKP" secondAttribute="leading" id="Nye-is-0Xm"/>
+                            <constraint firstItem="8aV-7K-eKP" firstAttribute="top" secondItem="ePC-Bu-BeT" secondAttribute="bottom" id="b9u-AR-99h"/>
+                            <constraint firstItem="JDt-oA-VdE" firstAttribute="top" secondItem="8aV-7K-eKP" secondAttribute="bottom" id="oF6-Jl-zlr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logoView" destination="KQj-56-Rjg" id="P5h-1L-vKD"/>
-                        <outlet property="scrollView" destination="MIY-l5-FKg" id="B3W-Gs-QAf"/>
-                        <outlet property="textView" destination="rhs-gD-x3w" id="pY1-mM-fAC"/>
+                        <outlet property="hyperlinkLabel" destination="Usa-8y-nnd" id="PF5-V8-ofx"/>
+                        <outlet property="nameLabel" destination="AvT-gs-ihg" id="zEy-73-iw4"/>
+                        <outlet property="scrollView" destination="JDt-oA-VdE" id="K1d-n1-bmS"/>
+                        <outlet property="textLabel" destination="zOv-JN-41C" id="e27-aJ-o3J"/>
+                        <outlet property="textView" destination="GzU-f5-1Yx" id="tjO-sG-6O2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lin-Bw-lld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vub-7x-BdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="-23"/>
+            <point key="canvasLocation" x="816.79999999999995" y="-132.68365817091455"/>
         </scene>
     </scenes>
     <resources>

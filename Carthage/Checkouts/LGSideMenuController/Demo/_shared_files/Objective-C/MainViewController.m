@@ -39,6 +39,8 @@
         self.leftViewBackgroundColor = [UIColor colorWithRed:0.5 green:0.65 blue:0.5 alpha:0.95];
         self.rootViewCoverColorForLeftView = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.05];
 
+
+
         self.rightViewWidth = 100.0;
         self.rightViewBackgroundImage = [UIImage imageNamed:@"imageRight"];
         self.rightViewBackgroundColor = [UIColor colorWithRed:0.65 green:0.5 blue:0.65 alpha:0.95];
@@ -60,7 +62,7 @@
 
     // -----
 
-    switch (type) {
+    switch (self.type) {
         case 0: {
             self.leftViewPresentationStyle = LGSideMenuPresentationStyleScaleFromBig;
             self.rightViewPresentationStyle = LGSideMenuPresentationStyleScaleFromBig;
@@ -138,7 +140,7 @@
 
             self.rightViewPresentationStyle = LGSideMenuPresentationStyleScaleFromBig;
             self.rightViewStatusBarStyle = UIStatusBarStyleLightContent;
-            
+
             break;
         }
         case 9: {
@@ -162,7 +164,7 @@
 
             self.leftViewSwipeGestureRange = LGSideMenuSwipeGestureRangeMake(0.0, 88.0);
             self.leftViewPresentationStyle = LGSideMenuPresentationStyleScaleFromBig;
-            self.leftViewAnimationSpeed = 1.0;
+            self.leftViewAnimationDuration = 1.0;
             self.leftViewBackgroundColor = [UIColor colorWithRed:0.5 green:0.75 blue:0.5 alpha:1.0];
             self.leftViewBackgroundImageInitialScale = 1.5;
             self.leftViewInitialOffsetX = -200.0;
@@ -177,7 +179,7 @@
 
             self.rightViewSwipeGestureRange = LGSideMenuSwipeGestureRangeMake(88.0, 0.0);
             self.rightViewPresentationStyle = LGSideMenuPresentationStyleSlideAbove;
-            self.rightViewAnimationSpeed = 0.25;
+            self.rightViewAnimationDuration = 0.25;
             self.rightViewBackgroundColor = [UIColor colorWithRed:0.75 green:0.5 blue:0.75 alpha:1.0];
             self.rightViewLayerBorderWidth = 3.0;
             self.rightViewLayerBorderColor = [UIColor blackColor];
@@ -223,7 +225,7 @@
     if (self.type == 8) {
         return UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation) && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
     }
-    
+
     return super.isRightViewStatusBarHidden;
 }
 

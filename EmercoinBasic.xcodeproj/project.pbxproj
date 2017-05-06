@@ -27,6 +27,16 @@
 		2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */; };
 		2D15E7931EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */; };
 		2D15E7951EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */; };
+		2D19D5291EBD0CF100B641D9 /* LicensiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D5281EBD0CF100B641D9 /* LicensiesViewController.swift */; };
+		2D19D52D1EBD12A800B641D9 /* Licensies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D52C1EBD12A800B641D9 /* Licensies.swift */; };
+		2D19D52F1EBD12C300B641D9 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D52E1EBD12C300B641D9 /* License.swift */; };
+		2D19D5321EBD140D00B641D9 /* LicenseLogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D5311EBD140D00B641D9 /* LicenseLogoCell.swift */; };
+		2D19D5341EBD141900B641D9 /* LicenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D5331EBD141900B641D9 /* LicenseCell.swift */; };
+		2D19D5361EBD144A00B641D9 /* LicensiesViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D5351EBD144A00B641D9 /* LicensiesViewController + TableView.swift */; };
+		2D19D5391EBD210700B641D9 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D5381EBD210700B641D9 /* LicenseViewModel.swift */; };
+		2D19D53B1EBD2A0300B641D9 /* licensies.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D19D53A1EBD2A0300B641D9 /* licensies.json */; };
+		2D19D53E1EBD93CF00B641D9 /* HyperlinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D53D1EBD93CF00B641D9 /* HyperlinkLabel.swift */; };
+		2D19D5421EBDB82300B641D9 /* FRHyperLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D19D5411EBDB82300B641D9 /* FRHyperLabel.m */; };
 		2D21D6641E926E690088AD31 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6511E926E690088AD31 /* RecordCell.swift */; };
 		2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */; };
 		2D21D6661E926E690088AD31 /* CreateNVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */; };
@@ -250,6 +260,18 @@
 		2D15E7901EA68C4D00B73217 /* WalletProtectionActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionActivityView.swift; sourceTree = "<group>"; };
 		2D15E7921EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptActivityView.swift; sourceTree = "<group>"; };
 		2D15E7941EA7F56B00B73217 /* WalletProtectionEncryptSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProtectionEncryptSuccessView.swift; sourceTree = "<group>"; };
+		2D19D5281EBD0CF100B641D9 /* LicensiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensiesViewController.swift; sourceTree = "<group>"; };
+		2D19D52C1EBD12A800B641D9 /* Licensies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Licensies.swift; sourceTree = "<group>"; };
+		2D19D52E1EBD12C300B641D9 /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		2D19D5311EBD140D00B641D9 /* LicenseLogoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseLogoCell.swift; sourceTree = "<group>"; };
+		2D19D5331EBD141900B641D9 /* LicenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseCell.swift; sourceTree = "<group>"; };
+		2D19D5351EBD144A00B641D9 /* LicensiesViewController + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LicensiesViewController + TableView.swift"; sourceTree = "<group>"; };
+		2D19D5381EBD210700B641D9 /* LicenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
+		2D19D53A1EBD2A0300B641D9 /* licensies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = licensies.json; sourceTree = "<group>"; };
+		2D19D53D1EBD93CF00B641D9 /* HyperlinkLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyperlinkLabel.swift; sourceTree = "<group>"; };
+		2D19D5401EBDB82300B641D9 /* FRHyperLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRHyperLabel.h; sourceTree = "<group>"; };
+		2D19D5411EBDB82300B641D9 /* FRHyperLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRHyperLabel.m; sourceTree = "<group>"; };
+		2D19D5431EBDB85900B641D9 /* FRHyperLabelDemoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRHyperLabelDemoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D21D6511E926E690088AD31 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		2D21D6551E926E690088AD31 /* AddressesNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesNVSViewController.swift; sourceTree = "<group>"; };
 		2D21D6561E926E690088AD31 /* CreateNVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNVSViewController.swift; sourceTree = "<group>"; };
@@ -593,6 +615,67 @@
 				2D109F3E1EAE3983003AD402 /* Blockchain.swift */,
 			);
 			path = Blockchain;
+			sourceTree = "<group>";
+		};
+		2D19D5271EBD0CDD00B641D9 /* Licensies */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D5301EBD13DA00B641D9 /* Cell */,
+				2D19D5281EBD0CF100B641D9 /* LicensiesViewController.swift */,
+				2D19D5351EBD144A00B641D9 /* LicensiesViewController + TableView.swift */,
+			);
+			path = Licensies;
+			sourceTree = "<group>";
+		};
+		2D19D52A1EBD127100B641D9 /* Licensies */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D52B1EBD127100B641D9 /* License */,
+				2D19D52C1EBD12A800B641D9 /* Licensies.swift */,
+			);
+			path = Licensies;
+			sourceTree = "<group>";
+		};
+		2D19D52B1EBD127100B641D9 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D52E1EBD12C300B641D9 /* License.swift */,
+			);
+			path = License;
+			sourceTree = "<group>";
+		};
+		2D19D5301EBD13DA00B641D9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D5311EBD140D00B641D9 /* LicenseLogoCell.swift */,
+				2D19D5331EBD141900B641D9 /* LicenseCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2D19D5371EBD20F700B641D9 /* LicenseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D5381EBD210700B641D9 /* LicenseViewModel.swift */,
+			);
+			path = LicenseViewModel;
+			sourceTree = "<group>";
+		};
+		2D19D53C1EBD93BC00B641D9 /* HyperlinkLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D53D1EBD93CF00B641D9 /* HyperlinkLabel.swift */,
+			);
+			path = HyperlinkLabel;
+			sourceTree = "<group>";
+		};
+		2D19D53F1EBDB82300B641D9 /* FRHyperLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2D19D5401EBDB82300B641D9 /* FRHyperLabel.h */,
+				2D19D5411EBDB82300B641D9 /* FRHyperLabel.m */,
+			);
+			path = FRHyperLabel;
 			sourceTree = "<group>";
 		};
 		2D21D64E1E926E690088AD31 /* Names */ = {
@@ -966,6 +1049,7 @@
 		2D997A851E7AC90700630560 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D5431EBDB85900B641D9 /* FRHyperLabelDemoSwift-Bridging-Header.h */,
 				2D997A861E7AC90700630560 /* AppDelegate.swift */,
 				2D997A871E7AC90700630560 /* Info.plist */,
 			);
@@ -1003,6 +1087,7 @@
 		2D997A8B1E7AC90700630560 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D52A1EBD127100B641D9 /* Licensies */,
 				2D109F3D1EAE3966003AD402 /* Blockchain */,
 				2D798EFB1E939F1B008AB5AF /* Records */,
 				2DA3E77A1E83DA0A003F9A6D /* Settings */,
@@ -1023,6 +1108,7 @@
 		2D997A8C1E7AC90700630560 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D53A1EBD2A0300B641D9 /* licensies.json */,
 				2D997AAA1E7AD02A00630560 /* Assets.xcassets */,
 				2D997AAB1E7AD02A00630560 /* Base.lproj */,
 				2D997AB01E7AD02A00630560 /* Fonts */,
@@ -1033,6 +1119,7 @@
 		2D997A921E7AC90700630560 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D5371EBD20F700B641D9 /* LicenseViewModel */,
 				2D2E06991EB1E5000053A6AC /* BlockchainLoadingViewModel */,
 				2D8237601EA60C4600DC37D6 /* CreateNVSViewModel */,
 				2DEDC9431EA0F70100F404B5 /* SendViewModel */,
@@ -1049,6 +1136,7 @@
 		2D997A931E7AC90700630560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D53C1EBD93BC00B641D9 /* HyperlinkLabel */,
 				2D109F351EAE2978003AD402 /* Blockchain */,
 				2D0DCC4D1EAA4BF300802609 /* Send */,
 				2D09DB8A1E9D64BE0013970F /* WalletProtection */,
@@ -1146,6 +1234,7 @@
 		2D997ACB1E7AD1FF00630560 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D53F1EBDB82300B641D9 /* FRHyperLabel */,
 				2D64EA8E1E9E0F37000F9B48 /* WalletProtectionHelper */,
 				2D70A9791E85332800F50488 /* AlertsHelper */,
 				2D997ACC1E7AD1FF00630560 /* AppManager */,
@@ -1795,6 +1884,7 @@
 		2D997CAC1E7AD3B200630560 /* Legal */ = {
 			isa = PBXGroup;
 			children = (
+				2D19D5271EBD0CDD00B641D9 /* Licensies */,
 				2D997CAD1E7AD3B200630560 /* Legal.storyboard */,
 				2D997CAE1E7AD3B200630560 /* LegalViewController.swift */,
 			);
@@ -1932,6 +2022,7 @@
 				2D2E06981EB1E42D0053A6AC /* BlockchainLoading.storyboard in Resources */,
 				2D22B2421E7C4455008BB64F /* AddressBook.xib in Resources */,
 				2D997ABD1E7AD02A00630560 /* Roboto-Bold.ttf in Resources */,
+				2D19D53B1EBD2A0300B641D9 /* licensies.json in Resources */,
 				2D997CCE1E7AD3B200630560 /* CoinOperations.storyboard in Resources */,
 				2D22B2411E7C4455008BB64F /* AddressBook.storyboard in Resources */,
 				2D997CE41E7AD3B200630560 /* Home.storyboard in Resources */,
@@ -2004,6 +2095,7 @@
 				2D798EFA1E9394C3008AB5AF /* NamesAPI.swift in Sources */,
 				2D109F3F1EAE3983003AD402 /* Blockchain.swift in Sources */,
 				2D997CD11E7AD3B200630560 /* GetCoinsViewController + DropDown.swift in Sources */,
+				2D19D53E1EBD93CF00B641D9 /* HyperlinkLabel.swift in Sources */,
 				2D28C85E1E7C596C0071947A /* ContactViewModel.swift in Sources */,
 				2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */,
 				2D997B281E7AD1FF00630560 /* TwitterPagerTabStripViewController.swift in Sources */,
@@ -2015,11 +2107,14 @@
 				2D997B141E7AD1FF00630560 /* DropDown+Appearance.swift in Sources */,
 				2DA249441E7C1F4700AF81DD /* LoginViewController.swift in Sources */,
 				2D997BD21E7AD2B600630560 /* ProtectionDoneView.swift in Sources */,
+				2D19D52F1EBD12C300B641D9 /* License.swift in Sources */,
 				2D997BCE1E7AD2B600630560 /* FindDPOButton.swift in Sources */,
 				2D109F371EAE29AC003AD402 /* BlockchainLoadingView.swift in Sources */,
 				2D997B1A1E7AD1FF00630560 /* BarPagerTabStripViewController.swift in Sources */,
+				2D19D5361EBD144A00B641D9 /* LicensiesViewController + TableView.swift in Sources */,
 				2D997BC01E7AD2B600630560 /* SuccessSendMessage.swift in Sources */,
 				2D109F3C1EAE3814003AD402 /* BlockchainInfoAPI.swift in Sources */,
+				2D19D5321EBD140D00B641D9 /* LicenseLogoCell.swift in Sources */,
 				2D997BB41E7AD2B600630560 /* BaseTextField.swift in Sources */,
 				2D997B571E7AD24E00630560 /* HistoryTransaction.swift in Sources */,
 				2D997B081E7AD1FF00630560 /* UIColor + Utils.swift in Sources */,
@@ -2028,6 +2123,7 @@
 				2D15E7931EA7DB9100B73217 /* WalletProtectionEncryptActivityView.swift in Sources */,
 				2D997B1E1E7AD1FF00630560 /* ButtonBarView.swift in Sources */,
 				2D997CD61E7AD3B200630560 /* RecipientAddressViewController.swift in Sources */,
+				2D19D5391EBD210700B641D9 /* LicenseViewModel.swift in Sources */,
 				2D997BD01E7AD2B600630560 /* PopupView.swift in Sources */,
 				2D997B181E7AD1FF00630560 /* QRCodeHelper.swift in Sources */,
 				2D997BC11E7AD2B600630560 /* HomeLogoView.swift in Sources */,
@@ -2055,6 +2151,7 @@
 				2DA3E77C1E83DA19003F9A6D /* Settings.swift in Sources */,
 				2D997CB41E7AD3B200630560 /* HistoryViewController + TableView.swift in Sources */,
 				2D21D6781E9279220088AD31 /* RecordInfoVIew.swift in Sources */,
+				2D19D5421EBDB82300B641D9 /* FRHyperLabel.m in Sources */,
 				2D997CB31E7AD3B200630560 /* HistoryCell.swift in Sources */,
 				2D578BFC1EB9CE2400996573 /* BaseAlertController.swift in Sources */,
 				2D4D98E81E7FF7D400DFB784 /* BaseAPI.swift in Sources */,
@@ -2071,6 +2168,7 @@
 				2D997C011E7AD37700630560 /* CoinsOperationViewModel.swift in Sources */,
 				2D997CE61E7AD3B200630560 /* HomeViewController + TableView.swift in Sources */,
 				2D997B1D1E7AD1FF00630560 /* ButtonBarPagerTabStripViewController.swift in Sources */,
+				2D19D5291EBD0CF100B641D9 /* LicensiesViewController.swift in Sources */,
 				2D21D6691E926E690088AD31 /* MyRecordsViewController + TableView.swift in Sources */,
 				2D997B021E7AD1FF00630560 /* Constants.swift in Sources */,
 				2D22B2451E7C4455008BB64F /* ContactCell.swift in Sources */,
@@ -2117,6 +2215,7 @@
 				2D21D66B1E926E690088AD31 /* NVSInfoViewController.swift in Sources */,
 				2D997B111E7AD1FF00630560 /* DPDUIView+Extension.swift in Sources */,
 				2D997BD61E7AD2B600630560 /* RoundButton.swift in Sources */,
+				2D19D5341EBD141900B641D9 /* LicenseCell.swift in Sources */,
 				2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */,
 				2D997B521E7AD24E00630560 /* Coin.swift in Sources */,
 				2D09DB8E1E9D651A0013970F /* WalletProtectionLockView.swift in Sources */,
@@ -2151,6 +2250,7 @@
 				2D997B0F1E7AD1FF00630560 /* DPDConstants.swift in Sources */,
 				2D997B5E1E7AD24E00630560 /* MenuItem.swift in Sources */,
 				2D997B091E7AD1FF00630560 /* UIImage + Utils.swift in Sources */,
+				2D19D52D1EBD12A800B641D9 /* Licensies.swift in Sources */,
 				2D4877D61E818E090084129C /* BalanceAPI.swift in Sources */,
 				2D997B4F1E7AD24E00630560 /* AddressBook.swift in Sources */,
 				2D6620931E9C02EA007DFB35 /* AddNameAPI.swift in Sources */,
@@ -2292,6 +2392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "866dbeae-d23a-460a-9139-3ea5605ec35e";
 				PROVISIONING_PROFILE_SPECIFIER = "Emercoin Basic";
+				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -2312,6 +2413,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "866dbeae-d23a-460a-9139-3ea5605ec35e";
 				PROVISIONING_PROFILE_SPECIFIER = "Emercoin Basic";
+				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

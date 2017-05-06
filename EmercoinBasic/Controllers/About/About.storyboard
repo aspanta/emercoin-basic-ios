@@ -70,54 +70,12 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ES-lX-WK9">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="692.5"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFM-al-QZe">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="692.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFM-al-QZe" customClass="FRHyperLabel">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="20"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Emercoin Basic">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment>
-                                                        <string key="content"> is a thin client for Emercoin Core Wallet which is connecting via RPC protocol designed by Aspanta Limited.
-
-</string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="Emercoin">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment>
-                                                        <string key="content"> is one of the world's leading digital currency and blockchain platforms. Emercoin allows users to exchange money and valuable information, anywhere in the world, at any time, quickly, securely and affordably. Emercoin is a digital currency that uses the power of blockchain technology to provide the most secure way to send, receive and store money. A blockchain is a distributed database where cryptography is used to ensure that records can not be changed. The Emercoin blockchain allows you to store, send and receive money anywhere in the world. When you control your money, you decide when to send it. No one can charge you money, nor can they spend your money when you use Emercoin. International payments now take minutes, not days. Using Emercoin is extremely affordable. You can securely send any amount of money at any time, anywhere for pennies. The Emercoin blockchain is a safer way to send money than a bank because of the superior technology that gives control back to the owner. Emercoin is much more than money, it is information. You can securely store, send and receive ownership and identity information, register censorship-resistant domain names and browse the internet without having to use passwords anymore! These services are available 24/7 on the Emercoin blockchain. When you use Emercoin, you are the sole owner of your money and this means there is no third party who can lose track of your information. No one can steal your identity or impersonate you when using Emercoin, and you can choose how much information you reveal to someone when you send them money or information.
-
-</string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="Aspanta Limited">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment>
-                                                        <string key="content"> is an expert in the development of highly loaded web and mobile full-cycle applications, reliable Microsoft Azure cloud resources, decentralized systems based on the Emercoin blockchain.</string>
+                                                    <fragment content="123">
                                                         <attributes>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="14" name="Helvetica"/>
@@ -130,7 +88,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="165" id="6L1-FV-tFQ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="6L1-FV-tFQ"/>
                                             <constraint firstItem="QFM-al-QZe" firstAttribute="top" secondItem="9ES-lX-WK9" secondAttribute="top" id="OQg-Bh-2PB"/>
                                             <constraint firstItem="QFM-al-QZe" firstAttribute="leading" secondItem="9ES-lX-WK9" secondAttribute="leading" constant="20" id="bXa-9q-EPt"/>
                                             <constraint firstAttribute="bottom" secondItem="QFM-al-QZe" secondAttribute="bottom" id="eCv-nG-Dfi"/>
@@ -163,6 +121,7 @@
                     <connections>
                         <outlet property="logoView" destination="daE-Cu-hOv" id="EHF-FP-PAQ"/>
                         <outlet property="scrollView" destination="iS4-XW-IQF" id="Qqv-nh-Nbi"/>
+                        <outlet property="textLabel" destination="QFM-al-QZe" id="rNG-R6-bok"/>
                         <outlet property="textView" destination="9ES-lX-WK9" id="xHB-ds-qxN"/>
                     </connections>
                 </viewController>

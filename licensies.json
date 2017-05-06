@@ -1,0 +1,13 @@
+{
+	"items":
+		{
+			"name":"RxSwift",
+			"text":"Copyright © 2015 Krunoslav Zaher All rights reserved.",
+			"url":"https://github.com/ReactiveX/RxSwift"
+		},
+		{
+			"name":"LGSideMenuController",
+			"text":"Copyright (c) 2015 Grigory Lutkov <Friend.LGA@gmail.com>.",
+			"url":"https://github.com/Friend-LGA/LGSideMenuController"
+		}
+}

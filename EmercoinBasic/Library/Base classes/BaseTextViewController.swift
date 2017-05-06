@@ -23,7 +23,13 @@ class BaseTextViewController: BaseViewController {
         let width = view.frame.size.width
         
         scrollView.contentSize.width = width
-        logoView.frame.size.width = width
-        textView.frame.size.width = width
+        
+        if let view = logoView {
+            view.frame.size.width = width
+        }
+        if let view = textView {
+            view.frame.size.width = width
+        }
+        
     }
 }

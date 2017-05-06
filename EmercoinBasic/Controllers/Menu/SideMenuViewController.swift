@@ -110,7 +110,7 @@ class SideMenuViewController: LGSideMenuController {
             bookVC.isFromMenu = true
             vc = bookVC
         case 6:vc = AboutViewController.controller()
-        case 7:vc = LegalViewController.controller()
+        case 7:vc = LicensiesViewController.controller()
         default:
             return
         }

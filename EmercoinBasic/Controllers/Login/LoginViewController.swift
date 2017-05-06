@@ -132,7 +132,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func termsButtonPressed(sender:UIButton) {
-        let controller = LegalViewController.controller()
+        let controller = LicensiesViewController.controller()
         navigationController?.pushViewController(controller, animated: true)
     }
     
