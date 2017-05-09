@@ -107,9 +107,9 @@ class NamesViewController: BaseViewController {
         
         mainTitleLabel.text = text
         
-        viewModel.coinCourseTitle.bindTo(headerView.coinCourseLabel.rx.attributedText)
+        viewModel.coinCourseTitle.bind(to: headerView.coinCourseLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
-        viewModel.coinAmount.bindTo(headerView.coinAmountLabel.rx.text)
+        viewModel.coinAmount.bind(to: headerView.coinAmountLabel.rx.text)
             .addDisposableTo(disposeBag)
         viewModel.locked.subscribe(onNext: {[weak self] (locked) in
             self?.lockButton.isLocked = locked

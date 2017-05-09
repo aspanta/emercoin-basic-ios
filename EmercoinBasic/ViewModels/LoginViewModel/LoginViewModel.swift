@@ -15,7 +15,6 @@ class LoginViewModel {
     
     var login:String = "" {didSet{validateCredentials()}}
     var password:String = "" {didSet{validateCredentials()}}
-    var isChecked:Bool = false {didSet{validateCredentials()}}
     
     var topConstraint = PublishSubject<CGFloat>()
     var leftConstraint = PublishSubject<CGFloat>()
@@ -32,7 +31,7 @@ class LoginViewModel {
     func validateCredentials() {
         
         let valid = host.length > 0 && port.length > 0 && webProtocol.length > 0 && login.length > 0
-            && password.length > 0 && isChecked
+            && password.length > 0
         
         isValidCredentials.onNext(valid)
     }

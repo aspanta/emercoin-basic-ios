@@ -10,7 +10,6 @@ import RxCocoa
 class LoginViewController: BaseViewController {
     
     @IBOutlet internal weak var enterButton:LoginButton!
-    @IBOutlet internal weak var checkButton:CheckButton!
     @IBOutlet internal weak var loginTextField:BaseTextField!
     @IBOutlet internal weak var hostTextField:BaseTextField!
     @IBOutlet internal weak var portTextField:BaseTextField!
@@ -55,9 +54,9 @@ class LoginViewController: BaseViewController {
             self?.viewModel.port = text
         }
         
-        viewModel.isValidCredentials.bindTo(enterButton.rx.isEnabled)
+        viewModel.isValidCredentials.bind(to: enterButton.rx.isEnabled)
             .addDisposableTo(disposeBag)
-        viewModel.topConstraint.bindTo(topConstraint.rx.constant)
+        viewModel.topConstraint.bind(to: topConstraint.rx.constant)
             .addDisposableTo(disposeBag)
 //        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
 //            .addDisposableTo(disposeBag)
@@ -123,12 +122,6 @@ class LoginViewController: BaseViewController {
         
         let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func checkButtonPressed(sender:UIButton) {
-        let isChecked = !checkButton.isChecked
-        checkButton.isChecked = isChecked
-        viewModel.isChecked = isChecked
     }
     
     @IBAction func termsButtonPressed(sender:UIButton) {

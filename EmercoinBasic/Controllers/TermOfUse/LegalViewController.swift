@@ -26,7 +26,6 @@ class LegalViewController: BaseTextViewController {
         if let viewModel = viewModel {
          
             let font = UIFont.systemFont(ofSize: 15.0)
-            let font2 = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
             
             let attributes = [NSForegroundColorAttributeName: UIColor.black,
                               NSFontAttributeName: font]

@@ -37,7 +37,7 @@ class SendCoinsViewController: BaseViewController {
         super.setupUI()
         
         hideStatusBar()
-        viewModel.coinSign.bindTo(signLabel.rx.text)
+        viewModel.coinSign.bind(to: signLabel.rx.text)
         .addDisposableTo(disposeBag)
         
         if object != nil {
