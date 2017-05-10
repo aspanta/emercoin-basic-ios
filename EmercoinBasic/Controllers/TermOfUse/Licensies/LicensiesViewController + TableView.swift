@@ -8,7 +8,11 @@ import UIKit
 extension LicensiesViewController {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = licensies.licensies.count + 1
+        
+        var count = 1
+        if let licensies = licensies {
+            count += licensies.licensies.count
+        }
         return count
     }
 
@@ -21,7 +25,9 @@ extension LicensiesViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! BaseTableViewCell
         
         if row > 0 {
-            cell.object = LicenseViewModel(license: item(at: row - 1))
+            if let license = item(at: row - 1) {
+                cell.object = LicenseViewModel(license: license)
+            }
         }
         
         return cell
@@ -42,9 +48,14 @@ extension LicensiesViewController {
         }
     }
     
-    private func item(at index:Int) -> License {
+    private func item(at index:Int) -> License? {
         
-        return licensies.licensies[index]
+        var license:License? = nil
+        if let licensies = licensies {
+            license = licensies.licensies[index]
+        }
+        
+        return license
     }
     
 }

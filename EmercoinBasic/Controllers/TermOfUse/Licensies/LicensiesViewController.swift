@@ -9,12 +9,15 @@ class LicensiesViewController: BaseViewController, UITableViewDelegate, UITableV
     
     @IBOutlet internal weak var tableView:UITableView!
 
-    var licensies = Licensies()
+    var licensies:Licensies? = Licensies()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        licensies.load()
+        if let licensies = licensies {
+            licensies.load()
+        }
+        
         tableView.baseSetup()
     }
     
@@ -23,6 +26,8 @@ class LicensiesViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     override func back() {
+        
+        licensies = nil
         
         if parent is SideMenuViewController {
             backToDashBoard()

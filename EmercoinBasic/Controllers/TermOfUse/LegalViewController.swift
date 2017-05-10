@@ -44,7 +44,7 @@ class LegalViewController: BaseTextViewController {
             textLabel.attributedText = body
             urlLabel.attributedText = link
             
-            let handler = {[weak self]
+            let handler = {
                 (hyperLabel: FRHyperLabel?, substring: String?) -> Void in
                 
                 let url = viewModel.url
