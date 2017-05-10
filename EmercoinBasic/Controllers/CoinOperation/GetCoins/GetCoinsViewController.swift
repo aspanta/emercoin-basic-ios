@@ -21,7 +21,7 @@ class GetCoinsViewController: BaseViewController {
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
     internal var address = ""
-    
+
     override class func storyboardName() -> String {
         return "CoinOperations"
     }
@@ -122,7 +122,9 @@ class GetCoinsViewController: BaseViewController {
     
         var amount = amountTextField.text ?? ""
         amount = amount.replacingOccurrences(of: ",", with: ".")
-        amount = String.dropZero(at: amount)
+        if amount.contains(".") == true {
+            amount = String.dropZero(at: amount)
+        }
         
         let name = "emercoin"
         var text = ""

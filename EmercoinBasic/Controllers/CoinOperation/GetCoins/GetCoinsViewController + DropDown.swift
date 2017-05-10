@@ -10,6 +10,7 @@ extension GetCoinsViewController {
     internal func setupDropDown() {
         
         let myAddressBook = AppManager.sharedInstance.myAddressBook
+        myAddressBook.load()
         
         myAddressBook.success.subscribe(onNext:{ [weak self] success in
             if success {
