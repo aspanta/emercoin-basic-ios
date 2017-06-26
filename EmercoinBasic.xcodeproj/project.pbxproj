@@ -2390,8 +2390,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aspanta.emercoinbasic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "866dbeae-d23a-460a-9139-3ea5605ec35e";
-				PROVISIONING_PROFILE_SPECIFIER = "Emercoin Basic";
+				PROVISIONING_PROFILE = "4240da15-d71b-4b41-95dd-41200ad4d9c9";
+				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -2401,7 +2401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 5AJAAW94U5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2411,8 +2411,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aspanta.emercoinbasic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "866dbeae-d23a-460a-9139-3ea5605ec35e";
-				PROVISIONING_PROFILE_SPECIFIER = "Emercoin Basic";
+				PROVISIONING_PROFILE = "3b45632e-8781-4def-ac84-7f34c728e9a1";
+				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDis;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

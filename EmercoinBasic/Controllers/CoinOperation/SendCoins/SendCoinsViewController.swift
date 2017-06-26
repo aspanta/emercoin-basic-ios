@@ -112,9 +112,9 @@ class SendCoinsViewController: BaseViewController {
     private func addRequestSendView() {
     
         var amount = amountTextField.text ?? ""
-        amount = amount.replacingOccurrences(of: ",", with: ".")
-        amount = String.dropZero(at: amount)
+        amount.formattedNumber()
         self.amount = Double(amount) ?? 0
+        
         let address = addressTextField.text
         
         if (amount.length) > 0 && (address?.length)! > 0  {

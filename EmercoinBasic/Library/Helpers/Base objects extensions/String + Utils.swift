@@ -39,23 +39,56 @@ extension String {
         return String(characters.dropLast())
     }
     
+    func removeFirst() -> String {
+        return String(characters.dropFirst())
+    }
+    
     func stringTo(_ index:Int) -> String {
         return  String(self.characters.prefix(index))
     }
     
-    static func dropZero(at text:String) -> String {
+    func replaceСommas() -> String {
+        return self.replacingOccurrences(of: ",", with: ".")
+    }
+    
+    mutating func formattedNumber() {
+        self = self.replaceСommas()
+        self = String.dropZeroLast(at: self)
+        self = String.dropZeroFirst(at: self)
+    }
+    
+    static func dropZeroLast(at text:String) -> String {
         
         var string = text
+        
+        if string.contains(".") == false {
+            return string
+        }
         
         let ch = string.last
         
         if ch == "0" {
             string = string.removeLast()
-            string = dropZero(at:string)
+            string = dropZeroLast(at:string)
         } else if ch == "." {
             string = string.removeLast()
         }
         
+        return string
+    }
+    
+    static func dropZeroFirst(at text:String) -> String {
+        
+        var string = text
+        
+        let ch = string.first
+        
+        if ch == "0" {
+            string = string.removeFirst()
+            string = dropZeroFirst(at:string)
+        } else if ch == "." {
+            string  = "0" + string
+        }
         return string
     }
     
@@ -85,7 +118,16 @@ extension String {
     }
     
     func validAmount() -> Bool {
-        return validData(at: "\\d{1,9}\\.(\\d{1,6})?")
+        let number = Double(self) ?? 0.0
+        return number != 0.01
+    }
+    
+    func validEnterAmount() -> Bool {
+        return validData(at: "\\d{1,9}\\.(\\d{1,8})?")
+    }
+    
+    func containOnlyZero() -> Bool {
+        return validData(at: "(?!^0+$)^.{1,}")
     }
     
     func validAddress() -> Bool {
