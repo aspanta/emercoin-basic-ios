@@ -80,6 +80,9 @@
 		2D64EA981E9E3452000F9B48 /* LockWalletAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64EA971E9E3452000F9B48 /* LockWalletAPI.swift */; };
 		2D64EA9B1E9E35C4000F9B48 /* UnlockWalletAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64EA9A1E9E35C4000F9B48 /* UnlockWalletAPI.swift */; };
 		2D6537C61E82864D0051B953 /* SendCoinsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */; };
+		2D65E52E1F025F6000C2E167 /* DetailValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65E52A1F025F6000C2E167 /* DetailValueView.swift */; };
+		2D65E52F1F025F6000C2E167 /* History.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D65E52B1F025F6000C2E167 /* History.xib */; };
+		2D65E5301F025F6000C2E167 /* HistoryTransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65E52C1F025F6000C2E167 /* HistoryTransactionDetailView.swift */; };
 		2D6620931E9C02EA007DFB35 /* AddNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6620921E9C02EA007DFB35 /* AddNameAPI.swift */; };
 		2D6620951E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6620941E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift */; };
 		2D6620971E9C0A07007DFB35 /* SuccessAddNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6620961E9C0A07007DFB35 /* SuccessAddNameView.swift */; };
@@ -315,6 +318,9 @@
 		2D64EA971E9E3452000F9B48 /* LockWalletAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockWalletAPI.swift; sourceTree = "<group>"; };
 		2D64EA9A1E9E35C4000F9B48 /* UnlockWalletAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockWalletAPI.swift; sourceTree = "<group>"; };
 		2D6537C51E82864D0051B953 /* SendCoinsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCoinsAPI.swift; sourceTree = "<group>"; };
+		2D65E52A1F025F6000C2E167 /* DetailValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailValueView.swift; sourceTree = "<group>"; };
+		2D65E52B1F025F6000C2E167 /* History.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = History.xib; sourceTree = "<group>"; };
+		2D65E52C1F025F6000C2E167 /* HistoryTransactionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransactionDetailView.swift; sourceTree = "<group>"; };
 		2D6620921E9C02EA007DFB35 /* AddNameAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNameAPI.swift; sourceTree = "<group>"; };
 		2D6620941E9C05EA007DFB35 /* CreateNVSViewController + DropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateNVSViewController + DropDown.swift"; sourceTree = "<group>"; };
 		2D6620961E9C0A07007DFB35 /* SuccessAddNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessAddNameView.swift; sourceTree = "<group>"; };
@@ -942,6 +948,16 @@
 			path = SendCoins;
 			sourceTree = "<group>";
 		};
+		2D65E5291F025F6000C2E167 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				2D65E52A1F025F6000C2E167 /* DetailValueView.swift */,
+				2D65E52B1F025F6000C2E167 /* History.xib */,
+				2D65E52C1F025F6000C2E167 /* HistoryTransactionDetailView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		2D6620911E9C02D5007DFB35 /* AddName */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1152,7 @@
 		2D997A931E7AC90700630560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D65E5291F025F6000C2E167 /* History */,
 				2D19D53C1EBD93BC00B641D9 /* HyperlinkLabel */,
 				2D109F351EAE2978003AD402 /* Blockchain */,
 				2D0DCC4D1EAA4BF300802609 /* Send */,
@@ -2016,6 +2033,7 @@
 				2D997D091E7AD3B200630560 /* ProtectionModule.xib in Resources */,
 				2D997CB11E7AD3B200630560 /* AccountPage.storyboard in Resources */,
 				2D997B131E7AD1FF00630560 /* DropDownCell.xib in Resources */,
+				2D65E52F1F025F6000C2E167 /* History.xib in Resources */,
 				2D997ABF1E7AD02A00630560 /* Roboto-Medium.ttf in Resources */,
 				2D997D081E7AD3B200630560 /* ProtectionModule.storyboard in Resources */,
 				2D997B121E7AD1FF00630560 /* Info.plist in Resources */,
@@ -2157,6 +2175,7 @@
 				2D4D98E81E7FF7D400DFB784 /* BaseAPI.swift in Sources */,
 				2D70A97B1E85334000F50488 /* AlertsHelper.swift in Sources */,
 				2D997B001E7AD1FF00630560 /* BaseTableViewCell.swift in Sources */,
+				2D65E52E1F025F6000C2E167 /* DetailValueView.swift in Sources */,
 				2D997B211E7AD1FF00630560 /* FXPageControl.m in Sources */,
 				2D21D6761E9279220088AD31 /* DeleteRecordView.swift in Sources */,
 				2D21D6791E9279220088AD31 /* RecordShortInfoView.swift in Sources */,
@@ -2200,6 +2219,7 @@
 				2D997B5F1E7AD24E00630560 /* MyAddressBook.swift in Sources */,
 				2D997BC61E7AD2B600630560 /* LoginButton.swift in Sources */,
 				2D997B161E7AD1FF00630560 /* DropDownCell.swift in Sources */,
+				2D65E5301F025F6000C2E167 /* HistoryTransactionDetailView.swift in Sources */,
 				2D15E7911EA68C4D00B73217 /* WalletProtectionActivityView.swift in Sources */,
 				2D4877D01E8147CC0084129C /* BaseModel.swift in Sources */,
 				2D09DB8C1E9D64E90013970F /* WalletProtectionUnlockView.swift in Sources */,

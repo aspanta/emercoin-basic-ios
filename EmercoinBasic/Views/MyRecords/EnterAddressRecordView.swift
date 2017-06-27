@@ -20,7 +20,7 @@ class EnterAddressRecordView: PopupView {
         }
     }
 
-    @IBAction override func doneButtonPressed(sender:UIButton) {
+    @IBAction override func doneButtonPressed(sender:UIButton?) {
         
         if text != nil {
             text!(addressTextField.text!)
