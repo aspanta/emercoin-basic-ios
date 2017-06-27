@@ -17,12 +17,16 @@ class LoginViewController: BaseViewController {
     @IBOutlet internal weak var protocolTextField:BaseTextField!
     @IBOutlet internal weak var protocolButton:UIButton!
     @IBOutlet internal weak var topConstraint:NSLayoutConstraint!
+    @IBOutlet internal weak var topAboutConstraint:NSLayoutConstraint!
+    @IBOutlet internal weak var topLoginConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var leftConstraint:NSLayoutConstraint!
     
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
     var viewModel = LoginViewModel()
 
+    private var basicLink = "https://www.aspanta.com/project/emcbasic"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,6 +62,11 @@ class LoginViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         viewModel.topConstraint.bind(to: topConstraint.rx.constant)
             .addDisposableTo(disposeBag)
+        viewModel.topButtonConstraint.bind(to: topLoginConstraint.rx.constant)
+            .addDisposableTo(disposeBag)
+        viewModel.topButtonConstraint.bind(to: topAboutConstraint.rx.constant)
+            .addDisposableTo(disposeBag)
+        
 //        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
 //            .addDisposableTo(disposeBag)
         
@@ -124,9 +133,10 @@ class LoginViewController: BaseViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func termsButtonPressed(sender:UIButton) {
-        let controller = LicensiesViewController.controller()
-        navigationController?.pushViewController(controller, animated: true)
+    @IBAction func aboutButtonPressed(sender:UIButton) {
+        if let url = URL(string: basicLink) {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
     
     @IBAction func dropButtonPressed() {
