@@ -132,7 +132,6 @@ class GetCoinsViewController: BaseViewController {
             text =  name+":\(address)"
             
             if isValidAmount {
-                
                 text = text+"?amount=\(amount)"
             }
             

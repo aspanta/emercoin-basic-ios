@@ -119,7 +119,7 @@ extension String {
     
     func validAmount() -> Bool {
         let number = Double(self) ?? 0.0
-        return number != 0.01
+        return number >= 0.01
     }
     
     func validEnterAmount() -> Bool {
