@@ -8,7 +8,6 @@ import UIKit
 class BaseButton: UIButton {
     
     @IBInspectable var enableConfig:Bool = false
-    
     @IBInspectable var enableColor:String = ""
     @IBInspectable var disableColor:String = ""
     

@@ -15,5 +15,4 @@ class DeleteContactView: PopupView {
         }
         super.doneButtonPressed(sender: sender)
     }
-
 }

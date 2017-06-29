@@ -9,6 +9,7 @@ import UIKit
 extension HistoryViewController:UITableViewDelegate, UITableViewDataSource {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         let count = history.transactions.count
         return count
     }
@@ -21,6 +22,7 @@ extension HistoryViewController:UITableViewDelegate, UITableViewDataSource {
         
         let viewModel = HistoryTransactionViewModel(historyTransaction: itemAt(indexPath: indexPath))
         cell.object = viewModel
+        
         return cell
     }
     

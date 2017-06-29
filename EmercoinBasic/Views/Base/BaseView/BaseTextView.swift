@@ -7,10 +7,10 @@ import UIKit
 
 class BaseTextView: UITextView, UITextViewDelegate {
 
-
     var textChanged:((_ text:String) -> (Void))?
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         
         delegate = self
     }

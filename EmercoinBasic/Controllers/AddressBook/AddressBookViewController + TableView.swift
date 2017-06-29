@@ -8,6 +8,7 @@ import UIKit
 extension AddressBookViewController {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         let count = addressBook.contacts.count
         return count
     }
@@ -42,6 +43,7 @@ extension AddressBookViewController {
 
         let deleteImage = UIImageView(image: UIImage(named: "delete_icon"))
         let editImage = UIImageView(image: UIImage(named: "edit_icon"))
+        
         deleteImage.contentMode = .scaleAspectFit
         editImage.contentMode = .scaleAspectFit
         
@@ -52,8 +54,10 @@ extension AddressBookViewController {
         let deleteAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
             self.addDeleteContactViewWith(indexPath: indexPath)
         }
+        
         deleteAction.backgroundColor = UIColor(patternImage:deleteImage.image!)
         editAction.backgroundColor = UIColor(patternImage:editImage.image!)
+        
         return [deleteAction, editAction]
     }
     
@@ -65,6 +69,7 @@ extension AddressBookViewController {
         tableView.beginUpdates()
         tableView.deleteRows(at: [indexPath], with: .top)
         tableView.endUpdates()
+        
         self.updateUI()
     }
     
@@ -95,10 +100,12 @@ extension AddressBookViewController {
             self?.addressBook.update(at: name, address: address, index: indexPath.row)
             self?.reloadRows(at: [indexPath])
         })
+        
         self.parent?.view.addSubview(editContactView)
     }
     
     private func reloadRows(at indexPaths:[IndexPath]) {
+        
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: indexPaths, with: .none)
         self.tableView.endUpdates()

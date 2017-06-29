@@ -27,5 +27,4 @@ class AlertsHelper {
         
         return alert
     }
-    
 }

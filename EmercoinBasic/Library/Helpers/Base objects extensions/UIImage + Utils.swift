@@ -9,8 +9,8 @@ import CoreGraphics
 
 extension UIImage {
     
-    func blurImageRadius(blurRadius:CGFloat) -> UIImage?
-    {
+    func blurImageRadius(blurRadius:CGFloat) -> UIImage? {
+        
         let blur = CIFilter(name: "CIGaussianBlur")
         
         blur!.setValue(CoreImage.CIImage(image: self), forKey: kCIInputImageKey)
@@ -35,8 +35,8 @@ extension UIImage {
         return filteredImage
     }
     
-    func averageColor() -> UIColor
-    {
+    func averageColor() -> UIColor {
+        
         let rgba = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: 4)
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let info = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
@@ -85,7 +85,7 @@ extension UIImage {
         return resized
     }
     
-    func textToImage(drawText: NSString, inImage: UIImage, atPoint: CGPoint) -> UIImage{
+    func textToImage(drawText: NSString, inImage: UIImage, atPoint: CGPoint) -> UIImage {
         
         // Setup the font specific variables
         let textColor = UIColor.white
@@ -118,7 +118,6 @@ extension UIImage {
         
         //Pass the image back up to the caller
         return newImage!
-        
     }
 }
 

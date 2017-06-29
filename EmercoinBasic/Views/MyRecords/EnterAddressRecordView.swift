@@ -25,6 +25,7 @@ class EnterAddressRecordView: PopupView {
         if text != nil {
             text!(addressTextField.text!)
         }
+        
         super.doneButtonPressed(sender: sender)
     }
 }

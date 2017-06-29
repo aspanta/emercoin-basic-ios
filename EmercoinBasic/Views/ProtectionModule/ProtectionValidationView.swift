@@ -3,7 +3,6 @@
 //  EmercoinBasic
 //
 
-
 import UIKit
 
 class ProtectionValidationView: UIView {

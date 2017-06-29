@@ -17,7 +17,6 @@ class License: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        
         name <- map["name"]
         text <- map["text"]
         url <- map["url"]

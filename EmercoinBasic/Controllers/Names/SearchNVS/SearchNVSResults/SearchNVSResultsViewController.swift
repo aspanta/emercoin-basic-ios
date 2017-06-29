@@ -23,28 +23,16 @@ class SearchNVSResultsViewController: MyRecordsViewController {
         textLabel.text = String(format:"Your query\n %@\n not found",records.searchString)
     }
     
-    @IBAction func back() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func createButtonPressed() {
-       // parent?.navigationController?.popViewController(animated: true)
-        
-        let data = nameData()
-        
-        if createPressed != nil {
-            createPressed!(data)
-        }
-        parent?.navigationController?.popToRootViewController(animated: true)
-    }
-    
     override func nvsInfoButtonPressed() {
+        
         let vc = NVSInfoViewController.controller() as! NVSInfoViewController
         vc.infoType = .why
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func nameData() -> [String:String] {
+        
         var text = records.searchString
         let array = text.components(separatedBy: ":")
         let prefixes = Constants.Names.Prefixes
@@ -52,6 +40,7 @@ class SearchNVSResultsViewController: MyRecordsViewController {
         var data = [String:String]()
         
         if array.count == 2 {
+            
             let prefix = array.first ?? ""
             let name = array.last ?? ""
             
@@ -62,6 +51,22 @@ class SearchNVSResultsViewController: MyRecordsViewController {
         }
         
         data["name"] = text
+        
         return data
+    }
+    
+    @IBAction override func back() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func createButtonPressed() {
+        
+        let data = nameData()
+        
+        if createPressed != nil {
+            createPressed!(data)
+        }
+        
+        parent?.navigationController?.popToRootViewController(animated: true)
     }
 }

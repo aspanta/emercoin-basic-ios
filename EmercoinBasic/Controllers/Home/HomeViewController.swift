@@ -35,6 +35,7 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
             let coin = wallet.emercoin
             coins = [coin]
         }
+        
         setupTableView()
         setupRefreshControl()
         setupHome()
@@ -44,30 +45,20 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         
         viewModel.error.subscribe(onNext: {[weak self] (error) in
             self?.showErrorAlert(at: error)
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.locked.subscribe(onNext: {[weak self] (locked) in
             self?.lockButton.isLocked = locked
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.walletSuccess.subscribe(onNext: {[weak self] (state) in
             self?.tableView.reload()
-        })
-        .addDisposableTo(disposeBag)
-    }
-    
-    private func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupTableView() {
         
         selectedRows.append(IndexPath(row: 0, section: 0))
-        
         tableView.hideEmtyCells()
         tableView.allowsSelection = false
     }
@@ -77,15 +68,14 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         let refresh = UIRefreshControl()
         refresh.tintColor = UIColor(hexString: Constants.Colors.Status.Emercoin)
         refresh.addTarget(self, action: #selector(self.handleRefresh(sender:)), for: .valueChanged)
+        
         tableView.refreshControl = refresh
         
         viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
-            
             if state == false {
                 refresh.endRefreshing()
             }
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {

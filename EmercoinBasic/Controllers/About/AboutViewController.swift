@@ -35,6 +35,7 @@ class AboutViewController: BaseTextViewController {
         textLabel.attributedText = NSAttributedString(string: aboutText, attributes: attributes)
         
         let handler = {[weak self]
+            
             (hyperLabel: FRHyperLabel?, substring: String?) -> Void in
             
             var url = ""
@@ -50,11 +51,9 @@ class AboutViewController: BaseTextViewController {
             if let url = URL(string: url) {
                 UIApplication.shared.open(url, options: [:])
             }
-            
         }
         
         textLabel.setLinksForSubstrings([basic, emer, aspanta], withLinkHandler: handler)
-        
     }
 
     override class func storyboardName() -> String {

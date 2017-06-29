@@ -35,5 +35,4 @@ class AppManager {
         
         Router.sharedInstance.showLoginController()
     }
-
 }

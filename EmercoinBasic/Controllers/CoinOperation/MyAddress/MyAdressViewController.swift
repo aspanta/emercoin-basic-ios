@@ -14,7 +14,6 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
     var addressBook = AddressBook()
     var isMyAddressBook = true
     let disposeBag = DisposeBag()
-    private var operationActivityView:UIView?
     
     override class func storyboardName() -> String {
         return "CoinOperations"
@@ -39,14 +38,12 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         addressBook.success.subscribe(onNext:{ [weak self] success in
             if success {self?.tableView.reload()}
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         addressBook.error.subscribe(onNext:{ [weak self] error in
             self?.hideOperationActivityView()
             self?.showErrorAlert(at: error)
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -60,10 +57,8 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
                     refresh?.endRefreshing()
                 }
                 self?.hideOperationActivityView()
-            } else {
             }
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupRefreshControl() {
@@ -85,20 +80,11 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
             self?.addressBook.addNewMyAddress(at: name)
             self?.showOperationActivityView()
         })
+        
         self.parent?.view.addSubview(addAddressView)
     }
     
-    internal func didSelectItem(contact:Contact) {
-        
-    }
-    
-    private func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func showOperationActivityView() {
+    override func showOperationActivityView() {
         
         var controller:UIViewController?
         
@@ -107,19 +93,10 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         }
         
         if let controller = controller {
-            let view = loadViewFromXib(name: "Send", index: 2,
-                                       frame: controller.view.frame)
+            let view = getOperationView(at: 2)
             self.operationActivityView = view
             userInteraction(at: false)
             controller.view.addSubview(view)
-        }
-    }
-    
-    private func hideOperationActivityView() {
-        
-        if let view = operationActivityView {
-            userInteraction(at: true)
-            view.removeFromSuperview()
         }
     }
 }

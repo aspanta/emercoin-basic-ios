@@ -82,7 +82,6 @@ extension ScanQRCodeController : QRCodeReaderViewControllerDelegate {
                     message: String (format:"QR-Code is incorrect"),
                     preferredStyle: .alert
                 )
-                // alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 if !success! {
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
                         self?.dismiss(animated: true, completion: nil)

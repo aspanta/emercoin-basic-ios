@@ -25,6 +25,7 @@ class WalletProtectionView: PopupView {
     }
     
     override func doneButtonPressed(sender: UIButton?) {
+        
         if encrypt != nil {
             encrypt!(passwordTextField.text ?? "")
             super.doneButtonPressed(sender: sender)

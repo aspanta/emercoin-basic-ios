@@ -52,6 +52,7 @@ extension String {
     }
     
     mutating func formattedNumber() {
+        
         self = self.replaceСommas()
         self = String.dropZeroLast(at: self)
         self = String.dropZeroFirst(at: self)
@@ -107,17 +108,20 @@ extension String {
     }
     
     static func coinFormat(at number:Double) -> String {
+        
         let string = number.truncatingRemainder(dividingBy: 1.0) == 0 ? String(format: "%.0f", number) : String(number)
         return string
     }
     
     static func isInfoCardType(at string:String) -> Bool {
+        
         let infoCardRegEx = "^info:[0-9a-fA-F]{16}$"
         let infoCardTest = NSPredicate(format:"SELF MATCHES %@", infoCardRegEx)
         return infoCardTest.evaluate(with: string)
     }
     
     func validAmount() -> Bool {
+        
         let number = Double(self) ?? 0.0
         return number >= 0.01
     }
@@ -135,6 +139,7 @@ extension String {
     }
     
     private func validData(at pattern:String) -> Bool {
+        
         let regex = try! NSRegularExpression(pattern:pattern, options:[])
         let nsString = self as NSString
         let results = regex.matches(in: self, range: NSRange(location: 0, length: nsString.length))

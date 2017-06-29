@@ -11,6 +11,7 @@ class PopupView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         backgroundColor = UIColor.black.withAlphaComponent(0.5)
     }
     

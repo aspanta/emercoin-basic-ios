@@ -38,6 +38,7 @@ class DetailValueView: NVSValueView {
     }
     
     func copyHandler() {
+        
         if enableCopy && copyPressed != nil {
             copyPressed!()
         }

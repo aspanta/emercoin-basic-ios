@@ -60,6 +60,7 @@ class AddContactView: PopupView {
         } else {
             return
         }
+        
         super.doneButtonPressed(sender: sender)
     }
 }

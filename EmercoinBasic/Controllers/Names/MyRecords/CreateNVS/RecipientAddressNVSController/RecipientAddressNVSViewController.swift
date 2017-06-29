@@ -7,11 +7,11 @@ import UIKit
 
 class RecipientAddressNVSViewController: BaseViewController {
     
+    var selectedAddress:((_ address:String) -> (Void))?
+    
     override class func storyboardName() -> String {
         return "Names"
     }
-    
-    var selectedAddress:((_ address:String) -> (Void))?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +22,6 @@ class RecipientAddressNVSViewController: BaseViewController {
         super.setupUI()
         
         hideStatusBar()
-    }
-    
-    @IBAction func qrCodeButtonPressed(sender:UIButton) {
-        showScanQRCodeController()
-    }
-    
-    @IBAction func listButtonPressed(sender:UIButton) {
-        showAddressBookController()
-    }
-    
-    @IBAction func enterButtonPressed(sender:UIButton) {
-        showEnterAddressView()
     }
 
     private func showEnterAddressView() {
@@ -47,6 +35,7 @@ class RecipientAddressNVSViewController: BaseViewController {
                 self.returnAddressAndBack(address: address)
             }
         }
+        
         self.parent?.parent!.view.addSubview(enterView)
     }
     
@@ -64,9 +53,8 @@ class RecipientAddressNVSViewController: BaseViewController {
                 message: String (format:"QR-Code is not emercoin address"),
                 preferredStyle: .alert
             )
-            // alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+
             if !isEmercoin {
-                
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
                         
@@ -78,6 +66,7 @@ class RecipientAddressNVSViewController: BaseViewController {
             }
             
         }
+        
         present(controller, animated: true, completion: nil)
     }
     
@@ -88,14 +77,27 @@ class RecipientAddressNVSViewController: BaseViewController {
         controller.selectedAddress = {address in
            self.returnAddressAndBack(address: address)
         }
+        
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func returnAddressAndBack(address:String) {
+        
         if self.selectedAddress != nil {
             self.selectedAddress!(address)
             self.back()
         }
     }
-
+    
+    @IBAction func qrCodeButtonPressed(sender:UIButton) {
+        showScanQRCodeController()
+    }
+    
+    @IBAction func listButtonPressed(sender:UIButton) {
+        showAddressBookController()
+    }
+    
+    @IBAction func enterButtonPressed(sender:UIButton) {
+        showEnterAddressView()
+    }
 }

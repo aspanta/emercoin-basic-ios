@@ -10,9 +10,9 @@ import RxCocoa
 class BlockchainLoadingViewController: BaseViewController {
 
     private weak var blockchainLoadingView:BlockchainLoadingView?
+    
     private var viewModel = BlockchainLoadingViewModel()
     private let disposeBag = DisposeBag()
-    
     private var isErrorShowing = false
     
     var blocks = 0
@@ -35,13 +35,11 @@ class BlockchainLoadingViewController: BaseViewController {
                 self?.hideBlockchainLoadingView()
                 self?.showMainController()
             }
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.blocks.subscribe(onNext: {[weak self] (blocks) in
             self?.showBlockchainLoadingView(at: blocks)
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.error.subscribe(onNext:{ [weak self] error in
             if self?.isErrorShowing == false {self?.showErrorAlert(at: error)}
@@ -50,16 +48,16 @@ class BlockchainLoadingViewController: BaseViewController {
     }
     
     private func showMainController() {
-        
         Router.sharedInstance.showMainController()
     }
     
-    private func showErrorAlert(at error:NSError) {
+    override func showErrorAlert(at error:NSError) {
         
         let alert = AlertsHelper.errorAlert(at: error)
         alert.done = {[weak self] in
             self?.isErrorShowing = false
         }
+        
         present(alert, animated: true, completion: nil)
         isErrorShowing = true
     }
@@ -69,17 +67,21 @@ class BlockchainLoadingViewController: BaseViewController {
         if let view = blockchainLoadingView {
             view.blocks = blocks
         } else {
+            
             let view = loadViewFromXib(name: "Blockchain", index: 0, frame: self.view.frame) as! BlockchainLoadingView
             view.blocks = blocks
+            
             view.checkBlockchain = {[weak self] in
                 self?.viewModel.loadBlockChainInfo()
             }
+            
             view.cancel = {[weak self] in
                 self?.hideBlockchainLoadingView()
                 self?.blockchainLoadingView?.removeFromSuperview()
                 self?.blockchainLoadingView = nil
                 AppManager.sharedInstance.logOut()
             }
+            
             self.blockchainLoadingView = view
             self.view.addSubview(view)
         }
@@ -92,5 +94,4 @@ class BlockchainLoadingViewController: BaseViewController {
             view.removeFromSuperview()
         }
     }
-
 }

@@ -49,7 +49,6 @@ class HistoryTransaction:Object, Mappable {
     }
     
     func mapping(map: Map) {
-        
         timereceived <- map["timereceived"]
         amount <- map["amount"]
         address <- map["address"]

@@ -11,15 +11,13 @@ import RealmSwift
 class MyAddressBook: AddressBook {
     
     func addressesArray() -> [String] {
-        
         return contacts.map({!$0.name.isEmpty ? $0.name : $0.address})
     }
     
     override var contacts: Results<Contact> {
-        get {
-            let realm = try! Realm()
-            return realm.objects(Contact.self).filter("isMyContact == true")
-        }
+        
+        let realm = try! Realm()
+        return realm.objects(Contact.self).filter("isMyContact == true")
     }
     
     override func load(loadAll:Bool? = false) {
@@ -77,7 +75,6 @@ class MyAddressBook: AddressBook {
         if array.count > 0 {
             self.remove(contacts: array)
         }
-        
     }
     
     override func addNewMyAddress(at name:String) {

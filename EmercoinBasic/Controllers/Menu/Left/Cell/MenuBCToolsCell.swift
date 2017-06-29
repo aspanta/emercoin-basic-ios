@@ -7,7 +7,6 @@ import UIKit
 
 class MenuBCToolsCell: MenuDefaultCell {
     
-    
     @IBAction func subMenuButtonPresed(sender:UIButton) {
         
         let index = sender.tag
@@ -16,5 +15,4 @@ class MenuBCToolsCell: MenuDefaultCell {
             self.pressedSubMenu!(index)
         }
     }
-
 }

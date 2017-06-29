@@ -10,9 +10,7 @@ class LeftViewController: BaseViewController {
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var versionLabel:UILabel!
     
-    
     var menuItems:[MenuItem] = []
-    
     var width:CGFloat = 0
     
     var pressed:((_ index:Int, _ subIndex:Int) -> (Void))?
@@ -61,7 +59,5 @@ class LeftViewController: BaseViewController {
         
         menuItems = [homeMenuItem,sendMenuItem,getMenuItem,historyMenuItem,bctoolsMenuItem,
                      bookMenuItem,aboutMenuItem,legalMenuItem,exitMenuItem]
-        
     }
-
 }

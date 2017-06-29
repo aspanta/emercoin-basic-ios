@@ -31,7 +31,6 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
 
         setupDropDown()
-        
     }
     
     override class func storyboardName() -> String {
@@ -68,9 +67,7 @@ class LoginViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         
         setupLogin()
-        
         setupActivityIndicator()
-
         viewModel.prepareUI()
     }
     
@@ -105,35 +102,11 @@ class LoginViewController: BaseViewController {
     }
     
     private func showMainController() {
-        
         Router.sharedInstance.showMainController()
     }
     
     private func showBlockchainController(at blocks:Int) {
-        
         Router.sharedInstance.showBlockChainLoadingController(at: blocks)
-    }
-    
-    private func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func enterButtonPressed(sender:UIButton) {
-        
-        viewModel.performLogin()
-    }
-    
-    @IBAction func aboutButtonPressed(sender:UIButton) {
-        if let url = URL(string: basicLink) {
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
-    
-    @IBAction func dropButtonPressed() {
-        
-        dropDown?.show()
     }
     
     internal func setupDropDown() {
@@ -142,9 +115,6 @@ class LoginViewController: BaseViewController {
         dropDown?.anchorView = protocolButton
         
         let dataSource = ["Protocol", "http", "https"]
-        
-        //protocolTextField.text = dataSource.first
-        
         dropDown?.dataSource = dataSource
         
         dropDown?.selectionAction = { [weak self] (index, item) in
@@ -164,7 +134,6 @@ class LoginViewController: BaseViewController {
         dropDown?.bottomOffset = CGPoint(x: 0, y: protocolButton.bounds.height)
         
         setupDropDownUI()
-        
     }
     
     internal func setupDropDownUI() {
@@ -173,5 +142,19 @@ class LoginViewController: BaseViewController {
         appearance.selectionBackgroundColor = UIColor(hexString: "9C73B1")
         appearance.cellHeight = protocolButton.bounds.height + 5
         appearance.textFont = UIFont(name: "Roboto-Regular", size: 17)!
+    }
+    
+    @IBAction func enterButtonPressed(sender:UIButton) {
+        viewModel.performLogin()
+    }
+    
+    @IBAction func aboutButtonPressed(sender:UIButton) {
+        if let url = URL(string: basicLink) {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+    
+    @IBAction func dropButtonPressed() {
+        dropDown?.show()
     }
 }

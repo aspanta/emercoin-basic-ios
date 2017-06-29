@@ -13,19 +13,17 @@ enum TableCellAction {
     case add
 }
 
-class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
+class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet internal weak var tableView:UITableView!
     @IBOutlet internal weak var noNotesView:UIView!
     
     var records = Records()
     let disposeBag = DisposeBag()
-    
     var tableCellAction:TableCellAction = .add
     
     internal var deleteRecord:Record?
     private var walletProtectionHelper:WalletProtectionHelper?
-    private var operationActivityView:UIView?
     
     internal var editingIndexPath:IndexPath?
 
@@ -44,6 +42,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
             setupActivityIndicator()
             records.load()
         }
+        
         updateUI()
     }
     
@@ -56,7 +55,14 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         }
     }
     
+    override func setupUI() {
+        super.setupUI()
+        
+        hideStatusBar()
+    }
+    
     private func updateUI() {
+        
         let count = records.searchString.isEmpty ? records.records.count : records.searchRecords.count
         noNotesView.isHidden =  count != 0
     }
@@ -79,25 +85,21 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
                 self?.tableView.reload()
             }
             self?.updateUI()
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         records.successDelete.subscribe(onNext:{ [weak self] success in
             if success {
                 self?.showSuccessDeleteNameView()
             }
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         records.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         records.walletLock.subscribe(onNext:{ [weak self] state in
             self?.showProtection()
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -114,14 +116,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
             } else {
                 self?.showOperationActivityView()
             }
-        })
-            .addDisposableTo(disposeBag)
-    }
-    
-    internal func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
+        }).addDisposableTo(disposeBag)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -131,11 +126,6 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     func addRecord(record:Record) {
         tableCellAction = .add
         records.add(record: record)
-    }
-    
-    @IBAction func nvsInfoButtonPressed() {
-        let vc = NVSInfoViewController.controller()
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func showSuccessDeleteNameView() {
@@ -157,7 +147,7 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         controlller.view.addSubview(successView)
     }
     
-    private func showOperationActivityView() {
+    override func showOperationActivityView() {
         
         var controller:UIViewController?
         
@@ -170,19 +160,11 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
         }
         
         if let controller = controller {
-            let view = loadViewFromXib(name: "Send", index: 2,
-                                       frame: controller.view.frame)
+            let view = getOperationView(at: 2)
+            view.frame = controller.view.frame
             self.operationActivityView = view
             userInteraction(at: false)
             controller.view.addSubview(view)
-        }
-    }
-    
-    private func hideOperationActivityView() {
-        
-        if let view = operationActivityView {
-            userInteraction(at: true)
-            view.removeFromSuperview()
         }
     }
     
@@ -198,18 +180,26 @@ class MyRecordsViewController: UIViewController, IndicatorInfoProvider, UITableV
     }
     
     private func showProtection(at controller:UIViewController) {
+        
         let protectionHelper = WalletProtectionHelper()
         protectionHelper.fromController = controller
+        
         protectionHelper.cancel = {[weak self] in
             self?.deleteRecord = nil
         }
+        
         protectionHelper.unlock = {[weak self] in
             if let record = self?.deleteRecord {
                 self?.records.remove(record: record)
             }
         }
+        
         self.walletProtectionHelper = protectionHelper
         protectionHelper.startProtection()
     }
-
+    
+    @IBAction func nvsInfoButtonPressed() {
+        let vc = NVSInfoViewController.controller()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

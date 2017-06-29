@@ -12,5 +12,4 @@ class FindDPOButton: BaseButton {
         
         fullyRound(diameter: frame.size.height, borderColor: .clear, borderWidth: 0)
     }
-
 }

@@ -14,7 +14,6 @@ class GetCoinsViewController: BaseViewController {
     @IBOutlet internal weak var amountTextField:BaseTextField!
     @IBOutlet internal weak var qrCodeImageView:UIImageView!
     @IBOutlet internal weak var dropDownButton:UIButton!
-    
     @IBOutlet internal weak var centerContentHeight:NSLayoutConstraint!
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     
@@ -52,9 +51,7 @@ class GetCoinsViewController: BaseViewController {
             }
             
             amountTextField.text = amount
-            
             generateQRCode(at: address)
-            
             object = nil
         }
     }
@@ -76,16 +73,6 @@ class GetCoinsViewController: BaseViewController {
         addressLabel.text = ""
     }
     
-    @IBAction func sendButtonPressed(sender:UIButton) {
-       showShareController()
-    }
-    
-    @IBAction func copyButtonPressed(sender:UIButton) {
-        
-        UIPasteboard.general.string = addressLabel.text
-        showCopyView()
-    }
-    
     private func showShareController() {
         
         let text = addressLabel.text as Any
@@ -93,29 +80,8 @@ class GetCoinsViewController: BaseViewController {
         
         let activityViewController = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
+        
         self.present(activityViewController, animated: true, completion: nil)
-    }
-    
-    private func showCopyView() {
-        
-        let copyView:UIView = loadViewFromXib(name: "AddressBook", index: 3,
-                                              frame: nil)
-        copyView.alpha = 0;
-        view.addSubview(copyView)
-        
-        copyView.center = view.center
-        
-        UIView.animate(withDuration: 0.3) {
-            copyView.alpha = 0.8
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            UIView.animate(withDuration: 0.3, animations: {
-                copyView.alpha = 0.0
-            }, completion: { (state) in
-                copyView.removeFromSuperview()
-            })
-        }
     }
     
     internal func generateQRCode(at address:String) {
@@ -139,5 +105,15 @@ class GetCoinsViewController: BaseViewController {
                 self.qrCodeImageView.image = image
             })
         }
+    }
+    
+    @IBAction func sendButtonPressed(sender:UIButton) {
+        showShareController()
+    }
+    
+    @IBAction func copyButtonPressed(sender:UIButton) {
+        
+        UIPasteboard.general.string = addressLabel.text
+        showCopyView()
     }
 }

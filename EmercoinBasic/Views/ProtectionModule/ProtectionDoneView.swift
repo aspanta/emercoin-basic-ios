@@ -14,7 +14,5 @@ class ProtectionDoneView: UIView {
         if done != nil {
             done!()
         }
-    
     }
-
 }

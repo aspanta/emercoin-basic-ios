@@ -6,6 +6,7 @@
 import UIKit
 
 public func loadViewFromXib(name:String, index:Int, frame:CGRect? = nil) -> UIView {
+    
     let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)![index] as! UIView
     
     if frame != nil {
@@ -30,6 +31,7 @@ internal func screenSize() -> CGRect {
 }
 
 public func isValidEmail(email:String?) -> Bool {
+    
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
     let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
     let result = emailTest.evaluate(with: email)
@@ -37,6 +39,7 @@ public func isValidEmail(email:String?) -> Bool {
 }
 
 public func userInteraction(at enable:Bool) {
+    
     if enable {
         Router.sharedInstance.sideMenu?.hideTabBar(hiden: false)
         Router.sharedInstance.sideMenu?.enableMenuSwipe(at: true)
@@ -52,10 +55,6 @@ public func bundleVersion() -> String {
     
     if let versionMain = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
         version = versionMain
-        
-//        if let bundleVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-//            version = version + "."+bundleVersion
-//        }
     }
     
     return version

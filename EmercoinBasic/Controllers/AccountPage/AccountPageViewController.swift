@@ -47,5 +47,4 @@ class AccountPageViewController: ButtonBarPagerTabStripViewController {
 
         return [firstVC, secondVC]
     }
-
 }

@@ -11,7 +11,6 @@ class ExchangeHeaderView: UIView {
 
     @IBOutlet weak var dropListFirstView:UIView!
     @IBOutlet weak var dropListSecondView:UIView!
-    
     @IBOutlet weak var dropHeadFirstLabel:UILabel!
     @IBOutlet weak var dropHeadSecondLabel:UILabel!
 
@@ -78,13 +77,10 @@ class ExchangeHeaderView: UIView {
     }
     
     @IBAction func showDropListFirst() {
-        
         dropDownFirst?.show()
     }
     
     @IBAction func showDropListSecond() {
-        
         dropDownSecond?.show()
     }
-
 }

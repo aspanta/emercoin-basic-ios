@@ -12,10 +12,9 @@ import RealmSwift
 class History: NSObject {
     
     var transactions:Results<HistoryTransaction> {
-        get {
-            let realm = try! Realm()
-            return realm.objects(HistoryTransaction.self).sorted(byKeyPath: "timereceived", ascending: false)
-        }
+        
+        let realm = try! Realm()
+        return realm.objects(HistoryTransaction.self).sorted(byKeyPath: "timereceived", ascending: false)
     }
     
     let disposeBag = DisposeBag()
@@ -24,6 +23,7 @@ class History: NSObject {
     var activityIndicator = PublishSubject<Bool>()
     
     func add(transaction:HistoryTransaction) {
+        
         let realm = try! Realm()
         try! realm.write {
             realm.add(transaction)
@@ -31,6 +31,7 @@ class History: NSObject {
     }
     
     func add(transactions:[HistoryTransaction]) {
+        
         let realm = try! Realm()
         try! realm.write {
             realm.add(transactions)
@@ -38,6 +39,7 @@ class History: NSObject {
     }
     
     func remove(transaction:HistoryTransaction) {
+        
         let realm = try! Realm()
         try! realm.write {
             realm.delete(transaction)
@@ -45,6 +47,7 @@ class History: NSObject {
     }
     
     func removeAll() {
+        
         let realm = try! Realm()
         try! realm.write {
             realm.delete(transactions)
@@ -55,6 +58,7 @@ class History: NSObject {
     
         APIManager.sharedInstance.loadTransactions {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
+            
             if error == nil {
                 if loadAll == true {
                     APIManager.sharedInstance.loadAll()

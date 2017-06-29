@@ -51,5 +51,4 @@ class EncryptionButtonView: UIView {
             encryption!(isEncryptionOn)
         }
     }
-
 }

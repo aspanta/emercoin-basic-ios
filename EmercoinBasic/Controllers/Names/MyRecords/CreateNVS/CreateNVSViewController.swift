@@ -17,19 +17,13 @@ class CreateNVSViewController: BaseViewController {
     @IBOutlet internal weak var prefixLabel:UILabel!
     @IBOutlet internal weak var prefixView:UIView!
     @IBOutlet internal weak var lineView:UIView!
-    
     @IBOutlet internal weak var nameTextField:BaseTextField!
     @IBOutlet internal weak var valueTextField:BaseTextView!
     @IBOutlet internal weak var addressTextField:BaseTextField!
     @IBOutlet internal weak var timeTextField:ExpireDaysTextField!
-    
     @IBOutlet internal weak var heightConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var prefixConstraint:NSLayoutConstraint!
-    
     @IBOutlet internal weak var createButton:BaseButton!
-    
-    var prefixDropDown:DropDown?
-    
     
     var created:((Void) -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
@@ -37,22 +31,19 @@ class CreateNVSViewController: BaseViewController {
     
     let disposeBag = DisposeBag()
     var viewModel = CreateNVSViewModel()
-    
+    var prefixDropDown:DropDown?
     var isEditingMode = false
     var record:Record?
     
-    private var operationActivityView:UIView?
     private var nameData:AnyObject?
     private var walletProtectionHelper:WalletProtectionHelper?
     
     var data:Any? {
         didSet{
             if let dict = data as? [String:Any] {
-                
                 if let name = dict["name"] as? String {
                     self.name = name
                 }
-                
                 if let prefix = dict["prefix"] as? String {
                     self.prefix = prefix
                 }
@@ -76,83 +67,6 @@ class CreateNVSViewController: BaseViewController {
         setupPrefixDropDown()
     }
     
-    private func setupActivityIndicator() {
-        
-        viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
-            if state {
-                self?.showOperationActivityView()
-            } else {
-                self?.hideOperationActivityView()
-            }
-        })
-            .addDisposableTo(disposeBag)
-    }
-    
-    private func setupController() {
-        
-        valueTextField.textChanged = {[weak self](text) in
-            self?.checkValidation()
-        }
-        
-        timeTextField.textChanged = {[weak self](text) in
-            self?.checkValidation()
-        }
-        
-        nameTextField.textChanged = {[weak self](text) in
-            self?.checkValidation()
-        }
-        
-        addressTextField.textChanged = {[weak self](text) in
-            self?.checkValidation()
-        }
-        
-        viewModel.success.subscribe(onNext:{[weak self] success in
-            if success {
-                self?.showSuccessAddNameView()
-            }
-        })
-            .addDisposableTo(disposeBag)
-        
-        viewModel.error.subscribe(onNext:{ [weak self] error in
-            self?.showErrorAlert(at: error)
-        })
-            .addDisposableTo(disposeBag)
-        
-        viewModel.walletLock.subscribe(onNext:{ [weak self] state in
-            self?.showProtection()
-        })
-            .addDisposableTo(disposeBag)
-        
-        timeTextField.didFirstResponder = {[weak self](state) in
-            
-            if self?.isEditingMode == false {return}
-            
-            if state {
-                if self?.timeTextField.text == "0" {
-                    self?.timeTextField.text = ""
-                    self?.checkValidation()
-                }
-            } else {
-                if self?.timeTextField.text == "" {
-                    self?.timeTextField.text = "0"
-                    self?.checkValidation()
-                }
-            }
-        }
-    }
-    
-    private func checkValidation() {
-        
-        let value = valueTextField.text ?? ""
-        let name = nameTextField.text ?? ""
-        let days = timeTextField.text ?? ""
-        let address = addressTextField.text ?? ""
-        
-        let validAddress = isEditingMode ? address.validAddress() : true
-        
-        createButton.isEnabled = !value.isEmpty && !name.isEmpty && !days.isEmpty && validAddress
-    }
-
     override func setupUI() {
         super.setupUI()
         
@@ -180,27 +94,162 @@ class CreateNVSViewController: BaseViewController {
             if name.length > 0 {
                 nameTextField.text = name
             }
-            
             if prefix.length > 0 {
                 prefixLabel.text = prefix+":"
             }
-            
             timeTextField.text = "300"
         }
         
         if isIphone5() {
-            
             let font = UIFont(name: "Roboto-Regular", size: 14)
-            
             nameTextField.font = font
             valueTextField.font = font
             addressTextField.font = font
         }
     }
     
+    private func setupActivityIndicator() {
+        
+        viewModel.activityIndicator.subscribe(onNext:{ [weak self] state in
+            if state {
+                self?.showOperationActivityView()
+            } else {
+                self?.hideOperationActivityView()
+            }
+        }).addDisposableTo(disposeBag)
+    }
+    
+    private func setupController() {
+        
+        viewModel.success.subscribe(onNext:{[weak self] success in
+            if success {
+                self?.showSuccessAddNameView()
+            }
+        }).addDisposableTo(disposeBag)
+        
+        viewModel.error.subscribe(onNext:{ [weak self] error in
+            self?.showErrorAlert(at: error)
+        }).addDisposableTo(disposeBag)
+        
+        viewModel.walletLock.subscribe(onNext:{ [weak self] state in
+            self?.showProtection()
+        }).addDisposableTo(disposeBag)
+        
+        setupTextFields()
+    }
+    
+    private func setupTextFields() {
+        
+        valueTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        timeTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        nameTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        addressTextField.textChanged = {[weak self](text) in
+            self?.checkValidation()
+        }
+        
+        timeTextField.didFirstResponder = {[weak self](state) in
+            
+            if self?.isEditingMode == false {return}
+            
+            if state {
+                if self?.timeTextField.text == "0" {
+                    self?.timeTextField.text = ""
+                    self?.checkValidation()
+                }
+            } else {
+                if self?.timeTextField.text == "" {
+                    self?.timeTextField.text = "0"
+                    self?.checkValidation()
+                }
+            }
+        }
+    }
+    
+    private func checkValidation() {
+        
+        let value = valueTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let days = timeTextField.text ?? ""
+        let address = addressTextField.text ?? ""
+        let validAddress = isEditingMode ? address.validAddress() : true
+        createButton.isEnabled = !value.isEmpty && !name.isEmpty && !days.isEmpty && validAddress
+    }
+    
+    private func showAddressesController() {
+    
+        let controller = NamesViewController.controller() as! NamesViewController
+        controller.subController = .myAddresses
+        controller.selectedAddress = {address in
+            self.addressTextField.text = address
+        }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func showRecepientAddressController() {
+        
+        let controller = NamesViewController.controller() as! NamesViewController
+        controller.subController = .recipientAddress
+        controller.selectedAddress = {address in
+            self.addressTextField.text = address
+        }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func showSuccessAddNameView() {
+        
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+                                                           frame: self.parent!.view.frame) as! SuccessAddNameView
+        successView.success = ({[weak self] in
+            
+            if self?.isEditingMode == true {
+                if self?.edited != nil {
+                    self?.edited!(self?.data as! [String : Any])
+                }
+            } else {
+                if self?.created != nil {
+                    self?.created!()
+                }
+            }
+            
+            self?.walletProtectionHelper = nil
+            self?.back()
+        })
+        
+        self.parent?.view.addSubview(successView)
+    }
+
+    private func showProtection() {
+        
+        if let parent = self.parent as? NamesViewController  {
+            
+            let protectionHelper = WalletProtectionHelper()
+            protectionHelper.fromController = parent
+            
+            protectionHelper.cancel = {[weak self] in
+                self?.nameData = nil
+            }
+            
+            protectionHelper.unlock = {[weak self] in
+                if let data = self?.nameData {
+                    self?.viewModel.sendData(at: data)
+                }
+            }
+            
+            self.walletProtectionHelper = protectionHelper
+            protectionHelper.startProtection()
+        }
+    }
     
     @IBAction func prefixButtonPressed() {
-        
         prefixDropDown?.show()
     }
     
@@ -210,9 +259,10 @@ class CreateNVSViewController: BaseViewController {
         let name = nameTextField.text!
         let value = valueTextField.text!
         let address = addressTextField.text!
-        var days = timeTextField.text!
         
+        var days = timeTextField.text!
         days = days.length > 0 ? days : "0"
+        
         let daysCount = Int(days) ?? 0
         let expiresIn = daysCount * blocksInDay
         
@@ -228,6 +278,7 @@ class CreateNVSViewController: BaseViewController {
             if let oldRecord = self.record {
                 
                 if oldRecord.value != record.value || oldRecord.address != record.address || daysCount > 0 {
+                    
                     record.expiresIn += oldRecord.expiresIn
                     
                     var data = [String:Any]()
@@ -246,15 +297,14 @@ class CreateNVSViewController: BaseViewController {
                     }
                     
                     self.data = data
-                    
                     viewModel.checkWalletAndSend(at: nameData as AnyObject)
                 } else {
                     back()
                 }
             }
         } else {
-            
             if !fullName.isEmpty && !value.isEmpty && daysCount != 0 {
+                
                 nameData.append(fullName as AnyObject)
                 nameData.append(value as AnyObject)
                 nameData.append(daysCount as AnyObject)
@@ -283,91 +333,6 @@ class CreateNVSViewController: BaseViewController {
             showRecepientAddressController()
         } else {
             showAddressesController()
-        }
-    }
-    
-    private func showAddressesController() {
-    
-        let controller = NamesViewController.controller() as! NamesViewController
-        controller.subController = .myAddresses
-        controller.selectedAddress = {address in
-            self.addressTextField.text = address
-        }
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    private func showRecepientAddressController() {
-        
-        let controller = NamesViewController.controller() as! NamesViewController
-        controller.subController = .recipientAddress
-        controller.selectedAddress = {address in
-            self.addressTextField.text = address
-        }
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    private func showOperationActivityView() {
-        
-        let view = loadViewFromXib(name: "Send", index: 2,
-                                   frame: self.parent!.view.frame)
-        self.operationActivityView = view
-        userInteraction(at: false)
-        self.parent?.view.addSubview(view)
-    }
-    
-    private func hideOperationActivityView() {
-        
-        if let view = operationActivityView {
-            userInteraction(at: true)
-            view.removeFromSuperview()
-        }
-    }
-    
-    private func showSuccessAddNameView() {
-        
-        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
-                                                           frame: self.parent!.view.frame) as! SuccessAddNameView
-        successView.success = ({[weak self] in
-            
-            if self?.isEditingMode == true {
-                if self?.edited != nil {
-                    self?.edited!(self?.data as! [String : Any])
-                }
-            } else {
-                if self?.created != nil {
-                    self?.created!()
-                }
-            }
-            
-            self?.walletProtectionHelper = nil
-    
-            self?.back()
-        })
-        
-        self.parent?.view.addSubview(successView)
-    }
-    
-    private func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
-    }
-
-    private func showProtection() {
-        
-        if let parent = self.parent as? NamesViewController  {
-            let protectionHelper = WalletProtectionHelper()
-            protectionHelper.fromController = parent
-            protectionHelper.cancel = {[weak self] in
-                self?.nameData = nil
-            }
-            protectionHelper.unlock = {[weak self] in
-                if let data = self?.nameData {
-                    self?.viewModel.sendData(at: data)
-                }
-            }
-            self.walletProtectionHelper = protectionHelper
-            protectionHelper.startProtection()
         }
     }
 }

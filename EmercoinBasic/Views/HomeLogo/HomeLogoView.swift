@@ -10,7 +10,5 @@ class HomeLogoView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-       // dropShadow()
     }
-
 }

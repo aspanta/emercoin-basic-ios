@@ -9,6 +9,7 @@ import UIKit
 extension UITableView {
     
     func baseSetup() {
+        
         self.hideEmtyCells()
         self.enableAutolayout()
     }
@@ -18,6 +19,7 @@ extension UITableView {
     }
     
     func enableAutolayout() {
+        
         rowHeight = UITableViewAutomaticDimension
         estimatedRowHeight = 66.0
     }

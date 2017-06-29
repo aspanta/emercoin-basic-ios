@@ -26,13 +26,10 @@ class NVSInfoViewController: BaseTextViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func setupUI() {
         super.setupUI()
-        
-        //statusBarView?.backgroundColor = UIColor(hexString: Constants.Colors.Status.Blockchain)
         
         var text = ""
         

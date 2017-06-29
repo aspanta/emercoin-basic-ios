@@ -13,7 +13,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet internal weak var noTransactionsLabel:UILabel!
     
     var history = History()
-    
     let disposeBag = DisposeBag()
     
     internal var selectedIndexPath:IndexPath?
@@ -40,7 +39,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     private func updateUI() {
-        
         noTransactionsLabel.isHidden = history.transactions.count != 0
     }
     
@@ -62,13 +60,11 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
                 self?.updateUI()
                 self?.tableView.reload()
             }
-        })
-        .addDisposableTo(disposeBag)
-        
+        }).addDisposableTo(disposeBag)
+
         history.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -82,8 +78,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
                     refresh?.endRefreshing()
                 }
             }
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -107,7 +102,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
         }
         
         self.parent?.parent?.view.addSubview(transactionDetailView)
-        
     }
     
     private func repeatTransaction() {

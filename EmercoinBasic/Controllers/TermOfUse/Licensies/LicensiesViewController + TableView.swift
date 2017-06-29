@@ -10,9 +10,11 @@ extension LicensiesViewController {
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var count = 1
+        
         if let licensies = licensies {
             count += licensies.licensies.count
         }
+        
         return count
     }
 
@@ -32,6 +34,7 @@ extension LicensiesViewController {
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return indexPath.row > 0
     }
@@ -51,11 +54,11 @@ extension LicensiesViewController {
     private func item(at index:Int) -> License? {
         
         var license:License? = nil
+        
         if let licensies = licensies {
             license = licensies.licensies[index]
         }
         
         return license
     }
-    
 }

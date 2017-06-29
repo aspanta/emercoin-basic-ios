@@ -26,5 +26,4 @@ class Settings {
         authInfo = nil
         Defaults[key] = nil
     }
-
 }

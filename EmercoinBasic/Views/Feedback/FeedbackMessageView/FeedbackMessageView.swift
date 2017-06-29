@@ -14,7 +14,6 @@ class FeedbackMessageView: UIView {
     }
     
     private func setupUI() {
-        
         fullyRound(diameter: 10, borderColor: .lightGray, borderWidth: 1.0)
     }
 

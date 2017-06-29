@@ -51,6 +51,7 @@ class SideMenuViewController: LGSideMenuController {
     }
     
     func enableMenuSwipe(at state:Bool) {
+        
         if state {
             leftViewSwipeGestureRange = swipeRange
         } else {
@@ -67,10 +68,7 @@ class SideMenuViewController: LGSideMenuController {
     }
     
     func showDashBoard() {
-        
         changeRootController(to: self.mainTabBarController)
-        
-        //selectTabItem(at: 0, subIndex:0)
     }
     
     private func selectTabItem(at index:Int, subIndex:Int) {
@@ -88,7 +86,6 @@ class SideMenuViewController: LGSideMenuController {
         }
         
         DispatchQueue.main.async {
-            
             self.hideLeftView(animated: true)
         }
     }
@@ -119,7 +116,6 @@ class SideMenuViewController: LGSideMenuController {
     }
     
     private func changeRootController(to controller:UIViewController)  {
-        
         self.rootViewController = controller
     }
     
@@ -131,7 +127,6 @@ class SideMenuViewController: LGSideMenuController {
 extension UIViewController {
     
     @IBAction func backToDashBoard() {
-        
         Router.sharedInstance.sideMenu?.showDashBoard()
     }
 }

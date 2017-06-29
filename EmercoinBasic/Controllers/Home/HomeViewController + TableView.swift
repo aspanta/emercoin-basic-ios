@@ -19,9 +19,9 @@ extension HomeViewController {
         
         switch indexPath.row {
         case 0:height = Constants.CellHeights.HomeBalanceCell.Collapsed
-        if isSelectedRow {
-            let coinsHeight = Constants.CellHeights.HomeBalanceCell.MoneyView * Double(coins.count)
-            height += coinsHeight
+            if isSelectedRow {
+                let coinsHeight = Constants.CellHeights.HomeBalanceCell.MoneyView * Double(coins.count)
+                height += coinsHeight
             }
         default:break
         }
@@ -36,7 +36,6 @@ extension HomeViewController {
         let cell:BaseTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseTableViewCell
         
         cell.indexPath = indexPath
-        
         cell.pressedCell = {[weak self] (selIndexPath) in
             self?.expandedCell(indexPath: selIndexPath)
         }

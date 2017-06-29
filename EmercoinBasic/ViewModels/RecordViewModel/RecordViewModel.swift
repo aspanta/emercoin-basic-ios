@@ -14,7 +14,6 @@ class RecordViewModel {
     var expiresType = "Days"
     
     init(record:Record) {
-        
         self.name = record.name
         self.address = record.address
         self.value = record.value

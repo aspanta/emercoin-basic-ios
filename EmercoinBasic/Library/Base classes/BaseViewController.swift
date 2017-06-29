@@ -8,6 +8,7 @@ import UIKit
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate, TabBarObjectInfo {
     
     internal var activiryIndicator:UIActivityIndicatorView?
+    internal var operationActivityView:UIView?
     
     var tabBarObject: TabBarObject?
     
@@ -44,25 +45,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, TabBarO
         return true
     }
     
-    @IBAction func menuShow() {
-        
-        Router.sharedInstance.sideMenu?.showLeftView(animated: true, completionHandler: {
-            
-        })
-    }
-    
-    @IBAction func menuHide() {
-        
-        Router.sharedInstance.sideMenu?.hideLeftView(animated: true, completionHandler: {
-            
-        })
-    }
-    
-    @IBAction func back() {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     func hideStatusBar() {
         statusBarView?.isHidden = true
     }
@@ -82,10 +64,76 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate, TabBarO
         }
     }
     
-    @IBAction internal func lockButtonPressed() {
+    func showErrorAlert(at error:NSError) {
+        let alert = AlertsHelper.errorAlert(at: error)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showCopyView() {
         
+        let copyView:UIView = loadViewFromXib(name: "AddressBook", index: 3,
+                                              frame: nil)
+        copyView.alpha = 0;
+        view.addSubview(copyView)
+        
+        copyView.center = view.center
+        
+        UIView.animate(withDuration: 0.3) {
+            copyView.alpha = 0.8
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIView.animate(withDuration: 0.3, animations: {
+                copyView.alpha = 0.0
+            }, completion: { (state) in
+                copyView.removeFromSuperview()
+            })
+        }
+    }
+    
+    func showSuccesOperationView() {
+        
+        let successView = getOperationView(at: 1) as! SuccessSendView
+        self.parent?.view.addSubview(successView)
+    }
+    
+    func showOperationActivityView() {
+        
+        let view = getOperationView(at: 2)
+        self.operationActivityView = view
+        userInteraction(at: false)
+        self.parent?.view.addSubview(view)
+    }
+    
+    func hideOperationActivityView() {
+        
+        if let view = operationActivityView {
+            userInteraction(at: true)
+            view.removeFromSuperview()
+        }
+    }
+    
+    func getOperationView(at index:Int) -> UIView {
+        let view = loadViewFromXib(name: "Send", index: index,
+                                   frame: self.parent!.view.frame)
+        return view
+    }
+    
+    @IBAction internal func lockButtonPressed() {
         let protectionHelper = WalletProtectionHelper()
         protectionHelper.fromController = self
         protectionHelper.startProtection()
+    }
+    
+    @IBAction func menuShow() {
+        Router.sharedInstance.sideMenu?.showLeftView(animated: true, completionHandler: {})
+    }
+    
+    @IBAction func menuHide() {
+        Router.sharedInstance.sideMenu?.hideLeftView(animated: true, completionHandler: {})
+    }
+    
+    @IBAction func back() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

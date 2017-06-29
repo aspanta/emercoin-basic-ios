@@ -12,10 +12,9 @@ import RxRealm
 class AddressBook {
     
     var contacts:Results<Contact> {
-        get {
-            let realm = try! Realm()
-            return realm.objects(Contact.self).filter("isMyContact == false")
-        }
+        
+        let realm = try! Realm()
+        return realm.objects(Contact.self).filter("isMyContact == false")
     }
     
     let disposeBag = DisposeBag()
@@ -28,13 +27,13 @@ class AddressBook {
         
         Observable.changeset(from: contacts)
             .subscribe(onNext: {results, changes in
+                
                 self.isEmpty.onNext(results.count == 0)
                 
                 if changes?.inserted.count != 0 || changes?.updated.count != 0 {
                     self.success.onNext(true)
                 }
-            })
-        .addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
     }
     
     func add(contact:Contact) {
@@ -54,6 +53,7 @@ class AddressBook {
     }
     
     func remove(contact:Contact) {
+        
         let realm = try! Realm()
         try! realm.write {
             realm.delete(contact)
@@ -61,6 +61,7 @@ class AddressBook {
     }
     
     func remove(contacts:[Contact]) {
+        
         let realm = try! Realm()
         try! realm.write {
             realm.delete(contacts)
@@ -68,6 +69,7 @@ class AddressBook {
     }
     
     func update(at name:String, index:Int) {
+        
         let realm = try! Realm()
         try! realm.write {
             contacts[index].name = name
@@ -75,6 +77,7 @@ class AddressBook {
     }
     
     func update(at name:String, address:String, index:Int) {
+        
         let realm = try! Realm()
         try! realm.write {
             contacts[index].name = name

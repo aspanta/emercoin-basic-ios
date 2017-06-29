@@ -223,9 +223,6 @@
 		2D997D031E7AD3B200630560 /* LeftViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C9B1E7AD3B200630560 /* LeftViewController + TableView.swift */; };
 		2D997D041E7AD3B200630560 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C9C1E7AD3B200630560 /* LeftViewController.swift */; };
 		2D997D051E7AD3B200630560 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997C9D1E7AD3B200630560 /* SideMenuViewController.swift */; };
-		2D997D081E7AD3B200630560 /* ProtectionModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CA21E7AD3B200630560 /* ProtectionModule.storyboard */; };
-		2D997D091E7AD3B200630560 /* ProtectionModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CA31E7AD3B200630560 /* ProtectionModule.xib */; };
-		2D997D0A1E7AD3B200630560 /* ProtectionModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CA41E7AD3B200630560 /* ProtectionModuleViewController.swift */; };
 		2D997D0F1E7AD3B200630560 /* Legal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997CAD1E7AD3B200630560 /* Legal.storyboard */; };
 		2D997D101E7AD3B200630560 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997CAE1E7AD3B200630560 /* LegalViewController.swift */; };
 		2DA249441E7C1F4700AF81DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249431E7C1F4700AF81DD /* LoginViewController.swift */; };
@@ -466,9 +463,6 @@
 		2D997C9B1E7AD3B200630560 /* LeftViewController + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "LeftViewController + TableView.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997C9C1E7AD3B200630560 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LeftViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997C9D1E7AD3B200630560 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SideMenuViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2D997CA21E7AD3B200630560 /* ProtectionModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProtectionModule.storyboard; sourceTree = "<group>"; };
-		2D997CA31E7AD3B200630560 /* ProtectionModule.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProtectionModule.xib; sourceTree = "<group>"; };
-		2D997CA41E7AD3B200630560 /* ProtectionModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProtectionModuleViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D997CAD1E7AD3B200630560 /* Legal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Legal.storyboard; sourceTree = "<group>"; };
 		2D997CAE1E7AD3B200630560 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LegalViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2DA249431E7C1F4700AF81DD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1084,7 +1078,6 @@
 				2D997C541E7AD3B200630560 /* Common */,
 				2D997C631E7AD3B200630560 /* Home */,
 				2D997C8D1E7AD3B200630560 /* Login */,
-				2D997CA11E7AD3B200630560 /* ProtectionModule */,
 				2D997CAC1E7AD3B200630560 /* Legal */,
 			);
 			path = Controllers;
@@ -1144,7 +1137,6 @@
 				2DA249481E7C203B00AF81DD /* LoginViewModel */,
 				2D997BE11E7AD37700630560 /* CoinsOperationViewModel */,
 				2D997BEB1E7AD37700630560 /* HistoryTransaction */,
-				2D997BFB1E7AD37700630560 /* SendHeaderViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1171,7 +1163,6 @@
 				2D997B7C1E7AD2B600630560 /* ExchangeHeader */,
 				2D997B7E1E7AD2B600630560 /* ExtendedView */,
 				2D997B801E7AD2B600630560 /* Feedback */,
-				2D997B871E7AD2B600630560 /* History */,
 				2D997B881E7AD2B600630560 /* HomeLogo */,
 				2D997B921E7AD2B600630560 /* Login */,
 				2D997B941E7AD2B600630560 /* MyAddreses */,
@@ -1457,7 +1448,6 @@
 			isa = PBXGroup;
 			children = (
 				2D997B651E7AD2B600630560 /* AddContact */,
-				2D997B671E7AD2B600630560 /* EditContact */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -1468,13 +1458,6 @@
 				2D997B661E7AD2B600630560 /* AddContactView.swift */,
 			);
 			path = AddContact;
-			sourceTree = "<group>";
-		};
-		2D997B671E7AD2B600630560 /* EditContact */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EditContact;
 			sourceTree = "<group>";
 		};
 		2D997B6A1E7AD2B600630560 /* Base */ = {
@@ -1601,13 +1584,6 @@
 			path = SuccessSendMessage;
 			sourceTree = "<group>";
 		};
-		2D997B871E7AD2B600630560 /* History */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = History;
-			sourceTree = "<group>";
-		};
 		2D997B881E7AD2B600630560 /* HomeLogo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1698,13 +1674,6 @@
 				2D997BEC1E7AD37700630560 /* HistoryTransactionViewModel.swift */,
 			);
 			path = HistoryTransaction;
-			sourceTree = "<group>";
-		};
-		2D997BFB1E7AD37700630560 /* SendHeaderViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SendHeaderViewModel;
 			sourceTree = "<group>";
 		};
 		2D997C0D1E7AD3B200630560 /* About */ = {
@@ -1888,16 +1857,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		2D997CA11E7AD3B200630560 /* ProtectionModule */ = {
-			isa = PBXGroup;
-			children = (
-				2D997CA21E7AD3B200630560 /* ProtectionModule.storyboard */,
-				2D997CA31E7AD3B200630560 /* ProtectionModule.xib */,
-				2D997CA41E7AD3B200630560 /* ProtectionModuleViewController.swift */,
-			);
-			path = ProtectionModule;
-			sourceTree = "<group>";
-		};
 		2D997CAC1E7AD3B200630560 /* Legal */ = {
 			isa = PBXGroup;
 			children = (
@@ -2030,12 +1989,10 @@
 				2D997ABE1E7AD02A00630560 /* Roboto-Light.ttf in Resources */,
 				2D109F391EAE29BB003AD402 /* Blockchain.xib in Resources */,
 				2D21D66C1E926E690088AD31 /* Names.storyboard in Resources */,
-				2D997D091E7AD3B200630560 /* ProtectionModule.xib in Resources */,
 				2D997CB11E7AD3B200630560 /* AccountPage.storyboard in Resources */,
 				2D997B131E7AD1FF00630560 /* DropDownCell.xib in Resources */,
 				2D65E52F1F025F6000C2E167 /* History.xib in Resources */,
 				2D997ABF1E7AD02A00630560 /* Roboto-Medium.ttf in Resources */,
-				2D997D081E7AD3B200630560 /* ProtectionModule.storyboard in Resources */,
 				2D997B121E7AD1FF00630560 /* Info.plist in Resources */,
 				2D2E06981EB1E42D0053A6AC /* BlockchainLoading.storyboard in Resources */,
 				2D22B2421E7C4455008BB64F /* AddressBook.xib in Resources */,
@@ -2230,7 +2187,6 @@
 				2D798F001E939F1B008AB5AF /* Records.swift in Sources */,
 				2D997B0C1E7AD1FF00630560 /* UIView + Utils.swift in Sources */,
 				2D997B541E7AD24E00630560 /* Contact.swift in Sources */,
-				2D997D0A1E7AD3B200630560 /* ProtectionModuleViewController.swift in Sources */,
 				2D997BD11E7AD2B600630560 /* YesButton.swift in Sources */,
 				2D21D66B1E926E690088AD31 /* NVSInfoViewController.swift in Sources */,
 				2D997B111E7AD1FF00630560 /* DPDUIView+Extension.swift in Sources */,

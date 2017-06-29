@@ -39,6 +39,7 @@ class WalletProtectionActivityView: PopupView {
     }
     
     deinit {
+        
         print("deinit - WalletProtectionActivityView")
         userInteraction(at: true)
     }

@@ -20,7 +20,5 @@ class MenuDefaultCell: BaseTableViewCell {
         
         titleLabel.text = menuItem.title
         iconView.image = UIImage(named: menuItem.image)
-        
     }
-
 }
