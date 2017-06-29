@@ -35,7 +35,13 @@ class HistoryTransactionDetailView: PopupView {
             categoryValueView.value = viewModel.category
             feeValueView.value = viewModel.fee + " \(sign)"
             voutValueView.value = viewModel.vout
-            blockheightValueView.value = viewModel.blockheight
+            
+            
+            let blockhash = viewModel.blockheight
+            blockheightValueView.value = blockhash
+            blockheightValueView.copyPressed = {[weak self] in
+                self?.copyToBuffer(at: blockhash)
+            }
             
             let address = viewModel.address
             addressValueView.value = address
