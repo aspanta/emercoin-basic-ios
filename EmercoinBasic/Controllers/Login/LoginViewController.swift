@@ -67,9 +67,6 @@ class LoginViewController: BaseViewController {
         viewModel.topButtonConstraint.bind(to: topAboutConstraint.rx.constant)
             .addDisposableTo(disposeBag)
         
-//        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
-//            .addDisposableTo(disposeBag)
-        
         setupLogin()
         
         setupActivityIndicator()
@@ -107,16 +104,6 @@ class LoginViewController: BaseViewController {
         .addDisposableTo(disposeBag)
     }
     
-    @IBAction func enterButtonPressed(sender:UIButton) {
-        
-        viewModel.performLogin()
-    }
-    
-    @IBAction func skipButtonPressed(sender:UIButton) {
-        
-        showMainController()
-    }
-    
     private func showMainController() {
         
         Router.sharedInstance.showMainController()
@@ -131,6 +118,11 @@ class LoginViewController: BaseViewController {
         
         let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func enterButtonPressed(sender:UIButton) {
+        
+        viewModel.performLogin()
     }
     
     @IBAction func aboutButtonPressed(sender:UIButton) {
