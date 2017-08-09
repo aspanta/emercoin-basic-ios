@@ -189,7 +189,7 @@
                 <outlet property="addressTextField" destination="G7R-XA-OOn" id="6FU-o7-bEi"/>
                 <outlet property="doneButton" destination="5Ay-eq-RFP" id="JSj-GF-Zhj"/>
             </connections>
-            <point key="canvasLocation" x="1384" y="58"/>
+            <point key="canvasLocation" x="832" y="58"/>
         </view>
         <view contentMode="scaleToFill" id="DWO-Yc-Bsg" customClass="SuccessAddNameView" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -258,7 +258,7 @@
                 <constraint firstItem="tNw-rX-tCr" firstAttribute="centerY" secondItem="DWO-Yc-Bsg" secondAttribute="centerY" id="vwK-lD-5PT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="1895" y="58"/>
+            <point key="canvasLocation" x="1335" y="58"/>
         </view>
         <view contentMode="scaleToFill" id="DSi-2A-opT" customClass="RecordInfoVIew" customModule="EmercoinBasic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -388,7 +388,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54x-L3-bLm">
-                            <rect key="frame" x="28" y="83" width="50.5" height="21"/>
+                            <rect key="frame" x="28" y="83" width="48.5" height="21"/>
                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -524,7 +524,7 @@
                 <outlet property="valueScrollView" destination="dFK-Xq-02y" id="tPU-zX-2yi"/>
                 <outlet property="valueView" destination="t6U-wS-2Mh" id="ipM-jr-vol"/>
             </connections>
-            <point key="canvasLocation" x="853" y="58"/>
+            <point key="canvasLocation" x="1849" y="77"/>
         </view>
     </objects>
 </document>

@@ -206,7 +206,7 @@ class CreateNVSViewController: BaseViewController {
     
     private func showSuccessAddNameView() {
         
-        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 2,
                                                            frame: self.parent!.view.frame) as! SuccessAddNameView
         successView.success = ({[weak self] in
             

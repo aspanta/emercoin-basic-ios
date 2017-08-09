@@ -140,7 +140,7 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
     }
     
     private func showSuccessDeleteNameView(at controlller:UIViewController) {
-        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 2,
                                                               frame: controlller.view.frame) as! SuccessAddNameView
         self.walletProtectionHelper = nil
         self.deleteRecord = nil
