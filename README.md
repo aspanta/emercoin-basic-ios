@@ -3,6 +3,7 @@ Emercoin Basic iOS Application
 
 
 Emercoin Basic iOS app is a remote controller for the Emercoin Core Wallet running on your computer or hosted server in a daemon mode.
+Available to download at https://itunes.apple.com/us/app/emercoin-basic/id1216255815
 
 
 How to install the Emercoin Core Wallet
