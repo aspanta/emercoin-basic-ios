@@ -8,6 +8,7 @@ import UIKit
 class SendViewModel: CoinOperationsViewModel {
     
     func checkWalletAndSend(at sendData:AnyObject) {
+        
         wallet?.loadInfo(completion: {[weak self] in
             if self?.wallet?.isLocked == true {
                 self?.walletLock.onNext(true)

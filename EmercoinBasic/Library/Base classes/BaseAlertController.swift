@@ -12,15 +12,14 @@ class BaseAlertController: UIAlertController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     deinit {
+        
         if done != nil {
             done!()
             done = nil
         }
         print("deinit - BaseAlertController")
     }
-
 }

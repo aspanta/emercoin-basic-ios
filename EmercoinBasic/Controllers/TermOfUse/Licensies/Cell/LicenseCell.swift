@@ -17,5 +17,4 @@ class LicenseCell: BaseTableViewCell {
         
         nameLabel.text = viewModel.name + " License"
     }
-
 }

@@ -42,7 +42,6 @@ extension BaseViewController {
         if Thread.isMainThread {
             stopAnimatingActivity()
         } else {
-            
             DispatchQueue.main.async {
                 self.stopAnimatingActivity()
             }
@@ -50,6 +49,7 @@ extension BaseViewController {
     }
     
     private func stopAnimatingActivity() {
+        
         activiryIndicator?.removeFromSuperview()
         activiryIndicator?.stopAnimating()
     }

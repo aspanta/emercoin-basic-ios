@@ -12,5 +12,4 @@ class YesButton: BaseButton {
         
         round(corners: [.bottomLeft,.topLeft], radius: 15)
     }
-
 }

@@ -37,5 +37,4 @@ class AddressesNVSViewController: MyAdressViewController {
     
         back()
     }
-
 }

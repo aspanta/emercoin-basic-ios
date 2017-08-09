@@ -34,6 +34,13 @@ class Wallet:BaseModel {
         }
     }
     
+    var balance:Double = 0.0 {
+        didSet{
+            emercoin.amount = balance
+            success.onNext(true)
+        }
+    }
+    
     init(amount:Double) {
         emercoin.amount = amount
         super.init()
@@ -43,15 +50,7 @@ class Wallet:BaseModel {
         super.init(map: map)
     }
     
-    var balance:Double = 0.0 {
-        didSet{
-            emercoin.amount = balance
-            success.onNext(true)
-        }
-    }
-    
     override func mapping(map: Map) {
-        
         isMintonly <- map["mintonly"]
         unlockedUntil <- map["unlocked_until"]
         isProtected <- map["encrypted"]
@@ -85,6 +84,7 @@ class Wallet:BaseModel {
     }
     
     func loadCourse() {
+        
         APIManager.sharedInstance.loadEmercoinCourse {[weak self] (data, error) in
             if let priceUSD = Double(data as! String) {
                 self?.emercoin.priceUSD = priceUSD

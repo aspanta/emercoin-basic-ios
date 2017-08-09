@@ -7,5 +7,4 @@ import UIKit
 
 class SuccessSendMessage: SuccessSendView {
 
-
 }

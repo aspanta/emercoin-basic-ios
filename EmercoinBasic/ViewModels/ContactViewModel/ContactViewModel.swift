@@ -11,7 +11,6 @@ class ContactViewModel {
     var address:String
     
     init(contact:Contact) {
-        
         self.name = contact.name
         self.address = contact.address
     }

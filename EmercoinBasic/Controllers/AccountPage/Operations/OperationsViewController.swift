@@ -19,22 +19,6 @@ class OperationsViewController: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Operations")
     }
-    
-    @IBAction func sendButtonPressed(sender:UIButton) {
-        showSendController()
-    }
-    
-    @IBAction func myAddressButtonPressed(sender:UIButton) {
-        showMyAddressController()
-    }
-    
-    @IBAction func addMoneyButtonPressed(sender:UIButton) {
-        print("addMoneyButtonPressed")
-    }
-    
-    @IBAction func receiveButtonPressed(sender:UIButton) {
-        showReceiveController()
-    }
 
     private func showSendController() {
         
@@ -62,6 +46,23 @@ class OperationsViewController: UIViewController, IndicatorInfoProvider {
         
         let controller = CoinOperationsViewController.controller() as! CoinOperationsViewController
         controller.coinsOperation = operationType
+        
         return controller
+    }
+    
+    @IBAction func sendButtonPressed(sender:UIButton) {
+        showSendController()
+    }
+    
+    @IBAction func myAddressButtonPressed(sender:UIButton) {
+        showMyAddressController()
+    }
+    
+    @IBAction func addMoneyButtonPressed(sender:UIButton) {
+        print("addMoneyButtonPressed")
+    }
+    
+    @IBAction func receiveButtonPressed(sender:UIButton) {
+        showReceiveController()
     }
 }

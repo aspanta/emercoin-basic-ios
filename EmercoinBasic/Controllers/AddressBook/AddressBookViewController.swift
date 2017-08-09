@@ -14,7 +14,6 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
     @IBOutlet internal weak var addButton:UIButton!
     @IBOutlet internal weak var noAddressesView:UIView!
     @IBOutlet internal weak var lockButton:LockButton!
-    
     @IBOutlet internal weak var tableView:UITableView!
     
     var selectedAddress:((_ text:String) -> (Void))?
@@ -43,8 +42,7 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
         
         wallet.success.subscribe(onNext: {[weak self] (state) in
             self?.updateUI()
-        })
-         .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     internal func updateUI() {
@@ -63,11 +61,6 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
         }).addDisposableTo(disposeBag)
     }
     
-    @IBAction func addButtonPressed(sender:UIButton) {
-        
-        showAddContactView()
-    }
-    
     private func showAddContactView() {
         
         let addContactView = loadViewFromXib(name: "AddressBook", index: 1,
@@ -80,10 +73,15 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
     }
     
     override func back() {
+        
         if isFromMenu {
             backToDashBoard()
         } else {
             super.back()
         }
+    }
+    
+    @IBAction func addButtonPressed(sender:UIButton) {
+        showAddContactView()
     }
 }

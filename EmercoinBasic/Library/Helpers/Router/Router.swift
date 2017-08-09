@@ -14,6 +14,7 @@ class Router {
     private var isBlockchainLoadingControllerActive = false
     
     private func changeRootController(to viewController: UIViewController) {
+        
         if let window = UIApplication.shared.delegate?.window {
             UIView.transition(with: window!, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 window?.rootViewController = viewController
@@ -22,25 +23,28 @@ class Router {
     }
     
     internal func showLoginController() {
+        
         let login = controller(at: "login")
         changeRootController(to:login)
         sideMenu = nil
     }
     
     internal func showMainController() {
+        
         let main = controller(at: "main")
         isBlockchainLoadingControllerActive = false
         changeRootController(to:main)
     }
     
     internal func showBlockChainLoadingController(at blocks:Int = 0) {
+        
        if  let nav = controller(at: "blockchain") as? BaseNavigationController {
-        if let vc = nav.viewControllers.first as? BlockchainLoadingViewController {
-            vc.blocks = blocks
-        }
-        changeRootController(to:nav)
-        isBlockchainLoadingControllerActive = true
-        sideMenu = nil
+            if let vc = nav.viewControllers.first as? BlockchainLoadingViewController {
+                vc.blocks = blocks
+            }
+            changeRootController(to:nav)
+            isBlockchainLoadingControllerActive = true
+            sideMenu = nil
        }
         
     }
@@ -96,5 +100,4 @@ class Router {
         let nav = BaseNavigationController(rootViewController: controller)
         return nav
     }
-    
 }

@@ -36,7 +36,6 @@ class LegalViewController: BaseTextViewController {
             let attributes = [NSForegroundColorAttributeName: UIColor.black,
                               NSFontAttributeName: font]
             
-           // let text = String(format:"%@\n\n%@\n\n",viewModel.text, viewModel.url)
             let body = NSMutableAttributedString(string:viewModel.text, attributes: attributes)
             let link = NSMutableAttributedString(string:viewModel.url, attributes: linkAttributes)
     
@@ -53,7 +52,6 @@ class LegalViewController: BaseTextViewController {
                     UIApplication.shared.open(url, options: [:])
                 }
             }
-            
             urlLabel.setLinksForSubstrings([viewModel.url], withLinkHandler: handler)
         }
     }

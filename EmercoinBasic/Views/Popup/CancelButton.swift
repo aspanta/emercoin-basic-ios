@@ -12,5 +12,4 @@ class CancelButton: UIButton {
         
         round(corners: [.bottomRight,.topRight], radius: 15)
     }
-
 }

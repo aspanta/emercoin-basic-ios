@@ -16,7 +16,7 @@ enum StatusCode:Int {
     case notFound = 404, unauthorized = 401, some = 500
     
     var description:String {
-        
+    
         switch self {
         case .notFound:
             return "Not Found"
@@ -214,7 +214,6 @@ class BaseAPI: NSObject {
             }
         return nil
     }
-    
 }
 
 extension BaseAPI:URLSessionDelegate {

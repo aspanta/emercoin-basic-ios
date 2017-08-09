@@ -29,9 +29,7 @@ class CoinOperationsViewController: BaseViewController {
     @IBOutlet internal weak var backButton:UIButton!
     @IBOutlet internal weak var addButton:UIButton!
     @IBOutlet internal weak var lockButton:LockButton!
-    
     @IBOutlet internal weak var operationConstraint:NSLayoutConstraint!
-    
     @IBOutlet internal weak var container:UIView!
     
     var coinsOperation:CoinsOperation = .recipientAddress
@@ -54,9 +52,7 @@ class CoinOperationsViewController: BaseViewController {
         super.setupUI()
         
         var text = ""
-        
         var isMenuHide = false
-        
         var count = 0
         
         if let countVC =  navigationController?.viewControllers.count {
@@ -83,22 +79,22 @@ class CoinOperationsViewController: BaseViewController {
             text = Constants.Controllers.CoinsOperation.History
         }
         
+        operationLabel.text = text
+        
         menuButton.isHidden = isMenuHide
         backButton.isHidden = !isMenuHide
         
-        operationLabel.text = text
-        
         viewModel.coinCourseTitle.bind(to: headerView.coinCourseLabel.rx.attributedText)
             .addDisposableTo(disposeBag)
+        
         viewModel.coinAmount.bind(to: headerView.coinAmountLabel.rx.text)
             .addDisposableTo(disposeBag)
+        
         viewModel.locked.subscribe(onNext: {[weak self] (locked) in
             self?.lockButton.isLocked = locked
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.updateUI()
-        
     }
     
     func showSendController(at data:AnyObject) {
@@ -157,6 +153,7 @@ class CoinOperationsViewController: BaseViewController {
     }
     
     @IBAction internal func addButtonPressed(sender:UIButton) {
+        
         if childController is MyAdressViewController {
             let controller = childController as! MyAdressViewController
             controller.showAddAddressView()

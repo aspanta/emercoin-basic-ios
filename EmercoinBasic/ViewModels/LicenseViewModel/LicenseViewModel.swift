@@ -12,7 +12,6 @@ class LicenseViewModel {
     var url = ""
     
     init(license:License) {
-        
         name = license.name
         text = license.text
         url = license.url

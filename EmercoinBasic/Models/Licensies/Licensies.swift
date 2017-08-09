@@ -16,12 +16,11 @@ class Licensies: NSObject {
                 let data = try Data(contentsOf: file)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let object = json as? [String: Any] {
-                    
-                    if let licensies = Mapper<License>().mapArray(JSONArray:object["items"] as! [[String:AnyObject]])
-                    {
-                        self.licensies = licensies
+                    if let items = object["items"] {
+                        if let licensies = Mapper<License>().mapArray(JSONObject: items) {
+                            self.licensies = licensies
+                        }
                     }
-                    
                 } else if let object = json as? [Any] {
                     // json is an array
                     print(object)

@@ -17,17 +17,20 @@ class LoginViewController: BaseViewController {
     @IBOutlet internal weak var protocolTextField:BaseTextField!
     @IBOutlet internal weak var protocolButton:UIButton!
     @IBOutlet internal weak var topConstraint:NSLayoutConstraint!
+    @IBOutlet internal weak var topAboutConstraint:NSLayoutConstraint!
+    @IBOutlet internal weak var topLoginConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var leftConstraint:NSLayoutConstraint!
     
     var dropDown:DropDown?
     let disposeBag = DisposeBag()
     var viewModel = LoginViewModel()
 
+    private var basicLink = "https://www.aspanta.com/project/emcbasic"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDropDown()
-        
     }
     
     override class func storyboardName() -> String {
@@ -58,13 +61,13 @@ class LoginViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         viewModel.topConstraint.bind(to: topConstraint.rx.constant)
             .addDisposableTo(disposeBag)
-//        viewModel.leftConstraint.bindTo(leftConstraint.rx.constant)
-//            .addDisposableTo(disposeBag)
+        viewModel.topButtonConstraint.bind(to: topLoginConstraint.rx.constant)
+            .addDisposableTo(disposeBag)
+        viewModel.topButtonConstraint.bind(to: topAboutConstraint.rx.constant)
+            .addDisposableTo(disposeBag)
         
         setupLogin()
-        
         setupActivityIndicator()
-
         viewModel.prepareUI()
     }
     
@@ -98,40 +101,12 @@ class LoginViewController: BaseViewController {
         .addDisposableTo(disposeBag)
     }
     
-    @IBAction func enterButtonPressed(sender:UIButton) {
-        
-        viewModel.performLogin()
-    }
-    
-    @IBAction func skipButtonPressed(sender:UIButton) {
-        
-        showMainController()
-    }
-    
     private func showMainController() {
-        
         Router.sharedInstance.showMainController()
     }
     
     private func showBlockchainController(at blocks:Int) {
-        
         Router.sharedInstance.showBlockChainLoadingController(at: blocks)
-    }
-    
-    private func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func termsButtonPressed(sender:UIButton) {
-        let controller = LicensiesViewController.controller()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    @IBAction func dropButtonPressed() {
-        
-        dropDown?.show()
     }
     
     internal func setupDropDown() {
@@ -140,9 +115,6 @@ class LoginViewController: BaseViewController {
         dropDown?.anchorView = protocolButton
         
         let dataSource = ["Protocol", "http", "https"]
-        
-        //protocolTextField.text = dataSource.first
-        
         dropDown?.dataSource = dataSource
         
         dropDown?.selectionAction = { [weak self] (index, item) in
@@ -162,7 +134,6 @@ class LoginViewController: BaseViewController {
         dropDown?.bottomOffset = CGPoint(x: 0, y: protocolButton.bounds.height)
         
         setupDropDownUI()
-        
     }
     
     internal func setupDropDownUI() {
@@ -171,5 +142,19 @@ class LoginViewController: BaseViewController {
         appearance.selectionBackgroundColor = UIColor(hexString: "9C73B1")
         appearance.cellHeight = protocolButton.bounds.height + 5
         appearance.textFont = UIFont(name: "Roboto-Regular", size: 17)!
+    }
+    
+    @IBAction func enterButtonPressed(sender:UIButton) {
+        viewModel.performLogin()
+    }
+    
+    @IBAction func aboutButtonPressed(sender:UIButton) {
+        if let url = URL(string: basicLink) {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+    
+    @IBAction func dropButtonPressed() {
+        dropDown?.show()
     }
 }

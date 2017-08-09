@@ -12,11 +12,10 @@ class LoginViewModel {
     var host:String = "" {didSet{validateCredentials()}}
     var port:String = "" {didSet{validateCredentials()}}
     var webProtocol:String = "" {didSet{validateCredentials()}}
-    
     var login:String = "" {didSet{validateCredentials()}}
     var password:String = "" {didSet{validateCredentials()}}
-    
     var topConstraint = PublishSubject<CGFloat>()
+    var topButtonConstraint = PublishSubject<CGFloat>()
     var leftConstraint = PublishSubject<CGFloat>()
     var isValidCredentials = PublishSubject<Bool>()
     var successLogin = PublishSubject<Bool>()
@@ -42,6 +41,7 @@ class LoginViewModel {
             let value = Constants.Constraints.Login.Top.iphone5
             topConstraint.onNext(CGFloat(value))
             leftConstraint.onNext(CGFloat(value))
+            topButtonConstraint.onNext(CGFloat(value + 12))
         }
     }
     
@@ -63,10 +63,10 @@ class LoginViewModel {
         APIManager.sharedInstance.login(at: authInfo) {[weak self] (data, error) in
             self?.isLoading = false
             self?.activityIndicator.onNext(false)
+            
             if error != nil {
                 self?.error.onNext(error!)
             } else {
-                
                 if self?.settings.authInfo == nil {
                     self?.settings.authInfo = authInfo
                     self?.settings.save()

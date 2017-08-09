@@ -10,6 +10,7 @@ class CreateNVSViewModel:CoinOperationsViewModel {
     var isEditingMode = false
     
     func checkWalletAndSend(at sendData:AnyObject) {
+        
         wallet?.loadInfo(completion: {[weak self] in
             if self?.wallet?.isLocked == true {
                 self?.walletLock.onNext(true)

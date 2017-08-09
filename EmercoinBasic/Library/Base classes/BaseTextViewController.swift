@@ -14,7 +14,6 @@ class BaseTextViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -27,9 +26,9 @@ class BaseTextViewController: BaseViewController {
         if let view = logoView {
             view.frame.size.width = width
         }
+        
         if let view = textView {
             view.frame.size.width = width
         }
-        
     }
 }

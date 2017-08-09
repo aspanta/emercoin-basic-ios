@@ -68,6 +68,7 @@ class WalletProtectionHelper {
                 activity.removeFromSuperview()
             })
         }
+        
         showView(at: view)
     }
     
@@ -81,6 +82,7 @@ class WalletProtectionHelper {
             })
 
         }
+        
         showView(at: view)
     }
     
@@ -125,6 +127,7 @@ class WalletProtectionHelper {
             self.wallet.protect(at: text)
             self.showEncryptActivityView()
         }
+        
         showView(at: view)
     }
     

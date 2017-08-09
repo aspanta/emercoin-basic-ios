@@ -14,7 +14,6 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
     
     private var recordsController:MyRecordsViewController?
     private var searchController:SearchNVSViewController?
-    
     private var data:Any?
     private var isHasData = false
     
@@ -23,7 +22,6 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewDidLoad() {
-        
         setupUI()
         
         super.viewDidLoad()
@@ -54,14 +52,13 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
         
         let firstVC = MyRecordsViewController.controller() as! MyRecordsViewController
         let secondVC = SearchNVSViewController.controller() as! SearchNVSViewController
+        
         secondVC.createPressed = {[weak self] data in
-            
             if self?.createPressed != nil {
                 self?.createPressed!(data)
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                
                 self?.moveTo(viewController: firstVC)
             }
         }
@@ -78,7 +75,6 @@ class NamesMainViewController: ButtonBarPagerTabStripViewController {
         if self.buttonBarView.selectedIndex == 0 {
             self.moveTo(viewController: self.searchController!)
         }
-        
     }
     
     func showMyNVSTab() {

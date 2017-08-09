@@ -9,13 +9,11 @@ import RxCocoa
 
 class CoinOperationsViewModel {
     
-    
     let disposeBag = DisposeBag()
 
     var coinCourseTitle = PublishSubject<NSAttributedString>()
     var coinAmount = PublishSubject<String>()
     var coinSign = PublishSubject<String>()
-    
     var success = PublishSubject<Bool>()
     var walletLock = PublishSubject<Bool>()
     var walletSuccess = PublishSubject<Bool>()

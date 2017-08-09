@@ -14,6 +14,7 @@ class CheckButton: UIButton {
     }
     
     private func updateUI() {
+        
         let image = isChecked ? "check_on" : "check_off"
         setImage(UIImage(named: image), for: .normal)
     }

@@ -28,12 +28,10 @@ extension BaseAPI {
             for string in removeStrings {
                 text = message.replacingOccurrences(of: string, with: "")
             }
-
         }
     
         let newError = NSError(domain: text, code: -1, userInfo: nil)
         
         return newError
     }
-    
 }

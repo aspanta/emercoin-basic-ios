@@ -9,11 +9,10 @@ class DeleteContactView: PopupView {
 
     var delete:((Void) -> (Void))?
     
-    @IBAction override func doneButtonPressed(sender:UIButton) {
+    @IBAction override func doneButtonPressed(sender:UIButton?) {
         if delete != nil {
             delete!()
         }
         super.doneButtonPressed(sender: sender)
     }
-
 }

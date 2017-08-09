@@ -12,5 +12,4 @@ class RoundButton: UIButton {
         
         fullyRound(diameter: frame.size.height, borderColor: .clear, borderWidth: 0)
     }
-
 }

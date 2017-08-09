@@ -25,5 +25,4 @@ class ExtendedView: UIView {
             layer.borderColor = borderColor?.cgColor
         }
     }
-
 }

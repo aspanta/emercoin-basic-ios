@@ -14,7 +14,6 @@ class BlockchainLoadingView: PopupView {
     
     private var seconds = 0
     private var interval = 30
-    
     private var timer:Timer?
     
     var blocks:Int = 0 {
@@ -61,6 +60,7 @@ class BlockchainLoadingView: PopupView {
     }
     
     func stopTimer() {
+        
         if let timer = timer {
             timer.invalidate()
             self.timer = nil
@@ -70,5 +70,4 @@ class BlockchainLoadingView: PopupView {
     private func updateUI() {
         textLabel.text = String(format:"Depth done: %i blocks",blocks)
     }
-
 }

@@ -21,13 +21,15 @@ class TransactionsAPI: BaseAPI {
     
     override func apiDidReturnData(data: AnyObject) {
         
-        if let transactions = Mapper<HistoryTransaction>().mapArray(JSONArray: data["result"] as! [[String:AnyObject]]) {
+        if let result = data["result"] {
             
-            let history = History()
-            history.removeAll()
-            history.add(transactions: transactions)
-            
-            super.apiDidReturnData(data: transactions as AnyObject)
+            if let transactions = Mapper<HistoryTransaction>().mapArray(JSONObject: result) {
+                let history = History()
+                history.removeAll()
+                history.add(transactions: transactions)
+                
+                super.apiDidReturnData(data: transactions as AnyObject)
+            }
         } else {
             super.apiDidReturnData(data: data)
         }

@@ -21,7 +21,6 @@ class BaseTextField: UITextField, UITextFieldDelegate {
     let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
-        
         super.awakeFromNib()
         
         delegate = self
@@ -46,6 +45,7 @@ class BaseTextField: UITextField, UITextFieldDelegate {
     }
     
     override func resignFirstResponder() -> Bool {
+        
         if done != nil {
             done!(self.text!)
         }
@@ -68,7 +68,7 @@ class BaseTextField: UITextField, UITextFieldDelegate {
         
         if validAmount {
             if fullText.contains(".") {
-                return fullText.validAmount()
+                return fullText.validEnterAmount()
             } else {
                 return maxIntCharacters == 0 ? true : fullText.length <= maxIntCharacters
             }
@@ -76,5 +76,4 @@ class BaseTextField: UITextField, UITextFieldDelegate {
             return maxCharacters == 0 ? true : fullText.length <= maxCharacters
         }
     }
-    
 }

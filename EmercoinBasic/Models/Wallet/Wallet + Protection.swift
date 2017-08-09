@@ -28,18 +28,21 @@ extension Wallet {
     }
     
     func unlock(at password:String, completion:((_ unlock:Bool) -> Void)? = nil) {
+        
         APIManager.sharedInstance.unlockWallet(at: [password, 3000] as AnyObject) {[weak self] (data, error) in
             self?.showErrorOrLoadInfo(at:error, completion: completion)
         }
     }
     
     func lock(completion:((_ lock:Bool) -> Void)? = nil) {
+        
         APIManager.sharedInstance.lockWallet {[weak self] (data, error) in
             self?.showErrorOrLoadInfo(at:error, completion: completion)
         }
     }
     
     func showErrorOrLoadInfo(at error:NSError?, completion:((_ lock:Bool) -> Void)? = nil ) {
+        
         if let error = error {
             if completion != nil {
                 completion!(false)

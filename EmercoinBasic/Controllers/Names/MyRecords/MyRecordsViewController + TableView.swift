@@ -55,14 +55,17 @@ extension MyRecordsViewController {
         let deleteAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
             self.addDeleteNoteViewWith(indexPath: indexPath)
         }
+        
         deleteAction.backgroundColor = UIColor(patternImage:deleteImage.image!)
         editAction.backgroundColor = UIColor(patternImage:editImage.image!)
+        
         return [deleteAction, editAction]
     }
     
     private func addDeleteNoteViewWith(indexPath:IndexPath) {
         
         let deleteNoteView = getRecordView(at: 0) as! DeleteRecordView
+        
         deleteNoteView.delete = ({
             self.removeCellAt(indexPath: indexPath)
         })
@@ -105,10 +108,6 @@ extension MyRecordsViewController {
         let item = itemAt(indexPath: indexPath)
         self.deleteRecord = item
         records.checkWalletAndRemove(at: item)
-        
-//        tableView.beginUpdates()
-//        tableView.deleteRows(at: [indexPath], with: .top)
-//        tableView.endUpdates()
         
         reloadRows()
     }

@@ -11,7 +11,6 @@ class MenuItem {
     var image:String
     var subTitles:[String] = []
 
-    
     init(title:String, image:String) {
         self.title = title
         self.image = image

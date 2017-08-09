@@ -11,7 +11,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         setupUI()
-        
         addControllers()
     }
     
@@ -155,5 +154,4 @@ class TabBarController: UITabBarController {
             }
         }
     }
-
 }

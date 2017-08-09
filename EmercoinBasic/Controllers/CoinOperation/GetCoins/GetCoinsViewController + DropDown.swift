@@ -16,8 +16,7 @@ extension GetCoinsViewController {
             if success {
                 self?.setupDataSource(at: myAddressBook)
             }
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         dropDown = DropDown()
         dropDown?.anchorView = dropDownButton
@@ -33,7 +32,6 @@ extension GetCoinsViewController {
         dropDown?.bottomOffset = CGPoint(x: 0, y: dropDownButton.bounds.height)
 
         setupDropDownUI()
-        
     }
     
     private func setupDataSource(at addressbook:MyAddressBook) {
@@ -56,7 +54,6 @@ extension GetCoinsViewController {
     }
     
     @IBAction func dropButtonPressed() {
-        
         dropDown?.show()
     }
 }

@@ -19,16 +19,20 @@ class NamesAPI: BaseAPI {
     
     override func apiDidReturnData(data: AnyObject) {
         
-        if let names = Mapper<Record>().mapArray(JSONArray: data["result"] as! [[String:AnyObject]]) {
-        
-            let records = Records()
-            records.removeAll()
-            records.add(records: names.filter({ (record) -> Bool in
-                return record.isExpired == false
-            }))
+        if let result = data["result"] {
             
-            super.apiDidReturnData(data: names as AnyObject)
-        } else {
+                if let names = Mapper<Record>().mapArray(JSONObject:result ) {
+                    
+                    let records = Records()
+                    records.removeAll()
+                    records.add(records: names.filter({ (record) -> Bool in
+                        return record.isExpired == false
+                    }))
+                    
+                    super.apiDidReturnData(data: names as AnyObject)
+                }
+        }
+         else {
             super.apiDidReturnData(data: data)
         }
     }

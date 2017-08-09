@@ -16,7 +16,6 @@ extension CreateNVSViewController {
         let dataSource = ["Any"] + Constants.Names.Prefixes
         
         prefixDropLabel.text = dataSource.first
-        
         prefixDropDown?.dataSource = dataSource
         
         prefixDropDown?.selectionAction = { [unowned self] (index, item) in
@@ -27,13 +26,11 @@ extension CreateNVSViewController {
         prefixDropDown?.bottomOffset = CGPoint(x: 0, y: prefixButton.bounds.height)
         
         setupDropDownUI()
-        
     }
     
     internal func setupDropDownUI() {
         
         let height = 10
-        
         let fontSize = 18
         
         let appearance = DropDown.appearance()

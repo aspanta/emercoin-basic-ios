@@ -51,5 +51,4 @@ class EmercoinCourseAPI {
         
         return jsonObject
     }
-    
 }

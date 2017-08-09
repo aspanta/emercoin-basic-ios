@@ -19,5 +19,4 @@ class ContactCell: BaseTableViewCell {
         nameLabeL.text = viewModel.name
         addressLabeL.text = viewModel.address
     }
-    
 }

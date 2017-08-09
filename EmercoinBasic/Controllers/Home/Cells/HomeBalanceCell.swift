@@ -68,7 +68,6 @@ class HomeBalanceCell: BaseTableViewCell {
         }
         
         updateCellHeader()
-        
     }
     
     private func updateCellHeader() {
@@ -93,5 +92,4 @@ class HomeBalanceCell: BaseTableViewCell {
             pressedCell!(indexPath!)
         }
     }
-
 }

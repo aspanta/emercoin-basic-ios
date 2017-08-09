@@ -8,6 +8,7 @@ import UIKit
 extension MyAdressViewController {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         let count = addressBook.contacts.count
         return count
     }
@@ -20,6 +21,7 @@ extension MyAdressViewController {
         
         let viewModel = ContactViewModel(contact:itemAt(indexPath: indexPath))
         cell.object = viewModel
+        
         return cell
     }
     
@@ -30,28 +32,6 @@ extension MyAdressViewController {
         UIPasteboard.general.string = contact.address
         
         showCopyView()
-    }
-    
-    private func showCopyView() {
-        
-        let copyView:UIView = loadViewFromXib(name: "AddressBook", index: 3,
-                                              frame: nil)
-        copyView.alpha = 0;
-        view.addSubview(copyView)
-        
-        copyView.center = view.center
-        
-        UIView.animate(withDuration: 0.3) {
-            copyView.alpha = 0.8
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            UIView.animate(withDuration: 0.3, animations: {
-                copyView.alpha = 0.0
-            }, completion: { (state) in
-                copyView.removeFromSuperview()
-            })
-        }
     }
     
     internal func itemAt(indexPath:IndexPath) -> Contact {
@@ -72,6 +52,7 @@ extension MyAdressViewController {
         }
         
         editAction.backgroundColor = UIColor(patternImage:editImage.image!)
+        
         return [editAction]
     }
     
@@ -86,10 +67,12 @@ extension MyAdressViewController {
             self.addressBook.update(at: name, index:indexPath.row)
             self.reloadRows(at: [indexPath])
         })
+        
         self.parent?.view.addSubview(editContactView)
     }
     
     private func reloadRows(at indexPaths:[IndexPath]) {
+        
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: indexPaths, with: .none)
         self.tableView.endUpdates()

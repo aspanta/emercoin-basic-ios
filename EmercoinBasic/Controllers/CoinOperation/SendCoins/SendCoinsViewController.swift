@@ -14,7 +14,6 @@ class SendCoinsViewController: BaseViewController {
     @IBOutlet internal weak  var sendButton:BaseButton!
     @IBOutlet internal weak  var amountTextField:BaseTextField!
     
-    private var operationActivityView:UIView?
     private var amount:Double = 0
     private var sendData:AnyObject?
     private var walletProtectionHelper:WalletProtectionHelper?
@@ -41,6 +40,7 @@ class SendCoinsViewController: BaseViewController {
         .addDisposableTo(disposeBag)
         
         if object != nil {
+            
             guard let dict = object as? [String:Any] else {
                 return
             }
@@ -67,18 +67,15 @@ class SendCoinsViewController: BaseViewController {
                 wallet.loadInfo(completion: nil)
                 self?.showSuccesSendView()
             }
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         viewModel.walletLock.subscribe(onNext:{ [weak self] state in
             self?.showProtection()
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
         
         addressTextField.textChanged = {[weak self](text) in
             self?.checkValidation()
@@ -92,10 +89,15 @@ class SendCoinsViewController: BaseViewController {
     private func checkValidation() {
         
         let address = addressTextField.text ?? ""
-        let amount = amountTextField.text ?? ""
+        var amount = amountTextField.text ?? ""
+        amount.formattedNumber()
         
-        sendButton.isEnabled = address.validAddress() && !amount.isEmpty
+        let isValidAddress = address.validAddress()
+        let isValidAmount = amount.validAmount()
+        
+        sendButton.isEnabled = isValidAddress  && isValidAmount
     }
+
     
     private func setupActivityIndicator() {
         
@@ -105,78 +107,41 @@ class SendCoinsViewController: BaseViewController {
             } else {
                 self?.hideOperationActivityView()
             }
-        })
-            .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     private func addRequestSendView() {
     
         var amount = amountTextField.text ?? ""
-        amount = amount.replacingOccurrences(of: ",", with: ".")
-        amount = String.dropZero(at: amount)
-        self.amount = Double(amount) ?? 0
         let address = addressTextField.text
+        amount.formattedNumber()
+        self.amount = Double(amount) ?? 0
         
         if (amount.length) > 0 && (address?.length)! > 0  {
         
             let requestSendView:RequestSendView! = loadViewFromXib(name: "Send", index: 0,
                                                                    frame: self.parent!.view.frame) as! RequestSendView
-            
             requestSendView.amount = amount
             requestSendView.sendCoins = ({[weak self] in
                 let data = [address ?? "", self?.amount as Any] as AnyObject
                 self?.sendData = data
                 self?.viewModel.checkWalletAndSend(at: data)
             })
+            
              self.parent?.view.addSubview(requestSendView)
         }
     }
     
     private func showSuccesSendView() {
         
-        let successView:SuccessSendView! = loadViewFromXib(name: "Send", index: 1,
-                                                           frame: self.parent!.view.frame) as! SuccessSendView
+        let successView:SuccessSendView! = getOperationView(at: 1) as! SuccessSendView
         successView.success = ({
-            
             let parent  = self.parent as! CoinOperationsViewController
             self.walletProtectionHelper = nil
             parent.back()
         })
         
         self.parent?.view.addSubview(successView)
-    }
-    
-    private func showOperationActivityView() {
-        
-        let view = getView(at: 2)
-        self.operationActivityView = view
-        userInteraction(at: false)
-        self.parent?.view.addSubview(view)
-    }
-    
-    private func hideOperationActivityView() {
-        
-        if let view = operationActivityView {
-            userInteraction(at: true)
-            view.removeFromSuperview()
-        }
-    }
-    
-    private func getView(at index:Int) -> UIView {
-        let view = loadViewFromXib(name: "Send", index: index,
-                                   frame: self.parent!.view.frame)
-        return view
-    }
-    
-    private func showErrorAlert(at error:NSError) {
-        
-        let alert = AlertsHelper.errorAlert(at: error)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func sendButtonPressed(sender:UIButton) {
-        
-        addRequestSendView()
     }
     
     private func showProtection() {
@@ -195,5 +160,10 @@ class SendCoinsViewController: BaseViewController {
             self.walletProtectionHelper = protectionHelper
             protectionHelper.startProtection()
         }
+    }
+    
+    @IBAction func sendButtonPressed(sender:UIButton) {
+        
+        addRequestSendView()
     }
 }

@@ -35,5 +35,4 @@ class LicensiesViewController: BaseViewController, UITableViewDelegate, UITableV
             super.back()
         }
     }
-
 }

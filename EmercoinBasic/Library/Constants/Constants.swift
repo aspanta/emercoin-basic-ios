@@ -27,7 +27,6 @@ struct Constants {
         static let ProtectWallet = "encryptwallet"
         static let LockWallet = "walletlock"
         static let UnlockWallet = "walletpassphrase"
-        
     }
     
     struct Names {
@@ -201,5 +200,4 @@ struct Constants {
             static let History = "tab_history_icon"
         }
     }
-
 }

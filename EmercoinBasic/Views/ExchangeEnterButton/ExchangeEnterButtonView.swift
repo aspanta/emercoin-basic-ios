@@ -49,6 +49,4 @@ class ExchangeEnterButtonView: UIView {
             signIn!(isSignIn)
         }
     }
-
-
 }

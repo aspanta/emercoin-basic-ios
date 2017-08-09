@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9NT-Iv-o9x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9NT-Iv-o9x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,7 +21,7 @@
         <scene sceneID="K79-qa-5hG">
             <objects>
                 <navigationController id="9NT-Iv-o9x" customClass="BaseNavigationController" customModule="EmercoinBasic" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fC-3m-IeB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3fC-3m-IeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMK-8c-gUV" customClass="LoginButton" customModule="EmercoinBasic" customModuleProvider="target">
-                                <rect key="frame" x="60" y="483" width="255" height="46"/>
+                                <rect key="frame" x="60" y="498" width="255" height="46"/>
                                 <color key="backgroundColor" red="0.38431372549999998" green="0.20000000000000001" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="ojx-hB-Oc4"/>
@@ -248,6 +248,40 @@
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-bq-Ayf">
+                                <rect key="frame" x="149.5" y="609" width="75" height="12"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rep-qW-7R4">
+                                        <rect key="frame" x="0.0" y="12.5" width="75" height="0.5"/>
+                                        <color key="backgroundColor" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="16x-rV-1hQ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsv-St-z4E">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="11"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                                        <state key="normal" title="What is this?">
+                                            <color key="titleColor" red="0.54901960780000003" green="0.36470588240000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="aboutButtonPressedWithSender:" destination="rgu-oq-k0z" eventType="touchUpInside" id="a9N-EX-nx5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xsv-St-z4E" firstAttribute="leading" secondItem="eWL-bq-Ayf" secondAttribute="leading" id="4W7-sN-xiR"/>
+                                    <constraint firstItem="Rep-qW-7R4" firstAttribute="leading" secondItem="eWL-bq-Ayf" secondAttribute="leading" id="LwQ-t4-ByO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rep-qW-7R4" secondAttribute="bottom" constant="-1" id="NMr-Tz-JYj"/>
+                                    <constraint firstItem="Rep-qW-7R4" firstAttribute="top" secondItem="xsv-St-z4E" secondAttribute="bottom" constant="1" id="aph-zm-Rhr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="dW0-OJ-gwI"/>
+                                    <constraint firstAttribute="trailing" secondItem="xsv-St-z4E" secondAttribute="trailing" id="fay-B9-RO2"/>
+                                    <constraint firstAttribute="height" constant="12" id="s5B-cs-oiP"/>
+                                    <constraint firstItem="xsv-St-z4E" firstAttribute="top" secondItem="eWL-bq-Ayf" secondAttribute="top" id="wOy-Ri-GNR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rep-qW-7R4" secondAttribute="trailing" id="yFr-dR-01h"/>
+                                    <constraint firstItem="Rep-qW-7R4" firstAttribute="top" secondItem="eWL-bq-Ayf" secondAttribute="top" constant="12.5" id="ydH-8o-7AV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -273,9 +307,11 @@
                             <constraint firstAttribute="trailing" secondItem="c5c-nc-zE4" secondAttribute="trailing" constant="60" id="hUO-YN-b3z"/>
                             <constraint firstItem="Smb-ON-KLZ" firstAttribute="top" secondItem="32n-15-JxQ" secondAttribute="bottom" constant="15" id="lHQ-lh-css"/>
                             <constraint firstItem="BMK-8c-gUV" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="nJc-fH-wc6"/>
-                            <constraint firstItem="BMK-8c-gUV" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="bottom" constant="50" id="nNA-b3-a4t"/>
+                            <constraint firstItem="BMK-8c-gUV" firstAttribute="top" secondItem="8HB-lr-8Vo" secondAttribute="bottom" constant="65" id="nNA-b3-a4t"/>
+                            <constraint firstItem="eWL-bq-Ayf" firstAttribute="centerX" secondItem="5p0-16-MIm" secondAttribute="centerX" id="nuU-Xg-jIk"/>
                             <constraint firstAttribute="trailing" secondItem="cnJ-a1-ehB" secondAttribute="trailing" constant="60" id="rPl-CH-rTn"/>
                             <constraint firstItem="HSx-U4-Ekd" firstAttribute="leading" secondItem="5p0-16-MIm" secondAttribute="leading" constant="60" id="wP2-2A-ozI"/>
+                            <constraint firstItem="eWL-bq-Ayf" firstAttribute="top" secondItem="BMK-8c-gUV" secondAttribute="bottom" constant="65" id="xAt-P9-QLK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0bK-w4-TEO"/>
@@ -288,7 +324,9 @@
                         <outlet property="portTextField" destination="z77-Q9-iaA" id="nTJ-3A-2bb"/>
                         <outlet property="protocolButton" destination="wth-am-slt" id="Vrq-Zq-BTT"/>
                         <outlet property="protocolTextField" destination="g1n-RR-riZ" id="LJi-pp-jG2"/>
+                        <outlet property="topAboutConstraint" destination="xAt-P9-QLK" id="x1Z-bA-9gS"/>
                         <outlet property="topConstraint" destination="352-Zs-8dQ" id="AYt-ND-xYp"/>
+                        <outlet property="topLoginConstraint" destination="nNA-b3-a4t" id="wPT-FT-en5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMd-XY-Qcs" userLabel="First Responder" sceneMemberID="firstResponder"/>

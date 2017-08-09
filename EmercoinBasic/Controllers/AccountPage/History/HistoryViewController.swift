@@ -13,8 +13,9 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet internal weak var noTransactionsLabel:UILabel!
     
     var history = History()
-    
     let disposeBag = DisposeBag()
+    
+    internal var selectedIndexPath:IndexPath?
     
     override class func storyboardName() -> String {
         return "AccountPage"
@@ -38,7 +39,6 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     private func updateUI() {
-        
         noTransactionsLabel.isHidden = history.transactions.count != 0
     }
     
@@ -60,13 +60,11 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
                 self?.updateUI()
                 self?.tableView.reload()
             }
-        })
-        .addDisposableTo(disposeBag)
-        
+        }).addDisposableTo(disposeBag)
+
         history.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -80,8 +78,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
                     refresh?.endRefreshing()
                 }
             }
-        })
-        .addDisposableTo(disposeBag)
+        }).addDisposableTo(disposeBag)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -92,5 +89,40 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
         
         let alert = AlertsHelper.errorAlert(at: error)
         present(alert, animated: true, completion: nil)
+    }
+    
+    internal func showTransactionDetailView(at viewModel:HistoryTransactionViewModel) {
+        
+        let transactionDetailView = loadViewFromXib(name: "History", index: 0,
+                                                    frame: self.parent?.parent?.view.frame) as! HistoryTransactionDetailView
+        transactionDetailView.viewModel = viewModel
+        
+        transactionDetailView.repeatTransaction = {[weak self] in
+            self?.repeatTransaction()
+        }
+        
+        self.parent?.parent?.view.addSubview(transactionDetailView)
+    }
+    
+    private func repeatTransaction() {
+        
+        if let indexPath = selectedIndexPath {
+            
+            let item = itemAt(indexPath: indexPath)
+            
+            var data = [String:Any]()
+            data["address"] = item.address as AnyObject
+            data["amount"] = String.coinFormat(at: abs(item.amount)) as AnyObject
+            
+            let menu = Router.sharedInstance.sideMenu
+            
+            if item.direction() == .outcoming {
+                menu?.showSendController(at: data as AnyObject)
+            } else {
+                menu?.showGetCoinsController(at: data as AnyObject)
+            }
+            
+            selectedIndexPath = nil
+        }
     }
 }
