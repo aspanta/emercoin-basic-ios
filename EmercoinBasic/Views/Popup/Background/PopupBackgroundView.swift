@@ -1,6 +1,6 @@
 //
 //  PopupBackgroundView.swift
-//  EmercoinOne
+//  EmercoinBasic
 //
 
 import UIKit

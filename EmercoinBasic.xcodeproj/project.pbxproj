@@ -2342,7 +2342,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aspanta.emercoinbasic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3b45632e-8781-4def-ac84-7f34c728e9a1";
+				PROVISIONING_PROFILE = "2be50eb4-f4ac-4c88-a791-a50073b38aae";
 				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDis;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
