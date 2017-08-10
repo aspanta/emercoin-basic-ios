@@ -9,6 +9,8 @@ import UIKit
 
 struct Constants {
     
+    static let DatabaseVersion = 2
+    
     struct API {
         static let BaseURL = ""
         static let EmercoinCourse = "https://api.coinmarketcap.com/v1/ticker/emercoin/?convert=USD"

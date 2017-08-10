@@ -26,7 +26,7 @@ class NamesAPI: BaseAPI {
                     let records = Records()
                     records.removeAll()
                     records.add(records: names.filter({ (record) -> Bool in
-                        return record.isExpired == false
+                        return record.isExpired == false && record.isTransferred == false
                     }))
                     
                     super.apiDidReturnData(data: names as AnyObject)
