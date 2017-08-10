@@ -906,7 +906,6 @@
 			isa = PBXGroup;
 			children = (
 				2D21D6601E926E690088AD31 /* SearchNVS */,
-				2D798EF51E9292A3008AB5AF /* Main */,
 				2D21D64F1E926E690088AD31 /* MyRecords */,
 				2D21D65E1E926E690088AD31 /* Names.storyboard */,
 				2D21D65F1E926E690088AD31 /* NamesViewController.swift */,
@@ -917,6 +916,7 @@
 		2D21D64F1E926E690088AD31 /* MyRecords */ = {
 			isa = PBXGroup;
 			children = (
+				2D798EF51E9292A3008AB5AF /* Main */,
 				2D21D6501E926E690088AD31 /* Cell */,
 				2D21D6521E926E690088AD31 /* CreateNVS */,
 				2D21D65B1E926E690088AD31 /* MyRecordsViewController.swift */,
@@ -1172,7 +1172,8 @@
 			children = (
 				2D798EF61E9292F7008AB5AF /* NamesMainViewController.swift */,
 			);
-			path = Main;
+			name = Main;
+			path = ../Main;
 			sourceTree = "<group>";
 		};
 		2D798EF81E9394B1008AB5AF /* Names */ = {

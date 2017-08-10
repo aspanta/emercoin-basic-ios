@@ -24,7 +24,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        history.load(loadAll:true)
+        history.load()
     }
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        history.load(loadAll: true)
+        history.load()
     }
     
     private func setupHistory() {

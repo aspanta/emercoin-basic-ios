@@ -85,7 +85,7 @@ class AddressBook {
         }
     }
     
-    func load(loadAll:Bool? = false) {
+    func load() {
         
     }
     

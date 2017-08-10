@@ -20,7 +20,7 @@ class MyAddressBook: AddressBook {
         return realm.objects(Contact.self).filter("isMyContact == true")
     }
     
-    override func load(loadAll:Bool? = false) {
+    override func load() {
         
         activityIndicator.onNext(true)
         
@@ -28,13 +28,14 @@ class MyAddressBook: AddressBook {
             
             self?.activityIndicator.onNext(false)
             
-            if error == nil {
-                if loadAll == true {
-                    APIManager.sharedInstance.loadAll()
-                }
-                self?.success.onNext(true)
+            if let error = error {
+                self?.error.onNext(error)
             } else {
-                self?.error.onNext(error!)
+                
+                if let addresses = data as? [String] {
+                    self?.processingAndAdd(at: addresses)
+                    self?.success.onNext(true)
+                }
             }
         }
     }

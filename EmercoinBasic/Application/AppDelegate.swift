@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupRealm() {
         
-        let version = Constants.DatabaseVersion
+        let version:UInt64 = UInt64(Constants.DatabaseVersion)
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used

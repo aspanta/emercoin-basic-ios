@@ -81,25 +81,6 @@ class APIManager: NSObject {
         api.startRequest(completion: completion)
     }
     
-    func loadAll() {
-        
-        loadBalance{ (data, error) in
-            if error == nil {
-                self.loadMyAddresses{ (data, error) in
-                    if error == nil {
-                        self.loadTransactions{ (data, error) in
-                            if error == nil {
-                                self.loadNames{ (data, error) in
-                                    
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
     func loadBalance(completion:@escaping (_ data: AnyObject?, _ error:NSError?) -> Void) {
         
         let api = getApi(at: .balance)
@@ -245,6 +226,7 @@ class APIManager: NSObject {
         api.object = authInfo as AnyObject?
         
         addApi(at: api)
+        
         api.done = {
             self.removeApi(at: api)
         }

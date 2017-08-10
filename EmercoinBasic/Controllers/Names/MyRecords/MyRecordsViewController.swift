@@ -75,7 +75,7 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        records.load(loadAll: true)
+        records.load()
     }
     
     private func setupRecords() {
@@ -137,6 +137,8 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
                 showSuccessDeleteNameView(at: parent)
             }
         }
+        
+        AppManager.sharedInstance.wallet.loadInfo()
     }
     
     private func showSuccessDeleteNameView(at controlller:UIViewController) {
