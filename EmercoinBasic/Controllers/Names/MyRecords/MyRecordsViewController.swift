@@ -75,7 +75,7 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
     }
     
     internal func handleRefresh(sender:UIRefreshControl) {
-        records.load(loadAll: true)
+        records.load()
     }
     
     private func setupRecords() {
@@ -137,10 +137,12 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
                 showSuccessDeleteNameView(at: parent)
             }
         }
+        
+        AppManager.sharedInstance.wallet.loadInfo()
     }
     
     private func showSuccessDeleteNameView(at controlller:UIViewController) {
-        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 4,
+        let successView:SuccessAddNameView! = loadViewFromXib(name: "MyRecords", index: 2,
                                                               frame: controlller.view.frame) as! SuccessAddNameView
         self.walletProtectionHelper = nil
         self.deleteRecord = nil

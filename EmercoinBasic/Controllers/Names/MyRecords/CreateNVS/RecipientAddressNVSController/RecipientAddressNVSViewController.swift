@@ -28,7 +28,7 @@ class RecipientAddressNVSViewController: BaseViewController {
         
         let frame = UIScreen.main.bounds
         
-        let enterView = loadViewFromXib(name: "MyRecords", index: 3,
+        let enterView = loadViewFromXib(name: "MyRecords", index: 1,
                                           frame: frame) as! EnterAddressRecordView
         enterView.text = { address in
             if address.length > 0 {

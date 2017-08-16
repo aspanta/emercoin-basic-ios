@@ -22,13 +22,6 @@ class NamesAPI: BaseAPI {
         if let result = data["result"] {
             
                 if let names = Mapper<Record>().mapArray(JSONObject:result ) {
-                    
-                    let records = Records()
-                    records.removeAll()
-                    records.add(records: names.filter({ (record) -> Bool in
-                        return record.isExpired == false
-                    }))
-                    
                     super.apiDidReturnData(data: names as AnyObject)
                 }
         }

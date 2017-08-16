@@ -58,8 +58,12 @@ class Records {
     }
     
     func checkWalletAndRemove(at record:Record) {
+        
+        activityIndicator.onNext(true)
+    
         let wallet = AppManager.sharedInstance.wallet
         wallet.loadInfo(completion: {[weak self] in
+            self?.activityIndicator.onNext(false)
             if wallet.isLocked == true {
                 self?.walletLock.onNext(true)
                 return
@@ -71,6 +75,7 @@ class Records {
     
     func remove(record:Record) {
         activityIndicator.onNext(true)
+        
         APIManager.sharedInstance.deleteName(at: [record.name] as AnyObject) {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
             if let error = error {
@@ -100,17 +105,24 @@ class Records {
         }
     }
     
-    func load(loadAll:Bool? = false, completion:((Void) -> Void)? = nil) {
+    func load(completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadNames {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
-            if error == nil {
-                if loadAll == true {
-                    APIManager.sharedInstance.loadAll()
-                }
-                self?.success.onNext(true)
+            if let error = error {
+                self?.error.onNext(error)
+                
             } else {
-                self?.error.onNext(error!)
+                if let records = data as? [Record] {
+                    
+                    
+                    let filteredNames = records.filter({ (record) -> Bool in
+                        return record.isExpired == false && record.isTransferred == false
+                    })
+                    self?.removeAll()
+                    self?.add(records: filteredNames)
+                    self?.success.onNext(true)
+                }
             }
             if completion != nil{
                 completion!()

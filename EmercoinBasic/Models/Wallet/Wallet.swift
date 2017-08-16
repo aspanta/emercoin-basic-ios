@@ -57,18 +57,13 @@ class Wallet:BaseModel {
         balance <- map["balance"]
     }
     
-    func loadInfo(loadAll:Bool? = false, completion:((Void) -> Void)? = nil) {
+    func loadInfo(completion:((Void) -> Void)? = nil) {
         
         APIManager.sharedInstance.loadInfo{[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
-            if error != nil {
-                self?.error.onNext(error!)
+            if let error = error {
+                self?.error.onNext(error)
             } else {
-                
-                if loadAll == true {
-                    APIManager.sharedInstance.loadAll()
-                }
-                
                 if let wallet = data as? Wallet {
                     self?.isLocked = wallet.isLocked
                     self?.isProtected = wallet.isProtected
