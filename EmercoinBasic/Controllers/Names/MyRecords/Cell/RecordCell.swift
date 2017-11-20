@@ -5,7 +5,7 @@
 
 import UIKit
 
-class RecordCell: BaseTableViewCell {
+class RecordCell: BaseSwipeTableViewCell {
 
     @IBOutlet weak var nameLabeL:UILabel!
     @IBOutlet weak var timeValue:UILabel!

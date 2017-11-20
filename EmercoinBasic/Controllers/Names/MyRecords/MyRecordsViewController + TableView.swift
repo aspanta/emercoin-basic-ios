@@ -4,8 +4,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-extension MyRecordsViewController {
+extension MyRecordsViewController: SwipeTableViewCellDelegate {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -17,9 +18,12 @@ extension MyRecordsViewController {
         
         let cellIdentifier = "RecordCell"
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecordCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseSwipeTableViewCell
         
         let viewModel = RecordViewModel(record: itemAt(indexPath: indexPath))
+        if viewModel.isEditing {
+            cell.delegate = self
+        }
         cell.object = viewModel
         cell.indexPath = indexPath
         
@@ -38,28 +42,32 @@ extension MyRecordsViewController {
         return record.isMyRecord
     }
     
-    internal func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
         
-        editingIndexPath = indexPath
+        let deleteAction = SwipeAction(style: .default, title: " ") { action, indexPath in
+            self.addDeleteNoteViewWith(indexPath: indexPath)
+        }
         
-        let deleteImage = UIImageView(image: UIImage(named: "delete_icon"))
-        let editImage = UIImageView(image: UIImage(named: "edit_icon"))
-        deleteImage.contentMode = .scaleAspectFit
-        editImage.contentMode = .scaleAspectFit
-        
-        let editAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
+        let editAction = SwipeAction(style: .default, title: " ") { action, indexPath in
             let record = self.itemAt(indexPath: indexPath)
             self.showEditRecordController(at: record, index: indexPath.row)
         }
         
-        let deleteAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
-            self.addDeleteNoteViewWith(indexPath: indexPath)
-        }
+        deleteAction.image = UIImage(named: "delete_icon")
+        deleteAction.backgroundColor = UIColor(hexString: "DA3975")
+        editAction.image = UIImage(named: "edit_icon")
+        editAction.backgroundColor = UIColor(hexString: "D9743C")
         
-        deleteAction.backgroundColor = UIColor(patternImage:deleteImage.image!)
-        editAction.backgroundColor = UIColor(patternImage:editImage.image!)
-        
-        return [deleteAction, editAction]
+        return [deleteAction,editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .none
+        options.transitionStyle = .border
+        options.buttonSpacing = -20
+        return options
     }
     
     private func addDeleteNoteViewWith(indexPath:IndexPath) {
