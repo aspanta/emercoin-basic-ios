@@ -49,7 +49,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
         tableView.refreshControl = refresh
     }
     
-    internal func handleRefresh(sender:UIRefreshControl) {
+    @objc internal func handleRefresh(sender:UIRefreshControl) {
         history.load()
     }
     
@@ -60,11 +60,11 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
                 self?.updateUI()
                 self?.tableView.reload()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
 
         history.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -78,7 +78,7 @@ class HistoryViewController: UIViewController, IndicatorInfoProvider {
                     refresh?.endRefreshing()
                 }
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

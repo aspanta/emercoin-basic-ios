@@ -39,7 +39,7 @@ class NVSInfoViewController: BaseTextViewController {
         }
         
         let font = UIFont(name: "Helvetica", size: 14)!
-        let attributes = [NSForegroundColorAttributeName:UIColor(hexString: "#333333"), NSFontAttributeName:font]
+        let attributes = [NSAttributedStringKey.foregroundColor:UIColor(hexString: "#333333"), NSAttributedStringKey.font:font]
         let string = NSMutableAttributedString(string: text, attributes: attributes)
         
         infoLabel.attributedText = string

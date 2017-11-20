@@ -105,7 +105,7 @@ class Records {
         }
     }
     
-    func load(completion:((Void) -> Void)? = nil) {
+    func load(completion:(() -> Void)? = nil) {
         
         APIManager.sharedInstance.loadNames {[weak self] (data, error) in
             self?.activityIndicator.onNext(false)
@@ -130,7 +130,7 @@ class Records {
         }
     }
     
-    func searchName(completion:((Void) -> Void)? = nil) {
+    func searchName(completion:(() -> Void)? = nil) {
         
         load {[weak self] in
             APIManager.sharedInstance.searchName(at: [self?.searchString] as AnyObject, completion: {[weak self] (data, error) in

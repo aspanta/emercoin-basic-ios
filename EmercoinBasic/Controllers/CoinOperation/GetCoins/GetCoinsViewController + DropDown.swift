@@ -16,7 +16,7 @@ extension GetCoinsViewController {
             if success {
                 self?.setupDataSource(at: myAddressBook)
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         dropDown = DropDown()
         dropDown?.anchorView = dropDownButton

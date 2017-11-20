@@ -42,7 +42,7 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
         
         wallet.success.subscribe(onNext: {[weak self] (state) in
             self?.updateUI()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     internal func updateUI() {
@@ -58,7 +58,7 @@ class AddressBookViewController: BaseViewController, UITableViewDelegate, UITabl
                 self?.tableView.reload()
                 self?.updateUI()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func showAddContactView() {

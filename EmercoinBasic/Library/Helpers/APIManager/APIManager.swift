@@ -229,7 +229,7 @@ class APIManager: NSObject {
         
         api.done = {
             self.removeApi(at: api)
-        }
+        } as (() -> Void)
 
         return api
     }

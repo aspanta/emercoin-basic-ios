@@ -23,9 +23,9 @@ class Coin {
     
     func exchangeAttributedString(color:UIColor? = nil) -> NSAttributedString {
         
-        let amountAttributes = [NSForegroundColorAttributeName: color ?? .gray, NSFontAttributeName:UIFont(name: "Roboto-Medium", size: 15)]
+        let amountAttributes = [NSAttributedStringKey.foregroundColor: color ?? .gray, NSAttributedStringKey.font:UIFont(name: "Roboto-Medium", size: 15)]
         
-        let otherAttributes = [NSForegroundColorAttributeName: color ?? .lightGray, NSFontAttributeName:UIFont(name: "Roboto-Light", size: 15)]
+        let otherAttributes = [NSAttributedStringKey.foregroundColor: color ?? .lightGray, NSAttributedStringKey.font:UIFont(name: "Roboto-Light", size: 15)]
         
         let countInUsd = String(format:"%0.2f",coinInUSD())
         

@@ -25,9 +25,9 @@ class CreateNVSViewController: BaseViewController {
     @IBOutlet internal weak var prefixConstraint:NSLayoutConstraint!
     @IBOutlet internal weak var createButton:BaseButton!
     
-    var created:((Void) -> (Void))?
+    var created:(() -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
-    var cancel:((Void) -> (Void))?
+    var cancel:(() -> (Void))?
     
     let disposeBag = DisposeBag()
     var viewModel = CreateNVSViewModel()
@@ -116,7 +116,7 @@ class CreateNVSViewController: BaseViewController {
             } else {
                 self?.hideOperationActivityView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func setupController() {
@@ -125,15 +125,15 @@ class CreateNVSViewController: BaseViewController {
             if success {
                 self?.showSuccessAddNameView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.walletLock.subscribe(onNext:{ [weak self] state in
             self?.showProtection()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         setupTextFields()
     }
@@ -224,7 +224,7 @@ class CreateNVSViewController: BaseViewController {
             
             self?.walletProtectionHelper = nil
             self?.back()
-        })
+        } as (() -> (Void)))
         
         self.parent?.view.addSubview(successView)
     }
@@ -244,7 +244,7 @@ class CreateNVSViewController: BaseViewController {
                 if let data = self?.nameData {
                     self?.viewModel.sendData(at: data)
                 }
-            }
+            } as (() -> (Void))
             
             self.walletProtectionHelper = protectionHelper
             protectionHelper.startProtection()

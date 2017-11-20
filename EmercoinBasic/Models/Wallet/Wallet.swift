@@ -57,7 +57,7 @@ class Wallet:BaseModel {
         balance <- map["balance"]
     }
     
-    func loadInfo(completion:((Void) -> Void)? = nil) {
+    func loadInfo(completion:(() -> Void)? = nil) {
         
         APIManager.sharedInstance.loadInfo{[weak self] (data, error) in
             self?.activityIndicator.onNext(false)

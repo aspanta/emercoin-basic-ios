@@ -11,20 +11,20 @@ let blocksInDay = 175
 
 class Record: Object, Mappable {
     
-    dynamic var name = ""
-    dynamic var value = ""
-    dynamic var address = ""
-    dynamic var isExpired = false
-    dynamic var isTransferred = false
-    dynamic var isDeleted = false
-    dynamic var isMyRecord = true
+    @objc dynamic var name = ""
+    @objc dynamic var value = ""
+    @objc dynamic var address = ""
+    @objc dynamic var isExpired = false
+    @objc dynamic var isTransferred = false
+    @objc dynamic var isDeleted = false
+    @objc dynamic var isMyRecord = true
     
-    dynamic var expiresIn = 0 {
+    @objc dynamic var expiresIn = 0 {
         didSet{
             expiresInDays = Int((Double(expiresIn)/Double(blocksInDay)).rounded())
         }
     }
-    dynamic var expiresInDays = 0
+    @objc dynamic var expiresInDays = 0
     
     required convenience init?(map: Map) {
         self.init()

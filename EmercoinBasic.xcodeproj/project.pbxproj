@@ -1911,6 +1911,7 @@
 					2D997A6F1E7AC49400630560 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5AJAAW94U5;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -2325,7 +2326,8 @@
 				PROVISIONING_PROFILE = "4240da15-d71b-4b41-95dd-41200ad4d9c9";
 				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -2346,7 +2348,8 @@
 				PROVISIONING_PROFILE = "2be50eb4-f4ac-4c88-a791-a50073b38aae";
 				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDis;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

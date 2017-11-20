@@ -31,10 +31,10 @@ class LegalViewController: BaseTextViewController {
             paragraphStyle.alignment = NSTextAlignment.left
             
             let font = UIFont.systemFont(ofSize: 15.0)
-            let linkAttributes = [NSForegroundColorAttributeName: UIColor.black,
-                                  NSFontAttributeName: font,NSParagraphStyleAttributeName:paragraphStyle]
-            let attributes = [NSForegroundColorAttributeName: UIColor.black,
-                              NSFontAttributeName: font]
+            let linkAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black,
+                                  NSAttributedStringKey.font: font,NSAttributedStringKey.paragraphStyle:paragraphStyle]
+            let attributes = [NSAttributedStringKey.foregroundColor: UIColor.black,
+                              NSAttributedStringKey.font: font]
             
             let body = NSMutableAttributedString(string:viewModel.text, attributes: attributes)
             let link = NSMutableAttributedString(string:viewModel.url, attributes: linkAttributes)

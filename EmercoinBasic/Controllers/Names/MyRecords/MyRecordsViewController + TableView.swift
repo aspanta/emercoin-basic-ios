@@ -68,11 +68,11 @@ extension MyRecordsViewController {
         
         deleteNoteView.delete = ({
             self.removeCellAt(indexPath: indexPath)
-        })
+        } as (() -> (Void)))
         
         deleteNoteView.cancel = ({
             self.reloadRows(at: [indexPath])
-        })
+        } as (() -> (Void)))
         
         self.parent?.parent?.view.addSubview(deleteNoteView)
     }
