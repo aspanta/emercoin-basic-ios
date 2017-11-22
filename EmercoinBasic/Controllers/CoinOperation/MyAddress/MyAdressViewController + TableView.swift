@@ -4,8 +4,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-extension MyAdressViewController {
+extension MyAdressViewController: SwipeTableViewCellDelegate {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -17,9 +18,10 @@ extension MyAdressViewController {
         
         let cellIdentifier = "MyAddressCell"
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BaseSwipeTableViewCell
         
         let viewModel = ContactViewModel(contact:itemAt(indexPath: indexPath))
+        cell.delegate = self
         cell.object = viewModel
         
         return cell
@@ -42,18 +44,25 @@ extension MyAdressViewController {
         return true
     }
     
-    internal func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
         
-        let editImage = UIImageView(image: UIImage(named: "edit_icon"))
-        editImage.contentMode = .scaleAspectFit
-        
-        let editAction = UITableViewRowAction(style: .normal, title: "     ") { (action, indexPath) in
+        let editAction = SwipeAction(style: .default, title: " ") { action, indexPath in
             self.addEditContactViewWith(indexPath: indexPath)
         }
         
-        editAction.backgroundColor = UIColor(patternImage:editImage.image!)
+        editAction.image = UIImage(named: "edit_icon")
+        editAction.backgroundColor = UIColor(hexString: "D9743C")
         
         return [editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .none
+        options.transitionStyle = .border
+        options.buttonSpacing = -20
+        return options
     }
     
     private func addEditContactViewWith(indexPath:IndexPath) {

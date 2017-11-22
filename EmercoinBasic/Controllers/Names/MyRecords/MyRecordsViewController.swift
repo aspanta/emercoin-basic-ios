@@ -74,7 +74,7 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
         tableView.refreshControl = refresh
     }
     
-    internal func handleRefresh(sender:UIRefreshControl) {
+    @objc internal func handleRefresh(sender:UIRefreshControl) {
         records.load()
     }
     
@@ -85,21 +85,21 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
                 self?.tableView.reload()
             }
             self?.updateUI()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         records.successDelete.subscribe(onNext:{ [weak self] success in
             if success {
                 self?.showSuccessDeleteNameView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         records.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         records.walletLock.subscribe(onNext:{ [weak self] state in
             self?.showProtection()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -116,7 +116,7 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
             } else {
                 self?.showOperationActivityView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -194,7 +194,7 @@ class MyRecordsViewController: BaseViewController, IndicatorInfoProvider, UITabl
             if let record = self?.deleteRecord {
                 self?.records.remove(record: record)
             }
-        }
+        } as (() -> (Void))
         
         self.walletProtectionHelper = protectionHelper
         protectionHelper.startProtection()

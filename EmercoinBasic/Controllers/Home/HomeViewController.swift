@@ -45,15 +45,15 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
         
         viewModel.error.subscribe(onNext: {[weak self] (error) in
             self?.showErrorAlert(at: error)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.locked.subscribe(onNext: {[weak self] (locked) in
             self?.lockButton.isLocked = locked
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.walletSuccess.subscribe(onNext: {[weak self] (state) in
             self?.tableView.reload()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func setupTableView() {
@@ -75,10 +75,10 @@ final class HomeViewController: BaseViewController, UITableViewDelegate, UITable
             if state == false {
                 refresh.endRefreshing()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
-    internal func handleRefresh(sender:UIRefreshControl) {
+    @objc internal func handleRefresh(sender:UIRefreshControl) {
         viewModel.updateWallet()
     }
 }

@@ -33,7 +33,7 @@ class AddressBook {
                 if changes?.inserted.count != 0 || changes?.updated.count != 0 {
                     self.success.onNext(true)
                 }
-            }).addDisposableTo(disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     func add(contact:Contact) {

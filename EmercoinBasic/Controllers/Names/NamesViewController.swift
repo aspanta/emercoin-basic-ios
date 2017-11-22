@@ -35,12 +35,12 @@ class NamesViewController: BaseViewController {
     
     var records:Records?
     var createPressed: ((_ data:Any) -> (Void))?
-    var created:((Void) -> (Void))?
+    var created:(() -> (Void))?
     var edited:((_ data:[String:Any]) -> (Void))?
-    var cancel:((Void) -> (Void))?
+    var cancel:(() -> (Void))?
     var selectedAddress:((_ address:String) -> (Void))?
     
-    var viewDidAppear: ((Void) -> (Void))?
+    var viewDidAppear: (() -> (Void))?
     
     let viewModel = CoinOperationsViewModel()
     let disposeBag = DisposeBag()
@@ -108,13 +108,13 @@ class NamesViewController: BaseViewController {
         mainTitleLabel.text = text
         
         viewModel.coinCourseTitle.bind(to: headerView.coinCourseLabel.rx.attributedText)
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         viewModel.coinAmount.bind(to: headerView.coinAmountLabel.rx.text)
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         viewModel.locked.subscribe(onNext: {[weak self] (locked) in
             self?.lockButton.isLocked = locked
         })
-        .addDisposableTo(disposeBag)
+        .disposed(by: disposeBag)
         
         viewModel.updateUI()
     }
@@ -147,7 +147,7 @@ class NamesViewController: BaseViewController {
             if let main = childController as? NamesMainViewController {
                     controller.created = {[weak self] in
                             main.reloadRecords()
-                    }
+                    } as (() -> (Void))
             }
         }
         

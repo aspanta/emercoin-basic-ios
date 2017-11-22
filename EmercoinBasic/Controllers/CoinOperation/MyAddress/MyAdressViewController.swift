@@ -38,12 +38,12 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         addressBook.success.subscribe(onNext:{ [weak self] success in
             if success {self?.tableView.reload()}
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         addressBook.error.subscribe(onNext:{ [weak self] error in
             self?.hideOperationActivityView()
             self?.showErrorAlert(at: error)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func setupActivityIndicator() {
@@ -58,7 +58,7 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
                 }
                 self?.hideOperationActivityView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func setupRefreshControl() {
@@ -68,7 +68,7 @@ class MyAdressViewController: BaseViewController, UITableViewDelegate, UITableVi
         tableView.refreshControl = refresh
     }
     
-    internal func handleRefresh(sender:UIRefreshControl) {
+    @objc internal func handleRefresh(sender:UIRefreshControl) {
         addressBook.load()
     }
 

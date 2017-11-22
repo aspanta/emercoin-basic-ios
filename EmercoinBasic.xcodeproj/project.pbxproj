@@ -118,6 +118,8 @@
 		2D798F001E939F1B008AB5AF /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798EFE1E939F1B008AB5AF /* Records.swift */; };
 		2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798F021E93A992008AB5AF /* RecordViewModel.swift */; };
 		2D8237621EA60C5C00DC37D6 /* CreateNVSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8237611EA60C5C00DC37D6 /* CreateNVSViewModel.swift */; };
+		2D89FBB51FC3126C0095DF05 /* BaseSwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89FBB41FC3126C0095DF05 /* BaseSwipeTableViewCell.swift */; };
+		2D89FBB71FC315550095DF05 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D89FBB61FC315540095DF05 /* SwipeCellKit.framework */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
 		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
 		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
@@ -348,6 +350,8 @@
 		2D798EFE1E939F1B008AB5AF /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		2D798F021E93A992008AB5AF /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		2D8237611EA60C5C00DC37D6 /* CreateNVSViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNVSViewModel.swift; sourceTree = "<group>"; };
+		2D89FBB41FC3126C0095DF05 /* BaseSwipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSwipeTableViewCell.swift; sourceTree = "<group>"; };
+		2D89FBB61FC315540095DF05 /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeCellKit.framework; path = Carthage/Build/iOS/SwipeCellKit.framework; sourceTree = "<group>"; };
 		2D997A701E7AC49400630560 /* EmercoinBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmercoinBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D997A861E7AC90700630560 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D997A871E7AC90700630560 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -474,6 +478,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D89FBB71FC315550095DF05 /* SwipeCellKit.framework in Frameworks */,
 				2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */,
 				2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */,
 				2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */,
@@ -1365,6 +1370,7 @@
 		2D997A9B1E7ACF3B00630560 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D89FBB61FC315540095DF05 /* SwipeCellKit.framework */,
 				2DF212611E8AC8A500A989F3 /* RxRealm.framework */,
 				2DF62FDB1E89122C007D9A60 /* Realm.framework */,
 				2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */,
@@ -1407,6 +1413,7 @@
 		2D997AC41E7AD1FF00630560 /* Base classes */ = {
 			isa = PBXGroup;
 			children = (
+				2D89FBB41FC3126C0095DF05 /* BaseSwipeTableViewCell.swift */,
 				2D997AC51E7AD1FF00630560 /* BaseNavigationController.swift */,
 				2D997AC61E7AD1FF00630560 /* BasePageViewController.swift */,
 				2D997AC71E7AD1FF00630560 /* BaseTableViewCell.swift */,
@@ -1911,6 +1918,7 @@
 					2D997A6F1E7AC49400630560 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5AJAAW94U5;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1992,6 +2000,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
 			);
 			outputPaths = (
 			);
@@ -2019,6 +2028,7 @@
 				2D997B611E7AD24E00630560 /* Wallet.swift in Sources */,
 				2D22B2431E7C4455008BB64F /* AddressBookViewController + TableView.swift in Sources */,
 				2D997B1F1E7AD1FF00630560 /* ButtonBarViewCell.swift in Sources */,
+				2D89FBB51FC3126C0095DF05 /* BaseSwipeTableViewCell.swift in Sources */,
 				2D004A351F3B12F500D52A4D /* CourseView.swift in Sources */,
 				2D21D6651E926E690088AD31 /* AddressesNVSViewController.swift in Sources */,
 				2D004A5C1F3B12F500D52A4D /* WalletProtectionWarningView.swift in Sources */,
@@ -2325,7 +2335,8 @@
 				PROVISIONING_PROFILE = "4240da15-d71b-4b41-95dd-41200ad4d9c9";
 				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -2346,7 +2357,8 @@
 				PROVISIONING_PROFILE = "2be50eb4-f4ac-4c88-a791-a50073b38aae";
 				PROVISIONING_PROFILE_SPECIFIER = EmercoinBasicDis;
 				SWIFT_OBJC_BRIDGING_HEADER = "EmercoinBasic/Application/FRHyperLabelDemoSwift-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

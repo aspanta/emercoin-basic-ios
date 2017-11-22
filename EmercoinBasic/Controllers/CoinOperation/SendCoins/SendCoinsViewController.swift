@@ -37,7 +37,7 @@ class SendCoinsViewController: BaseViewController {
         
         hideStatusBar()
         viewModel.coinSign.bind(to: signLabel.rx.text)
-        .addDisposableTo(disposeBag)
+        .disposed(by: disposeBag)
         
         if object != nil {
             
@@ -67,15 +67,15 @@ class SendCoinsViewController: BaseViewController {
                 wallet.loadInfo(completion: nil)
                 self?.showSuccesSendView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.error.subscribe(onNext:{ [weak self] error in
             self?.showErrorAlert(at: error)
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.walletLock.subscribe(onNext:{ [weak self] state in
             self?.showProtection()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         addressTextField.textChanged = {[weak self](text) in
             self?.checkValidation()
@@ -107,7 +107,7 @@ class SendCoinsViewController: BaseViewController {
             } else {
                 self?.hideOperationActivityView()
             }
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func addRequestSendView() {
@@ -126,7 +126,7 @@ class SendCoinsViewController: BaseViewController {
                 let data = [address ?? "", self?.amount as Any] as AnyObject
                 self?.sendData = data
                 self?.viewModel.checkWalletAndSend(at: data)
-            })
+            } as (() -> (Void)))
             
              self.parent?.view.addSubview(requestSendView)
         }
@@ -139,7 +139,7 @@ class SendCoinsViewController: BaseViewController {
             let parent  = self.parent as! CoinOperationsViewController
             self.walletProtectionHelper = nil
             parent.back()
-        })
+        } as (() -> (Void)))
         
         self.parent?.view.addSubview(successView)
     }
@@ -156,7 +156,7 @@ class SendCoinsViewController: BaseViewController {
                 if let data = self?.sendData {
                     self?.viewModel.sendCoins(at: data)
                 }
-            }
+            } as (() -> (Void))
             self.walletProtectionHelper = protectionHelper
             protectionHelper.startProtection()
         }
