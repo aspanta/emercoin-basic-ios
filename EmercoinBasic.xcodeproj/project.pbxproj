@@ -100,7 +100,6 @@
 		2D4D98EA1E7FF7D400DFB784 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D98E71E7FF7D400DFB784 /* APIManager.swift */; };
 		2D578BFA1EB2571100996573 /* BaseTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D578BF91EB2571100996573 /* BaseTextViewController.swift */; };
 		2D578BFC1EB9CE2400996573 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D578BFB1EB9CE2400996573 /* BaseAlertController.swift */; };
-		2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5D55021E8036CC004FC57D /* ObjectMapper.framework */; };
 		2D5D55051E803D61004FC57D /* BaseViewController + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D55041E803D61004FC57D /* BaseViewController + ActivityIndicator.swift */; };
 		2D64EA901E9E0F4F000F9B48 /* WalletProtectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64EA8F1E9E0F4F000F9B48 /* WalletProtectionHelper.swift */; };
 		2D64EA921E9E2CBC000F9B48 /* Wallet + Protection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64EA911E9E2CBC000F9B48 /* Wallet + Protection.swift */; };
@@ -119,14 +118,7 @@
 		2D798F031E93A992008AB5AF /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D798F021E93A992008AB5AF /* RecordViewModel.swift */; };
 		2D8237621EA60C5C00DC37D6 /* CreateNVSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8237611EA60C5C00DC37D6 /* CreateNVSViewModel.swift */; };
 		2D89FBB51FC3126C0095DF05 /* BaseSwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89FBB41FC3126C0095DF05 /* BaseSwipeTableViewCell.swift */; };
-		2D89FBB71FC315550095DF05 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D89FBB61FC315540095DF05 /* SwipeCellKit.framework */; };
 		2D997A941E7AC90700630560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D997A861E7AC90700630560 /* AppDelegate.swift */; };
-		2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9C1E7ACF3B00630560 /* IQKeyboardManagerSwift.framework */; };
-		2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9D1E7ACF3B00630560 /* LGSideMenuController.framework */; };
-		2D997AA51E7ACF3B00630560 /* QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9E1E7ACF3B00630560 /* QRCode.framework */; };
-		2D997AA61E7ACF3B00630560 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997A9F1E7ACF3B00630560 /* QRCodeReader.framework */; };
-		2D997AA71E7ACF3B00630560 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997AA01E7ACF3B00630560 /* RxCocoa.framework */; };
-		2D997AA81E7ACF3B00630560 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D997AA11E7ACF3B00630560 /* RxSwift.framework */; };
 		2D997AB91E7AD02A00630560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D997AAA1E7AD02A00630560 /* Assets.xcassets */; };
 		2D997ABA1E7AD02A00630560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997AAC1E7AD02A00630560 /* LaunchScreen.storyboard */; };
 		2D997ABB1E7AD02A00630560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D997AAE1E7AD02A00630560 /* Main.storyboard */; };
@@ -226,14 +218,11 @@
 		2DA249441E7C1F4700AF81DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249431E7C1F4700AF81DD /* LoginViewController.swift */; };
 		2DA2494A1E7C203B00AF81DD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA249491E7C203B00AF81DD /* LoginViewModel.swift */; };
 		2DA3E77C1E83DA19003F9A6D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E77B1E83DA19003F9A6D /* Settings.swift */; };
-		2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA3E77D1E83DAF3003F9A6D /* SwiftyUserDefaults.framework */; };
 		2DA3E7811E83F53E003F9A6D /* MyAddressesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7801E83F53E003F9A6D /* MyAddressesAPI.swift */; };
 		2DA3E7831E841D3A003F9A6D /* BaseAPI + Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA3E7821E841D3A003F9A6D /* BaseAPI + Errors.swift */; };
 		2DEDC9451EA0F71200F404B5 /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDC9441EA0F71200F404B5 /* SendViewModel.swift */; };
 		2DEDC9481EA10AC700F404B5 /* SearchNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDC9471EA10AC700F404B5 /* SearchNameAPI.swift */; };
-		2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF212611E8AC8A500A989F3 /* RxRealm.framework */; };
-		2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDB1E89122C007D9A60 /* Realm.framework */; };
-		2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */; };
+		4590CCC9824CA27410BC51B4 /* Pods_EmercoinBasic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C3FCC4397D8FC03AC71F3D /* Pods_EmercoinBasic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -471,6 +460,9 @@
 		2DF212611E8AC8A500A989F3 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 		2DF62FDB1E89122C007D9A60 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2DF62FDC1E89122C007D9A60 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		B5C3FCC4397D8FC03AC71F3D /* Pods_EmercoinBasic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmercoinBasic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDBCD56B49B7D0AD63C8A5EE /* Pods-EmercoinBasic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmercoinBasic.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmercoinBasic/Pods-EmercoinBasic.release.xcconfig"; sourceTree = "<group>"; };
+		E7864C232DC8D38EAA577C2F /* Pods-EmercoinBasic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmercoinBasic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmercoinBasic/Pods-EmercoinBasic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,18 +470,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D89FBB71FC315550095DF05 /* SwipeCellKit.framework in Frameworks */,
-				2DF212621E8AC8A500A989F3 /* RxRealm.framework in Frameworks */,
-				2DF62FDD1E89122C007D9A60 /* Realm.framework in Frameworks */,
-				2DF62FDE1E89122C007D9A60 /* RealmSwift.framework in Frameworks */,
-				2DA3E77E1E83DAF3003F9A6D /* SwiftyUserDefaults.framework in Frameworks */,
-				2D5D55031E8036CC004FC57D /* ObjectMapper.framework in Frameworks */,
-				2D997AA31E7ACF3B00630560 /* IQKeyboardManagerSwift.framework in Frameworks */,
-				2D997AA41E7ACF3B00630560 /* LGSideMenuController.framework in Frameworks */,
-				2D997AA51E7ACF3B00630560 /* QRCode.framework in Frameworks */,
-				2D997AA61E7ACF3B00630560 /* QRCodeReader.framework in Frameworks */,
-				2D997AA71E7ACF3B00630560 /* RxCocoa.framework in Frameworks */,
-				2D997AA81E7ACF3B00630560 /* RxSwift.framework in Frameworks */,
+				4590CCC9824CA27410BC51B4 /* Pods_EmercoinBasic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,6 +1209,7 @@
 				2D997A721E7AC49400630560 /* EmercoinBasic */,
 				2D997A711E7AC49400630560 /* Products */,
 				2D997A9B1E7ACF3B00630560 /* Frameworks */,
+				4BF899E8DA13912A7F5E3DA1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1383,6 +1365,7 @@
 				2D997AA01E7ACF3B00630560 /* RxCocoa.framework */,
 				2D997AA11E7ACF3B00630560 /* RxSwift.framework */,
 				2D997AA21E7ACF3B00630560 /* SwiftyJSON.framework */,
+				B5C3FCC4397D8FC03AC71F3D /* Pods_EmercoinBasic.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1884,6 +1867,15 @@
 			path = SearchName;
 			sourceTree = "<group>";
 		};
+		4BF899E8DA13912A7F5E3DA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7864C232DC8D38EAA577C2F /* Pods-EmercoinBasic.debug.xcconfig */,
+				DDBCD56B49B7D0AD63C8A5EE /* Pods-EmercoinBasic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1891,10 +1883,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D997A821E7AC49400630560 /* Build configuration list for PBXNativeTarget "EmercoinBasic" */;
 			buildPhases = (
+				1A17A44A7811F13F96452FEC /* [CP] Check Pods Manifest.lock */,
 				2D997A6C1E7AC49400630560 /* Sources */,
 				2D997A6D1E7AC49400630560 /* Frameworks */,
 				2D997A6E1E7AC49400630560 /* Resources */,
-				2D997A9A1E7ACE7F00630560 /* ShellScript */,
+				811FF8ABE230F99D83BC4DF4 /* [CP] Embed Pods Frameworks */,
+				938E320CC7A70D77C528C720 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1983,30 +1977,78 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D997A9A1E7ACE7F00630560 /* ShellScript */ = {
+		1A17A44A7811F13F96452FEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/LGSideMenuController.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/QRCode.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmercoinBasic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		811FF8ABE230F99D83BC4DF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EmercoinBasic/Pods-EmercoinBasic-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmercoinBasic/Pods-EmercoinBasic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		938E320CC7A70D77C528C720 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmercoinBasic/Pods-EmercoinBasic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2320,6 +2362,7 @@
 		};
 		2D997A831E7AC49400630560 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7864C232DC8D38EAA577C2F /* Pods-EmercoinBasic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2342,6 +2385,7 @@
 		};
 		2D997A841E7AC49400630560 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDBCD56B49B7D0AD63C8A5EE /* Pods-EmercoinBasic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
